@@ -15,7 +15,7 @@ mod tests {
         ];
 
         for ((nums, target), expected) in test_cases {
-            assert_eq!(S::two_sum(nums, target), expected)
+            assert_eq!(S::two_sum(nums, target), expected);
         }
     }
 
