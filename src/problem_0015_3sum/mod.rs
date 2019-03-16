@@ -1,3 +1,4 @@
+pub mod sort_then_two_sum;
 pub mod sort_then_two_sum_short;
 
 pub trait Solution {
@@ -132,6 +133,11 @@ mod tests {
         for (nums, expected) in test_cases {
             assert_eq!(sorted(S::three_sum(nums)), sorted(expected));
         }
+    }
+
+    #[test]
+    fn sort_then_two_sum() {
+        run_tests::<super::sort_then_two_sum::Solution>();
     }
 
     #[test]
