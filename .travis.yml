@@ -1,0 +1,14 @@
+language: rust
+rust:
+  - stable
+os:
+  - linux
+  - osx
+  - windows
+before_install:
+  - rustup component add clippy
+script:
+  - cargo clippy --verbose
+  - cargo test --verbose
+notifications:
+    email: false
