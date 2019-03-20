@@ -2,21 +2,21 @@ pub struct Solution {}
 
 use std::cmp::Ordering;
 
-fn partition<T, F: FnMut(&T) -> bool>(values: &mut [T], mut f: F) -> (&mut [T], &mut [T]) {
-    let mut pivot = 0;
+impl Solution {
+    fn partition<T, F: FnMut(&T) -> bool>(values: &mut [T], mut f: F) -> (&mut [T], &mut [T]) {
+        let mut pivot = 0;
 
-    for i in 0..values.len() {
-        if f(&values[i]) {
-            values.swap(i, pivot);
+        for i in 0..values.len() {
+            if f(&values[i]) {
+                values.swap(i, pivot);
 
-            pivot += 1;
+                pivot += 1;
+            }
         }
+
+        values.split_at_mut(pivot)
     }
 
-    values.split_at_mut(pivot)
-}
-
-impl Solution {
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
 
@@ -25,7 +25,7 @@ impl Solution {
         if nums.len() > 2 {
             let (nums, pivot) = {
                 let mut temp = nums;
-                let (left, right) = partition(temp.as_mut(), |x| *x <= 0);
+                let (left, right) = Self::partition(temp.as_mut(), |x| *x <= 0);
                 let pivot = left.len();
 
                 left.sort_unstable();
@@ -34,7 +34,7 @@ impl Solution {
                 (temp, pivot)
             };
 
-            for i in 0..pivot.min(nums.len()) {
+            for i in 0..pivot.min(nums.len() - 2) {
                 let first_value = nums[i];
 
                 if i == 0 || first_value != nums[i - 1] {
