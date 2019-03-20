@@ -8,7 +8,7 @@ os:
 before_install:
   - rustup component add clippy
 script:
-  - cargo clippy --verbose
+  - cargo clippy --verbose -- -D warnings
   - cargo test --verbose
 notifications:
     email: false
