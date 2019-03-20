@@ -89,7 +89,7 @@ impl Solution {
                             let mut left = 0;
                             let mut right = nums.len() - 1;
 
-                            loop {
+                            'two_sum_loop: loop {
                                 let left_value = nums[left];
                                 let right_value = nums[right];
 
@@ -100,8 +100,28 @@ impl Solution {
                                     Ordering::Equal => {
                                         result.push(vec![first_value, second_value, left_value, right_value]);
 
-                                        while left <= right && nums[left] == left_value {
+                                        loop {
                                             left += 1;
+
+                                            if left == right {
+                                                break 'two_sum_loop;
+                                            } else {
+                                                if nums[left] != left_value {
+                                                    break;
+                                                }
+                                            }
+                                        }
+
+                                        loop {
+                                            right -= 1;
+
+                                            if left == right {
+                                                break 'two_sum_loop;
+                                            } else {
+                                                if nums[right] != right_value {
+                                                    break;
+                                                }
+                                            }
                                         }
                                     }
                                     Ordering::Greater => {
