@@ -105,10 +105,8 @@ impl Solution {
 
                                             if left == right {
                                                 break 'two_sum_loop;
-                                            } else {
-                                                if nums[left] != left_value {
-                                                    break;
-                                                }
+                                            } else if nums[left] != left_value {
+                                                break;
                                             }
                                         }
 
@@ -117,10 +115,8 @@ impl Solution {
 
                                             if left == right {
                                                 break 'two_sum_loop;
-                                            } else {
-                                                if nums[right] != right_value {
-                                                    break;
-                                                }
+                                            } else if nums[right] != right_value {
+                                                break;
                                             }
                                         }
                                     }
