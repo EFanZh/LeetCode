@@ -6,7 +6,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    fn run_tests<S: super::Solution>() {
+    pub fn run_tests<S: super::Solution>() {
         let test_cases = vec![
             (
                 (vec![1, 0, -1, 0, -2, 2], 0),
@@ -46,10 +46,5 @@ mod tests {
         for ((nums, target), expected) in test_cases {
             assert_eq!(sorted(S::four_sum(nums, target)), sorted(expected));
         }
-    }
-
-    #[test]
-    fn reduce_to_three_sum() {
-        run_tests::<super::reduce_to_three_sum::Solution>();
     }
 }

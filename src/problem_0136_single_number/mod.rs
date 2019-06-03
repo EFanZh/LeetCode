@@ -6,16 +6,11 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    fn run_tests<S: super::Solution>() {
+    pub fn run_tests<S: super::Solution>() {
         let test_cases = vec![(vec![2, 2, 1], 1), (vec![4, 1, 2, 1, 2], 4)];
 
         for (nums, expected) in test_cases {
             assert_eq!(S::single_number(nums), expected);
         }
-    }
-
-    #[test]
-    fn reduce_xor() {
-        run_tests::<super::reduce_xor::Solution>();
     }
 }
