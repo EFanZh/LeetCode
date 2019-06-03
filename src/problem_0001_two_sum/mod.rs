@@ -7,7 +7,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    fn run_tests<S: super::Solution>() {
+    pub fn run_tests<S: super::Solution>() {
         let test_cases = vec![
             ((vec![2, 7, 11, 15], 9), vec![0, 1]),
             ((vec![-3, 4, 3, 90], 0), vec![0, 2]),
@@ -17,15 +17,5 @@ mod tests {
         for ((nums, target), expected) in test_cases {
             assert_eq!(S::two_sum(nums, target), expected);
         }
-    }
-
-    #[test]
-    fn index_map() {
-        run_tests::<super::index_map::Solution>();
-    }
-
-    #[test]
-    fn sort_then_bidirectional_search() {
-        run_tests::<super::sort_then_bidirectional_search::Solution>();
     }
 }

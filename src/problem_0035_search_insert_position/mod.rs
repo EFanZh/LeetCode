@@ -7,7 +7,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    fn run_tests<S: super::Solution>() {
+    pub fn run_tests<S: super::Solution>() {
         let test_cases = vec![
             ((vec![1, 3, 5, 6], 5), 2),
             ((vec![1, 3, 5, 6], 2), 1),
@@ -18,15 +18,5 @@ mod tests {
         for ((nums, target), expected) in test_cases {
             assert_eq!(S::search_insert(nums, target), expected);
         }
-    }
-
-    #[test]
-    fn binary_search() {
-        run_tests::<super::binary_search::Solution>();
-    }
-
-    #[test]
-    fn binary_search_fast() {
-        run_tests::<super::binary_search_fast::Solution>();
     }
 }

@@ -7,7 +7,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    fn run_tests<S: super::Solution>() {
+    pub fn run_tests<S: super::Solution>() {
         let test_cases = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
         for test_case in test_cases {
@@ -28,15 +28,5 @@ mod tests {
                 assert!(window[1] == window[0] + 1);
             }
         }
-    }
-
-    #[test]
-    fn dynamic_programming() {
-        run_tests::<super::dynamic_programming::Solution>();
-    }
-
-    #[test]
-    fn bit_manipulation() {
-        run_tests::<super::bit_manipulation::Solution>();
     }
 }
