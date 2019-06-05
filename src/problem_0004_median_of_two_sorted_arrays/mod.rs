@@ -1,4 +1,5 @@
 pub mod binary_search;
+pub mod fast_binary_search;
 pub mod simplified_binary_search;
 pub mod simplified_three_way_binary_search;
 pub mod three_way_binary_search;
