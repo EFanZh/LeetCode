@@ -8,7 +8,9 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    pub fn run_tests<S: super::Solution>() {
+    use super::Solution;
+
+    pub fn run_tests<S: Solution>() {
         let test_cases = vec![(vec![2, 3, 1, 1, 4], 2)];
 
         for (nums, expected) in test_cases {
