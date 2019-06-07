@@ -18,9 +18,8 @@ impl Solution {
         while size > 1 {
             let half_size = size / 2;
             let i = left + half_size;
-            let j = half_total_count - i;
 
-            if nums2[j - 1] > nums1[i] {
+            if nums2[half_total_count - i - 1] > nums1[i] {
                 left = i;
             }
 
@@ -39,7 +38,7 @@ impl Solution {
         if total_count % 2 == 0 {
             let m = nums1
                 .get(left.wrapping_sub(1))
-                .max(nums2.get((j).wrapping_sub(1)))
+                .max(nums2.get(j.wrapping_sub(1)))
                 .unwrap();
 
             f64::from(m + n) / 2.0

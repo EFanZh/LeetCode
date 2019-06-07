@@ -43,7 +43,7 @@ impl Solution {
         if total_count % 2 == 0 {
             let m = nums1
                 .get(left.wrapping_sub(1))
-                .max(nums2.get((j).wrapping_sub(1)))
+                .max(nums2.get(j.wrapping_sub(1)))
                 .unwrap();
 
             f64::from(m + n) / 2.0
