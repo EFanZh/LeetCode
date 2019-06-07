@@ -18,9 +18,8 @@ impl Solution {
         while size > 0 {
             let half_size = size / 2;
             let i = left + half_size;
-            let j = half_total_count - i;
 
-            if nums2[j - 1] > nums1[i] {
+            if nums2[half_total_count - i - 1] > nums1[i] {
                 left = i + 1;
                 size -= half_size + 1;
             } else {
