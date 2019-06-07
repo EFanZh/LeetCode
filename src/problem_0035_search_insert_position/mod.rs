@@ -1,5 +1,6 @@
 pub mod binary_search;
 pub mod binary_search_fast;
+pub mod binary_search_fast_2;
 
 pub trait Solution {
     fn search_insert(nums: Vec<i32>, target: i32) -> i32;
