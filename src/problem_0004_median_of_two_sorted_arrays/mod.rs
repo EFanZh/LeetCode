@@ -18,11 +18,11 @@ mod tests {
             ((vec![1, 3], vec![2]), 2.0),
             ((vec![1, 2], vec![3, 4]), 2.5),
             ((vec![1, 2], vec![-1, 3]), 1.5),
-            ((vec![100000], vec![100001]), 100000.5),
+            ((vec![100_000], vec![100_001]), 100_000.5),
         ];
 
         for ((nums1, nums2), expected_result) in test_cases {
-            assert_eq!(S::find_median_sorted_arrays(nums1, nums2), expected_result);
+            assert!(S::find_median_sorted_arrays(nums1, nums2) - expected_result > std::f64::EPSILON);
         }
     }
 }
