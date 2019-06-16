@@ -1,6 +1,6 @@
 use std::collections::VecDeque;
 
-struct MyStack {
+pub struct MyStack {
     q: VecDeque<i32>,
 }
 

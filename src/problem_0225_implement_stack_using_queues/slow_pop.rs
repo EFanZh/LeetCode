@@ -1,7 +1,7 @@
 use std::collections::VecDeque;
 use std::mem::swap;
 
-struct MyStack {
+pub struct MyStack {
     q: VecDeque<i32>, // Stores all elements except the top element pushed onto the stack.
     t: VecDeque<i32>, // Optionally stores the top element.
 }

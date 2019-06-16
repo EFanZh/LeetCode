@@ -1,4 +1,4 @@
-struct MyQueue {
+pub struct MyQueue {
     front: Vec<i32>,
     back: Vec<i32>,
 }
