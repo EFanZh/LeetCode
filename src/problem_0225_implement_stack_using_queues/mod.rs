@@ -1,3 +1,4 @@
+pub mod slow_pop;
 pub mod slow_push;
 
 pub trait MyStack {
