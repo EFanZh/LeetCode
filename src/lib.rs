@@ -7,3 +7,4 @@ pub mod problem_0045_jump_game_ii;
 pub mod problem_0089_gray_code;
 pub mod problem_0136_single_number;
 pub mod problem_0225_implement_stack_using_queues;
+pub mod problem_0232_implement_queue_using_stacks;
