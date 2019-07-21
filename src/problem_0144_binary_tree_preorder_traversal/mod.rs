@@ -3,6 +3,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 pub mod iterative;
+pub mod partial_iterative;
 pub mod recursive;
 
 pub trait Solution {
