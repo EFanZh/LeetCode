@@ -23,11 +23,11 @@ impl Solution {
                         Some(Some(node)) => {
                             // Left continuation.
 
-                            // Should I use `Ref::map_split`?
+                            let node_ref = node.borrow();
 
-                            result.push(node.borrow().val);
+                            result.push(node_ref.val);
 
-                            root = node.borrow().right.clone();
+                            root = node_ref.right.clone();
                             cont.push(None);
 
                             continue 'r;
