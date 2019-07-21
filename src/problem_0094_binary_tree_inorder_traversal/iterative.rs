@@ -10,40 +10,18 @@ impl Solution {
         let mut result = Vec::new();
         let mut cont = Vec::new();
 
-        'r: loop {
+        loop {
             if let Some(node) = root {
                 root = node.borrow().left.clone();
+                cont.push(node);
+            } else if let Some(node) = cont.pop() {
+                let node_ref = node.borrow();
 
-                cont.push(Some(node));
+                result.push(node_ref.val);
+
+                root = node_ref.right.clone();
             } else {
-                // Apply continuation.
-
-                'k: loop {
-                    match cont.pop() {
-                        Some(Some(node)) => {
-                            // Left continuation.
-
-                            let node_ref = node.borrow();
-
-                            result.push(node_ref.val);
-
-                            root = node_ref.right.clone();
-                            cont.push(None);
-
-                            continue 'r;
-                        }
-                        Some(None) => {
-                            // Right continuation.
-
-                            continue 'k;
-                        }
-                        None => {
-                            // Root continuation.
-
-                            break 'r;
-                        }
-                    }
-                }
+                break;
             }
         }
 
