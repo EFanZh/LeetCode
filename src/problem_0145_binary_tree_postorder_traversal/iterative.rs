@@ -5,8 +5,13 @@ pub struct Solution {}
 use std::cell::RefCell;
 use std::rc::Rc;
 
+enum Frame {
+    Left(Rc<RefCell<TreeNode>>),
+    Right(Rc<RefCell<TreeNode>>),
+}
+
 impl Solution {
-    pub fn inorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn postorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         let mut cont = Vec::new();
 
@@ -14,26 +19,25 @@ impl Solution {
             if let Some(node) = root {
                 root = node.borrow().left.clone();
 
-                cont.push(Some(node));
+                cont.push(Frame::Left(node));
             } else {
                 // Apply continuation.
 
                 'k: loop {
                     match cont.pop() {
-                        Some(Some(node)) => {
+                        Some(Frame::Left(node)) => {
                             // Left continuation.
 
-                            // Should I use `Ref::map_split`?
-
-                            result.push(node.borrow().val);
-
                             root = node.borrow().right.clone();
-                            cont.push(None);
+
+                            cont.push(Frame::Right(node));
 
                             continue 'r;
                         }
-                        Some(None) => {
+                        Some(Frame::Right(node)) => {
                             // Right continuation.
+
+                            result.push(node.borrow().val);
 
                             continue 'k;
                         }
@@ -52,8 +56,8 @@ impl Solution {
 }
 
 impl super::Solution for Solution {
-    fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        Solution::inorder_traversal(root)
+    fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+        Solution::postorder_traversal(root)
     }
 }
 
