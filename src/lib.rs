@@ -13,6 +13,7 @@ pub mod problem_0144_binary_tree_preorder_traversal;
 pub mod problem_0145_binary_tree_postorder_traversal;
 pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0232_implement_queue_using_stacks;
+pub mod problem_0300_longest_increasing_subsequence;
 pub mod problem_1143_longest_common_subsequence;
 
 #[cfg(test)]
