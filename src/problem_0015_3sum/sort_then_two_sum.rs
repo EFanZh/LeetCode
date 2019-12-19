@@ -87,7 +87,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        Solution::three_sum(nums)
+        Self::three_sum(nums)
     }
 }
 

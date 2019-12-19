@@ -28,7 +28,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        Solution::postorder_traversal(root)
+        Self::postorder_traversal(root)
     }
 }
 

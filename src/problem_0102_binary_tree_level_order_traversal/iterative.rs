@@ -48,7 +48,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-        Solution::level_order(root)
+        Self::level_order(root)
     }
 }
 

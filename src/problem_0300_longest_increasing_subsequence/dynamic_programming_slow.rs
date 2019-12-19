@@ -28,7 +28,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn length_of_lis(nums: Vec<i32>) -> i32 {
-        Solution::length_of_lis(nums)
+        Self::length_of_lis(nums)
     }
 }
 

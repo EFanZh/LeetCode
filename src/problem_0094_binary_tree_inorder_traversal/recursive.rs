@@ -27,7 +27,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        Solution::inorder_traversal(root)
+        Self::inorder_traversal(root)
     }
 }
 

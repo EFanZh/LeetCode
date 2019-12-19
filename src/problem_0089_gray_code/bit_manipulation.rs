@@ -8,7 +8,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn gray_code(n: i32) -> Vec<i32> {
-        Solution::gray_code(n)
+        Self::gray_code(n)
     }
 }
 

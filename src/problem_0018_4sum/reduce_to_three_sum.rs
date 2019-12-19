@@ -141,7 +141,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-        Solution::four_sum(nums, target)
+        Self::four_sum(nums, target)
     }
 }
 
