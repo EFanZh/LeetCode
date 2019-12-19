@@ -10,7 +10,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn single_number(nums: Vec<i32>) -> i32 {
-        Solution::single_number(nums)
+        Self::single_number(nums)
     }
 }
 

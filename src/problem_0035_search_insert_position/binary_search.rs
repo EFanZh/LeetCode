@@ -23,7 +23,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-        Solution::search_insert(nums, target)
+        Self::search_insert(nums, target)
     }
 }
 

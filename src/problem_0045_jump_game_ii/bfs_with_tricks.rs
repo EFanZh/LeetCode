@@ -27,7 +27,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn jump(nums: Vec<i32>) -> i32 {
-        Solution::jump(nums)
+        Self::jump(nums)
     }
 }
 

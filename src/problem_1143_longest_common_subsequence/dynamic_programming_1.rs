@@ -31,7 +31,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn longest_common_subsequence(text1: String, text2: String) -> i32 {
-        Solution::longest_common_subsequence(text1, text2)
+        Self::longest_common_subsequence(text1, text2)
     }
 }
 

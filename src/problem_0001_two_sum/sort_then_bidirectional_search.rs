@@ -32,7 +32,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        Solution::two_sum(nums, target)
+        Self::two_sum(nums, target)
     }
 }
 
