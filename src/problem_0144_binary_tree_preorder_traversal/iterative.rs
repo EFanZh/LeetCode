@@ -12,11 +12,12 @@ impl Solution {
 
         loop {
             if let Some(node) = root {
-                result.push(node.borrow().val);
+                let node_ref = node.borrow();
 
-                root = node.borrow().left.clone();
+                result.push(node_ref.val);
+                cont.push(node_ref.right.clone());
 
-                cont.push(node.borrow().right.clone());
+                root = node_ref.left.clone();
             } else if let Some(right) = cont.pop() {
                 root = right;
             } else {
