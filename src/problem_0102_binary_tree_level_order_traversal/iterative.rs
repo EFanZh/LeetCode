@@ -22,13 +22,14 @@ impl Solution {
 
                 for _ in 0..node_level.len() {
                     let node = node_level.pop_front().unwrap();
+                    let node_ref = node.borrow();
 
-                    if let Some(left) = &node.borrow().left {
+                    if let Some(left) = &node_ref.left {
                         node_level.push_back(left.clone());
                         value_level.push(left.borrow().val);
                     }
 
-                    if let Some(right) = &node.borrow().right {
+                    if let Some(right) = &node_ref.right {
                         node_level.push_back(right.clone());
                         value_level.push(right.borrow().val);
                     };
