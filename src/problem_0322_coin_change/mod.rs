@@ -1,4 +1,5 @@
 pub mod dynamic_programming;
+pub mod dynamic_programming_2;
 
 pub trait Solution {
     fn coin_change(coins: Vec<i32>, amount: i32) -> i32;
