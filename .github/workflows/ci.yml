@@ -1,0 +1,46 @@
+on: push
+jobs:
+    rustfmt:
+        runs-on: ${{ matrix.os }}
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions-rs/toolchain@v1
+            with:
+                toolchain: stable
+                components: rustfmt
+          - run: cargo fmt -- --check
+        strategy:
+            matrix:
+                os:
+                  - macOS-latest
+                  - ubuntu-latest
+                  - windows-latest
+    clippy:
+        runs-on: ${{ matrix.os }}
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions-rs/toolchain@v1
+            with:
+                toolchain: stable
+                components: clippy
+          - run: cargo clippy --all-targets --all-features -- -D warnings
+        strategy:
+            matrix:
+                os:
+                  - macOS-latest
+                  - ubuntu-latest
+                  - windows-latest
+    tests:
+        runs-on: ${{ matrix.os }}
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions-rs/toolchain@v1
+            with:
+                toolchain: stable
+          - run: cargo test
+        strategy:
+            matrix:
+                os:
+                  - macOS-latest
+                  - ubuntu-latest
+                  - windows-latest
