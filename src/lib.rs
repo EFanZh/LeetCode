@@ -1,5 +1,6 @@
-pub mod data_structures;
+pub(crate) mod data_structures;
 pub mod problem_0001_two_sum;
+pub mod problem_0002_add_two_numbers;
 pub mod problem_0004_median_of_two_sorted_arrays;
 pub mod problem_0015_3sum;
 pub mod problem_0018_4sum;
