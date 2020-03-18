@@ -1,4 +1,4 @@
-use super::data_structures::TreeNode;
+use super::data_structures::{ListNode, TreeNode};
 use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::rc::Rc;
@@ -56,4 +56,17 @@ pub fn make_tree<I: IntoIterator<Item = Option<i32>>>(values: I) -> Option<Rc<Re
     let unique_treee = make_unique_tree(values);
 
     unique_tree_to_tree(unique_treee)
+}
+
+pub fn make_list<I: IntoIterator<Item = i32>>(values: I) -> Option<Box<ListNode>> {
+    let mut result = None;
+    let mut node_ref = &mut result;
+
+    for value in values {
+        *node_ref = Some(Box::new(ListNode::new(value)));
+
+        node_ref = &mut node_ref.as_mut().unwrap().next;
+    }
+
+    result
 }
