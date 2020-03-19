@@ -4,14 +4,11 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        let sorted_nums = {
-            let mut temp = nums.into_iter().enumerate().collect::<Vec<_>>();
+        let mut sorted_nums = nums.into_iter().enumerate().collect::<Box<_>>();
 
-            temp.sort_unstable_by_key(|&(_, value)| value);
-            temp
-        };
+        sorted_nums.sort_unstable_by_key(|(_, value)| *value);
 
-        let mut slice = sorted_nums.as_slice();
+        let mut slice = &sorted_nums[..];
 
         // TODO: Update to use `slice_patterns`: https://doc.rust-lang.org/unstable-book/language-features/slice-patterns.html.
 
