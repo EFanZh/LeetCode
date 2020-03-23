@@ -1,4 +1,4 @@
-pub mod sequential_scan;
+pub mod sliding_window;
 
 pub trait Solution {
     fn length_of_longest_substring(s: String) -> i32;
