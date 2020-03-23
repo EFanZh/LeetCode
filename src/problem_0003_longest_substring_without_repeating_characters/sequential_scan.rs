@@ -4,8 +4,6 @@ use std::mem;
 
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        dbg!(&s);
-
         const INVALID_INDEX: usize = usize::max_value();
         let s = s.as_bytes();
         let mut result = 0;
