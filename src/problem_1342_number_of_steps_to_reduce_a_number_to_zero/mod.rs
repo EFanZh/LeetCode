@@ -1,4 +1,5 @@
 pub mod brute_force;
+pub mod brute_force_2;
 
 pub trait Solution {
     fn number_of_steps(num: i32) -> i32;
