@@ -25,6 +25,7 @@ pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0516_longest_palindromic_subsequence;
 pub mod problem_0518_coin_change_2;
 pub mod problem_1143_longest_common_subsequence;
+pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 
 #[cfg(test)]
 mod test_utilities;
