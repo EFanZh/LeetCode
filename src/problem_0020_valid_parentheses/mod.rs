@@ -1,4 +1,5 @@
 pub mod stack;
+pub mod stack_2;
 
 pub trait Solution {
     fn is_valid(s: String) -> bool;

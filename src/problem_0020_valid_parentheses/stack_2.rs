@@ -7,23 +7,14 @@ impl Solution {
 
         for byte in s.iter().copied() {
             match byte {
-                b'(' | b'{' | b'[' => stack.push(byte),
-                b')' => {
-                    if stack.pop() != Some(b'(') {
+                b'(' => stack.push(b')'),
+                b'{' => stack.push(b'}'),
+                b'[' => stack.push(b']'),
+                _ => {
+                    if stack.pop() != Some(byte) {
                         return false;
                     }
                 }
-                b'}' => {
-                    if stack.pop() != Some(b'{') {
-                        return false;
-                    }
-                }
-                b']' => {
-                    if stack.pop() != Some(b'[') {
-                        return false;
-                    }
-                }
-                _ => return false,
             }
         }
 
