@@ -5,6 +5,7 @@ pub mod problem_0003_longest_substring_without_repeating_characters;
 pub mod problem_0004_median_of_two_sorted_arrays;
 pub mod problem_0015_3sum;
 pub mod problem_0018_4sum;
+pub mod problem_0020_valid_parentheses;
 pub mod problem_0035_search_insert_position;
 pub mod problem_0045_jump_game_ii;
 pub mod problem_0072_edit_distance;
