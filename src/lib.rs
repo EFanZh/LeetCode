@@ -6,6 +6,7 @@ pub mod problem_0004_median_of_two_sorted_arrays;
 pub mod problem_0005_longest_palindromic_substring;
 pub mod problem_0006_zigzag_conversion;
 pub mod problem_0007_reverse_integer;
+pub mod problem_0008_string_to_integer_atoi;
 pub mod problem_0015_3sum;
 pub mod problem_0018_4sum;
 pub mod problem_0020_valid_parentheses;
