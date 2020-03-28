@@ -77,8 +77,8 @@ impl Solution {
 }
 
 impl super::Solution for Solution {
-    fn my_atoi(x: String) -> i32 {
-        Self::my_atoi(x)
+    fn my_atoi(str: String) -> i32 {
+        Self::my_atoi(str)
     }
 }
 
