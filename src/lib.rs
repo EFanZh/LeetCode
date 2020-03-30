@@ -14,6 +14,7 @@ pub mod problem_0020_valid_parentheses;
 pub mod problem_0035_search_insert_position;
 pub mod problem_0045_jump_game_ii;
 pub mod problem_0072_edit_distance;
+pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
 pub mod problem_0094_binary_tree_inorder_traversal;
 pub mod problem_0102_binary_tree_level_order_traversal;
