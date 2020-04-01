@@ -9,6 +9,7 @@ pub mod problem_0007_reverse_integer;
 pub mod problem_0008_string_to_integer_atoi;
 pub mod problem_0009_palindrome_number;
 pub mod problem_0010_regular_expression_matching;
+pub mod problem_0011_container_with_most_water;
 pub mod problem_0015_3sum;
 pub mod problem_0018_4sum;
 pub mod problem_0020_valid_parentheses;
