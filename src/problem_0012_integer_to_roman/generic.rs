@@ -21,7 +21,7 @@ impl Solution {
     }
 
     pub fn int_to_roman(mut num: i32) -> String {
-        let mut result = Vec::with_capacity(9);
+        let mut result = Vec::new();
 
         for _ in 0..num / 1000 {
             result.push(b'M');
