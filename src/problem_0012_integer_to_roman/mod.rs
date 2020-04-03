@@ -1,5 +1,6 @@
 pub mod generic;
 pub mod specialized_1;
+pub mod specialized_2;
 
 pub trait Solution {
     fn int_to_roman(num: i32) -> String;
