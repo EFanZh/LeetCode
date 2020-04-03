@@ -1,7 +1,7 @@
 pub struct Solution {}
 
 impl Solution {
-    pub fn int_to_roman(mut num: i32) -> String {
+    pub fn int_to_roman(num: i32) -> String {
         const C: [&str; 10] = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
         const X: [&str; 10] = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
         const I: [&str; 10] = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
@@ -12,12 +12,9 @@ impl Solution {
             result.push_str("M");
         }
 
-        num %= 1000;
-        result.push_str(C[(num / 100) as usize]);
-        num %= 100;
-        result.push_str(X[(num / 10) as usize]);
-        num %= 10;
-        result.push_str(I[num as usize]);
+        result.push_str(C[((num % 1000) / 100) as usize]);
+        result.push_str(X[((num % 100) / 10) as usize]);
+        result.push_str(I[(num % 10) as usize]);
 
         result
     }
