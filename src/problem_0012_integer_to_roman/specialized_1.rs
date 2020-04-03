@@ -21,11 +21,10 @@ impl Solution {
         let mut result = String::new();
 
         for (base, symbol) in DIGITS.iter().copied() {
-            for _ in 0..num / base {
+            while num >= base {
                 result.push_str(symbol);
+                num -= base;
             }
-
-            num %= base;
         }
 
         result
