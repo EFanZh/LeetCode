@@ -12,6 +12,7 @@ pub mod problem_0010_regular_expression_matching;
 pub mod problem_0011_container_with_most_water;
 pub mod problem_0012_integer_to_roman;
 pub mod problem_0013_roman_to_integer;
+pub mod problem_0014_longest_common_prefix;
 pub mod problem_0015_3sum;
 pub mod problem_0018_4sum;
 pub mod problem_0020_valid_parentheses;
