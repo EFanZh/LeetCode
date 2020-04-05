@@ -1,0 +1,18 @@
+pub mod two_pointers;
+
+pub trait Solution {
+    fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    pub fn run_tests<S: Solution>() {
+        let test_cases = [((&[-1, 2, 1, -4] as &[_], 1), 2)];
+
+        for ((nums, target), expected) in test_cases.iter().copied() {
+            assert_eq!(S::three_sum_closest(nums.iter().copied().collect(), target), expected);
+        }
+    }
+}
