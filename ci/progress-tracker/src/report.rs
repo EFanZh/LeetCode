@@ -43,6 +43,12 @@ fn write_solution_link(writer: &mut HtmlWriter, problem_id: &str, solution: &str
     );
 }
 
+fn write_difficulty(writer: &mut HtmlWriter, level: u8) {
+    for _ in 0..level {
+        writer.text("★");
+    }
+}
+
 pub fn make_report<P: AsRef<Path>>(problems: &[Problem], tree: &Tree, progress_chart: &str, output: P) {
     const TITLE: &str = "LeetCode Progress Report";
     let solution_map = make_solution_map(tree);
@@ -59,17 +65,20 @@ pub fn make_report<P: AsRef<Path>>(problems: &[Problem], tree: &Tree, progress_c
 figure { display: flex; justify-content: center; }
 .detail { border-collapse: collapse; }
 .detail>*>tr>* { padding: 0.125em 0.25em; }
+.detail>*>tr>* { text-align: left; }
 .detail>*>tr>*:nth-child(1) { text-align: center; }
 .detail>*>tr>*:nth-child(2) { text-align: right; }
-.detail>*>tr>*:nth-child(3),.detail>*>tr>*:nth-child(4) { text-align: left; }
 .detail>tbody>tr:nth-child(odd) { background: #eee; }
-.detail>tbody>tr>td>ul { margin: 0; padding: 0; }
-.not-done { opacity: 0.382; }"#,
+.detail>tbody>tr>td>ul { margin: 0; padding: 0; list-style-type: none; }
+.not-done>td { opacity: 0.382; }"#,
                 )
             });
         });
         w.element("body", &[], |w| {
             w.element("h1", &[], |w| w.text(TITLE));
+            w.element("div", &[("style", "text-align: center;")], |w| {
+                write_hyper_link(w, "https://github.com/EFanZh/LeetCode", "Source code")
+            });
             w.element("h2", &[], |w| w.text("Progress Chart"));
             w.element("figure", &[], |w| {
                 w.empty_element("img", &[("src", progress_chart), ("alt", "Progress Chart")])
@@ -82,6 +91,7 @@ figure { display: flex; justify-content: center; }
                             w.element("th", &[], |w| w.text("Done"));
                             w.element("th", &[], |w| w.text("ID"));
                             w.element("th", &[], |w| w.text("Title"));
+                            w.element("th", &[], |w| w.text("Difficulty"));
                             w.element("th", &[], |w| w.text("Solutions"));
                         });
                     });
@@ -94,6 +104,7 @@ figure { display: flex; justify-content: center; }
                                         w.text(problem.stat.frontend_question_id.to_string().as_str());
                                     });
                                     w.element("td", &[], |w| write_problem_link(w, problem));
+                                    w.element("td", &[], |w| write_difficulty(w, problem.difficulty.level));
                                     w.element("td", &[], |w| {
                                         w.element("ul", &[], |w| {
                                             let problem_id = problem.get_id();
@@ -113,6 +124,7 @@ figure { display: flex; justify-content: center; }
                                         w.text(problem.stat.frontend_question_id.to_string().as_str())
                                     });
                                     w.element("td", &[], |w| write_problem_link(w, problem));
+                                    w.element("td", &[], |w| write_difficulty(w, problem.difficulty.level));
                                     w.element("td", &[], |_| {});
                                 });
                             }

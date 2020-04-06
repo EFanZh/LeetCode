@@ -10,8 +10,14 @@ pub struct Stat {
 }
 
 #[derive(Deserialize)]
+pub struct Difficulty {
+    pub level: u8,
+}
+
+#[derive(Deserialize)]
 pub struct Problem {
     pub stat: Stat,
+    pub difficulty: Difficulty,
     pub paid_only: bool,
 }
 
