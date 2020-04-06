@@ -44,3 +44,14 @@ jobs:
                   - macOS-latest
                   - ubuntu-latest
                   - windows-latest
+    update-progress:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions-rs/toolchain@v1
+            with:
+                toolchain: stable
+          - run: cargo run --package progress-tracker -- . progress-report
+          - uses: peaceiris/actions-gh-pages@v3
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: progress-report
