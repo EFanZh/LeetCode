@@ -17,6 +17,7 @@ pub mod problem_0015_3sum;
 pub mod problem_0016_3sum_closest;
 pub mod problem_0017_letter_combinations_of_a_phone_number;
 pub mod problem_0018_4sum;
+pub mod problem_0019_remove_nth_node_from_end_of_list;
 pub mod problem_0020_valid_parentheses;
 pub mod problem_0035_search_insert_position;
 pub mod problem_0045_jump_game_ii;
