@@ -12,14 +12,12 @@ impl Solution {
             while let Some(mut l2_box) = l2 {
                 if l1_box.val <= l2_box.val {
                     l2 = l1_box.next.take();
-                    *target = Some(l1_box);
+                    target = &mut target.get_or_insert(l1_box).next; // TODO: Wait for `Option::insert` method.
                     l1_box = l2_box;
                 } else {
                     l2 = l2_box.next.take();
-                    *target = Some(l2_box);
+                    target = &mut target.get_or_insert(l2_box).next; // TODO: Wait for `Option::insert` method.
                 }
-
-                target = &mut target.as_mut().unwrap().next;
             }
 
             *target = Some(l1_box);
