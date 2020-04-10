@@ -21,6 +21,7 @@ pub mod problem_0019_remove_nth_node_from_end_of_list;
 pub mod problem_0020_valid_parentheses;
 pub mod problem_0021_merge_two_sorted_lists;
 pub mod problem_0022_generate_parentheses;
+pub mod problem_0023_merge_k_sorted_lists;
 pub mod problem_0035_search_insert_position;
 pub mod problem_0045_jump_game_ii;
 pub mod problem_0072_edit_distance;
