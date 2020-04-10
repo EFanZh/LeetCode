@@ -1,34 +1,29 @@
 pub struct Solution {}
 
 impl Solution {
-    fn generate_parenthesis_unused_unknown(n: i32, unmatched: usize, buffer: &mut Vec<u8>, result: &mut Vec<String>) {
+    fn generate_parenthesis_unused(n: i32, unmatched: usize, buffer: &mut Vec<u8>, result: &mut Vec<String>) {
         buffer.push(b'(');
-        Self::generate_parenthesis_helper_unknown_unmatched(n - 1, unmatched + 1, buffer, result);
+        Self::generate_parenthesis_unmatched(n - 1, unmatched + 1, buffer, result);
 
         if unmatched != 0 {
             *buffer.last_mut().unwrap() = b')';
-            Self::generate_parenthesis_unused_unknown(n, unmatched - 1, buffer, result);
+            Self::generate_parenthesis_unused(n, unmatched - 1, buffer, result);
         }
 
         buffer.pop();
     }
 
-    fn generate_parenthesis_helper_unknown_unmatched(
-        n: i32,
-        unmatched: usize,
-        buffer: &mut Vec<u8>,
-        result: &mut Vec<String>,
-    ) {
+    fn generate_parenthesis_unmatched(n: i32, unmatched: usize, buffer: &mut Vec<u8>, result: &mut Vec<String>) {
         if n == 0 {
             buffer.resize(buffer.len() + unmatched, b')');
             result.push(String::from_utf8(buffer.clone()).unwrap());
             buffer.truncate(buffer.len() - unmatched);
         } else {
             buffer.push(b'(');
-            Self::generate_parenthesis_helper_unknown_unmatched(n - 1, unmatched + 1, buffer, result);
+            Self::generate_parenthesis_unmatched(n - 1, unmatched + 1, buffer, result);
 
             *buffer.last_mut().unwrap() = b')';
-            Self::generate_parenthesis_unused_unknown(n, unmatched - 1, buffer, result);
+            Self::generate_parenthesis_unused(n, unmatched - 1, buffer, result);
 
             buffer.pop();
         }
@@ -42,7 +37,7 @@ impl Solution {
         } else {
             let mut buffer = vec![b'('];
 
-            Self::generate_parenthesis_helper_unknown_unmatched(n - 1, 1, &mut buffer, &mut result);
+            Self::generate_parenthesis_unmatched(n - 1, 1, &mut buffer, &mut result);
         }
 
         result
