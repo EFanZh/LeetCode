@@ -64,10 +64,10 @@ pub fn make_report<P: AsRef<Path>>(problems: &[Problem], tree: &Tree, progress_c
                     r#"h1,h2 { text-align: center; }
 figure { display: flex; justify-content: center; }
 .detail { border-collapse: collapse; }
-.detail>*>tr>* { padding: 0.125em 0.25em; }
-.detail>*>tr>* { text-align: left; }
+.detail>*>tr>* { padding: 0.125em 0.25em; text-align: left; }
 .detail>*>tr>*:nth-child(1) { text-align: center; }
 .detail>*>tr>*:nth-child(2) { text-align: right; }
+.detail>thead>tr>th { background: white; position: sticky; top: 0; z-index: 1; }
 .detail>tbody>tr:nth-child(odd) { background: #eee; }
 .detail>tbody>tr>td>ul { margin: 0; padding: 0; list-style-type: none; }
 .not-done>td { opacity: 0.382; }"#,
