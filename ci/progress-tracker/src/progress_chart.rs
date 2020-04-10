@@ -1,11 +1,12 @@
 use super::problems::Problems;
 use super::solutions;
-use chrono::{Date, TimeZone, Utc};
+use chrono::{DateTime, TimeZone, Utc};
 use git2::{Repository, Tree};
 use plotters::chart::ChartBuilder;
 use plotters::drawing::{IntoDrawingArea, SVGBackend};
 use plotters::series::LineSeries;
 use plotters::style::colors::RED;
+use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::path::Path;
 
@@ -39,7 +40,7 @@ fn get_progress(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> f64 {
     (hits as f64) / (hits_cache.len() as f64)
 }
 
-fn draw_chart<P: AsRef<Path>>(data: &[(Date<Utc>, f64)], output: P) {
+fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
     const H_MARGIN: u32 = 40;
     const V_MARGIN: u32 = 30;
 
@@ -56,6 +57,7 @@ fn draw_chart<P: AsRef<Path>>(data: &[(Date<Utc>, f64)], output: P) {
     chart
         .configure_mesh()
         .x_labels(10)
+        .x_label_formatter(&|v| v.date().format("%F").to_string())
         .y_labels(10)
         .y_label_formatter(&|v| format!("{}%", v))
         .draw()
@@ -77,15 +79,21 @@ pub fn draw_progress_chart<P: AsRef<Path>>(repository: &Repository, problems: &P
             let progress = get_progress(&commit.tree().unwrap(), &mut hits_cache);
 
             (
-                Utc.timestamp(date.seconds() - (date.offset_minutes() * 60) as i64, 0)
-                    .date(),
+                Utc.timestamp(date.seconds() - (date.offset_minutes() * 60) as i64, 0),
                 progress * 100.0,
             )
         })
         .collect::<Vec<_>>();
 
-    progress_data.sort_by_key(|(date, _)| *date);
-    progress_data.dedup_by_key(|(date, _)| *date);
+    progress_data.sort_by(|(lhs_date_time, lhs_progress), (rhs_date_time, rhs_progress)| {
+        match lhs_date_time.date().cmp(&rhs_date_time.date()) {
+            Ordering::Less => Ordering::Less,
+            Ordering::Equal => rhs_progress.partial_cmp(&lhs_progress).unwrap(),
+            Ordering::Greater => Ordering::Greater,
+        }
+    });
+
+    progress_data.dedup_by_key(|(date_time, _)| date_time.date());
 
     draw_chart(&progress_data, output);
 }
