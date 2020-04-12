@@ -10,12 +10,10 @@ impl Solution {
         'k: while let Some(mut head_node) = head {
             // Find a group that has the length of k.
 
-            let mut length = 1;
             let mut node = head_node.as_mut();
 
-            while length < k {
+            for _ in 1..k {
                 if let Some(next) = node.next.as_mut() {
-                    length += 1;
                     node = next;
                 } else {
                     *target = Some(head_node);
@@ -40,13 +38,9 @@ impl Solution {
 
             // Find the next target.
 
-            let mut node = target;
-
-            while let Some(node_2) = node {
-                node = &mut node_2.next;
+            while let Some(node) = target {
+                target = &mut node.next;
             }
-
-            target = node;
         }
 
         result
