@@ -29,8 +29,8 @@ impl Solution {
 
             // Find the next target.
 
-            while let Some(node_2) = target {
-                target = &mut node_2.next;
+            while let Some(node) = target {
+                target = &mut node.next;
             }
         }
 
