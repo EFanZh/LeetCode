@@ -3,6 +3,7 @@ use super::super::data_structures::ListNode;
 pub struct Solution {}
 
 use std::iter;
+use std::mem;
 
 impl Solution {
     pub fn reverse_k_group(mut head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
@@ -18,8 +19,7 @@ impl Solution {
             for _ in 0..k {
                 let mut node = head.unwrap();
 
-                head = node.next.take();
-                node.next = group;
+                head = mem::replace(&mut node.next, group);
                 group = Some(node);
             }
 
@@ -29,13 +29,9 @@ impl Solution {
 
             // Find the next target.
 
-            let mut node = target;
-
-            while let Some(node_2) = node {
-                node = &mut node_2.next;
+            while let Some(node_2) = target {
+                target = &mut node_2.next;
             }
-
-            target = node;
         }
 
         // Append final group to the chain.
