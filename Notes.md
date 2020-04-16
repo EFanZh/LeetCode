@@ -58,6 +58,10 @@ Reduce the number of swaps.
 
 Benchmark the performance against the one from standard library.
 
+## [32. Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
+
+How to come up with the bidirectional scan solution?
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
