@@ -29,6 +29,7 @@ pub mod problem_0027_remove_element;
 pub mod problem_0031_next_permutation;
 pub mod problem_0032_longest_valid_parentheses;
 pub mod problem_0033_search_in_rotated_sorted_array;
+pub mod problem_0034_find_first_and_last_position_of_element_in_sorted_array;
 pub mod problem_0035_search_insert_position;
 pub mod problem_0045_jump_game_ii;
 pub mod problem_0072_edit_distance;
