@@ -58,6 +58,14 @@ Reduce the number of swaps.
 
 Benchmark the performance against the one from standard library.
 
+## [28. Implement strStr()](https://leetcode.com/problems/implement-strstr/)
+
+1. Implement Boyer-Moore algorithm.
+2. Implement finite automata algorithm.
+3. Implement Knuth-Morris-Pratt algorithm.
+4. Implement Rabin-Karp algorithm.
+5. Implement Two-way string-matching algorithm.
+
 ## [32. Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
 
 How to come up with the bidirectional scan solution?
