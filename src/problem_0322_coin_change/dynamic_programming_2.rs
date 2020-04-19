@@ -9,7 +9,7 @@ impl Solution {
             cache[i] = coins
                 .iter()
                 .filter_map(|c| {
-                    if let Some(r) = i.checked_sub(*c as usize) {
+                    i.checked_sub(*c as usize).and_then(|r| {
                         let v = cache[r];
 
                         if v < 0 {
@@ -17,13 +17,10 @@ impl Solution {
                         } else {
                             Some(v)
                         }
-                    } else {
-                        None
-                    }
+                    })
                 })
                 .min()
-                .map(|x| x + 1)
-                .unwrap_or(-1);
+                .map_or(-1, |x| x + 1);
         }
 
         *cache.last().unwrap()

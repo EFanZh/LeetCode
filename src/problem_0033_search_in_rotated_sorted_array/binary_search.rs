@@ -17,8 +17,7 @@ impl Solution {
                 }
                 .ok()
             })
-            .map(|i| i as _)
-            .unwrap_or(-1)
+            .map_or(-1, |i| i as _)
     }
 }
 
