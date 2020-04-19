@@ -28,7 +28,7 @@ impl Solution {
 
                     // Count numbers.
 
-                    for value in nums.iter() {
+                    for value in &nums {
                         counts[((value >> key_bit) & mask) as usize] += 1;
                     }
 
@@ -50,7 +50,7 @@ impl Solution {
 
                     // Maintain loop invariant.
 
-                    for c in counts.iter_mut() {
+                    for c in &mut counts {
                         *c = 0;
                     }
 

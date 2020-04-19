@@ -9,36 +9,36 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
+    fn sorted<T: Ord>(v: Vec<T>) -> Vec<T> {
+        let mut v = v;
+
+        v.sort_unstable();
+
+        v
+    }
+
     pub fn run_tests<S: Solution>() {
-        let test_cases = vec![
-            (vec![-1, 0, 1, 2, -1, -4], vec![vec![-1, 0, 1], vec![-1, -1, 2]]),
-            (vec![], vec![]),
+        let test_cases = [
+            (&[-1, 0, 1, 2, -1, -4] as &[_], &[&[-1, 0, 1], &[-1, -1, 2]] as &[_]),
+            (&[], &[]),
             (
-                vec![-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6],
-                vec![
-                    vec![-4, -2, 6],
-                    vec![-4, 0, 4],
-                    vec![-4, 1, 3],
-                    vec![-4, 2, 2],
-                    vec![-2, -2, 4],
-                    vec![-2, 0, 2],
+                &[-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6],
+                &[
+                    &[-4, -2, 6],
+                    &[-4, 0, 4],
+                    &[-4, 1, 3],
+                    &[-4, 2, 2],
+                    &[-2, -2, 4],
+                    &[-2, 0, 2],
                 ],
             ),
-            (vec![0; 3000], vec![vec![0, 0, 0]]),
-            (vec![-1, 0, 1], vec![vec![-1, 0, 1]]),
-            (vec![1, 1, 1], vec![]),
+            (&[0; 3000], &[&[0, 0, 0]]),
+            (&[-1, 0, 1], &[&[-1, 0, 1]]),
+            (&[1, 1, 1], &[]),
         ];
 
-        fn sorted<T: Ord>(v: Vec<T>) -> Vec<T> {
-            let mut v = v;
-
-            v.sort_unstable();
-
-            v
-        }
-
-        for (nums, expected) in test_cases {
-            assert_eq!(sorted(S::three_sum(nums)), sorted(expected));
+        for (nums, expected) in test_cases.iter().copied() {
+            assert_eq!(sorted(S::three_sum(nums.to_owned())), sorted(expected.to_owned()));
         }
     }
 }

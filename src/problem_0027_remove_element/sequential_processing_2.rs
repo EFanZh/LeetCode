@@ -5,9 +5,7 @@ impl Solution {
         let mut retained = 0;
 
         while let Some(item) = nums.get(retained) {
-            if *item != val {
-                retained += 1;
-            } else {
+            if *item == val {
                 let mut i = retained + 1;
 
                 while let Some(item) = nums.get(i) {
@@ -22,6 +20,8 @@ impl Solution {
                 nums.truncate(retained);
 
                 break;
+            } else {
+                retained += 1;
             }
         }
 

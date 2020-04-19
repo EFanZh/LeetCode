@@ -79,7 +79,7 @@ pub fn draw_progress_chart<P: AsRef<Path>>(repository: &Repository, problems: &P
             let progress = get_progress(&commit.tree().unwrap(), &mut hits_cache);
 
             (
-                Utc.timestamp(date.seconds() - (date.offset_minutes() * 60) as i64, 0),
+                Utc.timestamp(date.seconds() - i64::from(date.offset_minutes() * 60), 0),
                 progress * 100.0,
             )
         })
