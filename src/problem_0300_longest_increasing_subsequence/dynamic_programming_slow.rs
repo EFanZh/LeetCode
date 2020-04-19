@@ -12,8 +12,7 @@ impl Solution {
                 .skip(i)
                 .filter_map(|(j, length)| if nums[j] > *num { Some(*length) } else { None })
                 .max()
-                .unwrap_or(0)
-                + 1;
+                .map_or(1, |x| x + 1);
 
             cache[i] = max_length;
 
