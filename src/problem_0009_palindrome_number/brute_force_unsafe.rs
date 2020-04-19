@@ -6,7 +6,7 @@ impl Solution {
             false
         } else {
             let mut x2 = x;
-            let mut reversed = 0i32;
+            let mut reversed = 0_i32;
 
             while x2 != 0 {
                 reversed = reversed.wrapping_mul(10).wrapping_add(x2 % 10);

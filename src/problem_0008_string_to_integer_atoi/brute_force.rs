@@ -4,11 +4,11 @@ use std::slice;
 
 impl Solution {
     fn parse_positive(first_char: u8, iter: slice::Iter<u8>) -> i32 {
-        let mut result = (first_char - b'0') as i32;
+        let mut result = i32::from(first_char - b'0');
 
         for c in iter {
             if c.is_ascii_digit() {
-                if let Some(new_result) = result.checked_mul(10).and_then(|r| r.checked_add((c - b'0') as i32)) {
+                if let Some(new_result) = result.checked_mul(10).and_then(|r| r.checked_add(i32::from(c - b'0'))) {
                     result = new_result;
                 } else {
                     return i32::max_value();
@@ -26,12 +26,12 @@ impl Solution {
             match c {
                 b'0' => continue,
                 b'1'..=b'9' => {
-                    let mut result = -((c - b'0') as i32);
+                    let mut result = -(i32::from(c - b'0'));
 
                     for &c in iter {
                         if c.is_ascii_digit() {
                             if let Some(new_result) =
-                                result.checked_mul(10).and_then(|r| r.checked_sub((c - b'0') as i32))
+                                result.checked_mul(10).and_then(|r| r.checked_sub(i32::from(c - b'0')))
                             {
                                 result = new_result;
                             } else {

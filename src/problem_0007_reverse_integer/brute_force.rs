@@ -2,7 +2,7 @@ pub struct Solution {}
 
 impl Solution {
     pub fn reverse(mut x: i32) -> i32 {
-        let mut result = 0i32;
+        let mut result = 0_i32;
 
         while x != 0 {
             if let Some(new_result) = result.checked_mul(10).and_then(|r| r.checked_add(x % 10)) {
