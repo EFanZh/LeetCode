@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
-            assert_eq!(S::search_range(nums.to_owned(), target), expected);
+            assert_eq!(S::search_range(nums.to_vec(), target), expected);
         }
     }
 }

@@ -15,7 +15,7 @@ mod tests {
         ];
 
         for (digits, expected) in test_cases.iter().copied() {
-            assert_eq!(S::letter_combinations(digits.to_owned()), expected);
+            assert_eq!(S::letter_combinations(digits.to_string()), expected);
         }
     }
 }

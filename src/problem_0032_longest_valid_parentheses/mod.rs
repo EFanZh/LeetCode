@@ -14,7 +14,7 @@ mod tests {
         let test_cases = [("(()", 2), (")()())", 4), ("()", 2), ("()(()", 2), (")(", 0)];
 
         for (s, expected) in test_cases.iter().copied() {
-            assert_eq!(S::longest_valid_parentheses(s.to_owned()), expected);
+            assert_eq!(S::longest_valid_parentheses(s.to_string()), expected);
         }
     }
 }

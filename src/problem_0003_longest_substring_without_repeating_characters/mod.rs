@@ -20,7 +20,7 @@ mod tests {
         ];
 
         for (s, expected) in test_cases.iter().copied() {
-            assert_eq!(S::length_of_longest_substring(s.to_owned()), expected);
+            assert_eq!(S::length_of_longest_substring(s.to_string()), expected);
         }
     }
 }

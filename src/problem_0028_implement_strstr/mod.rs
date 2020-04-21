@@ -13,7 +13,7 @@ mod tests {
         let test_cases = [(("hello", "ll"), 2), (("aaaaa", "bba"), -1)];
 
         for ((haystack, needle), expected) in test_cases.iter().copied() {
-            assert_eq!(S::str_str(haystack.to_owned(), needle.to_owned()), expected);
+            assert_eq!(S::str_str(haystack.to_string(), needle.to_string()), expected);
         }
     }
 }

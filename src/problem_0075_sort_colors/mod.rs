@@ -12,7 +12,7 @@ mod tests {
         let test_cases = [(&[2, 0, 2, 1, 1, 0] as &[_], &[0, 0, 1, 1, 2, 2] as &[_])];
 
         for (nums, expected) in test_cases.iter().copied() {
-            let mut nums = nums.to_owned();
+            let mut nums = nums.to_vec();
 
             S::sort_colors(&mut nums);
 

@@ -43,10 +43,7 @@ mod tests {
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
-            assert_eq!(
-                sorted(S::four_sum(nums.to_owned(), target)),
-                sorted(expected.to_owned())
-            );
+            assert_eq!(sorted(S::four_sum(nums.to_vec(), target)), sorted(expected.to_vec()));
         }
     }
 }

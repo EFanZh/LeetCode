@@ -33,7 +33,7 @@ impl Solution {
         let mut result = Vec::new();
 
         if n == 0 {
-            result.push("".to_owned());
+            result.push("".to_string());
         } else {
             let mut buffer = vec![b'('];
 

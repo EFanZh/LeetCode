@@ -11,9 +11,9 @@ fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<String>> {
 
     solutions::get_solutions(tree, |problem_id, solution_id| {
         result
-            .entry(problem_id.to_owned())
+            .entry(problem_id.to_string())
             .or_default()
-            .push(solution_id.to_owned());
+            .push(solution_id.to_string());
     });
 
     result

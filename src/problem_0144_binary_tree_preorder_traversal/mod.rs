@@ -16,10 +16,13 @@ mod tests {
     use super::Solution;
 
     pub fn run_tests<S: Solution>() {
-        let test_cases = vec![(vec![Some(1), None, Some(2), Some(3)], vec![1, 2, 3])];
+        let test_cases = [(&[Some(1), None, Some(2), Some(3)] as &[_], &[1, 2, 3] as &[_])];
 
-        for (serialized_tree, expected) in test_cases {
-            assert_eq!(S::preorder_traversal(make_tree(serialized_tree)), expected);
+        for (serialized_tree, expected) in test_cases.iter().copied() {
+            assert_eq!(
+                S::preorder_traversal(make_tree(serialized_tree.iter().copied())),
+                expected
+            );
         }
     }
 }

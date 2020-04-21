@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for (nums, expected) in test_cases.iter().copied() {
-            let mut nums = nums.to_owned();
+            let mut nums = nums.to_vec();
 
             S::next_permutation(&mut nums);
 

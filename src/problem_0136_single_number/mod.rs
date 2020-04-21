@@ -9,10 +9,10 @@ mod tests {
     use super::Solution;
 
     pub fn run_tests<S: Solution>() {
-        let test_cases = vec![(vec![2, 2, 1], 1), (vec![4, 1, 2, 1, 2], 4)];
+        let test_cases = [(&[2, 2, 1] as &[_], 1), (&[4, 1, 2, 1, 2], 4)];
 
-        for (nums, expected) in test_cases {
-            assert_eq!(S::single_number(nums), expected);
+        for (nums, expected) in test_cases.iter().copied() {
+            assert_eq!(S::single_number(nums.to_vec()), expected);
         }
     }
 }

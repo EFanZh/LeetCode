@@ -19,7 +19,7 @@ mod tests {
         ];
 
         for (s, expected) in test_cases.iter().copied() {
-            assert_eq!(S::is_valid(s.to_owned()), expected);
+            assert_eq!(S::is_valid(s.to_string()), expected);
         }
     }
 }
