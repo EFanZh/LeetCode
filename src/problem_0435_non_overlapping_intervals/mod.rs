@@ -15,10 +15,10 @@ mod tests {
             (&[(1, 2), (2, 3)], 0),
         ];
 
-        for (intervals, expected) in &test_cases {
+        for (intervals, expected) in test_cases.iter().copied() {
             assert_eq!(
                 S::erase_overlap_intervals(intervals.iter().map(|&(s, f)| vec![s, f]).collect()),
-                *expected
+                expected
             );
         }
     }

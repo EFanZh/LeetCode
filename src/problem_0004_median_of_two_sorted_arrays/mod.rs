@@ -14,15 +14,18 @@ mod tests {
     use super::Solution;
 
     pub fn run_tests<S: Solution>() {
-        let test_cases = vec![
-            ((vec![1, 3], vec![2]), 2.0),
-            ((vec![1, 2], vec![3, 4]), 2.5),
-            ((vec![1, 2], vec![-1, 3]), 1.5),
-            ((vec![100_000], vec![100_001]), 100_000.5),
+        let test_cases = [
+            ((&[1, 3] as &[_], &[2] as &[_]), 2.0),
+            ((&[1, 2], &[3, 4]), 2.5),
+            ((&[1, 2], &[-1, 3]), 1.5),
+            ((&[100_000], &[100_001]), 100_000.5),
         ];
 
-        for ((nums1, nums2), expected_result) in test_cases {
-            assert!((S::find_median_sorted_arrays(nums1, nums2) - expected_result).abs() < std::f64::EPSILON);
+        for ((nums1, nums2), expected_result) in test_cases.iter().copied() {
+            assert!(
+                (S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()) - expected_result).abs()
+                    < std::f64::EPSILON
+            );
         }
     }
 }

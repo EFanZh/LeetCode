@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for (str, expected) in test_cases.iter().copied() {
-            assert_eq!(S::my_atoi(str.to_owned()), expected);
+            assert_eq!(S::my_atoi(str.to_string()), expected);
         }
     }
 }

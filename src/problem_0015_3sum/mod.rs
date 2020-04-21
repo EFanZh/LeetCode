@@ -38,7 +38,7 @@ mod tests {
         ];
 
         for (nums, expected) in test_cases.iter().copied() {
-            assert_eq!(sorted(S::three_sum(nums.to_owned())), sorted(expected.to_owned()));
+            assert_eq!(sorted(S::three_sum(nums.to_vec())), sorted(expected.to_vec()));
         }
     }
 }

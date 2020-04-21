@@ -17,7 +17,7 @@ mod tests {
 
         for (strs, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::longest_common_prefix(strs.iter().copied().map(ToOwned::to_owned).collect()),
+                S::longest_common_prefix(strs.iter().copied().map(ToString::to_string).collect()),
                 expected
             );
         }

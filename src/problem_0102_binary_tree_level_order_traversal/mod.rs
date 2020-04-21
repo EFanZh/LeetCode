@@ -14,13 +14,13 @@ mod tests {
     use super::Solution;
 
     pub fn run_tests<S: Solution>() {
-        let test_cases = vec![(
-            vec![Some(3), Some(9), Some(20), None, None, Some(15), Some(7)],
-            vec![vec![3], vec![9, 20], vec![15, 7]],
+        let test_cases = [(
+            &[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)] as &[_],
+            &[&[3] as &[_], &[9, 20], &[15, 7]] as &[_],
         )];
 
-        for (serialized_tree, expected) in test_cases {
-            assert_eq!(S::level_order(make_tree(serialized_tree)), expected);
+        for (serialized_tree, expected) in test_cases.iter().copied() {
+            assert_eq!(S::level_order(make_tree(serialized_tree.iter().copied())), expected);
         }
     }
 }

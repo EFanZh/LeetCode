@@ -16,7 +16,7 @@ mod tests {
         ];
 
         for ((s, num_rows), expected) in test_cases.iter().copied() {
-            assert_eq!(S::convert(s.to_owned(), num_rows).as_str(), expected);
+            assert_eq!(S::convert(s.to_string(), num_rows).as_str(), expected);
         }
     }
 }

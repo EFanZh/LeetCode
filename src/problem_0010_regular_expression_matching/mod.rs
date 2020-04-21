@@ -18,7 +18,7 @@ mod tests {
         ];
 
         for ((s, p), expected) in test_cases.iter().copied() {
-            assert_eq!(S::is_match(s.to_owned(), p.to_owned()), expected);
+            assert_eq!(S::is_match(s.to_string(), p.to_string()), expected);
         }
     }
 }

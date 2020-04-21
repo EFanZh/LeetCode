@@ -18,7 +18,7 @@ mod tests {
         ];
 
         for (nums, expected) in test_cases.iter().copied() {
-            let mut nums = nums.to_owned();
+            let mut nums = nums.to_vec();
             let result = S::remove_duplicates(&mut nums);
 
             assert_eq!(nums.as_slice(), expected);

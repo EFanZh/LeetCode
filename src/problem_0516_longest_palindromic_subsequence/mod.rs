@@ -13,7 +13,7 @@ mod tests {
         let test_cases = [("", 0), ("a", 1), ("bbbab", 4), ("cbbd", 2), ("character", 5)];
 
         for (s, expected) in test_cases.iter().copied() {
-            assert_eq!(S::longest_palindrome_subseq(s.to_owned()), expected);
+            assert_eq!(S::longest_palindrome_subseq(s.to_string()), expected);
         }
     }
 }

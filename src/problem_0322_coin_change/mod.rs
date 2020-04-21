@@ -13,7 +13,7 @@ mod tests {
         let test_cases = [((&[1, 2, 5] as &[_], 11), 3), ((&[2], 3), -1)];
 
         for ((coins, amount), expected) in test_cases.iter().copied() {
-            assert_eq!(S::coin_change(coins.to_owned(), amount), expected);
+            assert_eq!(S::coin_change(coins.to_vec(), amount), expected);
         }
     }
 }

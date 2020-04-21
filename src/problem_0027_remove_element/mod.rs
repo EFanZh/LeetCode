@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((nums, val), expected) in test_cases.iter().copied() {
-            let mut nums = nums.to_owned();
+            let mut nums = nums.to_vec();
             let result = S::remove_element(&mut nums, val);
 
             assert_eq!(nums.as_slice(), expected);

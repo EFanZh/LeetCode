@@ -29,7 +29,7 @@ impl Solution {
             update_result(i, i + 1);
         }
 
-        s[max_left..max_left + max_length].into()
+        s[max_left..max_left + max_length].to_string()
     }
 }
 

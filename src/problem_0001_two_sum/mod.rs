@@ -11,14 +11,14 @@ mod tests {
     use super::Solution;
 
     pub fn run_tests<S: Solution>() {
-        let test_cases = vec![
-            ((vec![2, 7, 11, 15], 9), vec![0, 1]),
-            ((vec![-3, 4, 3, 90], 0), vec![0, 2]),
-            ((vec![3, 2, 4], 6), vec![1, 2]),
+        let test_cases = [
+            ((&[2, 7, 11, 15] as &[_], 9), [0, 1]),
+            ((&[-3, 4, 3, 90], 0), [0, 2]),
+            ((&[3, 2, 4], 6), [1, 2]),
         ];
 
-        for ((nums, target), expected) in test_cases {
-            assert_eq!(S::two_sum(nums, target), expected);
+        for ((nums, target), expected) in test_cases.iter().copied() {
+            assert_eq!(S::two_sum(nums.to_vec(), target), expected);
         }
     }
 }
