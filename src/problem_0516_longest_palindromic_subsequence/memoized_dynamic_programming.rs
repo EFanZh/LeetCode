@@ -3,34 +3,35 @@ pub struct Solution {}
 use std::collections::HashMap;
 
 impl Solution {
-    pub fn longest_palindrome_subseq(s: String) -> i32 {
-        fn helper(s: &[u8], cache: &mut HashMap<(*const u8, usize), i32>) -> i32 {
-            let key = (s.as_ptr(), s.len());
+    fn longest_palindrome_subseq_helper(s: &[u8], cache: &mut HashMap<(*const u8, usize), i32>) -> i32 {
+        let key = (s.as_ptr(), s.len());
 
-            if let Some(&result) = cache.get(&key) {
-                result
-            } else {
-                let result = if let Some((head, non_head)) = s.split_first() {
-                    if let Some((tail, body)) = non_head.split_last() {
-                        if head == tail {
-                            helper(body, cache) + 2
-                        } else {
-                            helper(non_head, cache).max(helper(&s[..s.len() - 1], cache))
-                        }
+        if let Some(&result) = cache.get(&key) {
+            result
+        } else {
+            let result = if let Some((head, non_head)) = s.split_first() {
+                if let Some((tail, body)) = non_head.split_last() {
+                    if head == tail {
+                        Self::longest_palindrome_subseq_helper(body, cache) + 2
                     } else {
-                        1
+                        Self::longest_palindrome_subseq_helper(non_head, cache)
+                            .max(Self::longest_palindrome_subseq_helper(&s[..s.len() - 1], cache))
                     }
                 } else {
-                    0
-                };
+                    1
+                }
+            } else {
+                0
+            };
 
-                cache.insert(key, result);
+            cache.insert(key, result);
 
-                result
-            }
+            result
         }
+    }
 
-        helper(s.as_bytes(), &mut HashMap::new())
+    pub fn longest_palindrome_subseq(s: String) -> i32 {
+        Self::longest_palindrome_subseq_helper(s.as_bytes(), &mut HashMap::new())
     }
 }
 

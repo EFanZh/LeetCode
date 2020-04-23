@@ -16,33 +16,6 @@ fn partition<T, F: FnMut(&T) -> bool>(values: &mut [T], mut f: F) -> (&mut [T], 
     values.split_at_mut(pivot)
 }
 
-fn lower_bound<T, F: FnMut(&T) -> bool>(values: &[T], mut f: F) -> usize {
-    let mut size = values.len();
-
-    if size == 0 {
-        return 0;
-    }
-
-    let mut left = 0;
-
-    while size > 1 {
-        let half = size / 2;
-        let middle = left + half;
-
-        if f(&values[middle]) {
-            left = middle;
-        }
-
-        size -= half;
-    }
-
-    if f(&values[left]) {
-        left + 1
-    } else {
-        left
-    }
-}
-
 impl Solution {
     fn partition_and_sort(mut nums: Vec<i32>, max_first_value: i32) -> (Vec<i32>, usize) {
         let (left, right) = partition(nums.as_mut(), |x| *x <= max_first_value);
@@ -71,11 +44,19 @@ impl Solution {
                     let nums = &nums[i + 1..];
                     let target = target - first_value;
 
-                    let pivot = lower_bound(nums, {
-                        let k = target / 3;
+                    let pivot = nums
+                        .binary_search_by({
+                            let k = target / 3;
 
-                        move |x| *x <= k
-                    });
+                            move |x| {
+                                if *x <= k {
+                                    Ordering::Less
+                                } else {
+                                    Ordering::Greater
+                                }
+                            }
+                        })
+                        .unwrap_err();
 
                     for j in 0..pivot.min(nums.len() - 2) {
                         let second_value = nums[j];
