@@ -6,21 +6,21 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        fn helper(mut root: Option<Rc<RefCell<TreeNode>>>, result: &mut Vec<i32>) {
-            while let Some(node) = root {
-                let node_ref = node.borrow();
+    fn preorder_traversal_helper(mut root: Option<Rc<RefCell<TreeNode>>>, result: &mut Vec<i32>) {
+        while let Some(node) = root {
+            let node_ref = node.borrow();
 
-                result.push(node_ref.val);
-                helper(node_ref.left.clone(), result);
+            result.push(node_ref.val);
+            Self::preorder_traversal_helper(node_ref.left.clone(), result);
 
-                root = node_ref.right.clone();
-            }
+            root = node_ref.right.clone();
         }
+    }
 
+    pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
 
-        helper(root, &mut result);
+        Self::preorder_traversal_helper(root, &mut result);
 
         result
     }
