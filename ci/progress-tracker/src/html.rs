@@ -16,11 +16,11 @@ fn write_attribute(attribute: &(&str, &str), target: &mut String) {
     target.push_str("\"");
 }
 
-pub struct HtmlWriter<'a> {
+pub struct Writer<'a> {
     buffer: &'a mut String,
 }
 
-impl<'a> HtmlWriter<'a> {
+impl<'a> Writer<'a> {
     pub fn on(buffer: &'a mut String) -> Self {
         Self { buffer }
     }

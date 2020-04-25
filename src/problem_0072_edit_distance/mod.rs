@@ -8,7 +8,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [(("horse", "ros"), 3), (("intention", "execution"), 5), (("", "a"), 1)];
 
         for ((word1, word2), expected) in test_cases.iter().copied() {

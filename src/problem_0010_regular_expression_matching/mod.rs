@@ -8,7 +8,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [
             (("aa", "a"), false),
             (("aa", "a*"), true),

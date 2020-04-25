@@ -29,7 +29,7 @@ fn generate_report<P: AsRef<Path>>(repository: P, target: P) {
 
     // Generate progress chart.
 
-    progress_chart::draw_progress_chart(&repository, &problems, target.as_ref().join("progress.svg"));
+    progress_chart::draw(&repository, &problems, target.as_ref().join("progress.svg"));
 
     // Generate report.
 
@@ -39,7 +39,7 @@ fn generate_report<P: AsRef<Path>>(repository: P, target: P) {
         .peel_to_tree()
         .unwrap();
 
-    report::make_report(
+    report::generate(
         problems.problems.as_slice(),
         &tree,
         "progress.svg",

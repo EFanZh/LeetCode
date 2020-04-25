@@ -10,7 +10,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [(&[2, 3, 1, 1, 4] as &[_], 2)];
 
         for (nums, expected) in test_cases.iter().copied() {

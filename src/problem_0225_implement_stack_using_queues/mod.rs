@@ -21,7 +21,7 @@ mod tests {
         Empty(bool),
     }
 
-    pub fn run_tests<S: MyStack>() {
+    pub fn run<S: MyStack>() {
         use StackOperation::{Empty, Pop, Push, Top};
 
         let test_cases = [&[Push(1), Push(2), Top(2), Pop(2), Empty(false)] as &[_]];

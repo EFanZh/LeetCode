@@ -9,7 +9,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [((&[1, 2, 5] as &[_], 11), 3), ((&[2], 3), -1)];
 
         for ((coins, amount), expected) in test_cases.iter().copied() {

@@ -11,7 +11,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [
             ((&[1, 3, 5, 6], 5), 2),
             ((&[1, 3, 5, 6], 2), 1),

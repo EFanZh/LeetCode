@@ -1,4 +1,4 @@
-use super::html::HtmlWriter;
+use super::html::Writer;
 use super::problems::Problem;
 use super::solutions;
 use git2::Tree;
@@ -9,7 +9,7 @@ use std::path::Path;
 fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<String>> {
     let mut result = HashMap::<String, Vec<String>>::new();
 
-    solutions::get_solutions(tree, |problem_id, solution_id| {
+    solutions::get(tree, |problem_id, solution_id| {
         result
             .entry(problem_id.to_string())
             .or_default()
@@ -19,11 +19,11 @@ fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<String>> {
     result
 }
 
-fn write_hyper_link(writer: &mut HtmlWriter, href: &str, text: &str) {
+fn write_hyper_link(writer: &mut Writer, href: &str, text: &str) {
     writer.element("a", &[("href", href)], |w| w.text(text))
 }
 
-fn write_problem_link(writer: &mut HtmlWriter, problem: &Problem) {
+fn write_problem_link(writer: &mut Writer, problem: &Problem) {
     write_hyper_link(
         writer,
         format!("https://leetcode.com/problems/{}/", problem.stat.title_slug).as_str(),
@@ -31,7 +31,7 @@ fn write_problem_link(writer: &mut HtmlWriter, problem: &Problem) {
     );
 }
 
-fn write_solution_link(writer: &mut HtmlWriter, problem_id: &str, solution: &str) {
+fn write_solution_link(writer: &mut Writer, problem_id: &str, solution: &str) {
     write_hyper_link(
         writer,
         format!(
@@ -43,17 +43,17 @@ fn write_solution_link(writer: &mut HtmlWriter, problem_id: &str, solution: &str
     );
 }
 
-fn write_difficulty(writer: &mut HtmlWriter, level: u8) {
+fn write_difficulty(writer: &mut Writer, level: u8) {
     for _ in 0..level {
         writer.text("★");
     }
 }
 
-pub fn make_report<P: AsRef<Path>>(problems: &[Problem], tree: &Tree, progress_chart: &str, output: P) {
+pub fn generate<P: AsRef<Path>>(problems: &[Problem], tree: &Tree, progress_chart: &str, output: P) {
     const TITLE: &str = "LeetCode Progress Report";
     let solution_map = make_solution_map(tree);
     let mut result = String::from("<!DOCTYPE html>\n");
-    let mut html_writer = HtmlWriter::on(&mut result);
+    let mut html_writer = Writer::on(&mut result);
 
     html_writer.element("html", &[("lang", "en")], |w| {
         w.element("head", &[], |w| {

@@ -21,7 +21,7 @@ fn make_problem_hits_cache(problems: &Problems) -> HashMap<String, bool> {
 }
 
 fn get_progress(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> f64 {
-    solutions::get_solutions(tree, |problem_id, _| {
+    solutions::get(tree, |problem_id, _| {
         if let Some(value) = hits_cache.get_mut(problem_id) {
             *value = true;
         }
@@ -66,7 +66,7 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
     chart.draw_series(LineSeries::new(data.iter().copied(), &RED)).unwrap();
 }
 
-pub fn draw_progress_chart<P: AsRef<Path>>(repository: &Repository, problems: &Problems, output: P) {
+pub fn draw<P: AsRef<Path>>(repository: &Repository, problems: &Problems, output: P) {
     let mut hits_cache = make_problem_hits_cache(problems);
     let mut revwalk = repository.revwalk().unwrap();
 

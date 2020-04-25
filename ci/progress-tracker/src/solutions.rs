@@ -1,6 +1,6 @@
 use git2::{Tree, TreeWalkMode, TreeWalkResult};
 
-pub fn get_solutions<F: FnMut(&str, &str)>(tree: &Tree, mut f: F) {
+pub fn get<F: FnMut(&str, &str)>(tree: &Tree, mut f: F) {
     const ROOT_PREFIX: &str = "src/problem_";
     const ROOT_POSTFIX: &str = "/";
     const SOLUTION_POST_FIX: &str = ".rs";
