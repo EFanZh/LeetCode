@@ -13,7 +13,7 @@ use std::path::Path;
 fn make_problem_hits_cache(problems: &Problems) -> HashMap<String, bool> {
     let mut result = HashMap::new();
 
-    for problem in problems.problems.iter() {
+    for problem in &problems.problems {
         result.insert(problem.get_id(), false);
     }
 
@@ -27,7 +27,7 @@ fn get_progress(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> f64 {
         }
     });
 
-    let mut hits = 0usize;
+    let mut hits = 0_usize;
 
     for value in hits_cache.values_mut() {
         if *value {

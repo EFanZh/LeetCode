@@ -2,7 +2,7 @@ pub struct Solution {}
 
 impl Solution {
     pub fn is_match(s: String, p: String) -> bool {
-        let (s, p) = (s.as_bytes(), p.as_bytes());
+        let (s, p) = (s.into_bytes(), p.into_bytes());
         let columns = p.len() + 1;
         let mut cache = vec![false; columns * (s.len() + 1)];
         let cache_len = cache.len();

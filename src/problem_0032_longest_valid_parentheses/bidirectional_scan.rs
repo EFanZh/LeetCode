@@ -30,7 +30,7 @@ impl Solution {
 
     pub fn longest_valid_parentheses(s: String) -> i32 {
         let length_1 = Self::get_max_length(s.bytes(), b'(');
-        let length_2 = Self::get_max_length(s.bytes().rev(), b')');
+        let length_2 = Self::get_max_length(s.into_bytes().into_iter().rev(), b')');
 
         length_1.max(length_2)
     }

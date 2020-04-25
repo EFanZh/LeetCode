@@ -19,12 +19,13 @@ impl Solution {
         ];
 
         let mut result = 0;
-        let mut s = s.as_bytes();
+        let s = s.into_bytes();
+        let mut slice = s.as_slice();
 
         for (digit, num) in DIGITS.iter().copied() {
-            while s.starts_with(digit) {
+            while slice.starts_with(digit) {
                 result += num;
-                s = &s[digit.len()..];
+                slice = &slice[digit.len()..];
             }
         }
 
