@@ -17,14 +17,21 @@ impl Solution {
 
             Self::combination_sum2_helper(counts.clone(), target, used, result);
 
-            for _ in 0..count {
-                if target >= num {
-                    used.push(num);
-                    target -= num;
+            if target >= num {
+                used.push(num);
+                target -= num;
 
-                    Self::combination_sum2_helper(counts.clone(), target, used, result);
-                } else {
-                    break;
+                Self::combination_sum2_helper(counts.clone(), target, used, result);
+
+                for _ in 1..count {
+                    if target >= num {
+                        used.push(num);
+                        target -= num;
+
+                        Self::combination_sum2_helper(counts.clone(), target, used, result);
+                    } else {
+                        break;
+                    }
                 }
             }
 
