@@ -56,11 +56,8 @@ impl super::MyStack for MyStack {
 
 #[cfg(test)]
 mod tests {
-    use super::super::tests::run;
-    use super::MyStack;
-
     #[test]
     fn test_solution() {
-        run::<MyStack>();
+        super::super::tests::run::<super::MyStack>();
     }
 }
