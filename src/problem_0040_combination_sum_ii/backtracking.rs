@@ -9,10 +9,10 @@ impl Solution {
                 used.push(first);
                 Self::combination_sum2_helper(rest, target - first, used, result);
                 used.pop();
-            }
 
-            if let Some(next) = rest.iter().position(|x| *x != first) {
-                Self::combination_sum2_helper(&rest[next..], target, used, result);
+                if let Some(next) = rest.iter().position(|x| *x != first) {
+                    Self::combination_sum2_helper(&rest[next..], target, used, result);
+                }
             }
         }
     }

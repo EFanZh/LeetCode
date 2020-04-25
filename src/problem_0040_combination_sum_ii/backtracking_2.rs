@@ -12,15 +12,15 @@ impl Solution {
             used.push(first);
             Self::combination_sum2_helper(rest, target - first, used, result);
             used.pop();
-        }
 
-        while let Some((&new_first, new_rest)) = rest.split_first() {
-            if new_first == first {
-                rest = new_rest;
-            } else {
-                Self::combination_sum2_helper_non_empty(new_first, new_rest, target, used, result);
+            while let Some((&new_first, new_rest)) = rest.split_first() {
+                if new_first == first {
+                    rest = new_rest;
+                } else {
+                    Self::combination_sum2_helper_non_empty(new_first, new_rest, target, used, result);
 
-                break;
+                    break;
+                }
             }
         }
     }
