@@ -23,7 +23,7 @@ jobs:
             with:
                 toolchain: stable
                 components: clippy
-          - run: cargo clippy --all-targets --all-features -- -D warnings
+          - run: cargo clippy --all-targets --all-features -- -W clippy::pedantic -A clippy::module-name-repetitions -A clippy::must-use-candidate -A clippy::cast-precision-loss -A clippy::non-ascii-literal -A clippy::cast-possible-truncation -A clippy::cast-possible-wrap -A clippy::cast-sign-loss -A clippy::needless-pass-by-value -D warnings
         strategy:
             matrix:
                 os:

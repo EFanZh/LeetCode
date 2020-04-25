@@ -1,9 +1,9 @@
 pub struct Solution {}
 
-use std::slice;
+use std::vec;
 
 impl Solution {
-    fn parse_positive(first_char: u8, iter: slice::Iter<u8>) -> i32 {
+    fn parse_positive(first_char: u8, iter: vec::IntoIter<u8>) -> i32 {
         let mut result = i32::from(first_char - b'0');
 
         for c in iter {
@@ -21,14 +21,14 @@ impl Solution {
         result
     }
 
-    fn parse_negaitive(mut iter: slice::Iter<u8>) -> i32 {
-        for &c in iter.by_ref() {
+    fn parse_negaitive(mut iter: vec::IntoIter<u8>) -> i32 {
+        for c in iter.by_ref() {
             match c {
                 b'0' => continue,
                 b'1'..=b'9' => {
                     let mut result = -(i32::from(c - b'0'));
 
-                    for &c in iter {
+                    for c in iter {
                         if c.is_ascii_digit() {
                             if let Some(new_result) =
                                 result.checked_mul(10).and_then(|r| r.checked_sub(i32::from(c - b'0')))
@@ -54,12 +54,12 @@ impl Solution {
     pub fn my_atoi(str: String) -> i32 {
         // \s*[+-]?\d+
 
-        let mut iter = str.as_bytes().iter();
+        let mut iter = str.into_bytes().into_iter();
 
-        for &c in iter.by_ref() {
+        for c in iter.by_ref() {
             match c {
                 b'+' => match iter.next() {
-                    Some(&c) if c.is_ascii_digit() => return Self::parse_positive(c, iter),
+                    Some(c) if c.is_ascii_digit() => return Self::parse_positive(c, iter),
                     _ => break,
                 },
                 b'-' => return Self::parse_negaitive(iter),

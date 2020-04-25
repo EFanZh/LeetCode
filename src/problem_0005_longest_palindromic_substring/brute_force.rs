@@ -2,12 +2,12 @@ pub struct Solution {}
 
 impl Solution {
     pub fn longest_palindrome(s: String) -> String {
-        let bytes = s.as_bytes();
+        let s = s.into_bytes();
         let mut max_left = 0;
         let mut max_length = 0;
 
         let mut update_result = |mut i: usize, mut j: usize| {
-            while let (Some(lhs), Some(rhs)) = (bytes.get(i), bytes.get(j)) {
+            while let (Some(lhs), Some(rhs)) = (s.get(i), s.get(j)) {
                 if lhs == rhs {
                     i = i.wrapping_sub(1);
                     j += 1;
@@ -24,12 +24,12 @@ impl Solution {
             }
         };
 
-        for i in 0..bytes.len() {
+        for i in 0..s.len() {
             update_result(i.wrapping_sub(1), i + 1);
             update_result(i, i + 1);
         }
 
-        s[max_left..max_left + max_length].to_string()
+        String::from_utf8(s[max_left..max_left + max_length].to_vec()).unwrap()
     }
 }
 

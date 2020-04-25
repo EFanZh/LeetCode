@@ -30,13 +30,13 @@ impl Solution {
     }
 
     pub fn letter_combinations(digits: String) -> Vec<String> {
-        let digits = digits.as_bytes();
+        let digits = digits.into_bytes();
         let mut result = Vec::new();
 
         if !digits.is_empty() {
             let mut prefix = Vec::new();
 
-            Self::enumerate_combinations(digits, &mut prefix, &mut result);
+            Self::enumerate_combinations(&digits, &mut prefix, &mut result);
         }
 
         result

@@ -6,7 +6,7 @@ impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut num_to_index = HashMap::new();
 
-        for (i, num) in nums.iter().enumerate() {
+        for (i, num) in nums.into_iter().enumerate() {
             match num_to_index.get(&(target - num)) {
                 None => num_to_index.insert(num, i),
                 Some(index) => return vec![*index as _, i as _],

@@ -2,7 +2,7 @@ pub struct Solution {}
 
 impl Solution {
     pub fn is_valid(s: String) -> bool {
-        let s = s.as_bytes();
+        let s = s.into_bytes();
         let mut stack = Vec::new();
 
         for byte in s.iter().copied() {

@@ -19,15 +19,16 @@ impl Solution {
         ];
 
         let mut result = 0;
-        let mut s = s.as_bytes();
+        let s = s.into_bytes();
+        let mut slice = s.as_slice();
         let (mut digit, mut digits) = DIGITS.split_first().unwrap();
 
         loop {
-            if s.starts_with(digit.0) {
+            if slice.starts_with(digit.0) {
                 result += digit.1;
-                s = &s[digit.0.len()..];
+                slice = &slice[digit.0.len()..];
 
-                if s.is_empty() {
+                if slice.is_empty() {
                     break;
                 }
             } else {
