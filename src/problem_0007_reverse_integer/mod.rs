@@ -8,7 +8,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [(123, 321), (-123, -321), (120, 21), (1_534_236_469, 0)];
 
         for (x, expected) in test_cases.iter().copied() {

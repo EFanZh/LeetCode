@@ -64,11 +64,11 @@ impl super::MyQueue for MyQueue {
 
 #[cfg(test)]
 mod tests {
-    use super::super::tests::run_tests;
+    use super::super::tests::run;
     use super::MyQueue;
 
     #[test]
     fn test_solution() {
-        run_tests::<MyQueue>();
+        run::<MyQueue>();
     }
 }

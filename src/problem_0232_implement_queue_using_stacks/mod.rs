@@ -20,7 +20,7 @@ mod tests {
         Empty(bool),
     }
 
-    pub fn run_tests<Q: MyQueue>() {
+    pub fn run<Q: MyQueue>() {
         use QueueOperation::{Empty, Peek, Pop, Push};
 
         let test_cases = [&[Push(1), Push(2), Peek(1), Pop(1), Empty(false)] as &[_]];

@@ -11,7 +11,7 @@ mod tests {
     use super::super::test_utilities;
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [(
             &[&[1, 4, 5] as &[_], &[1, 3, 4], &[2, 6]] as &[&[_]],
             &[1, 1, 2, 3, 4, 4, 5, 6] as &[_],

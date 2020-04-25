@@ -83,11 +83,11 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::tests::run_tests;
+    use super::super::tests::run;
     use super::Solution;
 
     #[test]
     fn test_solution() {
-        run_tests::<Solution>();
+        run::<Solution>();
     }
 }

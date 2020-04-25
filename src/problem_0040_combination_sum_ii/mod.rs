@@ -18,7 +18,7 @@ mod tests {
         value
     }
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [
             (
                 (&[10, 1, 2, 7, 6, 1, 5] as &[_], 8),

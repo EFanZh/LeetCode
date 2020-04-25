@@ -8,7 +8,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [
             (&[1, 2, 3] as &[_], &[1, 3, 2] as &[_]),
             (&[3, 2, 1], &[1, 2, 3]),

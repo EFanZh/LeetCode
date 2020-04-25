@@ -12,7 +12,7 @@ mod tests {
     use super::super::test_utilities;
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [((&[1, 2, 3, 4, 5] as &[_], 2), &[1, 2, 3, 5] as &[_])];
 
         for ((head, n), expected) in test_cases.iter().copied() {

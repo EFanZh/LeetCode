@@ -15,7 +15,7 @@ mod tests {
     use super::super::test_utilities::make_tree;
     use super::Solution;
 
-    pub fn run_tests<S: Solution>() {
+    pub fn run<S: Solution>() {
         let test_cases = [(&[Some(1), None, Some(2), Some(3)] as &[_], &[1, 2, 3] as &[_])];
 
         for (serialized_tree, expected) in test_cases.iter().copied() {
