@@ -38,6 +38,7 @@ pub mod problem_0037_sudoku_solver;
 pub mod problem_0038_count_and_say;
 pub mod problem_0039_combination_sum;
 pub mod problem_0040_combination_sum_ii;
+pub mod problem_0041_first_missing_positive;
 pub mod problem_0045_jump_game_ii;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
