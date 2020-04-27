@@ -70,6 +70,10 @@ Benchmark the performance against the one from standard library.
 
 How to come up with the bidirectional scan solution?
 
+## [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+
+Investigate the two pointers solution.
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
