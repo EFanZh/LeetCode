@@ -1,5 +1,6 @@
 pub mod maximum_on_both_sides;
 pub mod stack;
+pub mod two_pointers;
 
 pub trait Solution {
     fn trap(height: Vec<i32>) -> i32;

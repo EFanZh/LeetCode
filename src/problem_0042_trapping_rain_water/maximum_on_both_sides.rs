@@ -42,8 +42,8 @@ impl Solution {
 }
 
 impl super::Solution for Solution {
-    fn trap(nums: Vec<i32>) -> i32 {
-        Self::trap(nums)
+    fn trap(height: Vec<i32>) -> i32 {
+        Self::trap(height)
     }
 }
 
