@@ -4,7 +4,7 @@
 
 Do it with zero overhead.
 
-## [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+## [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) ★
 
 Make sure it can be solved again.
 
@@ -70,9 +70,17 @@ Benchmark the performance against the one from standard library.
 
 How to come up with the bidirectional scan solution?
 
-## [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+## [43. Multiply Strings](https://leetcode.com/problems/multiply-strings/)
 
-Investigate the two pointers solution.
+There are
+[faster algorithms](https://en.wikipedia.org/wiki/Multiplication_algorithm#Fast_multiplication_algorithms_for_large_inputs)
+to do this.
+
+## [44. Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) ★
+
+1. Make sure it can be solved again.
+2. Investigate the backtracking solution.
+3. How about DFA solution?
 
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
