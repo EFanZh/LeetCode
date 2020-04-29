@@ -1,12 +1,12 @@
 pub struct Solution {}
 
 use std::cmp::Reverse;
-use std::mem::swap;
+use std::mem;
 
 impl Solution {
     pub fn find_median_sorted_arrays(mut nums1: Vec<i32>, mut nums2: Vec<i32>) -> f64 {
         if nums2.len() < nums1.len() {
-            swap(&mut nums1, &mut nums2);
+            mem::swap(&mut nums1, &mut nums2);
         };
 
         let total_count = nums1.len() + nums2.len();

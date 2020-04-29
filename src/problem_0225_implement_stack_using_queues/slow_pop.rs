@@ -1,5 +1,5 @@
 use std::collections::VecDeque;
-use std::mem::swap;
+use std::mem;
 
 pub struct MyStack {
     q: VecDeque<i32>, // Stores all elements except the top element pushed onto the stack.
@@ -27,7 +27,7 @@ impl MyStack {
             self.t.push_back(self.q.pop_front().unwrap());
         }
 
-        swap(&mut self.q, &mut self.t);
+        mem::swap(&mut self.q, &mut self.t);
 
         self.q.pop_front().unwrap()
     }
