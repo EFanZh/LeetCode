@@ -1,4 +1,4 @@
-struct Solution {}
+pub struct Solution {}
 
 use std::cmp::Reverse;
 use std::mem::swap;
