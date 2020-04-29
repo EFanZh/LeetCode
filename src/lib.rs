@@ -41,6 +41,7 @@ pub mod problem_0040_combination_sum_ii;
 pub mod problem_0041_first_missing_positive;
 pub mod problem_0042_trapping_rain_water;
 pub mod problem_0043_multiply_strings;
+pub mod problem_0044_wildcard_matching;
 pub mod problem_0045_jump_game_ii;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
