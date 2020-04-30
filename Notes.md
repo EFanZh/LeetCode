@@ -82,6 +82,10 @@ to do this.
 2. Investigate the backtracking solution.
 3. How about DFA solution?
 
+## [46. Permutations](https://leetcode.com/problems/permutations/)
+
+Why does the [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm) works?
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
