@@ -1,4 +1,4 @@
-pub mod backtrack;
+pub mod backtracking;
 
 pub trait Solution {
     fn letter_combinations(digits: String) -> Vec<String>;
