@@ -86,6 +86,10 @@ to do this.
 
 Why does the [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm) works?
 
+## [47. Permutations II](https://leetcode.com/problems/permutations-ii/)
+
+How did I come up with the backtracking solution 2 and 3?
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
