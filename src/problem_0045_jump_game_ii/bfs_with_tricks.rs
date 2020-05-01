@@ -1,7 +1,7 @@
 pub struct Solution {}
 
 impl Solution {
-    fn jump(nums: Vec<i32>) -> i32 {
+    pub fn jump(nums: Vec<i32>) -> i32 {
         let mut step = 0;
         let mut left = 0;
         let mut right = 1;

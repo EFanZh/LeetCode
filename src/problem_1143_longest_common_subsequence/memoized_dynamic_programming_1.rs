@@ -27,7 +27,7 @@ impl Solution {
         }
     }
 
-    fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+    pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
         let columns = text2.len() + 1;
         let mut cache = vec![None; columns * (text1.len() + 1)];
 

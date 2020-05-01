@@ -24,7 +24,7 @@ impl Solution {
         }
     }
 
-    fn permute(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
         let nums_len = nums.len();
 

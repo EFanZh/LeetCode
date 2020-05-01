@@ -3,7 +3,7 @@ pub struct Solution {}
 use std::mem;
 
 impl Solution {
-    fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+    pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
         let (text1, text2) = if text2.len() < text1.len() {
             (text2.into_bytes(), text1.into_bytes())
         } else {

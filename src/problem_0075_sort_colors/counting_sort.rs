@@ -1,7 +1,7 @@
 pub struct Solution {}
 
 impl Solution {
-    fn sort_colors(nums: &mut Vec<i32>) {
+    pub fn sort_colors(nums: &mut Vec<i32>) {
         let mut counts = [0; 3];
 
         for num in &mut *nums {

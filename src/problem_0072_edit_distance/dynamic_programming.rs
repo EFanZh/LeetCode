@@ -3,7 +3,7 @@ pub struct Solution {}
 use std::mem;
 
 impl Solution {
-    fn min_distance(mut word1: String, mut word2: String) -> i32 {
+    pub fn min_distance(mut word1: String, mut word2: String) -> i32 {
         if word2.len() < word1.len() {
             mem::swap(&mut word1, &mut word2);
         }
