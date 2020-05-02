@@ -72,10 +72,9 @@ impl Solution {
         let s = s.into_bytes();
         let word_length = words.first().map_or(0, String::len);
         let num_words = words.len();
-        let window_length = word_length * num_words;
         let mut result = Vec::new();
 
-        if let Some(last_split) = s.len().checked_sub(window_length) {
+        if let Some(last_split) = s.len().checked_sub(word_length * num_words) {
             let words = words.iter().map(String::as_bytes).collect::<HashMultiSet<_>>();
             let mut words_cache = HashMultiSet::with_capacity(num_words);
 
