@@ -6,21 +6,14 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::super::test_utilities;
     use super::Solution;
-
-    fn sorted<T: Ord>(v: Vec<T>) -> Vec<T> {
-        let mut v = v;
-
-        v.sort_unstable();
-
-        v
-    }
 
     pub fn run<S: Solution>() {
         let test_cases = [
             (
                 (&[1, 0, -1, 0, -2, 2] as &[_], 0),
-                &[&[-1, 0, 0, 1], &[-2, -1, 1, 2], &[-2, 0, 0, 2]] as &[_],
+                &[&[-2, -1, 1, 2], &[-2, 0, 0, 2], &[-1, 0, 0, 1]] as &[_],
             ),
             ((&[], 0), &[]),
             ((&[0, 0, 0, 0], 0), &[&[0, 0, 0, 0]]),
@@ -43,7 +36,10 @@ mod tests {
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
-            assert_eq!(sorted(S::four_sum(nums.to_vec(), target)), sorted(expected.to_vec()));
+            assert_eq!(
+                test_utilities::unstable_sorted(S::four_sum(nums.to_vec(), target)),
+                expected
+            );
         }
     }
 }
