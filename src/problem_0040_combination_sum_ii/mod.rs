@@ -8,15 +8,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::super::test_utilities;
     use super::Solution;
-
-    fn sorted(mut value: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        value.iter_mut().for_each(|item| item.sort_unstable());
-
-        value.sort_unstable();
-
-        value
-    }
 
     pub fn run<S: Solution>() {
         let test_cases = [
@@ -28,7 +21,16 @@ mod tests {
         ];
 
         for ((candidates, target), expected) in test_cases.iter().copied() {
-            assert_eq!(sorted(S::combination_sum2(candidates.to_vec(), target)), expected);
+            assert_eq!(
+                test_utilities::unstable_sorted(S::combination_sum2(candidates.to_vec(), target).into_iter().map(
+                    |mut item| {
+                        item.sort_unstable();
+
+                        item
+                    }
+                )),
+                expected
+            );
         }
     }
 }

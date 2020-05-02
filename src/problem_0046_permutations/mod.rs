@@ -8,6 +8,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::super::test_utilities;
     use super::Solution;
 
     pub fn run<S: Solution>() {
@@ -51,11 +52,7 @@ mod tests {
         ];
 
         for (nums, expected) in test_cases.iter().copied() {
-            let mut result = S::permute(nums.to_vec());
-
-            result.sort_unstable();
-
-            assert_eq!(result, expected);
+            assert_eq!(test_utilities::unstable_sorted(S::permute(nums.to_vec())), expected);
         }
     }
 }

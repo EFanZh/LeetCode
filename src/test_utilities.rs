@@ -75,3 +75,11 @@ pub fn make_list<I: IntoIterator<Item = i32>>(values: I) -> Option<Box<ListNode>
 pub fn iter_list(list: &Option<Box<ListNode>>) -> impl Iterator<Item = &i32> {
     iter::successors(list.as_deref(), |node| node.next.as_deref()).map(|node| &node.val)
 }
+
+pub fn unstable_sorted<T: Ord, I: IntoIterator<Item = T>>(iter: I) -> Vec<T> {
+    let mut result = iter.into_iter().collect::<Vec<_>>();
+
+    result.sort();
+
+    result
+}
