@@ -28,6 +28,7 @@ pub mod problem_0026_remove_duplicates_from_sorted_array;
 pub mod problem_0027_remove_element;
 pub mod problem_0028_implement_strstr;
 pub mod problem_0029_divide_two_integers;
+pub mod problem_0030_substring_with_concatenation_of_all_words;
 pub mod problem_0031_next_permutation;
 pub mod problem_0032_longest_valid_parentheses;
 pub mod problem_0033_search_in_rotated_sorted_array;
