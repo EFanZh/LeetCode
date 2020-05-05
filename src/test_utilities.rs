@@ -83,3 +83,9 @@ pub fn unstable_sorted<T: Ord, I: IntoIterator<Item = T>>(iter: I) -> Vec<T> {
 
     result
 }
+
+pub fn almose_equal(x: f64, y: f64) -> bool {
+    let difference = y - x;
+
+    difference.abs() < (f64::EPSILON * (x + difference / 2.0)).abs()
+}

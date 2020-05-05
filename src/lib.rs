@@ -48,6 +48,7 @@ pub mod problem_0046_permutations;
 pub mod problem_0047_permutations_ii;
 pub mod problem_0048_rotate_image;
 pub mod problem_0049_group_anagrams;
+pub mod problem_0050_powx_n;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
