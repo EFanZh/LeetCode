@@ -18,7 +18,7 @@ impl Solution {
             );
         } else {
             for column in 0..n {
-                let main_diagonal = n - 1 + row - column;
+                let main_diagonal = n - 1 - row + column;
                 let anti_diagonal = row + column;
 
                 if !(column_hits[column] || main_diagonal_hits[main_diagonal] || anti_diagonal_hits[anti_diagonal]) {
