@@ -52,6 +52,7 @@ pub mod problem_0050_powx_n;
 pub mod problem_0051_n_queens;
 pub mod problem_0052_n_queens_ii;
 pub mod problem_0053_maximum_subarray;
+pub mod problem_0054_spiral_matrix;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
