@@ -10,7 +10,6 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        // https://oeis.org/A000170.
         let test_cases = [(&[-2, 1, -3, 4, -1, 2, 1, -5, 4] as &[_], 6)];
 
         for (nums, expected) in test_cases.iter().copied() {
