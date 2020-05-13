@@ -56,6 +56,7 @@ pub mod problem_0054_spiral_matrix;
 pub mod problem_0055_jump_game;
 pub mod problem_0056_merge_intervals;
 pub mod problem_0057_insert_interval;
+pub mod problem_0058_length_of_last_word;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
