@@ -1,4 +1,6 @@
 pub mod binary_search;
+pub mod binary_search_2;
+pub mod binary_search_3;
 
 pub trait Solution {
     fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>>;
