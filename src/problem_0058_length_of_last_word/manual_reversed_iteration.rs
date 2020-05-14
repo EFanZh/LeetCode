@@ -9,10 +9,10 @@ impl Solution {
                 let mut result = 1;
 
                 while let Some(c) = iter.next_back() {
-                    if c != b' ' {
-                        result += 1;
-                    } else {
+                    if c == b' ' {
                         break;
+                    } else {
+                        result += 1;
                     }
                 }
 
