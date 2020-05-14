@@ -5,8 +5,8 @@ impl Solution {
         let start = new_interval[0];
         let end = new_interval[1];
 
-        match intervals.binary_search_by(|interval| interval[1].cmp(&start)) {
-            Ok(i) => match intervals[i..].binary_search_by(|interval| interval[0].cmp(&end)) {
+        match intervals.binary_search_by_key(&start, |interval| interval[1]) {
+            Ok(i) => match intervals[i..].binary_search_by_key(&end, |interval| interval[0]) {
                 Ok(mut j) => {
                     j += i;
                     intervals[i][1] = intervals[j][1];
@@ -18,7 +18,7 @@ impl Solution {
                     intervals.drain(i + 1..j);
                 }
             },
-            Err(i) => match intervals[i..].binary_search_by(|interval| interval[0].cmp(&end)) {
+            Err(i) => match intervals[i..].binary_search_by_key(&end, |interval| interval[0]) {
                 Ok(mut j) => {
                     j += i;
                     intervals[j][0] = start.min(intervals[i][0]);
