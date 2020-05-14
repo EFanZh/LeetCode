@@ -90,10 +90,6 @@ Why does the [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm
 
 How did I come up with the backtracking solution 2 and 3?
 
-## [57. Insert Interval](https://leetcode.com/problems/insert-interval/)
-
-Optimize the solution.
-
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
