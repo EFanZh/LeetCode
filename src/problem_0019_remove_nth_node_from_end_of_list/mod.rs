@@ -17,8 +17,14 @@ mod tests {
 
         for ((head, n), expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::remove_nth_from_end(test_utilities::make_list(head.iter().copied()), n),
-                test_utilities::make_list(expected.iter().copied())
+                test_utilities::iter_list(&S::remove_nth_from_end(
+                    test_utilities::make_list(head.iter().copied()),
+                    n
+                ))
+                .copied()
+                .collect::<Box<_>>()
+                .as_ref(),
+                expected
             );
         }
     }
