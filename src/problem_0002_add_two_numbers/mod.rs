@@ -17,9 +17,14 @@ mod tests {
         for ((l1, l2), expected) in test_cases.iter().copied() {
             let l1 = test_utilities::make_list(l1.iter().copied());
             let l2 = test_utilities::make_list(l2.iter().copied());
-            let expected = test_utilities::make_list(expected.iter().copied());
 
-            assert_eq!(S::add_two_numbers(l1, l2), expected);
+            assert_eq!(
+                test_utilities::iter_list(&S::add_two_numbers(l1, l2))
+                    .copied()
+                    .collect::<Box<_>>()
+                    .as_ref(),
+                expected
+            );
         }
     }
 }
