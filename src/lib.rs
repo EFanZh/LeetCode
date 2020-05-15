@@ -58,6 +58,7 @@ pub mod problem_0056_merge_intervals;
 pub mod problem_0057_insert_interval;
 pub mod problem_0058_length_of_last_word;
 pub mod problem_0059_spiral_matrix_ii;
+pub mod problem_0060_permutation_sequence;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
