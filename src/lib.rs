@@ -61,6 +61,7 @@ pub mod problem_0059_spiral_matrix_ii;
 pub mod problem_0060_permutation_sequence;
 pub mod problem_0061_rotate_list;
 pub mod problem_0062_unique_paths;
+pub mod problem_0063_unique_paths_ii;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
