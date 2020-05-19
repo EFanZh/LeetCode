@@ -94,6 +94,10 @@ How did I come up with the backtracking solution 2 and 3?
 
 How to come up with the mathematical solution?
 
+## [65. Valid Number](https://leetcode.com/problems/valid-number/)
+
+Optimize the solution.
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
