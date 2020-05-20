@@ -64,6 +64,7 @@ pub mod problem_0062_unique_paths;
 pub mod problem_0063_unique_paths_ii;
 pub mod problem_0064_minimum_path_sum;
 pub mod problem_0065_valid_number;
+pub mod problem_0066_plus_one;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
