@@ -12,7 +12,8 @@ impl Solution {
             }
         }
 
-        digits.insert(0, 1);
+        digits[0] = 1;
+        digits.push(0);
 
         digits
     }
