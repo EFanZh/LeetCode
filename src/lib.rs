@@ -66,6 +66,7 @@ pub mod problem_0064_minimum_path_sum;
 pub mod problem_0065_valid_number;
 pub mod problem_0066_plus_one;
 pub mod problem_0067_add_binary;
+pub mod problem_0068_text_justification;
 pub mod problem_0072_edit_distance;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
