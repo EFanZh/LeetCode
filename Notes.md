@@ -100,7 +100,7 @@ Optimize the solution.
 
 ## [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 
-Why is the Newton’s method solution correct?
+Pay attention to the Newton’s method.
 
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
