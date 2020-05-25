@@ -23,6 +23,7 @@ mod tests {
             (8, 34),
             (9, 55),
             (10, 89),
+            (45, 1_836_311_903),
         ];
 
         for (n, expected) in test_cases.iter().copied() {

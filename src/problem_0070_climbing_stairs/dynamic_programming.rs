@@ -2,13 +2,13 @@ pub struct Solution {}
 
 impl Solution {
     pub fn climb_stairs(n: i32) -> i32 {
-        let mut cache = (1, 1);
+        let mut cache = (0, 1);
 
         for _ in 0..n {
             cache = (cache.1, cache.0 + cache.1)
         }
 
-        cache.0
+        cache.1
     }
 }
 
