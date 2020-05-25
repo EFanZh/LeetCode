@@ -22,6 +22,8 @@ mod tests {
             (8, 2),
             (9, 3),
             (10, 3),
+            (2_147_395_600, 46340),
+            (2_147_483_647, 46340),
         ];
 
         for (x, expected) in test_cases.iter().copied() {
