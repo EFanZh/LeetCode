@@ -71,6 +71,7 @@ pub mod problem_0069_sqrtx;
 pub mod problem_0070_climbing_stairs;
 pub mod problem_0071_simplify_path;
 pub mod problem_0072_edit_distance;
+pub mod problem_0073_set_matrix_zeroes;
 pub mod problem_0075_sort_colors;
 pub mod problem_0089_gray_code;
 pub mod problem_0094_binary_tree_inorder_traversal;
