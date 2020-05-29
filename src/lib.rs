@@ -85,6 +85,7 @@ pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0232_implement_queue_using_stacks;
 pub mod problem_0239_sliding_window_maximum;
+pub mod problem_0240_search_a_2d_matrix_ii;
 pub mod problem_0300_longest_increasing_subsequence;
 pub mod problem_0322_coin_change;
 pub mod problem_0435_non_overlapping_intervals;
