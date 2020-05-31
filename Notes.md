@@ -106,6 +106,10 @@ Pay attention to the Newton’s method.
 
 Optimize the solution.
 
+## [77. Combinations](https://leetcode.com/problems/combinations/)
+
+Remember the solution. Think an iterative solution.
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
