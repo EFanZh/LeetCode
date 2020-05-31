@@ -102,6 +102,10 @@ Optimize the solution.
 
 Pay attention to the Newton’s method.
 
+## [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+
+Optimize the solution.
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
