@@ -74,6 +74,7 @@ pub mod problem_0072_edit_distance;
 pub mod problem_0073_set_matrix_zeroes;
 pub mod problem_0074_search_a_2d_matrix;
 pub mod problem_0075_sort_colors;
+pub mod problem_0076_minimum_window_substring;
 pub mod problem_0089_gray_code;
 pub mod problem_0094_binary_tree_inorder_traversal;
 pub mod problem_0102_binary_tree_level_order_traversal;
