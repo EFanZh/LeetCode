@@ -77,6 +77,7 @@ pub mod problem_0075_sort_colors;
 pub mod problem_0076_minimum_window_substring;
 pub mod problem_0077_combinations;
 pub mod problem_0078_subsets;
+pub mod problem_0079_word_search;
 pub mod problem_0089_gray_code;
 pub mod problem_0094_binary_tree_inorder_traversal;
 pub mod problem_0102_binary_tree_level_order_traversal;
