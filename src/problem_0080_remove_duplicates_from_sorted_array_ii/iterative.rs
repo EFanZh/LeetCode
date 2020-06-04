@@ -8,11 +8,10 @@ impl Solution {
 
             'outer: while let Some(current) = nums.get(i).copied() {
                 nums.swap(deduped, i);
+                deduped += 1;
+                i += 1;
 
                 if current == prev {
-                    deduped += 1;
-                    i += 1;
-
                     while let Some(current) = nums.get(i).copied() {
                         if current == prev {
                             i += 1;
@@ -29,9 +28,7 @@ impl Solution {
 
                     break;
                 } else {
-                    deduped += 1;
                     prev = current;
-                    i += 1;
                 }
             }
 
