@@ -80,6 +80,7 @@ pub mod problem_0078_subsets;
 pub mod problem_0079_word_search;
 pub mod problem_0080_remove_duplicates_from_sorted_array_ii;
 pub mod problem_0081_search_in_rotated_sorted_array_ii;
+pub mod problem_0082_remove_duplicates_from_sorted_list_ii;
 pub mod problem_0089_gray_code;
 pub mod problem_0094_binary_tree_inorder_traversal;
 pub mod problem_0102_binary_tree_level_order_traversal;
