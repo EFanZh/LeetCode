@@ -114,6 +114,10 @@ Remember the solution. Think an iterative solution.
 
 Make sure it can be solved again.
 
+## [85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)
+
+Make sure it can be solved again.
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
