@@ -110,6 +110,10 @@ Optimize the solution.
 
 Remember the solution. Think an iterative solution.
 
+## [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+
+Make sure it can be solved again.
+
 ## [89. Gray Code](https://leetcode.com/problems/gray-code/)
 
 How to come up with the solution `i ^ (i >> 1)`?
