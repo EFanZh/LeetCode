@@ -122,6 +122,10 @@ Make sure it can be solved again.
 
 How to come up with the solution `i ^ (i >> 1)`?
 
+## [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
+
+Investigate other methods.
+
 ## [164. Maximum Gap](https://leetcode.com/problems/maximum-gap/)
 
 How to come up with the bucket and pigeonhole solution?
