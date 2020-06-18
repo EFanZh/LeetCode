@@ -12,7 +12,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities::make_tree;
+    use super::super::test_utilities;
     use super::Solution;
 
     pub fn run<S: Solution>() {
@@ -20,7 +20,7 @@ mod tests {
 
         for (serialized_tree, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::preorder_traversal(make_tree(serialized_tree.iter().copied())),
+                S::preorder_traversal(test_utilities::make_tree(serialized_tree.iter().copied())),
                 expected
             );
         }
