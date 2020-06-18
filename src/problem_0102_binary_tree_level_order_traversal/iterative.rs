@@ -11,34 +11,30 @@ impl Solution {
         let mut result = Vec::new();
 
         if let Some(node) = root {
-            let mut node_level = VecDeque::new();
-
-            result.push(vec![node.borrow().val]);
-
-            node_level.push_back(node);
+            let mut queue = VecDeque::from(vec![node]);
 
             loop {
-                let mut value_level = Vec::new();
+                let mut level = Vec::with_capacity(queue.len());
 
-                for _ in 0..node_level.len() {
-                    let node = node_level.pop_front().unwrap();
-                    let node_ref = node.borrow();
+                for _ in 0..queue.len() {
+                    let node = queue.pop_front().unwrap();
+                    let node = node.borrow();
 
-                    if let Some(left) = &node_ref.left {
-                        node_level.push_back(left.clone());
-                        value_level.push(left.borrow().val);
+                    level.push(node.val);
+
+                    if let Some(left) = node.left.clone() {
+                        queue.push_back(left);
                     }
 
-                    if let Some(right) = &node_ref.right {
-                        node_level.push_back(right.clone());
-                        value_level.push(right.borrow().val);
+                    if let Some(right) = node.right.clone() {
+                        queue.push_back(right)
                     };
                 }
 
-                if node_level.is_empty() {
+                result.push(level);
+
+                if queue.is_empty() {
                     break;
-                } else {
-                    result.push(value_level);
                 }
             }
         }
