@@ -10,7 +10,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities::make_tree;
+    use super::super::test_utilities;
     use super::Solution;
 
     pub fn run<S: Solution>() {
@@ -20,7 +20,10 @@ mod tests {
         )];
 
         for (serialized_tree, expected) in test_cases.iter().copied() {
-            assert_eq!(S::level_order(make_tree(serialized_tree.iter().copied())), expected);
+            assert_eq!(
+                S::level_order(test_utilities::make_tree(serialized_tree.iter().copied())),
+                expected
+            );
         }
     }
 }
