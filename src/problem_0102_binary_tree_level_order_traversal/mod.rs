@@ -19,9 +19,9 @@ mod tests {
             &[&[3] as &[_], &[9, 20], &[15, 7]] as &[_],
         )];
 
-        for (serialized_tree, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::level_order(test_utilities::make_tree(serialized_tree.iter().copied())),
+                S::level_order(test_utilities::make_tree(root.iter().copied())),
                 expected
             );
         }
