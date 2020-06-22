@@ -24,7 +24,7 @@ mod tests {
 
         for (root, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::is_symmetric(test_utilities::make_tree(root.iter().copied()),),
+                S::is_symmetric(test_utilities::make_tree(root.iter().copied())),
                 expected
             );
         }
