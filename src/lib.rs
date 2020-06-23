@@ -101,6 +101,7 @@ pub mod problem_0100_same_tree;
 pub mod problem_0101_symmetric_tree;
 pub mod problem_0102_binary_tree_level_order_traversal;
 pub mod problem_0103_binary_tree_zigzag_level_order_traversal;
+pub mod problem_0104_maximum_depth_of_binary_tree;
 pub mod problem_0136_single_number;
 pub mod problem_0144_binary_tree_preorder_traversal;
 pub mod problem_0145_binary_tree_postorder_traversal;
