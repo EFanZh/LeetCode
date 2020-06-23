@@ -4,6 +4,7 @@ use std::rc::Rc;
 
 pub mod iterative;
 pub mod morris_traversal;
+pub mod morris_traversal_keep_structure;
 pub mod partial_iterative;
 pub mod recursive;
 
