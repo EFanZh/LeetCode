@@ -110,6 +110,7 @@ pub mod problem_0108_convert_sorted_array_to_binary_search_tree;
 pub mod problem_0109_convert_sorted_list_to_binary_search_tree;
 pub mod problem_0110_balanced_binary_tree;
 pub mod problem_0111_minimum_depth_of_binary_tree;
+pub mod problem_0112_path_sum;
 pub mod problem_0136_single_number;
 pub mod problem_0144_binary_tree_preorder_traversal;
 pub mod problem_0145_binary_tree_postorder_traversal;
