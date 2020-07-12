@@ -34,7 +34,7 @@ mod tests {
                 ] as &[_],
                 22,
             ),
-            &[&[5, 4, 11, 2] as &[_], &[5, 8, 4, 5]] as &[_],
+            &[&[5, 4, 11, 2] as &[_], &[5, 8, 4, 5]] as &[&[_]],
         )];
 
         for ((root, sum), expected) in test_cases.iter().copied() {
