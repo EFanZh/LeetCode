@@ -120,6 +120,7 @@ pub mod problem_0120_triangle;
 pub mod problem_0121_best_time_to_buy_and_sell_stock;
 pub mod problem_0122_best_time_to_buy_and_sell_stock_ii;
 pub mod problem_0123_best_time_to_buy_and_sell_stock_iii;
+pub mod problem_0124_binary_tree_maximum_path_sum;
 pub mod problem_0136_single_number;
 pub mod problem_0144_binary_tree_preorder_traversal;
 pub mod problem_0145_binary_tree_postorder_traversal;
