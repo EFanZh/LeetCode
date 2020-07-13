@@ -2,7 +2,7 @@ use super::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-pub mod iterative;
+pub mod recursive;
 
 pub trait Solution {
     fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32;
