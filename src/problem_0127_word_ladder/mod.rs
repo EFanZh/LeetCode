@@ -14,7 +14,7 @@ mod tests {
         let test_cases = [
             (("hit", "cog", &["hot", "dot", "dog", "lot", "log", "cog"] as &[_]), 5),
             (("hit", "cog", &["hot", "dot", "dog", "lot", "log"]), 0),
-            (("a", "c", &["a", "b", "c"]), 1),
+            (("a", "c", &["a", "b", "c"]), 2),
         ];
 
         for ((begin_word, end_word, word_list), expected) in test_cases.iter().copied() {
