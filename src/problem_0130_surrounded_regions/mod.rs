@@ -1,4 +1,5 @@
 pub mod bfs;
+pub mod bfs_2;
 
 pub trait Solution {
     fn solve(board: &mut Vec<Vec<char>>);
