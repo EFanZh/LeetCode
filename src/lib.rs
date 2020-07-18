@@ -124,6 +124,7 @@ pub mod problem_0124_binary_tree_maximum_path_sum;
 pub mod problem_0125_valid_palindrome;
 pub mod problem_0127_word_ladder;
 pub mod problem_0129_sum_root_to_leaf_numbers;
+pub mod problem_0130_surrounded_regions;
 pub mod problem_0136_single_number;
 pub mod problem_0137_single_number_ii;
 pub mod problem_0144_binary_tree_preorder_traversal;
