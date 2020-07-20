@@ -5,8 +5,8 @@ impl Solution {
         let mut result = Vec::new();
 
         while n != 0 {
-            result.push(b'A' + ((n - 1) % 26) as u8);
             n -= 1;
+            result.push(b'A' + (n % 26) as u8);
             n /= 26;
         }
 
