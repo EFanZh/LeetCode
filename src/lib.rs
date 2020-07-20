@@ -131,6 +131,7 @@ pub mod problem_0144_binary_tree_preorder_traversal;
 pub mod problem_0145_binary_tree_postorder_traversal;
 pub mod problem_0164_maximum_gap;
 pub mod problem_0167_two_sum_ii_input_array_is_sorted;
+pub mod problem_0168_excel_sheet_column_title;
 pub mod problem_0188_best_time_to_buy_and_sell_stock_iv;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
