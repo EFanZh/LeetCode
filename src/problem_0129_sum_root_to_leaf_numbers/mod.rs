@@ -16,7 +16,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [
             (&[Some(1), Some(2), Some(3)] as &[_], 25),
-            (&[Some(4), Some(9), Some(0), Some(5), Some(1)] as &[_], 1026),
+            (&[Some(4), Some(9), Some(0), Some(5), Some(1)], 1026),
         ];
 
         for (root, expected) in test_cases.iter().copied() {
