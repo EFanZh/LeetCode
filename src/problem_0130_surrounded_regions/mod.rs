@@ -15,13 +15,14 @@ mod tests {
             &["XXXX", "XXXX", "XXXX", "XOXX"] as &[_],
         )];
 
-        for (nums, expected) in test_cases.iter().copied() {
-            let mut nums = nums.iter().map(|row| row.chars().collect()).collect();
+        for (board, expected) in test_cases.iter().copied() {
+            let mut board = board.iter().map(|row| row.chars().collect()).collect();
 
-            S::solve(&mut nums);
+            S::solve(&mut board);
 
             assert_eq!(
-                nums.into_iter()
+                board
+                    .into_iter()
                     .map(|row| row.into_iter().collect::<String>())
                     .collect::<Box<_>>()
                     .as_ref(),
