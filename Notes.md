@@ -126,6 +126,10 @@ How to come up with the solution `i ^ (i >> 1)`?
 
 Investigate other methods.
 
+## [126. Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
+
+Optimize the solution.
+
 ## [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)
 
 Make a faster solution.
