@@ -128,6 +128,7 @@ pub mod problem_0128_longest_consecutive_sequence;
 pub mod problem_0129_sum_root_to_leaf_numbers;
 pub mod problem_0130_surrounded_regions;
 pub mod problem_0131_palindrome_partitioning;
+pub mod problem_0132_palindrome_partitioning_ii;
 pub mod problem_0136_single_number;
 pub mod problem_0137_single_number_ii;
 pub mod problem_0144_binary_tree_preorder_traversal;

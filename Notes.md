@@ -134,6 +134,14 @@ Optimize the solution.
 
 Make a faster solution.
 
+## [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
+
+Solve it without using hash maps.
+
+## [132. Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)
+
+Solve it without using hash maps.
+
 ## [164. Maximum Gap](https://leetcode.com/problems/maximum-gap/)
 
 How to come up with the bucket and pigeonhole solution?
