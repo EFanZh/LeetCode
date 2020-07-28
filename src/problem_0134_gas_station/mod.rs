@@ -1,5 +1,5 @@
-pub mod dynamic_programming;
 pub mod greedy;
+pub mod greedy_2;
 
 pub trait Solution {
     fn can_complete_circuit(gas: Vec<i32>, cost: Vec<i32>) -> i32;
