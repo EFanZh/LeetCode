@@ -130,6 +130,7 @@ pub mod problem_0130_surrounded_regions;
 pub mod problem_0131_palindrome_partitioning;
 pub mod problem_0132_palindrome_partitioning_ii;
 pub mod problem_0134_gas_station;
+pub mod problem_0135_candy;
 pub mod problem_0136_single_number;
 pub mod problem_0137_single_number_ii;
 pub mod problem_0139_word_break;
