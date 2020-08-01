@@ -138,6 +138,7 @@ pub mod problem_0140_word_break_ii;
 pub mod problem_0143_reorder_list;
 pub mod problem_0144_binary_tree_preorder_traversal;
 pub mod problem_0145_binary_tree_postorder_traversal;
+pub mod problem_0146_lru_cache;
 pub mod problem_0150_evaluate_reverse_polish_notation;
 pub mod problem_0153_find_minimum_in_rotated_sorted_array;
 pub mod problem_0164_maximum_gap;
