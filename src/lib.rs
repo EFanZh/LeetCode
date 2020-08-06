@@ -141,6 +141,7 @@ pub mod problem_0145_binary_tree_postorder_traversal;
 pub mod problem_0146_lru_cache;
 pub mod problem_0147_insertion_sort_list;
 pub mod problem_0148_sort_list;
+pub mod problem_0149_max_points_on_a_line;
 pub mod problem_0150_evaluate_reverse_polish_notation;
 pub mod problem_0151_reverse_words_in_a_string;
 pub mod problem_0152_maximum_product_subarray;
