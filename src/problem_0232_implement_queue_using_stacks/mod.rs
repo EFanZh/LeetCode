@@ -13,7 +13,7 @@ mod tests {
     use super::MyQueue;
 
     #[derive(Clone, Copy)]
-    enum QueueOperation {
+    enum Operation {
         Push(i32),
         Pop(i32),
         Peek(i32),
@@ -21,7 +21,7 @@ mod tests {
     }
 
     pub fn run<Q: MyQueue>() {
-        use QueueOperation::{Empty, Peek, Pop, Push};
+        use Operation::{Empty, Peek, Pop, Push};
 
         let test_cases = [&[Push(1), Push(2), Peek(1), Pop(1), Empty(false)] as &[_]];
 

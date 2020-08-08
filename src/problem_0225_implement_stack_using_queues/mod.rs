@@ -14,7 +14,7 @@ mod tests {
     use super::MyStack;
 
     #[derive(Clone, Copy)]
-    enum StackOperation {
+    enum Operation {
         Push(i32),
         Pop(i32),
         Top(i32),
@@ -22,7 +22,7 @@ mod tests {
     }
 
     pub fn run<S: MyStack>() {
-        use StackOperation::{Empty, Pop, Push, Top};
+        use Operation::{Empty, Pop, Push, Top};
 
         let test_cases = [&[Push(1), Push(2), Top(2), Pop(2), Empty(false)] as &[_]];
 
