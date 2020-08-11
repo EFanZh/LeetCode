@@ -150,6 +150,7 @@ pub mod problem_0154_find_minimum_in_rotated_sorted_array_ii;
 pub mod problem_0155_min_stack;
 pub mod problem_0162_find_peak_element;
 pub mod problem_0164_maximum_gap;
+pub mod problem_0165_compare_version_numbers;
 pub mod problem_0167_two_sum_ii_input_array_is_sorted;
 pub mod problem_0168_excel_sheet_column_title;
 pub mod problem_0188_best_time_to_buy_and_sell_stock_iv;
