@@ -154,6 +154,7 @@ pub mod problem_0165_compare_version_numbers;
 pub mod problem_0166_fraction_to_recurring_decimal;
 pub mod problem_0167_two_sum_ii_input_array_is_sorted;
 pub mod problem_0168_excel_sheet_column_title;
+pub mod problem_0169_majority_element;
 pub mod problem_0188_best_time_to_buy_and_sell_stock_iv;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
