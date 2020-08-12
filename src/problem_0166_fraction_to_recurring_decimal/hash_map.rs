@@ -8,6 +8,7 @@ impl Solution {
         let numerator = i64::from(numerator);
         let denominator = i64::from(denominator);
         let integer_part = numerator / denominator;
+        let mut remainder = numerator % denominator;
 
         let mut result = if integer_part == 0 && if denominator < 0 { numerator > 0 } else { numerator < 0 } {
             String::from("-0")
@@ -15,14 +16,12 @@ impl Solution {
             integer_part.to_string()
         };
 
-        let numerator = numerator.abs();
-        let denominator = denominator.abs();
-        let mut remainder = numerator % denominator;
-
         if remainder != 0 {
+            let denominator = denominator.abs();
             let mut remainder_to_index = HashMap::new();
 
             result.push('.');
+            remainder = remainder.abs();
 
             loop {
                 match remainder_to_index.entry(remainder) {
