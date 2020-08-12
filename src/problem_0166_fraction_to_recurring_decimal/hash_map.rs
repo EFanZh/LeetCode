@@ -17,39 +17,32 @@ impl Solution {
 
         let numerator = numerator.abs();
         let denominator = denominator.abs();
-        let mut fraction_part = Vec::new();
-        let mut remainder_to_index = HashMap::new();
         let mut remainder = numerator % denominator;
 
-        loop {
-            if remainder == 0 {
-                if !fraction_part.is_empty() {
-                    result.push('.');
-                    result.extend(fraction_part.into_iter().map(char::from));
-                }
+        if remainder != 0 {
+            let mut remainder_to_index = HashMap::new();
 
-                break;
-            } else {
-                let temp = remainder * 10;
-                let digit = (temp / denominator) as u8;
+            result.push('.');
 
+            loop {
                 match remainder_to_index.entry(remainder) {
                     Entry::Occupied(entry) => {
-                        let (left, right) = fraction_part.split_at(*entry.into_mut());
-
-                        result.push('.');
-                        result.extend(left.iter().copied().map(char::from));
-                        result.push('(');
-                        result.extend(right.iter().copied().map(char::from));
+                        result.insert(*entry.into_mut(), '(');
                         result.push(')');
 
                         break;
                     }
                     Entry::Vacant(entry) => {
-                        entry.insert(fraction_part.len());
-                        fraction_part.push(b'0' + digit);
+                        let temp = remainder * 10;
+
+                        entry.insert(result.len());
+                        result.push(char::from(b'0' + (temp / denominator) as u8));
                         remainder = temp % denominator;
                     }
+                }
+
+                if remainder == 0 {
+                    break;
                 }
             }
         }
