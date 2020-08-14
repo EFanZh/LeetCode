@@ -146,6 +146,10 @@ Solve it without using hash maps.
 
 How does the greedy solution work?
 
+## [146. LRU Cache](https://leetcode.com/problems/lru-cache/) ★
+
+Make sure it can be solved again.
+
 ## [164. Maximum Gap](https://leetcode.com/problems/maximum-gap/)
 
 How to come up with the bucket and pigeonhole solution?
