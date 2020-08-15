@@ -5,7 +5,7 @@ use git2::{Repository, Tree};
 use plotters::chart::ChartBuilder;
 use plotters::drawing::{IntoDrawingArea, SVGBackend};
 use plotters::series::LineSeries;
-use plotters::style::colors::RED;
+use plotters::style::colors;
 use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::path::Path;
@@ -63,7 +63,9 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
         .draw()
         .unwrap();
 
-    chart.draw_series(LineSeries::new(data.iter().copied(), &RED)).unwrap();
+    chart
+        .draw_series(LineSeries::new(data.iter().copied(), &colors::RED))
+        .unwrap();
 }
 
 pub fn draw<P: AsRef<Path>>(repository: &Repository, problems: &Problems, output: P) {
