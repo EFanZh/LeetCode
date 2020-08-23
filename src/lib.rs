@@ -166,6 +166,7 @@ pub mod problem_0189_rotate_array;
 pub mod problem_0190_reverse_bits;
 pub mod problem_0191_number_of_1_bits;
 pub mod problem_0198_house_robber;
+pub mod problem_0206_reverse_linked_list;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0232_implement_queue_using_stacks;
