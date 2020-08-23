@@ -1,4 +1,5 @@
 pub mod cheating;
+pub mod cyclic_replacements;
 pub mod triple_reverses;
 
 pub trait Solution {
