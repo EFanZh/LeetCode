@@ -167,6 +167,7 @@ pub mod problem_0190_reverse_bits;
 pub mod problem_0191_number_of_1_bits;
 pub mod problem_0198_house_robber;
 pub mod problem_0199_binary_tree_right_side_view;
+pub mod problem_0200_number_of_islands;
 pub mod problem_0206_reverse_linked_list;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
