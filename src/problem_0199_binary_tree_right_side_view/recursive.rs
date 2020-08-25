@@ -11,7 +11,7 @@ impl Solution {
             let (left, right, next_depth) = {
                 let node = node.borrow();
 
-                if depth >= result.len() {
+                if depth == result.len() {
                     result.push(node.val);
                 }
 
