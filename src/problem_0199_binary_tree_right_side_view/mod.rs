@@ -2,6 +2,7 @@ use super::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
+pub mod bfs;
 pub mod recursive;
 
 pub trait Solution {
