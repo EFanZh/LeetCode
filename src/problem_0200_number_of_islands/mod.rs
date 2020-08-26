@@ -1,4 +1,6 @@
 pub mod bfs;
+pub mod dfs;
+pub mod recursive_dfs;
 
 pub trait Solution {
     fn num_islands(grid: Vec<Vec<char>>) -> i32;
