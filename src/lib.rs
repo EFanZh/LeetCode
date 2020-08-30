@@ -171,6 +171,7 @@ pub mod problem_0200_number_of_islands;
 pub mod problem_0201_bitwise_and_of_numbers_range;
 pub mod problem_0202_happy_number;
 pub mod problem_0203_remove_linked_list_elements;
+pub mod problem_0204_count_primes;
 pub mod problem_0206_reverse_linked_list;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
