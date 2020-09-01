@@ -175,6 +175,7 @@ pub mod problem_0204_count_primes;
 pub mod problem_0205_isomorphic_strings;
 pub mod problem_0206_reverse_linked_list;
 pub mod problem_0207_course_schedule;
+pub mod problem_0208_implement_trie_prefix_tree;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0232_implement_queue_using_stacks;
