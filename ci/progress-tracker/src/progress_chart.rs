@@ -3,7 +3,8 @@ use super::solutions;
 use chrono::{DateTime, TimeZone, Utc};
 use git2::{Repository, Tree};
 use plotters::chart::ChartBuilder;
-use plotters::drawing::{IntoDrawingArea, SVGBackend};
+use plotters::drawing::IntoDrawingArea;
+use plotters::prelude::SVGBackend;
 use plotters::series::LineSeries;
 use plotters::style::colors;
 use std::cmp::Ordering;
@@ -51,7 +52,7 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
     let mut chart = ChartBuilder::on(&backend)
         .x_label_area_size(V_MARGIN)
         .y_label_area_size(H_MARGIN)
-        .build_ranged(data.first().unwrap().0..data.last().unwrap().0, 0.0..101.0)
+        .build_cartesian_2d(data.first().unwrap().0..data.last().unwrap().0, 0.0..101.0)
         .unwrap();
 
     chart
