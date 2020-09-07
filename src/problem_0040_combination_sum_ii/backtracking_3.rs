@@ -7,35 +7,35 @@ impl Solution {
     fn combination_sum2_helper<'a, I: Iterator<Item = (&'a i32, &'a i32)> + Clone>(
         mut counts: I,
         mut target: i32,
-        used: &mut Vec<i32>,
+        base: &mut Vec<i32>,
         result: &mut Vec<Vec<i32>>,
     ) {
         if target == 0 {
-            result.push(used.clone())
+            result.push(base.clone())
         } else if let Some((&num, &count)) = counts.next() {
-            let original_size = used.len();
+            let original_size = base.len();
 
-            Self::combination_sum2_helper(counts.clone(), target, used, result);
+            Self::combination_sum2_helper(counts.clone(), target, base, result);
 
             if target >= num {
-                used.push(num);
+                base.push(num);
                 target -= num;
 
-                Self::combination_sum2_helper(counts.clone(), target, used, result);
+                Self::combination_sum2_helper(counts.clone(), target, base, result);
 
                 for _ in 1..count {
                     if target >= num {
-                        used.push(num);
+                        base.push(num);
                         target -= num;
 
-                        Self::combination_sum2_helper(counts.clone(), target, used, result);
+                        Self::combination_sum2_helper(counts.clone(), target, base, result);
                     } else {
                         break;
                     }
                 }
             }
 
-            used.truncate(original_size);
+            base.truncate(original_size);
         }
     }
 

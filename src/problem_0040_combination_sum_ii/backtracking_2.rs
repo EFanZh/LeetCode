@@ -5,19 +5,19 @@ impl Solution {
         first: i32,
         mut rest: &[i32],
         target: i32,
-        used: &mut Vec<i32>,
+        base: &mut Vec<i32>,
         result: &mut Vec<Vec<i32>>,
     ) {
         if target >= first {
-            used.push(first);
-            Self::combination_sum2_helper(rest, target - first, used, result);
-            used.pop();
+            base.push(first);
+            Self::combination_sum2_helper(rest, target - first, base, result);
+            base.pop();
 
             while let Some((&new_first, new_rest)) = rest.split_first() {
                 if new_first == first {
                     rest = new_rest;
                 } else {
-                    Self::combination_sum2_helper_non_empty(new_first, new_rest, target, used, result);
+                    Self::combination_sum2_helper_non_empty(new_first, new_rest, target, base, result);
 
                     break;
                 }
