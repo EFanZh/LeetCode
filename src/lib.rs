@@ -180,6 +180,7 @@ pub mod problem_0209_minimum_size_subarray_sum;
 pub mod problem_0210_course_schedule_ii;
 pub mod problem_0212_word_search_ii;
 pub mod problem_0213_house_robber_ii;
+pub mod problem_0214_shortest_palindrome;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0217_contains_duplicate;
 pub mod problem_0225_implement_stack_using_queues;
