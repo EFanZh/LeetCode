@@ -30,13 +30,13 @@ mod tests {
         ] as &[_]];
 
         for operations in test_cases.iter().copied() {
-            let mut tire = T::new();
+            let mut trie = T::new();
 
             for operation in operations {
-                match operation {
-                    Insert(word) => tire.insert((*word).to_string()),
-                    Search(word, expected) => assert_eq!(tire.search((*word).to_string()), *expected),
-                    StartsWith(prefix, expected) => assert_eq!(tire.starts_with((*prefix).to_string()), *expected),
+                match *operation {
+                    Insert(word) => trie.insert(word.to_string()),
+                    Search(word, expected) => assert_eq!(trie.search(word.to_string()), expected),
+                    StartsWith(prefix, expected) => assert_eq!(trie.starts_with(prefix.to_string()), expected),
                 }
             }
         }
