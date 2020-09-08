@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn remove_duplicates_single(nums: &mut [i32], deduped: usize, prev: i32, i: usize) -> usize {

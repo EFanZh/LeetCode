@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 use std::borrow::Borrow;
 use std::collections::hash_map::Entry;

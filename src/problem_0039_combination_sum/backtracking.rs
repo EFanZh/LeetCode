@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn combination_sum_helper(candidates: &[i32], target: i32, base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {

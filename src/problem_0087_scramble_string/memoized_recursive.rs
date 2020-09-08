@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 use std::collections::HashMap;
 use std::ptr::NonNull;

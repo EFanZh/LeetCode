@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 // https://en.wikipedia.org/wiki/Fibonacci_number#Closed-form_expression
 

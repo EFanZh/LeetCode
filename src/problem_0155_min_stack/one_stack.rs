@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 struct MinStack {
     stack: Vec<(i32, i32)>,

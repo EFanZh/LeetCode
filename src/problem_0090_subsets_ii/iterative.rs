@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn extend_result(result: &mut Vec<Vec<i32>>, num: i32, extra: u32) {

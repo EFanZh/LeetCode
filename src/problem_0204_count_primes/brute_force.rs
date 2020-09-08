@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn is_prime(i: i32, nums: &[i32]) -> bool {

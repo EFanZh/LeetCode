@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn count_nums(data: Vec<u8>) -> ([u8; 256], usize) {

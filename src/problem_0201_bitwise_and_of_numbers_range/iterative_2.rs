@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     pub fn range_bitwise_and(m: i32, mut n: i32) -> i32 {

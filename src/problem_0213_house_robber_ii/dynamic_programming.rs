@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn rob_helper(nums: &[i32]) -> i32 {

@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn largest_rectangle_area(stack_base: &mut Vec<(i32, i32)>, heights: &[i32]) -> i32 {

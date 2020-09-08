@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn search_insert_helper(nums: &[i32], target: i32, offset: usize) -> usize {

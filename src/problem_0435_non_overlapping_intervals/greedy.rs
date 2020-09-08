@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     pub fn erase_overlap_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {

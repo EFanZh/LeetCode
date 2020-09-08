@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn is_segment_match(s: &[u8], p: &[u8]) -> bool {

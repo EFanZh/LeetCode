@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn dfs(grid: &mut Vec<Vec<char>>, mut current: (usize, usize), stack: &mut Vec<(usize, usize)>) {

@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn get_letter(digit: u8) -> &'static [u8] {

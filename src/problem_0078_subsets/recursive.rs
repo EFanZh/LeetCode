@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn subsets_helper(slice: &[i32], base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {

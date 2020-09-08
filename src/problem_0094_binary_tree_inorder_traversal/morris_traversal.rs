@@ -1,6 +1,6 @@
 use super::super::data_structures::TreeNode;
 
-pub struct Solution {}
+pub struct Solution;
 
 use std::cell::RefCell;
 use std::mem;

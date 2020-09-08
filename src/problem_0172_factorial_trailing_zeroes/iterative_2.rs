@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     pub fn trailing_zeroes(mut n: i32) -> i32 {
