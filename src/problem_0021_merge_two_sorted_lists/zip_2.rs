@@ -1,6 +1,6 @@
 use super::super::data_structures::ListNode;
 
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     pub fn merge_two_lists(l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

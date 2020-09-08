@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn generate_parenthesis_unused(n: i32, unmatched: usize, buffer: &mut Vec<u8>, result: &mut Vec<String>) {

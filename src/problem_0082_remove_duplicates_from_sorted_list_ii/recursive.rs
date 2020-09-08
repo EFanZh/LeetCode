@@ -1,6 +1,6 @@
 use super::super::data_structures::ListNode;
 
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn delete_duplicates_double(prev: i32, head: Option<Box<ListNode>>, target: &mut Option<Box<ListNode>>) {

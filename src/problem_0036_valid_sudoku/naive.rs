@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn has_duplication<I: IntoIterator<Item = char>>(iter: I) -> bool {

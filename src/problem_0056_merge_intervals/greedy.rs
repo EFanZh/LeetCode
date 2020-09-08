@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     pub fn merge(mut intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

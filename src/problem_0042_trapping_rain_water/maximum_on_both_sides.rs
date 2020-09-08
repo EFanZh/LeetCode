@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn acc_max<'a, I: 'a + IntoIterator<Item = &'a i32>>(iter: I) -> impl 'a + Iterator<Item = i32> {

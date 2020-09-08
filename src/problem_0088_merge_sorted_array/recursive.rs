@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn merge_helper_left(nums1: &mut [i32], length1: usize, left: i32, nums2: &[i32]) {

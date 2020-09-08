@@ -1,6 +1,6 @@
 use super::super::data_structures::ListNode;
 
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn delete_duplicates_helper(tail: &mut ListNode, head: Option<Box<ListNode>>) {

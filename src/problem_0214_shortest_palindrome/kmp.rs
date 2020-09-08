@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn compute_prefix_function(mut s: impl FnMut(usize) -> Option<u8>, length: usize) -> usize {

@@ -1,6 +1,6 @@
 use super::super::data_structures::ListNode;
 
-pub struct Solution {}
+pub struct Solution;
 
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;

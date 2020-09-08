@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn max_sum_from_one_side<I: IntoIterator<Item = i32>>(iter: I) -> i32 {

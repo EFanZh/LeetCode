@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 // https://leetcode.com/problems/sqrtx/discuss/25057/3-4-short-lines-Integer-Newton-Every-Language.
 

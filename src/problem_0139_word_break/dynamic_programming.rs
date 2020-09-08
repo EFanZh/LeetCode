@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 #[derive(Default)]
 struct TrieNode {

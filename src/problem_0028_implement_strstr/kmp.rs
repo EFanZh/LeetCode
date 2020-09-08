@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn compute_prefix_function(needle: &[u8]) -> Box<[usize]> {

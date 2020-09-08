@@ -1,6 +1,6 @@
 use super::super::data_structures::ListNode;
 
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     pub fn swap_pairs(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

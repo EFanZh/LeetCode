@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn helper<T: Eq>(text_1: &[T], text_2: &[T], cache: &mut [Option<i32>], columns: usize) -> i32 {

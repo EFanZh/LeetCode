@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn permute_helper(nums: &mut [i32], split: usize, result: &mut Vec<Vec<i32>>) {

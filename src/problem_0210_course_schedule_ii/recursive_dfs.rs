@@ -1,4 +1,4 @@
-pub struct Solution {}
+pub struct Solution;
 
 impl Solution {
     fn is_acyclic(graph: &[Vec<i32>], node: i32, states: &mut [u8], result: &mut Vec<i32>) -> bool {
