@@ -1,20 +1,46 @@
 pub struct Solution {}
 
 impl Solution {
-    pub fn shortest_palindrome(s: String) -> String {
-        let mut iter = s.split_whitespace().rev();
-        let mut result = String::with_capacity(s.len());
+    fn compute_prefix_function(mut s: impl FnMut(usize) -> Option<u8>, length: usize) -> usize {
+        let mut result = vec![0; length];
+        let mut j = 0;
 
-        if let Some(first) = iter.next() {
-            result.push_str(first);
+        for i in 1..length {
+            let c = s(i);
 
-            for word in iter {
-                result.push(' ');
-                result.push_str(word);
+            loop {
+                if s(j) == c {
+                    j += 1;
+
+                    break;
+                } else if let Some(next_j) = result.get(j.wrapping_sub(1)) {
+                    j = *next_j;
+                } else {
+                    break;
+                }
             }
+
+            result[i] = j;
         }
 
-        result
+        *result.last().unwrap()
+    }
+
+    pub fn shortest_palindrome(s: String) -> String {
+        let s = s.as_bytes();
+        let length = s.len();
+        let length_2 = length + length;
+
+        let split = Self::compute_prefix_function(
+            |i| s.get(if i < length { i } else { length_2 - i }).copied(),
+            length_2 + 1,
+        );
+
+        let mut result = s[split..].iter().copied().rev().collect::<Vec<_>>();
+
+        result.extend(s);
+
+        String::from_utf8(result).unwrap()
     }
 }
 
