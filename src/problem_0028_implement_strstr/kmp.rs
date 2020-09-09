@@ -31,25 +31,26 @@ impl Solution {
         let mut i = 0;
         let mut j = 0;
 
-        while let Some(mut c_2) = needle.get(j) {
-            if let Some(c) = haystack.get(i) {
+        'outer: while let Some(mut c_2) = needle.get(j).copied() {
+            while let Some(c_1) = haystack.get(i).copied() {
                 loop {
-                    if c_2 == c {
+                    if c_1 == c_2 {
+                        i += 1;
                         j += 1;
 
-                        break;
-                    } else if let Some(next_j) = prefix_function.get(j.wrapping_sub(1)) {
-                        j = *next_j;
-                        c_2 = &needle[j];
+                        continue 'outer;
+                    } else if let Some(next_j) = prefix_function.get(j.wrapping_sub(1)).copied() {
+                        j = next_j;
+                        c_2 = needle[j];
                     } else {
+                        i += 1;
+
                         break;
                     }
                 }
-
-                i += 1;
-            } else {
-                return -1;
             }
+
+            return -1;
         }
 
         (i - j) as _
