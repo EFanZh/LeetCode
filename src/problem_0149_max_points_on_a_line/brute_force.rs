@@ -2,16 +2,9 @@ pub struct Solution;
 
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::convert::TryInto;
 
 impl Solution {
-    fn get_point(p: &[i32]) -> [i32; 2] {
-        if let [x, y] = p {
-            [*x, *y]
-        } else {
-            panic!()
-        }
-    }
-
     fn gcd(mut x: i32, mut y: i32) -> i32 {
         while y != 0 {
             let next_y = x % y;
@@ -46,10 +39,10 @@ impl Solution {
         let mut result = 0;
         let mut counts = HashMap::new();
 
-        for (i, point_1) in points.iter().map(|p| Self::get_point(p)).enumerate() {
+        for (i, point_1) in points.iter().map(|p| p.as_slice().try_into().unwrap()).enumerate() {
             let mut base_count = 1;
 
-            for point_2 in points[i + 1..].iter().map(|p| Self::get_point(p)) {
+            for point_2 in points[i + 1..].iter().map(|p| p.as_slice().try_into().unwrap()) {
                 let key = Self::get_line_key(point_1, point_2);
 
                 if key == (0, 0) {
