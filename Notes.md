@@ -154,6 +154,14 @@ Make sure it can be solved again.
 
 How to come up with the bucket and pigeonhole solution?
 
+## [214. Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)
+
+Remember the KMP solution.
+
+## [216. Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
+
+Optimize the solution.
+
 ## [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 
 Make sure it can be solved again.
