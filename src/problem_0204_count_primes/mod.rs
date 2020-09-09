@@ -11,6 +11,7 @@ mod tests {
 
     pub fn run<S: Solution>() {
         let test_cases = [
+            (0, 0),
             (1, 0),
             (2, 0),
             (3, 1),
