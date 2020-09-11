@@ -4,30 +4,21 @@ use std::collections::HashSet;
 
 impl Solution {
     pub fn contains_nearby_duplicate(nums: Vec<i32>, k: i32) -> bool {
-        let k = (k + 1) as usize;
         let mut visited = HashSet::with_capacity(nums.len());
+        let split = ((k + 1) as usize).min(nums.len());
+        let (left, right) = nums.split_at(split);
 
-        if nums.len() <= k {
-            for num in nums {
-                if !visited.insert(num) {
-                    return true;
-                }
+        for &num in left {
+            if !visited.insert(num) {
+                return true;
             }
-        } else {
-            let (left, right) = nums.split_at(k);
+        }
 
-            for &num in left {
-                if !visited.insert(num) {
-                    return true;
-                }
-            }
+        for (i, &num) in right.iter().enumerate() {
+            visited.remove(&nums[i]);
 
-            for (i, &num) in right.iter().enumerate() {
-                visited.remove(&nums[i]);
-
-                if !visited.insert(num) {
-                    return true;
-                }
+            if !visited.insert(num) {
+                return true;
             }
         }
 
