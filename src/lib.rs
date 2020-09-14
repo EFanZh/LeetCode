@@ -190,6 +190,7 @@ pub mod problem_0226_invert_binary_tree;
 pub mod problem_0228_summary_ranges;
 pub mod problem_0231_power_of_two;
 pub mod problem_0232_implement_queue_using_stacks;
+pub mod problem_0234_palindrome_linked_list;
 pub mod problem_0239_sliding_window_maximum;
 pub mod problem_0240_search_a_2d_matrix_ii;
 pub mod problem_0300_longest_increasing_subsequence;
