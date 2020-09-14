@@ -19,10 +19,9 @@ mod tests {
             let strs = strs.iter().map(ToString::to_string).collect();
 
             assert_eq!(
-                test_utilities::unstable_sorted(S::group_anagrams(strs).into_iter().map(|mut bucket| {
-                    bucket.sort_unstable();
-                    bucket
-                })),
+                test_utilities::unstable_sorted(
+                    S::group_anagrams(strs).into_iter().map(test_utilities::unstable_sorted)
+                ),
                 expected
             );
         }
