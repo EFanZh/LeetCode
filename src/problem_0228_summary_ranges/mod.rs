@@ -1,4 +1,5 @@
 pub mod iterative;
+pub mod recursive;
 
 pub trait Solution {
     fn summary_ranges(nums: Vec<i32>) -> Vec<String>;
