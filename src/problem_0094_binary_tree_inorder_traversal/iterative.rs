@@ -8,13 +8,13 @@ use std::rc::Rc;
 impl Solution {
     pub fn inorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
-        let mut cont = Vec::new();
+        let mut stack = Vec::new();
 
         loop {
             if let Some(node) = root {
                 root = node.borrow().left.clone();
-                cont.push(node);
-            } else if let Some(node) = cont.pop() {
+                stack.push(node);
+            } else if let Some(node) = stack.pop() {
                 let node_ref = node.borrow();
 
                 result.push(node_ref.val);

@@ -13,24 +13,24 @@ enum Frame {
 impl Solution {
     pub fn postorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
-        let mut cont = Vec::new();
+        let mut stack = Vec::new();
 
         'r: loop {
             if let Some(node) = root {
                 root = node.borrow().left.clone();
 
-                cont.push(Frame::Left(node));
+                stack.push(Frame::Left(node));
             } else {
                 // Apply continuation.
 
                 'k: loop {
-                    match cont.pop() {
+                    match stack.pop() {
                         Some(Frame::Left(node)) => {
                             // Left continuation.
 
                             root = node.borrow().right.clone();
 
-                            cont.push(Frame::Right(node));
+                            stack.push(Frame::Right(node));
 
                             continue 'r;
                         }
