@@ -184,6 +184,7 @@ pub mod problem_0213_house_robber_ii;
 pub mod problem_0214_shortest_palindrome;
 pub mod problem_0215_kth_largest_element_in_an_array;
 pub mod problem_0217_contains_duplicate;
+pub mod problem_0218_the_skyline_problem;
 pub mod problem_0219_contains_duplicate_ii;
 pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0226_invert_binary_tree;
