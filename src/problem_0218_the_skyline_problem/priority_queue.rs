@@ -1,7 +1,8 @@
 pub struct Solution;
 
-use std::collections::btree_map::Entry;
-use std::collections::BTreeMap;
+use std::cmp::Reverse;
+use std::collections::binary_heap::PeekMut;
+use std::collections::BinaryHeap;
 use std::convert::TryInto;
 
 impl Solution {
@@ -11,33 +12,37 @@ impl Solution {
         for building in buildings {
             let [left, right, height]: [_; 3] = building.as_slice().try_into().unwrap();
 
-            operations.push((left, -height));
-            operations.push((right, height));
+            operations.push((left, right, height));
+            operations.push((right, 0, 0));
         }
 
-        operations.sort_unstable();
+        operations.sort_unstable_by_key(|&(position, _, height)| (position, Reverse(height)));
 
         let mut result = Vec::new();
-        let mut heights = BTreeMap::new();
+        let mut heights = BinaryHeap::new();
         let mut current_height = 0;
 
-        for (x, h) in operations {
-            if h < 0 {
-                heights.entry(-h).and_modify(|count| *count += 1).or_insert(1);
-            } else if let Entry::Occupied(entry) = heights.entry(h) {
-                if *entry.get() == 1 {
-                    entry.remove();
-                } else {
-                    *entry.into_mut() -= 1;
-                }
+        for (x, right, height) in operations {
+            if height != 0 {
+                heights.push((height, right));
             }
 
-            let new_height = heights.keys().last().copied().unwrap_or(0);
+            let new_height = loop {
+                if let Some(top) = heights.peek_mut() {
+                    if top.1 <= x {
+                        PeekMut::pop(top);
+                    } else {
+                        break top.0;
+                    }
+                } else {
+                    break 0;
+                }
+            };
 
             if new_height != current_height {
                 current_height = new_height;
 
-                result.push(vec![x, current_height]);
+                result.push(vec![x, new_height]);
             }
         }
 
