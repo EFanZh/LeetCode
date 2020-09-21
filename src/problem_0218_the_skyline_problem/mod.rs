@@ -19,9 +19,9 @@ mod tests {
             (&[[1, 2, 1], [1, 2, 2], [1, 2, 3]], &[[1, 3], [2, 0]]),
         ];
 
-        for (building, expected) in test_cases.iter().copied() {
+        for (buildings, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::get_skyline(building.iter().map(|building| building.to_vec()).collect()),
+                S::get_skyline(buildings.iter().map(|building| building.to_vec()).collect()),
                 expected
             );
         }
