@@ -1,5 +1,5 @@
 pub mod sliding_window_buckets;
-pub mod sliding_window_ordered_map;
+pub mod sliding_window_ordered_set;
 
 pub trait Solution {
     fn contains_nearby_almost_duplicate(nums: Vec<i32>, k: i32, t: i32) -> bool;
