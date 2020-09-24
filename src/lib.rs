@@ -188,6 +188,7 @@ pub mod problem_0218_the_skyline_problem;
 pub mod problem_0219_contains_duplicate_ii;
 pub mod problem_0220_contains_duplicate_iii;
 pub mod problem_0221_maximal_square;
+pub mod problem_0222_count_complete_tree_nodes;
 pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0226_invert_binary_tree;
 pub mod problem_0228_summary_ranges;
