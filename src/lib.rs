@@ -202,6 +202,7 @@ pub mod problem_0240_search_a_2d_matrix_ii;
 pub mod problem_0242_valid_anagram;
 pub mod problem_0257_binary_tree_paths;
 pub mod problem_0258_add_digits;
+pub mod problem_0292_nim_game;
 pub mod problem_0300_longest_increasing_subsequence;
 pub mod problem_0322_coin_change;
 pub mod problem_0435_non_overlapping_intervals;
