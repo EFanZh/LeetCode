@@ -204,6 +204,7 @@ pub mod problem_0240_search_a_2d_matrix_ii;
 pub mod problem_0242_valid_anagram;
 pub mod problem_0257_binary_tree_paths;
 pub mod problem_0258_add_digits;
+pub mod problem_0263_ugly_number;
 pub mod problem_0274_h_index;
 pub mod problem_0275_h_index_ii;
 pub mod problem_0289_game_of_life;
