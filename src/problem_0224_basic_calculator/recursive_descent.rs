@@ -10,11 +10,11 @@ impl Solution {
     }
 
     fn term(iter: &mut Peekable<impl Iterator<Item = u8>>) -> i32 {
+        Self::whitespaces(iter);
+
         let c = iter.next().unwrap();
 
         if c == b'(' {
-            Self::whitespaces(iter);
-
             let result = Self::expression(iter);
 
             Self::whitespaces(iter);
@@ -46,14 +46,10 @@ impl Solution {
                 Some(b'+') => {
                     iter.next();
 
-                    Self::whitespaces(iter);
-
                     result += Self::term(iter);
                 }
                 Some(b'-') => {
                     iter.next();
-
-                    Self::whitespaces(iter);
 
                     result -= Self::term(iter);
                 }
@@ -65,10 +61,7 @@ impl Solution {
     }
 
     pub fn calculate(s: String) -> i32 {
-        let mut iter = s.bytes().peekable();
-
-        Self::whitespaces(&mut iter);
-        Self::expression(&mut iter)
+        Self::expression(&mut s.bytes().peekable())
     }
 }
 
