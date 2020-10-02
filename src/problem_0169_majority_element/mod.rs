@@ -1,4 +1,4 @@
-pub mod voting;
+pub mod boyer_moore_majority_vote;
 
 pub trait Solution {
     fn majority_element(nums: Vec<i32>) -> i32;
