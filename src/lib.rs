@@ -195,6 +195,7 @@ pub mod problem_0225_implement_stack_using_queues;
 pub mod problem_0226_invert_binary_tree;
 pub mod problem_0227_basic_calculator_ii;
 pub mod problem_0228_summary_ranges;
+pub mod problem_0229_majority_element_ii;
 pub mod problem_0230_kth_smallest_element_in_a_bst;
 pub mod problem_0231_power_of_two;
 pub mod problem_0232_implement_queue_using_stacks;
