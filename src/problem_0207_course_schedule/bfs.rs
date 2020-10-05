@@ -1,6 +1,7 @@
 pub struct Solution;
 
 use std::collections::VecDeque;
+use std::convert::TryInto;
 
 impl Solution {
     pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
@@ -8,13 +9,10 @@ impl Solution {
         let mut in_degrees = vec![0; num_courses as _];
 
         for edge in prerequisites {
-            match edge.as_slice() {
-                [from, to] => {
-                    graph[*from as usize].push(*to);
-                    in_degrees[*to as usize] += 1;
-                }
-                _ => unreachable!(),
-            }
+            let [from, to]: [_; 2] = edge.as_slice().try_into().unwrap();
+
+            graph[from as usize].push(to);
+            in_degrees[to as usize] += 1;
         }
 
         let mut queue = (0..num_courses)

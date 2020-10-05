@@ -1,6 +1,7 @@
 pub struct Solution;
 
 use std::collections::VecDeque;
+use std::convert::TryInto;
 
 impl Solution {
     pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
@@ -8,13 +9,10 @@ impl Solution {
         let mut in_degrees = vec![0; num_courses as _];
 
         for edge in prerequisites {
-            match edge.as_slice() {
-                [to, from] => {
-                    graph[*from as usize].push(*to);
-                    in_degrees[*to as usize] += 1;
-                }
-                _ => unreachable!(),
-            }
+            let [to, from]: [_; 2] = edge.as_slice().try_into().unwrap();
+
+            graph[from as usize].push(to);
+            in_degrees[to as usize] += 1;
         }
 
         let mut queue = (0..num_courses)

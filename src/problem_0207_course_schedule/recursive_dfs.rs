@@ -1,5 +1,7 @@
 pub struct Solution;
 
+use std::convert::TryInto;
+
 impl Solution {
     fn is_acyclic(graph: &[Vec<i32>], node: i32, states: &mut [u8]) -> bool {
         match &mut states[node as usize] {
@@ -25,12 +27,9 @@ impl Solution {
         let mut graph = vec![Vec::new(); num_courses as _];
 
         for edge in prerequisites {
-            match edge.as_slice() {
-                [from, to] => {
-                    graph[*from as usize].push(*to);
-                }
-                _ => unreachable!(),
-            }
+            let [from, to]: [_; 2] = edge.as_slice().try_into().unwrap();
+
+            graph[from as usize].push(to);
         }
 
         let mut states = vec![0; num_courses as _];
