@@ -16,7 +16,7 @@ impl Solution {
 
         // Detect cycle.
 
-        let mut states = vec![0; num_courses as _];
+        let mut states = vec![0_u8; num_courses as _];
         let mut stack = Vec::new();
 
         for mut node in 0..num_courses {

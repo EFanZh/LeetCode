@@ -20,25 +20,27 @@ impl Solution {
         let mut stack = Vec::new();
 
         for mut node in 0..num_courses {
-            if states[node as usize] == 0 {
-                'outer: loop {
-                    states[node as usize] = 1;
+            if let state @ 0 = &mut states[node as usize] {
+                *state = 1;
 
+                'outer: loop {
                     let mut iter = graph[node as usize].iter().copied();
 
                     // Return address.
 
                     loop {
                         while let Some(next) = iter.next() {
-                            let state = states[next as usize];
+                            match &mut states[next as usize] {
+                                state @ 0 => {
+                                    *state = 1;
 
-                            if state == 0 {
-                                stack.push((node, iter));
-                                node = next;
+                                    stack.push((node, iter));
+                                    node = next;
 
-                                continue 'outer;
-                            } else if state == 1 {
-                                return false;
+                                    continue 'outer;
+                                }
+                                1 => return false,
+                                _ => {}
                             }
                         }
 

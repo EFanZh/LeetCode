@@ -1,8 +1,10 @@
 pub mod bfs;
 pub mod iterative_dfs;
 pub mod iterative_dfs_2;
+pub mod iterative_dfs_3;
 pub mod recursive_dfs;
 pub mod recursive_dfs_2;
+pub mod recursive_dfs_3;
 
 pub trait Solution {
     fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool;
