@@ -203,6 +203,7 @@ pub mod problem_0234_palindrome_linked_list;
 pub mod problem_0238_product_of_array_except_self;
 pub mod problem_0239_sliding_window_maximum;
 pub mod problem_0240_search_a_2d_matrix_ii;
+pub mod problem_0241_different_ways_to_add_parentheses;
 pub mod problem_0242_valid_anagram;
 pub mod problem_0257_binary_tree_paths;
 pub mod problem_0258_add_digits;
