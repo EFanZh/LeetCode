@@ -15,8 +15,10 @@ impl Solution {
             in_degrees[to as usize] += 1;
         }
 
-        let mut queue = (0..num_courses)
-            .filter(|node| in_degrees[*node as usize] == 0)
+        let mut queue = in_degrees
+            .iter()
+            .enumerate()
+            .filter_map(|(i, &indegree)| if indegree == 0 { Some(i as _) } else { None })
             .collect::<VecDeque<_>>();
 
         let mut result = Vec::new();
@@ -24,7 +26,7 @@ impl Solution {
         while let Some(node) = queue.pop_front() {
             result.push(node);
 
-            for next in graph[node as usize].drain(..) {
+            for &next in &graph[node as usize] {
                 let in_degree = &mut in_degrees[next as usize];
 
                 if *in_degree == 1 {

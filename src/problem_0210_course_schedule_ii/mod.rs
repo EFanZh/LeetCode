@@ -11,7 +11,7 @@ pub trait Solution {
 #[cfg(test)]
 mod tests {
     use super::Solution;
-    use std::collections::{HashMap, HashSet};
+    use std::collections::HashSet;
 
     pub fn run<S: Solution>() {
         let test_cases = [
@@ -26,18 +26,16 @@ mod tests {
             let result = S::find_order(num_courses, prerequisites.iter().map(|edge| edge.to_vec()).collect());
 
             if can_finish {
-                let deduped_result = result.iter().copied().collect::<HashSet<_>>();
+                assert_eq!(result.iter().copied().collect::<HashSet<_>>().len(), num_courses as _);
 
-                let course_indices = result
-                    .into_iter()
-                    .enumerate()
-                    .map(|(i, x)| (x, i))
-                    .collect::<HashMap<_, _>>();
+                let mut course_indices = vec![0; num_courses as _];
 
-                assert_eq!(deduped_result.len(), num_courses as _);
+                for (i, node) in result.into_iter().enumerate() {
+                    course_indices[node as usize] = i;
+                }
 
-                for [course, prerequisite] in prerequisites {
-                    assert!(course_indices[prerequisite] < course_indices[course])
+                for &[course, prerequisite] in prerequisites {
+                    assert!(course_indices[prerequisite as usize] < course_indices[course as usize])
                 }
             } else {
                 assert!(result.is_empty());
