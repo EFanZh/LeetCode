@@ -3,7 +3,7 @@ pub struct Solution;
 use std::convert::TryInto;
 
 impl Solution {
-    pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
+    pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
         // Build graph.
 
         let mut graph = vec![Vec::new(); num_courses as _];
@@ -16,6 +16,7 @@ impl Solution {
 
         // Detect cycle.
 
+        let mut result = Vec::new();
         let mut states = vec![0_u8; num_courses as _];
         let mut stack = Vec::new();
 
@@ -27,7 +28,7 @@ impl Solution {
 
                         graph[node as usize].iter().copied()
                     }
-                    1 => return false,
+                    1 => return Vec::new(),
                     _ => {
                         if let Some((new_node, new_iter)) = stack.pop() {
                             node = new_node;
@@ -48,6 +49,8 @@ impl Solution {
                         continue 'outer;
                     }
 
+                    result.push(node);
+
                     states[node as usize] = 2;
 
                     // Apply continuation.
@@ -62,13 +65,13 @@ impl Solution {
             }
         }
 
-        true
+        result
     }
 }
 
 impl super::Solution for Solution {
-    fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
-        Self::can_finish(num_courses, prerequisites)
+    fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
+        Self::find_order(num_courses, prerequisites)
     }
 }
 
