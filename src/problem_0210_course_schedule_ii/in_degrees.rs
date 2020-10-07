@@ -5,8 +5,9 @@ use std::convert::TryInto;
 
 impl Solution {
     pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
-        let mut graph = vec![Vec::new(); num_courses as _];
-        let mut in_degrees = vec![0; num_courses as _];
+        let num_courses = num_courses as _;
+        let mut graph = vec![Vec::new(); num_courses];
+        let mut in_degrees = vec![0; num_courses];
 
         for edge in prerequisites {
             let [to, from]: [_; 2] = edge.as_slice().try_into().unwrap();
@@ -37,7 +38,7 @@ impl Solution {
             }
         }
 
-        if result.len() != num_courses as usize {
+        if result.len() != num_courses {
             result.clear();
         }
 

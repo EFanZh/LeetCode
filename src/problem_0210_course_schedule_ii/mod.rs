@@ -1,4 +1,5 @@
-pub mod bfs;
+pub mod in_degrees;
+pub mod in_degrees_2;
 pub mod iterative_dfs;
 pub mod iterative_dfs_2;
 pub mod recursive_dfs;
