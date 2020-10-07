@@ -4,25 +4,25 @@ use std::convert::TryInto;
 
 impl Solution {
     fn is_acyclic(graph: &[Vec<i32>], node: i32, states: &mut [u8], result: &mut Vec<i32>) -> bool {
-        match &mut states[node as usize] {
-            state @ 0 => {
-                *state = 1;
+        states[node as usize] = 1;
 
-                for &next in &graph[node as usize] {
-                    if !Self::is_acyclic(graph, next, states, result) {
-                        return false;
-                    }
-                }
+        for &next in &graph[node as usize] {
+            let state = states[next as usize];
 
-                result.push(node);
-
-                states[node as usize] = 2;
-
-                true
+            if if state == 0 {
+                !Self::is_acyclic(graph, next, states, result)
+            } else {
+                state == 1
+            } {
+                return false;
             }
-            1 => false,
-            _ => true,
         }
+
+        result.push(node);
+
+        states[node as usize] = 2;
+
+        true
     }
 
     pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
@@ -38,7 +38,7 @@ impl Solution {
         let mut result = Vec::new();
 
         for node in 0..num_courses {
-            if !Self::is_acyclic(&graph, node, &mut states, &mut result) {
+            if states[node as usize] == 0 && !Self::is_acyclic(&graph, node, &mut states, &mut result) {
                 result.clear();
 
                 break;

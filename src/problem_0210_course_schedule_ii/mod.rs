@@ -1,5 +1,8 @@
 pub mod bfs;
+pub mod iterative_dfs;
+pub mod iterative_dfs_2;
 pub mod recursive_dfs;
+pub mod recursive_dfs_2;
 
 pub trait Solution {
     fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32>;
@@ -16,6 +19,7 @@ mod tests {
             ((4, &[[1, 0], [2, 0], [3, 1], [3, 2]]), true),
             ((1, &[]), true),
             ((2, &[[1, 0], [0, 1]]), false),
+            ((3, &[[1, 0], [1, 2], [0, 1]]), false),
         ];
 
         for ((num_courses, prerequisites), can_finish) in test_cases.iter().copied() {
