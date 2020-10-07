@@ -27,48 +27,33 @@ impl Solution {
 
                         let mut iter = graph[node as usize].iter().copied();
 
-                        // Return address.
+                        if let Some(next) = iter.next() {
+                            stack.push((node, iter));
+                            node = next;
 
-                        loop {
-                            if let Some(next) = iter.next() {
-                                stack.push((node, iter));
-                                node = next;
-
-                                continue 'outer;
-                            }
-
-                            states[node as usize] = 2;
-
-                            // Apply continuation.
-
-                            if let Some((new_node, new_iter)) = stack.pop() {
-                                node = new_node;
-                                iter = new_iter;
-                            } else {
-                                break 'outer;
-                            }
+                            continue;
                         }
+
+                        states[node as usize] = 2;
                     }
                     1 => return false,
-                    _ => {
-                        // Apply continuation.
-
-                        while let Some((new_node, mut iter)) = stack.pop() {
-                            node = new_node;
-
-                            if let Some(next) = iter.next() {
-                                stack.push((node, iter));
-                                node = next;
-
-                                continue 'outer;
-                            }
-
-                            states[node as usize] = 2;
-                        }
-
-                        break 'outer;
-                    }
+                    _ => {}
                 }
+
+                // Apply continuation.
+
+                while let Some((new_node, mut iter)) = stack.pop() {
+                    if let Some(next) = iter.next() {
+                        stack.push((new_node, iter));
+                        node = next;
+
+                        continue 'outer;
+                    }
+
+                    states[new_node as usize] = 2;
+                }
+
+                break;
             }
         }
 
