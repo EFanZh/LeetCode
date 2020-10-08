@@ -6,6 +6,7 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::super::test_utilities;
     use super::Solution;
 
     pub fn run<S: Solution>() {
@@ -25,12 +26,12 @@ mod tests {
 
         for (accounts, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::accounts_merge(
+                test_utilities::unstable_sorted(S::accounts_merge(
                     accounts
                         .iter()
                         .map(|account| account.iter().map(|&s| s.to_string()).collect())
                         .collect()
-                ),
+                )),
                 expected
             );
         }
