@@ -199,7 +199,6 @@ pub mod problem_0229_majority_element_ii;
 pub mod problem_0230_kth_smallest_element_in_a_bst;
 pub mod problem_0231_power_of_two;
 pub mod problem_0232_implement_queue_using_stacks;
-pub mod problem_0233_number_of_digit_one;
 pub mod problem_0234_palindrome_linked_list;
 pub mod problem_0238_product_of_array_except_self;
 pub mod problem_0239_sliding_window_maximum;
