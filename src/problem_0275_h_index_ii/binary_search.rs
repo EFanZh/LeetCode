@@ -7,7 +7,7 @@ impl Solution {
     pub fn h_index(citations: Vec<i32>) -> i32 {
         let n = citations.len();
 
-        if let Some(first) = citations.first() {
+        citations.first().map_or(0, |first| {
             let end = first as *const _ as usize + mem::size_of_val(first) * n;
 
             let index = citations
@@ -21,9 +21,7 @@ impl Solution {
                 .unwrap_err();
 
             (n - index) as _
-        } else {
-            0
-        }
+        })
     }
 }
 

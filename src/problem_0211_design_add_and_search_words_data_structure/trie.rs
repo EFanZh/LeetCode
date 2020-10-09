@@ -26,11 +26,7 @@ impl WordDictionary {
                 .get(first.wrapping_sub(b'a') as usize)
                 .map(Option::as_deref)
             {
-                if let Some(child) = child_slot {
-                    child.search_helper(rest)
-                } else {
-                    false
-                }
+                child_slot.map_or(false, |child| child.search_helper(rest))
             } else {
                 for child in self.children.iter().flat_map(Option::as_deref) {
                     if child.search_helper(rest) {

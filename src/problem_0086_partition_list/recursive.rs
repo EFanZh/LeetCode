@@ -9,6 +9,7 @@ impl Solution {
         head: Option<Box<ListNode>>,
         x: i32,
     ) -> &'a mut Option<Box<ListNode>> {
+        #[allow(clippy::option_if_let_else)]
         if let Some(mut node) = head {
             let next = node.next.take();
 

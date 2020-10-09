@@ -6,6 +6,7 @@ impl Solution {
     fn helper<T: Eq>(text_1: &[T], text_2: &[T], cache: &mut HashMap<(usize, usize), i32>) -> i32 {
         let key = (text_1.len(), text_2.len());
 
+        #[allow(clippy::option_if_let_else)]
         if let Some(result) = cache.get(&key) {
             *result
         } else {

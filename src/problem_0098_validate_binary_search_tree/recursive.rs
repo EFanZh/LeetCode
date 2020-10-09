@@ -7,7 +7,7 @@ use std::rc::Rc;
 
 impl Solution {
     fn is_valid_bst_helper(root: Option<&RefCell<TreeNode>>, min: i64, max: i64) -> bool {
-        if let Some(node) = root {
+        root.map_or(true, |node| {
             let node = node.borrow();
             let val = i64::from(node.val);
 
@@ -15,9 +15,7 @@ impl Solution {
                 && val < max
                 && Self::is_valid_bst_helper(node.left.as_deref(), min, val)
                 && Self::is_valid_bst_helper(node.right.as_deref(), val + 1, max)
-        } else {
-            true
-        }
+        })
     }
 
     pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {

@@ -2,7 +2,7 @@ pub struct Solution;
 
 impl Solution {
     fn remove_duplicates_single(nums: &mut [i32], deduped: usize, prev: i32, i: usize) -> usize {
-        if let Some(current) = nums.get(i).copied() {
+        nums.get(i).copied().map_or(deduped, |current| {
             nums.swap(deduped, i);
 
             if current == prev {
@@ -10,13 +10,11 @@ impl Solution {
             } else {
                 Self::remove_duplicates_single(nums, deduped + 1, current, i + 1)
             }
-        } else {
-            deduped
-        }
+        })
     }
 
     fn remove_duplicates_double(nums: &mut [i32], deduped: usize, prev: i32, i: usize) -> usize {
-        if let Some(current) = nums.get(i).copied() {
+        nums.get(i).copied().map_or(deduped, |current| {
             if current == prev {
                 Self::remove_duplicates_double(nums, deduped, prev, i + 1)
             } else {
@@ -24,9 +22,7 @@ impl Solution {
 
                 Self::remove_duplicates_single(nums, deduped + 1, current, i + 1)
             }
-        } else {
-            deduped
-        }
+        })
     }
 
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {

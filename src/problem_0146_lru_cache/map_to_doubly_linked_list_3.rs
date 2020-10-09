@@ -45,6 +45,7 @@ impl LRUCache {
     }
 
     fn get(&mut self, key: i32) -> i32 {
+        #[allow(clippy::option_if_let_else)]
         if let Some(node) = self.map.get(&key) {
             Self::refresh(node, &mut self.newest, &mut self.oldest);
 

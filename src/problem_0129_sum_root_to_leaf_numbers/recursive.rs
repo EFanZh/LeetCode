@@ -20,11 +20,7 @@ impl Solution {
     }
 
     pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        if let Some(root) = root {
-            Self::sum_numbers_helper(&root.borrow(), 0)
-        } else {
-            0
-        }
+        root.map_or(0, |root| Self::sum_numbers_helper(&root.borrow(), 0))
     }
 }
 

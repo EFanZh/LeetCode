@@ -7,19 +7,20 @@ use std::rc::Rc;
 
 impl Solution {
     fn kth_smallest_helper(root: Option<&RefCell<TreeNode>>, k: i32) -> Result<i32, i32> {
-        if let Some(node) = root {
-            let node = node.borrow();
+        root.map_or_else(
+            || Err(k),
+            |node| {
+                let node = node.borrow();
 
-            Self::kth_smallest_helper(node.left.as_deref(), k).or_else(|x| {
-                if x == 0 {
-                    Ok(node.val)
-                } else {
-                    Self::kth_smallest_helper(node.right.as_deref(), x - 1)
-                }
-            })
-        } else {
-            Err(k)
-        }
+                Self::kth_smallest_helper(node.left.as_deref(), k).or_else(|x| {
+                    if x == 0 {
+                        Ok(node.val)
+                    } else {
+                        Self::kth_smallest_helper(node.right.as_deref(), x - 1)
+                    }
+                })
+            },
+        )
     }
 
     pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
