@@ -4,6 +4,7 @@ impl Solution {
     fn helper<T: Eq>(text_1: &[T], text_2: &[T], cache: &mut [Option<i32>], columns: usize) -> i32 {
         let cache_index = columns * text_1.len() + text_2.len();
 
+        #[allow(clippy::option_if_let_else)]
         if let Some(result) = cache[cache_index] {
             result
         } else {

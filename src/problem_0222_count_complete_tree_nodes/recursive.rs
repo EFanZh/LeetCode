@@ -22,25 +22,21 @@ impl Solution {
         let right_height = Self::get_left_height(node.right.clone());
 
         if right_height == left_height {
-            if let Some(right) = node.right.as_deref() {
+            node.right.as_deref().map_or(1, |right| {
                 (1 << left_height) + Self::count_nodes_helper(right_height - 1, &right.borrow())
-            } else {
-                1
-            }
+            })
         } else {
             (1 << right_height) + Self::count_nodes_helper(right_height, &node.left.as_deref().unwrap().borrow())
         }
     }
 
     pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        if let Some(node) = root {
+        root.map_or(0, |node| {
             let node = node.borrow();
             let left_height = Self::get_left_height(node.left.clone());
 
             Self::count_nodes_helper(left_height, &node)
-        } else {
-            0
-        }
+        })
     }
 }
 

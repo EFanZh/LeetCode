@@ -2,7 +2,7 @@ pub struct Solution;
 
 impl Solution {
     fn helper_less(s: i32, nums: &[i32], start: usize, mut end: usize, mut sum: i32, result: usize) -> usize {
-        if let Some(num) = nums.get(end) {
+        nums.get(end).map_or(result, |num| {
             end += 1;
             sum += num;
 
@@ -11,9 +11,7 @@ impl Solution {
             } else {
                 Self::helper_not_less(s, nums, start, end, sum, result)
             }
-        } else {
-            result
-        }
+        })
     }
 
     fn helper_not_less(s: i32, nums: &[i32], start: usize, end: usize, mut sum: i32, result: usize) -> usize {

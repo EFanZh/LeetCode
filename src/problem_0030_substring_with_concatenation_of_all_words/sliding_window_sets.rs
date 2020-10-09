@@ -31,6 +31,7 @@ impl<T: Hash + Eq> HashMultiSet<T> {
     where
         T: Borrow<Q>,
     {
+        #[allow(clippy::option_if_let_else)]
         if let Some(count) = self.data.get_mut(value) {
             if *count == 1 {
                 self.data.remove(value);

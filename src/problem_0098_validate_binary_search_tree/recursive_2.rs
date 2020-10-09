@@ -7,21 +7,23 @@ use std::rc::Rc;
 
 impl Solution {
     fn is_valid_bst_helper(root: Option<&RefCell<TreeNode>>, prev: Option<i32>) -> Result<Option<i32>, ()> {
-        if let Some(node) = root {
-            let node = node.borrow();
+        root.map_or_else(
+            || Ok(prev),
+            |node| {
+                let node = node.borrow();
 
-            if let Some(left_value) = Self::is_valid_bst_helper(node.left.as_deref(), prev)? {
-                if node.val > left_value {
-                    Self::is_valid_bst_helper(node.right.as_deref(), Some(node.val))
-                } else {
-                    Err(())
-                }
-            } else {
-                Self::is_valid_bst_helper(node.right.as_deref(), Some(node.val))
-            }
-        } else {
-            Ok(prev)
-        }
+                Self::is_valid_bst_helper(node.left.as_deref(), prev)?.map_or_else(
+                    || Self::is_valid_bst_helper(node.right.as_deref(), Some(node.val)),
+                    |left_value| {
+                        if node.val > left_value {
+                            Self::is_valid_bst_helper(node.right.as_deref(), Some(node.val))
+                        } else {
+                            Err(())
+                        }
+                    },
+                )
+            },
+        )
     }
 
     pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {

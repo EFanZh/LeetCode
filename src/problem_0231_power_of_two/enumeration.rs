@@ -2,6 +2,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn is_power_of_two(n: i32) -> bool {
+        #[allow(clippy::match_like_matches_macro)]
         match n {
             0x0000_0001 | 0x0000_0002 | 0x0000_0004 | 0x0000_0008 | 0x0000_0010 | 0x0000_0020 | 0x0000_0040
             | 0x0000_0080 | 0x0000_0100 | 0x0000_0200 | 0x0000_0400 | 0x0000_0800 | 0x0000_1000 | 0x0000_2000

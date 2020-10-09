@@ -13,19 +13,14 @@ impl Solution {
                 result.push(digits.1);
                 result.extend(iter::repeat(digits.0).take(digit - 5));
             }
-            9 => result.extend(&[digits.0, digits.2]),
-            _ => unreachable!(),
+            _ => result.extend(&[digits.0, digits.2]),
         }
 
         num % base
     }
 
     pub fn int_to_roman(mut num: i32) -> String {
-        let mut result = Vec::new();
-
-        for _ in 0..num / 1000 {
-            result.push(b'M');
-        }
+        let mut result = vec![b'M'; (num / 1000) as _];
 
         num = Self::int_to_roman_helper(num % 1000, 100, (b'C', b'D', b'M'), &mut result);
         num = Self::int_to_roman_helper(num, 10, (b'X', b'L', b'C'), &mut result);

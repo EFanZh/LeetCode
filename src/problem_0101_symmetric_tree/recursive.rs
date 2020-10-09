@@ -22,13 +22,11 @@ impl Solution {
     }
 
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        if let Some(root) = root {
+        root.map_or(true, |root| {
             let root = root.borrow();
 
             Self::is_flipped(root.left.as_deref(), root.right.as_deref())
-        } else {
-            true
-        }
+        })
     }
 }
 
