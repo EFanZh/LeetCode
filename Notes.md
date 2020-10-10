@@ -166,9 +166,7 @@ Optimize the solution.
 
 Make sure it can be solved again.
 
-## [240. Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)
 
-Check whether LeetCode supports Rust language.
 
 ## [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 
