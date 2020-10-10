@@ -10,7 +10,6 @@ impl Solution {
         let num_words = words.len();
         let window_length = word_length * num_words;
 
-        #[allow(clippy::unnecessary_sort_by)]
         words.sort_unstable_by(|lhs, rhs| lhs.as_bytes().cmp(rhs.as_bytes()));
 
         s.as_bytes()

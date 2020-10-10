@@ -6,10 +6,7 @@ impl Solution {
     fn helper<T: Eq>(text_1: &[T], text_2: &[T], cache: &mut HashMap<(usize, usize), i32>) -> i32 {
         let key = (text_1.len(), text_2.len());
 
-        #[allow(clippy::option_if_let_else)]
-        if let Some(result) = cache.get(&key) {
-            *result
-        } else {
+        cache.get(&key).copied().unwrap_or_else(|| {
             let result = if let Some((tail_1, head_1)) = text_1.split_last() {
                 if let Some((tail_2, head_2)) = text_2.split_last() {
                     if tail_1 == tail_2 {
@@ -27,7 +24,7 @@ impl Solution {
             cache.insert(key, result);
 
             result
-        }
+        })
     }
 
     pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
