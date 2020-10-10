@@ -1,7 +1,8 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn count_digit_one(mut n: i32) -> i32 {
+    pub fn count_digit_one(n: i32) -> i32 {
+        let mut n = i64::from(n);
         let mut result = 0;
         let mut ten_to_the_power = 1;
         let mut base = 0;
@@ -22,7 +23,7 @@ impl Solution {
             n /= 10;
         }
 
-        result
+        result as _
     }
 }
 

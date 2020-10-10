@@ -7,3 +7,5 @@ Solutions to [LeetCode algorithm problems](https://leetcode.com/problemset/algor
 ## Progress
 
 [![Progress Chart](https://efanzh.org/LeetCode/progress.svg)](https://efanzh.org/LeetCode/)
+
+See [here](https://efanzh.org/LeetCode/) for detailed report.
