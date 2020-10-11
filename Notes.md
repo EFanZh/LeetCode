@@ -166,7 +166,9 @@ Optimize the solution.
 
 Make sure it can be solved again.
 
+## [260. Single Number III](https://leetcode.com/problems/single-number-iii/)
 
+Make sure it can be solved again.
 
 ## [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 

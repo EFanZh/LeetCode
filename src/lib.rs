@@ -208,6 +208,7 @@ pub mod problem_0241_different_ways_to_add_parentheses;
 pub mod problem_0242_valid_anagram;
 pub mod problem_0257_binary_tree_paths;
 pub mod problem_0258_add_digits;
+pub mod problem_0260_single_number_iii;
 pub mod problem_0263_ugly_number;
 pub mod problem_0268_missing_number;
 pub mod problem_0274_h_index;
