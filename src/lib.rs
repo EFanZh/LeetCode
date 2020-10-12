@@ -212,6 +212,7 @@ pub mod problem_0260_single_number_iii;
 pub mod problem_0263_ugly_number;
 pub mod problem_0264_ugly_number_ii;
 pub mod problem_0268_missing_number;
+pub mod problem_0273_integer_to_english_words;
 pub mod problem_0274_h_index;
 pub mod problem_0275_h_index_ii;
 pub mod problem_0289_game_of_life;
