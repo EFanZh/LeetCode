@@ -215,6 +215,7 @@ pub mod problem_0268_missing_number;
 pub mod problem_0273_integer_to_english_words;
 pub mod problem_0274_h_index;
 pub mod problem_0275_h_index_ii;
+pub mod problem_0279_perfect_squares;
 pub mod problem_0289_game_of_life;
 pub mod problem_0292_nim_game;
 pub mod problem_0300_longest_increasing_subsequence;

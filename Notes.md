@@ -170,6 +170,10 @@ Make sure it can be solved again.
 
 Make sure it can be solved again.
 
+## [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+
+Investigate the mathematical solution.
+
 ## [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 
 Make sure it can be solved again.
