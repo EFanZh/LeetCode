@@ -174,6 +174,10 @@ Make sure it can be solved again.
 
 Investigate the mathematical solution.
 
+## [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
+
+Remember the solution.
+
 ## [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 
 Make sure it can be solved again.
