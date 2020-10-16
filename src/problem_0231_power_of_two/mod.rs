@@ -1,4 +1,5 @@
 pub mod bit_manipulation;
+pub mod division;
 pub mod enumeration;
 
 pub trait Solution {
