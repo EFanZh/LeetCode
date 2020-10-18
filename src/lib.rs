@@ -224,6 +224,7 @@ pub mod problem_0292_nim_game;
 pub mod problem_0300_longest_increasing_subsequence;
 pub mod problem_0322_coin_change;
 pub mod problem_0326_power_of_three;
+pub mod problem_0342_power_of_four;
 pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
