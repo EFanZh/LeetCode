@@ -15,6 +15,7 @@ mod tests {
             (("abba", "dog cat cat fish"), false),
             (("aaaa", "dog cat cat dog"), false),
             (("abba", "dog dog dog dog"), false),
+            (("aaa", "aa aa aa aa"), false),
         ];
 
         for ((pattern, s), expected) in test_cases.iter().copied() {
