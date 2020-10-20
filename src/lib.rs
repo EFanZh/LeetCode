@@ -223,6 +223,7 @@ pub mod problem_0290_word_pattern;
 pub mod problem_0292_nim_game;
 pub mod problem_0299_bulls_and_cows;
 pub mod problem_0300_longest_increasing_subsequence;
+pub mod problem_0318_maximum_product_of_word_lengths;
 pub mod problem_0322_coin_change;
 pub mod problem_0326_power_of_three;
 pub mod problem_0342_power_of_four;
