@@ -13,6 +13,7 @@ mod tests {
             (&["abcw", "baz", "foo", "bar", "xtfn", "abcdef"] as &[_], 16),
             (&["a", "ab", "abc", "d", "cd", "bcd", "abcd"], 4),
             (&["a", "aa", "aaa", "aaaa"], 0),
+            (&[], 0),
         ];
 
         for (words, expected) in test_cases.iter().copied() {
