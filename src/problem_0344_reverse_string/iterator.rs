@@ -1,0 +1,27 @@
+pub struct Solution;
+
+use std::mem;
+
+impl Solution {
+    pub fn reverse_string(s: &mut Vec<char>) {
+        let mut iter = s.iter_mut();
+
+        while let (Some(left), Some(right)) = (iter.next(), iter.next_back()) {
+            mem::swap(left, right);
+        }
+    }
+}
+
+impl super::Solution for Solution {
+    fn reverse_string(s: &mut Vec<char>) {
+        Self::reverse_string(s)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_solution() {
+        super::super::tests::run::<super::Solution>();
+    }
+}
