@@ -230,6 +230,7 @@ pub mod problem_0342_power_of_four;
 pub mod problem_0344_reverse_string;
 pub mod problem_0349_intersection_of_two_arrays;
 pub mod problem_0350_intersection_of_two_arrays_ii;
+pub mod problem_0401_binary_watch;
 pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
