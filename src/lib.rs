@@ -222,6 +222,7 @@ pub mod problem_0289_game_of_life;
 pub mod problem_0290_word_pattern;
 pub mod problem_0292_nim_game;
 pub mod problem_0295_find_median_from_data_stream;
+pub mod problem_0297_serialize_and_deserialize_binary_tree;
 pub mod problem_0299_bulls_and_cows;
 pub mod problem_0300_longest_increasing_subsequence;
 pub mod problem_0318_maximum_product_of_word_lengths;
