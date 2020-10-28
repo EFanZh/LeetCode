@@ -232,6 +232,7 @@ pub mod problem_0322_coin_change;
 pub mod problem_0326_power_of_three;
 pub mod problem_0342_power_of_four;
 pub mod problem_0344_reverse_string;
+pub mod problem_0345_reverse_vowels_of_a_string;
 pub mod problem_0349_intersection_of_two_arrays;
 pub mod problem_0350_intersection_of_two_arrays_ii;
 pub mod problem_0401_binary_watch;
