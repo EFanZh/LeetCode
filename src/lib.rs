@@ -241,6 +241,7 @@ pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
 pub mod problem_0518_coin_change_2;
 pub mod problem_0543_diameter_of_binary_tree;
+pub mod problem_0709_to_lower_case;
 pub mod problem_0721_accounts_merge;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
