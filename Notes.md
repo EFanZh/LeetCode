@@ -182,6 +182,10 @@ Remember the solution.
 
 Make sure it can be solved again.
 
+## [301. Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)
+
+Make sure it can be solved again.
+
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 How do you know that the greedy algorithm works?
