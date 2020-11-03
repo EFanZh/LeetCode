@@ -230,6 +230,7 @@ pub mod problem_0300_longest_increasing_subsequence;
 pub mod problem_0301_remove_invalid_parentheses;
 pub mod problem_0303_range_sum_query_immutable;
 pub mod problem_0304_range_sum_query_2d_immutable;
+pub mod problem_0306_additive_number;
 pub mod problem_0309_best_time_to_buy_and_sell_stock_with_cooldown;
 pub mod problem_0318_maximum_product_of_word_lengths;
 pub mod problem_0322_coin_change;
