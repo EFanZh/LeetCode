@@ -240,6 +240,7 @@ pub mod problem_0344_reverse_string;
 pub mod problem_0345_reverse_vowels_of_a_string;
 pub mod problem_0349_intersection_of_two_arrays;
 pub mod problem_0350_intersection_of_two_arrays_ii;
+pub mod problem_0367_valid_perfect_square;
 pub mod problem_0401_binary_watch;
 pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0509_fibonacci_number;
