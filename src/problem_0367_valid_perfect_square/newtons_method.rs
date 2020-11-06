@@ -4,24 +4,14 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn is_perfect_square(num: i32) -> bool {
-        if num == 1 {
-            true
-        } else {
-            let mut left = 1;
-            let mut right = num.min(46340);
+        let num = num as u64;
+        let mut x = num;
 
-            loop {
-                let middle = (left + right) / 2;
-
-                match (middle * middle).cmp(&num) {
-                    Ordering::Less => left = middle + 1,
-                    Ordering::Equal => return true,
-                    Ordering::Greater => right = middle,
-                }
-
-                if left == right {
-                    return false;
-                }
+        loop {
+            match (x * x).cmp(&num) {
+                Ordering::Less => return false,
+                Ordering::Equal => return true,
+                Ordering::Greater => x = (x + num / x) / 2,
             }
         }
     }
