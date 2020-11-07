@@ -1,4 +1,5 @@
 pub mod binary_search;
+pub mod binary_search_2;
 pub mod binary_search_fast;
 pub mod binary_search_fast_2;
 pub mod binary_search_recursive;
