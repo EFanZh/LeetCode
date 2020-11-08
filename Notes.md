@@ -186,6 +186,10 @@ Make sure it can be solved again.
 
 Make sure it can be solved again.
 
+## [307. Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)
+
+Why does the heap like binary tree (segment tree) works for *n* that is not a power of 2?
+
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 How do you know that the greedy algorithm works?
