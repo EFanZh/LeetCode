@@ -2,22 +2,21 @@ pub struct Solution;
 
 impl Solution {
     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-        let mut left = 0;
-        let mut size = nums.len();
+        let mut start = 0;
+        let mut length = nums.len();
 
-        while size > 0 {
-            let half = size / 2;
-            let middle = left + half;
+        while length != 0 {
+            let half = length / 2;
 
-            if nums[middle] < target {
-                left += half + 1;
-                size -= half + 1;
+            if nums[start + half] < target {
+                start += half + 1;
+                length -= half + 1;
             } else {
-                size = half;
+                length = half;
             }
         }
 
-        left as _
+        start as _
     }
 }
 
