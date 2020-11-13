@@ -238,6 +238,7 @@ pub mod problem_0307_range_sum_query_mutable;
 pub mod problem_0309_best_time_to_buy_and_sell_stock_with_cooldown;
 pub mod problem_0312_burst_balloons;
 pub mod problem_0318_maximum_product_of_word_lengths;
+pub mod problem_0319_bulb_switcher;
 pub mod problem_0322_coin_change;
 pub mod problem_0326_power_of_three;
 pub mod problem_0342_power_of_four;
