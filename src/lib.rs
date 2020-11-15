@@ -236,6 +236,7 @@ pub mod problem_0304_range_sum_query_2d_immutable;
 pub mod problem_0306_additive_number;
 pub mod problem_0307_range_sum_query_mutable;
 pub mod problem_0309_best_time_to_buy_and_sell_stock_with_cooldown;
+pub mod problem_0310_minimum_height_trees;
 pub mod problem_0312_burst_balloons;
 pub mod problem_0313_super_ugly_number;
 pub mod problem_0318_maximum_product_of_word_lengths;
