@@ -263,6 +263,7 @@ pub mod problem_0721_accounts_merge;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_1143_longest_common_subsequence;
+pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 
 #[cfg(test)]
