@@ -245,6 +245,7 @@ pub mod problem_0322_coin_change;
 pub mod problem_0326_power_of_three;
 pub mod problem_0328_odd_even_linked_list;
 pub mod problem_0329_longest_increasing_path_in_a_matrix;
+pub mod problem_0331_verify_preorder_serialization_of_a_binary_tree;
 pub mod problem_0342_power_of_four;
 pub mod problem_0344_reverse_string;
 pub mod problem_0345_reverse_vowels_of_a_string;
