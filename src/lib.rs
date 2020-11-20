@@ -252,6 +252,7 @@ pub mod problem_0345_reverse_vowels_of_a_string;
 pub mod problem_0349_intersection_of_two_arrays;
 pub mod problem_0350_intersection_of_two_arrays_ii;
 pub mod problem_0367_valid_perfect_square;
+pub mod problem_0371_sum_of_two_integers;
 pub mod problem_0383_ransom_note;
 pub mod problem_0393_utf_8_validation;
 pub mod problem_0401_binary_watch;
