@@ -9,7 +9,7 @@ impl Solution {
         let mut result = String::new();
 
         for _ in 0..num / 1000 {
-            result.push_str("M");
+            result.push('M');
         }
 
         result.push_str(C[((num % 1000) / 100) as usize]);
