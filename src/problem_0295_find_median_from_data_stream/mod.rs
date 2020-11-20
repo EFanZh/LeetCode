@@ -27,7 +27,7 @@ mod tests {
             for operation in operations {
                 match *operation {
                     AddNum(num) => median_finder.add_num(num),
-                    FindMedian(expected) => assert!((median_finder.find_median() - expected) < f64::EPSILON),
+                    FindMedian(expected) => assert!((median_finder.find_median() - expected).abs() < f64::EPSILON),
                 }
             }
         }

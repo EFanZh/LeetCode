@@ -13,7 +13,7 @@ fn write_attribute(attribute: &(&str, &str), target: &mut String) {
         }
     }
 
-    target.push_str("\"");
+    target.push('\"');
 }
 
 pub struct Writer<'a> {
@@ -27,28 +27,28 @@ impl<'a> Writer<'a> {
 
     fn write_attributes(&mut self, attributes: &[(&str, &str)]) {
         for attribute in attributes.iter() {
-            self.buffer.push_str(" ");
+            self.buffer.push(' ');
             write_attribute(attribute, self.buffer);
         }
     }
 
     pub fn element<B: FnMut(&mut Self)>(&mut self, tag: &str, attributes: &[(&str, &str)], mut body: B) {
-        self.buffer.push_str("<");
+        self.buffer.push('<');
         self.buffer.push_str(tag);
 
         self.write_attributes(attributes);
 
-        self.buffer.push_str(">");
+        self.buffer.push('>');
 
         body(self);
 
         self.buffer.push_str("</");
         self.buffer.push_str(tag);
-        self.buffer.push_str(">");
+        self.buffer.push('>');
     }
 
     pub fn empty_element(&mut self, tag: &str, attributes: &[(&str, &str)]) {
-        self.buffer.push_str("<");
+        self.buffer.push('<');
         self.buffer.push_str(tag);
 
         self.write_attributes(attributes);

@@ -36,7 +36,7 @@ impl Solution {
                 let remainder = num % 10;
 
                 if remainder != 0 {
-                    result.push_str(" ");
+                    result.push(' ');
                     Self::less_than_thousand(remainder, result);
                 }
             }
@@ -48,7 +48,7 @@ impl Solution {
                 let remainder = num % 100;
 
                 if remainder != 0 {
-                    result.push_str(" ");
+                    result.push(' ');
                     Self::less_than_thousand(remainder, result);
                 }
             }
@@ -64,7 +64,7 @@ impl Solution {
             for &(name, base) in &[("Billion", 1_000_000_000), ("Million", 1_000_000), ("Thousand", 1_000)] {
                 if num >= base {
                     Self::less_than_thousand(num / base, &mut result);
-                    result.push_str(" ");
+                    result.push(' ');
                     result.push_str(name);
 
                     num %= base;
@@ -72,7 +72,7 @@ impl Solution {
                     if num == 0 {
                         return result;
                     } else {
-                        result.push_str(" ");
+                        result.push(' ');
                     }
                 }
             }

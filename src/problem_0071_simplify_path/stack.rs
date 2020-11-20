@@ -21,7 +21,7 @@ impl Solution {
             result.push_str(first);
 
             for component in iter {
-                result.push_str("/");
+                result.push('/');
                 result.push_str(component);
             }
         }

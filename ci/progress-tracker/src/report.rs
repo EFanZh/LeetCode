@@ -135,7 +135,7 @@ figure { display: flex; justify-content: center; }
         });
     });
 
-    result.push_str("\n");
+    result.push('\n');
 
     fs::write(output, result).unwrap();
 }
