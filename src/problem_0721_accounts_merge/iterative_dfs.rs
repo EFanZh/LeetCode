@@ -12,7 +12,7 @@ impl Solution {
             let (name, emails) = user.split_first().unwrap();
 
             user_names
-                .entry(name.as_str())
+                .entry(&name)
                 .and_modify(|accounts| accounts.push(emails))
                 .or_insert_with(|| vec![emails]);
         }

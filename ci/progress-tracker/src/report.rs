@@ -26,19 +26,18 @@ fn write_hyper_link(writer: &mut Writer, href: &str, text: &str) {
 fn write_problem_link(writer: &mut Writer, problem: &Problem) {
     write_hyper_link(
         writer,
-        format!("https://leetcode.com/problems/{}/", problem.stat.title_slug).as_str(),
-        problem.stat.title.as_str(),
+        &format!("https://leetcode.com/problems/{}/", problem.stat.title_slug),
+        &problem.stat.title,
     );
 }
 
 fn write_solution_link(writer: &mut Writer, problem_id: &str, solution: &str) {
     write_hyper_link(
         writer,
-        format!(
+        &format!(
             "https://github.com/EFanZh/LeetCode/blob/master/src/problem_{}/{}.rs",
             problem_id, solution
-        )
-        .as_str(),
+        ),
         solution,
     );
 }
@@ -97,11 +96,11 @@ figure { display: flex; justify-content: center; }
                     });
                     w.element("tbody", &[], |w| {
                         for problem in problems {
-                            if let Some(solution_list) = solution_map.get(problem.get_id().as_str()) {
+                            if let Some(solution_list) = solution_map.get(&problem.get_id()) {
                                 w.element("tr", &[], |w| {
                                     w.element("td", &[], |w| w.text("✔"));
                                     w.element("td", &[], |w| {
-                                        w.text(problem.stat.frontend_question_id.to_string().as_str());
+                                        w.text(&problem.stat.frontend_question_id.to_string());
                                     });
                                     w.element("td", &[], |w| write_problem_link(w, problem));
                                     w.element("td", &[], |w| write_difficulty(w, problem.difficulty.level));
@@ -111,7 +110,7 @@ figure { display: flex; justify-content: center; }
 
                                             for solution in solution_list {
                                                 w.element("li", &[], |w| {
-                                                    write_solution_link(w, problem_id.as_str(), solution);
+                                                    write_solution_link(w, &problem_id, solution);
                                                 })
                                             }
                                         })
@@ -120,9 +119,7 @@ figure { display: flex; justify-content: center; }
                             } else {
                                 w.element("tr", &[("class", "not-done")], |w| {
                                     w.element("td", &[], |_| {});
-                                    w.element("td", &[], |w| {
-                                        w.text(problem.stat.frontend_question_id.to_string().as_str())
-                                    });
+                                    w.element("td", &[], |w| w.text(&problem.stat.frontend_question_id.to_string()));
                                     w.element("td", &[], |w| write_problem_link(w, problem));
                                     w.element("td", &[], |w| write_difficulty(w, problem.difficulty.level));
                                     w.element("td", &[], |_| {});
