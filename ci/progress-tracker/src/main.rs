@@ -40,7 +40,7 @@ fn generate_report<P: AsRef<Path>>(repository: P, target: P) {
         .unwrap();
 
     report::generate(
-        problems.problems.as_slice(),
+        &problems.problems,
         &tree,
         "progress.svg",
         target.as_ref().join("index.html"),

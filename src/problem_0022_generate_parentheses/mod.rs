@@ -19,7 +19,7 @@ mod tests {
         ];
 
         for (n, expected) in test_cases.iter().copied() {
-            assert_eq!(S::generate_parenthesis(n).as_slice(), expected);
+            assert_eq!(S::generate_parenthesis(n), expected);
         }
     }
 }
