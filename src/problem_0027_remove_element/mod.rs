@@ -20,7 +20,7 @@ mod tests {
             let mut nums = nums.to_vec();
             let result = S::remove_element(&mut nums, val);
 
-            assert_eq!(nums.as_slice(), expected);
+            assert_eq!(nums, expected);
             assert_eq!(result as usize, expected.len());
         }
     }

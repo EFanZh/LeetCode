@@ -21,7 +21,7 @@ mod tests {
             let mut nums = nums.to_vec();
             let result = S::remove_duplicates(&mut nums);
 
-            assert_eq!(nums.as_slice(), expected);
+            assert_eq!(nums, expected);
             assert_eq!(result as usize, expected.len());
         }
     }
