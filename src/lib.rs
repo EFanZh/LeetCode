@@ -251,6 +251,7 @@ pub mod problem_0330_patching_array;
 pub mod problem_0331_verify_preorder_serialization_of_a_binary_tree;
 pub mod problem_0332_reconstruct_itinerary;
 pub mod problem_0334_increasing_triplet_subsequence;
+pub mod problem_0337_house_robber_iii;
 pub mod problem_0342_power_of_four;
 pub mod problem_0344_reverse_string;
 pub mod problem_0345_reverse_vowels_of_a_string;
