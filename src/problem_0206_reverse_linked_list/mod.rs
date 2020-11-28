@@ -1,6 +1,7 @@
 use super::data_structures::ListNode;
 
 pub mod iterative;
+pub mod recursive;
 
 pub trait Solution {
     fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>>;
