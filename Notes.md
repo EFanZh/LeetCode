@@ -190,6 +190,10 @@ Make sure it can be solved again.
 
 Why does the heap like binary tree (segment tree) works for *n* that is not a power of 2?
 
+## [316. Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)
+
+Make sure it can be solved again.
+
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 How do you know that the greedy algorithm works?
