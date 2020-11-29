@@ -264,6 +264,7 @@ pub mod problem_0371_sum_of_two_integers;
 pub mod problem_0383_ransom_note;
 pub mod problem_0393_utf_8_validation;
 pub mod problem_0401_binary_watch;
+pub mod problem_0402_remove_k_digits;
 pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
