@@ -1,0 +1,35 @@
+on: push
+jobs:
+    tests:
+        runs-on: ${{ matrix.os }}
+        steps:
+          - run: vcpkg install gtest
+          - uses: actions/checkout@v2
+          - run: cmake -S c++ -B build -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+          - run: cmake --build build
+          - run: ctest
+            working-directory: build
+        strategy:
+            matrix:
+                os:
+                  - macOS-latest
+                  - ubuntu-latest
+    tests-windows:
+        runs-on: windows-latest
+        steps:
+          - run: vcpkg install gtest --triplet ${{ matrix.platform }}-windows
+          - uses: actions/checkout@v2
+          - run: >-
+                cmake
+                -S c++
+                -B build
+                -A $('${{ matrix.platform }}' -eq 'x64' ? 'x64' : 'Win32')
+                -D CMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
+          - run: cmake --build build
+          - run: ctest
+            working-directory: build
+        strategy:
+            matrix:
+                platform:
+                  - x64
+                  - x86
