@@ -5,7 +5,7 @@ jobs:
         steps:
           - run: vcpkg install gtest
           - uses: actions/checkout@v2
-          - run: cmake -S c++ -B build -DCMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+          - run: cmake -S c++ -B build -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
           - run: cmake --build build
           - run: ctest
             working-directory: build
@@ -20,10 +20,11 @@ jobs:
           - run: vcpkg install gtest --triplet ${{ matrix.platform }}-windows
           - uses: actions/checkout@v2
           - run: >-
-                cmake -S c++
+                cmake
+                -S c++
                 -B build
                 -A $('${{ matrix.platform }}' -eq 'x64' ? 'x64' : 'Win32')
-                -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
+                -D CMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
           - run: cmake --build build
           - run: ctest
             working-directory: build
