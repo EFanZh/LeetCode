@@ -19,10 +19,11 @@ jobs:
         steps:
           - run: vcpkg install gtest --triplet ${{ matrix.platform }}-windows
           - uses: actions/checkout@v2
-          - run: cmake -S c++ -B build -A Win32 -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
-            if: matrix.platform == 'x86'
-          - run: cmake -S c++ -B build -A x64 -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
-            if: matrix.platform == 'x64'
+          - run: >-
+                cmake -S c++
+                -B build
+                -A $('${{ matrix.platform }}' -eq 'x64' ? 'x64' : 'Win32')
+                -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
           - run: cmake --build build
           - run: ctest
             working-directory: build
