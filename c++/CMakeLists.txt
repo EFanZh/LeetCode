@@ -52,7 +52,15 @@ if(STANDALONE_PROJECT)
             "/WX"
         )
     else()
-        target_compile_options("common-compile-options" INTERFACE "-Wall" "-Wextra" "-Wpedantic" "-Wconversion" "-Werror")
+        target_compile_options(
+            "common-compile-options"
+            INTERFACE
+            "-Wall"
+            "-Wextra"
+            "-Wpedantic"
+            "-Wconversion"
+            "-Werror"
+        )
     endif()
 
     # Check headers.
@@ -80,6 +88,10 @@ if(STANDALONE_PROJECT)
     target_include_directories("check-leet-code-headers" PRIVATE "tests")
     target_link_libraries("check-leet-code-headers" PRIVATE "common-compile-options" "leet-code" "GTest::gtest_main")
 
+    set_target_properties("check-leet-code-headers"
+                          PROPERTIES CXX_EXTENSIONS OFF
+                                     CXX_STANDARD_REQUIRED ON)
+
     # Test executable.
 
     add_executable(
@@ -87,11 +99,11 @@ if(STANDALONE_PROJECT)
         "tests/leet-code/problem-0321-create-maximum-number/greedy.cpp"
     )
 
+    target_link_libraries("leet-code-tests" PRIVATE "common-compile-options" "leet-code" "GTest::gtest_main")
+
     set_target_properties("leet-code-tests"
                           PROPERTIES CXX_EXTENSIONS OFF
                                      CXX_STANDARD_REQUIRED ON)
-
-    target_link_libraries("leet-code-tests" PRIVATE "common-compile-options" "leet-code" "GTest::gtest_main")
 
     gtest_discover_tests("leet-code-tests")
 endif()
