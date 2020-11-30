@@ -45,10 +45,10 @@ if(STANDALONE_PROJECT)
             "common-compile-options"
             INTERFACE
             "/W4"
-            "/we4287" # 'operator': unsigned/negative constant mismatch
-            "/we4365" # 'action': conversion from 'type_1' to 'type_2', signed/unsigned mismatch
-            "/we4388" # signed/unsigned mismatch
-            "/we4826" # Conversion from 'type1' to 'type2' is sign-extended. This may cause unexpected runtime behavior.
+            "/we4287" # 'expression': unsigned/negative constant mismatch
+            "/we4365" # 'expression': conversion from 'type' to 'type', signed/unsigned mismatch
+            "/we4388" # 'token': signed/unsigned mismatch
+            "/we4826" # Conversion from 'type' to 'type' is sign-extended. This may cause unexpected runtime behavior.
             "/WX"
         )
     else()
