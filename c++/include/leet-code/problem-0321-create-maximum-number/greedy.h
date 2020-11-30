@@ -19,7 +19,7 @@ class Solution {
                 const auto digit = num[i];
 
                 const auto insertion_point = static_cast<size_t>(
-                    std::lower_bound(result + start, result + stack_length, digit, greater_equal<>{}) - result);
+                    std::lower_bound(result + start, result + stack_length, digit, greater_equal{}) - result);
 
                 if (insertion_point != result_length) {
                     result[insertion_point] = digit;
