@@ -265,6 +265,7 @@ pub mod problem_0367_valid_perfect_square;
 pub mod problem_0371_sum_of_two_integers;
 pub mod problem_0383_ransom_note;
 pub mod problem_0387_first_unique_character_in_a_string;
+pub mod problem_0392_is_subsequence;
 pub mod problem_0393_utf_8_validation;
 pub mod problem_0401_binary_watch;
 pub mod problem_0402_remove_k_digits;
