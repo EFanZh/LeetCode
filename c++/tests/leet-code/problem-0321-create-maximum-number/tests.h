@@ -1,3 +1,6 @@
+#ifndef LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_TESTS_H
+#define LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_TESTS_H
+
 #include <gtest/gtest.h>
 
 namespace leet_code::problem_0321_create_maximum_number::tests {
@@ -27,3 +30,5 @@ void run_tests() {
     }
 }
 } // namespace leet_code::problem_0321_create_maximum_number::tests
+
+#endif // LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_TESTS_H
