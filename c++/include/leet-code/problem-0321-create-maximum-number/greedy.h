@@ -1,3 +1,6 @@
+#ifndef LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_GREEDY_H
+#define LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_GREEDY_H
+
 #include <algorithm>
 #include <tuple>
 #include <vector>
@@ -106,3 +109,5 @@ public:
     }
 };
 } // namespace leet_code::problem_0321_create_maximum_number::greedy
+
+#endif // LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_GREEDY_H

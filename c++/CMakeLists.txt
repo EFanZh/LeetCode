@@ -67,8 +67,12 @@ if(STANDALONE_PROJECT)
 
     set(
         LEET_CODE_HEADERS
+        "include/leet-code/data-structures/list-node.h"
+        "include/leet-code/problem-0237-delete-node-in-a-linked-list/modify-this.h"
         "include/leet-code/problem-0321-create-maximum-number/greedy.h"
+        "tests/leet-code/problem-0237-delete-node-in-a-linked-list/tests.h"
         "tests/leet-code/problem-0321-create-maximum-number/tests.h"
+        "tests/leet-code/test-utilities.h"
     )
 
     set(CHECK_LEET_CODE_HEADERS_SOURCES)
@@ -96,7 +100,9 @@ if(STANDALONE_PROJECT)
 
     add_executable(
         "leet-code-tests"
+        "tests/leet-code/problem-0237-delete-node-in-a-linked-list/modify-this.cpp"
         "tests/leet-code/problem-0321-create-maximum-number/greedy.cpp"
+        "tests/leet-code/test-utilities.cpp"
     )
 
     target_link_libraries("leet-code-tests" PRIVATE "common-compile-options" "leet-code" "GTest::gtest_main")
