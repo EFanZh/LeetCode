@@ -20,7 +20,8 @@ void run_tests() {
 
     for (const auto &[args, expected] : test_cases) {
         const auto [list_values, node_value] = args;
-        [[maybe_unused]] const auto [buffer, head] = test_utilities::make_list(list_values);
+        const auto buffer_and_head = test_utilities::make_list(list_values);
+        auto *const head = std::get<1>(buffer_and_head);
         auto *node = head;
 
         while (node->val != node_value) {
