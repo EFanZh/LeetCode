@@ -32,10 +32,8 @@ fn to_title_case(id: &str) -> String {
 
 fn main() {
     let project_path = PathBuf::from(env::args_os().nth(1).unwrap());
-    let include_path = project_path.join("include");
-    let leet_code_include_path = include_path.join("leet-code");
-    let tests_path = project_path.join("tests");
-    let leet_code_tests_path = tests_path.join("leet-code");
+    let leet_code_include_path = project_path.join("include").join("leet-code");
+    let leet_code_tests_path = project_path.join("tests").join("leet-code");
 
     for problem_id in fs::read_dir(&leet_code_include_path).unwrap().filter_map(|entry| {
         entry
@@ -50,11 +48,8 @@ fn main() {
     }) {
         println!("Checking problem “{}” ...", problem_id);
 
-        let problem_path = leet_code_include_path.join(format!("problem-{}", problem_id));
         let problem_include_guard = to_all_caps_case(&problem_id);
         let problem_namespace = problem_id.replace('-', "_");
-        let problem_name = to_title_case(&problem_id);
-        let problem_test_path = leet_code_tests_path.join(format!("problem-{}", problem_id));
 
         println!("    Checking tests ...");
 
@@ -76,11 +71,15 @@ fn main() {
         ))
         .unwrap();
 
+        let problem_test_path = leet_code_tests_path.join(format!("problem-{}", problem_id));
         let problem_tests_source = fs::read_to_string(problem_test_path.join("tests.h")).unwrap();
 
         assert!(solution_tests_regex.is_match(&problem_tests_source));
 
         println!("    Checking solutions ...");
+
+        let problem_path = leet_code_include_path.join(format!("problem-{}", problem_id));
+        let problem_name = to_title_case(&problem_id);
 
         for solution_id in fs::read_dir(&problem_path)
             .unwrap()
