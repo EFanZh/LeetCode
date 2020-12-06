@@ -1,4 +1,5 @@
 pub mod greedy;
+pub mod greedy_2;
 pub mod stack;
 
 pub trait Solution {
@@ -16,6 +17,9 @@ mod tests {
             (("10", 2), "0"),
             (("112", 1), "11"),
             (("1173", 2), "11"),
+            (("5337", 2), "33"),
+            (("1234", 4), "0"),
+            (("52660469", 2), "260469"),
         ];
 
         for ((num, k), expected) in test_cases.iter().copied() {
