@@ -5,7 +5,7 @@
 
 namespace leet_code::problem_0321_create_maximum_number::tests {
 template <class S>
-void run_tests() {
+void run() {
     using std::tuple;
     using std::vector;
 
@@ -20,6 +20,7 @@ void run_tests() {
             {{2, 5, 6, 4, 4, 0}, {7, 3, 8, 0, 6, 5, 7, 6, 2}, 15},
             {7, 3, 8, 2, 5, 6, 4, 4, 0, 6, 5, 7, 6, 2, 0},
         },
+        {{{6, 7, 5}, {4, 8, 1}, 3}, {8, 7, 5}},
     };
 
     for (const auto &[args, expected] : test_cases) {

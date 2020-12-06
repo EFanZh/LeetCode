@@ -1,0 +1,30 @@
+#ifndef LEET_CODE_PROBLEM_0402_REMOVE_K_DIGITS_TESTS_H
+#define LEET_CODE_PROBLEM_0402_REMOVE_K_DIGITS_TESTS_H
+
+#include <gtest/gtest.h>
+
+namespace leet_code::problem_0402_remove_k_digits::tests {
+template <class S>
+void run() {
+    using std::string;
+    using std::string_view;
+    using std::tuple;
+
+    const tuple<tuple<string_view, int>, string_view> test_cases[] = {
+        {{"1432219", 3}, "1219"},
+        {{"10200", 1}, "200"},
+        {{"10", 2}, "0"},
+        {{"112", 1}, "11"},
+        {{"10", 1}, "0"},
+    };
+
+    for (const auto &[args, expected] : test_cases) {
+        const auto [num, k] = args;
+        const auto result = S{}.removeKdigits(string{num}, k);
+
+        ASSERT_EQ(expected, result);
+    }
+}
+} // namespace leet_code::problem_0402_remove_k_digits::tests
+
+#endif // LEET_CODE_PROBLEM_0402_REMOVE_K_DIGITS_TESTS_H

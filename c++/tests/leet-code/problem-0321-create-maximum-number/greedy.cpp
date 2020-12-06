@@ -3,6 +3,6 @@
 
 namespace leet_code::problem_0321_create_maximum_number::tests {
 TEST(Problem0321CreateMaximumNumber, Greedy) {
-    tests::run_tests<greedy::Solution>();
+    tests::run<greedy::Solution>();
 }
 } // namespace leet_code::problem_0321_create_maximum_number::tests
