@@ -43,7 +43,8 @@ class Solution {
             std::copy(nums_1, nums_1_end, result);
         } else {
             for (;;) {
-                if (std::lexicographical_compare(nums_1, nums_1_end, nums_2, nums_2_end)) {
+                if (*nums_1 < *nums_2 || (*nums_1 == *nums_2 && std::lexicographical_compare(
+                                                                    nums_1 + 1, nums_1_end, nums_2 + 1, nums_2_end))) {
                     *result = *nums_2;
                     ++result;
                     ++nums_2;

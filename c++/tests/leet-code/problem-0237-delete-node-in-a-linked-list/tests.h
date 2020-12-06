@@ -6,7 +6,7 @@
 
 namespace leet_code::problem_0237_delete_node_in_a_linked_list::tests {
 template <class S>
-void run_tests() {
+void run() {
     using std::tuple;
     using std::vector;
 

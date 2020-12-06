@@ -30,6 +30,15 @@ fn to_title_case(id: &str) -> String {
     result
 }
 
+fn check_regex(re: &str, text: &str) {
+    assert!(
+        Regex::new(re).unwrap().is_match(text),
+        "regex = {:?}, text = {:?}",
+        re,
+        text
+    );
+}
+
 fn main() {
     let project_path = PathBuf::from(env::args_os().nth(1).unwrap());
     let leet_code_include_path = project_path.join("include").join("leet-code");
@@ -53,14 +62,14 @@ fn main() {
 
         println!("    Checking tests ...");
 
-        let solution_tests_regex = Regex::new(&format!(
+        let solution_tests_regex = format!(
             "(?s)^\
                 #ifndef LEET_CODE_PROBLEM_{problem_include_guard}_TESTS_H\r?\n\
                 #define LEET_CODE_PROBLEM_{problem_include_guard}_TESTS_H\r?\n\r?\n\
                 ((#include (<[^>]+>|\"[^\"]+\")\r?\n)+\r?\n)?\
                 namespace leet_code::problem_{problem_namespace}::tests \\{{\r?\n\
                 template <class .>\r?\n\
-                void run_tests\\(\\) \\{{\
+                void run\\(\\) \\{{\
                 \r?\n.*\
                 \\}}\r?\n\
                 \\}} // namespace leet_code::problem_{problem_namespace}::tests\r?\n\r?\n\
@@ -68,13 +77,12 @@ fn main() {
             $",
             problem_include_guard = problem_include_guard.as_str(),
             problem_namespace = problem_namespace.as_str(),
-        ))
-        .unwrap();
+        );
 
         let problem_test_path = leet_code_tests_path.join(format!("problem-{}", problem_id));
         let problem_tests_source = fs::read_to_string(problem_test_path.join("tests.h")).unwrap();
 
-        assert!(solution_tests_regex.is_match(&problem_tests_source));
+        check_regex(&solution_tests_regex, &problem_tests_source);
 
         println!("    Checking solutions ...");
 
@@ -90,7 +98,7 @@ fn main() {
 
             let solution_namespace = solution_id.replace('-', "_");
 
-            let solution_regex = Regex::new(&format!(
+            let solution_regex = format!(
                 "(?s)^\
                     #ifndef LEET_CODE_PROBLEM_{problem_include_guard}_{solution_include_guard}_H\r?\n\
                     #define LEET_CODE_PROBLEM_{problem_include_guard}_{solution_include_guard}_H\r?\n\r?\n\
@@ -104,22 +112,21 @@ fn main() {
                 solution_include_guard = to_all_caps_case(&solution_id),
                 problem_namespace = problem_namespace.as_str(),
                 solution_namespace = solution_namespace.as_str(),
-            ))
-            .unwrap();
+            );
 
             let solution_source = fs::read_to_string(problem_path.join(format!("{}.h", solution_id))).unwrap();
 
-            assert!(solution_regex.is_match(&solution_source));
+            check_regex(&solution_regex, &solution_source);
 
             println!("            Checking tests ...");
 
-            let solution_tests_regex = Regex::new(&format!(
+            let solution_tests_regex = format!(
                 "(?s)^\
                     #include \"tests.h\"\r?\n\
                     #include <leet-code/problem-{problem_id}/{solution_id}.h>\r?\n\r?\n\
                     namespace leet_code::problem_{problem_namespace}::tests \\{{\r?\n\
                     TEST\\(Problem{problem_name}, {solution_name}\\) \\{{\r?\n\
-                    [ ]   tests::run_tests<{solution_namespace}::[^>]+>\\(\\);\r?\n\
+                    [ ]   tests::run<{solution_namespace}::[^>]+>\\(\\);\r?\n\
                     \\}}\r?\n\
                     \\}} // namespace leet_code::problem_{problem_namespace}::tests\r?\n\
                 $",
@@ -129,13 +136,12 @@ fn main() {
                 problem_name = problem_name,
                 solution_name = to_title_case(&solution_id),
                 solution_namespace = solution_namespace
-            ))
-            .unwrap();
+            );
 
             let solution_tests_source =
                 fs::read_to_string(problem_test_path.join(format!("{}.cpp", solution_id))).unwrap();
 
-            assert!(solution_tests_regex.is_match(&solution_tests_source));
+            check_regex(&solution_tests_regex, &solution_tests_source);
         }
     }
 }
