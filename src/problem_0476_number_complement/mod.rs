@@ -1,5 +1,6 @@
 pub mod bit_manipulation;
 pub mod bit_manipulation_2;
+pub mod bit_manipulation_3;
 
 pub trait Solution {
     fn find_complement(num: i32) -> i32;
