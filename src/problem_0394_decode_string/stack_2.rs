@@ -19,8 +19,7 @@ impl Solution {
                 }
                 b']' => {
                     if let Some((repeats, saved_length)) = stack.pop() {
-                        let child_length = result.len() - saved_length;
-                        let extra_space = child_length * (repeats - 1);
+                        let extra_space = (result.len() - saved_length) * (repeats - 1);
 
                         result.reserve(extra_space);
 
