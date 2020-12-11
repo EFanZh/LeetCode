@@ -265,6 +265,7 @@ pub mod problem_0354_russian_doll_envelopes;
 pub mod problem_0355_design_twitter;
 pub mod problem_0357_count_numbers_with_unique_digits;
 pub mod problem_0367_valid_perfect_square;
+pub mod problem_0368_largest_divisible_subset;
 pub mod problem_0371_sum_of_two_integers;
 pub mod problem_0383_ransom_note;
 pub mod problem_0387_first_unique_character_in_a_string;
