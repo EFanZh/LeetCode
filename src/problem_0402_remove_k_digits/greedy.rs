@@ -5,39 +5,41 @@ use std::cmp::Ordering;
 impl Solution {
     pub fn remove_kdigits(mut num: String, k: i32) -> String {
         if k != 0 {
-            let k = k as usize;
             let n = num.len();
+            let k = k as usize;
 
-            if k < n {
+            if k == n {
+                num.replace_range(.., "0");
+            } else {
                 let mut bytes = num.into_bytes();
-                let result_length = n - k;
+                let length = n - k;
 
-                let mut stack_length = bytes[..result_length]
+                let mut stack_top = bytes[..length]
                     .iter()
                     .zip(&bytes[1..])
                     .position(|(lhs, rhs)| lhs > rhs)
-                    .unwrap_or(result_length);
+                    .unwrap_or(length);
 
-                let mut i = stack_length + 1;
+                let mut i = stack_top + 1;
 
-                while i - stack_length != k {
+                while i - stack_top != k {
                     let start = i.saturating_sub(k);
                     let digit = bytes[i];
 
                     let insertion_point = start
-                        + bytes[start..stack_length]
-                            .binary_search_by(|&v| if v > digit { Ordering::Greater } else { Ordering::Less })
+                        + bytes[start..stack_top]
+                            .binary_search_by(|&d| if d <= digit { Ordering::Less } else { Ordering::Greater })
                             .unwrap_err();
 
-                    if insertion_point != result_length {
+                    if insertion_point != length {
                         bytes[insertion_point] = digit;
-                        stack_length = insertion_point + 1;
+                        stack_top = insertion_point + 1;
                     }
 
                     i += 1;
                 }
 
-                bytes.drain(stack_length..i);
+                bytes.drain(stack_top..i);
 
                 if let Some(i) = bytes.iter().position(|&d| d != b'0') {
                     bytes.drain(..i);
@@ -46,8 +48,6 @@ impl Solution {
                 }
 
                 num = String::from_utf8(bytes).unwrap();
-            } else {
-                num.replace_range(.., "0");
             }
         }
 

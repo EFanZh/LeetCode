@@ -1,70 +1,63 @@
 pub struct Solution;
 
 use std::cmp::Ordering;
-use std::iter;
 
 impl Solution {
     pub fn remove_kdigits(mut num: String, k: i32) -> String {
-        let k = k as usize;
-
         if k != 0 {
-            if k == num.len() {
+            let n = num.len();
+            let k = k as usize;
+
+            if k == n {
                 num.replace_range(.., "0");
+            } else if let Some(stack_base) = num.as_bytes()[..k]
+                .iter()
+                .zip(&num.as_bytes()[1..])
+                .position(|(lhs, rhs)| lhs <= rhs)
+            {
+                let mut bytes = num.into_bytes();
+                let length = n - k;
+
+                let mut stack_top = bytes[stack_base + 1..stack_base + length]
+                    .iter()
+                    .zip(&bytes[stack_base + 2..])
+                    .position(|(lhs, rhs)| lhs > rhs)
+                    .map_or(stack_base + length, |p| stack_base + 1 + p);
+
+                let mut i = stack_top + 1;
+                let to_remove = k - stack_base;
+
+                while i - stack_top != to_remove {
+                    let start = stack_base + (i - stack_base).saturating_sub(to_remove);
+                    let digit = bytes[i];
+
+                    let insertion_point = start
+                        + bytes[start..stack_top]
+                            .binary_search_by(|&d| if d <= digit { Ordering::Less } else { Ordering::Greater })
+                            .unwrap_err();
+
+                    if insertion_point != stack_base + length {
+                        bytes[insertion_point] = digit;
+                        stack_top = insertion_point + 1;
+                    }
+
+                    i += 1;
+                }
+
+                bytes.copy_within(stack_base..stack_top, 0);
+                bytes.drain(stack_top - stack_base..i);
+
+                if let Some(i) = bytes.iter().position(|&d| d != b'0') {
+                    bytes.drain(..i);
+                } else {
+                    bytes.truncate(1);
+                }
+
+                num = String::from_utf8(bytes).unwrap();
+            } else if let Some(i) = num.as_bytes()[k..].iter().position(|&d| d != b'0') {
+                num.drain(..k + i);
             } else {
-                num = {
-                    let mut num = num.into_bytes();
-
-                    if let Some(stack_base) = num[..k].iter().zip(&num[1..]).position(|(lhs, rhs)| lhs <= rhs) {
-                        let result_length = num.len() - k;
-
-                        let stack_length = {
-                            let num = &mut num[stack_base..];
-                            let k = k - stack_base;
-
-                            let mut stack_top = num[1..result_length]
-                                .iter()
-                                .zip(&num[2..])
-                                .position(|(lhs, rhs)| lhs > rhs)
-                                .map_or(result_length, |p| 1 + p);
-
-                            let mut i = stack_top + 1;
-
-                            while i - stack_top != k {
-                                let start = i.saturating_sub(k);
-                                let digit = num[i];
-
-                                let insertion_point = start
-                                    + num[start..stack_top]
-                                        .binary_search_by(
-                                            |&v| if v > digit { Ordering::Greater } else { Ordering::Less },
-                                        )
-                                        .unwrap_err();
-
-                                if insertion_point != result_length {
-                                    num[insertion_point] = digit;
-                                    stack_top = insertion_point + 1;
-                                }
-
-                                i += 1;
-                            }
-
-                            stack_top
-                        };
-
-                        num.copy_within(stack_base..stack_base + stack_length, 0);
-                        num.drain(stack_length..stack_length + k);
-                    } else {
-                        num.drain(..k);
-                    }
-
-                    if let Some(i) = num.iter().position(|&c| c != b'0') {
-                        num.drain(..i);
-                    } else {
-                        num.splice(.., iter::once(b'0'));
-                    }
-
-                    String::from_utf8(num).unwrap()
-                };
+                num.replace_range(.., "0");
             }
         }
 
