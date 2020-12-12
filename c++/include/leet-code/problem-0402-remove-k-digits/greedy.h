@@ -5,51 +5,50 @@
 #include <string>
 
 namespace leet_code::problem_0402_remove_k_digits::greedy {
-using std::greater;
 using std::string;
 
 class Solution {
 public:
     string removeKdigits(string num, int k) {
         if (k != 0) {
-            const auto k2 = static_cast<size_t>(k);
             const auto n = num.length();
+            const auto k_2 = static_cast<size_t>(k);
 
-            if (k2 < n) {
-                const auto stack_begin = num.begin();
-                const auto max_stack_end = stack_begin + static_cast<ptrdiff_t>(n - k2);
+            if (k_2 == n) {
+                num = "0";
+            } else {
+                const auto stack_base = num.begin();
+                const auto stack_top_end = stack_base + static_cast<ptrdiff_t>(n - k_2);
 
-                auto stack_end =
-                    std::find_if(stack_begin, max_stack_end, [](const char &lhs) { return lhs > (&lhs)[1]; });
+                auto stack_top =
+                    std::find_if(stack_base, stack_top_end, [](const char &lhs) { return lhs > (&lhs)[1]; });
 
-                auto it = stack_end + 1;
+                auto it = stack_top + 1;
 
-                while (static_cast<size_t>(it - stack_end) != k2) {
+                while (static_cast<size_t>(it - stack_top) != k_2) {
                     const auto start =
-                        static_cast<size_t>(it - stack_begin) < k2 ? stack_begin : it - static_cast<ptrdiff_t>(k2);
+                        it < stack_base + static_cast<ptrdiff_t>(k_2) ? stack_base : it - static_cast<ptrdiff_t>(k_2);
 
                     const auto digit = *it;
-                    const auto insertion_point = std::upper_bound(start, stack_end, digit);
+                    const auto insertion_point = std::upper_bound(start, stack_top, digit);
 
-                    if (insertion_point != max_stack_end) {
+                    if (insertion_point != stack_top_end) {
                         *insertion_point = digit;
-                        stack_end = insertion_point + 1;
+                        stack_top = insertion_point + 1;
                     }
 
                     ++it;
                 }
 
-                num.erase(stack_end, it);
+                num.erase(stack_top, it);
 
-                const auto leading_zeros = num.find_first_not_of('0');
+                const auto it_2 = std::find_if(num.begin(), num.end(), [](char v) { return v != '0'; });
 
-                if (leading_zeros == string::npos) {
+                if (it_2 == num.end()) {
                     num.resize(1);
                 } else {
-                    num.erase(0, leading_zeros);
+                    num.erase(num.begin(), it_2);
                 }
-            } else {
-                num = "0";
             }
         }
 
