@@ -42,7 +42,7 @@ public:
 
                 num.erase(stack_top, it);
 
-                const auto it_2 = std::find_if(num.begin(), num.end(), [](char v) { return v != '0'; });
+                const auto it_2 = std::find_if(num.begin(), num.end(), [](char d) { return d != '0'; });
 
                 if (it_2 == num.end()) {
                     num.resize(1);

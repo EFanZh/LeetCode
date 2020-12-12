@@ -71,6 +71,7 @@ if(STANDALONE_PROJECT)
         "include/leet-code/problem-0237-delete-node-in-a-linked-list/modify-this.h"
         "include/leet-code/problem-0321-create-maximum-number/greedy.h"
         "include/leet-code/problem-0402-remove-k-digits/greedy.h"
+        "include/leet-code/problem-0402-remove-k-digits/greedy-2.h"
         "tests/leet-code/problem-0237-delete-node-in-a-linked-list/tests.h"
         "tests/leet-code/problem-0321-create-maximum-number/tests.h"
         "tests/leet-code/problem-0402-remove-k-digits/tests.h"
@@ -105,6 +106,7 @@ if(STANDALONE_PROJECT)
         "tests/leet-code/problem-0237-delete-node-in-a-linked-list/modify-this.cpp"
         "tests/leet-code/problem-0321-create-maximum-number/greedy.cpp"
         "tests/leet-code/problem-0402-remove-k-digits/greedy.cpp"
+        "tests/leet-code/problem-0402-remove-k-digits/greedy-2.cpp"
         "tests/leet-code/test-utilities.cpp"
     )
 
