@@ -194,9 +194,17 @@ Why does the heap like binary tree (segment tree) works for *n* that is not a po
 
 Make sure it can be solved again.
 
+## [321. Create Maximum Number](https://leetcode.com/problems/create-maximum-number/)
+
+I consider this problem the hardest so far, is there a fast and elegant solution?
+
 ## [332. Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
 
 Why is the solution correct?
+
+## [402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
+
+Optimize the solution.
 
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
