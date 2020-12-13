@@ -55,7 +55,7 @@ jobs:
                 RUSTFLAGS: -Zinstrument-coverage
           - run: cargo profdata -- merge --output default.profdata --sparse default.profraw
           - run: cargo cov -- export --ignore-filename-regex '^/' --format lcov -Xdemangler rustfilt --instr-profile default.profdata target/debug/deps/leet_code-???????????????? > lcov.info
-          - uses: coverallsapp/github-action@v1
+          - uses: coverallsapp/github-action@master
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
                 path-to-lcov: lcov.info
