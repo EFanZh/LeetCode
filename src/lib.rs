@@ -243,6 +243,7 @@ pub mod problem_0315_count_of_smaller_numbers_after_self;
 pub mod problem_0316_remove_duplicate_letters;
 pub mod problem_0318_maximum_product_of_word_lengths;
 pub mod problem_0319_bulb_switcher;
+pub mod problem_0321_create_maximum_number;
 pub mod problem_0322_coin_change;
 pub mod problem_0324_wiggle_sort_ii;
 pub mod problem_0326_power_of_three;
