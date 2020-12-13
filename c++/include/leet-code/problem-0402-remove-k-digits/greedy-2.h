@@ -39,15 +39,20 @@ public:
                     auto it = stack_top + 1;
                     const auto to_remove = k_2 - static_cast<size_t>(stack_base - num.begin());
 
-                    while (static_cast<size_t>(it - stack_top) != to_remove) {
+                    while (it != num.end()) {
+                        const auto digit = *it;
+
                         const auto start = it < stack_base + static_cast<ptrdiff_t>(to_remove)
                                                ? stack_base
                                                : it - static_cast<ptrdiff_t>(to_remove);
 
-                        const auto digit = *it;
                         const auto insertion_point = std::upper_bound(start, stack_top, digit);
 
-                        if (insertion_point != stack_top_end) {
+                        if (static_cast<size_t>(it - insertion_point) == to_remove) {
+                            stack_top = insertion_point;
+
+                            break;
+                        } else if (insertion_point != stack_top_end) {
                             *insertion_point = digit;
                             stack_top = insertion_point + 1;
                         }

@@ -17,26 +17,30 @@ impl Solution {
             {
                 let mut bytes = num.into_bytes();
                 let length = n - k;
+                let stack_top_end = stack_base + length;
 
-                let mut stack_top = bytes[stack_base + 1..stack_base + length]
+                let mut stack_top = bytes[stack_base + 1..stack_top_end]
                     .iter()
                     .zip(&bytes[stack_base + 2..])
                     .position(|(lhs, rhs)| lhs > rhs)
-                    .map_or(stack_base + length, |p| stack_base + 1 + p);
+                    .map_or(stack_top_end, |p| stack_base + 1 + p);
 
                 let mut i = stack_top + 1;
                 let to_remove = k - stack_base;
 
-                while i - stack_top != to_remove {
+                while let Some(&digit) = bytes.get(i) {
                     let start = stack_base + (i - stack_base).saturating_sub(to_remove);
-                    let digit = bytes[i];
 
                     let insertion_point = start
                         + bytes[start..stack_top]
                             .binary_search_by(|&d| if d <= digit { Ordering::Less } else { Ordering::Greater })
                             .unwrap_err();
 
-                    if insertion_point != stack_base + length {
+                    if i - insertion_point == to_remove {
+                        stack_top = insertion_point;
+
+                        break;
+                    } else if insertion_point != stack_top_end {
                         bytes[insertion_point] = digit;
                         stack_top = insertion_point + 1;
                     }
