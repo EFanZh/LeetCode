@@ -73,7 +73,7 @@ pub fn draw<P: AsRef<Path>>(repository: &Repository, problems: &Problems, output
     let mut hits_cache = make_problem_hits_cache(problems);
     let mut revwalk = repository.revwalk().unwrap();
 
-    revwalk.push_ref("HEAD").unwrap();
+    revwalk.push_head().unwrap();
 
     let mut progress_data = revwalk
         .map(|oid| {
