@@ -33,11 +33,7 @@ fn generate_report<P: AsRef<Path>>(repository: P, target: P) {
 
     // Generate report.
 
-    let tree = repository
-        .find_reference("refs/heads/master")
-        .unwrap()
-        .peel_to_tree()
-        .unwrap();
+    let tree = repository.find_reference("HEAD").unwrap().peel_to_tree().unwrap();
 
     report::generate(
         &problems.problems,
