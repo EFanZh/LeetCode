@@ -257,6 +257,7 @@ pub mod problem_0335_self_crossing;
 pub mod problem_0337_house_robber_iii;
 pub mod problem_0338_counting_bits;
 pub mod problem_0342_power_of_four;
+pub mod problem_0336_palindrome_pairs;
 pub mod problem_0344_reverse_string;
 pub mod problem_0345_reverse_vowels_of_a_string;
 pub mod problem_0347_top_k_frequent_elements;
