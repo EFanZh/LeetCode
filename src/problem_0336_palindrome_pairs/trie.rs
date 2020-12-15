@@ -41,7 +41,7 @@ impl Solution {
         for (i, word) in (0..).zip(words.iter().map(String::as_bytes)) {
             let mut node = &mut trie;
 
-            for c in word.iter() {
+            for c in word {
                 node = node.children[usize::from(c - b'a')].get_or_insert_with(Box::default);
             }
 
