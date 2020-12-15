@@ -12,17 +12,22 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [((&[2, 4, 3], &[5, 6, 4]), &[7, 0, 8])];
+        let test_cases = [
+            ((&[2, 4, 3] as &[_], &[5, 6, 4] as &[_]), &[7, 0, 8] as &[_]),
+            ((&[0], &[0]), &[0]),
+            ((&[9, 9, 9, 9, 9, 9, 9], &[9, 9, 9, 9]), &[8, 9, 9, 9, 0, 0, 0, 1]),
+            ((&[9, 9, 9, 9], &[9, 9, 9, 9, 9, 9, 9]), &[8, 9, 9, 9, 0, 0, 0, 1]),
+        ];
 
         for ((l1, l2), expected) in test_cases.iter().copied() {
-            let l1 = test_utilities::make_list(l1.iter().copied());
-            let l2 = test_utilities::make_list(l2.iter().copied());
-
             assert_eq!(
-                test_utilities::iter_list(&S::add_two_numbers(l1, l2))
-                    .copied()
-                    .collect::<Box<_>>()
-                    .as_ref(),
+                test_utilities::iter_list(&S::add_two_numbers(
+                    test_utilities::make_list(l1.iter().copied()),
+                    test_utilities::make_list(l2.iter().copied())
+                ))
+                .copied()
+                .collect::<Box<_>>()
+                .as_ref(),
                 expected
             );
         }
