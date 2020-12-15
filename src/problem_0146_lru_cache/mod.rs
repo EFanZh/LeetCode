@@ -52,6 +52,7 @@ mod tests {
                     Get(4, 4),
                 ],
             ),
+            (2, &[Put(1, 2), Get(1, 2), Put(1, 3), Get(1, 3)]),
         ];
 
         for (capacity, operations) in test_cases.iter().copied() {
