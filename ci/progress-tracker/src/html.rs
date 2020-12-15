@@ -26,7 +26,7 @@ impl<'a> Writer<'a> {
     }
 
     fn write_attributes(&mut self, attributes: &[(&str, &str)]) {
-        for attribute in attributes.iter() {
+        for attribute in attributes {
             self.buffer.push(' ');
             write_attribute(attribute, self.buffer);
         }
