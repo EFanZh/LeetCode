@@ -9,8 +9,8 @@ jobs:
     tests:
         runs-on: ${{ matrix.os }}
         steps:
-          - run: vcpkg install gtest
           - uses: actions/checkout@v2
+          - run: vcpkg install gtest
           - run: cmake -S c++ -B build -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
           - run: cmake --build build
           - run: ctest
@@ -23,8 +23,8 @@ jobs:
     tests-windows:
         runs-on: windows-latest
         steps:
-          - run: vcpkg install gtest --triplet ${{ matrix.platform }}-windows
           - uses: actions/checkout@v2
+          - run: vcpkg install gtest --triplet ${{ matrix.platform }}-windows
           - run: >-
                 cmake
                 -S c++
