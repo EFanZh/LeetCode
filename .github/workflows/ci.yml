@@ -43,13 +43,13 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
+          - uses: actions/checkout@v2
           - uses: actions-rs/toolchain@v1
             with:
                 toolchain: nightly
                 override: true
                 components: llvm-tools-preview
           - run: cargo install cargo-binutils rustfilt
-          - uses: actions/checkout@v2
           - run: cargo test
             env:
                 RUSTFLAGS: -Zinstrument-coverage
