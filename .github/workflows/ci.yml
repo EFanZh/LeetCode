@@ -65,7 +65,7 @@ jobs:
           - uses: actions/checkout@v2
           - run: git fetch --prune --unshallow
           - uses: actions-rs/toolchain@v1
-          - run: cargo run --package progress-tracker -- . progress-report
+          - run: cargo run --package progress-tracker --release -- . progress-report
           - uses: peaceiris/actions-gh-pages@v3
             with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
