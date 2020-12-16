@@ -202,6 +202,10 @@ I consider this problem the hardest so far, is there a fast and elegant solution
 
 Why is the solution correct?
 
+## [373. Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
+
+Why can I eliminate the usage of visited set?
+
 ## [402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
 
 Optimize the solution.
