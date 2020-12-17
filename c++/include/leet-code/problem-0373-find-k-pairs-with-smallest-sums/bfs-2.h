@@ -20,7 +20,7 @@ public:
         result.reserve(k_2);
 
         if (k_2 != 0 && !nums1.empty() && !nums2.empty()) {
-            result.emplace_back(initializer_list<int>{nums1.front(), nums2.front()});
+            result.emplace_back(initializer_list{nums1.front(), nums2.front()});
 
             auto node = tuple{size_t{0}, size_t{0}};
 
@@ -44,7 +44,7 @@ public:
                 } else {
                     node = std::get<1>(queue.top());
                     queue.pop();
-                    result.emplace_back(initializer_list<int>{nums1[std::get<0>(node)], nums2[std::get<1>(node)]});
+                    result.emplace_back(initializer_list{nums1[std::get<0>(node)], nums2[std::get<1>(node)]});
                 }
             }
         }
