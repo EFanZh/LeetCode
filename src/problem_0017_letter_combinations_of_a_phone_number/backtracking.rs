@@ -10,8 +10,7 @@ impl Solution {
             b'6' => b"mno",
             b'7' => b"pqrs",
             b'8' => b"tuv",
-            b'9' => b"wxyz",
-            _ => unreachable!(),
+            _ => b"wxyz",
         }
     }
 
