@@ -12,7 +12,7 @@ jobs:
           - uses: actions/checkout@v2
           - run: vcpkg install gtest
           - run: cmake -S c++ -B build -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-          - run: cmake --build build
+          - run: cmake --build build -j
           - run: ctest
             working-directory: build
         strategy:
@@ -31,7 +31,7 @@ jobs:
                 -B build
                 -A $('${{ matrix.platform }}' -eq 'x64' ? 'x64' : 'Win32')
                 -D CMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
-          - run: cmake --build build
+          - run: cmake --build build -j
           - run: ctest
             working-directory: build
         strategy:
