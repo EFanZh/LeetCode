@@ -124,4 +124,16 @@ if(STANDALONE_PROJECT)
                                      CXX_STANDARD_REQUIRED ON)
 
     gtest_discover_tests("leet-code-tests")
+
+    # Source based coverage.
+
+    option(ENABLE_SOURCE_BASED_CODE_COVERAGE "Enable source-based code coverage")
+
+    if(ENABLE_SOURCE_BASED_CODE_COVERAGE)
+        if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+            target_compile_options("leet-code-tests" PRIVATE "-fprofile-instr-generate" "-fcoverage-mapping")
+        else()
+            message(FATAL_ERROR "Clang compiler is required for source-based code coverage.")
+        endif()
+    endif()
 endif()
