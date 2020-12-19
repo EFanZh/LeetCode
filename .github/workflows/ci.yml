@@ -49,12 +49,11 @@ jobs:
                 toolchain: nightly
                 override: true
                 components: llvm-tools-preview
-          - run: cargo install cargo-binutils rustfilt
+          - run: cargo install grcov
           - run: cargo test
             env:
                 RUSTFLAGS: -Zinstrument-coverage
-          - run: cargo profdata -- merge --output default.profdata --sparse default.profraw
-          - run: cargo cov -- export --ignore-filename-regex '^/' --format lcov -Xdemangler rustfilt --instr-profile default.profdata target/debug/deps/leet_code-???????????????? > lcov.info
+          - run: grcov --branch -b target/debug -o lcov.info -s . .
           - uses: coverallsapp/github-action@master
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
