@@ -52,12 +52,24 @@ jobs:
           - run: cargo install grcov
           - run: cargo test
             env:
+                LLVM_PROFILE_FILE: coverage/rust.profraw
                 RUSTFLAGS: -Zinstrument-coverage
-          - run: grcov --branch -b target/debug --keep-only . -o lcov.info -s . .
+          - run: vcpkg install gtest
+          - run: >-
+                cmake
+                -S c++
+                -B target/c++
+                -D CMAKE_CXX_COMPILER=clang++
+                -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+                -D ENABLE_SOURCE_BASED_CODE_COVERAGE=ON
+          - run: cmake --build build
+          - run: target/c++/leet-code-tests
+            env:
+                LLVM_PROFILE_FILE: coverage/c++.profraw
+          - run: grcov --branch -b target --keep-dir c++ -keep-dir src -o coverage/lcov.info -s . coverage-data
           - uses: coverallsapp/github-action@master
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
-                path-to-lcov: lcov.info
     update-progress:
         runs-on: ubuntu-latest
         steps:
