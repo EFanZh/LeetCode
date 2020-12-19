@@ -62,6 +62,7 @@ jobs:
                 cmake
                 -S c++
                 -B target/c++
+                -D CMAKE_BUILD_TYPE=Debug
                 -D CMAKE_CXX_COMPILER=clang++
                 -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
                 -D ENABLE_SOURCE_BASED_CODE_COVERAGE=ON
