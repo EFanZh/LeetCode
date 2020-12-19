@@ -53,7 +53,7 @@ jobs:
           - run: cargo test
             env:
                 RUSTFLAGS: -Zinstrument-coverage
-          - run: grcov --branch -b target/debug -o lcov.info -s . .
+          - run: grcov --branch -b target/debug --keep-only '**' -o lcov.info -s . .
           - uses: coverallsapp/github-action@master
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
