@@ -49,7 +49,10 @@ jobs:
                 toolchain: nightly
                 override: true
                 components: llvm-tools-preview
-          - run: cargo install grcov
+          - uses: actions-rs/install@v0.1
+            with:
+                crate: grcov
+                use-tool-cache: true
           - run: cargo test
             env:
                 LLVM_PROFILE_FILE: coverage/rust.profraw
