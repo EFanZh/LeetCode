@@ -11,10 +11,15 @@ jobs:
         steps:
           - uses: actions/checkout@v2
           - run: vcpkg install gtest
-          - run: cmake -S c++ -B build -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-          - run: cmake --build build -j
+          - run: >-
+                cmake
+                -S c++
+                -B target/c++
+                -D CMAKE_BUILD_TYPE=Debug
+                -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+          - run: cmake --build target/c++ -j
           - run: ctest
-            working-directory: build
+            working-directory: target/c++
         strategy:
             matrix:
                 os:
@@ -28,12 +33,12 @@ jobs:
           - run: >-
                 cmake
                 -S c++
-                -B build
+                -B target/c++
                 -A $('${{ matrix.platform }}' -eq 'x64' ? 'x64' : 'Win32')
                 -D CMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
-          - run: cmake --build build -j
+          - run: cmake --build target/c++ -j --config Debug
           - run: ctest
-            working-directory: build
+            working-directory: target/c++
         strategy:
             matrix:
                 platform:
