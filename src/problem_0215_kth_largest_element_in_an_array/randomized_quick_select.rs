@@ -36,7 +36,7 @@ impl Solution {
         loop {
             let last_index = values.len() - 1;
 
-            values.swap(rng.gen_range(0, values.len()), last_index);
+            values.swap(rng.gen_range(0..values.len()), last_index);
 
             let (last, rest) = values.split_last_mut().unwrap();
             let left_length = Self::partition_by(rest, |x| x < last);

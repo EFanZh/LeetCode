@@ -12,7 +12,7 @@ impl Solution {
         let mut rng = rand::thread_rng();
 
         while end - start > 1 {
-            nums.swap(index(start), index(rng.gen_range(start, end)));
+            nums.swap(index(start), index(rng.gen_range(start..end)));
 
             let x = nums[index(start)];
             let mut i = start;
