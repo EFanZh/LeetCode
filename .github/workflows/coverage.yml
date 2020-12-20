@@ -32,6 +32,9 @@ jobs:
             env:
                 LLVM_PROFILE_FILE: coverage/c++.profraw
           - run: grcov --branch -b target --keep-only 'c++/*' --keep-only 'src/*' -o coverage/lcov.info -s . coverage
+          - uses: codecov/codecov-action@v1
+            with:
+                file: coverage/lcov.info
           - uses: coverallsapp/github-action@master
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
