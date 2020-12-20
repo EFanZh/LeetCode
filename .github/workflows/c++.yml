@@ -6,6 +6,25 @@ jobs:
           - uses: actions/checkout@v2
           - uses: actions-rs/toolchain@v1
           - run: cargo run --release --manifest-path=ci/check-cpp-code-format/Cargo.toml c++
+          - run: >-
+                find c++
+                -type f
+                '(' -name '*.cpp' -o -name '*.h' ')'
+                -exec clang-format --Werror -n --verbose '{}' +
+    clang-tidy:
+        runs-on: ubuntu-20.04
+        steps:
+          - uses: actions/checkout@v2
+          - run: sudo apt-get update && sudo apt-get install --no-install-recommends -y clang-tidy
+          - run: vcpkg install gtest
+          - run: >-
+                cmake
+                -S c++
+                -B target/c++
+                -D CMAKE_BUILD_TYPE=Debug
+                -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+                -D ENABLE_CLANG_TIDY=clang-tidy
+          - run: cmake --build target/c++ -j
     tests:
         runs-on: ${{ matrix.os }}
         steps:

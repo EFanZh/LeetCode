@@ -125,9 +125,21 @@ if(STANDALONE_PROJECT)
 
     gtest_discover_tests("leet-code-tests")
 
-    # Source based coverage.
+    # Options.
 
-    option(ENABLE_SOURCE_BASED_CODE_COVERAGE "Enable source-based code coverage")
+    set(ENABLE_CLANG_TIDY OFF CACHE STRING "Enable Clang-Tidy check.")
+    set(ENABLE_SOURCE_BASED_CODE_COVERAGE OFF CACHE BOOL "Enable source-based code coverage.")
+
+    # Clang-Tidy check.
+
+    if(ENABLE_CLANG_TIDY)
+        set_target_properties(
+            "leet-code-tests"
+            PROPERTIES CXX_CLANG_TIDY "${ENABLE_CLANG_TIDY}"
+        )
+    endif()
+
+    # Source based coverage.
 
     if(ENABLE_SOURCE_BASED_CODE_COVERAGE)
         if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")

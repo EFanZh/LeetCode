@@ -1,0 +1,13 @@
+Checks: >-
+    *,
+    -cert-err58-cpp,
+    -cppcoreguidelines-avoid-non-const-global-variables,
+    -cppcoreguidelines-owning-memory,
+    -cppcoreguidelines-special-member-functions,
+    -fuchsia-statically-constructed-objects,
+    -hicpp-special-member-functions,
+    -llvmlibc-callee-namespace,
+    -llvmlibc-implementation-in-namespace,
+    -modernize-use-trailing-return-type
+WarningsAsErrors: '*'
+FormatStyle: file
