@@ -1,3 +1,5 @@
+__*
 Cargo.lock
 .vscode/
+/coverage/
 /target/
