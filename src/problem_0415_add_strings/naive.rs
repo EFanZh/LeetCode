@@ -26,6 +26,8 @@ impl Solution {
 
             if *rhs < b'0' + 10 {
                 carry = 0;
+
+                break;
             } else {
                 *rhs -= 10;
                 carry = 1;
