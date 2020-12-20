@@ -8,7 +8,7 @@ ConstructorInitializerAllOnOneLineOrOnePerLine: true
 IncludeBlocks: Merge
 IndentCaseLabels: true
 IndentGotoLabels: false
-InsertTrailingCommas: Wrapped
+# InsertTrailingCommas: Wrapped
 KeepEmptyLinesAtTheStartOfBlocks: false
 NamespaceIndentation: Inner
 SpacesInContainerLiterals: false
