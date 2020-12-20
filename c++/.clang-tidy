@@ -4,6 +4,7 @@ Checks: >-
     -cppcoreguidelines-avoid-non-const-global-variables,
     -cppcoreguidelines-owning-memory,
     -cppcoreguidelines-special-member-functions,
+    -fuchsia-default-arguments-calls,
     -fuchsia-statically-constructed-objects,
     -hicpp-special-member-functions,
     -llvmlibc-callee-namespace,
