@@ -1,3 +1,4 @@
+pub mod implicit_carry;
 pub mod naive;
 
 pub trait Solution {
