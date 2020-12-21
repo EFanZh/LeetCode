@@ -273,6 +273,7 @@ pub mod problem_0372_super_pow;
 pub mod problem_0373_find_k_pairs_with_smallest_sums;
 pub mod problem_0383_ransom_note;
 pub mod problem_0387_first_unique_character_in_a_string;
+pub mod problem_0388_longest_absolute_file_path;
 pub mod problem_0389_find_the_difference;
 pub mod problem_0392_is_subsequence;
 pub mod problem_0393_utf_8_validation;
