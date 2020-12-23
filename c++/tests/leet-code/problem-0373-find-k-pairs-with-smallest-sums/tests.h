@@ -13,11 +13,14 @@ void run() {
         {{{1, 7, 11}, {2, 4, 6}, 3}, {{1, 2}, {1, 4}, {1, 6}}},
         {{{1, 1, 2}, {1, 2, 3}, 2}, {{1, 1}, {1, 1}}},
         {{{1, 2}, {3}, 3}, {{1, 3}, {2, 3}}},
+        {{{1, 7, 11}, {2, 4, 6}, 9}, {{1, 2}, {1, 4}, {1, 6}, {7, 2}, {7, 4}, {7, 6}, {11, 2}, {11, 4}, {11, 6}}},
     };
 
     for (const auto &[args, expected] : test_cases) {
         auto [nums1, nums2, k] = args;
-        const auto result = S{}.kSmallestPairs(nums1, nums2, k);
+        auto result = S{}.kSmallestPairs(nums1, nums2, k);
+
+        std::sort(result.begin(), result.end());
 
         ASSERT_EQ(expected, result);
     }
