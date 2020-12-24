@@ -41,11 +41,11 @@ public:
 
                 if (queue.empty()) {
                     break;
-                } else {
-                    node = std::get<1>(queue.top());
-                    queue.pop();
-                    result.emplace_back(initializer_list<int>{nums1[std::get<0>(node)], nums2[std::get<1>(node)]});
                 }
+
+                node = std::get<1>(queue.top());
+                queue.pop();
+                result.emplace_back(initializer_list<int>{nums1[std::get<0>(node)], nums2[std::get<1>(node)]});
             }
         }
 

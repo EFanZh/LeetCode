@@ -6,10 +6,11 @@
 namespace leet_code::problem_0373_find_k_pairs_with_smallest_sums::tests {
 template <class S>
 void run() {
+    using std::initializer_list;
     using std::tuple;
     using std::vector;
 
-    const tuple<tuple<vector<int>, vector<int>, int>, vector<vector<int>>> test_cases[] = {
+    const auto test_cases = initializer_list<tuple<tuple<vector<int>, vector<int>, int>, vector<vector<int>>>>{
         {{{1, 7, 11}, {2, 4, 6}, 3}, {{1, 2}, {1, 4}, {1, 6}}},
         {{{1, 1, 2}, {1, 2, 3}, 2}, {{1, 1}, {1, 1}}},
         {{{1, 2}, {3}, 3}, {{1, 3}, {2, 3}}},

@@ -92,9 +92,9 @@ public:
         auto merge_buffer = vector<int>(k_2);
 
         for (auto i = std::get<0>(range); i != std::get<1>(range); ++i) {
-            const auto max_1 = max_buffer.data();
+            auto *const max_1 = max_buffer.data();
             const auto max_1_length = i;
-            const auto max_2 = max_buffer.data() + i;
+            auto *const max_2 = max_buffer.data() + i;
             const auto max_2_length = k_2 - i;
 
             Solution::single_max_number(nums1.data(), nums1.size(), max_1, max_1_length);

@@ -3,12 +3,18 @@ Checks: >-
     -cert-err58-cpp,
     -cppcoreguidelines-avoid-non-const-global-variables,
     -cppcoreguidelines-owning-memory,
+    -cppcoreguidelines-pro-bounds-pointer-arithmetic,
     -cppcoreguidelines-special-member-functions,
     -fuchsia-default-arguments-calls,
     -fuchsia-statically-constructed-objects,
+    -google-runtime-references,
     -hicpp-special-member-functions,
+    -llvm-header-guard,
     -llvmlibc-callee-namespace,
     -llvmlibc-implementation-in-namespace,
-    -modernize-use-trailing-return-type
+    -llvmlibc-restrict-system-libc-headers,
+    -modernize-use-trailing-return-type,
+    -readability-convert-member-functions-to-static
 WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
 FormatStyle: file

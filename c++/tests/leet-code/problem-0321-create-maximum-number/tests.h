@@ -6,10 +6,11 @@
 namespace leet_code::problem_0321_create_maximum_number::tests {
 template <class S>
 void run() {
+    using std::initializer_list;
     using std::tuple;
     using std::vector;
 
-    const tuple<tuple<vector<int>, vector<int>, int>, vector<int>> test_cases[] = {
+    const auto test_cases = initializer_list<tuple<tuple<vector<int>, vector<int>, int>, vector<int>>>{
         {
             {{3, 4, 6, 5}, {9, 1, 2, 5, 8, 3}, 5},
             {9, 8, 6, 5, 3},

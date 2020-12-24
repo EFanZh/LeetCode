@@ -7,10 +7,11 @@
 namespace leet_code::problem_0237_delete_node_in_a_linked_list::tests {
 template <class S>
 void run() {
+    using std::initializer_list;
     using std::tuple;
     using std::vector;
 
-    const tuple<tuple<vector<int>, int>, vector<int>> test_cases[] = {
+    const auto test_cases = initializer_list<tuple<tuple<vector<int>, int>, vector<int>>>{
         {{{4, 5, 1, 9}, 5}, {4, 1, 9}},
         {{{4, 5, 1, 9}, 1}, {4, 5, 9}},
         {{{1, 2, 3, 4}, 3}, {1, 2, 4}},

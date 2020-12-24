@@ -17,7 +17,7 @@ std::tuple<std::vector<std::unique_ptr<data_structures::ListNode>>, data_structu
 
     buffer.reserve(std::size(values));
 
-    auto head = static_cast<ListNode *>(nullptr);
+    auto *head = static_cast<ListNode *>(nullptr);
     auto *tail = &head;
 
     for (const auto &value : values) {
