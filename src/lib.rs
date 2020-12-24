@@ -282,6 +282,7 @@ pub mod problem_0397_integer_replacement;
 pub mod problem_0399_evaluate_division;
 pub mod problem_0401_binary_watch;
 pub mod problem_0402_remove_k_digits;
+pub mod problem_0404_sum_of_left_leaves;
 pub mod problem_0405_convert_a_number_to_hexadecimal;
 pub mod problem_0409_longest_palindrome;
 pub mod problem_0412_fizz_buzz;
