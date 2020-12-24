@@ -52,7 +52,9 @@ public:
                             stack_top = insertion_point;
 
                             break;
-                        } else if (insertion_point != stack_top_end) {
+                        }
+
+                        if (insertion_point != stack_top_end) {
                             *insertion_point = digit;
                             stack_top = insertion_point + 1;
                         }

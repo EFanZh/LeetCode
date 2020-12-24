@@ -41,8 +41,8 @@ class Solution {
 
                 for (;;) {
                     const auto num = *p;
-                    const auto start = std::max(stack_base, p - remaining_to_remove);
-                    const auto insertion_point = std::lower_bound(start, stack_top, num, greater_equal{});
+                    auto *const start = std::max(stack_base, p - remaining_to_remove);
+                    auto *const insertion_point = std::lower_bound(start, stack_top, num, greater_equal{});
 
                     if (static_cast<size_t>(p - insertion_point) == remaining_to_remove) {
                         stack_top = insertion_point;
@@ -54,19 +54,19 @@ class Solution {
                         item.insert(item.end(), p, nums_end);
 
                         break;
-                    } else {
-                        if (insertion_point != stack_base + max_length) {
-                            *insertion_point = num;
-                            stack_top = insertion_point + 1;
-                        }
+                    }
 
-                        ++p;
+                    if (insertion_point != stack_base + max_length) {
+                        *insertion_point = num;
+                        stack_top = insertion_point + 1;
+                    }
 
-                        if (p == nums_end) {
-                            result.emplace_back(stack_base, stack_top);
+                    ++p;
 
-                            break;
-                        }
+                    if (p == nums_end) {
+                        result.emplace_back(stack_base, stack_top);
+
+                        break;
                     }
                 }
             }
@@ -79,39 +79,39 @@ class Solution {
                         }
 
                         break;
-                    } else {
-                        const auto num = *p;
+                    }
 
-                        if (num > stack_top[-1]) {
-                            if (stack_top - stack_base == 1) {
-                                result.emplace_back(p, nums_end);
+                    const auto num = *p;
 
-                                if (result.size() == expected_items) {
-                                    break;
-                                } else {
-                                    stack_base = p;
-                                    stack_top = p + 1;
-                                    ++p;
-                                }
-                            } else {
-                                --stack_top;
+                    if (num > stack_top[-1]) {
+                        if (stack_top - stack_base == 1) {
+                            result.emplace_back(p, nums_end);
 
-                                const auto reserve_size = max_length - result.size();
-                                auto &item = result.emplace_back();
-
-                                item.reserve(reserve_size);
-                                item.insert(item.end(), stack_base, stack_top);
-                                item.insert(item.end(), p, nums_end);
-
-                                if (result.size() == expected_items) {
-                                    break;
-                                }
+                            if (result.size() == expected_items) {
+                                break;
                             }
-                        } else {
-                            *stack_top = num;
-                            ++stack_top;
+
+                            stack_base = p;
+                            stack_top = p + 1;
                             ++p;
+                        } else {
+                            --stack_top;
+
+                            const auto reserve_size = max_length - result.size();
+                            auto &item = result.emplace_back();
+
+                            item.reserve(reserve_size);
+                            item.insert(item.end(), stack_base, stack_top);
+                            item.insert(item.end(), p, nums_end);
+
+                            if (result.size() == expected_items) {
+                                break;
+                            }
                         }
+                    } else {
+                        *stack_top = num;
+                        ++stack_top;
+                        ++p;
                     }
                 }
             }

@@ -6,11 +6,12 @@
 namespace leet_code::problem_0402_remove_k_digits::tests {
 template <class S>
 void run() {
+    using std::initializer_list;
     using std::string;
     using std::string_view;
     using std::tuple;
 
-    const tuple<tuple<string_view, int>, string_view> test_cases[] = {
+    const auto test_cases = initializer_list<tuple<tuple<string_view, int>, string_view>>{
         {{"1432219", 3}, "1219"},
         {{"10200", 1}, "200"},
         {{"10", 2}, "0"},
