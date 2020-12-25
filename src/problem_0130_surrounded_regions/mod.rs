@@ -10,10 +10,16 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(
-            &["XXXX", "XOOX", "XXOX", "XOXX"] as &[&str],
-            &["XXXX", "XXXX", "XXXX", "XOXX"] as &[_],
-        )];
+        let test_cases = [
+            (
+                &["XXXX", "XOOX", "XXOX", "XOXX"] as &[&str],
+                &["XXXX", "XXXX", "XXXX", "XOXX"] as &[_],
+            ),
+            (
+                &["OXXXO", "XOXOO", "OOXXX", "XXXXX"],
+                &["OXXXO", "XOXOO", "OOXXX", "XXXXX"],
+            ),
+        ];
 
         for (board, expected) in test_cases.iter().copied() {
             let mut board = board.iter().map(|row| row.chars().collect()).collect();
