@@ -76,10 +76,18 @@ pub fn iter_list(list: &Option<Box<ListNode>>) -> impl Iterator<Item = &i32> {
     iter::successors(list.as_deref(), |node| node.next.as_deref()).map(|node| &node.val)
 }
 
-pub fn unstable_sorted<T: Ord, I: IntoIterator<Item = T>>(iter: I) -> Vec<T> {
+pub fn unstable_sorted_by_key<T, K: Ord>(iter: impl IntoIterator<Item = T>, f: impl FnMut(&T) -> K) -> Vec<T> {
     let mut result = iter.into_iter().collect::<Vec<_>>();
 
-    result.sort();
+    result.sort_unstable_by_key(f);
+
+    result
+}
+
+pub fn unstable_sorted<T: Ord>(iter: impl IntoIterator<Item = T>) -> Vec<T> {
+    let mut result = iter.into_iter().collect::<Vec<_>>();
+
+    result.sort_unstable();
 
     result
 }
