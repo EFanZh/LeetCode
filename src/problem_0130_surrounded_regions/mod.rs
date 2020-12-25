@@ -16,8 +16,8 @@ mod tests {
                 &["XXXX", "XXXX", "XXXX", "XOXX"] as &[_],
             ),
             (
-                &["OXXXO", "XOXOO", "OOXXX", "XXXXX"],
-                &["OXXXO", "XOXOO", "OOXXX", "XXXXX"],
+                &["OXXXO", "XOXOO", "OOXOX", "XXXXX"],
+                &["OXXXO", "XOXOO", "OOXOX", "XXXXX"],
             ),
         ];
 
