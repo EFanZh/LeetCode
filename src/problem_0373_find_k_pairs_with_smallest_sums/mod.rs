@@ -31,11 +31,44 @@ mod tests {
                     [11, 6],
                 ],
             ),
+            (
+                (&[2, 7, 11, 19, 23], &[3, 5, 13, 17, 29], 25),
+                &[
+                    [2, 3],
+                    [2, 5],
+                    [7, 3],
+                    [7, 5],
+                    [11, 3],
+                    [2, 13],
+                    [11, 5],
+                    [2, 17],
+                    [7, 13],
+                    [19, 3],
+                    [7, 17],
+                    [11, 13],
+                    [19, 5],
+                    [23, 3],
+                    [11, 17],
+                    [23, 5],
+                    [2, 29],
+                    [19, 13],
+                    [7, 29],
+                    [19, 17],
+                    [23, 13],
+                    [11, 29],
+                    [23, 17],
+                    [19, 29],
+                    [23, 29],
+                ],
+            ),
         ];
 
         for ((nums1, nums2, k), expected) in test_cases.iter().copied() {
             assert_eq!(
-                test_utilities::unstable_sorted(S::k_smallest_pairs(nums1.to_vec(), nums2.to_vec(), k)),
+                test_utilities::unstable_sorted_by_key(
+                    S::k_smallest_pairs(nums1.to_vec(), nums2.to_vec(), k),
+                    |item| (item[0] + item[1], item[0], item[1])
+                ),
                 expected
             );
         }
