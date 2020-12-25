@@ -206,6 +206,10 @@ Why is the solution correct?
 
 Why can I eliminate the usage of visited set?
 
+## [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+
+Investigate the linear time complexity algorithm.
+
 ## [402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
 
 Optimize the solution.
