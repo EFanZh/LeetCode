@@ -40,16 +40,15 @@ impl Solution {
                         let right = left + 1;
 
                         if let Some(right_key) = heap.get(right).map(&mut get_key) {
-                            if right_key < left_key {
-                                if right_key < key {
-                                    heap.swap(i, right);
-                                    i = right;
-                                } else {
-                                    break;
-                                }
-                            } else if left_key < key {
-                                heap.swap(i, left);
-                                i = left;
+                            let (child, child_key) = if right_key < left_key {
+                                (right, right_key)
+                            } else {
+                                (left, left_key)
+                            };
+
+                            if child_key < key {
+                                heap.swap(i, child);
+                                i = child;
                             } else {
                                 break;
                             }
