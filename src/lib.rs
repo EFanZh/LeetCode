@@ -271,6 +271,7 @@ pub mod problem_0368_largest_divisible_subset;
 pub mod problem_0371_sum_of_two_integers;
 pub mod problem_0372_super_pow;
 pub mod problem_0373_find_k_pairs_with_smallest_sums;
+pub mod problem_0378_kth_smallest_element_in_a_sorted_matrix;
 pub mod problem_0383_ransom_note;
 pub mod problem_0387_first_unique_character_in_a_string;
 pub mod problem_0388_longest_absolute_file_path;
