@@ -110,7 +110,7 @@ impl super::Codec for Codec {
 #[cfg(test)]
 mod tests {
     #[test]
-    fn test_median_finder() {
+    fn test_solution() {
         super::super::tests::run::<super::Codec>();
     }
 }
