@@ -16,7 +16,7 @@ mod tests {
     use std::iter;
 
     pub fn run<I: NestedIterator>() {
-        let test_cases = [
+        let test_cases = vec![
             (
                 vec![
                     NestedInteger::List(vec![NestedInteger::Int(1), NestedInteger::Int(1)]),
@@ -37,7 +37,7 @@ mod tests {
             ),
         ];
 
-        for (nested_list, expected) in test_cases.iter().cloned() {
+        for (nested_list, expected) in test_cases {
             let mut nested_iterator = I::new(nested_list);
 
             let result = iter::from_fn(|| {
