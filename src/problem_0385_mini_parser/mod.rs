@@ -34,8 +34,8 @@ mod tests {
             ),
         ];
 
-        for (s, expected) in test_cases.iter() {
-            assert_eq!(S::deserialize(s.to_string()), *expected);
+        for (s, expected) in &test_cases {
+            assert_eq!(S::deserialize((*s).to_string()), *expected);
         }
     }
 }
