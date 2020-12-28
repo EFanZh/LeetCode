@@ -1,11 +1,7 @@
+use super::data_structures::NestedInteger;
+
 pub mod stack;
 pub mod stack_2;
-
-#[derive(Clone)]
-pub enum NestedInteger {
-    Int(i32),
-    List(Vec<NestedInteger>),
-}
 
 pub trait NestedIterator {
     fn new(nested_list: Vec<NestedInteger>) -> Self;
@@ -15,7 +11,8 @@ pub trait NestedIterator {
 
 #[cfg(test)]
 mod tests {
-    use super::{NestedInteger, NestedIterator};
+    use super::super::data_structures::NestedInteger;
+    use super::NestedIterator;
     use std::iter;
 
     pub fn run<I: NestedIterator>() {
