@@ -1,4 +1,4 @@
-use super::NestedInteger;
+use super::super::data_structures::NestedInteger;
 
 use std::mem;
 use std::vec::IntoIter;

@@ -14,6 +14,12 @@ impl ListNode {
     }
 }
 
+#[derive(Clone)]
+pub enum NestedInteger {
+    Int(i32),
+    List(Vec<NestedInteger>),
+}
+
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
