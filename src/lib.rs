@@ -268,6 +268,7 @@ pub mod problem_0350_intersection_of_two_arrays_ii;
 pub mod problem_0354_russian_doll_envelopes;
 pub mod problem_0355_design_twitter;
 pub mod problem_0357_count_numbers_with_unique_digits;
+pub mod problem_0365_water_and_jug_problem;
 pub mod problem_0367_valid_perfect_square;
 pub mod problem_0368_largest_divisible_subset;
 pub mod problem_0371_sum_of_two_integers;
