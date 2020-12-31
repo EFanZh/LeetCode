@@ -202,6 +202,10 @@ I consider this problem the hardest so far, is there a fast and elegant solution
 
 Why is the solution correct?
 
+## [365. Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)
+
+Make sure it can be solved again.
+
 ## [373. Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
 
 Why can I eliminate the usage of visited set?
@@ -209,6 +213,10 @@ Why can I eliminate the usage of visited set?
 ## [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
 
 Investigate the linear time complexity algorithm.
+
+## [397. Integer Replacement](https://leetcode.com/problems/integer-replacement/)
+
+Make sure it can be solved again.
 
 ## [402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
 
