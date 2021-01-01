@@ -1,5 +1,6 @@
 pub mod dfs;
 pub mod dfs_2;
+pub mod dfs_3;
 
 pub trait Solution {
     fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String>;
