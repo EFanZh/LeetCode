@@ -3,7 +3,7 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    fn get_version_components<'a>(version: &'a str) -> impl Iterator<Item = u32> + 'a {
+    fn get_version_components(version: &str) -> impl Iterator<Item = u32> + '_ {
         version.split('.').map(|x| x.parse::<u32>().unwrap())
     }
 
