@@ -276,6 +276,7 @@ pub mod problem_0372_super_pow;
 pub mod problem_0373_find_k_pairs_with_smallest_sums;
 pub mod problem_0374_guess_number_higher_or_lower;
 pub mod problem_0375_guess_number_higher_or_lower_ii;
+pub mod problem_0377_combination_sum_iv;
 pub mod problem_0378_kth_smallest_element_in_a_sorted_matrix;
 pub mod problem_0383_ransom_note;
 pub mod problem_0385_mini_parser;
