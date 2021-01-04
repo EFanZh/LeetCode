@@ -26,14 +26,14 @@ public:
                     value /= 10;
                 }
 
-                ++value;
-
-                while (value % 10 == 0) {
+                while (value % 10 == 9) {
                     value /= 10;
                 }
 
-                if (value == 1) {
+                if (value == 0) {
                     break;
+                } else {
+                    ++value;
                 }
             }
         }
