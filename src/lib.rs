@@ -280,6 +280,7 @@ pub mod problem_0377_combination_sum_iv;
 pub mod problem_0378_kth_smallest_element_in_a_sorted_matrix;
 pub mod problem_0383_ransom_note;
 pub mod problem_0385_mini_parser;
+pub mod problem_0386_lexicographical_numbers;
 pub mod problem_0387_first_unique_character_in_a_string;
 pub mod problem_0388_longest_absolute_file_path;
 pub mod problem_0389_find_the_difference;
