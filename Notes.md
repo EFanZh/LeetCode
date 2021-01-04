@@ -214,6 +214,10 @@ Why can I eliminate the usage of visited set?
 
 Investigate the linear time complexity algorithm.
 
+## [386. Lexicographical Numbers](https://leetcode.com/problems/lexicographical-numbers/)
+
+Make sure it can be solved again.
+
 ## [390. Elimination Game](https://leetcode.com/problems/elimination-game/)
 
 How does the mathematical solution work?
