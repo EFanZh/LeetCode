@@ -32,9 +32,9 @@ public:
 
                 if (value == 0) {
                     break;
-                } else {
-                    ++value;
                 }
+
+                ++value;
             }
         }
 
