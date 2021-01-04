@@ -15,7 +15,8 @@ Checks: >-
     -llvmlibc-implementation-in-namespace,
     -llvmlibc-restrict-system-libc-headers,
     -modernize-use-trailing-return-type,
-    -readability-convert-member-functions-to-static
+    -readability-convert-member-functions-to-static,
+    -readability-magic-numbers
 WarningsAsErrors: '*'
 HeaderFilterRegex: '.*'
 FormatStyle: file
