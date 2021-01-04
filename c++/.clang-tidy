@@ -1,6 +1,7 @@
 Checks: >-
     *,
     -cert-err58-cpp,
+    -cppcoreguidelines-avoid-magic-numbers,
     -cppcoreguidelines-avoid-non-const-global-variables,
     -cppcoreguidelines-owning-memory,
     -cppcoreguidelines-pro-bounds-pointer-arithmetic,
