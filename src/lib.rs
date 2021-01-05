@@ -291,6 +291,7 @@ pub mod problem_0394_decode_string;
 pub mod problem_0396_rotate_function;
 pub mod problem_0397_integer_replacement;
 pub mod problem_0399_evaluate_division;
+pub mod problem_0400_nth_digit;
 pub mod problem_0401_binary_watch;
 pub mod problem_0402_remove_k_digits;
 pub mod problem_0404_sum_of_left_leaves;
