@@ -198,6 +198,10 @@ Make sure it can be solved again.
 
 I consider this problem the hardest so far, is there a fast and elegant solution?
 
+## [327. Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)
+
+Investigate the binary index tree solution and make sure it can be solved again.
+
 ## [332. Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
 
 Why is the solution correct?
