@@ -247,6 +247,7 @@ pub mod problem_0321_create_maximum_number;
 pub mod problem_0322_coin_change;
 pub mod problem_0324_wiggle_sort_ii;
 pub mod problem_0326_power_of_three;
+pub mod problem_0327_count_of_range_sum;
 pub mod problem_0328_odd_even_linked_list;
 pub mod problem_0329_longest_increasing_path_in_a_matrix;
 pub mod problem_0330_patching_array;
