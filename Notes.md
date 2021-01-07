@@ -206,6 +206,10 @@ Investigate the binary index tree solution and make sure it can be solved again.
 
 Why is the solution correct?
 
+## [363. Max Sum of Rectangle No Larger Than K](https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/)
+
+Make sure it can be solved again.
+
 ## [365. Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)
 
 Make sure it can be solved again.
