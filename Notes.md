@@ -218,6 +218,10 @@ Make sure it can be solved again.
 
 Why can I eliminate the usage of visited set?
 
+## [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
+
+How can you think of the greedy solution?
+
 ## [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
 
 Investigate the linear time complexity algorithm.
