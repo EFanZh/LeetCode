@@ -234,6 +234,10 @@ Make sure it can be solved again.
 
 How does the mathematical solution work?
 
+## [391. Perfect Rectangle](https://leetcode.com/problems/perfect-rectangle/)
+
+Make sure it can be solved again.
+
 ## [397. Integer Replacement](https://leetcode.com/problems/integer-replacement/)
 
 Make sure it can be solved again.
