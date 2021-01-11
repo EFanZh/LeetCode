@@ -292,6 +292,7 @@ pub mod problem_0391_perfect_rectangle;
 pub mod problem_0392_is_subsequence;
 pub mod problem_0393_utf_8_validation;
 pub mod problem_0394_decode_string;
+pub mod problem_0395_longest_substring_with_at_least_k_repeating_characters;
 pub mod problem_0396_rotate_function;
 pub mod problem_0397_integer_replacement;
 pub mod problem_0399_evaluate_division;
