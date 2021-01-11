@@ -238,6 +238,10 @@ How does the mathematical solution work?
 
 Make sure it can be solved again.
 
+## [395. Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)
+
+How can you come up with the sliding window solution?
+
 ## [397. Integer Replacement](https://leetcode.com/problems/integer-replacement/)
 
 Make sure it can be solved again.
