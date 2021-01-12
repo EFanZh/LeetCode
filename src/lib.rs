@@ -266,6 +266,7 @@ pub mod problem_0345_reverse_vowels_of_a_string;
 pub mod problem_0347_top_k_frequent_elements;
 pub mod problem_0349_intersection_of_two_arrays;
 pub mod problem_0350_intersection_of_two_arrays_ii;
+pub mod problem_0352_data_stream_as_disjoint_intervals;
 pub mod problem_0354_russian_doll_envelopes;
 pub mod problem_0355_design_twitter;
 pub mod problem_0357_count_numbers_with_unique_digits;
