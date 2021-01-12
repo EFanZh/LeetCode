@@ -14,6 +14,7 @@ impl Solution {
         const LEFT_SIDE: u8 = BOTTOM_LEFT_CORNER | TOP_LEFT_CORNER;
         const TOP_SIDE: u8 = TOP_LEFT_CORNER | TOP_RIGHT_CORNER;
         const RIGHT_SIDE: u8 = BOTTOM_RIGHT_CORNER | TOP_RIGHT_CORNER;
+        const CROSS_CORNER: u8 = BOTTOM_SIDE | TOP_SIDE;
 
         let mut points = HashMap::new();
 
@@ -52,7 +53,7 @@ impl Solution {
                         return false;
                     }
                 }
-                BOTTOM_SIDE | LEFT_SIDE | TOP_SIDE | RIGHT_SIDE => {}
+                BOTTOM_SIDE | LEFT_SIDE | TOP_SIDE | RIGHT_SIDE | CROSS_CORNER => {}
                 _ => return false,
             }
         }
