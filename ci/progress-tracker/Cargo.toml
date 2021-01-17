@@ -1,13 +1,13 @@
 [package]
-name = "progress-tracker"
-version = "0.1.0"
 authors = ["EFanZh <efanzh@gmail.com>"]
 edition = "2018"
+name = "progress-tracker"
+version = "0.1.0"
 
 [dependencies]
 chrono = "*"
 git2 = "*"
 plotters = "*"
-reqwest = { version = "*", features = ["blocking", "json"] }
-serde = { version = "*", features = ["derive"] }
+reqwest = {version = "*", features = ["blocking", "json"]}
+serde = {version = "*", features = ["derive"]}
 serde_json = "*"
