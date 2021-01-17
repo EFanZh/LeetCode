@@ -3,38 +3,33 @@ pub struct Solution;
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
         let mut result = 0;
+        let mut iter = height.into_iter();
 
-        if let Some((mut left, rest)) = height.split_first() {
-            if let Some((mut right, mut rest)) = rest.split_last() {
-                'outer: loop {
-                    if left < right {
-                        while let Some((middle, new_rest)) = rest.split_first() {
-                            rest = new_rest;
+        if let (Some(mut left), Some(mut right)) = (iter.next(), iter.next_back()) {
+            'outer: loop {
+                if left < right {
+                    while let Some(middle) = iter.next() {
+                        if middle < left {
+                            result += left - middle;
+                        } else {
+                            left = middle;
 
-                            if middle < left {
-                                result += left - middle;
-                            } else {
-                                left = middle;
-
-                                continue 'outer;
-                            }
-                        }
-                    } else {
-                        while let Some((middle, new_rest)) = rest.split_last() {
-                            rest = new_rest;
-
-                            if middle < right {
-                                result += right - middle;
-                            } else {
-                                right = middle;
-
-                                continue 'outer;
-                            }
+                            continue 'outer;
                         }
                     }
+                } else {
+                    while let Some(middle) = iter.next_back() {
+                        if middle < right {
+                            result += right - middle;
+                        } else {
+                            right = middle;
 
-                    break;
+                            continue 'outer;
+                        }
+                    }
                 }
+
+                break;
             }
         }
 
