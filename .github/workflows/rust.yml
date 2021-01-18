@@ -57,7 +57,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
-          - run: git fetch --prune --unshallow
+            with:
+                fetch-depth: "0"
           - uses: actions-rs/toolchain@v1
           - run: cargo run --package progress-tracker --release -- . progress-report
           - uses: peaceiris/actions-gh-pages@v3
