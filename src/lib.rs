@@ -312,6 +312,7 @@ pub mod problem_0415_add_strings;
 pub mod problem_0416_partition_equal_subset_sum;
 pub mod problem_0417_pacific_atlantic_water_flow;
 pub mod problem_0419_battleships_in_a_board;
+pub mod problem_0434_number_of_segments_in_a_string;
 pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0476_number_complement;
 pub mod problem_0509_fibonacci_number;
