@@ -21,8 +21,8 @@ impl Solution {
         let mut i = 0;
 
         iter::from_fn(move || {
-            while i != items.len() {
-                if f(&items[i]) {
+            while let Some(item) = items.get(i) {
+                if f(item) {
                     return Some(items.swap_remove(i));
                 } else {
                     i += 1;
