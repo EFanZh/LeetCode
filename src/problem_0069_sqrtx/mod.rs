@@ -1,5 +1,7 @@
 pub mod binary_search;
 pub mod newtons_method;
+pub mod smart_newtons_method;
+pub mod smarter_newtons_method;
 
 pub trait Solution {
     fn my_sqrt(x: i32) -> i32;
@@ -22,8 +24,12 @@ mod tests {
             (8, 2),
             (9, 3),
             (10, 3),
-            (2_147_395_600, 46340),
-            (2_147_483_647, 46340),
+            (21, 4),
+            (80, 8),
+            (4224, 64),
+            (0x0100_2000, 4096),
+            (0x7FFE_A810, 46340),
+            (0x7FFF_FFFF, 46340),
         ];
 
         for (x, expected) in test_cases.iter().copied() {

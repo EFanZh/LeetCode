@@ -1,11 +1,9 @@
 pub struct Solution;
 
-// https://leetcode.com/problems/sqrtx/discuss/25057/3-4-short-lines-Integer-Newton-Every-Language.
-
 impl Solution {
     pub fn my_sqrt(x: i32) -> i32 {
         let x = x as u32;
-        let mut guess = x.min(46340);
+        let mut guess = (1 << ((33 - x.leading_zeros()) / 2)) - 1;
 
         while guess * guess > x {
             guess = (guess + x / guess) / 2;
