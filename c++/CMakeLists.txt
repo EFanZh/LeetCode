@@ -80,11 +80,14 @@ if(STANDALONE_PROJECT)
         "include/leet-code/problem-0386-lexicographical-numbers/iterative-dfs.h"
         "include/leet-code/problem-0402-remove-k-digits/greedy.h"
         "include/leet-code/problem-0402-remove-k-digits/greedy-2.h"
+        "include/leet-code/problem-0436-find-right-interval/sort-and-merge.h"
+        "include/leet-code/problem-0436-find-right-interval/sort-and-scan.h"
         "tests/leet-code/problem-0237-delete-node-in-a-linked-list/tests.h"
         "tests/leet-code/problem-0321-create-maximum-number/tests.h"
         "tests/leet-code/problem-0373-find-k-pairs-with-smallest-sums/tests.h"
         "tests/leet-code/problem-0386-lexicographical-numbers/tests.h"
         "tests/leet-code/problem-0402-remove-k-digits/tests.h"
+        "tests/leet-code/problem-0436-find-right-interval/tests.h"
         "tests/leet-code/test-utilities.h"
     )
 
@@ -125,6 +128,8 @@ if(STANDALONE_PROJECT)
         "tests/leet-code/problem-0386-lexicographical-numbers/iterative-dfs.cpp"
         "tests/leet-code/problem-0402-remove-k-digits/greedy.cpp"
         "tests/leet-code/problem-0402-remove-k-digits/greedy-2.cpp"
+        "tests/leet-code/problem-0436-find-right-interval/sort-and-merge.cpp"
+        "tests/leet-code/problem-0436-find-right-interval/sort-and-scan.cpp"
         "tests/leet-code/test-utilities.cpp"
     )
 
