@@ -317,6 +317,7 @@ pub mod problem_0433_minimum_genetic_mutation;
 pub mod problem_0434_number_of_segments_in_a_string;
 pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0436_find_right_interval;
+pub mod problem_0437_path_sum_iii;
 pub mod problem_0441_arranging_coins;
 pub mod problem_0476_number_complement;
 pub mod problem_0509_fibonacci_number;
