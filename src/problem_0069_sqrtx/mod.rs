@@ -1,4 +1,5 @@
 pub mod binary_search;
+pub mod fast_binary_search;
 pub mod newtons_method;
 pub mod newtons_method_with_f32;
 pub mod newtons_method_with_f64;
