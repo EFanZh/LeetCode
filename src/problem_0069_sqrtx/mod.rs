@@ -1,5 +1,6 @@
 pub mod binary_search;
 pub mod newtons_method;
+pub mod newtons_method_with_f32;
 pub mod smart_newtons_method;
 pub mod smarter_newtons_method;
 
