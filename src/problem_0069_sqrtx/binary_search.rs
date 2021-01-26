@@ -5,26 +5,20 @@ use std::cmp::Ordering;
 impl Solution {
     pub fn my_sqrt(x: i32) -> i32 {
         let x = x as u32;
-        let mut start = 1;
-        let mut count = x;
+        let mut left = 0;
+        let mut right = x.min(46340) + 1;
 
-        while count != 0 {
-            let half = count / 2;
-            let middle = start + half;
+        while right - left > 1 {
+            let middle = (left + right) / 2;
 
-            match middle.saturating_mul(middle).cmp(&x) {
-                Ordering::Less => {
-                    start = middle + 1;
-                    count -= half + 1;
-                }
+            match (middle * middle).cmp(&x) {
+                Ordering::Less => left = middle,
                 Ordering::Equal => return middle as _,
-                Ordering::Greater => {
-                    count = half;
-                }
+                Ordering::Greater => right = middle,
             }
         }
 
-        (start - 1) as _
+        left as _
     }
 }
 
