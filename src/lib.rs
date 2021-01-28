@@ -313,6 +313,7 @@ pub mod problem_0416_partition_equal_subset_sum;
 pub mod problem_0417_pacific_atlantic_water_flow;
 pub mod problem_0419_battleships_in_a_board;
 pub mod problem_0423_reconstruct_original_digits_from_english;
+pub mod problem_0424_longest_repeating_character_replacement;
 pub mod problem_0433_minimum_genetic_mutation;
 pub mod problem_0434_number_of_segments_in_a_string;
 pub mod problem_0435_non_overlapping_intervals;
