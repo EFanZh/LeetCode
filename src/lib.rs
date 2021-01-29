@@ -322,6 +322,7 @@ pub mod problem_0437_path_sum_iii;
 pub mod problem_0438_find_all_anagrams_in_a_string;
 pub mod problem_0441_arranging_coins;
 pub mod problem_0442_find_all_duplicates_in_an_array;
+pub mod problem_0443_string_compression;
 pub mod problem_0476_number_complement;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
