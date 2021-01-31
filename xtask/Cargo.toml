@@ -1,0 +1,12 @@
+[package]
+authors = ["EFanZh <efanzh@gmail.com>"]
+edition = "2018"
+name = "xtask"
+version = "0.1.0"
+
+[dependencies]
+cc = "*"
+lazy_static = "*"
+structopt = "*"
+tempfile = "*"
+which = "*"
