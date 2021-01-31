@@ -35,27 +35,27 @@ fn find_visual_studio() -> Option<PathBuf> {
 }
 
 fn find_cmake() -> Option<PathBuf> {
-    if which::which("cmake").is_ok() {
-        Some(PathBuf::from("cmake"))
-    } else if cfg!(target_os = "windows") {
-        for &path in &[
-            r"C:\Program Files\CMake\bin\cmake.exe",
-            r"C:\Program Files (x86)\CMake\bin\cmake.exe",
-        ] {
-            if Path::new(path).is_file() {
-                return Some(PathBuf::from(path));
+    which::which("cmake").ok().or_else(|| {
+        if cfg!(target_os = "windows") {
+            for &path in &[
+                r"C:\Program Files\CMake\bin\cmake.exe",
+                r"C:\Program Files (x86)\CMake\bin\cmake.exe",
+            ] {
+                if Path::new(path).is_file() {
+                    return Some(PathBuf::from(path));
+                }
             }
-        }
 
-        VISUAL_STUDIO_PATH
-            .as_deref()
-            .map(|visual_studio_path| {
-                visual_studio_path.join(r"Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe")
-            })
-            .filter(|path| path.is_file())
-    } else {
-        None
-    }
+            VISUAL_STUDIO_PATH
+                .as_deref()
+                .map(|visual_studio_path| {
+                    visual_studio_path.join(r"Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe")
+                })
+                .filter(|path| path.is_file())
+        } else {
+            None
+        }
+    })
 }
 
 pub fn get_cmake() -> Option<&'static Path> {
@@ -63,18 +63,18 @@ pub fn get_cmake() -> Option<&'static Path> {
 }
 
 fn find_ninja() -> Option<PathBuf> {
-    if which::which("ninja").is_ok() {
-        Some(PathBuf::from("ninja"))
-    } else if cfg!(target_os = "windows") {
-        VISUAL_STUDIO_PATH
-            .as_deref()
-            .map(|visual_studio_path| {
-                visual_studio_path.join(r"Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja\ninja.exe")
-            })
-            .filter(|path| path.is_file())
-    } else {
-        None
-    }
+    which::which("ninja").ok().or_else(|| {
+        if cfg!(target_os = "windows") {
+            VISUAL_STUDIO_PATH
+                .as_deref()
+                .map(|visual_studio_path| {
+                    visual_studio_path.join(r"Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja\ninja.exe")
+                })
+                .filter(|path| path.is_file())
+        } else {
+            None
+        }
+    })
 }
 
 pub fn get_ninja() -> Option<&'static Path> {
