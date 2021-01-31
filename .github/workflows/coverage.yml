@@ -4,6 +4,7 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
           - uses: actions/checkout@v2
+          - run: vcpkg install gtest
           - uses: actions-rs/toolchain@v1
             with:
                 toolchain: nightly
@@ -13,25 +14,10 @@ jobs:
             with:
                 crate: grcov
                 use-tool-cache: true
-          - run: cargo test
-            env:
-                LLVM_PROFILE_FILE: coverage/rust.profraw
-                RUSTFLAGS: -Zinstrument-coverage
-          - run: vcpkg install gtest
           - run: >-
-                cmake
-                -S c++
-                -B target/c++
-                -D CMAKE_BUILD_TYPE=Debug
-                -D CMAKE_C_COMPILER=clang
-                -D CMAKE_CXX_COMPILER=clang++
-                -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-                -D ENABLE_SOURCE_BASED_CODE_COVERAGE=ON
-          - run: cmake --build target/c++ -j
-          - run: target/c++/leet-code-tests
-            env:
-                LLVM_PROFILE_FILE: coverage/c++.profraw
-          - run: grcov --branch -b target --keep-only 'c++/*' --keep-only 'src/*' -o coverage/lcov.info -s . coverage
+                cargo xtask coverage
+                --cmake-toolchain-file "$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+                -o coverage/lcov.info
           - uses: codecov/codecov-action@v1
             with:
                 file: coverage/lcov.info
