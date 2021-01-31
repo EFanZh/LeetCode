@@ -324,6 +324,7 @@ pub mod problem_0441_arranging_coins;
 pub mod problem_0442_find_all_duplicates_in_an_array;
 pub mod problem_0443_string_compression;
 pub mod problem_0445_add_two_numbers_ii;
+pub mod problem_0448_find_all_numbers_disappeared_in_an_array;
 pub mod problem_0476_number_complement;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
