@@ -1,10 +1,10 @@
 use crate::tools;
-use std::env;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter};
 use std::path::PathBuf;
 use std::process::Command;
 use std::str::FromStr;
+use std::{env, fs};
 use structopt::StructOpt;
 
 enum OutputType {
@@ -159,6 +159,10 @@ impl CoverageCommand {
             .success());
 
         // Generate report with grcov.
+
+        if let Some(parent) = self.output_path.parent() {
+            fs::create_dir_all(parent).unwrap();
+        }
 
         assert!(Command::new("grcov")
             .args(&[

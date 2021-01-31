@@ -9,13 +9,8 @@ lazy_static::lazy_static! {
 }
 
 fn find_msvc_binary_tools_dir() -> Option<PathBuf> {
-    cc::windows_registry::find_tool("x86_64-pc-windows-msvc", "cl.exe").map(|tool| {
-        let mut path = tool.path().to_path_buf();
-
-        path.pop();
-
-        path
-    })
+    cc::windows_registry::find_tool("x86_64-pc-windows-msvc", "cl.exe")
+        .map(|tool| tool.path().parent().unwrap().to_path_buf())
 }
 
 pub fn get_msvc_binary_tools_dir() -> Option<&'static Path> {
@@ -23,14 +18,12 @@ pub fn get_msvc_binary_tools_dir() -> Option<&'static Path> {
 }
 
 fn find_visual_studio() -> Option<PathBuf> {
-    MSVC_BINARY_TOOLS_DIR.as_deref().map(|path| {
-        let mut path = path.to_path_buf();
-
+    MSVC_BINARY_TOOLS_DIR.as_deref().map(|mut path| {
         for _ in 0..7 {
-            path.pop();
+            path = path.parent().unwrap();
         }
 
-        path
+        path.to_path_buf()
     })
 }
 
