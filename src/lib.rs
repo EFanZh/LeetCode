@@ -341,6 +341,7 @@ pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
+pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 
 #[cfg(test)]
 mod test_utilities;
