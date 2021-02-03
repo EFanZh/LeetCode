@@ -162,6 +162,10 @@ Remember the KMP solution.
 
 Optimize the solution.
 
+## [227. Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/)
+
+Optimize the solution, especially the stack one.
+
 ## [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 
 Make sure it can be solved again.

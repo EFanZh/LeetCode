@@ -12,24 +12,12 @@ impl Solution {
                     match ops.pop() {
                         Some(b'+') => *nums.last_mut().unwrap() += nums.pop().unwrap(),
                         Some(b'-') => *nums.last_mut().unwrap() -= nums.pop().unwrap(),
-                        Some(b'*') => *nums.last_mut().unwrap() *= nums.pop().unwrap(),
-                        Some(b'/') => *nums.last_mut().unwrap() /= nums.pop().unwrap(),
                         _ => {}
                     }
 
                     ops.push(c);
                 }
-                b'*' | b'/' => match ops.last_mut() {
-                    Some(op @ b'*') => {
-                        *op = c;
-                        *nums.last_mut().unwrap() *= nums.pop().unwrap();
-                    }
-                    Some(op @ b'/') => {
-                        *op = c;
-                        *nums.last_mut().unwrap() /= nums.pop().unwrap();
-                    }
-                    _ => ops.push(c),
-                },
+                b'*' | b'/' => ops.push(c),
                 b'0'..=b'9' => {
                     let mut num = i32::from(c - b'0');
 
