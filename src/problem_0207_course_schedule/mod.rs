@@ -19,6 +19,14 @@ mod tests {
             ((2, &[[1, 0]] as &[_]), true),
             ((2, &[[1, 0], [0, 1]]), false),
             ((3, &[[1, 0], [2, 1]]), true),
+            ((2, &[[0, 1]]), true),
+            (
+                (
+                    20,
+                    &[[0, 10], [3, 18], [5, 5], [6, 11], [11, 14], [13, 1], [15, 1], [17, 4]],
+                ),
+                false,
+            ),
         ];
 
         for ((num_courses, prerequisites), expected) in test_cases.iter().copied() {
