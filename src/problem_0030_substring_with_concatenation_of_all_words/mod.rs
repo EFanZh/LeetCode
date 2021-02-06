@@ -18,6 +18,8 @@ mod tests {
             (("", &[]), &[]),
             (("barfoofoobarthefoobarman", &["bar", "foo", "the"]), &[6, 9, 12]),
             (("aaaaaa", &["aa", "aa"]), &[0, 1, 2]),
+            (("a", &["a"]), &[0]),
+            (("abc", &["ab", "cd"]), &[]),
         ];
 
         for ((s, words), expected) in test_cases.iter().copied() {
