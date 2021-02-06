@@ -27,21 +27,16 @@ impl<T: Hash + Eq> HashMultiSet<T> {
         }
     }
 
-    fn remove<Q: Hash + Eq + ?Sized>(&mut self, value: &Q) -> bool
+    fn remove<Q: Hash + Eq + ?Sized>(&mut self, value: &Q)
     where
         T: Borrow<Q>,
     {
-        #[allow(clippy::option_if_let_else)]
-        if let Some(count) = self.data.get_mut(value) {
-            if *count == 1 {
-                self.data.remove(value);
-            } else {
-                *count -= 1;
-            }
+        let count = self.data.get_mut(value).unwrap();
 
-            true
+        if *count == 1 {
+            self.data.remove(value);
         } else {
-            false
+            *count -= 1;
         }
     }
 
