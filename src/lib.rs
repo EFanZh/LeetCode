@@ -329,6 +329,7 @@ pub mod problem_0447_number_of_boomerangs;
 pub mod problem_0448_find_all_numbers_disappeared_in_an_array;
 pub mod problem_0449_serialize_and_deserialize_bst;
 pub mod problem_0450_delete_node_in_a_bst;
+pub mod problem_0452_minimum_number_of_arrows_to_burst_balloons;
 pub mod problem_0476_number_complement;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
