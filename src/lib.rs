@@ -333,6 +333,7 @@ pub mod problem_0451_sort_characters_by_frequency;
 pub mod problem_0452_minimum_number_of_arrows_to_burst_balloons;
 pub mod problem_0453_minimum_moves_to_equal_array_elements;
 pub mod problem_0454_4sum_ii;
+pub mod problem_0455_assign_cookies;
 pub mod problem_0476_number_complement;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
