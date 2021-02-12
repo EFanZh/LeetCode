@@ -17,8 +17,8 @@ mod tests {
             (&[3, 3, 4, 2, 2], false),
             (&[], false),
             (&[3], false),
-            (&[3,2], false),
-            (&[3,2,1], false),
+            (&[3, 2], false),
+            (&[3, 2, 1], false),
         ];
 
         for (x, expected) in test_cases.iter().copied() {
