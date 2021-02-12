@@ -5,7 +5,7 @@ jobs:
         steps:
           - uses: actions/checkout@v2
           - uses: actions-rs/toolchain@v1
-          - run: cargo run --release --manifest-path=ci/check-cpp-code-format/Cargo.toml c++
+          - run: cargo run --package check-cpp-code-format --release -- c++
           - run: >-
                 find c++
                 -type f
