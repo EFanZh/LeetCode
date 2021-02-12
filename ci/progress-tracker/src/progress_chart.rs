@@ -61,7 +61,7 @@ fn fix_svg_size(svg: &str, zoom: u32) -> String {
 }
 
 fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
-    const ZOOM: u32 = 10;
+    const ZOOM: u32 = 16;
     const IMAGE_WIDTH: u32 = 987;
     const IMAGE_HEIGHT: u32 = 610;
     const TITLE_FONT_SIZE: f64 = 16.0;
