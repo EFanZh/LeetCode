@@ -12,27 +12,30 @@ impl Solution {
     fn term(iter: &mut Peekable<impl Iterator<Item = u8>>) -> i32 {
         Self::whitespaces(iter);
 
-        let c = iter.next().unwrap();
+        match iter.next().unwrap() {
+            b'(' => {
+                let result = Self::expression(iter);
 
-        if c == b'(' {
-            let result = Self::expression(iter);
-
-            Self::whitespaces(iter);
-
-            iter.next();
-
-            result
-        } else {
-            let mut num = i32::from(c - b'0');
-
-            while let Some(&c @ b'0'..=b'9') = iter.peek() {
-                num *= 10;
-                num += i32::from(c - b'0');
+                Self::whitespaces(iter);
 
                 iter.next();
-            }
 
-            num
+                result
+            }
+            b'+' => Self::term(iter),
+            b'-' => -Self::term(iter),
+            c => {
+                let mut num = i32::from(c - b'0');
+
+                while let Some(&c @ b'0'..=b'9') = iter.peek() {
+                    num *= 10;
+                    num += i32::from(c - b'0');
+
+                    iter.next();
+                }
+
+                num
+            }
         }
     }
 
