@@ -69,16 +69,16 @@ impl Solution {
 
                                 if result.len() == expected_items {
                                     break;
-                                } else {
-                                    stack_base = i;
-                                    stack_top = i + 1;
-                                    i += 1;
+                                }
 
-                                    if let Some(&next_num) = nums.get(i) {
-                                        num = next_num;
-                                    } else {
-                                        break;
-                                    }
+                                stack_base = i;
+                                stack_top = i + 1;
+                                i += 1;
+
+                                if let Some(&next_num) = nums.get(i) {
+                                    num = next_num;
+                                } else {
+                                    break;
                                 }
                             } else {
                                 stack_top -= 1;

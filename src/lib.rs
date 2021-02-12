@@ -1,3 +1,10 @@
+#![warn(clippy::pedantic)]
+#![allow(clippy::cast_possible_truncation)]
+#![allow(clippy::cast_possible_wrap)]
+#![allow(clippy::cast_sign_loss)]
+#![allow(clippy::must_use_candidate)]
+#![allow(clippy::needless_pass_by_value)]
+
 pub(crate) mod data_structures;
 pub mod problem_0001_two_sum;
 pub mod problem_0002_add_two_numbers;

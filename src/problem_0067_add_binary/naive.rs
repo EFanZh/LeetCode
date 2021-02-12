@@ -29,9 +29,9 @@ impl Solution {
                     *target = b'1';
 
                     return String::from_utf8(b).unwrap();
-                } else {
-                    *target = b'0';
                 }
+
+                *target = b'0';
             }
 
             b.insert(0, b'1');

@@ -22,9 +22,9 @@ impl Solution {
 
                 if count == 1 {
                     break;
-                } else {
-                    count -= 1;
                 }
+
+                count -= 1;
             }
 
             base.truncate(saved_size);

@@ -12,15 +12,15 @@ impl Solution {
                 result += n - 1;
 
                 break;
-            } else {
-                if n & 3 == 1 {
-                    n -= 1;
-                } else {
-                    n += 1;
-                }
-
-                result += 1 + n.trailing_zeros();
             }
+
+            if n & 3 == 1 {
+                n -= 1;
+            } else {
+                n += 1;
+            }
+
+            result += 1 + n.trailing_zeros();
         }
 
         result as _

@@ -11,9 +11,9 @@ impl Solution {
                 while let Some(c) = iter.next_back() {
                     if c == b' ' {
                         break;
-                    } else {
-                        result += 1;
                     }
+
+                    result += 1;
                 }
 
                 return result;

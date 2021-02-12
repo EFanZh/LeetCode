@@ -30,9 +30,9 @@ impl Solution {
         for num in nums {
             if num == -1 {
                 break;
-            } else {
-                i += 1;
             }
+
+            i += 1;
         }
 
         i

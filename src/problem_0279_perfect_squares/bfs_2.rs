@@ -24,15 +24,15 @@ impl Solution {
 
                     if sqrt_current * sqrt_current == current {
                         break 'outer;
-                    } else {
-                        for i in min_sqrt..=sqrt_current {
-                            let next = current - i * i;
+                    }
 
-                            if let value @ false = &mut visited[next as usize] {
-                                *value = true;
+                    for i in min_sqrt..=sqrt_current {
+                        let next = current - i * i;
 
-                                queue.push_back((next, i));
-                            }
+                        if let value @ false = &mut visited[next as usize] {
+                            *value = true;
+
+                            queue.push_back((next, i));
                         }
                     }
                 }

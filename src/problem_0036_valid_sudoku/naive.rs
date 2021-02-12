@@ -10,9 +10,9 @@ impl Solution {
 
                 if *target {
                     return true;
-                } else {
-                    *target = true;
                 }
+
+                *target = true;
             }
         }
 

@@ -12,9 +12,9 @@ impl Solution {
                     i += 1;
 
                     break;
-                } else {
-                    i += 1;
                 }
+
+                i += 1;
             } else {
                 return;
             }

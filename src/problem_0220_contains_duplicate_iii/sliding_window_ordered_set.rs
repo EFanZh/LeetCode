@@ -15,9 +15,9 @@ impl Solution {
                 .is_some()
             {
                 return true;
-            } else {
-                visited.insert(num);
             }
+
+            visited.insert(num);
         }
 
         for (i, &num) in right.iter().enumerate() {
@@ -29,9 +29,9 @@ impl Solution {
                 .is_some()
             {
                 return true;
-            } else {
-                visited.insert(num);
             }
+
+            visited.insert(num);
         }
 
         false

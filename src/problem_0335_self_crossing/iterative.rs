@@ -23,12 +23,12 @@ impl Solution {
                 }
 
                 break;
-            } else {
-                l1 = l2;
-                l2 = l3;
-                l3 = l4;
-                l4 = length;
             }
+
+            l1 = l2;
+            l2 = l3;
+            l3 = l4;
+            l4 = length;
         }
 
         false

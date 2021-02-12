@@ -13,9 +13,9 @@ impl Solution {
 
             if *count == 0 {
                 return false;
-            } else {
-                *count -= 1;
             }
+
+            *count -= 1;
         }
 
         true

@@ -32,10 +32,10 @@ impl Solution {
                                 node_ref.right = None;
 
                                 break;
-                            } else {
-                                drop(node_ref);
-                                node = right;
                             }
+
+                            drop(node_ref);
+                            node = right;
                         } else {
                             let left = left.clone();
 

@@ -20,9 +20,9 @@ impl Solution {
 
                 if k == 0 {
                     return node_ref.val;
-                } else {
-                    root = node_ref.right.clone();
                 }
+
+                root = node_ref.right.clone();
             } else {
                 break;
             }

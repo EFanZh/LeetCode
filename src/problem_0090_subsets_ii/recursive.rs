@@ -20,9 +20,9 @@ impl Solution {
 
                         if count == 0 {
                             break;
-                        } else {
-                            count -= 1;
                         }
+
+                        count -= 1;
                     }
 
                     base.truncate(saved_size);
@@ -38,9 +38,9 @@ impl Solution {
 
                     if count == 0 {
                         break;
-                    } else {
-                        count -= 1;
                     }
+
+                    count -= 1;
                 }
 
                 base.truncate(saved_size);

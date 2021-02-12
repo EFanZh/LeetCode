@@ -40,11 +40,11 @@ impl Solution {
 
             if temp.is_empty() {
                 break;
-            } else {
-                queue.clear();
-
-                mem::swap(&mut queue, &mut temp);
             }
+
+            queue.clear();
+
+            mem::swap(&mut queue, &mut temp);
         }
 
         queue

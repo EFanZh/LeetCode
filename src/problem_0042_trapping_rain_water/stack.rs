@@ -18,9 +18,9 @@ impl Solution {
                                 middle_height = left_height;
 
                                 continue;
-                            } else {
-                                result += (right_height - middle_height) * (right_index - left_index - 1);
                             }
+
+                            result += (right_height - middle_height) * (right_index - left_index - 1);
                         }
 
                         break;

@@ -60,9 +60,9 @@ impl Solution {
                     if *slot != 0 {
                         if *slot == t[usize::from(*c2)] {
                             break j;
-                        } else {
-                            *slot -= 1;
                         }
+
+                        *slot -= 1;
                     }
                 } else {
                     return String::new();
@@ -96,9 +96,9 @@ impl Solution {
                             }
 
                             break;
-                        } else {
-                            *slot -= 1;
                         }
+
+                        *slot -= 1;
                     }
                 }
             }

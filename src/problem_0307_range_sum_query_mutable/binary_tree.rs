@@ -81,17 +81,17 @@ impl NumArray {
                     result += root;
 
                     break;
-                } else {
-                    let half = length / 2;
-                    let (left, right) = children.split_at(half * 2 - 1);
+                }
 
-                    if to < half {
-                        tree = left;
-                    } else {
-                        result += *left.last().unwrap();
-                        tree = right;
-                        to -= half;
-                    }
+                let half = length / 2;
+                let (left, right) = children.split_at(half * 2 - 1);
+
+                if to < half {
+                    tree = left;
+                } else {
+                    result += *left.last().unwrap();
+                    tree = right;
+                    to -= half;
                 }
             }
 

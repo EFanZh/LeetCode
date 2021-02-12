@@ -12,10 +12,10 @@ impl Solution {
 
                 if num == target {
                     break;
-                } else {
-                    nums.swap(i, j);
-                    num = target;
                 }
+
+                nums.swap(i, j);
+                num = target;
             }
         }
 

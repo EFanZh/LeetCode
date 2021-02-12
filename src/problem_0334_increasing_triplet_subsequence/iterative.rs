@@ -18,9 +18,9 @@ impl Solution {
                     }
 
                     break;
-                } else {
-                    first = second;
                 }
+
+                first = second;
             }
         }
 

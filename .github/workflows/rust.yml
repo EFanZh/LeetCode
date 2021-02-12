@@ -21,20 +21,7 @@ jobs:
           - uses: actions-rs/toolchain@v1
             with:
                 components: clippy
-          - run: >-
-                cargo clippy
-                --all-targets
-                --all-features
-                --
-                -W clippy::pedantic
-                -A clippy::cast-possible-truncation
-                -A clippy::cast-possible-wrap
-                -A clippy::cast-precision-loss
-                -A clippy::cast-sign-loss
-                -A clippy::must-use-candidate
-                -A clippy::needless-pass-by-value
-                -A clippy::non-ascii-literal
-                -D warnings
+          - run: cargo clippy --all-targets --all-features -- -D warnings
         strategy:
             matrix:
                 os:

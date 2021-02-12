@@ -27,9 +27,9 @@ impl Solution {
                     }
 
                     break;
-                } else {
-                    prev = current;
                 }
+
+                prev = current;
             }
 
             nums.truncate(deduped);

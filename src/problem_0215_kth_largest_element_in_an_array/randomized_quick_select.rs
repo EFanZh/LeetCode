@@ -20,9 +20,9 @@ impl Solution {
                         result += 1;
 
                         continue 'k;
-                    } else {
-                        rest = body;
                     }
+
+                    rest = body;
                 }
 
                 break;

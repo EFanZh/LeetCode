@@ -20,9 +20,9 @@ impl Solution {
                         start += 1;
 
                         break;
-                    } else {
-                        start += 1
                     }
+
+                    start += 1
                 }
             }
         }
