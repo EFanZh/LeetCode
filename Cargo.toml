@@ -5,7 +5,7 @@ name = "leet-code"
 version = "0.1.0"
 
 [workspace]
-members = ["ci/check-cpp-code-format", "ci/progress-tracker", "xtask"]
+members = ["tools/check-cpp-code-format", "tools/progress-tracker", "xtask"]
 
 [dependencies]
 rand = "*"
