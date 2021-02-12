@@ -1,24 +1,8 @@
 pub struct Solution;
 
 impl Solution {
-    const fn get_results() -> [i32; 9] {
-        let mut result = [1; 9];
-        let mut total = 0;
-        let mut premutations = 1;
-        let mut i = 1;
-
-        while i != 9 {
-            total += premutations;
-            result[i] = total * 9 + 1;
-            premutations *= 10 - i as i32;
-            i += 1;
-        }
-
-        result
-    }
-
     pub fn count_numbers_with_unique_digits(n: i32) -> i32 {
-        const RESULTS: [i32; 9] = Solution::get_results();
+        const RESULTS: [i32; 9] = [1, 10, 91, 739, 5275, 32491, 168_571, 712_891, 2_345_851];
 
         RESULTS[n as usize]
     }

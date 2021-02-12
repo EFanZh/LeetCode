@@ -21,6 +21,7 @@ mod tests {
             ((1, &[]), true),
             ((2, &[[1, 0], [0, 1]]), false),
             ((3, &[[1, 0], [1, 2], [0, 1]]), false),
+            ((2, &[[0, 1]]), true),
         ];
 
         for ((num_courses, prerequisites), can_finish) in test_cases.iter().copied() {
