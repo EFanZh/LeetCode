@@ -15,25 +15,25 @@ impl Solution {
 
                     if *row_hit {
                         return false;
-                    } else {
-                        *row_hit = true;
                     }
+
+                    *row_hit = true;
 
                     let column_hit = &mut column_hits[j][digit];
 
                     if *column_hit {
                         return false;
-                    } else {
-                        *column_hit = true;
                     }
+
+                    *column_hit = true;
 
                     let block_hit = &mut block_hits[i / 3][j / 3][digit];
 
                     if *block_hit {
                         return false;
-                    } else {
-                        *block_hit = true;
                     }
+
+                    *block_hit = true;
                 }
             }
         }

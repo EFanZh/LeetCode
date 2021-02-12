@@ -17,15 +17,15 @@ impl Solution {
 
             if length == n {
                 break;
-            } else {
-                while sum < 0 {
-                    start -= 1;
-                    length += 1;
-                    sum += gas[start];
+            }
 
-                    if length == n {
-                        break 'outer;
-                    }
+            while sum < 0 {
+                start -= 1;
+                length += 1;
+                sum += gas[start];
+
+                if length == n {
+                    break 'outer;
                 }
             }
         }

@@ -2,6 +2,7 @@ pub mod cheating;
 pub mod iterative;
 
 pub trait Solution {
+    #[allow(clippy::wrong_self_convention)]
     fn to_hex(num: i32) -> String;
 }
 

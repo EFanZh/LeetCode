@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(clippy::clippy::wrong_self_convention)]
+    #[allow(clippy::wrong_self_convention)]
     pub fn to_lower_case(mut str: String) -> String {
         str.make_ascii_lowercase();
 

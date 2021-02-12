@@ -71,9 +71,9 @@ impl Solution {
 
                     if num == 0 {
                         return result;
-                    } else {
-                        result.push(' ');
                     }
+
+                    result.push(' ');
                 }
             }
 

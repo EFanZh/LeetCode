@@ -29,9 +29,9 @@ impl Solution {
 
                 if next == i {
                     break;
-                } else {
-                    nums.swap(i, next);
                 }
+
+                nums.swap(i, next);
             }
         }
     }

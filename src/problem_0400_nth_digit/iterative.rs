@@ -13,12 +13,12 @@ impl Solution {
 
             if next_total_digits > n {
                 break;
-            } else {
-                total_digits = next_total_digits;
-                number_length += 1;
-                number_count *= 10;
-                base *= 10
             }
+
+            total_digits = next_total_digits;
+            number_length += 1;
+            number_count *= 10;
+            base *= 10
         }
 
         let remaining_digits = n - total_digits;

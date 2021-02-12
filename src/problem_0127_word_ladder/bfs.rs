@@ -37,13 +37,13 @@ impl Solution {
 
                 if current == end_word.as_bytes() {
                     return length;
-                } else {
-                    for i in 0..current.len() {
-                        if let Some(nexts) = graph.get(&(&current[..i], &current[i + 1..])) {
-                            for next in nexts {
-                                if visited.insert(next) {
-                                    queue.push_back(next);
-                                }
+                }
+
+                for i in 0..current.len() {
+                    if let Some(nexts) = graph.get(&(&current[..i], &current[i + 1..])) {
+                        for next in nexts {
+                            if visited.insert(next) {
+                                queue.push_back(next);
                             }
                         }
                     }
@@ -52,9 +52,9 @@ impl Solution {
 
             if queue.is_empty() {
                 break;
-            } else {
-                length += 1;
             }
+
+            length += 1;
         }
 
         0

@@ -20,9 +20,9 @@ impl Solution {
 
                 if prev == 0 {
                     break;
-                } else {
-                    rank += prev as i32;
                 }
+
+                rank += prev as i32;
             }
 
             if rank < k {

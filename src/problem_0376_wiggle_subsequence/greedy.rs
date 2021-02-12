@@ -9,9 +9,9 @@ impl Solution {
                 *result += 1;
 
                 return Self::decreasing(num, nums, result);
-            } else {
-                prev = num;
             }
+
+            prev = num;
         }
     }
 
@@ -21,9 +21,9 @@ impl Solution {
                 *result += 1;
 
                 return Self::increasing(num, nums, result);
-            } else {
-                prev = num;
             }
+
+            prev = num;
         }
     }
 

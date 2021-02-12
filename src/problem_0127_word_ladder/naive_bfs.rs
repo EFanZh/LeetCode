@@ -24,9 +24,9 @@ impl Solution {
             while let Some(item) = items.get(i) {
                 if f(item) {
                     return Some(items.swap_remove(i));
-                } else {
-                    i += 1;
                 }
+
+                i += 1;
             }
 
             None
@@ -43,18 +43,18 @@ impl Solution {
 
                 if current == end_word {
                     return length;
-                } else {
-                    queue.extend(Self::drain_filter(&mut word_list, |item| {
-                        Self::is_neighbor(&current, &item)
-                    }));
                 }
+
+                queue.extend(Self::drain_filter(&mut word_list, |item| {
+                    Self::is_neighbor(&current, &item)
+                }));
             }
 
             if queue.is_empty() {
                 break;
-            } else {
-                length += 1;
             }
+
+            length += 1;
         }
 
         0

@@ -28,10 +28,10 @@ impl Solution {
                 carry = 0;
 
                 break;
-            } else {
-                *rhs -= 10;
-                carry = 1;
             }
+
+            *rhs -= 10;
+            carry = 1;
         }
 
         if carry != 0 {

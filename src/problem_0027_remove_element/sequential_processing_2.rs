@@ -20,9 +20,9 @@ impl Solution {
                 nums.truncate(retained);
 
                 break;
-            } else {
-                retained += 1;
             }
+
+            retained += 1;
         }
 
         nums.len() as _

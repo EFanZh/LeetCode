@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution {
     pub fn generate_parenthesis(n: i32) -> Vec<String> {
         if n == 0 {
-            return vec![String::new()];
+            vec![String::new()]
         } else {
             let mut result = Vec::new();
 

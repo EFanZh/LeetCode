@@ -40,9 +40,9 @@ impl Codec {
                             result.push(',');
 
                             continue 'outer;
-                        } else {
-                            result.push_str(",null");
                         }
+
+                        result.push_str(",null");
                     }
                 }
 

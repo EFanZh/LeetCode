@@ -25,10 +25,10 @@ impl Solution {
                                 node_ref.right = None;
 
                                 break;
-                            } else {
-                                drop(node_ref);
-                                node = right;
                             }
+
+                            drop(node_ref);
+                            node = right;
                         } else {
                             drop(current_ref);
                             node_ref.right = Some(mem::replace(&mut current, left));
