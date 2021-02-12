@@ -2487,13 +2487,7 @@ mod tests {
             for &operation in operations {
                 match operation {
                     AddNum(val) => summary_ranges.add_num(val),
-                    GetIntervals(expected) => {
-                        if summary_ranges.get_intervals() != expected {
-                            println!("{:?}", summary_ranges.get_intervals());
-                        }
-
-                        //assert_eq!(summary_ranges.get_intervals(), expected)
-                    }
+                    GetIntervals(expected) => assert_eq!(summary_ranges.get_intervals(), expected),
                 }
             }
         }
