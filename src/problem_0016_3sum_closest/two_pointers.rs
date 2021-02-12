@@ -54,21 +54,19 @@ impl Solution {
     }
 
     pub fn three_sum_closest(mut nums: Vec<i32>, target: i32) -> i32 {
-        if let Some((&mut first, rest)) = nums.split_first_mut() {
-            rest.sort_unstable();
+        let (&mut first, rest) = nums.split_first_mut().unwrap();
 
-            if let Some((&second, rest)) = rest.split_first() {
-                if let Some((&last, rest)) = rest.split_last() {
-                    let mut three_sum = first + Self::two_sum_closest(second, last, rest, target - first);
+        rest.sort_unstable();
 
-                    Self::three_sum_closest_helper(second, last, rest, target, &mut three_sum);
+        // TODO: use slice patterns.
 
-                    return three_sum;
-                }
-            }
-        }
+        let (&second, rest) = rest.split_first().unwrap();
+        let (&last, rest) = rest.split_last().unwrap();
+        let mut three_sum = first + Self::two_sum_closest(second, last, rest, target - first);
 
-        unreachable!();
+        Self::three_sum_closest_helper(second, last, rest, target, &mut three_sum);
+
+        three_sum
     }
 }
 
