@@ -24,9 +24,9 @@ impl Solution {
     fn parse_negaitive(mut iter: vec::IntoIter<u8>) -> i32 {
         for c in iter.by_ref() {
             match c {
-                b'0' => continue,
+                b'0' => {}
                 b'1'..=b'9' => {
-                    let mut result = -(i32::from(c - b'0'));
+                    let mut result = -i32::from(c - b'0');
 
                     for c in iter {
                         if c.is_ascii_digit() {
@@ -44,7 +44,7 @@ impl Solution {
 
                     return result;
                 }
-                _ => return 0,
+                _ => break,
             }
         }
 
