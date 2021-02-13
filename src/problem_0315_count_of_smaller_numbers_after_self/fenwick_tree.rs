@@ -6,8 +6,8 @@ impl Solution {
     fn prefix_sum(tree: &[i32], mut i: usize) -> i32 {
         let mut result = 0;
 
-        while i != 0 {
-            result += tree[i - 1];
+        while let Some(value) = tree.get(i.wrapping_sub(1)) {
+            result += value;
 
             i &= i - 1;
         }
@@ -16,14 +16,12 @@ impl Solution {
     }
 
     fn update(tree: &mut [i32], mut i: usize) {
-        loop {
-            tree[i] += 1;
+        tree[i] += 1;
+        i = i | (i + 1);
 
-            i += !i & (i + 1);
-
-            if i >= tree.len() {
-                break;
-            }
+        while let Some(value) = tree.get_mut(i) {
+            *value += 1;
+            i = i | (i + 1);
         }
     }
 
