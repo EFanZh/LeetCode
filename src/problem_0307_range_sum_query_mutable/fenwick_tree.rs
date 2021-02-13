@@ -12,8 +12,8 @@ impl NumArray {
     fn prefix_sum(tree: &[i32], mut i: usize) -> i32 {
         let mut result = 0;
 
-        while i != 0 {
-            result += tree[i - 1];
+        while let Some(value) = tree.get(i.wrapping_sub(1)) {
+            result += value;
 
             i &= i - 1;
         }
@@ -27,14 +27,12 @@ impl NumArray {
         let old_val = Self::prefix_sum(tree, i + 1) - Self::prefix_sum(tree, i);
         let diff = val - old_val;
 
-        loop {
-            tree[i] += diff;
+        tree[i] += diff;
+        i = i | (i + 1);
 
-            i += !i & (i + 1);
-
-            if i >= tree.len() {
-                break;
-            }
+        while let Some(value) = tree.get_mut(i) {
+            *value += diff;
+            i = i | (i + 1);
         }
     }
 
