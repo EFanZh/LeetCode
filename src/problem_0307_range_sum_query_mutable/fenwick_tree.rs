@@ -9,30 +9,29 @@ impl NumArray {
         }
     }
 
-    fn prefix_sum(tree: &[i32], mut i: usize) -> i32 {
+    fn prefix_sum(tree: &[i32], mut length: usize) -> i32 {
         let mut result = 0;
 
-        while let Some(value) = tree.get(i.wrapping_sub(1)) {
+        while let Some(value) = tree.get(length.wrapping_sub(1)) {
             result += value;
-
-            i &= i - 1;
+            length &= length - 1;
         }
 
         result
     }
 
-    fn update(&mut self, i: i32, val: i32) {
+    fn update(&mut self, index: i32, val: i32) {
         let tree = self.tree.as_mut();
-        let mut i = i as usize;
-        let old_val = Self::prefix_sum(tree, i + 1) - Self::prefix_sum(tree, i);
+        let mut index = index as usize;
+        let old_val = Self::prefix_sum(tree, index + 1) - Self::prefix_sum(tree, index);
         let diff = val - old_val;
 
-        tree[i] += diff;
-        i = i | (i + 1);
+        tree[index] += diff;
+        index |= index + 1;
 
-        while let Some(value) = tree.get_mut(i) {
+        while let Some(value) = tree.get_mut(index) {
             *value += diff;
-            i = i | (i + 1);
+            index |= index + 1;
         }
     }
 
