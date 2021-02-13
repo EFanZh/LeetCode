@@ -3,25 +3,24 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
-    fn prefix_sum(tree: &[i32], mut i: usize) -> i32 {
+    fn prefix_sum(tree: &[i32], mut length: usize) -> i32 {
         let mut result = 0;
 
-        while let Some(value) = tree.get(i.wrapping_sub(1)) {
+        while let Some(value) = tree.get(length.wrapping_sub(1)) {
             result += value;
-
-            i &= i - 1;
+            length &= length - 1;
         }
 
         result
     }
 
-    fn update(tree: &mut [i32], mut i: usize) {
-        tree[i] += 1;
-        i = i | (i + 1);
+    fn update(tree: &mut [i32], mut index: usize) {
+        tree[index] += 1;
+        index |= index + 1;
 
-        while let Some(value) = tree.get_mut(i) {
+        while let Some(value) = tree.get_mut(index) {
             *value += 1;
-            i = i | (i + 1);
+            index |= index + 1;
         }
     }
 
