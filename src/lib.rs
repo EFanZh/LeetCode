@@ -359,6 +359,7 @@ pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
+pub mod problem_1752_check_if_array_is_sorted_and_rotated;
 
 #[cfg(test)]
 mod test_utilities;
