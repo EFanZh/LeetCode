@@ -36,6 +36,7 @@ mod tests {
                 ],
                 44,
             ),
+            (&[], 0),
         ];
 
         for (height_map, expected) in test_cases.iter().copied() {
