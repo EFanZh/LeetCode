@@ -54,7 +54,7 @@ public:
             return lhs[0] < rhs[0] || (lhs[0] == rhs[0] && lhs[1] > rhs[1]);
         });
 
-        auto tree = static_cast<Node *>(nullptr);
+        auto *tree = static_cast<Node *>(nullptr);
         auto nodes = vector<Node>{};
 
         nodes.reserve(people.size());
