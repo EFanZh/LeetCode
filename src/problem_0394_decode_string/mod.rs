@@ -16,6 +16,7 @@ mod tests {
             ("3[a2[c]]", "accaccacc"),
             ("2[abc]3[cd]ef", "abcabccdcdcdef"),
             ("abc3[cd]xyz", "abccdcdcdxyz"),
+            ("10[abc]", "abcabcabcabcabcabcabcabcabcabc"),
         ];
 
         for (s, expected) in test_cases.iter().copied() {

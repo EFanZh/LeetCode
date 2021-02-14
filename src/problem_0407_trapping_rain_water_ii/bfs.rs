@@ -19,7 +19,7 @@ impl Eq for QueueItem {}
 
 impl PartialOrd for QueueItem {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        other.max_height.partial_cmp(&self.max_height)
+        Some(self.cmp(other))
     }
 }
 
@@ -138,6 +138,23 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::QueueItem;
+
+    #[test]
+    fn test_queue_item() {
+        assert!(
+            QueueItem {
+                max_height: 3,
+                row: 5,
+                column: 7
+            } == QueueItem {
+                max_height: 3,
+                row: 11,
+                column: 13
+            }
+        );
+    }
+
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();

@@ -18,16 +18,13 @@ impl Solution {
                     stack.push((repeats, result.len()));
                 }
                 b']' => {
-                    if let Some((repeats, saved_length)) = stack.pop() {
-                        let extra_space = (result.len() - saved_length) * (repeats - 1);
+                    let (repeats, saved_length) = stack.pop().unwrap();
+                    let extra_space = (result.len() - saved_length) * (repeats - 1);
 
-                        result.reserve(extra_space);
+                    result.reserve(extra_space);
 
-                        for i in 0..extra_space {
-                            result.push(result[saved_length + i]);
-                        }
-                    } else {
-                        break;
+                    for i in 0..extra_space {
+                        result.push(result[saved_length + i]);
                     }
                 }
                 _ => result.push(c),
