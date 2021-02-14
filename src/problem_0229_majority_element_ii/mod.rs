@@ -12,7 +12,7 @@ mod tests {
         let test_cases = [(&[3, 2, 3] as &[_], &[3] as &[_]), (&[1], &[1]), (&[1, 2], &[1, 2])];
 
         for (nums, expected) in test_cases.iter().copied() {
-            assert_eq!(S::majority_element(nums.iter().copied().collect()), expected);
+            assert_eq!(S::majority_element(nums.to_vec()), expected);
         }
     }
 }

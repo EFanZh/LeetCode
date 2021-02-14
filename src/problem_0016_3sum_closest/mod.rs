@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
-            assert_eq!(S::three_sum_closest(nums.iter().copied().collect(), target), expected);
+            assert_eq!(S::three_sum_closest(nums.to_vec(), target), expected);
         }
     }
 }

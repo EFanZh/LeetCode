@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((nums, k), expected) in test_cases.iter().copied() {
-            assert_eq!(S::find_kth_largest(nums.iter().copied().collect(), k), expected);
+            assert_eq!(S::find_kth_largest(nums.to_vec(), k), expected);
         }
     }
 }
