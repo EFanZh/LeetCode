@@ -13,7 +13,7 @@ mod tests {
         let test_cases = [((&[1, 2, 3] as &[_], 4), 7), ((&[2, 1, 3], 35), 1_132_436_852)];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
-            assert_eq!(S::combination_sum4(nums.iter().copied().collect(), target), expected);
+            assert_eq!(S::combination_sum4(nums.to_vec(), target), expected);
         }
     }
 }

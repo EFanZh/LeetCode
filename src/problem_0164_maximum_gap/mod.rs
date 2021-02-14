@@ -21,7 +21,7 @@ mod tests {
         ];
 
         for (nums, expected) in test_cases.iter().copied() {
-            assert_eq!(S::maximum_gap(nums.iter().copied().collect()), expected);
+            assert_eq!(S::maximum_gap(nums.to_vec()), expected);
         }
     }
 }
