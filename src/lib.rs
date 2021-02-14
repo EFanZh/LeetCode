@@ -310,6 +310,7 @@ pub mod problem_0402_remove_k_digits;
 pub mod problem_0403_frog_jump;
 pub mod problem_0404_sum_of_left_leaves;
 pub mod problem_0405_convert_a_number_to_hexadecimal;
+pub mod problem_0406_queue_reconstruction_by_height;
 pub mod problem_0407_trapping_rain_water_ii;
 pub mod problem_0409_longest_palindrome;
 pub mod problem_0412_fizz_buzz;
