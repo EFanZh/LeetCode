@@ -51,15 +51,12 @@ impl Solution {
     }
 
     pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
-        let mut result = Vec::new();
-
         nums.sort_unstable();
 
-        if let Some((first, rest)) = nums.split_first() {
-            Self::subsets_with_dup_helper(*first, rest, &mut Vec::new(), &mut result);
-        } else {
-            result.push(Vec::new());
-        }
+        let (&first, rest) = nums.split_first().unwrap();
+        let mut result = Vec::new();
+
+        Self::subsets_with_dup_helper(first, rest, &mut Vec::new(), &mut result);
 
         result
     }
