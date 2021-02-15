@@ -17,7 +17,7 @@ impl Eq for Entry {}
 
 impl PartialOrd for Entry {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        other.0.val.partial_cmp(&self.0.val)
+        Some(self.cmp(other))
     }
 }
 
@@ -57,6 +57,20 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::super::super::data_structures::ListNode;
+    use super::Entry;
+
+    #[test]
+    fn test_entry() {
+        assert!(
+            Entry(Box::new(ListNode { val: 2, next: None }))
+                == Entry(Box::new(ListNode {
+                    val: 2,
+                    next: Some(Box::new(ListNode { val: 3, next: None }))
+                }))
+        );
+    }
+
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();

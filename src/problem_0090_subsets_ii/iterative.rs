@@ -21,25 +21,23 @@ impl Solution {
         nums.sort_unstable();
 
         let mut iter = nums.into_iter();
+        let mut first = iter.next().unwrap();
+        let mut extra = 0;
 
-        if let Some(mut first) = iter.next() {
-            let mut extra = 0;
-
-            loop {
-                if let Some(num) = iter.next() {
-                    if num == first {
-                        extra += 1;
-                    } else {
-                        Self::extend_result(&mut result, first, extra);
-
-                        first = num;
-                        extra = 0;
-                    }
+        loop {
+            if let Some(num) = iter.next() {
+                if num == first {
+                    extra += 1;
                 } else {
                     Self::extend_result(&mut result, first, extra);
 
-                    break;
+                    first = num;
+                    extra = 0;
                 }
+            } else {
+                Self::extend_result(&mut result, first, extra);
+
+                break;
             }
         }
 
