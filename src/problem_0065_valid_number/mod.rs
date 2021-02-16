@@ -26,6 +26,11 @@ mod tests {
             ("95a54e53", false),
             (".", false),
             (".1", true),
+            ("+.e", false),
+            ("0..", false),
+            ("1e.", false),
+            ("7.e-.", false),
+            ("1E9", true),
         ];
 
         for (s, expected) in test_cases.iter().copied() {

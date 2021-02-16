@@ -40,7 +40,7 @@ impl Solution {
         iter.next().map_or(true, |c| match c {
             b'0'..=b'9' => Self::number_with_optional_fractional_part(iter),
             b'.' => Self::optional_fractional_part(iter),
-            b'e' => Self::exponential_part(iter),
+            b'E' | b'e' => Self::exponential_part(iter),
             b' ' => Self::trailing_space(iter),
             _ => false,
         })
@@ -51,7 +51,7 @@ impl Solution {
     fn optional_fractional_part(mut iter: IntoIter<u8>) -> bool {
         iter.next().map_or(true, |c| match c {
             b'0'..=b'9' => Self::optional_fractional_part(iter),
-            b'e' => Self::exponential_part(iter),
+            b'E' | b'e' => Self::exponential_part(iter),
             b' ' => Self::trailing_space(iter),
             _ => false,
         })
