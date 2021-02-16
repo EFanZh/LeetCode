@@ -14,6 +14,11 @@ mod tests {
             ("", &[]),
             ("2", &["a", "b", "c"]),
             ("34", &["dg", "dh", "di", "eg", "eh", "ei", "fg", "fh", "fi"]),
+            ("5", &["j", "k", "l"]),
+            ("6", &["m", "n", "o"]),
+            ("7", &["p", "q", "r", "s"]),
+            ("8", &["t", "u", "v"]),
+            ("9", &["w", "x", "y", "z"]),
         ];
 
         for (digits, expected) in test_cases.iter().copied() {
