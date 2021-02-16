@@ -344,6 +344,7 @@ pub mod problem_0454_4sum_ii;
 pub mod problem_0455_assign_cookies;
 pub mod problem_0461_hamming_distance;
 pub mod problem_0476_number_complement;
+pub mod problem_0494_target_sum;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
 pub mod problem_0518_coin_change_2;
