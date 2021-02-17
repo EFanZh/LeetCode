@@ -13,7 +13,8 @@ impl Solution {
             if let Some(node) = root {
                 root = node.borrow().left.clone();
                 stack.push(node);
-            } else if let Some(node) = stack.pop() {
+            } else {
+                let node = stack.pop().unwrap();
                 let node_ref = node.borrow();
 
                 k -= 1;
@@ -23,12 +24,8 @@ impl Solution {
                 }
 
                 root = node_ref.right.clone();
-            } else {
-                break;
             }
         }
-
-        0
     }
 }
 

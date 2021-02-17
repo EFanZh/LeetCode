@@ -37,6 +37,8 @@ mod tests {
             ] as &[_],
             &[PostTweet(1, 5), Follow(1, 1), GetNewsFeed(1, &[5])],
             &[PostTweet(1, 5), Unfollow(1, 1), GetNewsFeed(1, &[5])],
+            &[PostTweet(1, 5), PostTweet(1, 3), GetNewsFeed(1, &[3, 5])],
+            &[GetNewsFeed(1, &[])]
         ];
 
         for operations in test_cases.iter().copied() {
