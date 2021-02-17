@@ -257,3 +257,7 @@ Optimize the solution.
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 How do you know that the greedy algorithm works?
+
+## [621. Task Scheduler](https://efanzh.org/LeetCode/)
+
+Why does the mathematical solution work?
