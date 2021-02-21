@@ -350,6 +350,7 @@ pub mod problem_0516_longest_palindromic_subsequence;
 pub mod problem_0518_coin_change_2;
 pub mod problem_0543_diameter_of_binary_tree;
 pub mod problem_0560_subarray_sum_equals_k;
+pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0647_palindromic_substrings;
 pub mod problem_0704_binary_search;
