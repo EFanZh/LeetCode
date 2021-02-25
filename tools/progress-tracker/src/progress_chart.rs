@@ -22,7 +22,7 @@ fn make_problem_hits_cache(problems: &Problems) -> HashMap<String, bool> {
     result
 }
 
-fn get_progress(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> f64 {
+fn get_hits(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> usize {
     solutions::get(tree, |problem_id, _| {
         if let Some(value) = hits_cache.get_mut(problem_id) {
             *value = true;
@@ -39,7 +39,7 @@ fn get_progress(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> f64 {
         }
     }
 
-    (hits as f64) / (hits_cache.len() as f64)
+    hits
 }
 
 fn fix_svg_size(svg: &str, zoom: u32) -> String {
@@ -60,7 +60,11 @@ fn fix_svg_size(svg: &str, zoom: u32) -> String {
     )
 }
 
-fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
+fn get_progress(hits: usize, total: usize) -> f64 {
+    ((hits * 100) as f64) / (total as f64)
+}
+
+fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, usize)], total: usize, output: P) {
     const ZOOM: u32 = 16;
     const IMAGE_WIDTH: u32 = 987;
     const IMAGE_HEIGHT: u32 = 610;
@@ -72,12 +76,17 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
     let mut svg = String::new();
 
     {
-        let (latest_date_time, latest_progress) = data.last().unwrap();
+        let &(latest_date_time, latest_hits) = data.last().unwrap();
 
         let backend = SVGBackend::with_string(&mut svg, (IMAGE_WIDTH * ZOOM, IMAGE_HEIGHT * ZOOM))
             .into_drawing_area()
             .titled(
-                &format!("Progress: {:.2} %, Updated: {:?}", latest_progress, latest_date_time),
+                &format!(
+                    "Progress: {:.2} %, Remaining: {}, Updated: {:?}",
+                    get_progress(latest_hits, total),
+                    total - latest_hits,
+                    latest_date_time
+                ),
                 ("sans-serif", TITLE_FONT_SIZE * 1.24 * f64::from(ZOOM)),
             )
             .unwrap()
@@ -108,7 +117,7 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, f64)], output: P) {
 
         chart
             .draw_series(LineSeries::new(
-                data.iter().copied(),
+                data.iter().map(|&(date, hits)| (date, get_progress(hits, total))),
                 ShapeStyle::from(&colors::RED).stroke_width(ZOOM),
             ))
             .unwrap();
@@ -130,16 +139,16 @@ pub fn draw<P: AsRef<Path>>(repository: &Repository, problems: &Problems, output
         .map(|oid| {
             let commit = repository.find_commit(oid.unwrap()).unwrap();
             let date = commit.author().when();
-            let progress = get_progress(&commit.tree().unwrap(), &mut hits_cache);
+            let hits = get_hits(&commit.tree().unwrap(), &mut hits_cache);
 
             (
                 Utc.timestamp(date.seconds() - i64::from(date.offset_minutes() * 60), 0),
-                progress * 100.0,
+                hits,
             )
         })
         .collect::<Vec<_>>();
 
     progress_data.sort_by_key(|(date_time, _)| *date_time);
 
-    draw_chart(&progress_data, output);
+    draw_chart(&progress_data, problems.problems.len(), output);
 }
