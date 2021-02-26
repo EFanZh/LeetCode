@@ -360,6 +360,7 @@ pub mod problem_0647_palindromic_substrings;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
 pub mod problem_0721_accounts_merge;
+pub mod problem_0733_flood_fill;
 pub mod problem_0739_daily_temperatures;
 pub mod problem_0763_partition_labels;
 pub mod problem_0785_is_graph_bipartite;
