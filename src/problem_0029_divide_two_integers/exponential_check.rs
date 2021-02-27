@@ -26,7 +26,7 @@ impl Solution {
     }
 
     pub fn divide(dividend: i32, divisor: i32) -> i32 {
-        if divisor == 0 || (dividend == i32::min_value() && divisor == -1) {
+        if dividend == i32::min_value() && divisor == -1 {
             i32::max_value()
         } else if dividend < 0 {
             if divisor < 0 {
