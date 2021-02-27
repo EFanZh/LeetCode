@@ -16,6 +16,9 @@ mod tests {
             (("adceb", "*a*b"), true),
             (("acdcb", "a*c?b"), false),
             (("aaaa", "***a"), true),
+            (("mississippi", "m??*ss*?i*pi"), false),
+            (("b", "?*?"), false),
+            (("a", "aa"), false),
         ];
 
         for ((s, p), expected) in test_cases.iter().copied() {
