@@ -13,6 +13,10 @@ mod tests {
             ((&[2, 5, 6, 0, 0, 1, 2] as &[_], 0), true),
             ((&[2, 5, 6, 0, 0, 1, 2], 3), false),
             ((&[4, 5, 6, 7, 0, 1, 2], 7), true),
+            ((&[1], 1), true),
+            ((&[1, 0, 1, 1, 1], 0), true),
+            ((&[1, 1, 3], 0), false),
+            ((&[], 0), false),
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
