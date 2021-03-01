@@ -349,6 +349,7 @@ pub mod problem_0463_island_perimeter;
 pub mod problem_0476_number_complement;
 pub mod problem_0485_max_consecutive_ones;
 pub mod problem_0494_target_sum;
+pub mod problem_0504_base_7;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0516_longest_palindromic_subsequence;
 pub mod problem_0518_coin_change_2;
