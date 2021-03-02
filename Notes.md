@@ -254,6 +254,10 @@ Make sure it can be solved again.
 
 Optimize the solution.
 
+## [420. Strong Password Checker](https://leetcode.com/problems/strong-password-checker/)
+
+Why is the solution correct?
+
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 How do you know that the greedy algorithm works?
