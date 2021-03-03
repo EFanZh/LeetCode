@@ -258,6 +258,10 @@ Optimize the solution.
 
 Why is the solution correct?
 
+## [421. Maximum XOR of Two Numbers in an Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/)
+
+Make sure it can be solved again.
+
 ## [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 How do you know that the greedy algorithm works?
