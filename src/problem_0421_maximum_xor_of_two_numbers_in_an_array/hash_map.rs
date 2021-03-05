@@ -14,10 +14,10 @@ impl Solution {
 
             set.extend(nums.iter().map(|x| x & mask));
 
-            let maybe_result = result | probe;
+            let candidate = result | probe;
 
-            if set.iter().any(|x| set.contains(&(x ^ maybe_result))) {
-                result = maybe_result;
+            if set.iter().any(|x| set.contains(&(x ^ candidate))) {
+                result = candidate;
             }
 
             set.clear();
