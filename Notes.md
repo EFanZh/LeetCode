@@ -266,6 +266,10 @@ Make sure it can be solved again.
 
 How do you know that the greedy algorithm works?
 
+## [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
+
+Remember the solution.
+
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
 Why does the mathematical solution work?
