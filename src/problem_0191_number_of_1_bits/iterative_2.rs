@@ -1,13 +1,13 @@
+#![allow(non_snake_case)]
+
 pub struct Solution;
 
 impl Solution {
-    #[allow(non_snake_case)]
     pub fn hammingWeight(mut n: u32) -> i32 {
         let mut result = 0;
 
         while n != 0 {
             result += 1;
-
             n &= n - 1;
         }
 
