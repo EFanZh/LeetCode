@@ -1,9 +1,10 @@
+#![allow(non_snake_case)]
+
 use super::guess;
 
 pub struct Solution;
 
 impl Solution {
-    #[allow(non_snake_case)]
     pub fn guessNumber(n: i32) -> i32 {
         let mut left = 1;
         let mut right = n;
@@ -21,7 +22,7 @@ impl Solution {
 }
 
 impl super::Solution for Solution {
-    fn guessNumber(n: i32) -> i32 {
+    fn guess_number(n: i32) -> i32 {
         Self::guessNumber(n)
     }
 }

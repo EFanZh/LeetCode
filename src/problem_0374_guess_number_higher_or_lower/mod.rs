@@ -4,8 +4,7 @@ use std::cmp::Ordering;
 pub mod binary_search;
 
 pub trait Solution {
-    #[allow(non_snake_case)]
-    fn guessNumber(n: i32) -> i32;
+    fn guess_number(n: i32) -> i32;
 }
 
 // static NUM: AtomicI32 = AtomicI32::new(0);
@@ -62,7 +61,7 @@ mod tests {
             super::NUM.with(|num_cell| {
                 num_cell.set(num);
 
-                assert_eq!(S::guessNumber(n), num);
+                assert_eq!(S::guess_number(n), num);
             });
         }
     }
