@@ -363,6 +363,7 @@ pub mod problem_0516_longest_palindromic_subsequence;
 pub mod problem_0518_coin_change_2;
 pub mod problem_0520_detect_capital;
 pub mod problem_0535_encode_and_decode_tinyurl;
+pub mod problem_0541_reverse_string_ii;
 pub mod problem_0543_diameter_of_binary_tree;
 pub mod problem_0560_subarray_sum_equals_k;
 pub mod problem_0617_merge_two_binary_trees;
