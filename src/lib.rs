@@ -355,6 +355,7 @@ pub mod problem_0468_validate_ip_address;
 pub mod problem_0476_number_complement;
 pub mod problem_0482_license_key_formatting;
 pub mod problem_0485_max_consecutive_ones;
+pub mod problem_0492_construct_the_rectangle;
 pub mod problem_0494_target_sum;
 pub mod problem_0500_keyboard_row;
 pub mod problem_0504_base_7;
