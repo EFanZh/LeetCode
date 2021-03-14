@@ -357,6 +357,7 @@ pub mod problem_0482_license_key_formatting;
 pub mod problem_0485_max_consecutive_ones;
 pub mod problem_0492_construct_the_rectangle;
 pub mod problem_0494_target_sum;
+pub mod problem_0496_next_greater_element_i;
 pub mod problem_0500_keyboard_row;
 pub mod problem_0504_base_7;
 pub mod problem_0509_fibonacci_number;
