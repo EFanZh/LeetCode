@@ -332,6 +332,7 @@ pub mod problem_0435_non_overlapping_intervals;
 pub mod problem_0436_find_right_interval;
 pub mod problem_0437_path_sum_iii;
 pub mod problem_0438_find_all_anagrams_in_a_string;
+pub mod problem_0440_k_th_smallest_in_lexicographical_order;
 pub mod problem_0441_arranging_coins;
 pub mod problem_0442_find_all_duplicates_in_an_array;
 pub mod problem_0443_string_compression;
