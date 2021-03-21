@@ -1,6 +1,5 @@
 pub struct Solution;
 
-use std::collections::hash_map::Entry;
 use std::collections::{HashMap, HashSet};
 use std::iter;
 use std::mem;
@@ -9,20 +8,14 @@ type ConnectionKey<'a> = (&'a [u8], &'a [u8]);
 
 impl Solution {
     fn build_connection_table(word_list: &[String]) -> HashMap<ConnectionKey, Vec<&[u8]>> {
-        let mut connections = HashMap::new();
+        let mut connections = HashMap::<ConnectionKey, Vec<&[u8]>>::new();
 
         for word in word_list.iter().map(String::as_bytes) {
             for i in 0..word.len() {
-                let key = (&word[..i], &word[i + 1..]);
-
-                match connections.entry(key) {
-                    Entry::Vacant(entry) => {
-                        entry.insert(vec![word]);
-                    }
-                    Entry::Occupied(entry) => {
-                        entry.into_mut().push(word);
-                    }
-                }
+                connections
+                    .entry((&word[..i], &word[i + 1..]))
+                    .and_modify(|words| words.push(word))
+                    .or_insert_with(|| vec![word]);
             }
         }
 
@@ -32,7 +25,7 @@ impl Solution {
     fn build_connection_graph<'a>(
         begin_word: &'a [u8],
         end_word: &'a [u8],
-        connections: &HashMap<ConnectionKey, Vec<&'a [u8]>>,
+        connections: &HashMap<ConnectionKey<'a>, Vec<&'a [u8]>>,
     ) -> HashMap<&'a [u8], Vec<&'a [u8]>> {
         let mut graph = HashMap::new();
         let mut forward_level = iter::once(begin_word).collect::<HashSet<_>>();
@@ -77,16 +70,14 @@ impl Solution {
 
             for current in backward_level.drain() {
                 for i in 0..current.len() {
-                    if let Some(previouses) = connections.get(&(&current[..i], &current[i + 1..])) {
-                        for &previous in previouses {
-                            if forward_visited.contains(previous) {
-                                connected = true;
-                            }
+                    for &previous in &connections[&(&current[..i], &current[i + 1..])] {
+                        if forward_visited.contains(previous) {
+                            connected = true;
+                        }
 
-                            if !backward_visited.contains(previous) {
-                                graph.entry(previous).or_insert_with(Vec::new).push(current);
-                                temp_level.insert(previous);
-                            }
+                        if !backward_visited.contains(previous) {
+                            graph.entry(previous).or_insert_with(Vec::new).push(current);
+                            temp_level.insert(previous);
                         }
                     }
                 }
