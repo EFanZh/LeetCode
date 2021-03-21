@@ -15,9 +15,10 @@ mod tests {
                 &[
                     &["hit", "hot", "dot", "dog", "cog"] as &[_],
                     &["hit", "hot", "lot", "log", "cog"],
-                ] as &[_],
+                ] as &[&[_]],
             ),
             (("hit", "cog", &["hot", "dot", "dog", "lot", "log"]), &[]),
+            (("a", "c", &["a", "b", "c"]), &[&["a", "c"]]),
         ];
 
         for ((begin_word, end_word, word_list), expected) in test_cases.iter().copied() {
