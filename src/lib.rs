@@ -337,6 +337,7 @@ pub mod problem_0441_arranging_coins;
 pub mod problem_0442_find_all_duplicates_in_an_array;
 pub mod problem_0443_string_compression;
 pub mod problem_0445_add_two_numbers_ii;
+pub mod problem_0446_arithmetic_slices_ii_subsequence;
 pub mod problem_0447_number_of_boomerangs;
 pub mod problem_0448_find_all_numbers_disappeared_in_an_array;
 pub mod problem_0449_serialize_and_deserialize_bst;
