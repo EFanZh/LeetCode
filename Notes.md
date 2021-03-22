@@ -270,6 +270,10 @@ How do you know that the greedy algorithm works?
 
 Remember the solution.
 
+## [456. 132 Pattern](https://leetcode.com/problems/132-pattern/)
+
+Make sure it can be solved again.
+
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
 Why does the mathematical solution work?
