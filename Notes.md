@@ -266,6 +266,10 @@ Make sure it can be solved again.
 
 How do you know that the greedy algorithm works?
 
+## [458. Poor Pigs](https://leetcode.com/problems/poor-pigs/)
+
+Remember the solution.
+
 ## [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
 
 Remember the solution.
