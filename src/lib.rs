@@ -377,6 +377,7 @@ pub mod problem_0543_diameter_of_binary_tree;
 pub mod problem_0551_student_attendance_record_i;
 pub mod problem_0557_reverse_words_in_a_string_iii;
 pub mod problem_0560_subarray_sum_equals_k;
+pub mod problem_0561_array_partition_i;
 pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0647_palindromic_substrings;
