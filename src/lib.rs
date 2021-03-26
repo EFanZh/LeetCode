@@ -2,8 +2,10 @@
 #![allow(clippy::cast_possible_truncation)]
 #![allow(clippy::cast_possible_wrap)]
 #![allow(clippy::cast_sign_loss)]
+#![allow(clippy::missing_panics_doc)]
 #![allow(clippy::must_use_candidate)]
 #![allow(clippy::needless_pass_by_value)]
+#![allow(clippy::upper_case_acronyms)]
 
 pub(crate) mod data_structures;
 pub mod problem_0001_two_sum;
@@ -382,6 +384,7 @@ pub mod problem_0563_binary_tree_tilt;
 pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0647_palindromic_substrings;
+pub mod problem_0661_image_smoother;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
 pub mod problem_0721_accounts_merge;
