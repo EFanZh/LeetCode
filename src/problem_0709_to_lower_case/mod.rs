@@ -1,8 +1,9 @@
+#![allow(clippy::wrong_self_convention)]
+
 pub mod cheating;
 pub mod iterative;
 
 pub trait Solution {
-    #[allow(clippy::wrong_self_convention)]
     fn to_lower_case(str: String) -> String;
 }
 

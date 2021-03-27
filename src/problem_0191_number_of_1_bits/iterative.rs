@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 pub struct Solution;
 
 impl Solution {

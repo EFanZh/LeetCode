@@ -68,7 +68,6 @@ impl Twitter {
         result
     }
 
-    #[allow(clippy::similar_names)]
     fn follow(&mut self, follower_id: i32, followee_id: i32) {
         self.users
             .entry(follower_id)
@@ -81,7 +80,6 @@ impl Twitter {
             });
     }
 
-    #[allow(clippy::similar_names)]
     fn unfollow(&mut self, follower_id: i32, followee_id: i32) {
         if follower_id != followee_id {
             if let Some(user) = self.users.get_mut(&follower_id) {
@@ -104,12 +102,10 @@ impl super::Twitter for Twitter {
         self.get_news_feed(user_id)
     }
 
-    #[allow(clippy::similar_names)]
     fn follow(&mut self, follower_id: i32, followee_id: i32) {
         self.follow(follower_id, followee_id)
     }
 
-    #[allow(clippy::similar_names)]
     fn unfollow(&mut self, follower_id: i32, followee_id: i32) {
         self.unfollow(follower_id, followee_id)
     }

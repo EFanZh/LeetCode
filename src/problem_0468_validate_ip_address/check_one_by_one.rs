@@ -1,17 +1,15 @@
-#![allow(clippy::match_like_matches_macro)]
-
 pub struct Solution;
 
 impl Solution {
     fn is_ip_v4_component(component: &[u8]) -> bool {
-        match component {
+        matches!(
+            component,
             [b'0'..=b'9']
-            | [b'1'..=b'9', b'0'..=b'9']
-            | [b'1', b'0'..=b'9', b'0'..=b'9']
-            | [b'2', b'0'..=b'4', b'0'..=b'9']
-            | [b'2', b'5', b'0'..=b'5'] => true,
-            _ => false,
-        }
+                | [b'1'..=b'9', b'0'..=b'9']
+                | [b'1', b'0'..=b'9', b'0'..=b'9']
+                | [b'2', b'0'..=b'4', b'0'..=b'9']
+                | [b'2', b'5', b'0'..=b'5']
+        )
     }
 
     fn is_ip_v4(ip: &[u8]) -> bool {
