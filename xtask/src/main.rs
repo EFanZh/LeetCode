@@ -1,4 +1,4 @@
-use crate::coverage::CoverageCommand;
+use crate::coverage::Subcommand;
 use std::env;
 use std::path::PathBuf;
 use structopt::StructOpt;
@@ -8,7 +8,7 @@ mod tools;
 
 #[derive(StructOpt)]
 enum Config {
-    Coverage(CoverageCommand),
+    Coverage(Subcommand),
 }
 
 fn get_project_root() -> PathBuf {

@@ -1,3 +1,5 @@
+#![allow(clippy::unused_self)]
+
 use super::super::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::collections::VecDeque;
@@ -10,7 +12,6 @@ impl Codec {
         Self
     }
 
-    #[allow(clippy::unused_self)]
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
         use std::fmt::Write;
 
@@ -55,7 +56,6 @@ impl Codec {
         result
     }
 
-    #[allow(clippy::unused_self)]
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
         let mut iter = data[1..data.len() - 1].split_terminator(',');
 

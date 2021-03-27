@@ -1,7 +1,6 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(clippy::wrong_self_convention)]
     pub fn to_lower_case(str: String) -> String {
         let mut s = str.into_bytes();
 

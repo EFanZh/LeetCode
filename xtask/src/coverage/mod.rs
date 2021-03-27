@@ -8,8 +8,8 @@ use std::{env, fs};
 use structopt::StructOpt;
 
 enum OutputType {
-    HTML,
-    LCOV,
+    Html,
+    Lcov,
 }
 
 #[derive(Debug)]
@@ -26,8 +26,8 @@ impl FromStr for OutputType {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
-            "html" => Ok(Self::HTML),
-            "lcov" => Ok(Self::LCOV),
+            "html" => Ok(Self::Html),
+            "lcov" => Ok(Self::Lcov),
             _ => Err(ParseOutputTypeError),
         }
     }
@@ -42,15 +42,14 @@ impl Display for OutputType {
 impl OutputType {
     fn value(&self) -> &'static str {
         match self {
-            OutputType::HTML => "html",
-            OutputType::LCOV => "lcov",
+            OutputType::Html => "html",
+            OutputType::Lcov => "lcov",
         }
     }
 }
 
-#[allow(clippy::module_name_repetitions)]
 #[derive(StructOpt)]
-pub struct CoverageCommand {
+pub struct Subcommand {
     #[structopt(long)]
     cmake_toolchain_file: Option<PathBuf>,
 
@@ -72,7 +71,7 @@ fn add_cmake_variable(command: &mut Command, variable: &str, value: &OsStr) {
     command.arg(arg);
 }
 
-impl CoverageCommand {
+impl Subcommand {
     pub fn run(self) {
         let cmake_executable = tools::get_cmake().unwrap();
 

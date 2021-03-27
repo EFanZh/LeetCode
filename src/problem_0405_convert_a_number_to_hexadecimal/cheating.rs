@@ -1,7 +1,6 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(clippy::wrong_self_convention)]
     pub fn to_hex(num: i32) -> String {
         let num = u32::from_le_bytes(num.to_le_bytes());
 
