@@ -5,8 +5,7 @@
     clippy::cast_sign_loss,
     clippy::missing_panics_doc,
     clippy::must_use_candidate,
-    clippy::needless_pass_by_value,
-    clippy::upper_case_acronyms
+    clippy::needless_pass_by_value
 )]
 
 pub(crate) mod data_structures;

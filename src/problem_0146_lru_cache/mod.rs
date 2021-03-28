@@ -1,3 +1,5 @@
+#![allow(clippy::upper_case_acronyms)]
+
 pub mod map_to_doubly_linked_list;
 pub mod map_to_doubly_linked_list_2;
 pub mod map_to_doubly_linked_list_3;

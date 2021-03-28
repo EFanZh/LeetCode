@@ -1,3 +1,5 @@
+#![allow(clippy::upper_case_acronyms)]
+
 use super::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
