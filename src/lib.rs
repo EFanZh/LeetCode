@@ -354,6 +354,7 @@ pub mod problem_0456_132_pattern;
 pub mod problem_0457_circular_array_loop;
 pub mod problem_0458_poor_pigs;
 pub mod problem_0459_repeated_substring_pattern;
+pub mod problem_0460_lfu_cache;
 pub mod problem_0461_hamming_distance;
 pub mod problem_0462_minimum_moves_to_equal_array_elements_ii;
 pub mod problem_0463_island_perimeter;

@@ -266,6 +266,10 @@ Make sure it can be solved again.
 
 How do you know that the greedy algorithm works?
 
+## [456. 132 Pattern](https://leetcode.com/problems/132-pattern/)
+
+Make sure it can be solved again.
+
 ## [458. Poor Pigs](https://leetcode.com/problems/poor-pigs/)
 
 Remember the solution.
@@ -274,9 +278,9 @@ Remember the solution.
 
 Remember the solution.
 
-## [456. 132 Pattern](https://leetcode.com/problems/132-pattern/)
+## [460. LFU Cache](https://leetcode.com/problems/lfu-cache/)
 
-Make sure it can be solved again.
+Optimize the solution and add the double hash map solution.
 
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
