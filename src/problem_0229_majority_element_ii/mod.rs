@@ -9,7 +9,13 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[3, 2, 3] as &[_], &[3] as &[_]), (&[1], &[1]), (&[1, 2], &[1, 2])];
+        let test_cases = [
+            (&[3, 2, 3] as &[_], &[3] as &[_]),
+            (&[1], &[1]),
+            (&[1, 2], &[1, 2]),
+            (&[6, 5, 5], &[5]),
+            (&[1, 2, 3], &[]),
+        ];
 
         for (nums, expected) in test_cases.iter().copied() {
             assert_eq!(S::majority_element(nums.to_vec()), expected);
