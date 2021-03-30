@@ -14,7 +14,27 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)] as &[_], 24)];
+        let test_cases = [
+            (&[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)] as &[_], 24),
+            (
+                &[
+                    Some(0),
+                    Some(2),
+                    Some(4),
+                    Some(1),
+                    None,
+                    Some(3),
+                    Some(-1),
+                    Some(5),
+                    Some(1),
+                    None,
+                    Some(6),
+                    None,
+                    Some(8),
+                ],
+                5,
+            ),
+        ];
 
         for (root, expected) in test_cases.iter().copied() {
             assert_eq!(
