@@ -15,7 +15,7 @@ mod tests {
         )];
 
         for (board, expected) in test_cases.iter().copied() {
-            let mut board = board.iter().map(|row| row.to_vec()).collect();
+            let mut board = board.iter().copied().map(<[_]>::to_vec).collect();
 
             S::game_of_life(&mut board);
 

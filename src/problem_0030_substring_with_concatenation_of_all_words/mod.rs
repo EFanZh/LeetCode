@@ -26,7 +26,7 @@ mod tests {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_substring(
                     s.to_string(),
-                    words.iter().map(ToString::to_string).collect()
+                    words.iter().copied().map(str::to_string).collect()
                 )),
                 expected
             );

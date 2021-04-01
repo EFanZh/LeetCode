@@ -41,7 +41,7 @@ mod tests {
 
         for ((matrix, target), expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::search_matrix(matrix.iter().map(|row| row.to_vec()).collect(), target),
+                S::search_matrix(matrix.iter().copied().map(<[_]>::to_vec).collect(), target),
                 expected
             );
         }

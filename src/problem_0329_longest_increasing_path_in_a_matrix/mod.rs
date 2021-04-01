@@ -16,7 +16,7 @@ mod tests {
 
         for (matrix, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::longest_increasing_path(matrix.iter().map(|row| row.to_vec()).collect()),
+                S::longest_increasing_path(matrix.iter().copied().map(<[_]>::to_vec).collect()),
                 expected
             );
         }

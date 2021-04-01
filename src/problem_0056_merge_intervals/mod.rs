@@ -21,10 +21,7 @@ mod tests {
         ];
 
         for (intervals, expected) in test_cases.iter().copied() {
-            assert_eq!(
-                S::merge(intervals.iter().map(|interval| interval.to_vec()).collect()),
-                expected
-            );
+            assert_eq!(S::merge(intervals.iter().copied().map(Vec::from).collect()), expected);
         }
     }
 }

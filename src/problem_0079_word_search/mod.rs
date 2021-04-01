@@ -40,7 +40,7 @@ mod tests {
 
         for ((board, word), expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::exist(board.iter().map(|row| row.to_vec()).collect(), word.to_string()),
+                S::exist(board.iter().copied().map(<[_]>::to_vec).collect(), word.to_string()),
                 expected
             );
         }

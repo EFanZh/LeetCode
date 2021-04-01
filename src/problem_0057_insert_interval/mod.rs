@@ -27,7 +27,7 @@ mod tests {
         for ((intervals, new_interval), expected) in test_cases.iter().copied() {
             assert_eq!(
                 S::insert(
-                    intervals.iter().map(|interval| interval.to_vec()).collect(),
+                    intervals.iter().copied().map(Vec::from).collect(),
                     new_interval.to_vec()
                 ),
                 expected

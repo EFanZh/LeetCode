@@ -16,7 +16,7 @@ mod tests {
         for ((n, connections), expected) in test_cases.iter().copied() {
             assert_eq!(
                 test_utilities::unstable_sorted(
-                    S::critical_connections(n, connections.iter().map(|edge| edge.to_vec()).collect())
+                    S::critical_connections(n, connections.iter().copied().map(Vec::from).collect())
                         .into_iter()
                         .map(|mut edge| {
                             edge.sort_unstable();

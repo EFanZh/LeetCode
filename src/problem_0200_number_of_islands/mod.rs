@@ -33,7 +33,10 @@ mod tests {
         ];
 
         for (grid, expected) in test_cases.iter().copied() {
-            assert_eq!(S::num_islands(grid.iter().map(|row| row.to_vec()).collect()), expected);
+            assert_eq!(
+                S::num_islands(grid.iter().copied().map(<[_]>::to_vec).collect()),
+                expected
+            );
         }
     }
 }

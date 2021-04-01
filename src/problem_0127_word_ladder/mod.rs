@@ -22,7 +22,7 @@ mod tests {
                 S::ladder_length(
                     begin_word.to_string(),
                     end_word.to_string(),
-                    word_list.iter().map(ToString::to_string).collect()
+                    word_list.iter().copied().map(str::to_string).collect()
                 ),
                 expected
             );

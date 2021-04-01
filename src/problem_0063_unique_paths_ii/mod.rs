@@ -13,7 +13,7 @@ mod tests {
 
         for (obstacle_grid, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::unique_paths_with_obstacles(obstacle_grid.iter().map(|row| row.to_vec()).collect()),
+                S::unique_paths_with_obstacles(obstacle_grid.iter().copied().map(<[_]>::to_vec).collect()),
                 expected
             );
         }

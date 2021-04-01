@@ -27,7 +27,7 @@ mod tests {
 
         for (people, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::reconstruct_queue(people.iter().map(|item| item.to_vec()).collect()),
+                S::reconstruct_queue(people.iter().copied().map(Vec::from).collect()),
                 expected
             );
         }

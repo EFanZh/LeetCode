@@ -20,7 +20,7 @@ mod tests {
 
         for (grid, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::island_perimeter(grid.iter().map(|row| row.to_vec()).collect()),
+                S::island_perimeter(grid.iter().copied().map(<[_]>::to_vec).collect()),
                 expected
             );
         }

@@ -29,7 +29,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::accounts_merge(
                     accounts
                         .iter()
-                        .map(|account| account.iter().map(|&s| s.to_string()).collect())
+                        .map(|account| account.iter().copied().map(str::to_string).collect())
                         .collect()
                 )),
                 expected

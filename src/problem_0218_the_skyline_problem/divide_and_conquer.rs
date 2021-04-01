@@ -129,7 +129,7 @@ impl Solution {
 
         Self::get_skyline_helper(&buildings, &mut result, &mut Vec::new());
 
-        result.iter().map(|p| p.to_vec()).collect()
+        result.iter().copied().map(Vec::from).collect()
     }
 }
 

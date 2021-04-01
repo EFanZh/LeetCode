@@ -38,7 +38,7 @@ mod tests {
 
         for (rectangles, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::is_rectangle_cover(rectangles.iter().map(|rectangle| rectangle.to_vec()).collect()),
+                S::is_rectangle_cover(rectangles.iter().copied().map(Vec::from).collect()),
                 expected
             );
         }
