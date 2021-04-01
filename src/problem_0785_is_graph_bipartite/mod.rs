@@ -16,7 +16,7 @@ mod tests {
 
         for (graph, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::is_bipartite(graph.iter().map(|edge| edge.to_vec()).collect()),
+                S::is_bipartite(graph.iter().copied().map(<[_]>::to_vec).collect()),
                 expected
             );
         }

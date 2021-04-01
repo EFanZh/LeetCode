@@ -15,7 +15,10 @@ mod tests {
         )];
 
         for (m, expected) in test_cases.iter().copied() {
-            assert_eq!(S::image_smoother(m.iter().map(|row| row.to_vec()).collect()), expected);
+            assert_eq!(
+                S::image_smoother(m.iter().copied().map(<[_]>::to_vec).collect()),
+                expected
+            );
         }
     }
 }

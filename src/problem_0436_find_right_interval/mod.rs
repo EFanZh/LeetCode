@@ -19,7 +19,7 @@ mod tests {
 
         for (intervals, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::find_right_interval(intervals.iter().map(|interval| interval.to_vec()).collect()),
+                S::find_right_interval(intervals.iter().copied().map(Vec::from).collect()),
                 expected
             );
         }

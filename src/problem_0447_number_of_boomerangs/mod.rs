@@ -17,7 +17,7 @@ mod tests {
 
         for (points, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::number_of_boomerangs(points.iter().map(|p| p.to_vec()).collect()),
+                S::number_of_boomerangs(points.iter().copied().map(Vec::from).collect()),
                 expected
             );
         }

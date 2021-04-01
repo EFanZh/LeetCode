@@ -59,7 +59,7 @@ mod tests {
 
         for ((words, max_width), expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::full_justify(words.iter().map(ToString::to_string).collect(), max_width),
+                S::full_justify(words.iter().copied().map(str::to_string).collect(), max_width),
                 expected
             );
         }

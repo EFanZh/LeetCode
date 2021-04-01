@@ -53,7 +53,7 @@ mod tests {
 
         for ((matrix, k), expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::kth_smallest(matrix.iter().map(|row| row.to_vec()).collect(), k),
+                S::kth_smallest(matrix.iter().copied().map(<[_]>::to_vec).collect(), k),
                 expected
             );
         }

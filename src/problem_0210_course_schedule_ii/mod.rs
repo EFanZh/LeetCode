@@ -25,7 +25,7 @@ mod tests {
         ];
 
         for ((num_courses, prerequisites), can_finish) in test_cases.iter().copied() {
-            let result = S::find_order(num_courses, prerequisites.iter().map(|edge| edge.to_vec()).collect());
+            let result = S::find_order(num_courses, prerequisites.iter().copied().map(Vec::from).collect());
 
             if can_finish {
                 assert_eq!(result.iter().copied().collect::<HashSet<_>>().len(), num_courses as _);

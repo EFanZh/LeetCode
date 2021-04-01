@@ -22,7 +22,7 @@ mod tests {
         ];
 
         for (matrix, expected) in test_cases.iter().copied() {
-            let mut matrix = matrix.iter().map(|row| row.to_vec()).collect();
+            let mut matrix = matrix.iter().copied().map(<[_]>::to_vec).collect();
 
             S::rotate(&mut matrix);
 

@@ -26,7 +26,9 @@ mod tests {
 
         for (graph, expected) in test_cases.iter().copied() {
             assert_eq!(
-                test_utilities::unstable_sorted(S::pacific_atlantic(graph.iter().map(|row| row.to_vec()).collect())),
+                test_utilities::unstable_sorted(S::pacific_atlantic(
+                    graph.iter().copied().map(<[_]>::to_vec).collect()
+                )),
                 expected
             );
         }

@@ -27,7 +27,7 @@ mod tests {
         for (graph, expected) in test_cases.iter().copied() {
             assert_eq!(
                 test_utilities::unstable_sorted(S::all_paths_source_target(
-                    graph.iter().map(|nexts| nexts.to_vec()).collect()
+                    graph.iter().copied().map(<[_]>::to_vec).collect()
                 )),
                 expected
             );

@@ -28,7 +28,7 @@ mod tests {
         ];
 
         for (matrix, sums) in test_cases.iter().copied() {
-            let num_matrix = N::new(matrix.iter().map(|row| row.to_vec()).collect());
+            let num_matrix = N::new(matrix.iter().copied().map(<[_]>::to_vec).collect());
 
             for ((row1, col1, row2, col2), expected) in sums.iter().copied() {
                 assert_eq!(num_matrix.sum_region(row1, col1, row2, col2), expected);

@@ -15,7 +15,7 @@ mod tests {
         ];
 
         for (points, expected) in test_cases.iter().copied() {
-            assert_eq!(S::max_points(points.iter().map(|p| p.to_vec()).collect()), expected);
+            assert_eq!(S::max_points(points.iter().copied().map(Vec::from).collect()), expected);
         }
     }
 }

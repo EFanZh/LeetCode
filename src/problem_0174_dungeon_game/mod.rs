@@ -16,7 +16,7 @@ mod tests {
 
         for (dungeon, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::calculate_minimum_hp(dungeon.iter().map(|p| p.to_vec()).collect()),
+                S::calculate_minimum_hp(dungeon.iter().copied().map(<[_]>::to_vec).collect()),
                 expected
             );
         }

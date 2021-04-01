@@ -27,7 +27,7 @@ mod tests {
 
         for (matrix, expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::spiral_order(matrix.iter().map(|row| row.to_vec()).collect()),
+                S::spiral_order(matrix.iter().copied().map(<[_]>::to_vec).collect()),
                 expected
             );
         }

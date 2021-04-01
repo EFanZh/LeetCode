@@ -16,7 +16,7 @@ mod tests {
         )];
 
         for (strs, expected) in test_cases.iter().copied() {
-            let strs = strs.iter().map(ToString::to_string).collect();
+            let strs = strs.iter().copied().map(str::to_string).collect();
 
             assert_eq!(
                 test_utilities::unstable_sorted(

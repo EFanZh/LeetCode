@@ -43,7 +43,7 @@ mod tests {
 
         for ((matrix, k), expected) in test_cases.iter().copied() {
             assert_eq!(
-                S::max_sum_submatrix(matrix.iter().map(|row| row.to_vec()).collect(), k),
+                S::max_sum_submatrix(matrix.iter().copied().map(<[_]>::to_vec).collect(), k),
                 expected
             );
         }
