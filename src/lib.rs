@@ -388,6 +388,7 @@ pub mod problem_0566_reshape_the_matrix;
 pub mod problem_0572_subtree_of_another_tree;
 pub mod problem_0575_distribute_candies;
 pub mod problem_0594_longest_harmonious_subsequence;
+pub mod problem_0605_can_place_flowers;
 pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0647_palindromic_substrings;
