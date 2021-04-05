@@ -12,10 +12,10 @@ impl Solution {
 
         if let Some(mut current) = root {
             'outer: loop {
-                let mut current_ref = current.borrow_mut();
+                let current_ref = current.borrow();
 
-                if let Some(left) = current_ref.left.take() {
-                    let mut node = left.clone();
+                if let Some(left) = &current_ref.left {
+                    let mut node = Rc::clone(left);
 
                     loop {
                         let mut node_ref = node.borrow_mut();
@@ -30,7 +30,10 @@ impl Solution {
                             drop(node_ref);
                             node = right;
                         } else {
+                            let left = Rc::clone(left);
+
                             drop(current_ref);
+
                             node_ref.right = Some(mem::replace(&mut current, left));
 
                             continue 'outer;
