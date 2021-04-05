@@ -1,6 +1,7 @@
 pub struct Solution;
 
-use rand::Rng;
+use rand::rngs::StdRng;
+use rand::{Rng, SeedableRng};
 use std::cmp::Ordering;
 use std::mem;
 
@@ -56,7 +57,7 @@ impl Solution {
     pub fn find_kth_largest(mut nums: Vec<i32>, k: i32) -> i32 {
         let k = nums.len() - (k as usize);
 
-        Self::nth_element(&mut nums, k, &mut rand::thread_rng())
+        Self::nth_element(&mut nums, k, &mut StdRng::seed_from_u64(0))
     }
 }
 
