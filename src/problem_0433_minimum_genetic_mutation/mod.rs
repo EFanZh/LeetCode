@@ -21,6 +21,15 @@ mod tests {
                 ),
                 4,
             ),
+            (
+                (
+                    "AACCTTGG",
+                    "AATTCCGG",
+                    &["AATTCCGG", "AACCTGGG", "AACCCCGG", "AACCTACC"],
+                ),
+                -1,
+            ),
+            (("AACCGGTT", "AACCGGTA", &[]), -1),
         ];
 
         for ((start, end, bank), expected) in test_cases.iter().copied() {
