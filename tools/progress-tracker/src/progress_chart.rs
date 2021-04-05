@@ -82,9 +82,11 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, usize)], total: usize, out
             .into_drawing_area()
             .titled(
                 &format!(
-                    "Progress: {:.2} %, Remaining: {}, Updated: {:?}",
-                    get_progress(latest_hits, total),
+                    "Total: {}, Done: {}, Remaining: {}, Progress: {:.2} %, Updated: {:?}",
+                    total,
+                    latest_hits,
                     total - latest_hits,
+                    get_progress(latest_hits, total),
                     latest_date_time
                 ),
                 ("sans-serif", TITLE_FONT_SIZE * 1.24 * f64::from(ZOOM)),
