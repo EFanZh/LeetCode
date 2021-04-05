@@ -61,7 +61,7 @@ impl Codec {
 
         iter.next().map(|val| {
             let root = Rc::new(RefCell::new(TreeNode::new(val.parse().unwrap())));
-            let mut queue = VecDeque::from(vec![root.clone()]);
+            let mut queue = VecDeque::from(vec![Rc::clone(&root)]);
 
             while let Some(item) = iter.next() {
                 let target = queue.pop_front().unwrap();
@@ -70,7 +70,7 @@ impl Codec {
                 if let Ok(val) = item.parse() {
                     let left = Rc::new(RefCell::new(TreeNode::new(val)));
 
-                    target_ref.left = Some(left.clone());
+                    target_ref.left = Some(Rc::clone(&left));
 
                     queue.push_back(left);
                 }
@@ -79,7 +79,7 @@ impl Codec {
                     if let Ok(val) = item.parse() {
                         let right = Rc::new(RefCell::new(TreeNode::new(val)));
 
-                        target_ref.right = Some(right.clone());
+                        target_ref.right = Some(Rc::clone(&right));
 
                         queue.push_back(right);
                     }

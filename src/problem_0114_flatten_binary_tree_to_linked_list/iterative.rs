@@ -18,7 +18,7 @@ impl Solution {
 
             loop {
                 if let Some(node) = current {
-                    let new_prev = prev.borrow_mut().right.get_or_insert(node).clone();
+                    let new_prev = Rc::clone(prev.borrow_mut().right.get_or_insert(node));
 
                     prev = new_prev;
 

@@ -44,7 +44,7 @@ impl Codec {
             let long_url = Rc::<str>::from(long_url);
             let short_url = Rc::<str>::from(result.as_str());
 
-            self.long_to_short.insert(long_url.clone(), short_url.clone());
+            self.long_to_short.insert(Rc::clone(&long_url), Rc::clone(&short_url));
             self.short_to_long.insert(short_url, long_url);
 
             result

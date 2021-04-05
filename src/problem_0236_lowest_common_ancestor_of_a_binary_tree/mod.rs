@@ -25,7 +25,7 @@ mod tests {
             let root_ref = root.borrow();
 
             if root_ref.val == val {
-                Some(root.clone())
+                Some(Rc::clone(root))
             } else {
                 find_node(&root_ref.left, val).or_else(|| find_node(&root_ref.right, val))
             }

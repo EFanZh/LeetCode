@@ -58,7 +58,7 @@ impl Codec {
             .map(|(high, low)| 128 * i32::from(high) + i32::from(low))
             .peekable();
 
-        Self::deserialize_helper(&self, &mut iter, i32::min_value(), i32::max_value())
+        self.deserialize_helper(&mut iter, i32::min_value(), i32::max_value())
     }
 }
 

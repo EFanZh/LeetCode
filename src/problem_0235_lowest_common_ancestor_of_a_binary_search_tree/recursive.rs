@@ -14,7 +14,7 @@ impl Solution {
         } else if p.val > root_ref.val {
             Self::helper(root_ref.right.as_ref().unwrap(), p, q)
         } else {
-            root.clone()
+            Rc::clone(root)
         }
     }
 

@@ -1,4 +1,11 @@
-#![warn(clippy::pedantic)]
+#![warn(
+    clippy::clone_on_ref_ptr,
+    clippy::needless_borrow,
+    clippy::pedantic,
+    clippy::rc_buffer,
+    clippy::suboptimal_flops,
+    clippy::useless_let_if_seq
+)]
 #![allow(
     clippy::cast_possible_truncation,
     clippy::cast_possible_wrap,

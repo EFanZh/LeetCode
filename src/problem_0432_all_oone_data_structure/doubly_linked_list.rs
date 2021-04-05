@@ -120,15 +120,15 @@ impl AllOne {
 
             if let Some(first_node) = self.nodes.get_mut(self.head) {
                 if first_node.value == 0 {
-                    first_node.keys.insert(rc_key.clone());
+                    first_node.keys.insert(Rc::clone(&rc_key));
                 } else {
-                    let handle = self.allocate_node(rc_key.clone(), 0, INVALID_HANDLE, self.head);
+                    let handle = self.allocate_node(Rc::clone(&rc_key), 0, INVALID_HANDLE, self.head);
 
                     self.nodes[self.head].prev = handle;
                     self.head = handle;
                 }
             } else {
-                let handle = self.allocate_node(rc_key.clone(), 0, INVALID_HANDLE, INVALID_HANDLE);
+                let handle = self.allocate_node(Rc::clone(&rc_key), 0, INVALID_HANDLE, INVALID_HANDLE);
 
                 self.head = handle;
                 self.tail = handle;
