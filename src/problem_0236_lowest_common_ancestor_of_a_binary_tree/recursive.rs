@@ -41,12 +41,12 @@ impl Solution {
             let root_ref = root.borrow();
 
             if Self::is_same_object(root.as_ref(), p) {
-                Self::has_node(root_ref.left.as_deref(), q, &|| root.clone(), &|| {
-                    Self::has_node(root_ref.right.as_deref(), q, &|| root.clone(), only_p)
+                Self::has_node(root_ref.left.as_deref(), q, &|| Rc::clone(root), &|| {
+                    Self::has_node(root_ref.right.as_deref(), q, &|| Rc::clone(root), only_p)
                 })
             } else if Self::is_same_object(root.as_ref(), q) {
-                Self::has_node(root_ref.left.as_deref(), p, &|| root.clone(), &|| {
-                    Self::has_node(root_ref.right.as_deref(), p, &|| root.clone(), only_q)
+                Self::has_node(root_ref.left.as_deref(), p, &|| Rc::clone(root), &|| {
+                    Self::has_node(root_ref.right.as_deref(), p, &|| Rc::clone(root), only_q)
                 })
             } else {
                 Self::find_nodes(
@@ -54,8 +54,8 @@ impl Solution {
                     p,
                     q,
                     &|| Self::find_nodes(&root_ref.right, p, q, nothing, only_p, only_q),
-                    &|| Self::has_node(root_ref.right.as_deref(), q, &|| root.clone(), only_p),
-                    &|| Self::has_node(root_ref.right.as_deref(), p, &|| root.clone(), only_q),
+                    &|| Self::has_node(root_ref.right.as_deref(), q, &|| Rc::clone(root), only_p),
+                    &|| Self::has_node(root_ref.right.as_deref(), p, &|| Rc::clone(root), only_q),
                 )
             }
         })
@@ -63,7 +63,7 @@ impl Solution {
 
     fn helper(root: &Rc<RefCell<TreeNode>>, p: &RefCell<TreeNode>, q: &RefCell<TreeNode>) -> Rc<RefCell<TreeNode>> {
         if Self::is_same_object(root.as_ref(), p) || Self::is_same_object(root.as_ref(), q) {
-            root.clone()
+            Rc::clone(root)
         } else {
             let root_ref = root.borrow();
 
@@ -72,8 +72,8 @@ impl Solution {
                 p,
                 q,
                 &|| Self::helper(root_ref.right.as_ref().unwrap(), p, q),
-                &|| root.clone(),
-                &|| root.clone(),
+                &|| Rc::clone(root),
+                &|| Rc::clone(root),
             )
         }
     }

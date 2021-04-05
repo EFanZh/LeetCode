@@ -25,8 +25,8 @@ impl Solution {
                             let mut right_ref = right.borrow_mut();
 
                             if let Some(right_left) = &right_ref.left {
-                                let mut right_min_parent = right.clone();
-                                let mut right_min = right_left.clone();
+                                let mut right_min_parent = Rc::clone(&right);
+                                let mut right_min = Rc::clone(right_left);
 
                                 drop(right_ref);
 

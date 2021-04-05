@@ -6,13 +6,13 @@ impl Solution {
     pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
         // Group accounts by user name.
 
-        let mut user_names: HashMap<&str, Vec<&[String]>> = HashMap::new();
+        let mut user_names: HashMap<_, Vec<_>> = HashMap::new();
 
         for user in &accounts {
             let (name, emails) = user.split_first().unwrap();
 
             user_names
-                .entry(&name)
+                .entry(name.as_str())
                 .and_modify(|accounts| accounts.push(emails))
                 .or_insert_with(|| vec![emails]);
         }

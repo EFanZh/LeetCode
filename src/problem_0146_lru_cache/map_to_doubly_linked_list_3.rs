@@ -90,7 +90,7 @@ impl LRUCache {
                         key: Cell::new(key),
                         value: Cell::new(value),
                         prev: Cell::new(Weak::new()),
-                        next: Cell::new(self.newest.clone()),
+                        next: Cell::new(Weak::clone(&self.newest)),
                     });
 
                     if let Some(next) = mem::replace(&mut self.newest, Rc::downgrade(&node)).upgrade() {

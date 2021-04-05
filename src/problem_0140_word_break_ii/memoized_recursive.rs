@@ -12,7 +12,7 @@ struct TrieNode {
 impl Solution {
     fn word_break_helper(s: &[u8], root: &TrieNode, cache: &mut HashMap<*const u8, Rc<[String]>>) -> Rc<[String]> {
         if let Some(result) = cache.get(&s.as_ptr()) {
-            result.clone()
+            Rc::clone(result)
         } else {
             let mut result = Vec::new();
 
@@ -46,7 +46,7 @@ impl Solution {
                 }
             }
 
-            cache.entry(s.as_ptr()).or_insert_with(|| result.into()).clone()
+            Rc::clone(cache.entry(s.as_ptr()).or_insert_with(|| result.into()))
         }
     }
 

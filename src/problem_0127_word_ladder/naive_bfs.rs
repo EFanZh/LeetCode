@@ -46,7 +46,7 @@ impl Solution {
                 }
 
                 queue.extend(Self::drain_filter(&mut word_list, |item| {
-                    Self::is_neighbor(&current, &item)
+                    Self::is_neighbor(&current, item)
                 }));
             }
 
