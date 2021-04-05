@@ -10,7 +10,13 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [&[1, 5, 1, 1, 6, 4] as &[_], &[1, 3, 2, 2, 3, 1], &[4, 5, 5, 6]];
+        let test_cases = [
+            &[1, 5, 1, 1, 6, 4] as &[_],
+            &[1, 3, 2, 2, 3, 1],
+            &[4, 5, 5, 6],
+            &[1, 3, 2, 2, 3, 1],
+            &[2, 3, 5, 7, 11, 13, 17, 19, 23],
+        ];
 
         for nums in test_cases.iter().copied() {
             let mut nums_2 = nums.to_vec();

@@ -1,6 +1,7 @@
 pub struct Solution;
 
-use rand::Rng;
+use rand::rngs::StdRng;
+use rand::{Rng, SeedableRng};
 use std::cmp::Ordering;
 
 impl Solution {
@@ -9,7 +10,7 @@ impl Solution {
         let mut end = nums.len();
         let odd = end / 2;
         let index = |i: usize| i.checked_sub(odd).map_or_else(|| 1 + i * 2, |j| j * 2);
-        let mut rng = rand::thread_rng();
+        let mut rng = StdRng::seed_from_u64(0);
 
         while end - start > 1 {
             nums.swap(index(start), index(rng.gen_range(start..end)));
