@@ -10,7 +10,11 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [("aab", &[&["a", "a", "b"] as &[_], &["aa", "b"]] as &[_])];
+        let test_cases = [
+            ("aab", &[&["a", "a", "b"] as &[_], &["aa", "b"]] as &[&[_]]),
+            ("a", &[&["a"]]),
+            ("efe", &[&["e", "f", "e"], &["efe"]]),
+        ];
 
         for (s, expected) in test_cases.iter().copied() {
             assert_eq!(test_utilities::unstable_sorted(S::partition(s.to_string())), expected);
