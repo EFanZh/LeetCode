@@ -17,7 +17,7 @@ impl Solution {
                 if let Some(left) = current_ref.left.take() {
                     drop(current_ref);
 
-                    let mut node = left.clone();
+                    let mut node = Rc::clone(&left);
 
                     loop {
                         let mut node_ref = node.borrow_mut();

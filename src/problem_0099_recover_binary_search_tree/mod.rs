@@ -23,6 +23,41 @@ mod tests {
                 &[Some(3), Some(1), Some(4), None, None, Some(2)],
                 &[Some(2), Some(1), Some(4), None, None, Some(3)],
             ),
+            (
+                &[
+                    Some(146),
+                    Some(71),
+                    Some(-13),
+                    Some(55),
+                    None,
+                    Some(231),
+                    Some(399),
+                    Some(321),
+                    None,
+                    None,
+                    None,
+                    None,
+                    None,
+                    Some(-33),
+                ],
+                &[
+                    Some(146),
+                    Some(71),
+                    Some(321),
+                    Some(55),
+                    None,
+                    Some(231),
+                    Some(399),
+                    Some(-13),
+                    None,
+                    None,
+                    None,
+                    None,
+                    None,
+                    Some(-33),
+                ],
+            ),
+            (&[Some(3)], &[Some(3)]), // Extra test case for coverage.
         ];
 
         for (root, expected) in test_cases.iter().copied() {
