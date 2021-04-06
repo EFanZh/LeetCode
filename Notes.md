@@ -282,6 +282,10 @@ Remember the solution.
 
 Optimize the solution and add the double hash map solution.
 
+## [466. Count The Repetitions](https://leetcode.com/problems/count-the-repetitions/)
+
+Make sure it can be solved again.
+
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
 Why does the mathematical solution work?
