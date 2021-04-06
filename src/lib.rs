@@ -366,6 +366,7 @@ pub mod problem_0461_hamming_distance;
 pub mod problem_0462_minimum_moves_to_equal_array_elements_ii;
 pub mod problem_0463_island_perimeter;
 pub mod problem_0464_can_i_win;
+pub mod problem_0466_count_the_repetitions;
 pub mod problem_0467_unique_substrings_in_wraparound_string;
 pub mod problem_0468_validate_ip_address;
 pub mod problem_0476_number_complement;
