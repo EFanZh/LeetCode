@@ -286,6 +286,10 @@ Optimize the solution and add the double hash map solution.
 
 Make sure it can be solved again.
 
+## [473. Matchsticks to Square](https://leetcode.com/problems/matchsticks-to-square/)
+
+Optimize the solution.
+
 ## [491. Increasing Subsequences](https://leetcode.com/problems/increasing-subsequences/)
 
 Why is the solution correct?
