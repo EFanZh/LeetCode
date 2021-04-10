@@ -8,7 +8,7 @@ impl Solution {
             .zip(&nums[1..])
             .map(|(previous, current)| current - previous)
             .max()
-            .unwrap()
+            .unwrap_or(0)
     }
 }
 
