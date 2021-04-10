@@ -41,6 +41,7 @@ mod tests {
                 ),
                 161_834_419,
             ),
+            ((&[1], &[1, 2, 3, 4]), 0),
         ];
 
         for ((houses, heaters), expected) in test_cases.iter().copied() {

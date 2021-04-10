@@ -16,10 +16,9 @@ impl Solution {
     }
 
     pub fn rob(nums: Vec<i32>) -> i32 {
-        match nums.len() {
-            0 => 0,
-            1 => nums[0],
-            2 => nums[0].max(nums[1]),
+        match *nums {
+            [first] => first,
+            [first, second] => first.max(second),
             _ => (nums[0] + Self::rob_helper(&nums[2..nums.len() - 1])).max(Self::rob_helper(&nums[1..])),
         }
     }

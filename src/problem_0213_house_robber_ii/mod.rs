@@ -9,7 +9,7 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[2, 3, 2] as &[_], 3), (&[1, 2, 3, 1], 4)];
+        let test_cases = [(&[2, 3, 2] as &[_], 3), (&[1, 2, 3, 1], 4), (&[0], 0), (&[2, 3], 3)];
 
         for (nums, expected) in test_cases.iter().copied() {
             assert_eq!(S::rob(nums.to_vec()), expected);

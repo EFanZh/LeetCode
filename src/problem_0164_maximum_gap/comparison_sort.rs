@@ -4,18 +4,11 @@ impl Solution {
     pub fn maximum_gap(mut nums: Vec<i32>) -> i32 {
         nums.sort_unstable();
 
-        let mut iter = nums.into_iter();
-        let mut result = 0;
-
-        if let Some(mut previous) = iter.next() {
-            for current in iter {
-                result = result.max(current - previous);
-
-                previous = current
-            }
-        }
-
-        result
+        nums.iter()
+            .zip(&nums[1..])
+            .map(|(previous, current)| current - previous)
+            .max()
+            .unwrap()
     }
 }
 
