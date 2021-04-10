@@ -20,18 +20,13 @@ impl Solution {
         let d_x = x_2 - x_1;
         let d_y = y_2 - y_1;
         let g = Self::gcd(d_x, d_y);
+        let r_x = d_x / g;
+        let r_y = d_y / g;
 
-        if g == 0 {
-            (0, 0)
+        if r_x < 0 {
+            (-r_x, -r_y)
         } else {
-            let r_x = d_x / g;
-            let r_y = d_y / g;
-
-            if r_x < 0 {
-                (-r_x, -r_y)
-            } else {
-                (r_x, r_y)
-            }
+            (r_x, r_y)
         }
     }
 
@@ -40,24 +35,16 @@ impl Solution {
         let mut counts = HashMap::new();
 
         for (i, point_1) in points.iter().map(|p| p.as_slice().try_into().unwrap()).enumerate() {
-            let mut base_count = 1;
-
             for point_2 in points[i + 1..].iter().map(|p| p.as_slice().try_into().unwrap()) {
-                let key = Self::get_line_key(point_1, point_2);
-
-                if key == (0, 0) {
-                    base_count += 1;
-                } else {
-                    match counts.entry(key) {
-                        Entry::Occupied(entry) => *entry.into_mut() += 1,
-                        Entry::Vacant(entry) => {
-                            entry.insert(1);
-                        }
+                match counts.entry(Self::get_line_key(point_1, point_2)) {
+                    Entry::Occupied(entry) => *entry.into_mut() += 1,
+                    Entry::Vacant(entry) => {
+                        entry.insert(1);
                     }
                 }
             }
 
-            result = result.max(base_count + counts.drain().map(|(_, v)| v).max().unwrap_or(0));
+            result = result.max(1 + counts.drain().map(|(_, v)| v).max().unwrap_or(0));
         }
 
         result
