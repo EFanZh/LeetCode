@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod dynamic_programming;
 
 pub trait Solution {
     fn predict_the_winner(nums: Vec<i32>) -> bool;
