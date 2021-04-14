@@ -371,6 +371,7 @@ pub mod problem_0467_unique_substrings_in_wraparound_string;
 pub mod problem_0468_validate_ip_address;
 pub mod problem_0472_concatenated_words;
 pub mod problem_0473_matchsticks_to_square;
+pub mod problem_0474_ones_and_zeroes;
 pub mod problem_0475_heaters;
 pub mod problem_0476_number_complement;
 pub mod problem_0482_license_key_formatting;
