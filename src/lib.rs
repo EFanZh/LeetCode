@@ -374,6 +374,7 @@ pub mod problem_0473_matchsticks_to_square;
 pub mod problem_0474_ones_and_zeroes;
 pub mod problem_0475_heaters;
 pub mod problem_0476_number_complement;
+pub mod problem_0477_total_hamming_distance;
 pub mod problem_0482_license_key_formatting;
 pub mod problem_0485_max_consecutive_ones;
 pub mod problem_0486_predict_the_winner;
