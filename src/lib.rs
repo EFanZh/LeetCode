@@ -394,6 +394,7 @@ pub mod problem_0520_detect_capital;
 pub mod problem_0521_longest_uncommon_subsequence_i;
 pub mod problem_0535_encode_and_decode_tinyurl;
 pub mod problem_0539_minimum_time_difference;
+pub mod problem_0540_single_element_in_a_sorted_array;
 pub mod problem_0541_reverse_string_ii;
 pub mod problem_0543_diameter_of_binary_tree;
 pub mod problem_0551_student_attendance_record_i;
