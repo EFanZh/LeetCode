@@ -397,6 +397,7 @@ pub mod problem_0539_minimum_time_difference;
 pub mod problem_0540_single_element_in_a_sorted_array;
 pub mod problem_0541_reverse_string_ii;
 pub mod problem_0543_diameter_of_binary_tree;
+pub mod problem_0547_number_of_provinces;
 pub mod problem_0551_student_attendance_record_i;
 pub mod problem_0557_reverse_words_in_a_string_iii;
 pub mod problem_0560_subarray_sum_equals_k;
