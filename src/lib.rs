@@ -393,6 +393,7 @@ pub mod problem_0518_coin_change_2;
 pub mod problem_0520_detect_capital;
 pub mod problem_0521_longest_uncommon_subsequence_i;
 pub mod problem_0535_encode_and_decode_tinyurl;
+pub mod problem_0537_complex_number_multiplication;
 pub mod problem_0539_minimum_time_difference;
 pub mod problem_0540_single_element_in_a_sorted_array;
 pub mod problem_0541_reverse_string_ii;
