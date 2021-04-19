@@ -415,6 +415,7 @@ pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0628_maximum_product_of_three_numbers;
 pub mod problem_0647_palindromic_substrings;
+pub mod problem_0657_robot_return_to_origin;
 pub mod problem_0661_image_smoother;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
