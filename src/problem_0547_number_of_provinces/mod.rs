@@ -1,4 +1,4 @@
-pub mod dynamic_programming;
+pub mod bfs;
 
 pub trait Solution {
     fn find_circle_num(is_connected: Vec<Vec<i32>>) -> i32;
