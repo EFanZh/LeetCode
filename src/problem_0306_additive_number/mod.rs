@@ -15,6 +15,9 @@ mod tests {
             ("1203", false),
             ("0235813", false),
             ("0", false),
+            ("000", true),
+            ("111", false),
+            ("199111992", true),
         ];
 
         for (num, expected) in test_cases.iter().copied() {
