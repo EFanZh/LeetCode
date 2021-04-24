@@ -13,7 +13,6 @@ pub trait MyStack {
 mod tests {
     use super::MyStack;
 
-    #[derive(Clone, Copy)]
     enum Operation {
         Push(i32),
         Pop(i32),
@@ -24,13 +23,16 @@ mod tests {
     pub fn run<S: MyStack>() {
         use Operation::{Empty, Pop, Push, Top};
 
-        let test_cases = [&[Push(1), Push(2), Top(2), Pop(2), Empty(false)] as &[_]];
+        let test_cases = [
+            &[Push(1), Push(2), Top(2), Pop(2), Empty(false)] as &[_],
+            &[Push(1), Push(2), Push(3), Pop(3), Pop(2), Pop(1), Empty(true)] as &[_],
+        ];
 
         for test_case in test_cases.iter().copied() {
             let mut stack = S::new();
 
-            for operation in test_case.iter().copied() {
-                match operation {
+            for operation in test_case.iter() {
+                match *operation {
                     Push(value) => stack.push(value),
                     Pop(value) => assert_eq!(stack.pop(), value),
                     Top(value) => assert_eq!(stack.top(), value),
