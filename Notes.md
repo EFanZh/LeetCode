@@ -290,6 +290,10 @@ Make sure it can be solved again.
 
 Optimize the solution.
 
+## [480. Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+
+Why is the binary heap solution correct?
+
 ## [491. Increasing Subsequences](https://leetcode.com/problems/increasing-subsequences/)
 
 Why is the solution correct?
