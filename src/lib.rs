@@ -378,6 +378,7 @@ pub mod problem_0477_total_hamming_distance;
 pub mod problem_0480_sliding_window_median;
 pub mod problem_0481_magical_string;
 pub mod problem_0482_license_key_formatting;
+pub mod problem_0483_smallest_good_base;
 pub mod problem_0485_max_consecutive_ones;
 pub mod problem_0486_predict_the_winner;
 pub mod problem_0491_increasing_subsequences;
