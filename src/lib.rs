@@ -393,6 +393,7 @@ pub mod problem_0503_next_greater_element_ii;
 pub mod problem_0504_base_7;
 pub mod problem_0506_relative_ranks;
 pub mod problem_0507_perfect_number;
+pub mod problem_0508_most_frequent_subtree_sum;
 pub mod problem_0509_fibonacci_number;
 pub mod problem_0515_find_largest_value_in_each_tree_row;
 pub mod problem_0516_longest_palindromic_subsequence;
