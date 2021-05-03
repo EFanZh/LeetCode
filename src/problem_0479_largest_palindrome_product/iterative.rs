@@ -20,10 +20,11 @@ impl Solution {
 
     pub fn largest_palindrome(n: i32) -> i32 {
         let n = n as u32;
+        let pow_10_n = u64::pow(10, n);
 
-        for base in (u64::pow(10, n - 1)..u64::pow(10, n)).rev() {
-            let num = base * u64::pow(10, n) + Self::reverse(base);
-            let mut x = (num + (u64::pow(10, n) - 2)) / (u64::pow(10, n) - 1);
+        for base in (u64::pow(10, n - 1)..pow_10_n).rev() {
+            let num = base * pow_10_n + Self::reverse(base);
+            let mut x = (num + (pow_10_n - 2)) / (pow_10_n - 1);
 
             loop {
                 let y = num / x;
