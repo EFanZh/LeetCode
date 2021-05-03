@@ -375,6 +375,7 @@ pub mod problem_0474_ones_and_zeroes;
 pub mod problem_0475_heaters;
 pub mod problem_0476_number_complement;
 pub mod problem_0477_total_hamming_distance;
+pub mod problem_0479_largest_palindrome_product;
 pub mod problem_0480_sliding_window_median;
 pub mod problem_0481_magical_string;
 pub mod problem_0482_license_key_formatting;
