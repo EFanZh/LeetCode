@@ -15,7 +15,6 @@ pub trait Twitter {
 mod tests {
     use super::Twitter;
 
-    #[derive(Clone, Copy)]
     enum Operation<'a> {
         PostTweet(i32, i32),
         GetNewsFeed(i32, &'a [i32]),
@@ -40,6 +39,14 @@ mod tests {
             &[PostTweet(1, 5), Unfollow(1, 1), GetNewsFeed(1, &[5])],
             &[PostTweet(1, 5), PostTweet(1, 3), GetNewsFeed(1, &[3, 5])],
             &[GetNewsFeed(1, &[])],
+            &[
+                PostTweet(1, 1),
+                GetNewsFeed(1, &[1]),
+                Follow(2, 1),
+                GetNewsFeed(2, &[1]),
+                Unfollow(2, 1),
+                GetNewsFeed(2, &[]),
+            ],
         ];
 
         for operations in test_cases.iter().copied() {
