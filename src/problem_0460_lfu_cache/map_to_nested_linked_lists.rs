@@ -4,68 +4,6 @@ use std::ops::{Index, IndexMut};
 
 const INVALID_HANDLE: usize = usize::max_value();
 
-struct Slab<T> {
-    storage: Vec<T>,
-    free_head: usize,
-}
-
-trait SlabNext {
-    fn get_next(&mut self) -> &mut usize;
-}
-
-impl<T: SlabNext> Slab<T> {
-    fn with_capacity(capacity: usize) -> Self {
-        Self {
-            storage: Vec::with_capacity(capacity),
-            free_head: INVALID_HANDLE,
-        }
-    }
-
-    #[allow(clippy::option_if_let_else)]
-    fn allocate(&mut self, value: T) -> usize {
-        if let Some(slot) = self.storage.get_mut(self.free_head) {
-            let result = mem::replace(&mut self.free_head, *slot.get_next());
-
-            *slot = value;
-
-            result
-        } else {
-            let handle = self.storage.len();
-
-            self.storage.push(value);
-
-            handle
-        }
-    }
-
-    fn free(&mut self, handle: usize) {
-        *self.storage[handle].get_next() = self.free_head;
-        self.free_head = handle;
-    }
-
-    fn get(&mut self, handle: usize) -> Option<&T> {
-        self.storage.get(handle)
-    }
-
-    fn get_mut(&mut self, handle: usize) -> Option<&mut T> {
-        self.storage.get_mut(handle)
-    }
-}
-
-impl<T> Index<usize> for Slab<T> {
-    type Output = T;
-
-    fn index(&self, index: usize) -> &Self::Output {
-        &self.storage[index]
-    }
-}
-
-impl<T> IndexMut<usize> for Slab<T> {
-    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
-        &mut self.storage[index]
-    }
-}
-
 struct Node {
     key: i32,
     value: i32,
@@ -74,9 +12,41 @@ struct Node {
     next: usize,
 }
 
-impl SlabNext for Node {
-    fn get_next(&mut self) -> &mut usize {
-        &mut self.next
+struct Nodes {
+    nodes: Vec<Node>,
+}
+
+impl Nodes {
+    fn with_capacity(capacity: usize) -> Self {
+        Self {
+            nodes: Vec::with_capacity(capacity),
+        }
+    }
+
+    fn allocate(&mut self, node: Node) -> usize {
+        let result = self.nodes.len();
+
+        self.nodes.push(node);
+
+        result
+    }
+
+    fn get_mut(&mut self, handle: usize) -> Option<&mut Node> {
+        self.nodes.get_mut(handle)
+    }
+}
+
+impl Index<usize> for Nodes {
+    type Output = Node;
+
+    fn index(&self, index: usize) -> &Self::Output {
+        &self.nodes[index]
+    }
+}
+
+impl IndexMut<usize> for Nodes {
+    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
+        &mut self.nodes[index]
     }
 }
 
@@ -88,17 +58,69 @@ struct Block {
     next: usize,
 }
 
-impl SlabNext for Block {
-    fn get_next(&mut self) -> &mut usize {
-        &mut self.next
+struct Blocks {
+    storage: Vec<Block>,
+    free_head: usize,
+}
+
+impl Blocks {
+    fn with_capacity(capacity: usize) -> Self {
+        Self {
+            storage: Vec::with_capacity(capacity),
+            free_head: INVALID_HANDLE,
+        }
+    }
+
+    #[allow(clippy::option_if_let_else)]
+    fn allocate(&mut self, block: Block) -> usize {
+        if let Some(slot) = self.storage.get_mut(self.free_head) {
+            let result = mem::replace(&mut self.free_head, slot.next);
+
+            *slot = block;
+
+            result
+        } else {
+            let handle = self.storage.len();
+
+            self.storage.push(block);
+
+            handle
+        }
+    }
+
+    fn free(&mut self, handle: usize) {
+        self.storage[handle].next = self.free_head;
+        self.free_head = handle;
+    }
+
+    fn get(&mut self, handle: usize) -> Option<&Block> {
+        self.storage.get(handle)
+    }
+
+    fn get_mut(&mut self, handle: usize) -> Option<&mut Block> {
+        self.storage.get_mut(handle)
+    }
+}
+
+impl Index<usize> for Blocks {
+    type Output = Block;
+
+    fn index(&self, index: usize) -> &Self::Output {
+        &self.storage[index]
+    }
+}
+
+impl IndexMut<usize> for Blocks {
+    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
+        &mut self.storage[index]
     }
 }
 
 struct LFUCache {
     capacity: usize,
     key_to_node: HashMap<i32, usize>,
-    node_memory: Slab<Node>,
-    block_memory: Slab<Block>,
+    node_memory: Nodes,
+    block_memory: Blocks,
     block_head: usize,
 }
 
@@ -109,8 +131,8 @@ impl LFUCache {
         Self {
             capacity,
             key_to_node: HashMap::with_capacity(capacity),
-            node_memory: Slab::with_capacity(capacity),
-            block_memory: Slab::with_capacity(capacity),
+            node_memory: Nodes::with_capacity(capacity),
+            block_memory: Blocks::with_capacity(capacity),
             block_head: INVALID_HANDLE,
         }
     }
