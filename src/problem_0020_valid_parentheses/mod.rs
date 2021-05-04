@@ -16,6 +16,7 @@ mod tests {
             ("(]", false),
             ("([)]", false),
             ("{[]}", true),
+            ("(){}}{", false),
         ];
 
         for (s, expected) in test_cases.iter().copied() {

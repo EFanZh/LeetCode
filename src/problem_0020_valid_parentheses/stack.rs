@@ -18,12 +18,11 @@ impl Solution {
                         return false;
                     }
                 }
-                b']' => {
+                _ => {
                     if stack.pop() != Some(b'[') {
                         return false;
                     }
                 }
-                _ => return false,
             }
         }
 
