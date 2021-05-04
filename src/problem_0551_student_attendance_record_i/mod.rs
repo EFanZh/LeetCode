@@ -19,6 +19,9 @@ mod tests {
             ("LLL", false),
             ("AA", false),
             ("ALA", false),
+            ("LPLPLPLPLPL", true),
+            ("LLPPPLPAPP", true),
+            ("PPAPPLPPLP", true),
         ];
 
         for (s, expected) in test_cases.iter().copied() {

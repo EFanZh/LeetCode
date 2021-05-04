@@ -17,6 +17,8 @@ mod tests {
         let test_cases = [
             ((&[-1, 0, 3, 5, 9, 12] as &[_], 9), 4),
             ((&[-1, 0, 3, 5, 9, 12], 2), -1),
+            ((&[], 7), -1),
+            ((&[1], 1), 0),
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
