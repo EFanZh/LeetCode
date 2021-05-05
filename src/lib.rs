@@ -385,6 +385,7 @@ pub mod problem_0486_predict_the_winner;
 pub mod problem_0488_zuma_game;
 pub mod problem_0491_increasing_subsequences;
 pub mod problem_0492_construct_the_rectangle;
+pub mod problem_0493_reverse_pairs;
 pub mod problem_0494_target_sum;
 pub mod problem_0495_teemo_attacking;
 pub mod problem_0496_next_greater_element_i;
