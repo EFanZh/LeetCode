@@ -392,6 +392,7 @@ pub mod problem_0496_next_greater_element_i;
 pub mod problem_0498_diagonal_traverse;
 pub mod problem_0500_keyboard_row;
 pub mod problem_0501_find_mode_in_binary_search_tree;
+pub mod problem_0502_ipo;
 pub mod problem_0503_next_greater_element_ii;
 pub mod problem_0504_base_7;
 pub mod problem_0506_relative_ranks;
