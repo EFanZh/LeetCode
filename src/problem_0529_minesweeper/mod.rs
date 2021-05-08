@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod bfs;
 
 pub trait Solution {
     fn update_board(board: Vec<Vec<char>>, click: Vec<i32>) -> Vec<Vec<char>>;
