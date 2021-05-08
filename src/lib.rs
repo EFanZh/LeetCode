@@ -409,6 +409,7 @@ pub mod problem_0521_longest_uncommon_subsequence_i;
 pub mod problem_0523_continuous_subarray_sum;
 pub mod problem_0524_longest_word_in_dictionary_through_deleting;
 pub mod problem_0525_contiguous_array;
+pub mod problem_0529_minesweeper;
 pub mod problem_0535_encode_and_decode_tinyurl;
 pub mod problem_0537_complex_number_multiplication;
 pub mod problem_0539_minimum_time_difference;
