@@ -7,17 +7,15 @@ impl Solution {
         let mut result = Vec::new();
         let mut iter = intervals.into_iter();
 
-        if let Some(first) = iter.next() {
-            result.push(first);
+        result.push(iter.next().unwrap());
 
-            for interval in iter {
-                let previous_end = result.last_mut().unwrap().last_mut().unwrap();
+        for interval in iter {
+            let previous_end = result.last_mut().unwrap().last_mut().unwrap();
 
-                if interval[0] <= *previous_end {
-                    *previous_end = (*previous_end).max(interval[1]);
-                } else {
-                    result.push(interval);
-                }
+            if interval[0] <= *previous_end {
+                *previous_end = (*previous_end).max(interval[1]);
+            } else {
+                result.push(interval);
             }
         }
 

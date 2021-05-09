@@ -11,18 +11,17 @@ impl Solution {
 
         let mut result = Vec::new();
         let mut iter = intervals.into_iter();
+        let first = iter.next().unwrap();
 
-        if let Some(first) = iter.next() {
-            result.push(vec![first.0, first.1]);
+        result.push(vec![first.0, first.1]);
 
-            for interval in iter {
-                let previous_end = result.last_mut().unwrap().last_mut().unwrap();
+        for interval in iter {
+            let previous_end = result.last_mut().unwrap().last_mut().unwrap();
 
-                if interval.0 <= *previous_end {
-                    *previous_end = (*previous_end).max(interval.1);
-                } else {
-                    result.push(vec![interval.0, interval.1]);
-                }
+            if interval.0 <= *previous_end {
+                *previous_end = (*previous_end).max(interval.1);
+            } else {
+                result.push(vec![interval.0, interval.1]);
             }
         }
 
