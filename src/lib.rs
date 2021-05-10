@@ -411,6 +411,7 @@ pub mod problem_0524_longest_word_in_dictionary_through_deleting;
 pub mod problem_0525_contiguous_array;
 pub mod problem_0529_minesweeper;
 pub mod problem_0530_minimum_absolute_difference_in_bst;
+pub mod problem_0532_k_diff_pairs_in_an_array;
 pub mod problem_0535_encode_and_decode_tinyurl;
 pub mod problem_0537_complex_number_multiplication;
 pub mod problem_0539_minimum_time_difference;
