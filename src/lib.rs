@@ -422,6 +422,7 @@ pub mod problem_0542_01_matrix;
 pub mod problem_0543_diameter_of_binary_tree;
 pub mod problem_0547_number_of_provinces;
 pub mod problem_0551_student_attendance_record_i;
+pub mod problem_0553_optimal_division;
 pub mod problem_0554_brick_wall;
 pub mod problem_0557_reverse_words_in_a_string_iii;
 pub mod problem_0560_subarray_sum_equals_k;
