@@ -8,6 +8,7 @@
 namespace leet_code::problem_0373_find_k_pairs_with_smallest_sums::bfs_2 {
 using std::initializer_list;
 using std::priority_queue;
+using std::size_t;
 using std::tuple;
 using std::vector;
 
