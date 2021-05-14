@@ -1,7 +1,7 @@
 on: push
 jobs:
     check-code-format:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
           - uses: actions-rs/toolchain@v1
@@ -12,7 +12,7 @@ jobs:
                 '(' -name '*.cpp' -o -name '*.h' ')'
                 -exec clang-format --Werror -n --verbose '{}' +
     clang-tidy:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
           - run: sudo apt-get update && sudo apt-get install --no-install-recommends -y clang-tidy
@@ -43,7 +43,7 @@ jobs:
             matrix:
                 os:
                   - macOS-latest
-                  - ubuntu-20.04
+                  - ubuntu-latest
     tests-windows:
         runs-on: windows-latest
         steps:

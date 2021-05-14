@@ -1,7 +1,7 @@
 on: push
 jobs:
     coverage:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
           - run: sudo apt-get install --no-install-recommends -y ninja-build
