@@ -429,6 +429,7 @@ pub mod problem_0560_subarray_sum_equals_k;
 pub mod problem_0561_array_partition_i;
 pub mod problem_0563_binary_tree_tilt;
 pub mod problem_0566_reshape_the_matrix;
+pub mod problem_0567_permutation_in_string;
 pub mod problem_0572_subtree_of_another_tree;
 pub mod problem_0575_distribute_candies;
 pub mod problem_0594_longest_harmonious_subsequence;
