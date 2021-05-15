@@ -49,14 +49,12 @@ impl Solution {
 
                 if let Some((right, right_length)) = right_queue.pop_front() {
                     for i in 0..left.len() {
-                        if let Some(nexts) = graph.get(&(&right[..i], &right[i + 1..])) {
-                            for next in nexts {
-                                if let Some(left_length) = left_visited.get(next) {
-                                    return left_length + right_length;
-                                } else if let Entry::Vacant(entry) = right_visited.entry(next) {
-                                    entry.insert(right_length + 1);
-                                    right_queue.push_back((next, right_length + 1));
-                                }
+                        for next in &graph[&(&right[..i], &right[i + 1..])] {
+                            if let Some(left_length) = left_visited.get(next) {
+                                return left_length + right_length;
+                            } else if let Entry::Vacant(entry) = right_visited.entry(next) {
+                                entry.insert(right_length + 1);
+                                right_queue.push_back((next, right_length + 1));
                             }
                         }
                     }

@@ -14,6 +14,7 @@ mod tests {
             (("aabcc", "dbbca", "aadbbbaccc"), false),
             (("", "", "a"), false),
             (("a", "", "c"), false),
+            (("", "b", "b"), true),
         ];
 
         for ((s1, s2, s3), expected) in test_cases.iter().copied() {
