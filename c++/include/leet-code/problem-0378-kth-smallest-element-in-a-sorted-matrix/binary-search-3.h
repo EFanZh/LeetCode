@@ -5,6 +5,7 @@
 #include <vector>
 
 namespace leet_code::problem_0378_kth_smallest_element_in_a_sorted_matrix::binary_search_3 {
+using std::ptrdiff_t;
 using std::vector;
 
 class Solution {
