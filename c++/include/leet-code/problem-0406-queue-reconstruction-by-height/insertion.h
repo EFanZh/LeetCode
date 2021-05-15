@@ -6,6 +6,7 @@
 #include <vector>
 
 namespace leet_code::problem_0406_queue_reconstruction_by_height::insertion {
+using std::ptrdiff_t;
 using std::vector;
 
 class Solution {

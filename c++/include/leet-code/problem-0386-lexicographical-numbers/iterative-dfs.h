@@ -4,6 +4,7 @@
 #include <vector>
 
 namespace leet_code::problem_0386_lexicographical_numbers::iterative_dfs {
+using std::size_t;
 using std::vector;
 
 class Solution {
