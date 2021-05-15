@@ -19,6 +19,7 @@ mod tests {
                 &["OXXXO", "XOXOO", "OOXOX", "XXXXX"],
                 &["OXXXO", "XOXOO", "OOXOX", "XXXXX"],
             ),
+            (&["X"], &["X"]),
         ];
 
         for (board, expected) in test_cases.iter().copied() {
