@@ -432,6 +432,7 @@ pub mod problem_0566_reshape_the_matrix;
 pub mod problem_0567_permutation_in_string;
 pub mod problem_0572_subtree_of_another_tree;
 pub mod problem_0575_distribute_candies;
+pub mod problem_0583_delete_operation_for_two_strings;
 pub mod problem_0594_longest_harmonious_subsequence;
 pub mod problem_0605_can_place_flowers;
 pub mod problem_0606_construct_string_from_binary_tree;
