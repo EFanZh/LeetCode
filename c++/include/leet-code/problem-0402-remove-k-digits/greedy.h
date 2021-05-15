@@ -5,6 +5,7 @@
 #include <string>
 
 namespace leet_code::problem_0402_remove_k_digits::greedy {
+using std::ptrdiff_t;
 using std::string;
 
 class Solution {
