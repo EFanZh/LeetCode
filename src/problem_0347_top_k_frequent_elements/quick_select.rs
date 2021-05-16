@@ -1,12 +1,14 @@
 pub struct Solution;
 
 use std::cmp::Ordering;
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
+use std::hash::BuildHasherDefault;
 
 impl Solution {
     pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         let k = k as _;
-        let mut counts = HashMap::new();
+        let mut counts = HashMap::with_hasher(BuildHasherDefault::<DefaultHasher>::default());
 
         for num in nums {
             counts.entry(num).and_modify(|count| *count += 1).or_insert(1);
