@@ -298,6 +298,10 @@ Why is the binary heap solution correct?
 
 Why is the solution correct?
 
+## [517. Super Washing Machines](https://leetcode.com/problems/super-washing-machines/)
+
+Why is the solution correct?
+
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
 Why does the mathematical solution work?

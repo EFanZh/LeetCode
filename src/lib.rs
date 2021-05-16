@@ -403,6 +403,7 @@ pub mod problem_0513_find_bottom_left_tree_value;
 pub mod problem_0514_freedom_trail;
 pub mod problem_0515_find_largest_value_in_each_tree_row;
 pub mod problem_0516_longest_palindromic_subsequence;
+pub mod problem_0517_super_washing_machines;
 pub mod problem_0518_coin_change_2;
 pub mod problem_0520_detect_capital;
 pub mod problem_0521_longest_uncommon_subsequence_i;
