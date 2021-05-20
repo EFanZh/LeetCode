@@ -437,6 +437,7 @@ pub mod problem_0575_distribute_candies;
 pub mod problem_0576_out_of_boundary_paths;
 pub mod problem_0583_delete_operation_for_two_strings;
 pub mod problem_0591_tag_validator;
+pub mod problem_0593_valid_square;
 pub mod problem_0594_longest_harmonious_subsequence;
 pub mod problem_0605_can_place_flowers;
 pub mod problem_0606_construct_string_from_binary_tree;
