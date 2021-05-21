@@ -439,6 +439,7 @@ pub mod problem_0583_delete_operation_for_two_strings;
 pub mod problem_0591_tag_validator;
 pub mod problem_0593_valid_square;
 pub mod problem_0594_longest_harmonious_subsequence;
+pub mod problem_0599_minimum_index_sum_of_two_lists;
 pub mod problem_0605_can_place_flowers;
 pub mod problem_0606_construct_string_from_binary_tree;
 pub mod problem_0609_find_duplicate_file_in_system;
