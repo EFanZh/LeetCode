@@ -31,15 +31,15 @@ impl Solution {
         let [p1, p2, p3, p4] = points;
 
         if p1 == p2 {
-            return false;
+            false
+        } else {
+            let vec_12 = Self::displacement(p1, p2);
+            let vec_24 = Self::displacement(p2, p4);
+
+            Self::squared_norm(vec_12) == Self::squared_norm(vec_24)
+                && Self::inner_product(vec_12, vec_24) == 0
+                && p4 == Self::add(p3, vec_12)
         }
-
-        let vec_12 = Self::displacement(p1, p2);
-        let vec_24 = Self::displacement(p2, p4);
-
-        Self::squared_norm(vec_12) == Self::squared_norm(vec_24)
-            && Self::inner_product(vec_12, vec_24) == 0
-            && p4 == Self::add(p3, vec_12)
     }
 }
 
