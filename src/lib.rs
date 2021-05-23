@@ -407,6 +407,7 @@ pub mod problem_0517_super_washing_machines;
 pub mod problem_0518_coin_change_2;
 pub mod problem_0520_detect_capital;
 pub mod problem_0521_longest_uncommon_subsequence_i;
+pub mod problem_0522_longest_uncommon_subsequence_ii;
 pub mod problem_0523_continuous_subarray_sum;
 pub mod problem_0524_longest_word_in_dictionary_through_deleting;
 pub mod problem_0525_contiguous_array;
