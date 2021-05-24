@@ -411,6 +411,7 @@ pub mod problem_0522_longest_uncommon_subsequence_ii;
 pub mod problem_0523_continuous_subarray_sum;
 pub mod problem_0524_longest_word_in_dictionary_through_deleting;
 pub mod problem_0525_contiguous_array;
+pub mod problem_0526_beautiful_arrangement;
 pub mod problem_0529_minesweeper;
 pub mod problem_0530_minimum_absolute_difference_in_bst;
 pub mod problem_0532_k_diff_pairs_in_an_array;
