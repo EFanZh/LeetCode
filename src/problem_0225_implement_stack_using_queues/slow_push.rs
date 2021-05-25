@@ -15,7 +15,7 @@ impl MyStack {
         for _ in 1..self.q.len() {
             let value = self.q.pop_front().unwrap();
 
-            self.q.push_back(value)
+            self.q.push_back(value);
         }
     }
 

@@ -11,7 +11,7 @@ impl Solution {
         result: &mut Vec<Vec<i32>>,
     ) {
         if target == 0 {
-            result.push(base.clone())
+            result.push(base.clone());
         } else if let Some((&num, &count)) = counts.next() {
             let original_size = base.len();
 

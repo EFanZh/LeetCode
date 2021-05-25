@@ -13,7 +13,7 @@ impl Solution {
                     return iter.next().is_none();
                 }
             } else {
-                stack += 1
+                stack += 1;
             }
         }
 

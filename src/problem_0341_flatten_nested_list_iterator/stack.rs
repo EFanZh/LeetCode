@@ -29,7 +29,7 @@ impl NestedIterator {
     }
 
     fn new(nested_list: Vec<NestedInteger>) -> Self {
-        NestedIterator {
+        Self {
             state: Self::next_state(nested_list.into_iter(), Vec::new()),
         }
     }

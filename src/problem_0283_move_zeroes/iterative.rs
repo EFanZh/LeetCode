@@ -34,7 +34,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn move_zeroes(nums: &mut Vec<i32>) {
-        Self::move_zeroes(nums)
+        Self::move_zeroes(nums);
     }
 }
 

@@ -103,7 +103,7 @@ impl Solution {
                 }
 
                 for top in ((stack_base + min_length)..stack_top).rev() {
-                    result.push(nums[stack_base..top].into())
+                    result.push(nums[stack_base..top].into());
                 }
             }
         }

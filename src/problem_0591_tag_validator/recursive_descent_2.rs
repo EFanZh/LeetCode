@@ -45,14 +45,14 @@ impl Solution {
     }
 
     fn parse_tag(input: &str) -> Option<&str> {
-        let input = input.strip_prefix("<")?;
+        let input = input.strip_prefix('<')?;
         let (tag_name, input) = Self::parse_tag_name(input)?;
-        let input = input.strip_prefix(">")?;
+        let input = input.strip_prefix('>')?;
         let input = Self::parse_content(input);
         let input = input.strip_prefix("</")?;
         let input = input.strip_prefix(tag_name)?;
 
-        input.strip_prefix(">")
+        input.strip_prefix('>')
     }
 
     pub fn is_valid(code: String) -> bool {

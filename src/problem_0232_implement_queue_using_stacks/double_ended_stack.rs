@@ -13,7 +13,7 @@ impl MyQueue {
 
     fn push(&mut self, x: i32) {
         if self.empty() {
-            self.front.push(x)
+            self.front.push(x);
         } else {
             self.back.push(x);
         }
@@ -24,7 +24,7 @@ impl MyQueue {
 
         if self.front.is_empty() {
             while let Some(item) = self.back.pop() {
-                self.front.push(item)
+                self.front.push(item);
             }
         }
 

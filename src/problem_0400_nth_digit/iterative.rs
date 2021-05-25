@@ -18,7 +18,7 @@ impl Solution {
             total_digits = next_total_digits;
             number_length += 1;
             number_count *= 10;
-            base *= 10
+            base *= 10;
         }
 
         let remaining_digits = n - total_digits;

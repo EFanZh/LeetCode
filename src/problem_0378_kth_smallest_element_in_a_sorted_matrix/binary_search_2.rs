@@ -26,9 +26,9 @@ impl Solution {
             }
 
             if rank < k {
-                start = middle + 1
+                start = middle + 1;
             } else {
-                end = middle
+                end = middle;
             }
         }
 

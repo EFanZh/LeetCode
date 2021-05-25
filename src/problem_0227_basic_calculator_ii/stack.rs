@@ -31,11 +31,11 @@ impl Solution {
                     match ops.last() {
                         Some(b'*') => {
                             ops.pop();
-                            *nums.last_mut().unwrap() *= num
+                            *nums.last_mut().unwrap() *= num;
                         }
                         Some(b'/') => {
                             ops.pop();
-                            *nums.last_mut().unwrap() /= num
+                            *nums.last_mut().unwrap() /= num;
                         }
                         _ => nums.push(num),
                     }

@@ -27,7 +27,7 @@ impl Solution {
                     }
 
                     if let Some(right) = node.right.clone() {
-                        queue.push_back(right)
+                        queue.push_back(right);
                     };
                 }
 

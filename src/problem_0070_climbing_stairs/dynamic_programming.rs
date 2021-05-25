@@ -5,7 +5,7 @@ impl Solution {
         let mut cache = (0, 1);
 
         for _ in 0..n {
-            cache = (cache.1, cache.0 + cache.1)
+            cache = (cache.1, cache.0 + cache.1);
         }
 
         cache.1

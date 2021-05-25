@@ -29,7 +29,7 @@ impl NestedIterator {
         let mut iter = nested_list.into_iter();
         let mut stack = Vec::new();
 
-        NestedIterator {
+        Self {
             state: Self::next_state(&mut iter, &mut stack).map(|value| (value, iter, stack)),
         }
     }

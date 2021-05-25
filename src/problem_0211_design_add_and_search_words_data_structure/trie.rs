@@ -16,7 +16,7 @@ impl WordDictionary {
             node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(Self::new()));
         }
 
-        node.has_value = true
+        node.has_value = true;
     }
 
     fn search_helper(&self, word: &[u8]) -> bool {
@@ -28,7 +28,7 @@ impl WordDictionary {
             {
                 child_slot.map_or(false, |child| child.search_helper(rest))
             } else {
-                for child in self.children.iter().flat_map(Option::as_deref) {
+                for child in self.children.iter().filter_map(Option::as_deref) {
                     if child.search_helper(rest) {
                         return true;
                     }
@@ -52,7 +52,7 @@ impl super::WordDictionary for WordDictionary {
     }
 
     fn add_word(&mut self, word: String) {
-        self.add_word(word)
+        self.add_word(word);
     }
 
     fn search(&self, word: String) -> bool {

@@ -6,11 +6,11 @@ impl Solution {
     fn delete_duplicates_helper(tail: &mut ListNode, head: Option<Box<ListNode>>) {
         if let Some(mut node) = head {
             if node.val == tail.val {
-                Self::delete_duplicates_helper(tail, node.next)
+                Self::delete_duplicates_helper(tail, node.next);
             } else {
                 let next = node.next.take();
 
-                Self::delete_duplicates_helper(tail.next.get_or_insert(node), next)
+                Self::delete_duplicates_helper(tail.next.get_or_insert(node), next);
             }
         }
     }

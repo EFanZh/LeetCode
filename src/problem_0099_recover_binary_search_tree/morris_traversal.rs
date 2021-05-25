@@ -80,14 +80,14 @@ impl Solution {
         }
 
         if let State::GotFirst(first, second, _) | State::GotSecond(first, second) = state {
-            mem::swap(&mut first.borrow_mut().val, &mut second.borrow_mut().val)
+            mem::swap(&mut first.borrow_mut().val, &mut second.borrow_mut().val);
         }
     }
 }
 
 impl super::Solution for Solution {
     fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
-        Self::recover_tree(root)
+        Self::recover_tree(root);
     }
 }
 

@@ -48,7 +48,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn reorder_list(head: &mut Option<Box<ListNode>>) {
-        Self::reorder_list(head)
+        Self::reorder_list(head);
     }
 }
 

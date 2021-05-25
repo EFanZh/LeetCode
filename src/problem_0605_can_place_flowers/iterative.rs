@@ -18,7 +18,7 @@ impl Solution {
 
                     prev = (1, 0);
                 } else {
-                    prev = (prev.1, num)
+                    prev = (prev.1, num);
                 }
             }
 

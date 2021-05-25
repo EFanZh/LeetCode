@@ -119,7 +119,7 @@ impl Solution {
                 let middle = target.len();
 
                 Self::get_skyline_helper(right_buildings, target, merge_buffer);
-                Self::merge(target, left, middle, merge_buffer)
+                Self::merge(target, left, middle, merge_buffer);
             }
         }
     }

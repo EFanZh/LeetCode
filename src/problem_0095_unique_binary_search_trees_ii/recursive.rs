@@ -17,8 +17,8 @@ impl Solution {
                             val,
                             left: left.clone(),
                             right,
-                        }))))
-                    })
+                        }))));
+                    });
                 });
             }
         }

@@ -11,7 +11,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn rotate(nums: &mut Vec<i32>, k: i32) {
-        Self::rotate(nums, k)
+        Self::rotate(nums, k);
     }
 }
 

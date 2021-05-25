@@ -43,7 +43,7 @@ impl Twitter {
             let mut queue = user
                 .followees
                 .iter()
-                .flat_map(|followee_id| {
+                .filter_map(|followee_id| {
                     self.users
                         .get(followee_id)
                         .and_then(|followee| followee.tweets.split_last())
@@ -95,7 +95,7 @@ impl super::Twitter for Twitter {
     }
 
     fn post_tweet(&mut self, user_id: i32, tweet_id: i32) {
-        self.post_tweet(user_id, tweet_id)
+        self.post_tweet(user_id, tweet_id);
     }
 
     fn get_news_feed(&self, user_id: i32) -> Vec<i32> {
@@ -103,11 +103,11 @@ impl super::Twitter for Twitter {
     }
 
     fn follow(&mut self, follower_id: i32, followee_id: i32) {
-        self.follow(follower_id, followee_id)
+        self.follow(follower_id, followee_id);
     }
 
     fn unfollow(&mut self, follower_id: i32, followee_id: i32) {
-        self.unfollow(follower_id, followee_id)
+        self.unfollow(follower_id, followee_id);
     }
 }
 

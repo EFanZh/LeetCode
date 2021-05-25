@@ -37,7 +37,7 @@ mod tests {
                 }
 
                 for &[course, prerequisite] in prerequisites {
-                    assert!(course_indices[prerequisite as usize] < course_indices[course as usize])
+                    assert!(course_indices[prerequisite as usize] < course_indices[course as usize]);
                 }
             } else {
                 assert!(result.is_empty());

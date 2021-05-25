@@ -20,7 +20,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn sort_colors(nums: &mut Vec<i32>) {
-        Self::sort_colors(nums)
+        Self::sort_colors(nums);
     }
 }
 

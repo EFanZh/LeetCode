@@ -71,7 +71,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn game_of_life(board: &mut Vec<Vec<i32>>) {
-        Self::game_of_life(board)
+        Self::game_of_life(board);
     }
 }
 

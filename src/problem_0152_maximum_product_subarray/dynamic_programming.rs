@@ -16,7 +16,7 @@ impl Solution {
 
             min_product = (min_product * num).min(num);
             max_product = (max_product * num).max(num);
-            result = result.max(max_product)
+            result = result.max(max_product);
         }
 
         result

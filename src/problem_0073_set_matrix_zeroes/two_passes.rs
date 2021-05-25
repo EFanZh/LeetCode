@@ -52,7 +52,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
-        Self::set_zeroes(matrix)
+        Self::set_zeroes(matrix);
     }
 }
 

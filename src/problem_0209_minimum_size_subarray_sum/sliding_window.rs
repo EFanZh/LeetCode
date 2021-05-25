@@ -22,7 +22,7 @@ impl Solution {
                         break;
                     }
 
-                    start += 1
+                    start += 1;
                 }
             }
         }

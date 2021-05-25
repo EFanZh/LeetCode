@@ -58,7 +58,7 @@ impl<T: Eq + Hash> FromIterator<T> for HashMultiSet<T> {
 impl<T: Eq + Hash> Extend<T> for HashMultiSet<T> {
     fn extend<I: IntoIterator<Item = T>>(&mut self, iter: I) {
         for item in iter {
-            self.insert(item)
+            self.insert(item);
         }
     }
 }

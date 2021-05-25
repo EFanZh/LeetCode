@@ -9,7 +9,7 @@ impl Solution {
             temp ^= i;
             temp ^= num;
 
-            i += 1
+            i += 1;
         }
 
         temp

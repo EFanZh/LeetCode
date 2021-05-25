@@ -23,7 +23,7 @@ impl Solution {
                     let next_low = Self::dfs(graph, next, vertex, time + 1, states, result);
 
                     if next_low > time {
-                        result.push(vec![vertex, next])
+                        result.push(vec![vertex, next]);
                     }
 
                     low = low.min(next_low);

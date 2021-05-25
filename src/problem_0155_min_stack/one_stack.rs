@@ -34,11 +34,11 @@ impl super::MinStack for MinStack {
     }
 
     fn push(&mut self, x: i32) {
-        self.push(x)
+        self.push(x);
     }
 
     fn pop(&mut self) {
-        self.pop()
+        self.pop();
     }
 
     fn top(&self) -> i32 {

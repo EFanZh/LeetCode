@@ -15,13 +15,13 @@ impl Solution {
                 } else {
                     false
                 }
-            })
+            });
         }
     }
 
     fn helper_0(callback: &mut dyn FnMut(bool) -> bool) {
         if callback(false) && callback(true) {
-            Self::helper_1(callback)
+            Self::helper_1(callback);
         }
     }
 
