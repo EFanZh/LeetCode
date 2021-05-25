@@ -45,7 +45,9 @@ fn generate_report<P: AsRef<Path>>(repository: P, target: P) {
 
 fn main() {
     let mut args = env::args();
-    let _ = args.next().unwrap();
+
+    args.next().unwrap();
+
     let repository = args.next().unwrap();
     let target = args.next().unwrap();
 

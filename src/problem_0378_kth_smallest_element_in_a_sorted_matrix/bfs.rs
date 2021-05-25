@@ -84,7 +84,7 @@ impl Solution {
                 Self::heap_push(&mut queue, (node.0 + 1, node.1), get_key);
             }
 
-            node = Self::heap_pop(&mut queue, get_key).unwrap()
+            node = Self::heap_pop(&mut queue, get_key).unwrap();
         }
 
         matrix[node.0][node.1]

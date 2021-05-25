@@ -30,7 +30,10 @@ impl Solution {
                 reversed = Some(node);
             }
 
-            unsafe { *reversed_tail.as_mut() = rest };
+            unsafe {
+                *reversed_tail.as_mut() = rest;
+            }
+
             *tail = reversed;
         }
 

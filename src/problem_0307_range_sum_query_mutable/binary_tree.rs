@@ -108,7 +108,7 @@ impl super::NumArray for NumArray {
     }
 
     fn update(&mut self, i: i32, val: i32) {
-        self.update(i, val)
+        self.update(i, val);
     }
 
     fn sum_range(&self, i: i32, j: i32) -> i32 {

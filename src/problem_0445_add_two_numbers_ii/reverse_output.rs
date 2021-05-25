@@ -50,7 +50,7 @@ impl Solution {
         }
 
         if carry != 0 {
-            result = Some(Box::new(ListNode { val: 1, next: result }))
+            result = Some(Box::new(ListNode { val: 1, next: result }));
         }
 
         result

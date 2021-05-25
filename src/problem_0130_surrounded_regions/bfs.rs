@@ -84,7 +84,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn solve(board: &mut Vec<Vec<char>>) {
-        Self::solve(board)
+        Self::solve(board);
     }
 }
 

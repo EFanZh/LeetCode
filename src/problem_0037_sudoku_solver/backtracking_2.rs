@@ -71,7 +71,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn solve_sudoku(board: &mut Vec<Vec<char>>) {
-        Self::solve_sudoku(board)
+        Self::solve_sudoku(board);
     }
 }
 

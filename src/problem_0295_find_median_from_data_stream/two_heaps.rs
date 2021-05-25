@@ -50,7 +50,7 @@ impl super::MedianFinder for MedianFinder {
     }
 
     fn add_num(&mut self, num: i32) {
-        self.add_num(num)
+        self.add_num(num);
     }
 
     fn find_median(&self) -> f64 {

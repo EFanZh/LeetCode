@@ -43,7 +43,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
-        Self::flatten(root)
+        Self::flatten(root);
     }
 }
 

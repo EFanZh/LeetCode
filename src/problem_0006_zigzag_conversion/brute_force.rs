@@ -12,7 +12,7 @@ impl Solution {
         let mut result = vec![0; s.len()];
         let mut iter = result.iter_mut();
 
-        for &c in chunks.clone().flat_map(|chunk| chunk.first()) {
+        for &c in chunks.clone().filter_map(|chunk| chunk.first()) {
             *iter.next().unwrap() = c;
         }
 
@@ -28,7 +28,7 @@ impl Solution {
             }
         }
 
-        for &c in chunks.flat_map(|chunk| chunk.get(num_rows - 1)) {
+        for &c in chunks.filter_map(|chunk| chunk.get(num_rows - 1)) {
             *iter.next().unwrap() = c;
         }
 

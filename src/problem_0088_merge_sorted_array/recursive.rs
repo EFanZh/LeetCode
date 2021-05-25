@@ -46,7 +46,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
-        Self::merge(nums1, m, nums2, n)
+        Self::merge(nums1, m, nums2, n);
     }
 }
 

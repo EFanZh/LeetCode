@@ -31,7 +31,7 @@ impl Solution {
 
             base.pop();
         } else {
-            result.push(base.clone())
+            result.push(base.clone());
         }
     }
 

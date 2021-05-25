@@ -230,11 +230,11 @@ impl super::AllOne for AllOne {
     }
 
     fn inc(&mut self, key: String) {
-        self.inc(key)
+        self.inc(key);
     }
 
     fn dec(&mut self, key: String) {
-        self.dec(key)
+        self.dec(key);
     }
 
     fn get_max_key(&self) -> String {

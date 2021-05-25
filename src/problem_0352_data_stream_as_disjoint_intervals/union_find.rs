@@ -83,7 +83,7 @@ impl super::SummaryRanges for SummaryRanges {
     }
 
     fn add_num(&mut self, val: i32) {
-        self.add_num(val)
+        self.add_num(val);
     }
 
     fn get_intervals(&self) -> Vec<Vec<i32>> {

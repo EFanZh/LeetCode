@@ -10,7 +10,7 @@ impl Solution {
     fn trie_contains_word(mut root: &Node, word: &[u8]) -> bool {
         for c in word {
             if let Some(child) = root.children[usize::from(c - b'a')].as_deref() {
-                root = child
+                root = child;
             } else {
                 return false;
             }

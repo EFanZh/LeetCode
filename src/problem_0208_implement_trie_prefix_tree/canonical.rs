@@ -16,7 +16,7 @@ impl Trie {
             node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(Self::new()));
         }
 
-        node.has_value = true
+        node.has_value = true;
     }
 
     fn search(&self, word: String) -> bool {
@@ -54,7 +54,7 @@ impl super::Trie for Trie {
     }
 
     fn insert(&mut self, word: String) {
-        self.insert(word)
+        self.insert(word);
     }
 
     fn search(&self, word: String) -> bool {

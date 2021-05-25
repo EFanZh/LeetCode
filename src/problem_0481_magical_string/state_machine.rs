@@ -13,46 +13,46 @@ enum State {
 
 impl State {
     fn next(&mut self) -> bool {
-        match mem::replace(self, State::S0) {
+        match mem::replace(self, Self::S0) {
             State::S0 => {
-                *self = State::S1;
+                *self = Self::S1;
 
                 true
             }
             State::S1 => {
-                *self = State::S2(Box::new(State::S0));
+                *self = Self::S2(Box::new(Self::S0));
 
                 false
             }
             State::S2(mut inner) => {
                 if inner.next() {
-                    *self = State::S3(inner);
+                    *self = Self::S3(inner);
 
                     false
                 } else {
-                    *self = State::S4(inner);
+                    *self = Self::S4(inner);
 
                     true
                 }
             }
             State::S3(inner) => {
-                *self = State::S4(inner);
+                *self = Self::S4(inner);
 
                 true
             }
             State::S4(mut inner) => {
                 if inner.next() {
-                    *self = State::S5(inner);
+                    *self = Self::S5(inner);
 
                     true
                 } else {
-                    *self = State::S2(inner);
+                    *self = Self::S2(inner);
 
                     false
                 }
             }
             State::S5(inner) => {
-                *self = State::S2(inner);
+                *self = Self::S2(inner);
 
                 false
             }

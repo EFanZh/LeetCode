@@ -145,7 +145,7 @@ impl PartialEq for State {
 
 impl Hash for State {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        self.fields().hash(state)
+        self.fields().hash(state);
     }
 }
 
@@ -166,7 +166,7 @@ impl Solution {
                     }
 
                     if visited.insert(next) {
-                        queue.push_back(next)
+                        queue.push_back(next);
                     }
                 }
             }

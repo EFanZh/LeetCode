@@ -62,7 +62,7 @@ impl Solution {
 
     fn heap_build<T, K: Ord>(heap: &mut [T], mut get_key: impl FnMut(&T) -> K) {
         for i in (0..heap.len() / 2).rev() {
-            Self::heap_fix(heap, i, &mut get_key)
+            Self::heap_fix(heap, i, &mut get_key);
         }
     }
 

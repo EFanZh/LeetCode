@@ -27,13 +27,13 @@ impl Solution {
 
                 match op {
                     b'+' => Self::helper(left_nums, left_ops, &mut |lhs| {
-                        Self::helper(right_nums, right_ops, &mut |rhs| callback(lhs + rhs))
+                        Self::helper(right_nums, right_ops, &mut |rhs| callback(lhs + rhs));
                     }),
                     b'-' => Self::helper(left_nums, left_ops, &mut |lhs| {
-                        Self::helper(right_nums, right_ops, &mut |rhs| callback(lhs - rhs))
+                        Self::helper(right_nums, right_ops, &mut |rhs| callback(lhs - rhs));
                     }),
                     _ => Self::helper(left_nums, left_ops, &mut |lhs| {
-                        Self::helper(right_nums, right_ops, &mut |rhs| callback(lhs * rhs))
+                        Self::helper(right_nums, right_ops, &mut |rhs| callback(lhs * rhs));
                     }),
                 }
             }

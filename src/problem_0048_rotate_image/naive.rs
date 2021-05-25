@@ -23,7 +23,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn rotate(matrix: &mut Vec<Vec<i32>>) {
-        Self::rotate(matrix)
+        Self::rotate(matrix);
     }
 }
 

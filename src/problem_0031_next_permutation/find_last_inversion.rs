@@ -29,7 +29,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn next_permutation(nums: &mut Vec<i32>) {
-        Self::next_permutation(nums)
+        Self::next_permutation(nums);
     }
 }
 

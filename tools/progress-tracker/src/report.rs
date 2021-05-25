@@ -20,7 +20,7 @@ fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<String>> {
 }
 
 fn write_hyper_link(writer: &mut Writer, href: &str, text: &str) {
-    writer.element("a", &[("href", href)], |w| w.text(text))
+    writer.element("a", &[("href", href)], |w| w.text(text));
 }
 
 fn write_problem_link(writer: &mut Writer, problem: &Problem) {
@@ -70,17 +70,17 @@ figure { display: flex; justify-content: center; }
 .detail>tbody>tr:nth-child(odd) { background: #eee; }
 .detail>tbody>tr>td>ul { margin: 0; padding: 0; list-style-type: none; }
 .not-done>td { opacity: 0.382; }"#,
-                )
+                );
             });
         });
         w.element("body", &[], |w| {
             w.element("h1", &[], |w| w.text(TITLE));
             w.element("div", &[("style", "text-align: center;")], |w| {
-                write_hyper_link(w, "https://github.com/EFanZh/LeetCode", "Source code")
+                write_hyper_link(w, "https://github.com/EFanZh/LeetCode", "Source code");
             });
             w.element("h2", &[], |w| w.text("Progress Chart"));
             w.element("figure", &[], |w| {
-                w.empty_element("img", &[("src", progress_chart), ("alt", "Progress Chart")])
+                w.empty_element("img", &[("src", progress_chart), ("alt", "Progress Chart")]);
             });
             w.element("h2", &[], |w| w.text("Detail"));
             w.element("figure", &[], |w| {
@@ -111,9 +111,9 @@ figure { display: flex; justify-content: center; }
                                             for solution in solution_list {
                                                 w.element("li", &[], |w| {
                                                     write_solution_link(w, &problem_id, solution);
-                                                })
+                                                });
                                             }
-                                        })
+                                        });
                                     });
                                 });
                             } else {
@@ -127,7 +127,7 @@ figure { display: flex; justify-content: center; }
                             }
                         }
                     });
-                })
+                });
             });
         });
     });

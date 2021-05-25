@@ -16,7 +16,7 @@ impl Solution {
             (row + 1, column + 1),
         ] {
             if let Some(slot) = board.get_mut(r).and_then(|row| row.get_mut(c)) {
-                f((r, c), slot)
+                f((r, c), slot);
             }
         }
     }
@@ -50,7 +50,7 @@ impl Solution {
                     Self::neighbors(&mut board, position, |next, slot| {
                         if *slot == 'E' {
                             *slot = 'V';
-                            queue.push_back(next)
+                            queue.push_back(next);
                         }
                     });
 

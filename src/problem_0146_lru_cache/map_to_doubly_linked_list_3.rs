@@ -116,7 +116,7 @@ impl super::LRUCache for LRUCache {
     }
 
     fn put(&mut self, key: i32, value: i32) {
-        self.put(key, value)
+        self.put(key, value);
     }
 }
 

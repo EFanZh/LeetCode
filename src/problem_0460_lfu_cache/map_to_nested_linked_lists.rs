@@ -376,7 +376,7 @@ impl super::LFUCache for LFUCache {
     }
 
     fn put(&mut self, key: i32, value: i32) {
-        self.put(key, value)
+        self.put(key, value);
     }
 }
 

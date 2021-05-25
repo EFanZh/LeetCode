@@ -27,7 +27,7 @@ impl Solution {
                     }
                 }
 
-                prev = num
+                prev = num;
             }
 
             true

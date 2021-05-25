@@ -57,7 +57,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn wiggle_sort(nums: &mut Vec<i32>) {
-        Self::wiggle_sort(nums)
+        Self::wiggle_sort(nums);
     }
 }
 

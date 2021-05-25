@@ -14,7 +14,7 @@ impl Solution {
 
 impl super::Solution for Solution {
     fn reverse_string(s: &mut Vec<char>) {
-        Self::reverse_string(s)
+        Self::reverse_string(s);
     }
 }
 

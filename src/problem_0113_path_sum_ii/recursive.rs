@@ -39,7 +39,7 @@ impl Solution {
         let mut result = Vec::new();
 
         if let Some(node) = root {
-            Self::path_sum_helper(&node.borrow(), sum, &mut Vec::new(), &mut result)
+            Self::path_sum_helper(&node.borrow(), sum, &mut Vec::new(), &mut result);
         }
 
         result

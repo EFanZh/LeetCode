@@ -17,7 +17,7 @@ impl Solution {
             cache[i] = max_length;
 
             if max_length > result {
-                result = max_length
+                result = max_length;
             }
         }
 

@@ -16,7 +16,7 @@ impl MyStack {
 
     fn push(&mut self, x: i32) {
         if let Some(value) = self.t.pop_front() {
-            self.q.push_back(value)
+            self.q.push_back(value);
         }
 
         self.t.push_back(x);

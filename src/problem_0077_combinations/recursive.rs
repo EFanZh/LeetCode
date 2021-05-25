@@ -8,7 +8,7 @@ impl Solution {
             for i in k..=n {
                 base[(k - 1) as usize] = i;
 
-                Self::combine_helper(i - 1, k - 1, base, result)
+                Self::combine_helper(i - 1, k - 1, base, result);
             }
         }
     }

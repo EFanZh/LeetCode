@@ -15,7 +15,7 @@ impl Solution {
                     end += 1;
                 }
 
-                result = result.max(end - num)
+                result = result.max(end - num);
             }
         }
 

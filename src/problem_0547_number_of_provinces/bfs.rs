@@ -29,7 +29,7 @@ impl Solution {
                     }
 
                     if let Some(next_node) = queue.pop_front() {
-                        node = next_node
+                        node = next_node;
                     } else {
                         break;
                     }

@@ -64,7 +64,7 @@ impl Solution {
                 let need_to_delete = length - 20;
 
                 if need_to_delete <= zero {
-                    replace_steps -= need_to_delete
+                    replace_steps -= need_to_delete;
                 } else if need_to_delete <= (zero + one) {
                     replace_steps -= zero;
                     replace_steps -= (need_to_delete - zero) / 2;

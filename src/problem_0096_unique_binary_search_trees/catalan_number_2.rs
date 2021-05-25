@@ -12,7 +12,7 @@ impl Solution {
 
             for i in 2..n {
                 result *= n + i + 1;
-                result /= i
+                result /= i;
             }
 
             (result / n) as _

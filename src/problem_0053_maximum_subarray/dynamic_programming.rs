@@ -7,7 +7,7 @@ impl Solution {
 
         for num in nums {
             prev_max_sum = if prev_max_sum <= 0 { num } else { prev_max_sum + num };
-            max_sum = max_sum.max(prev_max_sum)
+            max_sum = max_sum.max(prev_max_sum);
         }
 
         max_sum

@@ -25,7 +25,7 @@ impl Solution {
                     let next_low = Self::dfs(graph, next, vertex, time, states, result);
 
                     if next_low > discovery_time {
-                        result.push(vec![vertex, next])
+                        result.push(vec![vertex, next]);
                     }
 
                     low = low.min(next_low);

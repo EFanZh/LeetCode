@@ -10,7 +10,7 @@ impl Solution {
                 let diff_1 = nums[start + (length - 1)] - cache[start];
                 let diff_2 = nums[start] - cache[start + 1];
 
-                cache[start] = diff_1.max(diff_2)
+                cache[start] = diff_1.max(diff_2);
             }
         }
 
