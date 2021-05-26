@@ -27,7 +27,6 @@
     clippy::multiple_inherent_impl,
     clippy::mutex_integer,
     clippy::needless_borrow,
-    clippy::panic,
     clippy::panic_in_result_fn,
     clippy::path_buf_push_overwrite,
     clippy::pedantic,
