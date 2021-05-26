@@ -18,15 +18,27 @@ mod tests {
     pub fn run<D: WordDictionary>() {
         use Operation::{AddWord, Search};
 
-        let test_cases = [&[
-            AddWord("bad"),
-            AddWord("dad"),
-            AddWord("mad"),
-            Search("pad", false),
-            Search("bad", true),
-            Search(".ad", true),
-            Search("b..", true),
-        ] as &[_]];
+        let test_cases = [
+            &[
+                AddWord("bad"),
+                AddWord("dad"),
+                AddWord("mad"),
+                Search("pad", false),
+                Search("bad", true),
+                Search(".ad", true),
+                Search("b..", true),
+            ] as &[_],
+            &[
+                AddWord("a"),
+                AddWord("a"),
+                Search(".", true),
+                Search("a", true),
+                Search("aa", false),
+                Search("a", true),
+                Search(".a", false),
+                Search("a.", false),
+            ],
+        ];
 
         for operations in test_cases.iter().copied() {
             let mut word_dictionary = D::new();
