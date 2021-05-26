@@ -22,7 +22,7 @@ impl Solution {
                 let mut node = root;
 
                 for (i, c) in s.iter().copied().enumerate() {
-                    if let Some(child) = node.children[(c - b'a') as usize].as_deref() {
+                    if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
                         if child.has_value {
                             for tail in Self::word_break_helper(&s[i + 1..], root, cache).iter() {
                                 if tail.is_empty() {
@@ -58,7 +58,7 @@ impl Solution {
             let mut node = &mut root;
 
             for c in word.bytes() {
-                node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(TrieNode::default()));
+                node = node.children[usize::from(c - b'a')].get_or_insert_with(Box::default);
             }
 
             node.has_value = true;

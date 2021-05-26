@@ -9,7 +9,7 @@ impl NumArray {
     fn new(mut nums: Vec<i32>) -> Self {
         Self {
             tree: if nums.is_empty() {
-                Box::new([])
+                Box::default()
             } else {
                 let internal_nodes = nums.len() - 1;
 

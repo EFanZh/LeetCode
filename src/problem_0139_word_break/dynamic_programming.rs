@@ -15,7 +15,7 @@ impl Solution {
             let mut node = &mut root;
 
             for c in word.bytes() {
-                node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(TrieNode::default()));
+                node = node.children[usize::from(c - b'a')].get_or_insert_with(Box::default);
             }
 
             node.has_value = true;
@@ -29,7 +29,7 @@ impl Solution {
             let mut node = &root;
 
             for (j, c) in s.iter().enumerate().skip(i) {
-                if let Some(child) = node.children[(c - b'a') as usize].as_deref() {
+                if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
                     if child.has_value && cache[j + 1] {
                         cache[i] = true;
 
