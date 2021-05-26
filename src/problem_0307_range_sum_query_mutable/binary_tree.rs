@@ -32,7 +32,7 @@ impl NumArray {
 
         Self {
             tree: match nums.as_slice() {
-                [] => Box::new([]),
+                [] => Box::default(),
                 &[num] => Box::new([num]),
                 nums => {
                     let mut tree = Vec::with_capacity(nums.len() * 2 - 1);

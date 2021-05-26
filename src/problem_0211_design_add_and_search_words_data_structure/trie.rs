@@ -13,7 +13,7 @@ impl WordDictionary {
         let mut node = self;
 
         for c in word.into_bytes() {
-            node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(Self::new()));
+            node = node.children[usize::from(c - b'a')].get_or_insert_with(Box::default);
         }
 
         node.has_value = true;

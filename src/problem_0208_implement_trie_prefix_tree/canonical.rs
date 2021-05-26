@@ -13,7 +13,7 @@ impl Trie {
         let mut node = self;
 
         for c in word.into_bytes() {
-            node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(Self::new()));
+            node = node.children[usize::from(c - b'a')].get_or_insert_with(Box::default);
         }
 
         node.has_value = true;
@@ -23,7 +23,7 @@ impl Trie {
         let mut node = self;
 
         for c in word.into_bytes() {
-            if let Some(child) = node.children[(c - b'a') as usize].as_deref() {
+            if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
                 node = child;
             } else {
                 return false;
@@ -37,7 +37,7 @@ impl Trie {
         let mut node = self;
 
         for c in prefix.into_bytes() {
-            if let Some(child) = node.children[(c - b'a') as usize].as_deref() {
+            if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
                 node = child;
             } else {
                 return false;

@@ -40,7 +40,7 @@ impl Solution {
             let mut node = &mut root;
 
             for c in word.bytes() {
-                node = node.children[(c - b'a') as usize].get_or_insert_with(|| Box::new(TrieNode::default()));
+                node = node.children[usize::from(c - b'a')].get_or_insert_with(Box::default);
             }
 
             node.has_value = true;
@@ -52,7 +52,7 @@ impl Solution {
             let mut trie_node = &root;
 
             for (j, c) in s.iter().enumerate().skip(i) {
-                if let Some(child) = trie_node.children[(c - b'a') as usize].as_deref() {
+                if let Some(child) = trie_node.children[usize::from(c - b'a')].as_deref() {
                     if child.has_value && graph.get(j + 1).map_or(true, |next| !next.is_empty()) {
                         graph[i].push(j + 1);
                     }
