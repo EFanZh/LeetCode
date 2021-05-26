@@ -6,14 +6,13 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
 
     pub fn run<S: Solution>() {
         let test_cases = [((2.0, 10), 1024.0), ((2.1, 3), 9.261), ((2.0, -2), 0.25)];
 
         for ((x, n), expected) in test_cases.iter().copied() {
-            assert!(test_utilities::almose_equal(S::my_pow(x, n), expected));
+            approx::assert_relative_eq!(S::my_pow(x, n), expected);
         }
     }
 }

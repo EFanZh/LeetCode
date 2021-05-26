@@ -9,3 +9,6 @@ members = ["tools/check-cpp-code-format", "tools/progress-tracker", "xtask"]
 
 [dependencies]
 rand = "*"
+
+[dev-dependencies]
+approx = "*"

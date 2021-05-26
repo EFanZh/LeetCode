@@ -11,7 +11,6 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
 
     pub fn run<S: Solution>() {
@@ -26,10 +25,10 @@ mod tests {
         ];
 
         for ((nums1, nums2), expected_result) in test_cases.iter().copied() {
-            assert!(test_utilities::almose_equal(
+            approx::assert_relative_eq!(
                 S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()),
-                expected_result
-            ));
+                expected_result,
+            );
         }
     }
 }
