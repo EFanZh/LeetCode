@@ -20,14 +20,18 @@ mod tests {
     pub fn run<T: Trie>() {
         use Operation::{Insert, Search, StartsWith};
 
-        let test_cases = [&[
-            Insert("apple"),
-            Search("apple", true),
-            Search("app", false),
-            StartsWith("app", true),
-            Insert("app"),
-            Search("app", true),
-        ] as &[_]];
+        let test_cases = [
+            &[
+                Insert("apple"),
+                Search("apple", true),
+                Search("app", false),
+                StartsWith("app", true),
+                Insert("app"),
+                Search("app", true),
+            ] as &[_],
+            &[Search("a", false)],
+            &[StartsWith("a", false)],
+        ];
 
         for operations in test_cases.iter().copied() {
             let mut trie = T::new();
