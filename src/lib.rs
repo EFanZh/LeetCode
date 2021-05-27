@@ -493,6 +493,7 @@ pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0623_add_one_row_to_tree;
 pub mod problem_0628_maximum_product_of_three_numbers;
+pub mod problem_0633_sum_of_square_numbers;
 pub mod problem_0647_palindromic_substrings;
 pub mod problem_0657_robot_return_to_origin;
 pub mod problem_0661_image_smoother;
