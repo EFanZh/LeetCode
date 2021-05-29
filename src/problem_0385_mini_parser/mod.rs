@@ -12,24 +12,24 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
+        use NestedInteger::{Int, List};
+
         let test_cases = [
-            ("324", NestedInteger::Int(324)),
+            ("324", Int(324)),
             (
                 "[123,[456,[789]]]",
-                NestedInteger::List(vec![
-                    NestedInteger::Int(123),
-                    NestedInteger::List(vec![
-                        NestedInteger::Int(456),
-                        NestedInteger::List(vec![NestedInteger::Int(789)]),
-                    ]),
-                ]),
+                List(vec![Int(123), List(vec![Int(456), List(vec![Int(789)])])]),
             ),
+            ("[1,23,-45]", List(vec![Int(1), Int(23), Int(-45)])),
             (
-                "[1,23,-45]",
-                NestedInteger::List(vec![
-                    NestedInteger::Int(1),
-                    NestedInteger::Int(23),
-                    NestedInteger::Int(-45),
+                "[123,456,[788,799,833],[[]],10,[]]",
+                List(vec![
+                    Int(123),
+                    Int(456),
+                    List(vec![Int(788), Int(799), Int(833)]),
+                    List(vec![List(vec![])]),
+                    Int(10),
+                    List(vec![]),
                 ]),
             ),
         ];
