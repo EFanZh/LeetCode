@@ -37,6 +37,7 @@ mod tests {
                 ),
                 false,
             ),
+            ((&[&[-5]], -10), false),
         ];
 
         for ((matrix, target), expected) in test_cases.iter().copied() {

@@ -12,7 +12,6 @@ pub trait MyQueue {
 mod tests {
     use super::MyQueue;
 
-    #[derive(Clone, Copy)]
     enum Operation {
         Push(i32),
         Pop(i32),
@@ -23,13 +22,27 @@ mod tests {
     pub fn run<Q: MyQueue>() {
         use Operation::{Empty, Peek, Pop, Push};
 
-        let test_cases = [&[Push(1), Push(2), Peek(1), Pop(1), Empty(false)] as &[_]];
+        let test_cases = [
+            &[Push(1), Push(2), Peek(1), Pop(1), Empty(false)] as &[_],
+            &[
+                Push(1),
+                Push(2),
+                Push(3),
+                Push(4),
+                Pop(1),
+                Push(5),
+                Pop(2),
+                Pop(3),
+                Pop(4),
+                Pop(5),
+            ],
+        ];
 
         for test_case in test_cases.iter().copied() {
             let mut queue = Q::new();
 
-            for operation in test_case.iter().copied() {
-                match operation {
+            for operation in test_case {
+                match *operation {
                     Push(value) => queue.push(value),
                     Pop(value) => assert_eq!(queue.pop(), value),
                     Peek(value) => assert_eq!(queue.peek(), value),

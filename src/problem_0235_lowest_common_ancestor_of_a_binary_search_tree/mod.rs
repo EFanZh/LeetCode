@@ -76,6 +76,26 @@ mod tests {
                 2,
             ),
             ((&[Some(2), Some(1)], 2, 1), 2),
+            (
+                (
+                    &[
+                        Some(6),
+                        Some(2),
+                        Some(8),
+                        Some(0),
+                        Some(4),
+                        Some(7),
+                        Some(9),
+                        None,
+                        None,
+                        Some(3),
+                        Some(5),
+                    ],
+                    3,
+                    5,
+                ),
+                4,
+            ),
         ];
 
         for ((root, p, q), expected) in test_cases.iter().copied() {
