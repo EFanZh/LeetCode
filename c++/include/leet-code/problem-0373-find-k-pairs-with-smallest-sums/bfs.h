@@ -19,37 +19,34 @@ public:
         auto result = vector<vector<int>>{};
 
         result.reserve(k_2);
+        result.emplace_back(initializer_list<int>{nums1.front(), nums2.front()});
 
-        if (k_2 != 0 && !nums1.empty() && !nums2.empty()) {
-            result.emplace_back(initializer_list<int>{nums1.front(), nums2.front()});
+        auto node = tuple{size_t{0}, size_t{0}};
 
-            auto node = tuple{size_t{0}, size_t{0}};
+        auto queue = priority_queue{[&](const tuple<size_t, size_t> &lhs, const tuple<size_t, size_t> &rhs) {
+                                        return nums1[std::get<0>(rhs)] + nums2[std::get<1>(rhs)] <
+                                               nums1[std::get<0>(lhs)] + nums2[std::get<1>(lhs)];
+                                    },
+                                    vector<tuple<size_t, size_t>>{}};
 
-            auto queue = priority_queue{[&](const tuple<size_t, size_t> &lhs, const tuple<size_t, size_t> &rhs) {
-                                            return nums1[std::get<0>(rhs)] + nums2[std::get<1>(rhs)] <
-                                                   nums1[std::get<0>(lhs)] + nums2[std::get<1>(lhs)];
-                                        },
-                                        vector<tuple<size_t, size_t>>{}};
+        while (result.size() != k_2) {
+            const auto [i, j] = node;
 
-            while (result.size() != k_2) {
-                const auto [i, j] = node;
-
-                if (j != nums2.size() - 1) {
-                    queue.emplace(i, j + 1);
-                }
-
-                if (j == 0 && i != nums1.size() - 1) {
-                    queue.emplace(i + 1, j);
-                }
-
-                if (queue.empty()) {
-                    break;
-                }
-
-                node = queue.top();
-                queue.pop();
-                result.emplace_back(initializer_list<int>{nums1[std::get<0>(node)], nums2[std::get<1>(node)]});
+            if (j != nums2.size() - 1) {
+                queue.emplace(i, j + 1);
             }
+
+            if (j == 0 && i != nums1.size() - 1) {
+                queue.emplace(i + 1, j);
+            }
+
+            if (queue.empty()) {
+                break;
+            }
+
+            node = queue.top();
+            queue.pop();
+            result.emplace_back(initializer_list<int>{nums1[std::get<0>(node)], nums2[std::get<1>(node)]});
         }
 
         return result;
