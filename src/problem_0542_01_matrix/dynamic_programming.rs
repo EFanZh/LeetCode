@@ -1,12 +1,38 @@
 pub struct Solution;
 
-// TODO: Unify forward and backward steps.
+use std::iter::Rev;
+use std::slice::IterMut;
+
+trait MakeIter<'a> {
+    type Iter: Iterator<Item = &'a mut i32>;
+
+    fn make_iter(&self, slice: &'a mut [i32]) -> Self::Iter;
+}
+
+struct Forward;
+
+impl<'a> MakeIter<'a> for Forward {
+    type Iter = IterMut<'a, i32>;
+
+    fn make_iter(&self, slice: &'a mut [i32]) -> Self::Iter {
+        slice.iter_mut()
+    }
+}
+
+struct Backward;
+
+impl<'a> MakeIter<'a> for Backward {
+    type Iter = Rev<IterMut<'a, i32>>;
+
+    fn make_iter(&self, slice: &'a mut [i32]) -> Self::Iter {
+        slice.iter_mut().rev()
+    }
+}
 
 impl Solution {
-    fn update_forward(mat: &mut [Vec<i32>]) {
-        let mut rows_iter = mat.iter_mut().map(Vec::as_mut_slice);
+    fn update<'a>(mut rows_iter: impl Iterator<Item = &'a mut [i32]>, make_iter: impl for<'b> MakeIter<'b>) {
         let mut prev_row = rows_iter.next().unwrap();
-        let mut first_row_iter = prev_row.iter_mut();
+        let mut first_row_iter = make_iter.make_iter(prev_row);
         let mut left = *first_row_iter.next().unwrap();
 
         for value in first_row_iter {
@@ -15,42 +41,15 @@ impl Solution {
         }
 
         for row in rows_iter {
-            let mut iter = prev_row.iter().copied().zip(row.iter_mut());
-            let (top, left) = iter.next().unwrap();
+            let mut iter = make_iter.make_iter(prev_row).zip(make_iter.make_iter(row));
+
+            let (&mut top, left) = iter.next().unwrap();
 
             *left = (*left).min(top + 1);
 
             let mut left = *left;
 
-            for (top, current) in iter {
-                *current = (*current).min(top.min(left) + 1);
-                left = *current;
-            }
-
-            prev_row = row;
-        }
-    }
-
-    fn update_backward(mat: &mut [Vec<i32>]) {
-        let mut rows_iter = mat.iter_mut().map(Vec::as_mut_slice).rev();
-        let mut prev_row = rows_iter.next().unwrap();
-        let mut first_row_iter = prev_row.iter_mut().rev();
-        let mut left = *first_row_iter.next().unwrap();
-
-        for value in first_row_iter {
-            *value = (*value).min(left + 1);
-            left = *value;
-        }
-
-        for row in rows_iter {
-            let mut iter = prev_row.iter().rev().copied().zip(row.iter_mut().rev());
-            let (top, left) = iter.next().unwrap();
-
-            *left = (*left).min(top + 1);
-
-            let mut left = *left;
-
-            for (top, current) in iter {
+            for (&mut top, current) in iter {
                 *current = (*current).min(top.min(left) + 1);
                 left = *current;
             }
@@ -68,8 +67,8 @@ impl Solution {
             }
         }
 
-        Self::update_forward(&mut mat);
-        Self::update_backward(&mut mat);
+        Self::update(mat.iter_mut().map(Vec::as_mut_slice), Forward);
+        Self::update(mat.iter_mut().map(Vec::as_mut_slice).rev(), Backward);
 
         mat
     }
