@@ -75,30 +75,26 @@ impl Solution {
         let k = k as _;
         let mut result = Vec::with_capacity(k);
 
-        if k != 0 {
-            if let (Some(&left), Some(&right)) = (nums1.first(), nums2.first()) {
-                result.push(vec![left, right]);
+        result.push(vec![nums1[0], nums2[0]]);
 
-                let mut node = (0, 0);
-                let mut queue = Vec::new();
-                let get_key = |&(i, j): &(usize, usize)| nums1[i] + nums2[j];
+        let mut node = (0, 0);
+        let mut queue = Vec::new();
+        let get_key = |&(i, j): &(usize, usize)| nums1[i] + nums2[j];
 
-                while result.len() != k {
-                    if node.1 != nums2.len() - 1 {
-                        Self::heap_push(&mut queue, (node.0, node.1 + 1), get_key);
-                    }
+        while result.len() != k {
+            if node.1 != nums2.len() - 1 {
+                Self::heap_push(&mut queue, (node.0, node.1 + 1), get_key);
+            }
 
-                    if node.1 == 0 && node.0 != nums1.len() - 1 {
-                        Self::heap_push(&mut queue, (node.0 + 1, node.1), get_key);
-                    }
+            if node.1 == 0 && node.0 != nums1.len() - 1 {
+                Self::heap_push(&mut queue, (node.0 + 1, node.1), get_key);
+            }
 
-                    if let Some((i, j)) = Self::heap_pop(&mut queue, get_key) {
-                        result.push(vec![nums1[i], nums2[j]]);
-                        node = (i, j);
-                    } else {
-                        break;
-                    }
-                }
+            if let Some((i, j)) = Self::heap_pop(&mut queue, get_key) {
+                result.push(vec![nums1[i], nums2[j]]);
+                node = (i, j);
+            } else {
+                break;
             }
         }
 
