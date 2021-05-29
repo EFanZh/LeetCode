@@ -12,95 +12,95 @@ impl Solution {
         let mut iter_1 = skyline_1.iter().copied();
         let mut iter_2 = skyline_2.iter().copied();
 
-        if let (Some([mut x_1, mut y_1]), Some([mut x_2, mut y_2])) = (iter_1.next(), iter_2.next()) {
-            let mut prev_y_1 = 0;
-            let mut prev_y_2 = 0;
-            let mut prev_y = 0;
+        let [mut x_1, mut y_1] = iter_1.next().unwrap();
+        let [mut x_2, mut y_2] = iter_2.next().unwrap();
+        let mut prev_y_1 = 0;
+        let mut prev_y_2 = 0;
+        let mut prev_y = 0;
 
-            loop {
-                if x_1 == x_2 {
-                    let y = y_1.max(y_2);
-
-                    if y != prev_y {
-                        prev_y = y;
-
-                        buffer.push([x_1, y]);
-                    }
-
-                    match (iter_1.next(), iter_2.next()) {
-                        (None, None) => {
-                            skyline.splice(left.., buffer.drain(..));
-
-                            return;
-                        }
-                        (None, Some([new_x_2, new_y_2])) => {
-                            prev_y_1 = y_1;
-                            x_2 = new_x_2;
-                            y_2 = new_y_2;
-
-                            break;
-                        }
-                        (Some([new_x_1, new_y_1]), None) => {
-                            prev_y_1 = y_2;
-                            x_2 = new_x_1;
-                            y_2 = new_y_1;
-                            mem::swap(&mut iter_1, &mut iter_2);
-
-                            break;
-                        }
-                        (Some([new_x_1, new_y_1]), Some([new_x_2, new_y_2])) => {
-                            prev_y_1 = mem::replace(&mut y_1, new_y_1);
-                            prev_y_2 = mem::replace(&mut y_2, new_y_2);
-                            x_1 = new_x_1;
-                            x_2 = new_x_2;
-                        }
-                    }
-                } else {
-                    if x_1 > x_2 {
-                        mem::swap(&mut prev_y_1, &mut prev_y_2);
-                        mem::swap(&mut x_1, &mut x_2);
-                        mem::swap(&mut y_1, &mut y_2);
-                        mem::swap(&mut iter_1, &mut iter_2);
-                    }
-
-                    let y = y_1.max(prev_y_2);
-
-                    if y != prev_y {
-                        prev_y = y;
-
-                        buffer.push([x_1, y]);
-                    }
-
-                    prev_y_1 = y_1;
-
-                    if let Some([new_x_1, new_y_1]) = iter_1.next() {
-                        x_1 = new_x_1;
-                        y_1 = new_y_1;
-                    } else {
-                        break;
-                    }
-                }
-            }
-
-            loop {
-                let y = y_2.max(prev_y_1);
+        loop {
+            if x_1 == x_2 {
+                let y = y_1.max(y_2);
 
                 if y != prev_y {
                     prev_y = y;
 
-                    buffer.push([x_2, y]);
+                    buffer.push([x_1, y]);
                 }
 
-                if let Some([new_x_2, new_y_2]) = iter_2.next() {
-                    x_2 = new_x_2;
-                    y_2 = new_y_2;
+                match (iter_1.next(), iter_2.next()) {
+                    (None, None) => {
+                        skyline.splice(left.., buffer.drain(..));
+
+                        return;
+                    }
+                    (None, Some([new_x_2, new_y_2])) => {
+                        prev_y_1 = y_1;
+                        x_2 = new_x_2;
+                        y_2 = new_y_2;
+
+                        break;
+                    }
+                    (Some([new_x_1, new_y_1]), None) => {
+                        prev_y_1 = y_2;
+                        x_2 = new_x_1;
+                        y_2 = new_y_1;
+                        mem::swap(&mut iter_1, &mut iter_2);
+
+                        break;
+                    }
+                    (Some([new_x_1, new_y_1]), Some([new_x_2, new_y_2])) => {
+                        prev_y_1 = mem::replace(&mut y_1, new_y_1);
+                        prev_y_2 = mem::replace(&mut y_2, new_y_2);
+                        x_1 = new_x_1;
+                        x_2 = new_x_2;
+                    }
+                }
+            } else {
+                if x_1 > x_2 {
+                    mem::swap(&mut prev_y_1, &mut prev_y_2);
+                    mem::swap(&mut x_1, &mut x_2);
+                    mem::swap(&mut y_1, &mut y_2);
+                    mem::swap(&mut iter_1, &mut iter_2);
+                }
+
+                let y = y_1.max(prev_y_2);
+
+                if y != prev_y {
+                    prev_y = y;
+
+                    buffer.push([x_1, y]);
+                }
+
+                prev_y_1 = y_1;
+
+                if let Some([new_x_1, new_y_1]) = iter_1.next() {
+                    x_1 = new_x_1;
+                    y_1 = new_y_1;
                 } else {
                     break;
                 }
             }
-
-            skyline.splice(left.., buffer.drain(..));
         }
+
+        loop {
+            let y = y_2.max(prev_y_1);
+
+            if y != prev_y {
+                prev_y = y;
+
+                buffer.push([x_2, y]);
+            }
+
+            if let Some([new_x_2, new_y_2]) = iter_2.next() {
+                x_2 = new_x_2;
+                y_2 = new_y_2;
+            } else {
+                break;
+            }
+        }
+
+        skyline.splice(left.., buffer.drain(..));
     }
 
     fn get_skyline_helper(buildings: &[Vec<i32>], target: &mut Vec<[i32; 2]>, merge_buffer: &mut Vec<[i32; 2]>) {

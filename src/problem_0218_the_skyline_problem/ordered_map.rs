@@ -24,14 +24,14 @@ impl Solution {
         let mut current_height = 0;
 
         for (x, h) in operations {
-            if h < 0 {
-                heights.entry(-h).and_modify(|count| *count += 1).or_insert(1);
-            } else if let Entry::Occupied(entry) = heights.entry(h) {
+            if let Entry::Occupied(entry) = heights.entry(h) {
                 if *entry.get() == 1 {
                     entry.remove();
                 } else {
                     *entry.into_mut() -= 1;
                 }
+            } else {
+                heights.entry(-h).and_modify(|count| *count += 1).or_insert(1);
             }
 
             let new_height = heights.keys().last().copied().unwrap_or(0);
