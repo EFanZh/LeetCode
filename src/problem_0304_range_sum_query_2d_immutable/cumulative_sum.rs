@@ -1,4 +1,6 @@
-struct NumMatrix {
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
+pub struct NumMatrix {
     sums: Box<[i32]>,
     columns: usize,
 }
@@ -40,6 +42,8 @@ impl NumMatrix {
         self.get_sum(row2, col2) + self.get_sum(row1, col1) - (self.get_sum(row1, col2) + self.get_sum(row2, col1))
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NumMatrix for NumMatrix {
     fn new(matrix: Vec<Vec<i32>>) -> Self {

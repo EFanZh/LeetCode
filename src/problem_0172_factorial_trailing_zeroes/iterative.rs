@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn trailing_zeroes(n: i32) -> i32 {
         let n = i64::from(n);
@@ -15,6 +17,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn trailing_zeroes(n: i32) -> i32 {

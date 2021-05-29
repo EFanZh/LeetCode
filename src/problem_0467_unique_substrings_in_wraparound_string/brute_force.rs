@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn update_length(lengths: &mut [i32; 26], key: u8, length: i32) {
         let target = &mut lengths[usize::from(key - b'a')];
@@ -33,6 +35,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_substring_in_wrapround_string(p: String) -> i32 {

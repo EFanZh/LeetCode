@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 impl Solution {
@@ -40,6 +42,8 @@ impl Solution {
         cache.into_iter().map(|(_, value)| value).min().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_rotate_steps(ring: String, key: String) -> i32 {

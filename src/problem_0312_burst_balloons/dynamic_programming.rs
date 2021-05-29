@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn max_coins(nums: Vec<i32>) -> i32 {
         let n = nums.len() + 1;
@@ -24,6 +26,8 @@ impl Solution {
         *cache.last().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_coins(nums: Vec<i32>) -> i32 {

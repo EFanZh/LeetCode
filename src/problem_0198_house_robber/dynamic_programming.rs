@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn rob(nums: Vec<i32>) -> i32 {
         let mut max_if_skip = 0;
@@ -16,6 +18,8 @@ impl Solution {
         max_if_skip.max(max_if_rob)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn rob(nums: Vec<i32>) -> i32 {

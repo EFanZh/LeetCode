@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
         if let Some((first_row, rest_rows)) = matrix.split_first_mut() {
@@ -49,6 +51,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {

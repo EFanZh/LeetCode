@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn extend_result(result: &mut Vec<Vec<i32>>, num: i32, extra: u32) {
         for i in 0..result.len() {
@@ -44,6 +46,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn subsets_with_dup(nums: Vec<i32>) -> Vec<Vec<i32>> {

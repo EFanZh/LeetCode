@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn predict_the_winner(nums: Vec<i32>) -> bool {
         let n = nums.len();
@@ -17,6 +19,8 @@ impl Solution {
         cache[0] >= 0
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn predict_the_winner(nums: Vec<i32>) -> bool {

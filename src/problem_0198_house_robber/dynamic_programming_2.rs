@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn rob(nums: Vec<i32>) -> i32 {
         let mut prev = 0;
@@ -15,6 +17,8 @@ impl Solution {
         current
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn rob(nums: Vec<i32>) -> i32 {

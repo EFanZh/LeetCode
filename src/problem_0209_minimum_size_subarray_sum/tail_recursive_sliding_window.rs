@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper_less(s: i32, nums: &[i32], start: usize, mut end: usize, mut sum: i32, result: usize) -> usize {
         nums.get(end).map_or(result, |num| {
@@ -34,6 +36,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {

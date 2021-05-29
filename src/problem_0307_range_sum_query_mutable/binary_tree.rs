@@ -1,6 +1,8 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
-struct NumArray {
+pub struct NumArray {
     tree: Box<[i32]>,
 }
 
@@ -101,6 +103,8 @@ impl NumArray {
         range_to(&self.tree, j as usize + 1) - range_to(&self.tree, i as _)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NumArray for NumArray {
     fn new(nums: Vec<i32>) -> Self {

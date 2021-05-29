@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn merge_sort_to_self(nums: &mut [i32], buffer: &mut [i32], result: &mut i32) {
         if nums.len() > 1 {
@@ -102,6 +104,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn reverse_pairs(nums: Vec<i32>) -> i32 {

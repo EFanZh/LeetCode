@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 #[derive(Default)]
 struct TrieNode {
     children: [Option<Box<TrieNode>>; 26],
@@ -46,6 +48,8 @@ impl Solution {
         cache[0]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn word_break(s: String, word_dict: Vec<String>) -> bool {

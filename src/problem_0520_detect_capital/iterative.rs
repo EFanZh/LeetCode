@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn detect_capital_use(word: String) -> bool {
         let mut iter = word.as_bytes().iter();
@@ -17,6 +19,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn detect_capital_use(word: String) -> bool {

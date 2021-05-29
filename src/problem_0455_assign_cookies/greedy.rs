@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_content_children(mut g: Vec<i32>, mut s: Vec<i32>) -> i32 {
         g.sort_unstable();
@@ -25,6 +27,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_content_children(g: Vec<i32>, s: Vec<i32>) -> i32 {

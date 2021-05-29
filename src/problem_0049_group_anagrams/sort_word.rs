@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
@@ -25,6 +27,8 @@ impl Solution {
         buckets.into_iter().map(|(_, value)| value).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {

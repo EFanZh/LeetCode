@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
         let num_rows = num_rows as usize;
@@ -23,6 +25,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn generate(num_rows: i32) -> Vec<Vec<i32>> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_nth_digit(n: i32) -> i32 {
         const POWERS_OF_TEN: [i32; 9] = [1, 10, 100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000, 100_000_000];
@@ -17,6 +19,8 @@ impl Solution {
         (number / POWERS_OF_TEN[(number_length - 1 - digit_index) as usize]) % 10
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_nth_digit(n: i32) -> i32 {

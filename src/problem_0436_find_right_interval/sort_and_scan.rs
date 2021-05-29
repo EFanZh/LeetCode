@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Reverse;
 use std::convert::TryInto;
 
@@ -30,6 +32,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_right_interval(intervals: Vec<Vec<i32>>) -> Vec<i32> {

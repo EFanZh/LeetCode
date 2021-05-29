@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::btree_map::Entry;
 use std::collections::BTreeMap;
 
@@ -133,6 +135,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn combination_sum4(mut nums: Vec<i32>, target: i32) -> i32 {
         let mut cache = Vec::with_capacity((target + 1) as _);
@@ -24,6 +26,8 @@ impl Solution {
         *cache.last().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn combination_sum4(nums: Vec<i32>, target: i32) -> i32 {

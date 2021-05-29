@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::vec::IntoIter;
 
@@ -36,6 +38,8 @@ impl Solution {
             .map_or(false, |column| Self::has_columns(matrix.into_iter(), column, target))
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {

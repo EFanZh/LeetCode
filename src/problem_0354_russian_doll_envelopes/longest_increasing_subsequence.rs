@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Reverse;
 use std::convert::TryInto;
 
@@ -26,6 +28,8 @@ impl Solution {
         cache.len() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {

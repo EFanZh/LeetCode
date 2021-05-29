@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -27,6 +29,8 @@ impl Solution {
         Self::helper(&nums, target, &mut HashMap::new())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn combination_sum4(nums: Vec<i32>, target: i32) -> i32 {

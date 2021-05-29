@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
         let mut result = vec![0; nums.len()];
@@ -20,6 +22,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn product_except_self(nums: Vec<i32>) -> Vec<i32> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn missing_number(nums: Vec<i32>) -> i32 {
         let n = nums.len() as i32;
@@ -9,6 +11,8 @@ impl Solution {
         expected - actual
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn missing_number(nums: Vec<i32>) -> i32 {

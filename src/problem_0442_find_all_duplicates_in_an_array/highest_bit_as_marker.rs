@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_duplicates(mut nums: Vec<i32>) -> Vec<i32> {
         const MARKER: i32 = 1 << 31;
@@ -19,6 +21,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_duplicates(nums: Vec<i32>) -> Vec<i32> {

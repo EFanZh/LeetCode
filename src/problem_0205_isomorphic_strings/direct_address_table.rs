@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_isomorphic(s: String, t: String) -> bool {
         let mut mapping = [0; 256];
@@ -24,6 +26,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_isomorphic(s: String, t: String) -> bool {

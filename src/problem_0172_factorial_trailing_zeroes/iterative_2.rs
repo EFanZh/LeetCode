@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn trailing_zeroes(mut n: i32) -> i32 {
         // https://oeis.org/A027868
@@ -15,6 +17,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn trailing_zeroes(n: i32) -> i32 {

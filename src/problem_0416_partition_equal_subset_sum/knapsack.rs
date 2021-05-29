@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::HashSet;
 
@@ -26,6 +28,8 @@ impl Solution {
         sum % 2 == 0 && Self::helper(sum / 2, &nums, &mut HashSet::new())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_partition(nums: Vec<i32>) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn length_of_lis(nums: Vec<i32>) -> i32 {
         let mut cache = vec![0; nums.len()];
@@ -24,6 +26,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn length_of_lis(nums: Vec<i32>) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn eval_rpn(tokens: Vec<String>) -> i32 {
         let mut stack = Vec::new();
@@ -23,6 +25,8 @@ impl Solution {
         stack[0]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn eval_rpn(tokens: Vec<String>) -> i32 {

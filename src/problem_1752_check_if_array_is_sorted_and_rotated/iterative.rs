@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn check(nums: Vec<i32>) -> bool {
         nums.split_first().map_or(true, |(&first, rest)| {
@@ -34,6 +36,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn check(nums: Vec<i32>) -> bool {

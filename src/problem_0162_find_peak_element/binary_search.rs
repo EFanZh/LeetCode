@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_peak_element(nums: Vec<i32>) -> i32 {
         let mut start = 0;
@@ -20,6 +22,8 @@ impl Solution {
         start as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_peak_element(nums: Vec<i32>) -> i32 {

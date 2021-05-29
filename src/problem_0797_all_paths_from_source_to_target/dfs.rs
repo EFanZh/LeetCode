@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn dfs<'a>(graph: &[Vec<i32>], node: i32, cache: &'a mut Vec<Option<Vec<Vec<i32>>>>) -> &'a [Vec<i32>] {
         if cache[node as usize].is_none() {
@@ -34,6 +36,8 @@ impl Solution {
         cache[0].take().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn all_paths_source_target(graph: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

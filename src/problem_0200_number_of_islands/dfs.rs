@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn dfs(grid: &mut Vec<Vec<char>>, mut current: (usize, usize), stack: &mut Vec<(usize, usize)>) {
         loop {
@@ -41,6 +43,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn num_islands(grid: Vec<Vec<char>>) -> i32 {

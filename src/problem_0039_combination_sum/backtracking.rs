@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn combination_sum_helper(candidates: &[i32], target: i32, base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
         if target == 0 {
@@ -23,6 +25,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {

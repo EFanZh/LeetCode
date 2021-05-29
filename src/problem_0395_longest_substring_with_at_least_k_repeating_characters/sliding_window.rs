@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn count_unique_characters(s: &[u8]) -> i32 {
         let mut counts = [0; 26];
@@ -88,6 +90,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_substring(s: String, k: i32) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 // https://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form.
 
 impl Solution {
@@ -22,6 +24,8 @@ impl Solution {
         Self::matrix_powers(n + 1).1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn climb_stairs(n: i32) -> i32 {

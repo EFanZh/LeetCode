@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn erase_overlap_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {
         intervals.sort_unstable_by_key(|x| x[1]);
@@ -22,6 +24,8 @@ impl Solution {
         (intervals.len() - k) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32 {

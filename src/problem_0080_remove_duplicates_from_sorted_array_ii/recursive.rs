@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn remove_duplicates_single(nums: &mut [i32], deduped: usize, prev: i32, i: usize) -> usize {
         nums.get(i).copied().map_or(deduped, |current| {
@@ -35,6 +37,8 @@ impl Solution {
         nums.len() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn coin_change(coins: Vec<i32>, amount: i32) -> i32 {
         let amount = amount as usize;
@@ -16,6 +18,8 @@ impl Solution {
         cache.last().unwrap().unwrap_or(-1)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn coin_change(coins: Vec<i32>, amount: i32) -> i32 {

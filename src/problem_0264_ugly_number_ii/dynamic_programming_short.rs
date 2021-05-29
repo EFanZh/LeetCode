@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn nth_ugly_number(n: i32) -> i32 {
         let n = n as _;
@@ -35,6 +37,8 @@ impl Solution {
         cache[n - 1]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn nth_ugly_number(n: i32) -> i32 {

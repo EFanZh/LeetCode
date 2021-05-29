@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         let mut buy = i32::min_value();
@@ -19,6 +21,8 @@ impl Solution {
         sell.max(cooldown)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_profit(prices: Vec<i32>) -> i32 {

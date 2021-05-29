@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter;
 use std::mem;
 
@@ -25,6 +27,8 @@ impl Solution {
         reversed == head
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_palindrome(head: Option<Box<ListNode>>) -> bool {

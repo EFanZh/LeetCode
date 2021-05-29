@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn fix_heap_by_key<T, K: Ord>(heap: &mut [T], mut get_key: impl FnMut(&T) -> K) {
         let mut node_index = 0;
@@ -71,6 +73,8 @@ impl Solution {
         prev
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn nth_super_ugly_number(n: i32, primes: Vec<i32>) -> i32 {

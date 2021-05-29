@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn number_of_steps(mut num: i32) -> i32 {
         let mut result = -1;
@@ -12,6 +14,8 @@ impl Solution {
         result.max(0)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn number_of_steps(num: i32) -> i32 {

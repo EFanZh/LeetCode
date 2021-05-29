@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn dfs(matrix: &[Vec<i32>], i: usize, j: usize, columns: usize, cache: &mut [i32]) -> i32 {
         let key = columns * i + j;
@@ -52,6 +54,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_increasing_path(matrix: Vec<Vec<i32>>) -> i32 {

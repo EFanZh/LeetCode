@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_max_form(strs: Vec<String>, m: i32, n: i32) -> i32 {
         let m = m as usize;
@@ -22,6 +24,8 @@ impl Solution {
         *cache.last().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_max_form(strs: Vec<String>, m: i32, n: i32) -> i32 {

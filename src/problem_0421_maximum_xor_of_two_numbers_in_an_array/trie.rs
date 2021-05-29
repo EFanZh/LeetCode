@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 #[derive(Default)]
 struct Node {
     zero: Option<Box<Node>>,
@@ -64,6 +66,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_maximum_xor(nums: Vec<i32>) -> i32 {

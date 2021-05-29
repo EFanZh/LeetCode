@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_disappeared_numbers(mut nums: Vec<i32>) -> Vec<i32> {
         const MARKER: i32 = 1 << 31;
@@ -15,6 +17,8 @@ impl Solution {
             .collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {

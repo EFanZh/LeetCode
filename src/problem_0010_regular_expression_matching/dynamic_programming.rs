@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_match(s: String, p: String) -> bool {
         let (s, p) = (s.into_bytes(), p.into_bytes());
@@ -30,6 +32,8 @@ impl Solution {
         cache[0]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_match(s: String, p: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::convert::TryInto;
 use std::mem;
 
@@ -50,6 +52,8 @@ impl Solution {
         queue
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {

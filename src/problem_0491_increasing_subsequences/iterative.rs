@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 
 // https://leetcode.com/problems/increasing-subsequences/discuss/97147/Java-solution-beats-100/363291.
@@ -69,6 +71,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_subsequences(nums: Vec<i32>) -> Vec<Vec<i32>> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 // https://en.wikipedia.org/wiki/Fibonacci_number#Closed-form_expression
 
 impl Solution {
@@ -11,6 +13,8 @@ impl Solution {
         ((Self::PHI.powi(n) - Self::PSI.powi(n)) / Self::SQRT_5).round() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn fib(n: i32) -> i32 {

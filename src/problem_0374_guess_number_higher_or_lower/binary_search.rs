@@ -4,6 +4,8 @@ use super::guess;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn guessNumber(n: i32) -> i32 {
         let mut left = 1;
@@ -20,6 +22,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn guess_number(n: i32) -> i32 {

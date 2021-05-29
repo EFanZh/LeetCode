@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn write_int(target: &mut [char], index: usize, mut value: i32) -> usize {
         let mut i = index;
@@ -58,6 +60,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn compress(chars: &mut Vec<char>) -> i32 {

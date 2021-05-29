@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn to_hex(num: i32) -> String {
         let num = u32::from_le_bytes(num.to_le_bytes());
@@ -7,6 +9,8 @@ impl Solution {
         format!("{:x}", num)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn to_hex(num: i32) -> String {

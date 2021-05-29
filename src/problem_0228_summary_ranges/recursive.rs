@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::vec::IntoIter;
 
 impl Solution {
@@ -42,6 +44,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn summary_ranges(nums: Vec<i32>) -> Vec<String> {

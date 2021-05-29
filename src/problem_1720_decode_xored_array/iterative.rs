@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn decode(encoded: Vec<i32>, first: i32) -> Vec<i32> {
         let mut result = Vec::with_capacity(encoded.len() + 1);
@@ -19,6 +21,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn decode(encoded: Vec<i32>, first: i32) -> Vec<i32> {

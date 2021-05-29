@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn maximum_gap(mut nums: Vec<i32>) -> i32 {
         nums.sort_unstable();
@@ -11,6 +13,8 @@ impl Solution {
             .unwrap_or(0)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn maximum_gap(nums: Vec<i32>) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_the_difference(s: String, t: String) -> char {
         let mut result = 0;
@@ -15,6 +17,8 @@ impl Solution {
         result.into()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_the_difference(s: String, t: String) -> char {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_valid(s: String) -> bool {
         let s = s.into_bytes();
@@ -21,6 +23,8 @@ impl Solution {
         stack.is_empty()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid(s: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
         for x in digits.iter_mut().rev() {
@@ -18,6 +20,8 @@ impl Solution {
         digits
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn plus_one(digits: Vec<i32>) -> Vec<i32> {

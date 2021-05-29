@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn calculate(s: String) -> i32 {
         let mut iter = s.bytes().peekable();
@@ -55,6 +57,8 @@ impl Solution {
         nums.pop().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn calculate(s: String) -> i32 {

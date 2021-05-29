@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn h_index(citations: Vec<i32>) -> i32 {
         let n = citations.len();
@@ -13,6 +15,8 @@ impl Solution {
         0
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn h_index(citations: Vec<i32>) -> i32 {

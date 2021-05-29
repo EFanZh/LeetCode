@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn merge_sort_to_self(indices: &mut [usize], buffer: &mut [usize], nums: &[i32], result: &mut [i32]) {
         if indices.len() > 1 {
@@ -78,6 +80,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_smaller(nums: Vec<i32>) -> Vec<i32> {

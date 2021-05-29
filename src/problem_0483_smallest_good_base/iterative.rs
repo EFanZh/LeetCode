@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn write_u64(value: u64, mut target: String) -> String {
         use std::fmt::Write;
@@ -33,6 +35,8 @@ impl Solution {
         Self::write_u64(n_value - 1, n)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn smallest_good_base(n: String) -> String {

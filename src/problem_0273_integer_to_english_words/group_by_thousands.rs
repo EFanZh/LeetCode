@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn less_than_thousand(num: i32, result: &mut String) {
         const SINGLES: [&str; 19] = [
@@ -83,6 +85,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn number_to_words(num: i32) -> String {

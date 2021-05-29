@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     #[allow(clippy::same_item_push)]
     pub fn license_key_formatting(s: String, k: i32) -> String {
@@ -28,6 +30,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn license_key_formatting(s: String, k: i32) -> String {

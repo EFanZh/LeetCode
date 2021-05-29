@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         let mut start = 0;
@@ -22,6 +24,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn search(nums: Vec<i32>, target: i32) -> i32 {

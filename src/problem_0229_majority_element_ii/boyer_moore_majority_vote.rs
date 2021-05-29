@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn majority_element(nums: Vec<i32>) -> Vec<i32> {
         let mut result_1 = 0;
@@ -49,6 +51,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn majority_element(nums: Vec<i32>) -> Vec<i32> {

@@ -1,4 +1,7 @@
 use super::super::data_structures::TreeNode;
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -47,6 +50,8 @@ impl Codec {
         self.deserialize_helper(&mut data.split(' '))
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Codec for Codec {
     fn new() -> Self {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
         let mut iter = s.into_bytes().into_iter().filter(u8::is_ascii_alphanumeric);
@@ -17,6 +19,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_palindrome(s: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn count_numbers_with_unique_digits(n: i32) -> i32 {
         let mut result = 0;
@@ -13,6 +15,8 @@ impl Solution {
         result * 9 + 1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_numbers_with_unique_digits(n: i32) -> i32 {

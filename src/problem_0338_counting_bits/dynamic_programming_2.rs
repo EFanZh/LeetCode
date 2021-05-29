@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn count_bits(num: i32) -> Vec<i32> {
         let num = (num + 1) as _;
@@ -12,6 +14,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_bits(num: i32) -> Vec<i32> {

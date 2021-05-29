@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn permute_helper_even(nums: &mut [i32], k: usize, result: &mut Vec<Vec<i32>>) {
         if k == 0 {
@@ -38,6 +40,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {

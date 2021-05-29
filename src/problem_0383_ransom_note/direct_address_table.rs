@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn can_construct(ransom_note: String, magazine: String) -> bool {
         let mut available = [0_usize; 26];
@@ -21,6 +23,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_construct(ransom_note: String, magazine: String) -> bool {

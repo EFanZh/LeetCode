@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_self_crossing(x: Vec<i32>) -> bool {
         if let [mut l3, mut l4, ref rest @ ..] = *x {
@@ -34,6 +36,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_self_crossing(x: Vec<i32>) -> bool {

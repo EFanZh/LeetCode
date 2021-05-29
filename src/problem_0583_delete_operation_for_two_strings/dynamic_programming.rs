@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 impl Solution {
@@ -28,6 +30,8 @@ impl Solution {
         cache_rest.last().copied().unwrap_or(cache_first) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_distance(word1: String, word2: String) -> i32 {

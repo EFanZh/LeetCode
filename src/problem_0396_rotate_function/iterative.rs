@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn max_rotate_function(a: Vec<i32>) -> i32 {
         a.split_first().map_or(0, |(_, rest)| {
@@ -17,6 +19,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_rotate_function(a: Vec<i32>) -> i32 {

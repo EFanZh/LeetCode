@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter;
 
 impl Solution {
@@ -34,6 +36,8 @@ impl Solution {
         rest
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {

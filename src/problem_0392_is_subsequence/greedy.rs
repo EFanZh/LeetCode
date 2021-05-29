@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_subsequence(s: String, t: String) -> bool {
         let mut iter_2 = t.bytes();
@@ -19,6 +21,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_subsequence(s: String, t: String) -> bool {

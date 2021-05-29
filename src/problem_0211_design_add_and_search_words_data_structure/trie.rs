@@ -1,3 +1,5 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 #[derive(Default)]
 struct WordDictionary {
     children: [Option<Box<WordDictionary>>; 26],
@@ -45,6 +47,8 @@ impl WordDictionary {
         self.search_helper(word.as_bytes())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::WordDictionary for WordDictionary {
     fn new() -> Self {

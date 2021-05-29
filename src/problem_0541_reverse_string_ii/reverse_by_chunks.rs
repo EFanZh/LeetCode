@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn reverse_str(s: String, k: i32) -> String {
         let mut s = s.into_bytes();
@@ -9,6 +11,8 @@ impl Solution {
         String::from_utf8(s).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn reverse_str(s: String, k: i32) -> String {

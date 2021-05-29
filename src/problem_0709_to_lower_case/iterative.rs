@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn to_lower_case(str: String) -> String {
         let mut s = str.into_bytes();
@@ -13,6 +15,8 @@ impl Solution {
         String::from_utf8(s).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn to_lower_case(str: String) -> String {

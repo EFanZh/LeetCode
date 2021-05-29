@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {
         let mut cache = grid.last().unwrap().clone();
@@ -25,6 +27,8 @@ impl Solution {
         cache[0]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {

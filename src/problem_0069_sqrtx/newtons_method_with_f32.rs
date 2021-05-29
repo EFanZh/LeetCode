@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     #[allow(clippy::cast_precision_loss)]
     pub fn my_sqrt(x: i32) -> i32 {
@@ -21,6 +23,8 @@ impl Solution {
         guess as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn my_sqrt(x: i32) -> i32 {

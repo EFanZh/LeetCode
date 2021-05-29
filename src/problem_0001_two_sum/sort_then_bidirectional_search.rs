@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 
 impl Solution {
@@ -26,6 +28,8 @@ impl Solution {
         slice.iter().map(|&(i, _)| i).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {

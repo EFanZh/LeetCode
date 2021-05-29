@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter::Peekable;
 
 impl Solution {
@@ -76,6 +78,8 @@ impl Solution {
         Self::expression(&mut s.bytes().peekable())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn calculate(s: String) -> i32 {

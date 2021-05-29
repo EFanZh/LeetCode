@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn num_trees(n: i32) -> i32 {
         let n = n as usize;
@@ -22,6 +24,8 @@ impl Solution {
         cache[n]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn num_trees(n: i32) -> i32 {

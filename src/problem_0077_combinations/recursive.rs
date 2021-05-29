@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn combine_helper(n: i32, k: i32, base: &mut [i32], result: &mut Vec<Vec<i32>>) {
         if k == 0 {
@@ -21,6 +23,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn combine(n: i32, k: i32) -> Vec<Vec<i32>> {

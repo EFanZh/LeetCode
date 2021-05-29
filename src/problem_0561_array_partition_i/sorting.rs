@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn array_pair_sum(mut nums: Vec<i32>) -> i32 {
         nums.sort_unstable();
@@ -7,6 +9,8 @@ impl Solution {
         nums.iter().step_by(2).sum()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn array_pair_sum(nums: Vec<i32>) -> i32 {

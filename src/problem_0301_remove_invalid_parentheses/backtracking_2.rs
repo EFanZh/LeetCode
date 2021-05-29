@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashSet;
 use std::slice::Iter;
 
@@ -83,6 +85,8 @@ impl Solution {
         result.into_iter().collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn remove_invalid_parentheses(s: String) -> Vec<String> {

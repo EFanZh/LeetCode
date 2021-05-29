@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn largest_divisible_subset(mut nums: Vec<i32>) -> Vec<i32> {
         if nums.len() < 2 {
@@ -46,6 +48,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn largest_divisible_subset(nums: Vec<i32>) -> Vec<i32> {

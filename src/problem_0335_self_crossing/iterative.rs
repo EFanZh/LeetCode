@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_self_crossing(x: Vec<i32>) -> bool {
         let mut iter = x.into_iter();
@@ -34,6 +36,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_self_crossing(x: Vec<i32>) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn calculate(s: String) -> i32 {
         let mut stack = Vec::new();
@@ -40,6 +42,8 @@ impl Solution {
         lhs + rhs * sign
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn calculate(s: String) -> i32 {

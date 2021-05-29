@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn can_jump(nums: Vec<i32>) -> bool {
         let mut farest = 0;
@@ -15,6 +17,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_jump(nums: Vec<i32>) -> bool {

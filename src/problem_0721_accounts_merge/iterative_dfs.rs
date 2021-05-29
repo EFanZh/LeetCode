@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::{HashMap, HashSet};
 
 impl Solution {
@@ -80,6 +82,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {

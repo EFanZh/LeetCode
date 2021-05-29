@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn judge_circle(moves: String) -> bool {
         let mut x = 0;
@@ -17,6 +19,8 @@ impl Solution {
         x == 0 && y == 0
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn judge_circle(moves: String) -> bool {

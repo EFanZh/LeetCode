@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn character_replacement(s: String, k: i32) -> i32 {
         let s = s.into_bytes();
@@ -56,6 +58,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn character_replacement(s: String, k: i32) -> i32 {

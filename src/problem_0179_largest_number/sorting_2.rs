@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn largest_number(nums: Vec<i32>) -> String {
         let mut nums_string = nums.iter().map(i32::to_string).collect::<Vec<_>>();
@@ -13,6 +15,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn largest_number(nums: Vec<i32>) -> String {

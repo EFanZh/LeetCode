@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn subsets_helper(mut slice: &[i32], base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
         while let Some((first, rest)) = slice.split_first() {
@@ -21,6 +23,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {

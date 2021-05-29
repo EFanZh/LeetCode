@@ -1,11 +1,11 @@
-pub struct Solution;
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::binary_heap::PeekMut;
 use std::collections::hash_map::Entry;
 use std::collections::{BinaryHeap, HashMap, HashSet};
 use std::iter;
 
-struct Twitter {
+pub struct Twitter {
     time: u32,
     followees: HashMap<i32, HashSet<i32>>,
     tweets: HashMap<i32, Vec<(u32, i32)>>,
@@ -81,6 +81,8 @@ impl Twitter {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Twitter for Twitter {
     fn new() -> Self {

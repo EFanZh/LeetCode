@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_nth_digit(n: i32) -> i32 {
         let n = n as u64;
@@ -32,6 +34,8 @@ impl Solution {
         (number % 10) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_nth_digit(n: i32) -> i32 {

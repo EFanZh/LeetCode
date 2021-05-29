@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::convert::TryFrom;
 
 impl Solution {
@@ -34,6 +36,8 @@ impl Solution {
         nums.len() as i32 + 1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn first_missing_positive(nums: Vec<i32>) -> i32 {

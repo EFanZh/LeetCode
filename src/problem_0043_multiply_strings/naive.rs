@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn multiply(num1: String, num2: String) -> String {
         let mut result = vec![0; num1.len() + num2.len()];
@@ -27,6 +29,8 @@ impl Solution {
         String::from_utf8(result.into_iter().rev().map(|v| b'0' + v.to_le_bytes()[0]).collect()).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn multiply(num1: String, num2: String) -> String {

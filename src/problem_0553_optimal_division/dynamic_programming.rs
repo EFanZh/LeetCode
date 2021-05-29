@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn select_min(item: &(f64, usize, f64, usize)) -> usize {
         item.1
@@ -96,6 +98,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn optimal_division(nums: Vec<i32>) -> String {

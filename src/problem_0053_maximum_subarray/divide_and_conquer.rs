@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn max_sum_from_one_side<I: IntoIterator<Item = i32>>(iter: I) -> i32 {
         let mut max_sum = i32::min_value();
@@ -33,6 +35,8 @@ impl Solution {
         Self::max_sub_array_helper(&nums)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_sub_array(nums: Vec<i32>) -> i32 {

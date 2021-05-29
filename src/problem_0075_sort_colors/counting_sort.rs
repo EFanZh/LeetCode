@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn sort_colors(nums: &mut Vec<i32>) {
         let mut counts = [0; 3];
@@ -17,6 +19,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn sort_colors(nums: &mut Vec<i32>) {

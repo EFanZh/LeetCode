@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper(nums: &[i32], m: i32, max_sum: i32) -> bool {
         let mut sum = 0;
@@ -47,6 +49,8 @@ impl Solution {
         left
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn split_array(nums: Vec<i32>, m: i32) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn generate_parenthesis(n: i32) -> Vec<String> {
         if n == 0 {
@@ -19,6 +21,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn generate_parenthesis(n: i32) -> Vec<String> {

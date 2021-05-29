@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn image_smoother(m: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         let rows = m.len();
@@ -29,6 +31,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn image_smoother(m: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

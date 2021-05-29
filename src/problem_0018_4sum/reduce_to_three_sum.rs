@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 
 fn partition<T, F: FnMut(&T) -> bool>(values: &mut [T], mut f: F) -> (&mut [T], &mut [T]) {
@@ -119,6 +121,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {

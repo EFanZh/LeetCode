@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_disappeared_numbers(mut nums: Vec<i32>) -> Vec<i32> {
         for i in 0..nums.len() {
@@ -22,6 +24,8 @@ impl Solution {
         (1..=nums.len() as _).filter(|&i| nums[(i - 1) as usize] != i).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {

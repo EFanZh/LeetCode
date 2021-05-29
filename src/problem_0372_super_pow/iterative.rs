@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn pow_mod(base: u32, exponent: u32, modulus: u32) -> u32 {
         let mut result = 1;
@@ -28,6 +30,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn super_pow(a: i32, b: Vec<i32>) -> i32 {

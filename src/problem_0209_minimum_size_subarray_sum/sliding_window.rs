@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {
         let mut start = 0;
@@ -34,6 +36,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {

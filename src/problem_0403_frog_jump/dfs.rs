@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::HashSet;
 
@@ -30,6 +32,8 @@ impl Solution {
         Self::helper(&stones.into_iter().collect(), target, 0, 0, &mut HashSet::new())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_cross(stones: Vec<i32>) -> bool {

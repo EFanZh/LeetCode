@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 use std::ptr::NonNull;
 
@@ -66,6 +68,8 @@ impl Solution {
         Self::is_scramble_helper(s1.as_bytes(), s2.as_bytes(), &mut HashMap::new())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_scramble(s1: String, s2: String) -> bool {

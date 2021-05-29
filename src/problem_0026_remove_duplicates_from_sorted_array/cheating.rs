@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         nums.dedup();
@@ -7,6 +9,8 @@ impl Solution {
         nums.len() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {

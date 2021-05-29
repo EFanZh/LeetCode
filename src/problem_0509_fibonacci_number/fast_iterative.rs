@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 // https://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form.
@@ -24,6 +26,8 @@ impl Solution {
         matrix.1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn fib(n: i32) -> i32 {

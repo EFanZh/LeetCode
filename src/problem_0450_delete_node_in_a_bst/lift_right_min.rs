@@ -1,6 +1,8 @@
 use super::super::data_structures::TreeNode;
 
-struct Solution;
+pub struct Solution;
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cell::RefCell;
 use std::cmp::Ordering;
@@ -67,6 +69,8 @@ impl Solution {
         root
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {

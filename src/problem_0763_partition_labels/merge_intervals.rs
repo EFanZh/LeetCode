@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn partition_labels(s: String) -> Vec<i32> {
         let mut intervals = [(0, 0); 26];
@@ -36,6 +38,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn partition_labels(s: String) -> Vec<i32> {

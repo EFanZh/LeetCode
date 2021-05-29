@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn read_binary_watch_helper(base: u16, start: u8, n: u8, result: &mut Vec<String>) {
         if n == 0 {
@@ -24,6 +26,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn read_binary_watch(num: i32) -> Vec<String> {

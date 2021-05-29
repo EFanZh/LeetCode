@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn longest_valid_parentheses(s: String) -> i32 {
         let mut max_length = 0;
@@ -19,6 +21,8 @@ impl Solution {
         max_length
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_valid_parentheses(s: String) -> i32 {

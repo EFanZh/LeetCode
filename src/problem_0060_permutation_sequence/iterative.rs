@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn get_permutation(n: i32, k: i32) -> String {
         const FACTORIALS: [usize; 10] = [1, 1, 2, 6, 24, 120, 720, 5_040, 40_320, 362_880];
@@ -17,6 +19,8 @@ impl Solution {
         String::from_utf8(digits_storage[..n].to_vec()).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn get_permutation(n: i32, k: i32) -> String {

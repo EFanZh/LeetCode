@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn longest_palindrome(s: String) -> i32 {
         const COUNTS_LENGTH: usize = (b'z' - b'A' + 1) as _;
@@ -22,6 +24,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_palindrome(s: String) -> i32 {

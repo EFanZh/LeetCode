@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn str_str(haystack: String, needle: String) -> i32 {
         if needle.is_empty() {
@@ -13,6 +15,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn str_str(haystack: String, needle: String) -> i32 {

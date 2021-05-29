@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter;
 
 impl Solution {
@@ -89,6 +91,8 @@ impl Solution {
         head
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

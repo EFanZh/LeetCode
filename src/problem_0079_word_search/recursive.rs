@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn exist_helper(board: &mut [Vec<char>], word: &[u8], columns: usize, row: usize, column: usize) -> bool {
         if let Some((c, rest_word)) = word.split_first() {
@@ -39,6 +41,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn exist(board: Vec<Vec<char>>, word: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn first_uniq_char(s: String) -> i32 {
         let mut states = [0_u8; 26];
@@ -17,6 +19,8 @@ impl Solution {
             .map_or(-1, |i| i as _)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn first_uniq_char(s: String) -> i32 {

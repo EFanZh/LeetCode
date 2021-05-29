@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn single_number(nums: Vec<i32>) -> Vec<i32> {
         let mut a_xor_b = 0;
@@ -23,6 +25,8 @@ impl Solution {
         vec![a, b]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn single_number(nums: Vec<i32>) -> Vec<i32> {

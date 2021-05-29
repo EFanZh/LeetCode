@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn int_to_roman(mut num: i32) -> String {
         const DIGITS: [(i32, &str); 13] = [
@@ -30,6 +32,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn int_to_roman(num: i32) -> String {

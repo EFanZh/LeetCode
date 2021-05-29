@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn parse_integer(input: &[u8]) -> (i16, &[u8]) {
         let (&first, mut input) = input.split_first().unwrap();
@@ -48,6 +50,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn complex_number_multiply(a: String, b: String) -> String {
