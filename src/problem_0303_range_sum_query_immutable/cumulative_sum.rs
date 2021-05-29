@@ -1,4 +1,6 @@
-struct NumArray {
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
+pub struct NumArray {
     sums: Box<[i32]>,
 }
 
@@ -21,6 +23,8 @@ impl NumArray {
         self.sums[j as usize] - self.sums.get((i as usize).wrapping_sub(1)).copied().unwrap_or(0)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NumArray for NumArray {
     fn new(nums: Vec<i32>) -> Self {

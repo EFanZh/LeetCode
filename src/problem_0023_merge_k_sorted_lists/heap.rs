@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;
 
@@ -48,6 +50,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {

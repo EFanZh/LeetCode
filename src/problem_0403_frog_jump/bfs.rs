@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::{HashSet, VecDeque};
 
@@ -38,6 +40,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_cross(stones: Vec<i32>) -> bool {

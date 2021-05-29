@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
         let c = c as u32;
@@ -16,6 +18,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn judge_square_sum(c: i32) -> bool {

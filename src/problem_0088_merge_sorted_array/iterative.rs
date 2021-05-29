@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn merge_helper(nums1: &mut [i32], mut m: usize, mut left: i32, mut nums2: &[i32], mut right: i32) {
         loop {
@@ -48,6 +50,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {

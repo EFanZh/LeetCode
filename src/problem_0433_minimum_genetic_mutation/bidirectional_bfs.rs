@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::{HashMap, VecDeque};
 use std::iter;
@@ -86,6 +88,8 @@ impl Solution {
         -1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_mutation(start: String, end: String, bank: Vec<String>) -> i32 {

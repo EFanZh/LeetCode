@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn check_record(s: String) -> bool {
         let mut iter = s.bytes();
@@ -62,6 +64,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn check_record(s: String) -> bool {

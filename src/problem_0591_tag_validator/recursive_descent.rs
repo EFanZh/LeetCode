@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     #[allow(clippy::manual_strip)]
     fn parse_str<'a>(value: &str, input: &'a str) -> Option<&'a str> {
@@ -70,6 +72,8 @@ impl Solution {
         Self::parse_tag(&code) == Some("")
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid(code: String) -> bool {

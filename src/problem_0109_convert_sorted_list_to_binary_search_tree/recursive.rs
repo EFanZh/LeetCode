@@ -2,6 +2,8 @@ use super::super::data_structures::{ListNode, TreeNode};
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::iter;
 use std::rc::Rc;
@@ -30,6 +32,8 @@ impl Solution {
         Self::sorted_list_to_bst_helper(&mut iterator.map(|node| node.val), length)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<TreeNode>>> {

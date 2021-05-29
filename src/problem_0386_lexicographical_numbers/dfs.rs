@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper(prefix: i32, n: i32, result: &mut Vec<i32>) {
         result.push(prefix);
@@ -23,6 +25,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn lexical_order(n: i32) -> Vec<i32> {

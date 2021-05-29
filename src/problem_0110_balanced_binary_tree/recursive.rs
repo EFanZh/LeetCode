@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -26,6 +28,8 @@ impl Solution {
         Self::is_balanced_helper(root.as_deref()).is_some()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {

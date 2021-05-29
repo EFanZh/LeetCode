@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn solve_n_queens_helper(
         n: usize,
@@ -63,6 +65,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn solve_n_queens(n: i32) -> Vec<Vec<String>> {

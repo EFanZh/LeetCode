@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -68,6 +70,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn contains_nearby_almost_duplicate(nums: Vec<i32>, k: i32, t: i32) -> bool {

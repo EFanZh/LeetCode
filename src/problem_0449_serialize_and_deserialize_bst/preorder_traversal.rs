@@ -1,4 +1,7 @@
 use super::super::data_structures::TreeNode;
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::iter::Peekable;
 use std::rc::Rc;
@@ -61,6 +64,8 @@ impl Codec {
         self.deserialize_helper(&mut iter, i32::min_value(), i32::max_value())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Codec for Codec {
     fn new() -> Self {

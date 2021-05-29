@@ -1,3 +1,5 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::Cell;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
@@ -105,6 +107,8 @@ impl LRUCache {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::LRUCache for LRUCache {
     fn new(capacity: i32) -> Self {

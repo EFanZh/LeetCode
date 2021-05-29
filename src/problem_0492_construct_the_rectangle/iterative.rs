@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn construct_rectangle(area: i32) -> Vec<i32> {
         (f64::from(area).sqrt().ceil() as _..area)
@@ -8,6 +10,8 @@ impl Solution {
             .to_vec()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn construct_rectangle(area: i32) -> Vec<i32> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter;
 use std::mem;
 
@@ -29,6 +31,8 @@ impl Solution {
         cache_2.first().copied().unwrap_or(0)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_palindrome_subseq(s: String) -> i32 {

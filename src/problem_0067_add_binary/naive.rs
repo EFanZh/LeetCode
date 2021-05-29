@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 impl Solution {
@@ -40,6 +42,8 @@ impl Solution {
         String::from_utf8(b).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn add_binary(a: String, b: String) -> String {

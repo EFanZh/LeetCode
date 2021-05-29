@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashSet;
 
 impl Solution {
@@ -16,6 +18,8 @@ impl Solution {
         unique_types.len() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn distribute_candies(candy_type: Vec<i32>) -> i32 {

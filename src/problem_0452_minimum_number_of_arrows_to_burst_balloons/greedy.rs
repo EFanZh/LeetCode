@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::convert::TryInto;
 
 impl Solution {
@@ -23,6 +25,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_min_arrow_shots(points: Vec<Vec<i32>>) -> i32 {

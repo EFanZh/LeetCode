@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::{HashSet, VecDeque};
 use std::hash::{Hash, Hasher};
 
@@ -181,6 +183,8 @@ impl Solution {
         -1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_min_step(board: String, hand: String) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper_2(required: i32, nums: &[i32]) -> bool {
         if required == 0 {
@@ -77,6 +79,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn makesquare(nums: Vec<i32>) -> bool {

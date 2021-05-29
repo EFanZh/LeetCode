@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn permute_helper(nums: &mut [i32], split: usize, result: &mut Vec<Vec<i32>>) {
         if split == nums.len() {
@@ -25,6 +27,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {

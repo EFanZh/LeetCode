@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn count_nums(data: Vec<u8>) -> ([u8; 256], usize) {
         let mut result = [0; 256];
@@ -109,6 +111,8 @@ impl Solution {
         String::from_utf8(s[min_window_start..min_window_start + min_window_len].to_vec()).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_window(s: String, t: String) -> String {

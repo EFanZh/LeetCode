@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn game_of_life(board: &mut Vec<Vec<i32>>) {
         let columns = board.first().map_or(0, Vec::len);
@@ -68,6 +70,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn game_of_life(board: &mut Vec<Vec<i32>>) {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn is_palindrome(s: &[u8]) -> bool {
         let mut iter = s.iter();
@@ -23,6 +25,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn shortest_palindrome(s: String) -> String {

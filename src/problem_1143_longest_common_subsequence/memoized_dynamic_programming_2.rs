@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -31,6 +33,8 @@ impl Solution {
         Self::helper(text1.as_bytes(), text2.as_bytes(), &mut HashMap::new())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_common_subsequence(text1: String, text2: String) -> i32 {

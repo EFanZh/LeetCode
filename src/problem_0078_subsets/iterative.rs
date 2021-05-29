@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
@@ -27,6 +29,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {

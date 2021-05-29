@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -17,6 +19,8 @@ impl Solution {
         vec![indices[&(target - last)], nums.len() as _]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {

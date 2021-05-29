@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn min_moves(nums: Vec<i32>) -> i32 {
         nums.split_first().map_or(0, |(&first, rest)| {
@@ -15,6 +17,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_moves(nums: Vec<i32>) -> i32 {

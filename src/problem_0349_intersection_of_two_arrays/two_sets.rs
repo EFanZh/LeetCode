@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashSet;
 
 impl Solution {
@@ -10,6 +12,8 @@ impl Solution {
         nums1.into_iter().filter(|num| nums2.contains(num)).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {

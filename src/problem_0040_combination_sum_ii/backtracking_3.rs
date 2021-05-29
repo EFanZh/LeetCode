@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
@@ -58,6 +60,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {

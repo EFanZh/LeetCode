@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Reverse;
 use std::collections::binary_heap::PeekMut;
 use std::collections::BinaryHeap;
@@ -49,6 +51,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

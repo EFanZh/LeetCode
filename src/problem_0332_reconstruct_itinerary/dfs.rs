@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Reverse;
 use std::collections::HashMap;
 use std::convert::TryInto;
@@ -51,6 +53,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {

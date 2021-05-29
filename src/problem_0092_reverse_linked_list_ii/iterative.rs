@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 use std::ptr::NonNull;
 
@@ -40,6 +42,8 @@ impl Solution {
         head
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {

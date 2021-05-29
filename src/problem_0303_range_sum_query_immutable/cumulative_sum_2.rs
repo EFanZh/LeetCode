@@ -1,6 +1,8 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
-struct NumArray {
+pub struct NumArray {
     sums: Box<[i32]>,
 }
 
@@ -23,6 +25,8 @@ impl NumArray {
         self.sums[(j as usize) + 1] - self.sums[i as usize]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NumArray for NumArray {
     fn new(nums: Vec<i32>) -> Self {

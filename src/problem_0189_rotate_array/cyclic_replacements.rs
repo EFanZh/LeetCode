@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn gcd(mut x: usize, mut y: usize) -> usize {
         while y != 0 {
@@ -36,6 +38,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn rotate(nums: &mut Vec<i32>, k: i32) {

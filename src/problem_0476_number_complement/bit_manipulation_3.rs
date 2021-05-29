@@ -1,10 +1,14 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_complement(num: i32) -> i32 {
         !num << num.leading_zeros() >> num.leading_zeros()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_complement(num: i32) -> i32 {

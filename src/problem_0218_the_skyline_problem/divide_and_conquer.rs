@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::convert::TryInto;
 use std::mem;
 
@@ -132,6 +134,8 @@ impl Solution {
         result.iter().copied().map(Vec::from).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

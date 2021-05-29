@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn is_ip_v4_component(component: &[u8]) -> bool {
         matches!(
@@ -52,6 +54,8 @@ impl Solution {
         result.to_string()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn valid_ip_address(ip: String) -> String {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
         let mut result = Vec::new();
@@ -42,6 +44,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn summary_ranges(nums: Vec<i32>) -> Vec<String> {

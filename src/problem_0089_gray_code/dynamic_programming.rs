@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn gray_code(n: i32) -> Vec<i32> {
         let mut result = vec![0; 1 << n];
@@ -16,6 +18,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn gray_code(n: i32) -> Vec<i32> {

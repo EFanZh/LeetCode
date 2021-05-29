@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         let k = k as usize;
@@ -8,6 +10,8 @@ impl Solution {
         nums.rotate_right(k % length);
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn rotate(nums: &mut Vec<i32>, k: i32) {

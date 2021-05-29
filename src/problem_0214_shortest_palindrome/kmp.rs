@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn compute_prefix_function(mut s: impl FnMut(usize) -> Option<u8>, length: usize) -> usize {
         let mut result = vec![0; length];
@@ -43,6 +45,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn shortest_palindrome(s: String) -> String {

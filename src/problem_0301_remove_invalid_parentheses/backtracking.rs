@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::HashSet;
 
@@ -68,6 +70,8 @@ impl Solution {
         result.into_iter().collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn remove_invalid_parentheses(s: String) -> Vec<String> {

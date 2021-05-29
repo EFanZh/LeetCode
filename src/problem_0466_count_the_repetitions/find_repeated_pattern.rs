@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
@@ -52,6 +54,8 @@ impl Solution {
         (repeat_count / n2) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn get_max_repetitions(s1: String, n1: i32, s2: String, n2: i32) -> i32 {

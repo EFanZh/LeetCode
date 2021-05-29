@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter::Peekable;
 use std::mem;
 use std::str::Bytes;
@@ -75,6 +77,8 @@ impl Solution {
         mem::take(&mut cache[columns * ops.len()])
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn diff_ways_to_compute(input: String) -> Vec<i32> {

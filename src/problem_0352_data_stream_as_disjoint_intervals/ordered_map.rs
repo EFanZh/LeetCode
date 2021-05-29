@@ -1,3 +1,5 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::BTreeMap;
 
@@ -53,6 +55,8 @@ impl SummaryRanges {
         self.intervals.iter().map(|(&from, &to)| vec![from, to]).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::SummaryRanges for SummaryRanges {
     fn new() -> Self {

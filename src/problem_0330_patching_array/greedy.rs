@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn min_patches(nums: Vec<i32>, n: i32) -> i32 {
         let n = n as u32;
@@ -34,6 +36,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_patches(nums: Vec<i32>, n: i32) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn increasing_triplet(nums: Vec<i32>) -> bool {
         let mut iter = nums.into_iter();
@@ -27,6 +29,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn increasing_triplet(nums: Vec<i32>) -> bool {

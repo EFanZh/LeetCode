@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn nth_super_ugly_number(n: i32, primes: Vec<i32>) -> i32 {
         let n = n as _;
@@ -31,6 +33,8 @@ impl Solution {
         prev
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn nth_super_ugly_number(n: i32, primes: Vec<i32>) -> i32 {

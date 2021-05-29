@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn count_numbers_with_unique_digits(n: i32) -> i32 {
         const RESULTS: [i32; 9] = [1, 10, 91, 739, 5275, 32491, 168_571, 712_891, 2_345_851];
@@ -7,6 +9,8 @@ impl Solution {
         RESULTS[n as usize]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_numbers_with_unique_digits(n: i32) -> i32 {

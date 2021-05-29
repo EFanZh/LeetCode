@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 use std::mem;
 
@@ -42,6 +44,8 @@ impl Solution {
         list2
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_restaurant(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {

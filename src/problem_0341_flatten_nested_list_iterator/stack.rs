@@ -1,5 +1,7 @@
 use super::super::data_structures::NestedInteger;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 use std::vec::IntoIter;
 
@@ -46,6 +48,8 @@ impl NestedIterator {
         self.state.is_some()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NestedIterator for NestedIterator {
     fn new(nested_list: Vec<NestedInteger>) -> Self {

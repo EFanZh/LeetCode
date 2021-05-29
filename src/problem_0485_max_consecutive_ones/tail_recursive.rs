@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn zero_before(nums: &[i32], i: usize, result: usize) -> usize {
         match nums.get(i) {
@@ -21,6 +23,8 @@ impl Solution {
         Self::zero_before(&nums, 0, 0) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_max_consecutive_ones(nums: Vec<i32>) -> i32 {

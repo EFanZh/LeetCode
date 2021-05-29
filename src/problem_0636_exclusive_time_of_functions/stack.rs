@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn exclusive_time(n: i32, logs: Vec<String>) -> Vec<i32> {
         let mut result = vec![0; n as _];
@@ -32,6 +34,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn exclusive_time(n: i32, logs: Vec<String>) -> Vec<i32> {

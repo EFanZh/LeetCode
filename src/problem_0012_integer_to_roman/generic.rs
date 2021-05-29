@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter;
 
 impl Solution {
@@ -29,6 +31,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn int_to_roman(num: i32) -> String {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn merge_sort_to_self(sums: &mut [i64], buffer: &mut [i64], lower: i32, upper: i32, result: &mut i32) {
         if sums.len() > 1 {
@@ -128,6 +130,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_range_sum(nums: Vec<i32>, lower: i32, upper: i32) -> i32 {

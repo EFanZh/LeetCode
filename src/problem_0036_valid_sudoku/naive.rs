@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn has_duplication<I: IntoIterator<Item = char>>(iter: I) -> bool {
         let mut count = [false; 9];
@@ -47,6 +49,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {

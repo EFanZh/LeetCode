@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn compute_prefix_function(needle: &[u8]) -> Box<[usize]> {
         let mut prefix_function = vec![0; needle.len()];
@@ -56,6 +58,8 @@ impl Solution {
         (i - j) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn str_str(haystack: String, needle: String) -> i32 {

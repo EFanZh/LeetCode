@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
         const DIGITS: [(&[u8], i32); 13] = [
@@ -42,6 +44,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn roman_to_int(s: String) -> i32 {

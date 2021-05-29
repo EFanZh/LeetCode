@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::ops::BitXor;
 
 impl Solution {
@@ -7,6 +9,8 @@ impl Solution {
         nums.into_iter().fold(0, BitXor::bitxor)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn single_number(nums: Vec<i32>) -> i32 {

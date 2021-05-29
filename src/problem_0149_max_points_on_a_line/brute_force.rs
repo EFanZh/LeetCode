@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::convert::TryInto;
@@ -50,6 +52,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_points(points: Vec<Vec<i32>>) -> i32 {

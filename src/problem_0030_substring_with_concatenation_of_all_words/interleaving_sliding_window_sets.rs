@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::borrow::Borrow;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
@@ -103,6 +105,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {

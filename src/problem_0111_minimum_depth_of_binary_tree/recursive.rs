@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::rc::Rc;
@@ -54,6 +56,8 @@ impl Solution {
         depth
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {

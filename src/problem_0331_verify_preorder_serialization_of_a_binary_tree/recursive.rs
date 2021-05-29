@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper<I: Iterator<Item = bool>>(mut iter: I, k: &mut dyn FnMut(I) -> bool) -> bool {
         match iter.next() {
@@ -15,6 +17,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid_serialization(preorder: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn least_interval(tasks: Vec<char>, n: i32) -> i32 {
         let mut counts = [0; 26];
@@ -14,6 +16,8 @@ impl Solution {
         (tasks.len() as i32).max((max_count - 1) * (n + 1) + max_count_tasks)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn least_interval(tasks: Vec<char>, n: i32) -> i32 {

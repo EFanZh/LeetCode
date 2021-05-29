@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn combination_sum2_helper_non_empty(
         first: i32,
@@ -43,6 +45,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {

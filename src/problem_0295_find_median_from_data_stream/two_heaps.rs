@@ -1,3 +1,5 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 use std::mem;
@@ -43,6 +45,8 @@ impl MedianFinder {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::MedianFinder for MedianFinder {
     fn new() -> Self {

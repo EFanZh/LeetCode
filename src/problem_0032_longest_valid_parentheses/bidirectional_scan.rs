@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 
 impl Solution {
@@ -35,6 +37,8 @@ impl Solution {
         length_1.max(length_2)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_valid_parentheses(s: String) -> i32 {

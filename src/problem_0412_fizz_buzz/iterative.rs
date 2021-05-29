@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn fizz_buzz(n: i32) -> Vec<String> {
         (1..=n)
@@ -19,6 +21,8 @@ impl Solution {
             .collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn fizz_buzz(n: i32) -> Vec<String> {

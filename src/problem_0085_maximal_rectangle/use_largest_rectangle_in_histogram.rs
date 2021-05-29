@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn largest_rectangle_area(stack_base: &mut Vec<(i32, i32)>, heights: &[i32]) -> i32 {
         let mut result = 0;
@@ -56,6 +58,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn maximal_rectangle(matrix: Vec<Vec<char>>) -> i32 {

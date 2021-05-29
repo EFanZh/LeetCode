@@ -1,6 +1,9 @@
 #![allow(clippy::unused_self)]
 
 use super::super::data_structures::TreeNode;
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::rc::Rc;
@@ -92,6 +95,8 @@ impl Codec {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Codec for Codec {
     fn new() -> Self {

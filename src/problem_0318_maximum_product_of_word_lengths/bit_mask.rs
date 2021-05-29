@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn max_product(words: Vec<String>) -> i32 {
         let mut result = 0;
@@ -25,6 +27,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_product(words: Vec<String>) -> i32 {

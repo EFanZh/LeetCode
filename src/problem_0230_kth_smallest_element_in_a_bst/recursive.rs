@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -27,6 +29,8 @@ impl Solution {
         Self::kth_smallest_helper(root.as_deref(), k - 1).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {

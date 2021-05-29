@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 use std::rc::Rc;
 
@@ -69,6 +71,8 @@ impl Solution {
         result.to_vec()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn word_break(s: String, word_dict: Vec<String>) -> Vec<String> {

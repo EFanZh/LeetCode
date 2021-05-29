@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn acc_max<'a, I: 'a + IntoIterator<Item = &'a i32>>(iter: I) -> impl 'a + Iterator<Item = i32> {
         let mut state = 0;
@@ -40,6 +42,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn trap(height: Vec<i32>) -> i32 {

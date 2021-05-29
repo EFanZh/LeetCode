@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn unique_paths_with_obstacles(obstacle_grid: Vec<Vec<i32>>) -> i32 {
         let columns = obstacle_grid[0].len();
@@ -24,6 +26,8 @@ impl Solution {
         cache[0]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn unique_paths_with_obstacles(obstacle_grid: Vec<Vec<i32>>) -> i32 {

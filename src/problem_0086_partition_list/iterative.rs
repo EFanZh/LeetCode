@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn partition(mut head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
         let mut left = None;
@@ -24,6 +26,8 @@ impl Solution {
         left
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {

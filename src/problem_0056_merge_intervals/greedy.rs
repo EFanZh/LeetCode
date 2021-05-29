@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn merge(mut intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         intervals.sort_unstable_by_key(|interval| interval[0]);
@@ -22,6 +24,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

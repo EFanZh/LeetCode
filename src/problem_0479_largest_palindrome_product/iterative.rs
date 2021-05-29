@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn reverse(mut n: u64) -> u64 {
         let mut result = 0;
@@ -44,6 +46,8 @@ impl Solution {
         9
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn largest_palindrome(n: i32) -> i32 {

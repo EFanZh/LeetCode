@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 #[derive(Default)]
 struct TrieNode {
     children: [Option<Box<TrieNode>>; 26],
@@ -80,6 +82,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn palindrome_pairs(words: Vec<String>) -> Vec<Vec<i32>> {

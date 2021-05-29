@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn check_inclusion(s1: String, s2: String) -> bool {
         if s1.len() <= s2.len() {
@@ -58,6 +60,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn check_inclusion(s1: String, s2: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::vec::IntoIter;
 
 impl Solution {
@@ -103,6 +105,8 @@ impl Solution {
         Self::start(s.into_bytes().into_iter())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_number(s: String) -> bool {

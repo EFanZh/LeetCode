@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn is_component(slice: &str) -> bool {
         if slice.starts_with('0') {
@@ -35,6 +37,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn restore_ip_addresses(s: String) -> Vec<String> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find132pattern(nums: Vec<i32>) -> bool {
         let mut s3 = i32::min_value();
@@ -21,6 +23,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find132pattern(nums: Vec<i32>) -> bool {

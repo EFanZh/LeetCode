@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_poisoned_duration(time_series: Vec<i32>, duration: i32) -> i32 {
         time_series.get(1..).map_or(0, |rest| {
@@ -12,6 +14,8 @@ impl Solution {
         })
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_poisoned_duration(time_series: Vec<i32>, duration: i32) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_power_of_two(n: i32) -> bool {
         #[allow(clippy::match_like_matches_macro)]
@@ -13,6 +15,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_power_of_two(n: i32) -> bool {

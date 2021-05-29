@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         let mut row_hits = [[false; 9]; 9];
@@ -41,6 +43,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {

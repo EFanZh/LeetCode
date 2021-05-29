@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::rc::Rc;
 
 #[derive(Default, Clone)]
@@ -45,6 +47,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_longest_word(s: String, dictionary: Vec<String>) -> String {

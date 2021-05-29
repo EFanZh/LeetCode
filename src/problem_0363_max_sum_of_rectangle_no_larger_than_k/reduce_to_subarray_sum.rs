@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::BTreeSet;
 use std::iter;
 
@@ -85,6 +87,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_sum_submatrix(matrix: Vec<Vec<i32>>, k: i32) -> i32 {

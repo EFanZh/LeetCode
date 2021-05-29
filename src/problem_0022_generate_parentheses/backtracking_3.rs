@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn generate_parenthesis_unused(n: i32, unmatched: usize, buffer: &mut Vec<u8>, result: &mut Vec<String>) {
         buffer.push(b'(');
@@ -43,6 +45,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn generate_parenthesis(n: i32) -> Vec<String> {

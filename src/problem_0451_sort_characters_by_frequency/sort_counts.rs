@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn frequency_sort(s: String) -> String {
         const START: u8 = b' ';
@@ -27,6 +29,8 @@ impl Solution {
         String::from_utf8(s).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn frequency_sort(s: String) -> String {

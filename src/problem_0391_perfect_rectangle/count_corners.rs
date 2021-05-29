@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::convert::TryInto;
@@ -61,6 +63,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_rectangle_cover(rectangles: Vec<Vec<i32>>) -> bool {

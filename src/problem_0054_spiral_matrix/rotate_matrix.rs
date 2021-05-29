@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
         let mut result = Vec::new();
@@ -45,6 +47,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {

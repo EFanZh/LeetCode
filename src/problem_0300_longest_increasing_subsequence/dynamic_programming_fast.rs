@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn length_of_lis(nums: Vec<i32>) -> i32 {
         // Invariant: The last element of the increasing subsequence of length i with the minimal last element is
@@ -22,6 +24,8 @@ impl Solution {
         cache.len() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn length_of_lis(nums: Vec<i32>) -> i32 {

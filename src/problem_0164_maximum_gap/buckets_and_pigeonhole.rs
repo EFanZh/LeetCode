@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn maximum_gap(nums: Vec<i32>) -> i32 {
         let mut result = 0;
@@ -49,6 +51,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn maximum_gap(nums: Vec<i32>) -> i32 {

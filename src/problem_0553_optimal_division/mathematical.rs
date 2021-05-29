@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::fmt::Error;
 
 impl Solution {
@@ -32,6 +34,8 @@ impl Solution {
         Self::helper(nums).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn optimal_division(nums: Vec<i32>) -> String {

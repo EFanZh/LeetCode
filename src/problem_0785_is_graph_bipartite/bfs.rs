@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::{HashMap, VecDeque};
 
@@ -41,6 +43,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_bipartite(graph: Vec<Vec<i32>>) -> bool {

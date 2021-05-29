@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_interleave(s1: String, s2: String, s3: String) -> bool {
         if s1.len() + s2.len() == s3.len() {
@@ -40,6 +42,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_interleave(s1: String, s2: String, s3: String) -> bool {

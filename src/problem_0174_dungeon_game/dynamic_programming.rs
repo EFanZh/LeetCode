@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn calculate_minimum_hp(dungeon: Vec<Vec<i32>>) -> i32 {
         let columns = dungeon.first().map_or(0, Vec::len);
@@ -26,6 +28,8 @@ impl Solution {
         cache[0]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn calculate_minimum_hp(dungeon: Vec<Vec<i32>>) -> i32 {

@@ -1,3 +1,5 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 
 pub struct SummaryRanges {
@@ -76,6 +78,8 @@ impl SummaryRanges {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::SummaryRanges for SummaryRanges {
     fn new() -> Self {

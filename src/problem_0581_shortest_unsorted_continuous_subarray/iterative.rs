@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
         let mut max = i32::min_value();
@@ -27,6 +29,8 @@ impl Solution {
         (right - left) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {

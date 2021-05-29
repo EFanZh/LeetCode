@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn lexical_order(n: i32) -> Vec<i32> {
         let mut result = Vec::with_capacity(n as _);
@@ -32,6 +34,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn lexical_order(n: i32) -> Vec<i32> {

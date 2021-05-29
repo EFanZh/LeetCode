@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn get_streaks(s: &[u8]) -> (usize, usize, usize) {
         let length = s.len();
@@ -79,6 +81,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn strong_password_checker(password: String) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn is_scramble(s1: String, s2: String) -> bool {
         if s1.is_empty() {
@@ -33,6 +35,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_scramble(s1: String, s2: String) -> bool {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
         let mut result = Vec::new();
@@ -37,6 +39,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_anagrams(s: String, p: String) -> Vec<i32> {

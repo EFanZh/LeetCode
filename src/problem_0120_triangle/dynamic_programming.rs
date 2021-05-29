@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 impl Solution {
@@ -24,6 +26,8 @@ impl Solution {
         cache.into_iter().min().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn minimum_total(triangle: Vec<Vec<i32>>) -> i32 {

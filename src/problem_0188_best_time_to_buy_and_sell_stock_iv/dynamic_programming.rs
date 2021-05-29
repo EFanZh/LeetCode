@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn max_profit(k: i32, prices: Vec<i32>) -> i32 {
         let k = k as usize;
@@ -38,6 +40,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_profit(k: i32, prices: Vec<i32>) -> i32 {

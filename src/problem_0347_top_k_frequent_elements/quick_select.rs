@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
@@ -48,6 +50,8 @@ impl Solution {
         counts[..k].iter().map(|&(num, _)| num).collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {

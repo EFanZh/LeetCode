@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::BTreeMap;
 
 impl Solution {
@@ -53,6 +55,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn palindrome_pairs(words: Vec<String>) -> Vec<Vec<i32>> {

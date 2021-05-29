@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::num::NonZeroU8;
 
 impl Solution {
@@ -49,6 +51,8 @@ impl Solution {
         Self::helper(&mut buffer[..n as usize])
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_arrangement(n: i32) -> i32 {

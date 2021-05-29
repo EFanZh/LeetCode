@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn convert(s: String, num_rows: i32) -> String {
         if num_rows == 1 {
@@ -35,6 +37,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn convert(s: String, num_rows: i32) -> String {

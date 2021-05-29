@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn longest_palindrome(s: String) -> String {
         let s = s.into_bytes();
@@ -32,6 +34,8 @@ impl Solution {
         String::from_utf8(s[max_left..max_left + max_length].to_vec()).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_palindrome(s: String) -> String {

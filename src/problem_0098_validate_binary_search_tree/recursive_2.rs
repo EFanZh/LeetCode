@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -30,6 +32,8 @@ impl Solution {
         Self::is_valid_bst_helper(root.as_deref(), None).is_ok()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {

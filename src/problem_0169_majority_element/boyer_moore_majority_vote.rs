@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn majority_element(nums: Vec<i32>) -> i32 {
         // https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm.
@@ -21,6 +23,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn majority_element(nums: Vec<i32>) -> i32 {

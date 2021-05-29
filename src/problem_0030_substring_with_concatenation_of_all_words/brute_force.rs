@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_substring(s: String, mut words: Vec<String>) -> Vec<i32> {
         if words.is_empty() {
@@ -33,6 +35,8 @@ impl Solution {
             .collect()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {

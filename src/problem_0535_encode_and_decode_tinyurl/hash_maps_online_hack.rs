@@ -1,3 +1,5 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
@@ -57,7 +59,7 @@ impl Inner {
     }
 }
 
-struct Codec(RefCell<Inner>);
+pub struct Codec(RefCell<Inner>);
 
 impl Codec {
     fn new() -> Self {
@@ -72,6 +74,8 @@ impl Codec {
         self.0.borrow().decode(short_url)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Codec for Codec {
     fn new() -> Self {

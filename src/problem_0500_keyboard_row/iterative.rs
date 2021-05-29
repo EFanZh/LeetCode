@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn get_row(c: u8) -> u8 {
         match c {
@@ -21,6 +23,8 @@ impl Solution {
         words
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_words(words: Vec<String>) -> Vec<String> {

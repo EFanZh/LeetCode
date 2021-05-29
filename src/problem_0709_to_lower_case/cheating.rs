@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn to_lower_case(mut str: String) -> String {
         str.make_ascii_lowercase();
@@ -7,6 +9,8 @@ impl Solution {
         str
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn to_lower_case(str: String) -> String {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn max_sub_array(nums: Vec<i32>) -> i32 {
         let mut max_sum = i32::min_value();
@@ -13,6 +15,8 @@ impl Solution {
         max_sum
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn max_sub_array(nums: Vec<i32>) -> i32 {

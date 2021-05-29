@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_duplicate(nums: Vec<i32>) -> i32 {
         let start = nums.len() as i32;
@@ -25,6 +27,8 @@ impl Solution {
         slow
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_duplicate(nums: Vec<i32>) -> i32 {

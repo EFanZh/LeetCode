@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn binomial(n: i32, k: i32) -> i32 {
         let n = i64::from(n);
@@ -18,6 +20,8 @@ impl Solution {
         Self::binomial(m + n - 2, m - 1)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn unique_paths(m: i32, n: i32) -> i32 {

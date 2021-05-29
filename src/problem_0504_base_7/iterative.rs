@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 
 impl Solution {
@@ -31,6 +33,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn convert_to_base7(num: i32) -> String {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper(s: &[u8], k: i32) -> usize {
         let mut counts = [0; 26];
@@ -28,6 +30,8 @@ impl Solution {
         Self::helper(s.as_bytes(), k) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_substring(s: String, k: i32) -> i32 {

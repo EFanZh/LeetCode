@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper(input: &mut &[u8], depth: usize, parent_length: usize, result: &mut usize) {
         while input.get(..depth).map_or(false, |s| s.iter().all(|&c| c == b'\t')) {
@@ -30,6 +32,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn length_longest_path(input: String) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 impl Solution {
@@ -26,6 +28,8 @@ impl Solution {
         cache.last().copied().unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn unique_paths(m: i32, n: i32) -> i32 {

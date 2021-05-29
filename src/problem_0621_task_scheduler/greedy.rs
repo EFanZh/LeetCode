@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::BinaryHeap;
 use std::collections::VecDeque;
 
@@ -54,6 +56,8 @@ impl Solution {
         time
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn least_interval(tasks: Vec<char>, n: i32) -> i32 {

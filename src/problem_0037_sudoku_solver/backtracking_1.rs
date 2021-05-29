@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn solve_sudoku_helper(board: &mut [Vec<char>], i: usize) -> Result<(), ()> {
         if i == 81 {
@@ -38,6 +40,8 @@ impl Solution {
         Self::solve_sudoku_helper(board, 0).unwrap_err();
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn solve_sudoku(board: &mut Vec<Vec<char>>) {

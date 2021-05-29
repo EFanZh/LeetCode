@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn integer_replacement(n: i32) -> i32 {
         let mut n = n as u32;
@@ -26,6 +28,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn integer_replacement(n: i32) -> i32 {

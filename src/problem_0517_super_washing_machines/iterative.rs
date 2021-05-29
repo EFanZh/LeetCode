@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_min_moves(machines: Vec<i32>) -> i32 {
         let n = machines.len() as i32;
@@ -25,6 +27,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_min_moves(machines: Vec<i32>) -> i32 {

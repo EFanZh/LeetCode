@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::VecDeque;
 
 impl Solution {
@@ -49,6 +51,8 @@ impl Solution {
         mat
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn update_matrix(mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

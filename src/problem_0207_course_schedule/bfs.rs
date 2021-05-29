@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::VecDeque;
 use std::convert::TryInto;
 
@@ -38,6 +40,8 @@ impl Solution {
         removed == num_courses
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {

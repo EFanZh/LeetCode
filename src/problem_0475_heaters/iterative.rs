@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_radius(mut houses: Vec<i32>, mut heaters: Vec<i32>) -> i32 {
         houses.sort_unstable();
@@ -31,6 +33,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_radius(houses: Vec<i32>, heaters: Vec<i32>) -> i32 {

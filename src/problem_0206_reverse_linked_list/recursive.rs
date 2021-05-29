@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 impl Solution {
@@ -20,6 +22,8 @@ impl Solution {
         Self::helper(None, head)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn length_of_last_word(s: String) -> i32 {
         let mut iter = s.into_bytes().into_iter();
@@ -23,6 +25,8 @@ impl Solution {
         0
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn length_of_last_word(s: String) -> i32 {

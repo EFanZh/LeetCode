@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::mem;
 
 // https://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form.
@@ -28,6 +30,8 @@ impl Solution {
         Self::fast_fibonacci(n + 1)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn climb_stairs(n: i32) -> i32 {

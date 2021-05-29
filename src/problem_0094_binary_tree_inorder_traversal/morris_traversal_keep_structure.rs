@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::mem;
 use std::rc::Rc;
@@ -56,6 +58,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {

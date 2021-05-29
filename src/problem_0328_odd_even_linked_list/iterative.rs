@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn odd_even_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut odd = None;
@@ -26,6 +28,8 @@ impl Solution {
         odd
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

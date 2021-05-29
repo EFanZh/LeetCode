@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn number_of_arithmetic_slices(a: Vec<i32>) -> i32 {
         let mut result = 0;
@@ -33,6 +35,8 @@ impl Solution {
         result as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn number_of_arithmetic_slices(a: Vec<i32>) -> i32 {

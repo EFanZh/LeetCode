@@ -1,10 +1,12 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 use std::rc::Rc;
 
 const MIN_CHAR: u8 = b'a';
 const MAX_CHAR: u8 = b'z';
 
-struct Codec {
+pub struct Codec {
     short_to_long: HashMap<Rc<str>, Rc<str>>,
     long_to_short: HashMap<Rc<str>, Rc<str>>,
     prev: Vec<u8>,
@@ -55,6 +57,8 @@ impl Codec {
         self.short_to_long[short_url.as_str()].to_string()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Codec for Codec {
     fn new() -> Self {

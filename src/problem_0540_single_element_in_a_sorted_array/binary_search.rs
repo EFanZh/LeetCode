@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn single_non_duplicate(nums: Vec<i32>) -> i32 {
         let mut left = 0;
@@ -18,6 +20,8 @@ impl Solution {
         nums[left]
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn single_non_duplicate(nums: Vec<i32>) -> i32 {

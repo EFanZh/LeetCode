@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn repeated_substring_pattern(s: String) -> bool {
         let mut t = String::with_capacity(s.len() * 2 - 2);
@@ -10,6 +12,8 @@ impl Solution {
         t.contains(&s)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn repeated_substring_pattern(s: String) -> bool {

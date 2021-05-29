@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn total_hamming_distance(nums: Vec<i32>) -> i32 {
         let n = nums.len() as i32;
@@ -13,6 +15,8 @@ impl Solution {
             .sum()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn total_hamming_distance(nums: Vec<i32>) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn get_money_amount(n: i32) -> i32 {
         let n = n as usize;
@@ -24,6 +26,8 @@ impl Solution {
         cache[n * (n - 1)] as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn get_money_amount(n: i32) -> i32 {

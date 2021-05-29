@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn arrange_coins(n: i32) -> i32 {
         let n = i64::from(n);
@@ -28,6 +30,8 @@ impl Solution {
         guess as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn arrange_coins(n: i32) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn gcd(mut x: i32, mut y: i32) -> i32 {
         while y != 0 {
@@ -16,6 +18,8 @@ impl Solution {
         z == 0 || (z <= x + y && z % Self::gcd(x, y) == 0)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_measure_water(x: i32, y: i32, z: i32) -> bool {

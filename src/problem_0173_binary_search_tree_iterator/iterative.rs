@@ -1,4 +1,7 @@
 use super::super::data_structures::TreeNode;
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -37,6 +40,8 @@ impl BSTIterator {
         !self.stack.is_empty()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::BSTIterator for BSTIterator {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {

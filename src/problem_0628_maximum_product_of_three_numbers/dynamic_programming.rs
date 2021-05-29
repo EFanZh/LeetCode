@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::convert::TryInto;
 
 impl Solution {
@@ -35,6 +37,8 @@ impl Solution {
         max_3
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn maximum_product(nums: Vec<i32>) -> i32 {

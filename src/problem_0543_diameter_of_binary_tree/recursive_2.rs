@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -23,6 +25,8 @@ impl Solution {
         Self::diameter_of_binary_tree_helper(root.as_deref()).0
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {

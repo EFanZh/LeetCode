@@ -2,6 +2,8 @@ use super::super::data_structures::NestedInteger;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter::Peekable;
 
 impl Solution {
@@ -61,6 +63,8 @@ impl Solution {
         Self::nested_integer(&mut s.bytes().peekable()).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn deserialize(s: String) -> NestedInteger {

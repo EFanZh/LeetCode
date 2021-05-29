@@ -1,7 +1,9 @@
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::iter;
 use std::mem;
 
-struct NumArray {
+pub struct NumArray {
     tree: Box<[i32]>,
 }
 
@@ -60,6 +62,8 @@ impl NumArray {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NumArray for NumArray {
     fn new(nums: Vec<i32>) -> Self {

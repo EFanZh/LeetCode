@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_complement(num: i32) -> i32 {
         let mask = (1_i32 << (32 - num.leading_zeros())).wrapping_sub(1);
@@ -7,6 +9,8 @@ impl Solution {
         !num & mask
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_complement(num: i32) -> i32 {

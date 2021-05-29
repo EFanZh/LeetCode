@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
         let n = matrix.len();
@@ -20,6 +22,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn rotate(matrix: &mut Vec<Vec<i32>>) {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cmp::Ordering;
 use std::mem;
 
@@ -54,6 +56,8 @@ impl Solution {
         Self::nth_element(&mut nums, k)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {

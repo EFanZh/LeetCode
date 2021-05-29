@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn remove_elements_helper(mut maybe_node: &mut Option<Box<ListNode>>, val: i32) {
         while let Some(node) = maybe_node.as_deref_mut() {
@@ -19,6 +21,8 @@ impl Solution {
         head
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {

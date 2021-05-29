@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_target_sum_ways(mut nums: Vec<i32>, s: i32) -> i32 {
         let sum = nums.iter().sum::<i32>();
@@ -32,6 +34,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_target_sum_ways(nums: Vec<i32>, s: i32) -> i32 {

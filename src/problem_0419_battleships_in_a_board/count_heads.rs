@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn count_battleships(board: Vec<Vec<char>>) -> i32 {
         let mut result = 0;
@@ -19,6 +21,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn count_battleships(board: Vec<Vec<char>>) -> i32 {

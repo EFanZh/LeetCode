@@ -2,6 +2,8 @@ use super::super::data_structures::ListNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn delete_duplicates_helper(
         mut prev: Box<ListNode>,
@@ -50,6 +52,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

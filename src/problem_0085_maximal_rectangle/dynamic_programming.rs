@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn maximal_rectangle(matrix: Vec<Vec<char>>) -> i32 {
         let columns = matrix.first().map_or(0, Vec::len) as i32;
@@ -36,6 +38,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn maximal_rectangle(matrix: Vec<Vec<char>>) -> i32 {

@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn parse_tag_name(input: &str) -> Option<(&str, &str)> {
         let search_area = if input.len() <= 9 { input } else { &input[..9] };
@@ -59,6 +61,8 @@ impl Solution {
         Self::parse_tag(&code) == Some("")
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_valid(code: String) -> bool {

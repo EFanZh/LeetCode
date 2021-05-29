@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 use std::convert::TryInto;
 use std::mem;
@@ -44,6 +46,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn restore_array(adjacent_pairs: Vec<Vec<i32>>) -> Vec<i32> {

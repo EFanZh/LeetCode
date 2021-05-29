@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn get_hint(secret: String, guess: String) -> String {
         let mut secret_digits = vec![0; 10];
@@ -29,6 +31,8 @@ impl Solution {
         format!("{}A{}B", bulls, cows)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn get_hint(secret: String, guess: String) -> String {

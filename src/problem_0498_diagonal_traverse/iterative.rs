@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn find_diagonal_order(mat: Vec<Vec<i32>>) -> Vec<i32> {
         let rows = mat.len();
@@ -24,6 +26,8 @@ impl Solution {
         result
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_diagonal_order(mat: Vec<Vec<i32>>) -> Vec<i32> {

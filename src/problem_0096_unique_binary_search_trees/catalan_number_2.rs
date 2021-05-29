@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn num_trees(n: i32) -> i32 {
         // https://en.wikipedia.org/wiki/Catalan_number.
@@ -19,6 +21,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn num_trees(n: i32) -> i32 {

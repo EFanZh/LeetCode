@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn is_segment_match(s: &[u8], p: &[u8]) -> bool {
         for (s_char, p_char) in s.iter().zip(p) {
@@ -58,6 +60,8 @@ impl Solution {
         false
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn is_match(s: String, p: String) -> bool {

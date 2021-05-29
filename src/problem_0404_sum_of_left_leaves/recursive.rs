@@ -2,6 +2,8 @@ use super::super::data_structures::TreeNode;
 
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -28,6 +30,8 @@ impl Solution {
         root.map_or(0, |node| Self::helper_right(&node.borrow()))
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn sum_of_left_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {

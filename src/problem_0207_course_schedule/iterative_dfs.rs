@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::convert::TryInto;
 
 impl Solution {
@@ -65,6 +67,8 @@ impl Solution {
         true
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {

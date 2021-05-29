@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
@@ -28,6 +30,8 @@ impl Solution {
         nums1
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {

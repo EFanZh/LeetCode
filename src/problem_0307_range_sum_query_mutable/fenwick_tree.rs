@@ -1,4 +1,6 @@
-struct NumArray {
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
+pub struct NumArray {
     tree: Box<[i32]>,
 }
 
@@ -41,6 +43,8 @@ impl NumArray {
         Self::prefix_sum(tree, j as usize + 1) - Self::prefix_sum(tree, i as _)
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::NumArray for NumArray {
     fn new(nums: Vec<i32>) -> Self {

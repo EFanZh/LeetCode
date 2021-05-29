@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::{hash_map, HashMap, HashSet};
 
 impl Solution {
@@ -31,6 +33,8 @@ impl Solution {
         }
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn find_pairs(nums: Vec<i32>, k: i32) -> i32 {

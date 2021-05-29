@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn search_insert_helper(nums: &[i32], target: i32, offset: usize) -> usize {
         if nums.is_empty() {
@@ -19,6 +21,8 @@ impl Solution {
         Self::search_insert_helper(&nums, target, 0) as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn search_insert(nums: Vec<i32>, target: i32) -> i32 {

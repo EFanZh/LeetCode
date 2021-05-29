@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 use std::collections::HashMap;
 
 impl Solution {
@@ -34,6 +36,8 @@ impl Solution {
         Self::longest_palindrome_subseq_helper(s.as_bytes(), &mut HashMap::new())
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn longest_palindrome_subseq(s: String) -> i32 {

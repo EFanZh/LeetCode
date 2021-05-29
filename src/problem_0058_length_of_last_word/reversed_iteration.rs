@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     pub fn length_of_last_word(s: String) -> i32 {
         s.into_bytes()
@@ -10,6 +12,8 @@ impl Solution {
             .count() as _
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn length_of_last_word(s: String) -> i32 {

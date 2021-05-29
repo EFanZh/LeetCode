@@ -1,5 +1,7 @@
 pub struct Solution;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 impl Solution {
     fn helper(iter: &mut impl Iterator<Item = u8>, result: &mut Vec<u8>) {
         while let Some(c) = iter.next() {
@@ -37,6 +39,8 @@ impl Solution {
         String::from_utf8(result).unwrap()
     }
 }
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
     fn decode_string(s: String) -> String {
