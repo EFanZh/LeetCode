@@ -19,7 +19,21 @@ mod tests {
     pub fn run<M: MedianFinder>() {
         use Operation::{AddNum, FindMedian};
 
-        let test_cases = [&[AddNum(1), AddNum(2), FindMedian(1.5), AddNum(3), FindMedian(2.0)] as &[_]];
+        let test_cases = [
+            &[AddNum(1), AddNum(2), FindMedian(1.5), AddNum(3), FindMedian(2.0)] as &[_],
+            &[
+                AddNum(-1),
+                FindMedian(-1.0),
+                AddNum(-2),
+                FindMedian(-1.5),
+                AddNum(-3),
+                FindMedian(-2.0),
+                AddNum(-4),
+                FindMedian(-2.5),
+                AddNum(-5),
+                FindMedian(-3.0),
+            ],
+        ];
 
         for operations in test_cases.iter().copied() {
             let mut median_finder = M::new();
@@ -27,7 +41,7 @@ mod tests {
             for operation in operations {
                 match *operation {
                     AddNum(num) => median_finder.add_num(num),
-                    FindMedian(expected) => assert!((median_finder.find_median() - expected).abs() < f64::EPSILON),
+                    FindMedian(expected) => approx::assert_relative_eq!(median_finder.find_median(), expected),
                 }
             }
         }
