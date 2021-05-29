@@ -1,4 +1,4 @@
-pub mod two_passes;
+pub mod partition_by_bit;
 
 pub trait Solution {
     fn single_number(nums: Vec<i32>) -> Vec<i32>;
