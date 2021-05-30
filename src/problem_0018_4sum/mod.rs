@@ -34,6 +34,7 @@ mod tests {
                     [-1, 0, 0, 1],
                 ],
             ),
+            ((&[5, 5, 3, 5, 1, -5, 1, -2], 4), &[[-5, 1, 3, 5]]),
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {
