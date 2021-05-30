@@ -18,6 +18,7 @@ mod tests {
                 &[&[1, 1, 6] as &[_], &[1, 2, 5], &[1, 7], &[2, 6]] as &[&[_]],
             ),
             ((&[2, 5, 2, 1, 2], 5), &[&[1, 2, 2], &[5]]),
+            ((&[1], 2), &[]),
         ];
 
         for ((candidates, target), expected) in test_cases.iter().copied() {
