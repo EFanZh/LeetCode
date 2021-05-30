@@ -2,27 +2,24 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::collections::HashSet;
 
 impl Solution {
     fn helper(stones: &HashSet<i32>, target: i32, stone: i32, steps: i32, cache: &mut HashSet<(i32, i32)>) -> bool {
-        match stone.cmp(&target) {
-            Ordering::Less => {
-                if cache.insert((stone, steps)) {
-                    for next_steps in ((steps - 1).max(1)..steps + 2).rev() {
-                        let next_stone = stone + next_steps;
+        if stone == target {
+            true
+        } else {
+            if cache.insert((stone, steps)) {
+                for next_steps in ((steps - 1).max(1)..steps + 2).rev() {
+                    let next_stone = stone + next_steps;
 
-                        if stones.contains(&next_stone) && Self::helper(stones, target, next_stone, next_steps, cache) {
-                            return true;
-                        }
+                    if stones.contains(&next_stone) && Self::helper(stones, target, next_stone, next_steps, cache) {
+                        return true;
                     }
                 }
-
-                false
             }
-            Ordering::Equal => true,
-            Ordering::Greater => false,
+
+            false
         }
     }
 

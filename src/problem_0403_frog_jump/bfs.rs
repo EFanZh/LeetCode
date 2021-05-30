@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::collections::{HashSet, VecDeque};
 
 impl Solution {
@@ -16,18 +15,16 @@ impl Solution {
         loop {
             let (stone, steps) = current;
 
-            match stone.cmp(&target) {
-                Ordering::Less => {
-                    for next_steps in ((steps - 1).max(1)..steps + 2).rev() {
-                        let next_stone = stone + next_steps;
+            if stone == target {
+                return true;
+            }
 
-                        if stones.contains(&next_stone) && visited.insert((next_stone, next_steps)) {
-                            queue.push_back((next_stone, next_steps));
-                        }
-                    }
+            for next_steps in ((steps - 1).max(1)..steps + 2).rev() {
+                let next_stone = stone + next_steps;
+
+                if stones.contains(&next_stone) && visited.insert((next_stone, next_steps)) {
+                    queue.push_back((next_stone, next_steps));
                 }
-                Ordering::Equal => return true,
-                Ordering::Greater => {}
             }
 
             if let Some(next) = queue.pop_front() {
