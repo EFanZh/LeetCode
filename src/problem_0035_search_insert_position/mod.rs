@@ -14,10 +14,13 @@ mod tests {
 
     pub fn run<S: Solution>() {
         let test_cases = [
-            ((&[1, 3, 5, 6], 5), 2),
+            ((&[1, 3, 5, 6] as &[_], 5), 2),
             ((&[1, 3, 5, 6], 2), 1),
             ((&[1, 3, 5, 6], 7), 4),
             ((&[1, 3, 5, 6], 0), 0),
+            ((&[1], 0), 0),
+            ((&[1], 2), 1),
+            ((&[], 4), 0),
         ];
 
         for ((nums, target), expected) in test_cases.iter().copied() {

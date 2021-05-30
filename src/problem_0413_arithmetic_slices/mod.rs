@@ -10,7 +10,7 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[1, 2, 3, 4] as &[_], 3), (&[1, 2, 3, 2, 1], 2)];
+        let test_cases = [(&[1, 2, 3, 4] as &[_], 3), (&[1], 0), (&[1, 2, 3, 2, 1], 2)];
 
         for (a, expected) in test_cases.iter().copied() {
             assert_eq!(S::number_of_arithmetic_slices(a.to_vec()), expected);
