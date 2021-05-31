@@ -302,6 +302,10 @@ Why is the solution correct?
 
 Why is the solution correct?
 
+## [546. Remove Boxes](https://leetcode.com/problems/remove-boxes/)
+
+Make sure it can be solved again.
+
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
 Why does the mathematical solution work?
