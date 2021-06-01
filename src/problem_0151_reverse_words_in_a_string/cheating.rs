@@ -7,13 +7,11 @@ impl Solution {
         let mut iter = s.split_whitespace().rev();
         let mut result = String::with_capacity(s.len());
 
-        if let Some(first) = iter.next() {
-            result.push_str(first);
+        result.push_str(iter.next().unwrap());
 
-            for word in iter {
-                result.push(' ');
-                result.push_str(word);
-            }
+        for word in iter {
+            result.push(' ');
+            result.push_str(word);
         }
 
         result
