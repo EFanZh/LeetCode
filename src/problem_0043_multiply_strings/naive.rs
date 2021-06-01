@@ -12,14 +12,14 @@ impl Solution {
             }
         }
 
-        if let Some((mut first, mut rest)) = result.split_first_mut() {
-            while let Some((second, new_rest)) = rest.split_first_mut() {
-                *second += *first / 10;
-                *first %= 10;
+        let (mut first, mut rest) = result.split_first_mut().unwrap();
 
-                first = second;
-                rest = new_rest;
-            }
+        while let Some((second, new_rest)) = rest.split_first_mut() {
+            *second += *first / 10;
+            *first %= 10;
+
+            first = second;
+            rest = new_rest;
         }
 
         while result.len() > 1 && *result.last().unwrap() == 0 {

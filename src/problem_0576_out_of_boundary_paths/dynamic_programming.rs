@@ -6,7 +6,7 @@ use std::mem;
 
 impl Solution {
     pub fn find_paths(m: i32, n: i32, max_move: i32, start_row: i32, start_column: i32) -> i32 {
-        let modular = 1_000_000_007;
+        let modulus = 1_000_000_007;
         let m = m as usize;
         let n = n as usize;
         let max_move = max_move as usize;
@@ -28,11 +28,11 @@ impl Solution {
                     let right = if x == n - 1 { border } else { cache[n * y + (x + 1)] };
                     let bottom = if y == m - 1 { border } else { cache[n * (y + 1) + x] };
 
-                    temp[n * y + x] = (top + left + right + bottom) % modular;
+                    temp[n * y + x] = (top + left + right + bottom) % modulus;
                 }
             }
 
-            result = (result + temp[n * start_row + start_column]) % modular;
+            result = (result + temp[n * start_row + start_column]) % modulus;
 
             mem::swap(&mut cache, &mut temp);
         }
