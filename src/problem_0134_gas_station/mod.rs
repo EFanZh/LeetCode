@@ -13,6 +13,7 @@ mod tests {
         let test_cases = [
             ((&[1, 2, 3, 4, 5] as &[_], &[3, 4, 5, 1, 2] as &[_]), 3),
             ((&[2, 3, 4], &[3, 4, 3]), -1),
+            ((&[3, 3, 4], &[3, 4, 4]), -1),
         ];
 
         for ((gas, cost), expected) in test_cases.iter().copied() {
