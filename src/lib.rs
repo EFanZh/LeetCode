@@ -468,6 +468,7 @@ pub mod problem_0543_diameter_of_binary_tree;
 pub mod problem_0546_remove_boxes;
 pub mod problem_0547_number_of_provinces;
 pub mod problem_0551_student_attendance_record_i;
+pub mod problem_0552_student_attendance_record_ii;
 pub mod problem_0553_optimal_division;
 pub mod problem_0554_brick_wall;
 pub mod problem_0556_next_greater_element_iii;
