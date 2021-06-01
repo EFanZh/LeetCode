@@ -9,7 +9,12 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [((2.0, 10), 1024.0), ((2.1, 3), 9.261), ((2.0, -2), 0.25)];
+        let test_cases = [
+            ((2.0, 10), 1024.0),
+            ((2.1, 3), 9.261),
+            ((2.0, -2), 0.25),
+            ((7.0, 0), 1.0),
+        ];
 
         for ((x, n), expected) in test_cases.iter().copied() {
             approx::assert_relative_eq!(S::my_pow(x, n), expected);
