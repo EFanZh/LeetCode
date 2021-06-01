@@ -12,7 +12,7 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[1, 2] as &[_], false), (&[1, 2, 2, 1], true)];
+        let test_cases = [(&[1, 2] as &[_], false), (&[1, 2, 2, 1], true), (&[1], true)];
 
         for (head, expected) in test_cases.iter().copied() {
             assert_eq!(

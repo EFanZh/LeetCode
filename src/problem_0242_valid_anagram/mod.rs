@@ -9,7 +9,11 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(("anagram", "nagaram"), true), (("rat", "car"), false)];
+        let test_cases = [
+            (("anagram", "nagaram"), true),
+            (("rat", "car"), false),
+            (("a", "ab"), false),
+        ];
 
         for ((s, t), expected) in test_cases.iter().copied() {
             assert_eq!(S::is_anagram(s.to_string(), t.to_string()), expected);
