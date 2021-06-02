@@ -9,7 +9,11 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[[5, 4], [6, 4], [6, 7], [2, 3]] as &[[_; 2]], 3)];
+        let test_cases = [
+            (&[[5, 4], [6, 4], [6, 7], [2, 3]] as &[_], 3),
+            (&[[1, 1], [1, 1], [1, 1]], 1),
+            (&[[4, 5], [4, 6], [6, 7], [2, 3], [1, 1]], 4),
+        ];
 
         for (envelopes, expected) in test_cases.iter().copied() {
             assert_eq!(

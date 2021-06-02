@@ -11,7 +11,6 @@ pub trait SummaryRanges {
 mod tests {
     use super::SummaryRanges;
 
-    #[derive(Clone, Copy)]
     enum Operation<'a> {
         AddNum(i32),
         GetIntervals(&'a [[i32; 2]]),
@@ -589,8 +588,8 @@ mod tests {
         for operations in test_cases.iter().copied() {
             let mut summary_ranges = S::new();
 
-            for &operation in operations {
-                match operation {
+            for operation in operations {
+                match *operation {
                     AddNum(val) => summary_ranges.add_num(val),
                     GetIntervals(expected) => assert_eq!(summary_ranges.get_intervals(), expected),
                 }
