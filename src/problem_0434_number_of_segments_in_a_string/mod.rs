@@ -15,6 +15,7 @@ mod tests {
             ("Hello", 1),
             ("love live! mu'sic forever", 4),
             ("", 0),
+            ("                ", 0),
         ];
 
         for (s, expected) in test_cases.iter().copied() {
