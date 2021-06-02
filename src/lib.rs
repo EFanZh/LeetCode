@@ -476,6 +476,7 @@ pub mod problem_0557_reverse_words_in_a_string_iii;
 pub mod problem_0560_subarray_sum_equals_k;
 pub mod problem_0561_array_partition_i;
 pub mod problem_0563_binary_tree_tilt;
+pub mod problem_0564_find_the_closest_palindrome;
 pub mod problem_0565_array_nesting;
 pub mod problem_0566_reshape_the_matrix;
 pub mod problem_0567_permutation_in_string;
