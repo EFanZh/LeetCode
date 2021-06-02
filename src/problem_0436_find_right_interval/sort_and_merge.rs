@@ -26,26 +26,27 @@ impl Solution {
         let mut left_iter = lefts.into_iter();
         let mut right_iter = rights.into_iter();
 
-        if let (Some((mut left, mut i)), Some((mut right, mut j))) = (left_iter.next(), right_iter.next()) {
-            loop {
-                if left < right {
-                    result[j as usize] = prev;
+        let (mut left, mut i) = left_iter.next().unwrap();
+        let (mut right, mut j) = right_iter.next().unwrap();
 
-                    if let Some((next_right, next_j)) = right_iter.next() {
-                        right = next_right;
-                        j = next_j;
-                    } else {
-                        break;
-                    }
+        loop {
+            if left < right {
+                result[j as usize] = prev;
+
+                if let Some((next_right, next_j)) = right_iter.next() {
+                    right = next_right;
+                    j = next_j;
                 } else {
-                    prev = i;
+                    break;
+                }
+            } else {
+                prev = i;
 
-                    if let Some((next_left, next_i)) = left_iter.next() {
-                        left = next_left;
-                        i = next_i;
-                    } else {
-                        break;
-                    }
+                if let Some((next_left, next_i)) = left_iter.next() {
+                    left = next_left;
+                    i = next_i;
+                } else {
+                    break;
                 }
             }
         }
