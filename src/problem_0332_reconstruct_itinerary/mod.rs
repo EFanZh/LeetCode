@@ -26,6 +26,10 @@ mod tests {
                 ],
                 &["JFK", "ATL", "JFK", "SFO", "ATL", "SFO"],
             ),
+            (
+                &[["JFK", "KUL"], ["JFK", "NRT"], ["NRT", "JFK"]],
+                &["JFK", "NRT", "JFK", "KUL"],
+            ),
         ];
 
         for (tickets, expected) in test_cases.iter().copied() {
