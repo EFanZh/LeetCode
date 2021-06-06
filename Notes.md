@@ -306,6 +306,10 @@ Why is the solution correct?
 
 Make sure it can be solved again.
 
+## [587. Erect the Fence](https://leetcode.com/problems/erect-the-fence/)
+
+Implement other solutions.
+
 ## [621. Task Scheduler](https://efanzh.org/LeetCode/)
 
 Why does the mathematical solution work?
