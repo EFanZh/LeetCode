@@ -496,6 +496,7 @@ pub mod problem_0600_non_negative_integers_without_consecutive_ones;
 pub mod problem_0605_can_place_flowers;
 pub mod problem_0606_construct_string_from_binary_tree;
 pub mod problem_0609_find_duplicate_file_in_system;
+pub mod problem_0611_valid_triangle_number;
 pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0622_design_circular_queue;
