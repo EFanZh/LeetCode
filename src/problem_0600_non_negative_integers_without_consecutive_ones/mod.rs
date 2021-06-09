@@ -1,4 +1,5 @@
 pub mod mathematical;
+pub mod mathematical_2;
 
 pub trait Solution {
     fn find_integers(n: i32) -> i32;
