@@ -25,6 +25,7 @@ mod tests {
             (0x0123_4567, 156_815),
             (0x1234_5678, 1_074_826),
             (0x7654_3210, 3_524_578),
+            (0x7fff_ffff, 3_524_578),
         ];
 
         for (n, expected) in test_cases.iter().copied() {
