@@ -509,6 +509,7 @@ pub mod problem_0637_average_of_levels_in_binary_tree;
 pub mod problem_0643_maximum_average_subarray_i;
 pub mod problem_0645_set_mismatch;
 pub mod problem_0647_palindromic_substrings;
+pub mod problem_0648_replace_words;
 pub mod problem_0657_robot_return_to_origin;
 pub mod problem_0661_image_smoother;
 pub mod problem_0704_binary_search;
