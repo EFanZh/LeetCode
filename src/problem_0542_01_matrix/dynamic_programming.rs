@@ -2,32 +2,21 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter::Rev;
-use std::slice::IterMut;
-
 trait MakeIter<'a> {
     type Iter: Iterator<Item = &'a mut i32>;
 
     fn make_iter(&self, slice: &'a mut [i32]) -> Self::Iter;
 }
 
-struct Forward;
-
-impl<'a> MakeIter<'a> for Forward {
-    type Iter = IterMut<'a, i32>;
-
-    fn make_iter(&self, slice: &'a mut [i32]) -> Self::Iter {
-        slice.iter_mut()
-    }
-}
-
-struct Backward;
-
-impl<'a> MakeIter<'a> for Backward {
-    type Iter = Rev<IterMut<'a, i32>>;
+impl<'a, F, R> MakeIter<'a> for F
+where
+    F: Fn(&'a mut [i32]) -> R,
+    R: Iterator<Item = &'a mut i32>,
+{
+    type Iter = R;
 
     fn make_iter(&self, slice: &'a mut [i32]) -> Self::Iter {
-        slice.iter_mut().rev()
+        self(slice)
     }
 }
 
@@ -61,6 +50,14 @@ impl Solution {
     }
 
     pub fn update_matrix(mut mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        fn iter_forward(slice: &mut [i32]) -> impl Iterator<Item = &mut i32> {
+            slice.iter_mut()
+        }
+
+        fn iter_backward(slice: &mut [i32]) -> impl Iterator<Item = &mut i32> {
+            slice.iter_mut().rev()
+        }
+
         for row in &mut mat {
             for cell in row {
                 if *cell != 0 {
@@ -69,8 +66,8 @@ impl Solution {
             }
         }
 
-        Self::update(mat.iter_mut().map(Vec::as_mut_slice), Forward);
-        Self::update(mat.iter_mut().map(Vec::as_mut_slice).rev(), Backward);
+        Self::update(mat.iter_mut().map(Vec::as_mut_slice), iter_forward);
+        Self::update(mat.iter_mut().map(Vec::as_mut_slice).rev(), iter_backward);
 
         mat
     }
