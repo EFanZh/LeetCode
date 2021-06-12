@@ -511,6 +511,7 @@ pub mod problem_0645_set_mismatch;
 pub mod problem_0647_palindromic_substrings;
 pub mod problem_0648_replace_words;
 pub mod problem_0657_robot_return_to_origin;
+pub mod problem_0658_find_k_closest_elements;
 pub mod problem_0661_image_smoother;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
