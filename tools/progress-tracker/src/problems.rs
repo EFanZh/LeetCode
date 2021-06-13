@@ -23,11 +23,7 @@ pub struct Problem {
 
 impl Problem {
     pub fn get_id(&self) -> String {
-        format!(
-            "{:04}_{}",
-            self.stat.frontend_question_id,
-            self.stat.title_slug.replace("-", "_")
-        )
+        format!("{:04}-{}", self.stat.frontend_question_id, self.stat.title_slug)
     }
 }
 

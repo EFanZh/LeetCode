@@ -1,5 +1,5 @@
-use super::problems::Problems;
-use super::solutions;
+use crate::problems::Problems;
+use crate::solutions;
 use chrono::{DateTime, TimeZone, Utc};
 use git2::{Repository, Tree};
 use plotters::chart::ChartBuilder;
@@ -23,8 +23,8 @@ fn make_problem_hits_cache(problems: &Problems) -> HashMap<String, bool> {
 }
 
 fn get_hits(tree: &Tree, hits_cache: &mut HashMap<String, bool>) -> usize {
-    solutions::get(tree, |problem_id, _| {
-        if let Some(value) = hits_cache.get_mut(problem_id) {
+    solutions::list(tree, |solution| {
+        if let Some(value) = hits_cache.get_mut(&solution.problem_id) {
             *value = true;
         }
     });
@@ -64,7 +64,7 @@ fn get_progress(hits: usize, total: usize) -> f64 {
     ((hits * 100) as f64) / (total as f64)
 }
 
-fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, usize)], total: usize, output: P) {
+fn draw_chart(data: &[(DateTime<Utc>, usize)], total: usize, output: &Path) {
     const ZOOM: u32 = 16;
     const IMAGE_WIDTH: u32 = 987;
     const IMAGE_HEIGHT: u32 = 610;
@@ -131,7 +131,7 @@ fn draw_chart<P: AsRef<Path>>(data: &[(DateTime<Utc>, usize)], total: usize, out
         .unwrap();
 }
 
-pub fn draw<P: AsRef<Path>>(repository: &Repository, problems: &Problems, output: P) {
+pub fn draw(repository: &Repository, problems: &Problems, output: &Path) {
     let mut hits_cache = make_problem_hits_cache(problems);
     let mut revwalk = repository.revwalk().unwrap();
 
