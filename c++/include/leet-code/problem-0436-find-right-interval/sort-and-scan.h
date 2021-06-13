@@ -8,6 +8,8 @@ namespace leet_code::problem_0436_find_right_interval::sort_and_scan {
 using std::tuple;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
 public:
     vector<int> findRightInterval(vector<vector<int>> &intervals) {
@@ -39,6 +41,9 @@ public:
         return result;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0436_find_right_interval::sort_and_scan
 
 #endif // LEET_CODE_PROBLEM_0436_FIND_RIGHT_INTERVAL_SORT_AND_SCAN_H

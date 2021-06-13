@@ -8,6 +8,8 @@ namespace leet_code::problem_0402_remove_k_digits::greedy_2 {
 using std::ptrdiff_t;
 using std::string;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
 public:
     string removeKdigits(string num, int k) {
@@ -80,6 +82,9 @@ public:
         return num;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0402_remove_k_digits::greedy_2
 
 #endif // LEET_CODE_PROBLEM_0402_REMOVE_K_DIGITS_GREEDY_2_H

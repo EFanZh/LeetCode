@@ -10,6 +10,8 @@ using std::greater_equal;
 using std::tuple;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
     static void single_max_number(const int *num, size_t num_length, int *result, size_t result_length) {
         if (result_length != 0) {
@@ -109,6 +111,9 @@ public:
         return result;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0321_create_maximum_number::greedy
 
 #endif // LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_GREEDY_H

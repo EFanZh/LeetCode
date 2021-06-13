@@ -8,6 +8,8 @@
 namespace leet_code::problem_0406_queue_reconstruction_by_height::binary_search_tree {
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 struct Node {
     size_t length;
     vector<int> value;
@@ -75,6 +77,9 @@ public:
         return people;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0406_queue_reconstruction_by_height::binary_search_tree
 
 #endif // LEET_CODE_PROBLEM_0406_QUEUE_RECONSTRUCTION_BY_HEIGHT_BINARY_SEARCH_TREE_H

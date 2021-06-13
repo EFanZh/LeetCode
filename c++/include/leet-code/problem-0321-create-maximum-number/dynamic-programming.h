@@ -10,6 +10,8 @@ using std::greater_equal;
 using std::tuple;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
     static vector<vector<int>> single_max_numbers(int *nums, size_t nums_length, size_t min_length, size_t max_length) {
         auto *const nums_end = nums + nums_length;
@@ -190,6 +192,9 @@ public:
         return result;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0321_create_maximum_number::dynamic_programming
 
 #endif // LEET_CODE_PROBLEM_0321_CREATE_MAXIMUM_NUMBER_DYNAMIC_PROGRAMMING_H

@@ -12,6 +12,8 @@ using std::size_t;
 using std::tuple;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
 public:
     vector<vector<int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2, int k) {
@@ -52,6 +54,9 @@ public:
         return result;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0373_find_k_pairs_with_smallest_sums::bfs
 
 #endif // LEET_CODE_PROBLEM_0373_FIND_K_PAIRS_WITH_SMALLEST_SUMS_BFS_H
