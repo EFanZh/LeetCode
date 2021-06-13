@@ -8,6 +8,8 @@ namespace leet_code::problem_0378_kth_smallest_element_in_a_sorted_matrix::bfs_2
 using std::tuple;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
     static size_t saturating_sub(size_t lhs, size_t rhs) {
         return lhs <= rhs ? 0 : lhs - rhs;
@@ -53,6 +55,9 @@ public:
         return matrix[std::get<0>(queue.front())][std::get<1>(queue.front())];
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0378_kth_smallest_element_in_a_sorted_matrix::bfs_2
 
 #endif // LEET_CODE_PROBLEM_0378_KTH_SMALLEST_ELEMENT_IN_A_SORTED_MATRIX_BFS_2_H

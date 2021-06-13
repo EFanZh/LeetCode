@@ -8,6 +8,8 @@ namespace leet_code::problem_0378_kth_smallest_element_in_a_sorted_matrix::binar
 using std::ptrdiff_t;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
 public:
     int kthSmallest(vector<vector<int>> &matrix, int k) {
@@ -40,6 +42,9 @@ public:
         return start;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0378_kth_smallest_element_in_a_sorted_matrix::binary_search_3
 
 #endif // LEET_CODE_PROBLEM_0378_KTH_SMALLEST_ELEMENT_IN_A_SORTED_MATRIX_BINARY_SEARCH_3_H

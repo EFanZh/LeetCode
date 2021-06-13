@@ -9,6 +9,8 @@ namespace leet_code::problem_0406_queue_reconstruction_by_height::insertion {
 using std::ptrdiff_t;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
 public:
     vector<vector<int>> reconstructQueue(vector<vector<int>> &people) {
@@ -23,6 +25,9 @@ public:
         return std::move(people);
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0406_queue_reconstruction_by_height::insertion
 
 #endif // LEET_CODE_PROBLEM_0406_QUEUE_RECONSTRUCTION_BY_HEIGHT_INSERTION_H

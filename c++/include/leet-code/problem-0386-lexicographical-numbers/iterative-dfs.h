@@ -7,6 +7,8 @@ namespace leet_code::problem_0386_lexicographical_numbers::iterative_dfs {
 using std::size_t;
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
 public:
     vector<int> lexicalOrder(int n) {
@@ -42,6 +44,9 @@ public:
         return result;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0386_lexicographical_numbers::iterative_dfs
 
 #endif // LEET_CODE_PROBLEM_0386_LEXICOGRAPHICAL_NUMBERS_ITERATIVE_DFS_H

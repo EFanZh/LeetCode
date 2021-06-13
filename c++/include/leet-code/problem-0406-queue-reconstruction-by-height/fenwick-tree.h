@@ -8,6 +8,8 @@
 namespace leet_code::problem_0406_queue_reconstruction_by_height::fenwick_tree {
 using std::vector;
 
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 class Solution {
     static size_t prefix_sum(const vector<size_t> &tree, size_t length) {
         auto result = size_t{0};
@@ -63,6 +65,9 @@ public:
         return result;
     }
 };
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
 } // namespace leet_code::problem_0406_queue_reconstruction_by_height::fenwick_tree
 
 #endif // LEET_CODE_PROBLEM_0406_QUEUE_RECONSTRUCTION_BY_HEIGHT_FENWICK_TREE_H
