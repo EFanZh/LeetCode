@@ -26,7 +26,7 @@ else()
     target_include_directories("leet-code" SYSTEM INTERFACE "include")
 endif()
 
-target_compile_features("leet-code" INTERFACE cxx_std_20)
+target_compile_features("leet-code" INTERFACE cxx_std_17)
 
 # Tests.
 
