@@ -14,7 +14,6 @@ void run() {
     using std::initializer_list;
     using std::optional;
     using std::tuple;
-    using std::unordered_map;
     using std::vector;
 
     const auto test_cases = initializer_list<tuple<vector<optional<int>>, vector<optional<int>>>>{
