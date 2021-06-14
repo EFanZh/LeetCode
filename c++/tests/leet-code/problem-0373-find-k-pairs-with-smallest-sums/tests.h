@@ -1,6 +1,7 @@
 #ifndef LEET_CODE_PROBLEM_0373_FIND_K_PAIRS_WITH_SMALLEST_SUMS_TESTS_H
 #define LEET_CODE_PROBLEM_0373_FIND_K_PAIRS_WITH_SMALLEST_SUMS_TESTS_H
 
+#include <algorithm>
 #include <gtest/gtest.h>
 
 namespace leet_code::problem_0373_find_k_pairs_with_smallest_sums::tests {
