@@ -69,6 +69,10 @@ if(STANDALONE_PROJECT)
     set(
         LEET_CODE_HEADERS
         "include/leet-code/data-structures/list-node.h"
+        "include/leet-code/data-structures/tree-node-with-next-right-pointer.h"
+        "include/leet-code/problem-0116-populating-next-right-pointers-in-each-node/iterative.h"
+        "include/leet-code/problem-0116-populating-next-right-pointers-in-each-node/recursive.h"
+        "include/leet-code/problem-0117-populating-next-right-pointers-in-each-node-ii/iterative.h"
         "include/leet-code/problem-0237-delete-node-in-a-linked-list/modify-this.h"
         "include/leet-code/problem-0321-create-maximum-number/dynamic-programming.h"
         "include/leet-code/problem-0321-create-maximum-number/greedy.h"
@@ -86,6 +90,8 @@ if(STANDALONE_PROJECT)
         "include/leet-code/problem-0406-queue-reconstruction-by-height/insertion.h"
         "include/leet-code/problem-0436-find-right-interval/sort-and-merge.h"
         "include/leet-code/problem-0436-find-right-interval/sort-and-scan.h"
+        "tests/leet-code/problem-0116-populating-next-right-pointers-in-each-node/tests.h"
+        "tests/leet-code/problem-0117-populating-next-right-pointers-in-each-node-ii/tests.h"
         "tests/leet-code/problem-0237-delete-node-in-a-linked-list/tests.h"
         "tests/leet-code/problem-0321-create-maximum-number/tests.h"
         "tests/leet-code/problem-0373-find-k-pairs-with-smallest-sums/tests.h"
@@ -121,6 +127,9 @@ if(STANDALONE_PROJECT)
 
     add_executable(
         "leet-code-tests"
+        "tests/leet-code/problem-0116-populating-next-right-pointers-in-each-node/iterative.cpp"
+        "tests/leet-code/problem-0116-populating-next-right-pointers-in-each-node/recursive.cpp"
+        "tests/leet-code/problem-0117-populating-next-right-pointers-in-each-node-ii/iterative.cpp"
         "tests/leet-code/problem-0237-delete-node-in-a-linked-list/modify-this.cpp"
         "tests/leet-code/problem-0321-create-maximum-number/dynamic-programming.cpp"
         "tests/leet-code/problem-0321-create-maximum-number/greedy.cpp"
