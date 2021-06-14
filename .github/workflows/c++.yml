@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
-          - run: sudo apt-get update && sudo apt-get install --no-install-recommends -y clang-tidy-12
+          - run: sudo apt-get update && sudo apt-get install --no-install-recommends -y clang-tidy
           - run: vcpkg install gtest
           - run: >-
                 cmake
@@ -23,7 +23,7 @@ jobs:
                 -B target/c++
                 -D CMAKE_BUILD_TYPE=Debug
                 -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-                -D ENABLE_CLANG_TIDY=clang-tidy-12
+                -D ENABLE_CLANG_TIDY=clang-tidy
           - run: cmake --build target/c++ -j
     tests:
         runs-on: ${{ matrix.os }}
