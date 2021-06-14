@@ -21,8 +21,7 @@ void run() {
 
     for (const auto &[args, expected] : test_cases) {
         const auto [list_values, node_value] = args;
-        const auto buffer_and_head = test_utilities::make_list(list_values);
-        auto *const head = std::get<1>(buffer_and_head);
+        const auto [buffer, head] = test_utilities::make_list(list_values);
         auto *node = head;
 
         while (node->val != node_value) {

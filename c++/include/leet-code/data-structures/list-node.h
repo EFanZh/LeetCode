@@ -6,7 +6,7 @@ struct ListNode {
     int val;        // NOLINT(misc-non-private-member-variables-in-classes)
     ListNode *next; // NOLINT(misc-non-private-member-variables-in-classes)
 
-    explicit ListNode(int x) : val(x), next(nullptr) {
+    explicit ListNode(int x) : val{x}, next{nullptr} {
     }
 };
 } // namespace leet_code::data_structures

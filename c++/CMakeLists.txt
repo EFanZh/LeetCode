@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION "3.15")
+cmake_minimum_required(VERSION "3.19")
 project("leet-code")
 
 # Global configuration.
@@ -26,7 +26,7 @@ else()
     target_include_directories("leet-code" SYSTEM INTERFACE "include")
 endif()
 
-target_compile_features("leet-code" INTERFACE cxx_std_17)
+target_compile_features("leet-code" INTERFACE cxx_std_20)
 
 # Tests.
 

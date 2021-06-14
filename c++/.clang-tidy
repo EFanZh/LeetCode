@@ -1,5 +1,8 @@
+# `*-use-nullptr` checks is allowed due to a clang-tidy bug.
+
 Checks: >-
     *,
+    -altera-struct-pack-align,
     -cert-err58-cpp,
     -cppcoreguidelines-avoid-magic-numbers,
     -cppcoreguidelines-avoid-non-const-global-variables,
@@ -10,12 +13,16 @@ Checks: >-
     -fuchsia-statically-constructed-objects,
     -google-runtime-references,
     -hicpp-special-member-functions,
+    -hicpp-use-nullptr,
     -llvm-header-guard,
     -llvmlibc-callee-namespace,
     -llvmlibc-implementation-in-namespace,
     -llvmlibc-restrict-system-libc-headers,
+    -misc-no-recursion,
+    -modernize-use-nullptr,
     -modernize-use-trailing-return-type,
     -readability-convert-member-functions-to-static,
+    -readability-function-cognitive-complexity,
     -readability-magic-numbers
 WarningsAsErrors: '*'
 HeaderFilterRegex: '.*'
