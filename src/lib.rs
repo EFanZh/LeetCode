@@ -504,6 +504,7 @@ pub mod problem_0623_add_one_row_to_tree;
 pub mod problem_0628_maximum_product_of_three_numbers;
 pub mod problem_0629_k_inverse_pairs_array;
 pub mod problem_0630_course_schedule_iii;
+pub mod problem_0632_smallest_range_covering_elements_from_k_lists;
 pub mod problem_0633_sum_of_square_numbers;
 pub mod problem_0636_exclusive_time_of_functions;
 pub mod problem_0637_average_of_levels_in_binary_tree;
