@@ -1,7 +1,7 @@
 use crate::tools;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
 use std::{env, fs};
@@ -73,6 +73,8 @@ fn add_cmake_variable(command: &mut Command, variable: &str, value: &OsStr) {
 
 impl Subcommand {
     pub fn run(self) {
+        const CPP_COVERAGE_TARGET_DIR: &str = "target/c++-coverage";
+
         let cmake_executable = tools::get_cmake().unwrap();
 
         // Configure C++.
@@ -83,7 +85,7 @@ impl Subcommand {
             "-S",
             "c++",
             "-B",
-            "target/c++",
+            CPP_COVERAGE_TARGET_DIR,
             "-G",
             "Ninja",
             "-D",
@@ -116,11 +118,12 @@ impl Subcommand {
 
         let mut cmake_build_command = Command::new(cmake_executable);
 
-        cmake_build_command.args(&["--build", "target/c++", "-j"]);
+        cmake_build_command.args(&["--build", CPP_COVERAGE_TARGET_DIR, "-j"]);
 
         // Workaround for https://github.com/microsoft/vcpkg/issues/11467.
 
-        if cfg!(target_os = "windows") {
+        #[cfg(target_os = "windows")]
+        {
             let mut paths = tools::get_msvc_binary_tools_dir().unwrap().as_os_str().to_os_string();
 
             paths.push(";");
@@ -135,7 +138,7 @@ impl Subcommand {
 
         let profile_dir = tempfile::tempdir().unwrap();
 
-        assert!(Command::new("target/c++/leet-code-tests")
+        assert!(Command::new(Path::new(CPP_COVERAGE_TARGET_DIR).join("leet-code-tests"))
             .env("LLVM_PROFILE_FILE", profile_dir.path().join("c++.profraw"))
             .status()
             .unwrap()
