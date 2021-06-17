@@ -17,7 +17,7 @@ mod tests {
             (&[[2, 3], [2, 3]], 1),
         ];
 
-        for (points, expected) in test_cases.iter().copied() {
+        for (points, expected) in test_cases {
             assert_eq!(
                 S::find_min_arrow_shots(points.iter().copied().map(Vec::from).collect()),
                 expected

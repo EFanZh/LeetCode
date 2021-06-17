@@ -57,7 +57,7 @@ mod tests {
             ),
         ];
 
-        for ((a, b), expected) in test_cases.iter().copied() {
+        for ((a, b), expected) in test_cases {
             assert_eq!(S::super_pow(a, b.to_vec()), expected);
         }
     }

@@ -16,7 +16,7 @@ mod tests {
             (("acb", 1, "acb", 1), 1),
         ];
 
-        for ((s1, n1, s2, n2), expected) in test_cases.iter().copied() {
+        for ((s1, n1, s2, n2), expected) in test_cases {
             assert_eq!(S::get_max_repetitions(s1.to_string(), n1, s2.to_string(), n2), expected);
         }
     }

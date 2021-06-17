@@ -24,7 +24,7 @@ mod tests {
             ],
         )];
 
-        for (accounts, expected) in test_cases.iter().copied() {
+        for (accounts, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::accounts_merge(
                     accounts

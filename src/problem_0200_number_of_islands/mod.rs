@@ -32,7 +32,7 @@ mod tests {
             ),
         ];
 
-        for (grid, expected) in test_cases.iter().copied() {
+        for (grid, expected) in test_cases {
             assert_eq!(
                 S::num_islands(grid.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

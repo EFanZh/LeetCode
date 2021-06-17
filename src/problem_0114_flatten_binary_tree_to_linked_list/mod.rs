@@ -36,7 +36,7 @@ mod tests {
             (&[Some(0)], &[Some(0)]),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             let mut root = test_utilities::make_tree(root.iter().copied());
 
             S::flatten(&mut root);

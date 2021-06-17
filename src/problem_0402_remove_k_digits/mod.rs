@@ -24,7 +24,7 @@ mod tests {
             (("1234567890", 9), "0"),
         ];
 
-        for ((num, k), expected) in test_cases.iter().copied() {
+        for ((num, k), expected) in test_cases {
             assert_eq!(S::remove_kdigits(num.to_string(), k), expected);
         }
     }

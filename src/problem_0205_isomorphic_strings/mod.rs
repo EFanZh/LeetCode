@@ -17,7 +17,7 @@ mod tests {
             (("ab", "aa"), false),
         ];
 
-        for ((s, t), expected) in test_cases.iter().copied() {
+        for ((s, t), expected) in test_cases {
             assert_eq!(S::is_isomorphic(s.to_string(), t.to_string()), expected);
         }
     }

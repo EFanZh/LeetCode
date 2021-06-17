@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("abcdefg", 2), "bacdfeg"), (("abcd", 2), "bacd")];
 
-        for ((s, k), expected) in test_cases.iter().copied() {
+        for ((s, k), expected) in test_cases {
             assert_eq!(S::reverse_str(s.to_string(), k), expected);
         }
     }

@@ -98,7 +98,7 @@ mod tests {
             ),
         ];
 
-        for ((root, p, q), expected) in test_cases.iter().copied() {
+        for ((root, p, q), expected) in test_cases {
             let root = test_utilities::make_tree(root.iter().copied());
             let p = find_node(&root, p);
             let q = find_node(&root, q);

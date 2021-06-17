@@ -15,7 +15,7 @@ mod tests {
             ((&[10, 9, 8, 7], &[5, 6, 7, 8]), 2),
         ];
 
-        for ((g, s), expected) in test_cases.iter().copied() {
+        for ((g, s), expected) in test_cases {
             assert_eq!(S::find_content_children(g.to_vec(), s.to_vec()), expected);
         }
     }

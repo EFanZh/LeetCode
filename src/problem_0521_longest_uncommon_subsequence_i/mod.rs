@@ -17,7 +17,7 @@ mod tests {
             (("horbxeemlgqpqbujbdagizcfairalg", "iwvtgyojrfhyzgyzeikqagpfjoaeen"), 30),
         ];
 
-        for ((a, b), expected) in test_cases.iter().copied() {
+        for ((a, b), expected) in test_cases {
             assert_eq!(S::find_lu_slength(a.to_string(), b.to_string()), expected);
         }
     }

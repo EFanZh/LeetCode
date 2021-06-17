@@ -18,7 +18,7 @@ mod tests {
             (&[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3, 2, 1], false),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::makesquare(nums.to_vec()), expected);
         }
     }

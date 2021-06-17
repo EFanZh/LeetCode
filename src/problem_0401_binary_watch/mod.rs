@@ -17,7 +17,7 @@ mod tests {
             ] as &[_],
         )];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(test_utilities::unstable_sorted(S::read_binary_watch(num)), expected);
         }
     }

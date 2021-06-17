@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[1, 3, 2, 2, 2, 3, 4, 3, 1] as &[_], 23), (&[1, 1, 1], 9), (&[1], 1)];
 
-        for (boxes, expected) in test_cases.iter().copied() {
+        for (boxes, expected) in test_cases {
             assert_eq!(S::remove_boxes(boxes.to_vec()), expected);
         }
     }

@@ -29,7 +29,7 @@ mod tests {
             ),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::can_partition(nums.to_vec()), expected);
         }
     }

@@ -25,7 +25,7 @@ mod tests {
             ((&[3, 4], &[&[1, 2, 3], &[1, 2, 5]], &[2, 2]), 6),
         ];
 
-        for ((price, special, needs), expected) in test_cases.iter().copied() {
+        for ((price, special, needs), expected) in test_cases {
             assert_eq!(
                 S::shopping_offers(
                     price.to_vec(),

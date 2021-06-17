@@ -17,7 +17,7 @@ mod tests {
             ((&[0], 1), false),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             assert_eq!(S::check_subarray_sum(nums.to_vec(), k), expected);
         }
     }

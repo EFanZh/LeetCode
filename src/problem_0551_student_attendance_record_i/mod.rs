@@ -24,7 +24,7 @@ mod tests {
             ("PPAPPLPPLP", true),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::check_record(s.to_string()), expected);
         }
     }

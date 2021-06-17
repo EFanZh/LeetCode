@@ -15,7 +15,7 @@ mod tests {
             ((11, &[1, 1, 1, 1, 1, 1, 1, 1]), 0),
         ];
 
-        for ((s, nums), expected) in test_cases.iter().copied() {
+        for ((s, nums), expected) in test_cases {
             assert_eq!(S::min_sub_array_len(s, nums.to_vec()), expected);
         }
     }

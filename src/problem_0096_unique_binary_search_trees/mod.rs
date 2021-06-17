@@ -34,7 +34,7 @@ mod tests {
             (19, 1_767_263_190),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::num_trees(n), expected);
         }
     }

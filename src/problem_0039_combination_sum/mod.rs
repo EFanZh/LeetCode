@@ -14,7 +14,7 @@ mod tests {
             ((&[2, 3, 5], 8), &[&[2, 2, 2, 2], &[2, 3, 3], &[3, 5]]),
         ];
 
-        for ((candidates, target), expected) in test_cases.iter().copied() {
+        for ((candidates, target), expected) in test_cases {
             assert_eq!(S::combination_sum(candidates.to_vec(), target), expected);
         }
     }

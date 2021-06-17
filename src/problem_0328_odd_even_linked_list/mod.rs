@@ -17,7 +17,7 @@ mod tests {
             (&[2, 1, 3, 5, 6, 4, 7], &[2, 3, 6, 7, 1, 5, 4]),
         ];
 
-        for (head, expected) in test_cases.iter().copied() {
+        for (head, expected) in test_cases {
             assert_eq!(
                 test_utilities::iter_list(&S::odd_even_list(test_utilities::make_list(head.iter().copied())))
                     .copied()

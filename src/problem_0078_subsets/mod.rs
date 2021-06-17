@@ -18,7 +18,7 @@ mod tests {
             &[&[] as &[_], &[1], &[1, 2], &[1, 2, 3], &[1, 3], &[2], &[2, 3], &[3]] as &[&[_]],
         )];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(
                     S::subsets(nums.to_vec())

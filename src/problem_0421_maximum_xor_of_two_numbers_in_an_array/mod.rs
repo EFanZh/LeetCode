@@ -18,7 +18,7 @@ mod tests {
             (&[14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70], 127),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::find_maximum_xor(nums.to_vec()), expected);
         }
     }

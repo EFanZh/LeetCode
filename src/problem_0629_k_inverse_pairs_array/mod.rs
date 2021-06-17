@@ -20,7 +20,7 @@ mod tests {
             ((1000, 1000), 663_677_020),
         ];
 
-        for ((n, k), expected) in test_cases.iter().copied() {
+        for ((n, k), expected) in test_cases {
             assert_eq!(S::k_inverse_pairs(n, k), expected);
         }
     }

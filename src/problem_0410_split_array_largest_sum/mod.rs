@@ -15,7 +15,7 @@ mod tests {
             ((&[1, 4, 4], 3), 4),
         ];
 
-        for ((nums, m), expected) in test_cases.iter().copied() {
+        for ((nums, m), expected) in test_cases {
             assert_eq!(S::split_array(nums.to_vec(), m), expected);
         }
     }

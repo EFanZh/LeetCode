@@ -97,7 +97,7 @@ mod tests {
             ),
         ];
 
-        for (capacity, operations) in test_cases.iter().copied() {
+        for (capacity, operations) in test_cases {
             let mut cache = S::new(capacity);
 
             for operation in operations {

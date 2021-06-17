@@ -22,7 +22,7 @@ mod tests {
             (&[Some(1), Some(2), Some(2), None, Some(3), None, Some(3)], false),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::is_symmetric(test_utilities::make_tree(root.iter().copied())),
                 expected

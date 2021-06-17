@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("Hello World", 5), (" ", 0)];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::length_of_last_word(s.to_string()), expected);
         }
     }

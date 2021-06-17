@@ -35,7 +35,7 @@ mod tests {
             ],
         ];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut median_finder = M::new();
 
             for operation in operations {

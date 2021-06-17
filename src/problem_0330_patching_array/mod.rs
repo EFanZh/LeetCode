@@ -17,7 +17,7 @@ mod tests {
             ((&[20, 22, 39, 53, 55, 61, 65, 78, 87, 90], 20), 5),
         ];
 
-        for ((nums, n), expected) in test_cases.iter().copied() {
+        for ((nums, n), expected) in test_cases {
             assert_eq!(S::min_patches(nums.to_vec(), n), expected);
         }
     }

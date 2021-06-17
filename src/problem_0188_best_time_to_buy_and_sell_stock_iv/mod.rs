@@ -17,7 +17,7 @@ mod tests {
             ((1, &[1]), 0),
         ];
 
-        for ((k, prices), expected) in test_cases.iter().copied() {
+        for ((k, prices), expected) in test_cases {
             assert_eq!(S::max_profit(k, prices.to_vec()), expected);
         }
     }

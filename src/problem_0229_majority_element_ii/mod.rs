@@ -17,7 +17,7 @@ mod tests {
             (&[1, 2, 3], &[]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::majority_element(nums.to_vec()), expected);
         }
     }

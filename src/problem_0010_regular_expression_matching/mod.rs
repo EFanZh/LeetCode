@@ -17,7 +17,7 @@ mod tests {
             (("mississippi", "c*a*b"), false),
         ];
 
-        for ((s, p), expected) in test_cases.iter().copied() {
+        for ((s, p), expected) in test_cases {
             assert_eq!(S::is_match(s.to_string(), p.to_string()), expected);
         }
     }

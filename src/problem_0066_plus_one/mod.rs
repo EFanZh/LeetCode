@@ -15,7 +15,7 @@ mod tests {
             (&[9, 9, 9, 9], &[1, 0, 0, 0, 0]),
         ];
 
-        for (digits, expected) in test_cases.iter().copied() {
+        for (digits, expected) in test_cases {
             assert_eq!(S::plus_one(digits.to_vec()), expected);
         }
     }

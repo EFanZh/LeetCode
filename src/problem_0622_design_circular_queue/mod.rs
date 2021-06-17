@@ -119,7 +119,7 @@ mod tests {
     ];
 
     pub fn run<Q: MyCircularQueue>() {
-        for (k, operations) in TEST_CASES.iter().copied() {
+        for &(k, operations) in TEST_CASES {
             let mut queue = Q::new(k);
 
             for operation in operations {

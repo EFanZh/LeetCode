@@ -26,7 +26,7 @@ mod tests {
             (10, 5),
         ];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::find_complement(num), expected);
         }
     }

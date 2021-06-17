@@ -71,7 +71,7 @@ mod tests {
             ),
         ];
 
-        for (stones, expected) in test_cases.iter().copied() {
+        for (stones, expected) in test_cases {
             assert_eq!(S::can_cross(stones.to_vec()), expected);
         }
     }

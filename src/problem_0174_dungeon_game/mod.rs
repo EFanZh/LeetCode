@@ -14,7 +14,7 @@ mod tests {
             (&[&[1, -2, 3], &[2, -2, -2]], 2),
         ];
 
-        for (dungeon, expected) in test_cases.iter().copied() {
+        for (dungeon, expected) in test_cases {
             assert_eq!(
                 S::calculate_minimum_hp(dungeon.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

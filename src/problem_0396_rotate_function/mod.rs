@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[4, 3, 2, 6] as &[_], 26), (&[], 0)];
 
-        for (a, expected) in test_cases.iter().copied() {
+        for (a, expected) in test_cases {
             assert_eq!(S::max_rotate_function(a.to_vec()), expected);
         }
     }

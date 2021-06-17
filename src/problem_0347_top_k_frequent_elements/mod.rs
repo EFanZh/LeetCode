@@ -18,7 +18,7 @@ mod tests {
             ((&[5, 2, 5, 3, 5, 3, 1, 1, 3], 2), &[3, 5]),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::top_k_frequent(nums.to_vec(), k)),
                 expected

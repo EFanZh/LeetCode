@@ -17,7 +17,7 @@ mod tests {
             (("9133", "0"), "0"),
         ];
 
-        for ((num1, num2), expected) in test_cases.iter().copied() {
+        for ((num1, num2), expected) in test_cases {
             assert_eq!(S::multiply(num1.to_string(), num2.to_string()), expected);
         }
     }

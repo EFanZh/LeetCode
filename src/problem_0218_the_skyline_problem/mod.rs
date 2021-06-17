@@ -32,7 +32,7 @@ mod tests {
             ),
         ];
 
-        for (buildings, expected) in test_cases.iter().copied() {
+        for (buildings, expected) in test_cases {
             assert_eq!(
                 S::get_skyline(buildings.iter().copied().map(Vec::from).collect()),
                 expected

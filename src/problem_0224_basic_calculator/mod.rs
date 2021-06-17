@@ -22,7 +22,7 @@ mod tests {
             ("2+-+-+-3", -1),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::calculate(s.to_string()), expected);
         }
     }

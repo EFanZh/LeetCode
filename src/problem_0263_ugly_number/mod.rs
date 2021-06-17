@@ -29,7 +29,7 @@ mod tests {
             (14, false),
         ];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::is_ugly(num), expected);
         }
     }

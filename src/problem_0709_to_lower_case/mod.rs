@@ -14,7 +14,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("Hello", "hello"), ("here", "here"), ("LOVELY", "lovely")];
 
-        for (str, expected) in test_cases.iter().copied() {
+        for (str, expected) in test_cases {
             assert_eq!(S::to_lower_case(str.to_string()), expected);
         }
     }

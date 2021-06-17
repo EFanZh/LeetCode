@@ -585,7 +585,7 @@ mod tests {
             ],
         ];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut summary_ranges = S::new();
 
             for operation in operations {

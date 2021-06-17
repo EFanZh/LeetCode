@@ -47,7 +47,7 @@ mod tests {
             ((&["S", "TEXP", "BK", "KFC"], &["KFC", "BK", "S"]), &["S"]),
         ];
 
-        for ((list1, list2), expected) in test_cases.iter().copied() {
+        for ((list1, list2), expected) in test_cases {
             assert_eq!(
                 S::find_restaurant(
                     list1.iter().copied().map(str::to_string).collect(),

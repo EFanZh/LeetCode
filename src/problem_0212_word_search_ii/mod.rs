@@ -18,7 +18,7 @@ mod tests {
             &["eat", "oath"] as &[_],
         )];
 
-        for ((board, words), expected) in test_cases.iter().copied() {
+        for ((board, words), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_words(
                     board.iter().map(|row| row.chars().collect()).collect(),

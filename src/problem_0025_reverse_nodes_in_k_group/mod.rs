@@ -18,7 +18,7 @@ mod tests {
             ((&[1, 2, 3, 4, 5] as &[_], 3), &[3, 2, 1, 4, 5] as &[_]),
         ];
 
-        for ((head, k), expected) in test_cases.iter().copied() {
+        for ((head, k), expected) in test_cases {
             let head = test_utilities::make_list(head.iter().copied());
 
             let result = test_utilities::iter_list(&S::reverse_k_group(head, k))

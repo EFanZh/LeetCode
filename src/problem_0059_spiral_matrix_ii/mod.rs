@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(3, &[&[1, 2, 3] as &[_], &[8, 9, 4], &[7, 6, 5]] as &[_])];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::generate_matrix(n), expected);
         }
     }

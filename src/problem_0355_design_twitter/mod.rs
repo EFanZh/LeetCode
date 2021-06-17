@@ -49,7 +49,7 @@ mod tests {
             ],
         ];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut twitter = T::new();
 
             for operation in operations {

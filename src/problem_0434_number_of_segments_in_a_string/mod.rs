@@ -18,7 +18,7 @@ mod tests {
             ("                ", 0),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::count_segments(s.to_string()), expected);
         }
     }

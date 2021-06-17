@@ -31,7 +31,7 @@ mod tests {
             ),
         ];
 
-        for ((s, t), expected) in test_cases.iter().copied() {
+        for ((s, t), expected) in test_cases {
             assert_eq!(
                 S::is_subtree(
                     test_utilities::make_tree(s.iter().copied()),

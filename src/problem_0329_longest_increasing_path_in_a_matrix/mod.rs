@@ -14,7 +14,7 @@ mod tests {
             (&[&[3, 4, 5], &[3, 2, 6], &[2, 2, 1]], 4),
         ];
 
-        for (matrix, expected) in test_cases.iter().copied() {
+        for (matrix, expected) in test_cases {
             assert_eq!(
                 S::longest_increasing_path(matrix.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

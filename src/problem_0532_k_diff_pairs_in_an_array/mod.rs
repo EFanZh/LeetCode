@@ -17,7 +17,7 @@ mod tests {
             ((&[-1, -2, -3], 1), 2),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             assert_eq!(S::find_pairs(nums.to_vec(), k), expected);
         }
     }

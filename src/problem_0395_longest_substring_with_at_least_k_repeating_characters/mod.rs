@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("aaabb", 3), 3), (("ababbc", 2), 5), (("ababacb", 3), 0)];
 
-        for ((s, k), expected) in test_cases.iter().copied() {
+        for ((s, k), expected) in test_cases {
             assert_eq!(S::longest_substring(s.to_string(), k), expected);
         }
     }

@@ -20,7 +20,7 @@ mod tests {
             (1_410_065_408, 1_737_167_499),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::count_digit_one(n), expected);
         }
     }

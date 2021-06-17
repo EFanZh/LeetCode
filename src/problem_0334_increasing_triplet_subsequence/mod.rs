@@ -19,7 +19,7 @@ mod tests {
             (&[], false),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::increasing_triplet(nums.to_vec()), expected);
         }
     }

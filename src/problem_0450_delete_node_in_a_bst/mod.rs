@@ -57,7 +57,7 @@ mod tests {
             ),
         ];
 
-        for ((root, key), expected) in test_cases.iter().copied() {
+        for ((root, key), expected) in test_cases {
             assert_eq!(
                 S::delete_node(test_utilities::make_tree(root.iter().copied()), key),
                 test_utilities::make_tree(expected.iter().copied())

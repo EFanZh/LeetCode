@@ -18,7 +18,7 @@ mod tests {
             (1000, "One Thousand")
         ];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::number_to_words(num), expected);
         }
     }

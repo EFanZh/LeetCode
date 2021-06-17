@@ -34,7 +34,7 @@ mod tests {
             ),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::find_bottom_left_value(test_utilities::make_tree(root.iter().copied())),
                 expected

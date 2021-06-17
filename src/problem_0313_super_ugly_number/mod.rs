@@ -16,7 +16,7 @@ mod tests {
             ((10, &[2, 5, 7, 11, 13, 17, 23, 29, 43, 53]), 14),
         ];
 
-        for ((n, primes), expected) in test_cases.iter().copied() {
+        for ((n, primes), expected) in test_cases {
             assert_eq!(S::nth_super_ugly_number(n, primes.to_vec()), expected);
         }
     }

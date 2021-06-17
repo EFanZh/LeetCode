@@ -18,7 +18,7 @@ mod tests {
             (("aaa", "aa aa aa aa"), false),
         ];
 
-        for ((pattern, s), expected) in test_cases.iter().copied() {
+        for ((pattern, s), expected) in test_cases {
             assert_eq!(S::word_pattern(pattern.to_string(), s.to_string()), expected);
         }
     }

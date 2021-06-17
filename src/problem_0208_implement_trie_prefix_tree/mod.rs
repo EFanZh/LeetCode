@@ -33,7 +33,7 @@ mod tests {
             &[StartsWith("a", false)],
         ];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut trie = T::new();
 
             for operation in operations {

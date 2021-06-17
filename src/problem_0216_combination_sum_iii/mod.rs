@@ -16,7 +16,7 @@ mod tests {
             ((3, 9), &[&[1, 2, 6], &[1, 3, 5], &[2, 3, 4]]),
         ];
 
-        for ((k, n), expected) in test_cases.iter().copied() {
+        for ((k, n), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(
                     S::combination_sum3(k, n)

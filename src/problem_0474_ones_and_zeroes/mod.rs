@@ -14,7 +14,7 @@ mod tests {
             ((&["10", "0", "1"], 1, 1), 2),
         ];
 
-        for ((strs, m, n), expected) in test_cases.iter().copied() {
+        for ((strs, m, n), expected) in test_cases {
             assert_eq!(
                 S::find_max_form(strs.iter().copied().map(str::to_string).collect(), m, n),
                 expected

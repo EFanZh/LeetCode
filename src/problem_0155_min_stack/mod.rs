@@ -24,7 +24,7 @@ mod tests {
 
         let test_cases = [(&[Push(-2), Push(0), Push(-3), GetMin(-3), Pop, Top(0), GetMin(-2)] as &[_])];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut stack = S::new();
 
             for operation in operations {

@@ -19,7 +19,7 @@ mod tests {
             ((7, &[[0, 1], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6]]), &[1, 2]),
         ];
 
-        for ((n, edges), expected) in test_cases.iter().copied() {
+        for ((n, edges), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_min_height_trees(
                     n,

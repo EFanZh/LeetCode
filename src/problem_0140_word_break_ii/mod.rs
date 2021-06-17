@@ -30,7 +30,7 @@ mod tests {
             )
         ];
 
-        for ((s, word_dict), expected) in test_cases.iter().copied() {
+        for ((s, word_dict), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::word_break(
                     s.to_string(),

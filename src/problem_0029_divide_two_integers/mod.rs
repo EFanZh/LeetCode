@@ -21,7 +21,7 @@ mod tests {
             ((-7, -3), 2),
         ];
 
-        for ((dividend, divisor), expected) in test_cases.iter().copied() {
+        for ((dividend, divisor), expected) in test_cases {
             assert_eq!(S::divide(dividend, divisor), expected);
         }
     }

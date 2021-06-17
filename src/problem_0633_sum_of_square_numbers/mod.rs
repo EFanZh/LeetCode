@@ -19,7 +19,7 @@ mod tests {
             (12_132_321, false),
         ];
 
-        for (c, expected) in test_cases.iter().copied() {
+        for (c, expected) in test_cases {
             assert_eq!(S::judge_square_sum(c), expected);
         }
     }

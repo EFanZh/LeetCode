@@ -25,7 +25,7 @@ mod tests {
             ((&[2_147_483_647, -2_147_483_648, 2_147_483_647], 0, 0), false),
         ];
 
-        for ((nums, k, t), expected) in test_cases.iter().copied() {
+        for ((nums, k, t), expected) in test_cases {
             assert_eq!(S::contains_nearby_almost_duplicate(nums.to_vec(), k, t), expected);
         }
     }

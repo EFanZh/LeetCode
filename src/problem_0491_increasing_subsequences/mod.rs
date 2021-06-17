@@ -47,7 +47,7 @@ mod tests {
             (&[3, 4, 3, 4], &[&[3, 3], &[3, 3, 4], &[3, 4], &[3, 4, 4], &[4, 4]]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(
                     S::find_subsequences(nums.to_vec())

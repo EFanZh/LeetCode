@@ -60,7 +60,7 @@ mod tests {
             (&[Some(3)], &[Some(3)]), // Extra test case for coverage.
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             let mut root = test_utilities::make_tree(root.iter().copied());
 
             S::recover_tree(&mut root);

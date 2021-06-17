@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[5, 2, 6, 1] as &[_], &[2, 1, 1, 0] as &[_]), (&[2, 0, 1], &[2, 0, 0])];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::count_smaller(nums.to_vec()), expected);
         }
     }

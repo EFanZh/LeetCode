@@ -24,7 +24,7 @@ mod tests {
             (&[5, 2, 2], 5),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::third_max(nums.to_vec()), expected);
         }
     }

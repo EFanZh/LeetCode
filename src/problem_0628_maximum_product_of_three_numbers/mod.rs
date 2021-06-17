@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[1, 2, 3] as &[_], 6), (&[1, 2, 3, 4], 24), (&[-1, -2, -3], -6)];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::maximum_product(nums.to_vec()), expected);
         }
     }

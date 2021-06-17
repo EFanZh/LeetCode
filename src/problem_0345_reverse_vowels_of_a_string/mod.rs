@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("hello", "holle"), ("leetcode", "leotcede")];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::reverse_vowels(s.to_string()), expected);
         }
     }

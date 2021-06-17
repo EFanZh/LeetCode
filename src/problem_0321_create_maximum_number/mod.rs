@@ -109,7 +109,7 @@ mod tests {
             ((&[1], &[], 1), &[1]),
         ];
 
-        for ((nums1, nums2, k), expected) in test_cases.iter().copied() {
+        for ((nums1, nums2, k), expected) in test_cases {
             assert_eq!(S::max_number(nums1.to_vec(), nums2.to_vec(), k), expected);
         }
     }

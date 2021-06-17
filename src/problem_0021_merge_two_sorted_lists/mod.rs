@@ -19,7 +19,7 @@ mod tests {
             ((&[], &[]), &[]),
         ];
 
-        for ((l1, l2), expected) in test_cases.iter().copied() {
+        for ((l1, l2), expected) in test_cases {
             let l1 = test_utilities::make_list(l1.iter().copied());
             let l2 = test_utilities::make_list(l2.iter().copied());
             let result = S::merge_two_lists(l1, l2);

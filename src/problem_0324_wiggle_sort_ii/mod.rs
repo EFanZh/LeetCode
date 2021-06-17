@@ -19,7 +19,7 @@ mod tests {
             &[3],
         ];
 
-        for nums in test_cases.iter().copied() {
+        for nums in test_cases {
             let mut nums_2 = nums.to_vec();
 
             S::wiggle_sort(&mut nums_2);

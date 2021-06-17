@@ -15,7 +15,7 @@ mod tests {
             (("", 1), ""),
         ];
 
-        for ((s, num_rows), expected) in test_cases.iter().copied() {
+        for ((s, num_rows), expected) in test_cases {
             assert_eq!(S::convert(s.to_string(), num_rows), expected);
         }
     }

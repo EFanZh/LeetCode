@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[0, 1, 3, 5, 6] as &[_], 3), (&[0], 0)];
 
-        for (citations, expected) in test_cases.iter().copied() {
+        for (citations, expected) in test_cases {
             assert_eq!(S::h_index(citations.to_vec()), expected);
         }
     }

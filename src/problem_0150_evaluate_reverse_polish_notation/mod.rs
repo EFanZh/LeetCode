@@ -18,7 +18,7 @@ mod tests {
             ),
         ];
 
-        for (tokens, expected) in test_cases.iter().copied() {
+        for (tokens, expected) in test_cases {
             assert_eq!(
                 S::eval_rpn(tokens.iter().copied().map(str::to_string).collect()),
                 expected

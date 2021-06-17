@@ -41,7 +41,7 @@ mod tests {
             ((&[&[2, 3], &[5, 7], &[11, 13]], 14), 13),
         ];
 
-        for ((matrix, k), expected) in test_cases.iter().copied() {
+        for ((matrix, k), expected) in test_cases {
             assert_eq!(
                 S::max_sum_submatrix(matrix.iter().copied().map(<[_]>::to_vec).collect(), k),
                 expected

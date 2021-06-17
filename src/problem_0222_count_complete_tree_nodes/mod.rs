@@ -19,7 +19,7 @@ mod tests {
             (&[Some(1), Some(2), Some(3)], 3),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::count_nodes(test_utilities::make_tree(root.iter().copied())),
                 expected

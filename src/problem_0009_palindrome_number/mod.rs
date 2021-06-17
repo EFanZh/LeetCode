@@ -19,7 +19,7 @@ mod tests {
             (0, true),
         ];
 
-        for (x, expected) in test_cases.iter().copied() {
+        for (x, expected) in test_cases {
             assert_eq!(S::is_palindrome(x), expected);
         }
     }

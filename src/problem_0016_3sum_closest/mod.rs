@@ -16,7 +16,7 @@ mod tests {
             ((&[0, 2, 1, -3], 1), 0),
         ];
 
-        for ((nums, target), expected) in test_cases.iter().copied() {
+        for ((nums, target), expected) in test_cases {
             assert_eq!(S::three_sum_closest(nums.to_vec(), target), expected);
         }
     }

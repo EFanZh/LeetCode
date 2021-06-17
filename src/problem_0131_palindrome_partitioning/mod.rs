@@ -16,7 +16,7 @@ mod tests {
             ("efe", &[&["e", "f", "e"], &["efe"]]),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(test_utilities::unstable_sorted(S::partition(s.to_string())), expected);
         }
     }

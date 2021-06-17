@@ -17,7 +17,7 @@ mod tests {
             (&[[1, 1], [3, 4]], &[0, -1]),
         ];
 
-        for (intervals, expected) in test_cases.iter().copied() {
+        for (intervals, expected) in test_cases {
             assert_eq!(
                 S::find_right_interval(intervals.iter().copied().map(Vec::from).collect()),
                 expected

@@ -16,7 +16,7 @@ mod tests {
             ((&[1, 2, 3, 1, 2, 3], 2), false),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             assert_eq!(S::contains_nearby_duplicate(nums.to_vec(), k), expected);
         }
     }

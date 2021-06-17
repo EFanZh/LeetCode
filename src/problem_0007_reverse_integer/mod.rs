@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(123, 321), (-123, -321), (120, 21), (1_534_236_469, 0)];
 
-        for (x, expected) in test_cases.iter().copied() {
+        for (x, expected) in test_cases {
             assert_eq!(S::reverse(x), expected);
         }
     }

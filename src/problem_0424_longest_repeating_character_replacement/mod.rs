@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("ABAB", 2), 4), (("AABABBA", 1), 4), (("ABCDEFG", 6), 7)];
 
-        for ((s, k), expected) in test_cases.iter().copied() {
+        for ((s, k), expected) in test_cases {
             assert_eq!(S::character_replacement(s.to_string(), k), expected);
         }
     }

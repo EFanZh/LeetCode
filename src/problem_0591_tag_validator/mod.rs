@@ -59,7 +59,7 @@ mod tests {
             ),
         ];
 
-        for (code, expected) in test_cases.iter().copied() {
+        for (code, expected) in test_cases {
             assert_eq!(S::is_valid(code.to_string()), expected);
         }
     }

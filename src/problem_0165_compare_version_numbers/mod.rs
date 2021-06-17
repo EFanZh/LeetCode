@@ -20,7 +20,7 @@ mod tests {
             (("1", "0"), 1),
         ];
 
-        for ((version1, version2), expected) in test_cases.iter().copied() {
+        for ((version1, version2), expected) in test_cases {
             assert_eq!(S::compare_version(version1.to_string(), version2.to_string()), expected);
         }
     }

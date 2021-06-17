@@ -29,7 +29,7 @@ mod tests {
             (0, &[]),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(
                 S::generate_trees(n),
                 expected

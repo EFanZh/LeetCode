@@ -20,7 +20,7 @@ mod tests {
             ("file1.txt\nfile2.txt\nlongfile.txt", 12),
         ];
 
-        for (input, expected) in test_cases.iter().copied() {
+        for (input, expected) in test_cases {
             assert_eq!(S::length_longest_path(input.to_string()), expected);
         }
     }

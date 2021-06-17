@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("leetcode", 0), ("loveleetcode", 2)];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::first_uniq_char(s.to_string()), expected);
         }
     }

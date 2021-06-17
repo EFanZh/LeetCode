@@ -15,7 +15,7 @@ mod tests {
             (("---", 3), ""),
         ];
 
-        for ((s, k), expected) in test_cases.iter().copied() {
+        for ((s, k), expected) in test_cases {
             assert_eq!(S::license_key_formatting(s.to_string(), k), expected);
         }
     }

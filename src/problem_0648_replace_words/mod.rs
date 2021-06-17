@@ -32,7 +32,7 @@ mod tests {
             ),
         ];
 
-        for ((dictionary, sentence), expected) in test_cases.iter().copied() {
+        for ((dictionary, sentence), expected) in test_cases {
             assert_eq!(
                 S::replace_words(
                     dictionary.iter().copied().map(str::to_string).collect(),

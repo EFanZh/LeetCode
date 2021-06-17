@@ -15,7 +15,7 @@ mod tests {
             ("0P", false),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::is_palindrome(s.to_string()), expected);
         }
     }

@@ -24,7 +24,7 @@ mod tests {
             ((&[[1, 5]], [5, 7]), &[[1, 7]]),
         ];
 
-        for ((intervals, new_interval), expected) in test_cases.iter().copied() {
+        for ((intervals, new_interval), expected) in test_cases {
             assert_eq!(
                 S::insert(
                     intervals.iter().copied().map(Vec::from).collect(),

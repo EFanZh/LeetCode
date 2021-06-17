@@ -22,7 +22,7 @@ mod tests {
             &[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)] as &[_],
         )];
 
-        for ((preorder, inorder), expected) in test_cases.iter().copied() {
+        for ((preorder, inorder), expected) in test_cases {
             assert_eq!(
                 S::build_tree(preorder.to_vec(), inorder.to_vec()),
                 test_utilities::make_tree(expected.iter().copied())

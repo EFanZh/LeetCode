@@ -22,7 +22,7 @@ mod tests {
             (&["X"], &["X"]),
         ];
 
-        for (board, expected) in test_cases.iter().copied() {
+        for (board, expected) in test_cases {
             let mut board = board.iter().map(|row| row.chars().collect()).collect();
 
             S::solve(&mut board);

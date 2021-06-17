@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((3, 5, 4), true), ((2, 6, 5), false), ((0, 0, 0), true)];
 
-        for ((x, y, z), expected) in test_cases.iter().copied() {
+        for ((x, y, z), expected) in test_cases {
             assert_eq!(S::can_measure_water(x, y, z), expected);
         }
     }

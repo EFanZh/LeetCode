@@ -16,7 +16,7 @@ mod tests {
             (&[1, 1, 1, 1, 1], 16),
         ];
 
-        for (a, expected) in test_cases.iter().copied() {
+        for (a, expected) in test_cases {
             assert_eq!(S::number_of_arithmetic_slices(a.to_vec()), expected);
         }
     }

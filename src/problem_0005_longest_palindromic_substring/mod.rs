@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("babad", &["bab", "aba"] as &[_]), ("cbbd", &["bb"])];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert!(expected.contains(&S::longest_palindrome(s.to_string()).as_str()));
         }
     }

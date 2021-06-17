@@ -36,7 +36,7 @@ mod tests {
             (9999, 10001),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::nearest_palindromic(n.to_string()).parse::<u64>().unwrap(), expected);
         }
     }

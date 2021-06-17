@@ -18,7 +18,7 @@ mod tests {
             (&[0], &["0"]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::summary_ranges(nums.to_vec()), expected);
         }
     }

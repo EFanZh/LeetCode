@@ -15,7 +15,7 @@ mod tests {
             &[&["ate", "eat", "tea"] as &[_], &["bat"], &["nat", "tan"]] as &[_],
         )];
 
-        for (strs, expected) in test_cases.iter().copied() {
+        for (strs, expected) in test_cases {
             let strs = strs.iter().copied().map(str::to_string).collect();
 
             assert_eq!(

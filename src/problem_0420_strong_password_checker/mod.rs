@@ -22,7 +22,7 @@ mod tests {
             ("1234567890123456Baaaa", 2),
         ];
 
-        for (password, expected) in test_cases.iter().copied() {
+        for (password, expected) in test_cases {
             assert_eq!(S::strong_password_checker(password.to_string()), expected);
         }
     }

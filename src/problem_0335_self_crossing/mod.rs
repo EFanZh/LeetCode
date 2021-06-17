@@ -21,7 +21,7 @@ mod tests {
             (&[3, 2, 1], false),
         ];
 
-        for (x, expected) in test_cases.iter().copied() {
+        for (x, expected) in test_cases {
             assert_eq!(S::is_self_crossing(x.to_vec()), expected);
         }
     }

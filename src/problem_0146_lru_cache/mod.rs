@@ -82,7 +82,7 @@ mod tests {
             (2, &[Put(2, 1), Put(1, 1), Put(2, 3), Put(4, 1), Get(1, -1), Get(2, 3)]),
         ];
 
-        for (capacity, operations) in test_cases.iter().copied() {
+        for (capacity, operations) in test_cases {
             let mut cache = S::new(capacity);
 
             for operation in operations {

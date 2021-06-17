@@ -18,7 +18,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[Some(1), None, Some(2), Some(3)] as &[_], &[3, 2, 1] as &[_])];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::postorder_traversal(test_utilities::make_tree(root.iter().copied())),
                 expected

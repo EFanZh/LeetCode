@@ -26,7 +26,7 @@ mod tests {
             (45, 1_836_311_903),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::climb_stairs(n), expected);
         }
     }

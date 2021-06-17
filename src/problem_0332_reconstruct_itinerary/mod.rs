@@ -32,7 +32,7 @@ mod tests {
             ),
         ];
 
-        for (tickets, expected) in test_cases.iter().copied() {
+        for (tickets, expected) in test_cases {
             assert_eq!(
                 S::find_itinerary(
                     tickets

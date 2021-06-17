@@ -16,7 +16,7 @@ mod tests {
             (("ae", "aea"), 'a'),
         ];
 
-        for ((s, t), expected) in test_cases.iter().copied() {
+        for ((s, t), expected) in test_cases {
             assert_eq!(S::find_the_difference(s.to_string(), t.to_string()), expected);
         }
     }

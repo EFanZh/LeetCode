@@ -22,7 +22,7 @@ mod tests {
             (8, 2_345_851),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::count_numbers_with_unique_digits(n), expected);
         }
     }

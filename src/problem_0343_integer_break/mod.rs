@@ -29,7 +29,7 @@ mod tests {
             (17, 486),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::integer_break(n), expected);
         }
     }

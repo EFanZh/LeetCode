@@ -20,7 +20,7 @@ mod tests {
             (2_147_483_647, 2),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::find_nth_digit(n), expected);
         }
     }

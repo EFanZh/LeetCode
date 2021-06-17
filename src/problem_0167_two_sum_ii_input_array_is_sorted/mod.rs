@@ -16,7 +16,7 @@ mod tests {
             ((&[5, 25, 75], 100), [2, 3]),
         ];
 
-        for ((numbers, target), expected) in test_cases.iter().copied() {
+        for ((numbers, target), expected) in test_cases {
             assert_eq!(S::two_sum(numbers.to_vec(), target), expected);
         }
     }

@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[0, 1] as &[_], 2), (&[0, 1, 0], 2)];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::find_max_length(nums.to_vec()), expected);
         }
     }

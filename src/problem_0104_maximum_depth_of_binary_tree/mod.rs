@@ -21,7 +21,7 @@ mod tests {
             (&[Some(3)], 1),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(S::max_depth(test_utilities::make_tree(root.iter().copied())), expected);
         }
     }

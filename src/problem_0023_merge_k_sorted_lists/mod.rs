@@ -17,7 +17,7 @@ mod tests {
             &[1, 1, 2, 3, 4, 4, 5, 6] as &[_],
         )];
 
-        for (lists, expected) in test_cases.iter().copied() {
+        for (lists, expected) in test_cases {
             let lists = lists
                 .iter()
                 .map(|list| test_utilities::make_list(list.iter().copied()))

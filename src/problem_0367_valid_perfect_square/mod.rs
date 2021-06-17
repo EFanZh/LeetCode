@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(16, true), (14, false), (2_147_395_600, true)];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::is_perfect_square(num), expected);
         }
     }

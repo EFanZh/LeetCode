@@ -20,7 +20,7 @@ mod tests {
             (&[], ""),
         ];
 
-        for (t, expected) in test_cases.iter().copied() {
+        for (t, expected) in test_cases {
             assert_eq!(S::tree2str(test_utilities::make_tree(t.iter().copied())), expected);
         }
     }

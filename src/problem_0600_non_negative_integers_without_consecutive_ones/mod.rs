@@ -29,7 +29,7 @@ mod tests {
             (0x7fff_ffff, 3_524_578),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::find_integers(n), expected);
         }
     }

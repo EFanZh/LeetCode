@@ -24,7 +24,7 @@ mod tests {
             ((&[1], &[2, 3, 4]), 2.5),
         ];
 
-        for ((nums1, nums2), expected_result) in test_cases.iter().copied() {
+        for ((nums1, nums2), expected_result) in test_cases {
             approx::assert_relative_eq!(
                 S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()),
                 expected_result,

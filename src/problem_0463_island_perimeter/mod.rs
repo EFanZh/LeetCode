@@ -18,7 +18,7 @@ mod tests {
             (&[&[1, 0]], 4),
         ];
 
-        for (grid, expected) in test_cases.iter().copied() {
+        for (grid, expected) in test_cases {
             assert_eq!(
                 S::island_perimeter(grid.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

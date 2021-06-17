@@ -17,7 +17,7 @@ mod tests {
             ((&[3, 1, 2, 4], 2), 3),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             assert_eq!(S::find_kth_largest(nums.to_vec(), k), expected);
         }
     }

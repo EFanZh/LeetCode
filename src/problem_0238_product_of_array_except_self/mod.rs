@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[1, 2, 3, 4] as &[_], [24, 12, 8, 6])];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::product_except_self(nums.to_vec()), expected);
         }
     }

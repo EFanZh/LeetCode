@@ -16,7 +16,7 @@ mod tests {
             ((8, 50, 23, 5, 26), 914_783_380),
         ];
 
-        for ((m, n, max_move, start_row, start_column), expected) in test_cases.iter().copied() {
+        for ((m, n, max_move, start_row, start_column), expected) in test_cases {
             assert_eq!(S::find_paths(m, n, max_move, start_row, start_column), expected);
         }
     }

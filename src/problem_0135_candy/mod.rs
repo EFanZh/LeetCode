@@ -16,7 +16,7 @@ mod tests {
             (&[1, 2, 3, 5, 4, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 1, 2, 3, 4], 47),
         ];
 
-        for (ratings, expected) in test_cases.iter().copied() {
+        for (ratings, expected) in test_cases {
             assert_eq!(S::candy(ratings.to_vec()), expected);
         }
     }

@@ -17,7 +17,7 @@ mod tests {
             (&[&[1, 2], &[3, 4]], &[1, 2, 3, 4]),
         ];
 
-        for (mat, expected) in test_cases.iter().copied() {
+        for (mat, expected) in test_cases {
             assert_eq!(
                 S::find_diagonal_order(mat.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

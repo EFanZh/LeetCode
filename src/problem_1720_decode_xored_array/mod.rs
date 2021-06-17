@@ -15,7 +15,7 @@ mod tests {
             ((&[6, 2, 7, 3], 4), &[4, 2, 0, 7, 4]),
         ];
 
-        for ((encoded, first), expected) in test_cases.iter().copied() {
+        for ((encoded, first), expected) in test_cases {
             assert_eq!(S::decode(encoded.to_vec(), first), expected);
         }
     }

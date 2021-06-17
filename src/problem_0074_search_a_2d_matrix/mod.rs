@@ -22,7 +22,7 @@ mod tests {
             ((&[&[1, 3, 5, 7], &[10, 11, 16, 20], &[23, 30, 34, 50]], 11), true),
         ];
 
-        for ((matrix, target), expected) in test_cases.iter().copied() {
+        for ((matrix, target), expected) in test_cases {
             assert_eq!(
                 S::search_matrix(matrix.iter().copied().map(<[_]>::to_vec).collect(), target),
                 expected

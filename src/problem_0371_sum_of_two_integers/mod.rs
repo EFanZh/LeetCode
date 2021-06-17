@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((1, 2), 3), ((-2, 3), 1)];
 
-        for ((a, b), expected) in test_cases.iter().copied() {
+        for ((a, b), expected) in test_cases {
             assert_eq!(S::get_sum(a, b), expected);
         }
     }

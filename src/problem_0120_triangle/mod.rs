@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[&[2] as &[_], &[3, 4], &[6, 5, 7], &[4, 1, 8, 3]] as &[&[_]], 11)];
 
-        for (triangle, expected) in test_cases.iter().copied() {
+        for (triangle, expected) in test_cases {
             assert_eq!(
                 S::minimum_total(triangle.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

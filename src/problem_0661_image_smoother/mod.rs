@@ -14,7 +14,7 @@ mod tests {
             &[&[0, 0, 0] as &[_], &[0, 0, 0], &[0, 0, 0]] as &[&[_]],
         )];
 
-        for (m, expected) in test_cases.iter().copied() {
+        for (m, expected) in test_cases {
             assert_eq!(
                 S::image_smoother(m.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

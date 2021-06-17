@@ -18,7 +18,7 @@ mod tests {
     pub fn run<C: Codec>() {
         let test_cases = [&[Some(2), Some(1), Some(3)] as &[_], &[]];
 
-        for root in test_cases.iter().copied() {
+        for root in test_cases {
             let codec = C::new();
             let root = test_utilities::make_tree(root.iter().copied());
             let data = codec.serialize(root.clone());

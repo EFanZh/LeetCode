@@ -15,7 +15,7 @@ mod tests {
             (&[1, 1, 1, 3, 3, 4, 3, 2, 4, 2], true),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::contains_duplicate(nums.to_vec()), expected);
         }
     }

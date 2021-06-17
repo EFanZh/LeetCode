@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[1, 2, 3, 0, 2] as &[_], 3), (&[1], 0), (&[], 0)];
 
-        for (prices, expected) in test_cases.iter().copied() {
+        for (prices, expected) in test_cases {
             assert_eq!(S::max_profit(prices.to_vec()), expected);
         }
     }

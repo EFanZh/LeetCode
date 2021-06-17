@@ -20,7 +20,7 @@ mod tests {
             ),
         ];
 
-        for (score, expected) in test_cases.iter().copied() {
+        for (score, expected) in test_cases {
             assert_eq!(S::find_relative_ranks(score.to_vec()), expected);
         }
     }

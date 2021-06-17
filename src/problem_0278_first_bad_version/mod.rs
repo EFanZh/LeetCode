@@ -15,7 +15,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((5, 4), 4), ((1, 1), 1)];
 
-        for ((n, bad), expected) in test_cases.iter().copied() {
+        for ((n, bad), expected) in test_cases {
             assert_eq!(S::new(bad).first_bad_version(n), expected);
         }
     }

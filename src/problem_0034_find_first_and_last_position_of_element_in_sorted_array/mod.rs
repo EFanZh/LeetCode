@@ -16,7 +16,7 @@ mod tests {
             ((&[1, 2, 3] as &[_], 3), [2, 2]),
         ];
 
-        for ((nums, target), expected) in test_cases.iter().copied() {
+        for ((nums, target), expected) in test_cases {
             assert_eq!(S::search_range(nums.to_vec(), target), expected);
         }
     }

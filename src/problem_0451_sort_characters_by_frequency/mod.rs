@@ -15,7 +15,7 @@ mod tests {
             ("Aabb", &["bbAa", "bbaA"]),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert!(expected.contains(&S::frequency_sort(s.to_string()).as_str()));
         }
     }

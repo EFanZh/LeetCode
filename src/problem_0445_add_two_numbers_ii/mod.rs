@@ -18,7 +18,7 @@ mod tests {
             ((&[9, 9], &[9]), &[1, 0, 8]),
         ];
 
-        for ((l1, l2), expected) in test_cases.iter().copied() {
+        for ((l1, l2), expected) in test_cases {
             assert_eq!(
                 test_utilities::iter_list(&S::add_two_numbers(
                     test_utilities::make_list(l1.iter().copied()),

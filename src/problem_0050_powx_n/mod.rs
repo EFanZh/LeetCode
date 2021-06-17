@@ -16,7 +16,7 @@ mod tests {
             ((7.0, 0), 1.0),
         ];
 
-        for ((x, n), expected) in test_cases.iter().copied() {
+        for ((x, n), expected) in test_cases {
             approx::assert_relative_eq!(S::my_pow(x, n), expected);
         }
     }

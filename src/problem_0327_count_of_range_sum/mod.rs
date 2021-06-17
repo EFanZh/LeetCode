@@ -17,7 +17,7 @@ mod tests {
             ((&[1, 2], 1, 3), 3),
         ];
 
-        for ((nums, lower, upper), expected) in test_cases.iter().copied() {
+        for ((nums, lower, upper), expected) in test_cases {
             assert_eq!(S::count_range_sum(nums.to_vec(), lower, upper), expected);
         }
     }

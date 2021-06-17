@@ -14,7 +14,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[1, 1, 0, 1, 1, 1] as &[_], 3), (&[0, 0, 1, 1, 1, 0, 0], 3)];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::find_max_consecutive_ones(nums.to_vec()), expected);
         }
     }

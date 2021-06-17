@@ -29,7 +29,7 @@ mod tests {
             ("usb", true),
         ];
 
-        for (word, expected) in test_cases.iter().copied() {
+        for (word, expected) in test_cases {
             assert_eq!(S::detect_capital_use(word.to_string()), expected);
         }
     }

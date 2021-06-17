@@ -27,7 +27,7 @@ mod tests {
             (10, &[1, 10, 2, 3, 4, 5, 6, 7, 8, 9]),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::lexical_order(n), expected);
         }
     }
