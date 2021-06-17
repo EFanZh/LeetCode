@@ -12,7 +12,7 @@ impl Solution {
 
         let mut slice = nums.as_ref();
 
-        while let [(first_index, first_value), .., (last_index, last_value)] = *slice {
+        while let [(first_index, first_value), _, .., (last_index, last_value)] = *slice {
             match (first_value + last_value).cmp(&target) {
                 Ordering::Less => slice = &slice[1..],
                 Ordering::Equal => return vec![first_index, last_index],
