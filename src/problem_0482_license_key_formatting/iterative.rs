@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::same_item_push)]
     pub fn license_key_formatting(s: String, k: i32) -> String {
         let k = k as usize;
         let letters = s.bytes().filter(|&x| x != b'-').count();
