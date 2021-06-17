@@ -60,8 +60,6 @@ impl Solution {
 
         rest.sort_unstable();
 
-        // TODO: use slice patterns.
-
         let (&second, rest) = rest.split_first().unwrap();
         let (&last, rest) = rest.split_last().unwrap();
         let mut three_sum = first + Self::two_sum_closest(second, last, rest, target - first);

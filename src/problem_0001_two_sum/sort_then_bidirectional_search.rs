@@ -12,12 +12,7 @@ impl Solution {
 
         let mut slice = nums.as_ref();
 
-        // TODO: Update to use `slice_patterns`: https://doc.rust-lang.org/unstable-book/language-features/slice-patterns.html.
-
-        while slice.len() > 2 {
-            let &(first_index, first_value) = slice.first().unwrap();
-            let &(last_index, last_value) = slice.last().unwrap();
-
+        while let [(first_index, first_value), .., (last_index, last_value)] = *slice {
             match (first_value + last_value).cmp(&target) {
                 Ordering::Less => slice = &slice[1..],
                 Ordering::Equal => return vec![first_index, last_index],
