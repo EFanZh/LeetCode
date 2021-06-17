@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::branches_sharing_code)]
     fn helper(input: &mut &[u8], depth: usize, parent_length: usize, result: &mut usize) {
         while input.get(..depth).map_or(false, |s| s.iter().all(|&c| c == b'\t')) {
             if let Some(name_length) = input[depth..].iter().position(|&c| c == b'\n') {

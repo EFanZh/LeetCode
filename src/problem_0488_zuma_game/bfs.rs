@@ -58,7 +58,6 @@ impl State {
         self.buffer[..board_length + self.hand_length()].split_at(board_length)
     }
 
-    #[allow(clippy::filter_map)]
     fn nexts(&self) -> impl Iterator<Item = Self> + '_ {
         let (board, hand) = self.fields();
 

@@ -3,15 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::manual_strip)]
     fn parse_str<'a>(value: &str, input: &'a str) -> Option<&'a str> {
-        // TODO: use `str::strip_prefix`.
-
-        if input.starts_with(value) {
-            Some(&input[value.len()..])
-        } else {
-            None
-        }
+        input.strip_prefix(value)
     }
 
     fn parse_tag_name(input: &str) -> Option<(&str, &str)> {

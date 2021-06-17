@@ -95,6 +95,6 @@ mod tests {
         assert_eq!(result.stat.title, "Two Sum");
         assert_eq!(result.stat.title_slug, "two-sum");
         assert_eq!(result.stat.frontend_question_id, 1);
-        assert_eq!(result.paid_only, false);
+        assert!(!result.paid_only);
     }
 }
