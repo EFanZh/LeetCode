@@ -59,7 +59,7 @@ mod tests {
             ),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::convert_bst(test_utilities::make_tree(root.iter().copied())),
                 test_utilities::make_tree(expected.iter().copied())

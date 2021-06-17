@@ -15,7 +15,7 @@ mod tests {
             (&[[100_000, -100_000]], &[100_000, -100_000]),
         ];
 
-        for (adjacent_pairs, expected) in test_cases.iter().copied() {
+        for (adjacent_pairs, expected) in test_cases {
             let result = S::restore_array(adjacent_pairs.iter().copied().map(Vec::from).collect());
 
             assert!(result == expected || result.iter().eq(expected.iter().rev()));

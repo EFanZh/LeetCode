@@ -44,7 +44,7 @@ mod tests {
             (&[-1], &[SumRange((0, 0), -1), Update(0, 1), SumRange((0, 0), 1)]),
         ];
 
-        for (nums, operations) in test_cases.iter().copied() {
+        for (nums, operations) in test_cases {
             let mut num_array = N::new(nums.to_vec());
 
             for operation in operations {

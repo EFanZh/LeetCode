@@ -13,7 +13,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[3, 0, 1] as &[_], 2), (&[9, 6, 4, 2, 3, 5, 7, 0, 1], 8)];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::missing_number(nums.to_vec()), expected);
         }
     }

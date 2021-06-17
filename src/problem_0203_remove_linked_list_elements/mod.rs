@@ -15,7 +15,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((&[1, 2, 6, 3, 4, 5, 6] as &[_], 6), &[1, 2, 3, 4, 5] as &[_])];
 
-        for ((head, val), expected) in test_cases.iter().copied() {
+        for ((head, val), expected) in test_cases {
             assert_eq!(
                 test_utilities::iter_list(&S::remove_elements(
                     test_utilities::make_list(head.iter().copied()),

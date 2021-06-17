@@ -17,7 +17,7 @@ mod tests {
             (&[&[1, 2, 3], &[4, 5, 6]], &[&[1, 4], &[2, 5], &[3, 6]]),
         ];
 
-        for (matrix, expected) in test_cases.iter().copied() {
+        for (matrix, expected) in test_cases {
             assert_eq!(
                 S::transpose(matrix.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

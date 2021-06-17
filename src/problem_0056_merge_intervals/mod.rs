@@ -20,7 +20,7 @@ mod tests {
             (&[[1, 4], [2, 3]], &[[1, 4]]),
         ];
 
-        for (intervals, expected) in test_cases.iter().copied() {
+        for (intervals, expected) in test_cases {
             assert_eq!(S::merge(intervals.iter().copied().map(Vec::from).collect()), expected);
         }
     }

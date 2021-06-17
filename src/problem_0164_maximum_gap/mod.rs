@@ -19,7 +19,7 @@ mod tests {
             (&[1, 11], 10),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::maximum_gap(nums.to_vec()), expected);
         }
     }

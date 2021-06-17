@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("a", "b"), false), (("aa", "ab"), false), (("aa", "aab"), true)];
 
-        for ((ransom_note, magazine), expected) in test_cases.iter().copied() {
+        for ((ransom_note, magazine), expected) in test_cases {
             assert_eq!(
                 S::can_construct(ransom_note.to_string(), magazine.to_string()),
                 expected

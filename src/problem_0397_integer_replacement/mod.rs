@@ -37,7 +37,7 @@ mod tests {
             (0x7fff_ffff, 32),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::integer_replacement(n), expected);
         }
     }

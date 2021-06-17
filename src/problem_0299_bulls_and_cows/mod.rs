@@ -17,7 +17,7 @@ mod tests {
             (("1122", "1222"), "3A0B"),
         ];
 
-        for ((secret, guess), expected) in test_cases.iter().copied() {
+        for ((secret, guess), expected) in test_cases {
             assert_eq!(S::get_hint(secret.to_string(), guess.to_string()), expected);
         }
     }

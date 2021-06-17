@@ -25,7 +25,7 @@ mod tests {
             ),
         ];
 
-        for ((s1, s2), expected) in test_cases.iter().copied() {
+        for ((s1, s2), expected) in test_cases {
             assert_eq!(S::is_scramble(s1.to_string(), s2.to_string()), expected);
         }
     }

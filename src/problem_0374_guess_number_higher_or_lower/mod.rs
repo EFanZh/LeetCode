@@ -57,7 +57,7 @@ mod tests {
             (6, 6),
         ];
 
-        for (n, num) in test_cases.iter().copied() {
+        for (n, num) in test_cases {
             super::NUM.with(|num_cell| {
                 num_cell.set(num);
 

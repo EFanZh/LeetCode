@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((1, 4), 2)];
 
-        for ((x, y), expected) in test_cases.iter().copied() {
+        for ((x, y), expected) in test_cases {
             assert_eq!(S::hamming_distance(x, y), expected);
         }
     }

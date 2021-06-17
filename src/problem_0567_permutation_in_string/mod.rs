@@ -16,7 +16,7 @@ mod tests {
             (("ab", "ba"), true),
         ];
 
-        for ((s1, s2), expected) in test_cases.iter().copied() {
+        for ((s1, s2), expected) in test_cases {
             assert_eq!(S::check_inclusion(s1.to_string(), s2.to_string()), expected);
         }
     }

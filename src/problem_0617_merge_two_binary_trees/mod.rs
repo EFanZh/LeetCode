@@ -28,7 +28,7 @@ mod tests {
             ((&[Some(1)], &[Some(1), Some(2)]), &[Some(2), Some(2)]),
         ];
 
-        for ((root1, root2), expected) in test_cases.iter().copied() {
+        for ((root1, root2), expected) in test_cases {
             assert_eq!(
                 S::merge_trees(
                     test_utilities::make_tree(root1.iter().copied()),

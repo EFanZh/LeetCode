@@ -19,7 +19,7 @@ mod tests {
             ((-2_147_483_648, -1), "2147483648"),
         ];
 
-        for ((numerator, denominator), expected) in test_cases.iter().copied() {
+        for ((numerator, denominator), expected) in test_cases {
             assert_eq!(S::fraction_to_decimal(numerator, denominator), expected);
         }
     }

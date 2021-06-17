@@ -19,7 +19,7 @@ mod tests {
             &[Some(0), Some(-3), Some(9), Some(-10), None, Some(5)] as &[_],
         )];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(
                 S::sorted_array_to_bst(nums.to_vec()),
                 test_utilities::make_tree(expected.iter().copied())

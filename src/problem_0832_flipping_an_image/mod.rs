@@ -20,7 +20,7 @@ mod tests {
             ),
         ];
 
-        for (a, expected) in test_cases.iter().copied() {
+        for (a, expected) in test_cases {
             assert_eq!(
                 S::flip_and_invert_image(a.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

@@ -21,7 +21,7 @@ mod tests {
             ),
         ];
 
-        for (matrix, expected) in test_cases.iter().copied() {
+        for (matrix, expected) in test_cases {
             let mut matrix = matrix.iter().copied().map(<[_]>::to_vec).collect();
 
             S::rotate(&mut matrix);

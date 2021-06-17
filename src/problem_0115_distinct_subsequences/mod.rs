@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("rabbbit", "rabbit"), 3), (("babgbag", "bag"), 5)];
 
-        for ((s, t), expected) in test_cases.iter().copied() {
+        for ((s, t), expected) in test_cases {
             assert_eq!(S::num_distinct(s.to_string(), t.to_string()), expected);
         }
     }

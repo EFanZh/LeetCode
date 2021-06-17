@@ -28,7 +28,7 @@ mod tests {
             (1_000_000_000_000_000_000, 999_999_999_999_999_999),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::smallest_good_base(n.to_string()).parse::<u64>().unwrap(), expected);
         }
     }

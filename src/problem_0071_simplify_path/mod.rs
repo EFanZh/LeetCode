@@ -18,7 +18,7 @@ mod tests {
             ("/a//b////c/d//././/..", "/a/b/c"),
         ];
 
-        for (path, expected) in test_cases.iter().copied() {
+        for (path, expected) in test_cases {
             assert_eq!(S::simplify_path(path.to_string()), expected);
         }
     }

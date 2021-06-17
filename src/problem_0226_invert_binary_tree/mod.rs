@@ -19,7 +19,7 @@ mod tests {
             &[Some(4), Some(7), Some(2), Some(9), Some(6), Some(3), Some(1)] as &[_],
         )];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::invert_tree(test_utilities::make_tree(root.iter().copied())),
                 test_utilities::make_tree(expected.iter().copied())

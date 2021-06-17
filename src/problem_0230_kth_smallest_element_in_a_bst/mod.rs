@@ -23,7 +23,7 @@ mod tests {
             ),
         ];
 
-        for ((root, k), expected) in test_cases.iter().copied() {
+        for ((root, k), expected) in test_cases {
             assert_eq!(
                 S::kth_smallest(test_utilities::make_tree(root.iter().copied()), k),
                 expected

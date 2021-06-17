@@ -20,7 +20,7 @@ mod tests {
             ((&[1, 2, 3], 3, &[], 0), &[1, 2, 3]),
         ];
 
-        for ((nums1, m, nums2, n), expected) in test_cases.iter().copied() {
+        for ((nums1, m, nums2, n), expected) in test_cases {
             let mut nums1 = nums1.to_vec();
 
             S::merge(&mut nums1, m, &mut nums2.to_vec(), n);

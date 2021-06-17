@@ -15,7 +15,7 @@ mod tests {
             ((&[1, 1, 1, 10, 10, 10], 1, 9), &[10]),
         ];
 
-        for ((arr, k, x), expected) in test_cases.iter().copied() {
+        for ((arr, k, x), expected) in test_cases {
             assert_eq!(S::find_closest_elements(arr.to_vec(), k, x), expected);
         }
     }

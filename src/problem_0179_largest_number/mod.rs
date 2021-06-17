@@ -19,7 +19,7 @@ mod tests {
             (&[432, 43243], "43243432"),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::largest_number(nums.to_vec()), expected);
         }
     }

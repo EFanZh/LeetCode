@@ -18,7 +18,7 @@ mod tests {
             ("aaabba", "a3b2a"),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             let mut s = s.chars().collect();
             let result_length = S::compress(&mut s);
 

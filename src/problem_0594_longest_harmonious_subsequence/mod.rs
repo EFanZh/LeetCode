@@ -15,7 +15,7 @@ mod tests {
             (&[1, 1, 1, 1], 0),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::find_lhs(nums.to_vec()), expected);
         }
     }

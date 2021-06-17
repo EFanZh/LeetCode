@@ -17,7 +17,7 @@ mod tests {
             (&[1, 2, 3, 4, 5], &[1, 5, 2, 4, 3]),
         ];
 
-        for (head, expected) in test_cases.iter().copied() {
+        for (head, expected) in test_cases {
             let mut head = test_utilities::make_list(head.iter().copied());
 
             S::reorder_list(&mut head);

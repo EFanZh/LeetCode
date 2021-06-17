@@ -20,7 +20,7 @@ mod tests {
             ((4_897_764, 4_330_851), 4_897_764),
         ];
 
-        for ((n, k), expected) in test_cases.iter().copied() {
+        for ((n, k), expected) in test_cases {
             assert_eq!(S::find_kth_number(n, k), expected);
         }
     }

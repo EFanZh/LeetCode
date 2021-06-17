@@ -14,7 +14,7 @@ mod tests {
             (&[&[1, 0, 0], &[0, 1, 0], &[0, 0, 1]], 3),
         ];
 
-        for (is_connected, expected) in test_cases.iter().copied() {
+        for (is_connected, expected) in test_cases {
             assert_eq!(
                 S::find_circle_num(is_connected.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

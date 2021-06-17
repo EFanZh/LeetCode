@@ -34,7 +34,7 @@ mod tests {
             ((1, &["0:start:0", "0:end:0"]), &[1]),
         ];
 
-        for ((n, logs), expected) in test_cases.iter().copied() {
+        for ((n, logs), expected) in test_cases {
             assert_eq!(
                 S::exclusive_time(n, logs.iter().copied().map(str::to_string).collect()),
                 expected

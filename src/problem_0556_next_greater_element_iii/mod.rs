@@ -25,7 +25,7 @@ mod tests {
             (1_999_999_999, -1),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::next_greater_element(n), expected);
         }
     }

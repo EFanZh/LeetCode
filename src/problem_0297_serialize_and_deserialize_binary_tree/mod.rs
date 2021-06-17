@@ -24,7 +24,7 @@ mod tests {
             &[Some(1), Some(2)],
         ];
 
-        for root in test_cases.iter().copied() {
+        for root in test_cases {
             let codec = C::new();
             let root = test_utilities::make_tree(root.iter().copied());
             let data = codec.serialize(root.clone());

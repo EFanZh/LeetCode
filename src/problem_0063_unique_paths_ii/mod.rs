@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(&[&[0, 0, 0] as &[_], &[0, 1, 0], &[0, 0, 0]] as &[&[_]], 2)];
 
-        for (obstacle_grid, expected) in test_cases.iter().copied() {
+        for (obstacle_grid, expected) in test_cases {
             assert_eq!(
                 S::unique_paths_with_obstacles(obstacle_grid.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

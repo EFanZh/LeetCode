@@ -20,7 +20,7 @@ mod tests {
             (&[26, 16, 16, 36, 36, 16, 16, 36, 36, 10, 10, 80, 80, 10, 10, 6], false),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::find132pattern(nums.to_vec()), expected);
         }
     }

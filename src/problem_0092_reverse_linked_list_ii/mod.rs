@@ -18,7 +18,7 @@ mod tests {
             ((&[5], 1, 1), &[5]),
         ];
 
-        for ((head, m, n), expected) in test_cases.iter().copied() {
+        for ((head, m, n), expected) in test_cases {
             assert_eq!(
                 test_utilities::iter_list(&S::reverse_between(
                     test_utilities::make_list(head.iter().copied()),

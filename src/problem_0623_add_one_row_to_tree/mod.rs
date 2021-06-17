@@ -36,7 +36,7 @@ mod tests {
             ),
         ];
 
-        for ((root, val, depth), expected) in test_cases.iter().copied() {
+        for ((root, val, depth), expected) in test_cases {
             assert_eq!(
                 S::add_one_row(test_utilities::make_tree(root.iter().copied()), val, depth),
                 test_utilities::make_tree(expected.iter().copied())

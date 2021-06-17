@@ -41,7 +41,7 @@ mod tests {
             ),
         ];
 
-        for (paths, expected) in test_cases.iter().copied() {
+        for (paths, expected) in test_cases {
             let paths = paths.iter().copied().map(str::to_string).collect();
 
             assert_eq!(

@@ -15,7 +15,7 @@ mod tests {
             (&[1], &[1]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             let mut nums = nums.to_vec();
 
             S::move_zeroes(&mut nums);

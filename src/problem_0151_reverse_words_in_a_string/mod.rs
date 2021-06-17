@@ -15,7 +15,7 @@ mod tests {
             ("a good   example", "example good a"),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::reverse_words(s.to_string()), expected);
         }
     }

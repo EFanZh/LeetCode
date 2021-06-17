@@ -19,7 +19,7 @@ mod tests {
             ((8, 36), false),
         ];
 
-        for ((max_choosable_integer, desired_total), expected) in test_cases.iter().copied() {
+        for ((max_choosable_integer, desired_total), expected) in test_cases {
             assert_eq!(S::can_i_win(max_choosable_integer, desired_total), expected);
         }
     }

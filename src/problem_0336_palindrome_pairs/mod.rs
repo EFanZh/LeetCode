@@ -21,7 +21,7 @@ mod tests {
             (&["a", ""], &[[0, 1], [1, 0]]),
         ];
 
-        for (words, expected) in test_cases.iter().copied() {
+        for (words, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::palindrome_pairs(
                     words.iter().copied().map(str::to_string).collect()

@@ -22,7 +22,7 @@ mod tests {
             (10, 16),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::get_money_amount(n), expected);
         }
     }

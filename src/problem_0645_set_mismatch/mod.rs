@@ -17,7 +17,7 @@ mod tests {
             (&[3, 3, 1], [3, 2]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::find_error_nums(nums.to_vec()), expected);
         }
     }

@@ -13,7 +13,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(3, "III"), (4, "IV"), (9, "IX"), (58, "LVIII"), (1994, "MCMXCIV")];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::int_to_roman(num), expected);
         }
     }

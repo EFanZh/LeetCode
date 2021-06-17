@@ -14,7 +14,7 @@ mod tests {
             ("God Ding", "doG gniD"),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::reverse_words(s.to_string()), expected);
         }
     }

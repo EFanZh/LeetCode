@@ -16,7 +16,7 @@ mod tests {
             (&[1, 2, 1], 2),
         ];
 
-        for (height, expected) in test_cases.iter().copied() {
+        for (height, expected) in test_cases {
             assert_eq!(S::max_area(height.to_vec()), expected);
         }
     }

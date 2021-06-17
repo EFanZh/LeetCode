@@ -40,7 +40,7 @@ mod tests {
             ] as &[_],
         )];
 
-        for (tree, operations) in test_cases.iter().copied() {
+        for (tree, operations) in test_cases {
             let mut iterator = I::new(test_utilities::make_tree(tree.iter().copied()));
 
             for operation in operations {

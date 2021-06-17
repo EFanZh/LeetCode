@@ -16,7 +16,7 @@ mod tests {
             ((&[1, 2, 7, 9, 981], 1_000_000_000), 0),
         ];
 
-        for ((nums, s), expected) in test_cases.iter().copied() {
+        for ((nums, s), expected) in test_cases {
             assert_eq!(S::find_target_sum_ways(nums.to_vec(), s), expected);
         }
     }

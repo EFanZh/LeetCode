@@ -26,7 +26,7 @@ mod tests {
             ((&[Some(1), Some(2)], &[Some(1), None, Some(2)]), false),
         ];
 
-        for ((p, q), expected) in test_cases.iter().copied() {
+        for ((p, q), expected) in test_cases {
             assert_eq!(
                 S::is_same_tree(
                     test_utilities::make_tree(p.iter().copied()),

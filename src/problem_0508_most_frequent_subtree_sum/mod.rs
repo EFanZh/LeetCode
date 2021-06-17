@@ -19,7 +19,7 @@ mod tests {
             (&[Some(5), Some(2), Some(-5)], &[2]),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_frequent_tree_sum(test_utilities::make_tree(
                     root.iter().copied()

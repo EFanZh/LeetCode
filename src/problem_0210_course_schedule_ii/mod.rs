@@ -24,7 +24,7 @@ mod tests {
             ((2, &[[0, 1]]), true),
         ];
 
-        for ((num_courses, prerequisites), can_finish) in test_cases.iter().copied() {
+        for ((num_courses, prerequisites), can_finish) in test_cases {
             let result = S::find_order(num_courses, prerequisites.iter().copied().map(Vec::from).collect());
 
             if can_finish {

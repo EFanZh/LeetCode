@@ -14,7 +14,7 @@ mod tests {
             (&[[1, 1], [3, 2], [5, 3], [4, 1], [2, 3], [1, 4]], 4),
         ];
 
-        for (points, expected) in test_cases.iter().copied() {
+        for (points, expected) in test_cases {
             assert_eq!(S::max_points(points.iter().copied().map(Vec::from).collect()), expected);
         }
     }

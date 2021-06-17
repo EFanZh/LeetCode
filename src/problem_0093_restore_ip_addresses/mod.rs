@@ -15,7 +15,7 @@ mod tests {
             ("010010", &["0.10.0.10", "0.100.1.0"]),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::restore_ip_addresses(s.to_string()), expected);
         }
     }

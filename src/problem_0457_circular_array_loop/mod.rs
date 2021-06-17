@@ -17,7 +17,7 @@ mod tests {
             (&[-1, -1, -1], true),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::circular_array_loop(nums.to_vec()), expected);
         }
     }

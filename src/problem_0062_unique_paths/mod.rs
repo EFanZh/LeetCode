@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((3, 2), 3), ((7, 3), 28), ((51, 9), 1_916_797_311)];
 
-        for ((m, n), expected) in test_cases.iter().copied() {
+        for ((m, n), expected) in test_cases {
             assert_eq!(S::unique_paths(m, n), expected);
         }
     }

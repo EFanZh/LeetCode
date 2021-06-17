@@ -28,10 +28,10 @@ mod tests {
             &[Push(1), Push(2), Push(3), Pop(3), Pop(2), Pop(1), Empty(true)] as &[_],
         ];
 
-        for test_case in test_cases.iter().copied() {
+        for test_case in test_cases {
             let mut stack = S::new();
 
-            for operation in test_case.iter() {
+            for operation in test_case {
                 match *operation {
                     Push(value) => stack.push(value),
                     Pop(value) => assert_eq!(stack.pop(), value),

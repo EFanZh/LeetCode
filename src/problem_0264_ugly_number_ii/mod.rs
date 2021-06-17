@@ -50,7 +50,7 @@ mod tests {
             (37, 125),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::nth_ugly_number(n), expected);
         }
     }

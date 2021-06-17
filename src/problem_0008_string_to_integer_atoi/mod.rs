@@ -21,7 +21,7 @@ mod tests {
             ("+1", 1),
         ];
 
-        for (str, expected) in test_cases.iter().copied() {
+        for (str, expected) in test_cases {
             assert_eq!(S::my_atoi(str.to_string()), expected);
         }
     }

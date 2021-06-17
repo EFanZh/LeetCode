@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("godding", "gd"), 4), (("godding", "godding"), 13)];
 
-        for ((ring, key), expected) in test_cases.iter().copied() {
+        for ((ring, key), expected) in test_cases {
             assert_eq!(S::find_rotate_steps(ring.to_string(), key.to_string()), expected);
         }
     }

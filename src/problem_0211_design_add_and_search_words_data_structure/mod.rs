@@ -40,7 +40,7 @@ mod tests {
             ],
         ];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut word_dictionary = D::new();
 
             for operation in operations {

@@ -19,7 +19,7 @@ mod tests {
             (("", ""), 0),
         ];
 
-        for ((haystack, needle), expected) in test_cases.iter().copied() {
+        for ((haystack, needle), expected) in test_cases {
             assert_eq!(S::str_str(haystack.to_string(), needle.to_string()), expected);
         }
     }

@@ -23,7 +23,7 @@ mod tests {
             (&[3, 2], 4),
         ];
 
-        for (heights, expected) in test_cases.iter().copied() {
+        for (heights, expected) in test_cases {
             assert_eq!(S::largest_rectangle_area(heights.to_vec()), expected);
         }
     }

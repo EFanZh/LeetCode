@@ -19,7 +19,7 @@ mod tests {
             ("#,7,6,9,#,#,#", false),
         ];
 
-        for (preorder, expected) in test_cases.iter().copied() {
+        for (preorder, expected) in test_cases {
             assert_eq!(S::is_valid_serialization(preorder.to_string()), expected);
         }
     }

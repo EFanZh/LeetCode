@@ -16,7 +16,7 @@ mod tests {
             ((&[0, 1, 2, 2, 3, 0, 4, 2], 2), &[0, 1, 3, 0, 4]),
         ];
 
-        for ((nums, val), expected) in test_cases.iter().copied() {
+        for ((nums, val), expected) in test_cases {
             let mut nums = nums.to_vec();
             let result = S::remove_element(&mut nums, val);
 

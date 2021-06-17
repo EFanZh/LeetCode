@@ -14,7 +14,7 @@ mod tests {
             &[&[0, 0, 0], &[1, 0, 1], &[0, 1, 1], &[0, 1, 0]],
         )];
 
-        for (board, expected) in test_cases.iter().copied() {
+        for (board, expected) in test_cases {
             let mut board = board.iter().copied().map(<[_]>::to_vec).collect();
 
             S::game_of_life(&mut board);

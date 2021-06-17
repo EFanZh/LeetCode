@@ -18,7 +18,7 @@ mod tests {
             ((-2, -2, 2, 2, -2, -4, 2, -2), 24),
         ];
 
-        for ((a, b, c, d, e, f, g, h), expected) in test_cases.iter().copied() {
+        for ((a, b, c, d, e, f, g, h), expected) in test_cases {
             assert_eq!(S::compute_area(a, b, c, d, e, f, g, h), expected);
         }
     }

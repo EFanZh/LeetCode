@@ -37,7 +37,7 @@ mod tests {
             ((&[5, 5, 3, 5, 1, -5, 1, -2], 4), &[[-5, 1, 3, 5]]),
         ];
 
-        for ((nums, target), expected) in test_cases.iter().copied() {
+        for ((nums, target), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::four_sum(nums.to_vec(), target)),
                 expected

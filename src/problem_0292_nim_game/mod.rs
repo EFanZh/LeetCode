@@ -20,7 +20,7 @@ mod tests {
             (8, false),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::can_win_nim(n), expected);
         }
     }

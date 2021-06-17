@@ -19,7 +19,7 @@ mod tests {
             (&[Some(4), Some(9), Some(0), Some(5), Some(1)], 1026),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::sum_numbers(test_utilities::make_tree(root.iter().copied())),
                 expected

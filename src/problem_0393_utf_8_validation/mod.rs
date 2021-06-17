@@ -19,7 +19,7 @@ mod tests {
             (&[255], false),
         ];
 
-        for (data, expected) in test_cases.iter().copied() {
+        for (data, expected) in test_cases {
             assert_eq!(S::valid_utf8(data.to_vec()), expected);
         }
     }

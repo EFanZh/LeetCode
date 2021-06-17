@@ -19,7 +19,7 @@ mod tests {
             ("10[abc]", "abcabcabcabcabcabcabcabcabcabc"),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::decode_string(s.to_string()), expected);
         }
     }

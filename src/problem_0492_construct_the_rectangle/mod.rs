@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(4, [2, 2]), (37, [37, 1]), (122_122, [427, 286])];
 
-        for (area, expected) in test_cases.iter().copied() {
+        for (area, expected) in test_cases {
             assert_eq!(S::construct_rectangle(area), expected);
         }
     }

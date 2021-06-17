@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(2, &[0, 1, 1] as &[_]), (5, &[0, 1, 1, 2, 1, 2])];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::count_bits(num), expected);
         }
     }

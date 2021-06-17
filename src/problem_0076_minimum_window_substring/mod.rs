@@ -17,7 +17,7 @@ mod tests {
             (("abc", ""), ""),
         ];
 
-        for ((s, t), expected) in test_cases.iter().copied() {
+        for ((s, t), expected) in test_cases {
             assert_eq!(S::min_window(s.to_string(), t.to_string()), expected);
         }
     }

@@ -40,7 +40,7 @@ mod tests {
             ((&[Some(1), Some(2)], 1), false),
         ];
 
-        for ((root, sum), expected) in test_cases.iter().copied() {
+        for ((root, sum), expected) in test_cases {
             assert_eq!(
                 S::has_path_sum(test_utilities::make_tree(root.iter().copied()), sum),
                 expected

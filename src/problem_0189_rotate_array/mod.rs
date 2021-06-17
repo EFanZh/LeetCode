@@ -17,7 +17,7 @@ mod tests {
             ((&[-1], 2), &[-1]),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             let mut nums = nums.to_vec();
 
             S::rotate(&mut nums, k);

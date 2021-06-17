@@ -19,7 +19,7 @@ mod tests {
             ("AAAAAAAAAAA", &["AAAAAAAAAA"]),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::find_repeated_dna_sequences(s.to_string()), expected);
         }
     }

@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((5, &[1, 2, 5] as &[_]), 4), ((3, &[2]), 0), ((10, &[10]), 1)];
 
-        for ((amount, coins), expected) in test_cases.iter().copied() {
+        for ((amount, coins), expected) in test_cases {
             assert_eq!(S::change(amount, coins.to_vec()), expected);
         }
     }

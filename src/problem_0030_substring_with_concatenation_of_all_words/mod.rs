@@ -22,7 +22,7 @@ mod tests {
             (("abc", &["ab", "cd"]), &[]),
         ];
 
-        for ((s, words), expected) in test_cases.iter().copied() {
+        for ((s, words), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_substring(
                     s.to_string(),

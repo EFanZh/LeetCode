@@ -39,7 +39,7 @@ mod tests {
             (&[], 0),
         ];
 
-        for (height_map, expected) in test_cases.iter().copied() {
+        for (height_map, expected) in test_cases {
             assert_eq!(
                 S::trap_rain_water(height_map.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

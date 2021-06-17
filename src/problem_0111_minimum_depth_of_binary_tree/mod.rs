@@ -26,7 +26,7 @@ mod tests {
             (&[Some(1), Some(2), Some(3), Some(4), Some(5)], 2),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(S::min_depth(test_utilities::make_tree(root.iter().copied())), expected);
         }
     }

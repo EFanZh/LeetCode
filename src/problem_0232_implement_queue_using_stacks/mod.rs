@@ -38,7 +38,7 @@ mod tests {
             ],
         ];
 
-        for test_case in test_cases.iter().copied() {
+        for test_case in test_cases {
             let mut queue = Q::new();
 
             for operation in test_case {

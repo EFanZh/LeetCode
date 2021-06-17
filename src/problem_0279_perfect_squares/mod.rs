@@ -29,7 +29,7 @@ mod tests {
             (14, 3),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::num_squares(n), expected);
         }
     }

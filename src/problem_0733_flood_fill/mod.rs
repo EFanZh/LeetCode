@@ -20,7 +20,7 @@ mod tests {
             ),
         ];
 
-        for ((image, sr, sc, new_color), expected) in test_cases.iter().copied() {
+        for ((image, sr, sc, new_color), expected) in test_cases {
             assert_eq!(
                 S::flood_fill(image.iter().copied().map(<[_]>::to_vec).collect(), sr, sc, new_color),
                 expected

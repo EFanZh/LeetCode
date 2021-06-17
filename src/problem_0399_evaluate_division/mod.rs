@@ -40,7 +40,7 @@ mod tests {
             ),
         ];
 
-        for ((equations, values, queries), expected) in test_cases.iter().copied() {
+        for ((equations, values, queries), expected) in test_cases {
             assert_eq!(
                 S::calc_equation(
                     equations

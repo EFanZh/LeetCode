@@ -27,7 +27,7 @@ mod tests {
             (46, 1_836_311_903),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::fib(n), expected);
         }
     }

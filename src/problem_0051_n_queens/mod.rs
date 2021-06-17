@@ -17,7 +17,7 @@ mod tests {
             ] as &[_],
         )];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::solve_n_queens(n), expected);
         }
     }

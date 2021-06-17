@@ -13,7 +13,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("hello", "olleh"), ("Hannah", "hannaH")];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             let mut s = s.chars().collect();
 
             S::reverse_string(&mut s);

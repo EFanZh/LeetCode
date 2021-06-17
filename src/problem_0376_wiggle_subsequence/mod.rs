@@ -18,7 +18,7 @@ mod tests {
             (&[3, 3, 3, 2, 5], 3),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::wiggle_max_length(nums.to_vec()), expected);
         }
     }

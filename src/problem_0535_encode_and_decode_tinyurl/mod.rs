@@ -26,7 +26,7 @@ mod tests {
             ],
         ];
 
-        for urls in test_cases.iter().copied() {
+        for urls in test_cases {
             let mut codec = C::new();
 
             for &url in urls {

@@ -21,7 +21,7 @@ mod tests {
             (("2147483648", -2_147_483_648), &[]),
         ];
 
-        for ((num, target), expected) in test_cases.iter().copied() {
+        for ((num, target), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::add_operators(num.to_string(), target)),
                 expected

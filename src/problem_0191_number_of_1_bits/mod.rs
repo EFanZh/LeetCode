@@ -15,7 +15,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(11, 3), (128, 1), (4_294_967_294, 31)];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::hamming_weight(n), expected);
         }
     }

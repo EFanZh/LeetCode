@@ -19,7 +19,7 @@ mod tests {
             ("tmmzuxt", 5),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::length_of_longest_substring(s.to_string()), expected);
         }
     }

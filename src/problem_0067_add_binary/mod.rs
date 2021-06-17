@@ -16,7 +16,7 @@ mod tests {
             (("0", "0"), "0"),
         ];
 
-        for ((a, b), expected) in test_cases.iter().copied() {
+        for ((a, b), expected) in test_cases {
             assert_eq!(S::add_binary(a.to_string(), b.to_string()), expected);
         }
     }

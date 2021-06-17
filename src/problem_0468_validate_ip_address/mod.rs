@@ -19,7 +19,7 @@ mod tests {
             ("01.01.01.01", "Neither"),
         ];
 
-        for (ip, expected) in test_cases.iter().copied() {
+        for (ip, expected) in test_cases {
             assert_eq!(S::valid_ip_address(ip.to_string()), expected);
         }
     }

@@ -32,7 +32,7 @@ mod tests {
             // (18, 666_090_624),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::total_n_queens(n), expected);
         }
     }

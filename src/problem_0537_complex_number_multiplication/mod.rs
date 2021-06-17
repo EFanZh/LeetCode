@@ -15,7 +15,7 @@ mod tests {
             (("78+-76i", "-86+72i"), "-1236+12152i"),
         ];
 
-        for ((a, b), expected) in test_cases.iter().copied() {
+        for ((a, b), expected) in test_cases {
             assert_eq!(S::complex_number_multiply(a.to_string(), b.to_string()), expected);
         }
     }

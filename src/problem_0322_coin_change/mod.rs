@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((&[1, 2, 5] as &[_], 11), 3), ((&[2], 3), -1)];
 
-        for ((coins, amount), expected) in test_cases.iter().copied() {
+        for ((coins, amount), expected) in test_cases {
             assert_eq!(S::coin_change(coins.to_vec(), amount), expected);
         }
     }

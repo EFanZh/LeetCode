@@ -166,7 +166,7 @@ mod tests {
             ],
         ];
 
-        for operations in test_cases.iter().copied() {
+        for operations in test_cases {
             let mut all_one = A::new();
 
             for operation in operations {

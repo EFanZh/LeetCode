@@ -15,7 +15,7 @@ mod tests {
             (&[83, 86, 77, 15, 93, 35, 86, 92, 49, 21], 487),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::min_moves(nums.to_vec()), expected);
         }
     }

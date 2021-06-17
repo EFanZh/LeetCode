@@ -38,7 +38,7 @@ mod tests {
             ((&[&['a']], "a"), true),
         ];
 
-        for ((board, word), expected) in test_cases.iter().copied() {
+        for ((board, word), expected) in test_cases {
             assert_eq!(
                 S::exist(board.iter().copied().map(<[_]>::to_vec).collect(), word.to_string()),
                 expected

@@ -14,7 +14,7 @@ mod tests {
             &[1, 1, 4, 2, 1, 1, 0, 0] as &[_],
         )];
 
-        for (t, expected) in test_cases.iter().copied() {
+        for (t, expected) in test_cases {
             assert_eq!(S::daily_temperatures(t.to_vec()), expected);
         }
     }

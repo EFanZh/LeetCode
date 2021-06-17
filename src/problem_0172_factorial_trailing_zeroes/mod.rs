@@ -18,7 +18,7 @@ mod tests {
             (2_147_483_647, 536_870_902),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::trailing_zeroes(n), expected);
         }
     }

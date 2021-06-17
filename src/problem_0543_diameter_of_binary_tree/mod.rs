@@ -21,7 +21,7 @@ mod tests {
             (&[Some(1), Some(2)], 1),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::diameter_of_binary_tree(test_utilities::make_tree(root.iter().copied())),
                 expected

@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((3, 3), "213"), ((4, 9), "2314"), ((1, 1), "1")];
 
-        for ((n, k), expected) in test_cases.iter().copied() {
+        for ((n, k), expected) in test_cases {
             assert_eq!(S::get_permutation(n, k), expected);
         }
     }

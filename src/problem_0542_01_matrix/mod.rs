@@ -63,7 +63,7 @@ mod tests {
             ),
         ];
 
-        for (mat, expected) in test_cases.iter().copied() {
+        for (mat, expected) in test_cases {
             assert_eq!(
                 S::update_matrix(mat.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

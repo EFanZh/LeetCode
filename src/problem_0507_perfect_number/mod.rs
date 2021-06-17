@@ -19,7 +19,7 @@ mod tests {
             (33_550_336, true),
             (121, false),
         ];
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::check_perfect_number(num), expected);
         }
     }

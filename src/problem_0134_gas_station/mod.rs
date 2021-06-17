@@ -16,7 +16,7 @@ mod tests {
             ((&[3, 3, 4], &[3, 4, 4]), -1),
         ];
 
-        for ((gas, cost), expected) in test_cases.iter().copied() {
+        for ((gas, cost), expected) in test_cases {
             assert_eq!(S::can_complete_circuit(gas.to_vec(), cost.to_vec()), expected);
         }
     }

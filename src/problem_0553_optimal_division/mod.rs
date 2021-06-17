@@ -18,7 +18,7 @@ mod tests {
             (&[2, 3], "2/3"),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::optimal_division(nums.to_vec()), expected);
         }
     }

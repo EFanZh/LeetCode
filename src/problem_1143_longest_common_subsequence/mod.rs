@@ -20,7 +20,7 @@ mod tests {
             (("ac", "bc"), 1),
         ];
 
-        for ((text1, text2), expected) in test_cases.iter().copied() {
+        for ((text1, text2), expected) in test_cases {
             assert_eq!(
                 S::longest_common_subsequence(text1.to_string(), text2.to_string()),
                 expected

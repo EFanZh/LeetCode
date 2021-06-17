@@ -28,7 +28,7 @@ mod tests {
             (&[], &[]),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::binary_tree_paths(test_utilities::make_tree(root.iter().copied())),
                 expected

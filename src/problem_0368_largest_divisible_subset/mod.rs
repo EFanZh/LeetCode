@@ -16,7 +16,7 @@ mod tests {
             (&[1], &[&[1]]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             let result = test_utilities::unstable_sorted(S::largest_divisible_subset(nums.to_vec()));
 
             assert!(expected.contains(&result.as_slice()));

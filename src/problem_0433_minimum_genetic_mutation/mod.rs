@@ -32,7 +32,7 @@ mod tests {
             (("AACCGGTT", "AACCGGTA", &[]), -1),
         ];
 
-        for ((start, end, bank), expected) in test_cases.iter().copied() {
+        for ((start, end, bank), expected) in test_cases {
             assert_eq!(
                 S::min_mutation(
                     start.to_string(),

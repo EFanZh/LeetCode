@@ -35,7 +35,7 @@ mod tests {
             ],
         )];
 
-        for (board, expected) in test_cases.iter().copied() {
+        for (board, expected) in test_cases {
             let mut board = board.iter().map(|row| row.chars().collect()).collect();
 
             let expected = expected

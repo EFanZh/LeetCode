@@ -35,7 +35,7 @@ mod tests {
             ((3, 3, &[]), 9),
         ];
 
-        for ((m, n, ops), expected) in test_cases.iter().copied() {
+        for ((m, n, ops), expected) in test_cases {
             assert_eq!(
                 S::max_count(m, n, ops.iter().copied().map(Vec::from).collect()),
                 expected

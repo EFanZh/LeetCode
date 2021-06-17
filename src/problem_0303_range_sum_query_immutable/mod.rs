@@ -16,10 +16,10 @@ mod tests {
             &[((0, 2), 1), ((2, 5), -1), ((0, 5), -3)] as &[_],
         )];
 
-        for (nums, sums) in test_cases.iter().copied() {
+        for (nums, sums) in test_cases {
             let num_array = N::new(nums.to_vec());
 
-            for ((i, j), expected) in sums.iter().copied() {
+            for &((i, j), expected) in sums {
                 assert_eq!(num_array.sum_range(i, j), expected);
             }
         }

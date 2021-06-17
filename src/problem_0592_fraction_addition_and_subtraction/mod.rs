@@ -17,7 +17,7 @@ mod tests {
             ("-5/2+10/3+7/9", "29/18"),
         ];
 
-        for (expression, expected) in test_cases.iter().copied() {
+        for (expression, expected) in test_cases {
             assert_eq!(S::fraction_addition(expression.to_string()), expected);
         }
     }

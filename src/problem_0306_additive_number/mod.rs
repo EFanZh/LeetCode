@@ -20,7 +20,7 @@ mod tests {
             ("199111992", true),
         ];
 
-        for (num, expected) in test_cases.iter().copied() {
+        for (num, expected) in test_cases {
             assert_eq!(S::is_additive_number(num.to_string()), expected);
         }
     }

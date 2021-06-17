@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(("abc", "ahbgdc"), true), (("axc", "ahbgdc"), false)];
 
-        for ((s, t), expected) in test_cases.iter().copied() {
+        for ((s, t), expected) in test_cases {
             assert_eq!(S::is_subsequence(s.to_string(), t.to_string()), expected);
         }
     }

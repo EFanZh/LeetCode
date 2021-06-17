@@ -27,7 +27,7 @@ mod tests {
             (100_000, 49972),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::magical_string(n), expected);
         }
     }

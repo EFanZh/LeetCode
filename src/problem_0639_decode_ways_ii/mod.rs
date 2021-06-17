@@ -21,7 +21,7 @@ mod tests {
             ("*1*1*0", 404),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::num_decodings(s.to_string()), expected);
         }
     }

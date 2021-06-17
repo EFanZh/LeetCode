@@ -15,7 +15,7 @@ mod tests {
             (&[0, 0, 1, 1, 1, 1, 2, 3, 3], &[0, 0, 1, 1, 2, 3, 3]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             let mut nums = nums.to_vec();
 
             assert_eq!(S::remove_duplicates(&mut nums), expected.len() as _);

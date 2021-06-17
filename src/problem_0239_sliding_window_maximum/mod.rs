@@ -14,7 +14,7 @@ mod tests {
             ((&[], 0), &[]),
         ];
 
-        for ((nums, k), expected) in test_cases.iter().copied() {
+        for ((nums, k), expected) in test_cases {
             assert_eq!(S::max_sliding_window(nums.to_vec(), k), expected);
         }
     }

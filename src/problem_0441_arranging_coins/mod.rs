@@ -38,7 +38,7 @@ mod tests {
             (0x7FFF_FFFF, 65535),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::arrange_coins(n), expected);
         }
     }

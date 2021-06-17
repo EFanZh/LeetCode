@@ -17,7 +17,7 @@ mod tests {
             (&[[5, 5], [4, 6], [2, 6]], 2),
         ];
 
-        for (courses, expected) in test_cases.iter().copied() {
+        for (courses, expected) in test_cases {
             assert_eq!(
                 S::schedule_course(courses.iter().copied().map(Vec::from).collect()),
                 expected

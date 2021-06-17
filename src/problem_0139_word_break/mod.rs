@@ -15,7 +15,7 @@ mod tests {
             (("catsandog", &["cats", "dog", "sand", "and", "cat"]), false),
         ];
 
-        for ((s, word_dict), expected) in test_cases.iter().copied() {
+        for ((s, word_dict), expected) in test_cases {
             assert_eq!(
                 S::word_break(s.to_string(), word_dict.iter().copied().map(str::to_string).collect()),
                 expected

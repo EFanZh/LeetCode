@@ -15,7 +15,7 @@ mod tests {
             (&[[4, 5], [4, 6], [6, 7], [2, 3], [1, 1]], 4),
         ];
 
-        for (envelopes, expected) in test_cases.iter().copied() {
+        for (envelopes, expected) in test_cases {
             assert_eq!(
                 S::max_envelopes(envelopes.iter().copied().map(Vec::from).collect()),
                 expected

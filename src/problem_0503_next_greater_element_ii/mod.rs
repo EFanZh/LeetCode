@@ -14,7 +14,7 @@ mod tests {
             (&[1, 2, 3, 4, 3], &[2, 3, 4, -1, 4]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(S::next_greater_elements(nums.to_vec()), expected);
         }
     }

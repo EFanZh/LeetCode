@@ -18,7 +18,7 @@ mod tests {
             (("BB", "B"), 1),
         ];
 
-        for ((board, hand), expected) in test_cases.iter().copied() {
+        for ((board, hand), expected) in test_cases {
             assert_eq!(S::find_min_step(board.to_string(), hand.to_string()), expected);
         }
     }

@@ -25,7 +25,7 @@ mod tests {
             (&[[2, 0]], &[[2, 0]]),
         ];
 
-        for (people, expected) in test_cases.iter().copied() {
+        for (people, expected) in test_cases {
             assert_eq!(
                 S::reconstruct_queue(people.iter().copied().map(Vec::from).collect()),
                 expected

@@ -44,7 +44,7 @@ mod tests {
             ((&[1], &[1, 2, 3, 4]), 0),
         ];
 
-        for ((houses, heaters), expected) in test_cases.iter().copied() {
+        for ((houses, heaters), expected) in test_cases {
             assert_eq!(S::find_radius(houses.to_vec(), heaters.to_vec()), expected);
         }
     }

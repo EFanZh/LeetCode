@@ -21,7 +21,7 @@ mod tests {
             (&[&[1], &[2], &[3], &[4], &[5], &[6], &[7]], [1, 7]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(
                 S::smallest_range(nums.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

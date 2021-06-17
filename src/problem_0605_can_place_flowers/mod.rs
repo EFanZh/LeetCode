@@ -17,7 +17,7 @@ mod tests {
             ((&[1, 0, 0, 0, 1], 0), true),
         ];
 
-        for ((flowerbed, n), expected) in test_cases.iter().copied() {
+        for ((flowerbed, n), expected) in test_cases {
             assert_eq!(S::can_place_flowers(flowerbed.to_vec(), n), expected);
         }
     }

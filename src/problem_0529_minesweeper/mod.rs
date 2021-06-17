@@ -20,7 +20,7 @@ mod tests {
             ),
         ];
 
-        for ((board, click), expected) in test_cases.iter().copied() {
+        for ((board, click), expected) in test_cases {
             assert_eq!(
                 S::update_board(board.iter().map(|row| row.chars().collect()).collect(), click.to_vec())
                     .into_iter()

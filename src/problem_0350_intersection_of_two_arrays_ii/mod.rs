@@ -15,7 +15,7 @@ mod tests {
             ((&[4, 9, 5], &[9, 4, 9, 8, 4]), &[4, 9]),
         ];
 
-        for ((nums1, nums2), expected) in test_cases.iter().copied() {
+        for ((nums1, nums2), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::intersect(nums1.to_vec(), nums2.to_vec())),
                 expected

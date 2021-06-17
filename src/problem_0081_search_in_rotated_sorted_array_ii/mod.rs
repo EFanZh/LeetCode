@@ -19,7 +19,7 @@ mod tests {
             ((&[], 0), false),
         ];
 
-        for ((nums, target), expected) in test_cases.iter().copied() {
+        for ((nums, target), expected) in test_cases {
             assert_eq!(S::search(nums.to_vec(), target), expected);
         }
     }

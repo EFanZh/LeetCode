@@ -19,7 +19,7 @@ mod tests {
             (&[Some(-10), Some(9), Some(20), None, None, Some(15), Some(7)], 42),
         ];
 
-        for (root, expected) in test_cases.iter().copied() {
+        for (root, expected) in test_cases {
             assert_eq!(
                 S::max_path_sum(test_utilities::make_tree(root.iter().copied())),
                 expected

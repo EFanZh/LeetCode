@@ -22,7 +22,7 @@ mod tests {
             // (9, 1226),
         ];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::largest_palindrome(n), expected);
         }
     }

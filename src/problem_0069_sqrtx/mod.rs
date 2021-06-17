@@ -35,7 +35,7 @@ mod tests {
             (0x7FFF_FFFF, 46340),
         ];
 
-        for (x, expected) in test_cases.iter().copied() {
+        for (x, expected) in test_cases {
             assert_eq!(S::my_sqrt(x), expected);
         }
     }

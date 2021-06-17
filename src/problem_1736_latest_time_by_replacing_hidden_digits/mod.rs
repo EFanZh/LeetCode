@@ -18,7 +18,7 @@ mod tests {
             ("??:01", "23:01"),
         ];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert!(S::maximum_time(s.to_string()) == expected);
         }
     }

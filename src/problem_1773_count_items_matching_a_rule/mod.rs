@@ -48,7 +48,7 @@ mod tests {
             ),
         ];
 
-        for ((items, rule_key, rule_value), expected) in test_cases.iter().copied() {
+        for ((items, rule_key, rule_value), expected) in test_cases {
             assert_eq!(
                 S::count_matches(
                     items

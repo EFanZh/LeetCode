@@ -21,7 +21,7 @@ mod tests {
             (("a", "c", &["a", "b", "c"]), &[&["a", "c"]]),
         ];
 
-        for ((begin_word, end_word, word_list), expected) in test_cases.iter().copied() {
+        for ((begin_word, end_word, word_list), expected) in test_cases {
             assert_eq!(
                 S::find_ladders(
                     begin_word.to_string(),

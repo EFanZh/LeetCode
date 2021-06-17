@@ -13,7 +13,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((4, &[[0, 1], [1, 2], [2, 0], [1, 3]] as &[[_; 2]]), &[[1, 3]])];
 
-        for ((n, connections), expected) in test_cases.iter().copied() {
+        for ((n, connections), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(
                     S::critical_connections(n, connections.iter().copied().map(Vec::from).collect())

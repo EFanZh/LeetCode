@@ -21,7 +21,7 @@ mod tests {
             ("9", &["w", "x", "y", "z"]),
         ];
 
-        for (digits, expected) in test_cases.iter().copied() {
+        for (digits, expected) in test_cases {
             assert_eq!(S::letter_combinations(digits.to_string()), expected);
         }
     }

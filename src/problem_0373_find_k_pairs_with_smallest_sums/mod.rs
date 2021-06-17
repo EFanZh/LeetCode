@@ -63,7 +63,7 @@ mod tests {
             ),
         ];
 
-        for ((nums1, nums2, k), expected) in test_cases.iter().copied() {
+        for ((nums1, nums2, k), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted_by_key(
                     S::k_smallest_pairs(nums1.to_vec(), nums2.to_vec(), k),

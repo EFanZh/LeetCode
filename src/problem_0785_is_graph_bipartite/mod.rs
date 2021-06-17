@@ -14,7 +14,7 @@ mod tests {
             (&[&[1, 2, 3], &[0, 2], &[0, 1, 3], &[0, 2]], false),
         ];
 
-        for (graph, expected) in test_cases.iter().copied() {
+        for (graph, expected) in test_cases {
             assert_eq!(
                 S::is_bipartite(graph.iter().copied().map(<[_]>::to_vec).collect()),
                 expected

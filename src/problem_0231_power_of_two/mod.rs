@@ -13,7 +13,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [(1, true), (16, true), (218, false)];
 
-        for (n, expected) in test_cases.iter().copied() {
+        for (n, expected) in test_cases {
             assert_eq!(S::is_power_of_two(n), expected);
         }
     }

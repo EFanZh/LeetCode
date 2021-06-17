@@ -11,7 +11,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [((1000, 15, 60), 5), ((4, 15, 15), 2), ((4, 15, 30), 2)];
 
-        for ((buckets, minutes_to_die, minutes_to_test), expected) in test_cases.iter().copied() {
+        for ((buckets, minutes_to_die, minutes_to_test), expected) in test_cases {
             assert_eq!(S::poor_pigs(buckets, minutes_to_die, minutes_to_test), expected);
         }
     }

@@ -30,7 +30,7 @@ mod tests {
             (&[1, 1, 1], &[]),
         ];
 
-        for (nums, expected) in test_cases.iter().copied() {
+        for (nums, expected) in test_cases {
             assert_eq!(test_utilities::unstable_sorted(S::three_sum(nums.to_vec())), expected);
         }
     }

@@ -12,7 +12,7 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [("12", 2), ("226", 3), ("0", 0), ("06", 0), ("", 1), ("27", 1)];
 
-        for (s, expected) in test_cases.iter().copied() {
+        for (s, expected) in test_cases {
             assert_eq!(S::num_decodings(s.to_string()), expected);
         }
     }

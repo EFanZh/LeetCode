@@ -15,7 +15,7 @@ mod tests {
             ((1, 0, &[1, 2, 3], &[1, 1, 2]), 0),
         ];
 
-        for ((k, w, profits, capital), expected) in test_cases.iter().copied() {
+        for ((k, w, profits, capital), expected) in test_cases {
             assert_eq!(
                 S::find_maximized_capital(k, w, profits.to_vec(), capital.to_vec()),
                 expected
