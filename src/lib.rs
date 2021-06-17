@@ -509,6 +509,7 @@ pub mod problem_0633_sum_of_square_numbers;
 pub mod problem_0636_exclusive_time_of_functions;
 pub mod problem_0637_average_of_levels_in_binary_tree;
 pub mod problem_0638_shopping_offers;
+pub mod problem_0639_decode_ways_ii;
 pub mod problem_0643_maximum_average_subarray_i;
 pub mod problem_0645_set_mismatch;
 pub mod problem_0647_palindromic_substrings;
