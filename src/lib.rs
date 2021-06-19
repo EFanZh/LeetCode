@@ -514,6 +514,7 @@ pub mod problem_0639_decode_ways_ii;
 pub mod problem_0640_solve_the_equation;
 pub mod problem_0643_maximum_average_subarray_i;
 pub mod problem_0645_set_mismatch;
+pub mod problem_0646_maximum_length_of_pair_chain;
 pub mod problem_0647_palindromic_substrings;
 pub mod problem_0648_replace_words;
 pub mod problem_0657_robot_return_to_origin;
