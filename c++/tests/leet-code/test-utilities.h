@@ -11,8 +11,9 @@
 
 namespace leet_code::test_utilities {
 template <class C>
-std::tuple<std::vector<std::unique_ptr<data_structures::ListNode>>, data_structures::ListNode *> make_list(C &&values) {
-    using data_structures::ListNode;
+std::tuple<std::vector<std::unique_ptr<data_structures::list_node::ListNode>>, data_structures::list_node::ListNode *>
+make_list(C &&values) {
+    using data_structures::list_node::ListNode;
     using std::unique_ptr;
     using std::vector;
 
@@ -77,7 +78,7 @@ std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(C &&values) {
     return {std::move(buffer), root};
 }
 
-std::vector<int> list_to_vector(const data_structures::ListNode *head);
+std::vector<int> list_to_vector(const data_structures::list_node::ListNode *head);
 
 std::vector<std::optional<int>> list_tree_levels_with_next_right_pointers(
     const data_structures::tree_node_with_next_right_pointer::Node *root);

@@ -1,6 +1,6 @@
 #include "test-utilities.h"
 
-using leet_code::data_structures::ListNode;
+using leet_code::data_structures::list_node::ListNode;
 using std::deque;
 using std::optional;
 using std::vector;

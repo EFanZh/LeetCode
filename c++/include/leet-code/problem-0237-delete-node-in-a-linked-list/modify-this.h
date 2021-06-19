@@ -4,7 +4,7 @@
 #include <leet-code/data-structures/list-node.h>
 
 namespace leet_code::problem_0237_delete_node_in_a_linked_list::modify_this {
-using data_structures::ListNode;
+using data_structures::list_node::ListNode;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
