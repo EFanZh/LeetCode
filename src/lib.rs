@@ -524,6 +524,7 @@ pub mod problem_0657_robot_return_to_origin;
 pub mod problem_0658_find_k_closest_elements;
 pub mod problem_0661_image_smoother;
 pub mod problem_0662_maximum_width_of_binary_tree;
+pub mod problem_0665_non_decreasing_array;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
 pub mod problem_0721_accounts_merge;
