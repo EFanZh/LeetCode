@@ -520,6 +520,7 @@ pub mod problem_0647_palindromic_substrings;
 pub mod problem_0648_replace_words;
 pub mod problem_0649_dota2_senate;
 pub mod problem_0650_2_keys_keyboard;
+pub mod problem_0653_two_sum_iv_input_is_a_bst;
 pub mod problem_0657_robot_return_to_origin;
 pub mod problem_0658_find_k_closest_elements;
 pub mod problem_0661_image_smoother;
