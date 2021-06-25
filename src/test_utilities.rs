@@ -44,6 +44,26 @@ pub fn make_tree<I: IntoIterator<Item = Option<i32>>>(values: I) -> Option<Rc<Re
     })
 }
 
+pub fn iter_tree(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = Option<i32>> {
+    let mut non_null_nodes = usize::from(root.is_some());
+    let mut queue = VecDeque::from(vec![root]);
+
+    iter::from_fn(move || {
+        (non_null_nodes != 0).then(|| {
+            queue.pop_front().unwrap().map(|node| {
+                let node = node.borrow();
+
+                non_null_nodes -= 1;
+                non_null_nodes += usize::from(node.left.is_some()) + usize::from(node.right.is_some());
+                queue.push_back(node.left.clone());
+                queue.push_back(node.right.clone());
+
+                node.val
+            })
+        })
+    })
+}
+
 pub fn make_list<I: IntoIterator<Item = i32>>(values: I) -> Option<Box<ListNode>> {
     let mut result = None;
     let mut node_ref = &mut result;
