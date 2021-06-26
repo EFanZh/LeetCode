@@ -49,6 +49,7 @@ if(STANDALONE_PROJECT)
             "/we4365" # 'expression': conversion from 'type' to 'type', signed/unsigned mismatch
             "/we4388" # 'token': signed/unsigned mismatch
             "/we4826" # Conversion from 'type' to 'type' is sign-extended. This may cause unexpected runtime behavior.
+            "/wd4275" # TODO: Fix or investigate this. https://github.com/google/googletest/issues/3415.
             "/WX"
         )
     else()
