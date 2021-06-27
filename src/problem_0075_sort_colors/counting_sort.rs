@@ -6,8 +6,8 @@ impl Solution {
     pub fn sort_colors(nums: &mut Vec<i32>) {
         let mut counts = [0; 3];
 
-        for num in &mut *nums {
-            counts[*num as usize] += 1;
+        for &num in nums.iter() {
+            counts[num as usize] += 1;
         }
 
         let mut iter = nums.iter_mut();
