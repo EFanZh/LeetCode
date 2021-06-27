@@ -21,7 +21,7 @@ impl Solution {
             if next != parent {
                 let state = &mut states[next as usize];
 
-                if *state == u32::max_value() {
+                if *state == u32::MAX {
                     let next_low = Self::dfs(graph, next, vertex, time + 1, states, result);
 
                     if next_low > time {
@@ -50,7 +50,7 @@ impl Solution {
 
         let mut result = Vec::new();
 
-        Self::dfs(&graph, 0, -1, 0, &mut vec![u32::max_value(); graph.len()], &mut result);
+        Self::dfs(&graph, 0, -1, 0, &mut vec![u32::MAX; graph.len()], &mut result);
 
         result
     }

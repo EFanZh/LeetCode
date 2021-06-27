@@ -9,7 +9,7 @@ impl Solution {
         if k == 0 {
             0
         } else if k < prices.len() / 2 {
-            let mut cache = vec![(i32::min_value(), 0); k];
+            let mut cache = vec![(i32::MIN, 0); k];
 
             for price in prices {
                 let (first_buy, first_sell) = &mut cache[0];
@@ -28,7 +28,7 @@ impl Solution {
 
             cache[k - 1].1
         } else {
-            let mut buy = i32::min_value();
+            let mut buy = i32::MIN;
             let mut sell = 0;
 
             for price in prices {

@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     fn i32_to_u32(value: i32) -> u32 {
-        u32::from_le_bytes(value.wrapping_sub(i32::min_value()).to_le_bytes())
+        u32::from_le_bytes(value.wrapping_sub(i32::MIN).to_le_bytes())
     }
 
     pub fn contains_nearby_almost_duplicate(nums: Vec<i32>, k: i32, t: i32) -> bool {

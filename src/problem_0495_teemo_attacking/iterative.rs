@@ -5,8 +5,8 @@ pub struct Solution;
 impl Solution {
     pub fn find_poisoned_duration(time_series: Vec<i32>, duration: i32) -> i32 {
         let mut result = 0;
-        let mut poisoned = i32::min_value();
-        let mut healed = i32::min_value();
+        let mut poisoned = i32::MIN;
+        let mut healed = i32::MIN;
 
         for time_point in time_series {
             if time_point > healed {

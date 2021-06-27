@@ -12,7 +12,7 @@ impl Solution {
             let mut max_size = 1;
             let mut max_node = 0;
             let mut sizes = vec![1; nums.len()];
-            let mut parents = vec![usize::max_value(); nums.len()];
+            let mut parents = vec![usize::MAX; nums.len()];
 
             for (i, &num) in nums.iter().enumerate().skip(1) {
                 let (size, parent) = nums[..i]
@@ -21,7 +21,7 @@ impl Solution {
                     .enumerate()
                     .filter(|(_, (&x, _))| num % x == 0)
                     .max_by_key(|(_, (_, &size))| size)
-                    .map_or((1, usize::max_value()), |(j, (_, size))| (size + 1, j));
+                    .map_or((1, usize::MAX), |(j, (_, size))| (size + 1, j));
 
                 sizes[i] = size;
                 parents[i] = parent;

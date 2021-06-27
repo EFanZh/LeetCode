@@ -23,7 +23,7 @@ impl Solution {
         events.sort_unstable_by_key(|&(x, _)| x);
 
         let mut best_low = 0;
-        let mut best_high = i32::max_value();
+        let mut best_high = i32::MAX;
         let mut left_iter = events.iter();
         let mut counts = vec![0; nums.len()];
         let mut covered = 0;

@@ -7,7 +7,7 @@ impl Solution {
         let mut start = 0;
         let mut end = 0;
         let mut sum = 0;
-        let mut result = usize::max_value();
+        let mut result = usize::MAX;
 
         while let Some(num) = nums.get(end) {
             end += 1;
@@ -29,7 +29,7 @@ impl Solution {
             }
         }
 
-        if result == usize::max_value() {
+        if result == usize::MAX {
             0
         } else {
             result as _

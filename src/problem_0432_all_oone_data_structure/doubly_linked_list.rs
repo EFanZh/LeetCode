@@ -5,7 +5,7 @@ use std::iter;
 use std::mem;
 use std::rc::Rc;
 
-const INVALID_HANDLE: usize = usize::max_value();
+const INVALID_HANDLE: usize = usize::MAX;
 
 struct Node {
     keys: HashSet<Rc<str>>,

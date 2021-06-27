@@ -8,21 +8,21 @@ impl Solution {
         let mut i = 0;
 
         let extra = loop {
-            let num = nums[i] & i32::max_value();
+            let num = nums[i] & i32::MAX;
             let slot = &mut nums[(num - 1) as usize];
 
             extra_xor_missing ^= num ^ ((i + 1) as i32);
             i += 1;
 
-            if *slot & i32::min_value() == 0 {
-                *slot |= i32::min_value();
+            if *slot & i32::MIN == 0 {
+                *slot |= i32::MIN;
             } else {
                 break num;
             }
         };
 
         while let Some(num) = nums.get(i) {
-            extra_xor_missing ^= (num & i32::max_value()) ^ ((i + 1) as i32);
+            extra_xor_missing ^= (num & i32::MAX) ^ ((i + 1) as i32);
             i += 1;
         }
 

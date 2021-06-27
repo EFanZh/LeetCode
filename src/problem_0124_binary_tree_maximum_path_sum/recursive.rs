@@ -9,7 +9,7 @@ use std::rc::Rc;
 
 impl Solution {
     fn max_path_sum_helper(root: Option<&RefCell<TreeNode>>, result: &mut i32) -> i32 {
-        root.map(RefCell::borrow).as_deref().map_or(i32::min_value(), |root| {
+        root.map(RefCell::borrow).as_deref().map_or(i32::MIN, |root| {
             let line_sum_1 = Self::max_path_sum_helper(root.left.as_deref(), result);
             let line_sum_2 = Self::max_path_sum_helper(root.right.as_deref(), result);
 
@@ -20,7 +20,7 @@ impl Solution {
     }
 
     pub fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut result = i32::min_value();
+        let mut result = i32::MIN;
 
         Self::max_path_sum_helper(root.as_deref(), &mut result);
 

@@ -10,8 +10,8 @@ impl Solution {
         let mut prefix_sum = 0;
         let mut min_prefix_sum = 0;
         let mut max_prefix_sum = 0;
-        let mut min_range_sum = i32::max_value();
-        let mut max_range_sum = i32::min_value();
+        let mut min_range_sum = i32::MAX;
+        let mut max_range_sum = i32::MIN;
 
         for (value, sum) in values.zip(sums.iter_mut()) {
             *sum += value;
@@ -56,7 +56,7 @@ impl Solution {
     pub fn max_sum_submatrix(matrix: Vec<Vec<i32>>, k: i32) -> i32 {
         let rows = matrix.len();
         let columns = matrix.first().map_or(0, Vec::len);
-        let mut result = i32::min_value();
+        let mut result = i32::MIN;
 
         if columns < rows {
             let mut row_sums = vec![0; rows];

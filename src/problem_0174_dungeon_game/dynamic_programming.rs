@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn calculate_minimum_hp(dungeon: Vec<Vec<i32>>) -> i32 {
         let columns = dungeon.first().map_or(0, Vec::len);
-        let mut cache = vec![i32::max_value(); columns];
+        let mut cache = vec![i32::MAX; columns];
         let (last_row, rest_rows) = dungeon.split_last().unwrap();
         let (last_cell, rest_cells) = last_row.split_last().unwrap();
         let mut prev = (1 - last_cell).max(1);

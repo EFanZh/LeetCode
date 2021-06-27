@@ -4,7 +4,7 @@ use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::mem;
 
-const INVALID_HANDLE: usize = usize::max_value();
+const INVALID_HANDLE: usize = usize::MAX;
 
 struct CacheEntry {
     key: i32,

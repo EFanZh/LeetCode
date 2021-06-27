@@ -4,7 +4,7 @@ use std::collections::HashMap;
 use std::mem;
 use std::ops::{Index, IndexMut};
 
-const INVALID_HANDLE: usize = usize::max_value();
+const INVALID_HANDLE: usize = usize::MAX;
 
 struct Node {
     key: i32,

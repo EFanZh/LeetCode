@@ -23,7 +23,7 @@ impl Solution {
     }
 
     pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut result = i32::max_value();
+        let mut result = i32::MAX;
 
         Self::helper(root.as_deref(), &mut None, &mut result);
 

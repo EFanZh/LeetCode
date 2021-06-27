@@ -28,8 +28,8 @@ impl Solution {
     }
 
     pub fn divide(dividend: i32, divisor: i32) -> i32 {
-        if dividend == i32::min_value() && divisor == -1 {
-            i32::max_value()
+        if dividend == i32::MIN && divisor == -1 {
+            i32::MAX
         } else if dividend < 0 {
             if divisor < 0 {
                 -Self::divide_negative(dividend, divisor)

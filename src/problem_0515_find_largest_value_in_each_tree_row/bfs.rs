@@ -16,7 +16,7 @@ impl Solution {
             let mut queue = VecDeque::from(vec![node]);
 
             loop {
-                let mut max_value = i32::min_value();
+                let mut max_value = i32::MIN;
 
                 for _ in 0..queue.len() {
                     let node = queue.pop_front().unwrap();

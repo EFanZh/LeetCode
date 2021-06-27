@@ -17,7 +17,7 @@ impl Solution {
 
         let mut min_2 = first * second;
         let mut max_2 = min_2;
-        let mut max_3 = i32::min_value();
+        let mut max_3 = i32::MIN;
 
         for &num in right {
             if num < 0 {

@@ -14,7 +14,7 @@ impl Solution {
     pub fn find_min_difference(mut time_points: Vec<String>) -> i32 {
         time_points.sort_unstable();
 
-        let mut result = u16::max_value();
+        let mut result = u16::MAX;
         let (first, rest) = time_points.split_first().unwrap();
         let first_time = Self::parse_time(first);
         let mut prev = first_time;

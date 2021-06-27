@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
-        let mut max = i32::min_value();
+        let mut max = i32::MIN;
         let mut right = 0;
 
         for (i, &num) in nums.iter().enumerate() {
@@ -15,7 +15,7 @@ impl Solution {
             max = max.max(num);
         }
 
-        let mut min = i32::max_value();
+        let mut min = i32::MAX;
         let mut left = right;
 
         for (i, &num) in nums[..right].iter().enumerate().rev() {
