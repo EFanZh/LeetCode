@@ -16,7 +16,7 @@ impl Solution {
         }
 
         for row in grid.into_iter().rev().skip(1) {
-            let mut prev = i32::max_value();
+            let mut prev = i32::MAX;
 
             for (cell, cache_item) in row.into_iter().zip(cache.iter_mut()).rev() {
                 *cache_item = cell + (*cache_item).min(prev);

@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn increasing_triplet(nums: Vec<i32>) -> bool {
-        let mut first = i32::max_value();
-        let mut second = i32::max_value();
+        let mut first = i32::MAX;
+        let mut second = i32::MAX;
 
         for num in nums {
             if num <= first {

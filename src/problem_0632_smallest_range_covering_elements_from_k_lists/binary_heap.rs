@@ -46,7 +46,7 @@ impl Solution {
         let mut queue = nums.iter().map(|list| Item::new(list)).collect::<BinaryHeap<_>>();
         let mut high = queue.iter().map(|item| item.value).max().unwrap();
         let mut best_low = 0;
-        let mut best_high = i32::max_value();
+        let mut best_high = i32::MAX;
 
         loop {
             let mut top = queue.peek_mut().unwrap();

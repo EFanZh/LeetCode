@@ -6,7 +6,7 @@ impl Solution {
     pub fn erase_overlap_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {
         intervals.sort_unstable_by_key(|x| x[1]);
 
-        let mut last_finish_time = i32::min_value();
+        let mut last_finish_time = i32::MIN;
 
         let k = intervals
             .iter()

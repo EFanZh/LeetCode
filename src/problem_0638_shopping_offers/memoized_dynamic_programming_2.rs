@@ -20,7 +20,7 @@ impl Solution {
         } else if let Some(&result) = cache.get(&needs) {
             result
         } else {
-            let mut result = i32::max_value();
+            let mut result = i32::MAX;
 
             for &(offer, price) in offers {
                 if price < result && Self::check_offer(offer, needs) {

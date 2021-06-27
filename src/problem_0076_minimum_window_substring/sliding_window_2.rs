@@ -27,7 +27,7 @@ impl Solution {
         let mut window = [0; 256];
         let mut window_elements = 0;
         let mut min_window_start = 0;
-        let mut min_window_len = usize::max_value();
+        let mut min_window_len = usize::MAX;
 
         for (i, &c) in s.iter().enumerate() {
             let expected_count = t[usize::from(c)];
@@ -70,7 +70,7 @@ impl Solution {
             }
         }
 
-        if min_window_len == usize::max_value() {
+        if min_window_len == usize::MAX {
             String::new()
         } else {
             String::from_utf8(s[min_window_start..min_window_start + min_window_len].to_vec()).unwrap()

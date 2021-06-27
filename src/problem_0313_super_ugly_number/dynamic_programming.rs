@@ -12,7 +12,7 @@ impl Solution {
         cache.push(1);
 
         while cache.len() != n {
-            let mut v = i32::max_value();
+            let mut v = i32::MAX;
 
             for (index, &prime) in indices.iter_mut().zip(&primes) {
                 let new_value = cache[*index] * prime;

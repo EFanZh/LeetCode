@@ -21,7 +21,7 @@ impl Solution {
     }
 
     pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        Self::is_valid_bst_helper(root.as_deref(), i64::min_value(), i64::max_value())
+        Self::is_valid_bst_helper(root.as_deref(), i64::MIN, i64::MAX)
     }
 }
 

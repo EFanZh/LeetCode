@@ -13,7 +13,7 @@ impl Solution {
                 if let Some(new_result) = result.checked_mul(10).and_then(|r| r.checked_add(i32::from(c - b'0'))) {
                     result = new_result;
                 } else {
-                    return i32::max_value();
+                    return i32::MAX;
                 }
             } else {
                 break;
@@ -37,7 +37,7 @@ impl Solution {
                             {
                                 result = new_result;
                             } else {
-                                return i32::min_value();
+                                return i32::MIN;
                             }
                         } else {
                             break;

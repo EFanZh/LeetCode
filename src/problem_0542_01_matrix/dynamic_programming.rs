@@ -61,7 +61,7 @@ impl Solution {
         for row in &mut mat {
             for cell in row {
                 if *cell != 0 {
-                    *cell = i32::max_value() - 1;
+                    *cell = i32::MAX - 1;
                 }
             }
         }

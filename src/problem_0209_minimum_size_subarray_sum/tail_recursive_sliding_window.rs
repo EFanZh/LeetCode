@@ -27,9 +27,9 @@ impl Solution {
     }
 
     pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {
-        let result = Self::helper_less(s, &nums, 0, 0, 0, usize::max_value());
+        let result = Self::helper_less(s, &nums, 0, 0, 0, usize::MAX);
 
-        if result == usize::max_value() {
+        if result == usize::MAX {
             0
         } else {
             result as _

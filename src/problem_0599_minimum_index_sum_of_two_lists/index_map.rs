@@ -17,7 +17,7 @@ impl Solution {
             .map(|(i, name)| (name, i))
             .collect::<HashMap<_, _>>();
 
-        let mut min_sum = usize::max_value();
+        let mut min_sum = usize::MAX;
 
         for (i, name) in list2.iter().enumerate() {
             if i <= min_sum {

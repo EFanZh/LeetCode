@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_sub_array(nums: Vec<i32>) -> i32 {
-        let mut max_sum = i32::min_value();
+        let mut max_sum = i32::MIN;
         let mut prev_max_sum = 0;
 
         for num in nums {

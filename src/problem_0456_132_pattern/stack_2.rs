@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn find132pattern(nums: Vec<i32>) -> bool {
-        let mut s3 = i32::min_value();
+        let mut s3 = i32::MIN;
         let mut stack = Vec::with_capacity(nums.len());
 
         for &num in nums.iter().rev() {

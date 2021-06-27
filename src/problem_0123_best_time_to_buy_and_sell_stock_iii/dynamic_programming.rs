@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
-        let mut buy_1 = i32::min_value();
-        let mut buy_2 = i32::min_value();
+        let mut buy_1 = i32::MIN;
+        let mut buy_2 = i32::MIN;
         let mut sell_1 = 0;
         let mut sell_2 = 0;
 

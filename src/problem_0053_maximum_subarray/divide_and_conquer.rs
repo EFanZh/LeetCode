@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn max_sum_from_one_side<I: IntoIterator<Item = i32>>(iter: I) -> i32 {
-        let mut max_sum = i32::min_value();
+        let mut max_sum = i32::MIN;
         let mut sum = 0;
 
         for num in iter {
