@@ -3,6 +3,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 pub mod recursive;
+pub mod recursive_2;
 
 pub trait Solution {
     fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>>;

@@ -9,19 +9,24 @@ use std::mem;
 use std::rc::Rc;
 
 impl Solution {
-    fn invert_tree_helper(root: Option<&RefCell<TreeNode>>) {
-        if let Some(node) = root {
-            let node_ref = &mut *node.borrow_mut();
+    fn helper(node: &RefCell<TreeNode>) {
+        let node_ref = &mut *node.borrow_mut();
 
-            Self::invert_tree_helper(node_ref.left.as_deref());
-            Self::invert_tree_helper(node_ref.right.as_deref());
-
-            mem::swap(&mut node_ref.left, &mut node_ref.right);
+        if let Some(left) = node_ref.left.as_deref() {
+            Self::helper(left);
         }
+
+        if let Some(right) = node_ref.right.as_deref() {
+            Self::helper(right);
+        }
+
+        mem::swap(&mut node_ref.left, &mut node_ref.right);
     }
 
     pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-        Self::invert_tree_helper(root.as_deref());
+        if let Some(node) = root.as_deref() {
+            Self::helper(node);
+        }
 
         root
     }
