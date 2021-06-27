@@ -1,3 +1,4 @@
+name: C++
 on: push
 jobs:
     check-code-format:
