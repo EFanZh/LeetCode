@@ -523,6 +523,7 @@ pub mod problem_0650_2_keys_keyboard;
 pub mod problem_0652_find_duplicate_subtrees;
 pub mod problem_0653_two_sum_iv_input_is_a_bst;
 pub mod problem_0654_maximum_binary_tree;
+pub mod problem_0655_print_binary_tree;
 pub mod problem_0657_robot_return_to_origin;
 pub mod problem_0658_find_k_closest_elements;
 pub mod problem_0661_image_smoother;
