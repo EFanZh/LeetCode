@@ -533,6 +533,7 @@ pub mod problem_0665_non_decreasing_array;
 pub mod problem_0671_second_minimum_node_in_a_binary_tree;
 pub mod problem_0674_longest_continuous_increasing_subsequence;
 pub mod problem_0682_baseball_game;
+pub mod problem_0693_binary_number_with_alternating_bits;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
 pub mod problem_0721_accounts_merge;
