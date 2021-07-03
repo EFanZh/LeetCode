@@ -1,4 +1,4 @@
-use super::super::data_structures::NestedInteger;
+use crate::data_structures::NestedInteger;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 

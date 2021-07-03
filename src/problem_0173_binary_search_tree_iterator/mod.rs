@@ -1,6 +1,6 @@
 #![allow(clippy::upper_case_acronyms)]
 
-use super::data_structures::TreeNode;
+use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -14,8 +14,8 @@ pub trait BSTIterator {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::BSTIterator;
+    use crate::test_utilities;
 
     enum Operation {
         Next(i32),

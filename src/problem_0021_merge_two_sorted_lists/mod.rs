@@ -1,4 +1,4 @@
-use super::data_structures::ListNode;
+use crate::data_structures::ListNode;
 
 pub mod zip;
 pub mod zip_2;
@@ -9,8 +9,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::test_utilities;
 
     pub fn run<S: Solution>() {
         let test_cases = [

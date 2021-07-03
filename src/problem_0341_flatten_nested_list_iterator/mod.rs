@@ -1,4 +1,4 @@
-use super::data_structures::NestedInteger;
+use crate::data_structures::NestedInteger;
 
 pub mod stack;
 pub mod stack_2;
@@ -11,8 +11,8 @@ pub trait NestedIterator {
 
 #[cfg(test)]
 mod tests {
-    use super::super::data_structures::NestedInteger;
     use super::NestedIterator;
+    use crate::data_structures::NestedInteger;
     use std::iter;
 
     pub fn run<I: NestedIterator>() {

@@ -1,4 +1,4 @@
-use super::super::data_structures::ListNode;
+use crate::data_structures::ListNode;
 
 pub struct Solution;
 

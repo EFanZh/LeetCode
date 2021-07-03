@@ -1,4 +1,4 @@
-use super::data_structures::TreeNode;
+use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -15,9 +15,9 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::data_structures::TreeNode;
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::data_structures::TreeNode;
+    use crate::test_utilities;
     use std::cell::RefCell;
     use std::rc::Rc;
 

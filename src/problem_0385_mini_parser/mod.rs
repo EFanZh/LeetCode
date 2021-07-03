@@ -1,4 +1,4 @@
-use super::data_structures::NestedInteger;
+use crate::data_structures::NestedInteger;
 
 pub mod recursive;
 
@@ -8,8 +8,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::data_structures::NestedInteger;
     use super::Solution;
+    use crate::data_structures::NestedInteger;
 
     pub fn run<S: Solution>() {
         use NestedInteger::{Int, List};

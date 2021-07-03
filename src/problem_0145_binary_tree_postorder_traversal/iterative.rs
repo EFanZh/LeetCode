@@ -1,4 +1,4 @@
-use super::super::data_structures::TreeNode;
+use crate::data_structures::TreeNode;
 
 pub struct Solution;
 

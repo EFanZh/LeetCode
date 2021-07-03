@@ -7,8 +7,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::test_utilities;
 
     pub fn run<S: Solution>() {
         let test_cases = [((4, &[[0, 1], [1, 2], [2, 0], [1, 3]] as &[[_; 2]]), &[[1, 3]])];
