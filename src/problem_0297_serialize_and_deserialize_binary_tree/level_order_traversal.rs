@@ -1,6 +1,6 @@
 #![allow(clippy::unused_self)]
 
-use super::super::data_structures::TreeNode;
+use crate::data_structures::TreeNode;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 

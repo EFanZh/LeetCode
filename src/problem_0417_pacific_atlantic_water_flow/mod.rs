@@ -6,8 +6,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::test_utilities;
 
     pub fn run<S: Solution>() {
         let test_cases = [

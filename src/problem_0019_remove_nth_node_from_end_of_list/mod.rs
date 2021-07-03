@@ -1,4 +1,4 @@
-use super::data_structures::ListNode;
+use crate::data_structures::ListNode;
 
 pub mod measure_length;
 pub mod scout;
@@ -9,8 +9,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::test_utilities;
 
     pub fn run<S: Solution>() {
         let test_cases = [((&[1, 2, 3, 4, 5] as &[_], 2), &[1, 2, 3, 5] as &[_])];

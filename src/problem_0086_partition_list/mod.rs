@@ -1,4 +1,4 @@
-use super::data_structures::ListNode;
+use crate::data_structures::ListNode;
 
 pub mod iterative;
 pub mod recursive;
@@ -9,8 +9,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::test_utilities;
 
     pub fn run<S: Solution>() {
         let test_cases = [((&[1, 4, 3, 2, 5, 2] as &[_], 3), &[1, 2, 2, 4, 3, 5] as &[_])];

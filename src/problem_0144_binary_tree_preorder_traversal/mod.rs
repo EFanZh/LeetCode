@@ -1,4 +1,4 @@
-use super::data_structures::TreeNode;
+use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -12,8 +12,8 @@ pub trait Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::test_utilities;
     use super::Solution;
+    use crate::test_utilities;
 
     pub fn run<S: Solution>() {
         let test_cases = [(&[Some(1), None, Some(2), Some(3)] as &[_], &[1, 2, 3] as &[_])];

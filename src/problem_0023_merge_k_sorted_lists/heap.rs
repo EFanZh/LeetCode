@@ -1,4 +1,4 @@
-use super::super::data_structures::ListNode;
+use crate::data_structures::ListNode;
 
 pub struct Solution;
 
@@ -61,8 +61,8 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::super::super::data_structures::ListNode;
     use super::Entry;
+    use crate::data_structures::ListNode;
 
     #[test]
     fn test_entry() {
