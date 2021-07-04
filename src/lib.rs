@@ -529,6 +529,7 @@ pub mod problem_0658_find_k_closest_elements;
 pub mod problem_0659_split_array_into_consecutive_subsequences;
 pub mod problem_0661_image_smoother;
 pub mod problem_0662_maximum_width_of_binary_tree;
+pub mod problem_0664_strange_printer;
 pub mod problem_0665_non_decreasing_array;
 pub mod problem_0667_beautiful_arrangement_ii;
 pub mod problem_0671_second_minimum_node_in_a_binary_tree;
