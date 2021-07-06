@@ -12,9 +12,7 @@ mod tests {
         let test_cases = [("aaabbb", 2), ("aba", 2)];
 
         for (s, expected) in test_cases {
-            let result = S::strange_printer(s.to_string());
-
-            assert_eq!(result, expected, "Expect {:?} => {:?}, got {:?}.", s, expected, result);
+            assert_eq!(S::strange_printer(s.to_string()), expected);
         }
     }
 }
