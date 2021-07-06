@@ -14,7 +14,7 @@ mod tests {
         for (s, expected) in test_cases {
             let result = S::strange_printer(s.to_string());
 
-            assert_eq!(result, expected, "Expect {:?} => {}, got {}.", s, expected, result);
+            assert_eq!(result, expected, "Expect {:?} => {:?}, got {:?}.", s, expected, result);
         }
     }
 }
