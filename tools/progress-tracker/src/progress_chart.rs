@@ -143,10 +143,7 @@ pub fn draw(repository: &Repository, problems: &Problems, output: &Path) {
             let date = commit.author().when();
             let hits = get_hits(&commit.tree().unwrap(), &mut hits_cache);
 
-            (
-                Utc.timestamp(date.seconds() - i64::from(date.offset_minutes() * 60), 0),
-                hits,
-            )
+            (Utc.timestamp(date.seconds(), 0), hits)
         })
         .collect::<Vec<_>>();
 
