@@ -310,6 +310,10 @@ Make sure it can be solved again.
 
 Implement other solutions.
 
-## [621. Task Scheduler](https://efanzh.org/LeetCode/)
+## [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 
 Why does the mathematical solution work?
+
+## [673. Number of Longest Increasing Subsequence](https://leetcode.com/problems/number-of-longest-increasing-subsequence/)
+
+Investigate the *n* log(*n*) time complexity solution.
