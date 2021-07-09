@@ -537,6 +537,7 @@ pub mod problem_0669_trim_a_binary_search_tree;
 pub mod problem_0670_maximum_swap;
 pub mod problem_0671_second_minimum_node_in_a_binary_tree;
 pub mod problem_0672_bulb_switcher_ii;
+pub mod problem_0673_number_of_longest_increasing_subsequence;
 pub mod problem_0674_longest_continuous_increasing_subsequence;
 pub mod problem_0678_valid_parenthesis_string;
 pub mod problem_0682_baseball_game;
