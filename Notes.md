@@ -317,3 +317,7 @@ Why does the mathematical solution work?
 ## [673. Number of Longest Increasing Subsequence](https://leetcode.com/problems/number-of-longest-increasing-subsequence/)
 
 Investigate the *n* log(*n*) time complexity solution.
+
+## [675. Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)
+
+Is there a best solution?
