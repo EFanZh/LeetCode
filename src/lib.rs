@@ -542,6 +542,7 @@ pub mod problem_0674_longest_continuous_increasing_subsequence;
 pub mod problem_0675_cut_off_trees_for_golf_event;
 pub mod problem_0676_implement_magic_dictionary;
 pub mod problem_0678_valid_parenthesis_string;
+pub mod problem_0679_24_game;
 pub mod problem_0682_baseball_game;
 pub mod problem_0693_binary_number_with_alternating_bits;
 pub mod problem_0704_binary_search;
