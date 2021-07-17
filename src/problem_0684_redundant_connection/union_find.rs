@@ -44,7 +44,7 @@ impl Solution {
 
     pub fn find_redundant_connection(edges: Vec<Vec<i32>>) -> Vec<i32> {
         let mut edges = edges.into_iter();
-        let mut nodes = HashMap::<i32, (i32, u32)>::new();
+        let mut nodes = HashMap::new();
 
         loop {
             let edge = edges.next().unwrap();
