@@ -541,6 +541,7 @@ pub mod problem_0673_number_of_longest_increasing_subsequence;
 pub mod problem_0674_longest_continuous_increasing_subsequence;
 pub mod problem_0675_cut_off_trees_for_golf_event;
 pub mod problem_0676_implement_magic_dictionary;
+pub mod problem_0677_map_sum_pairs;
 pub mod problem_0678_valid_parenthesis_string;
 pub mod problem_0679_24_game;
 pub mod problem_0680_valid_palindrome_ii;
