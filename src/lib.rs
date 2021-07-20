@@ -550,6 +550,7 @@ pub mod problem_0684_redundant_connection;
 pub mod problem_0686_repeated_string_match;
 pub mod problem_0687_longest_univalue_path;
 pub mod problem_0688_knight_probability_in_chessboard;
+pub mod problem_0689_maximum_sum_of_3_non_overlapping_subarrays;
 pub mod problem_0693_binary_number_with_alternating_bits;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
