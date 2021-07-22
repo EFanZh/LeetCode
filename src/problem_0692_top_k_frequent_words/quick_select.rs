@@ -21,20 +21,20 @@ impl Solution {
 
         values.swap(pivot, length - 1);
 
-        let mut left = 0;
-        let mut right = length - 1;
         let (key, rest) = values.split_last_mut().unwrap();
+        let mut left = 0;
+        let mut right = rest.len();
 
         'outer: while left != right {
             if rest[left] < *key {
                 left += 1;
             } else {
                 loop {
-                    if left + 1 == right {
+                    right -= 1;
+
+                    if left == right {
                         break 'outer;
                     }
-
-                    right -= 1;
 
                     if rest[right] < *key {
                         rest.swap(left, right);
