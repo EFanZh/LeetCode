@@ -5,7 +5,7 @@ pub struct Solution;
 use std::cmp::{Ordering, Reverse};
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
-use std::hash::Hasher;
+use std::hash::{BuildHasherDefault, Hasher};
 use std::mem;
 
 impl Solution {
@@ -70,7 +70,7 @@ impl Solution {
 
     pub fn top_k_frequent(words: Vec<String>, k: i32) -> Vec<String> {
         let k = k as usize;
-        let mut frequencies = HashMap::new();
+        let mut frequencies = HashMap::with_hasher(BuildHasherDefault::<DefaultHasher>::default());
 
         for word in words {
             frequencies.entry(word).and_modify(|count| *count += 1).or_insert(1);
