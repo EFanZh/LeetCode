@@ -3,48 +3,38 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::collections::hash_map::Entry;
-use std::collections::HashMap;
 use std::convert::TryInto;
 
 impl Solution {
-    fn get_root(nodes: &mut HashMap<i32, (i32, u32)>, node: i32) -> (i32, u32) {
-        match nodes.entry(node) {
-            Entry::Occupied(entry) => {
-                let (parent, rank) = *entry.get();
+    fn get_root(nodes: &mut [(i32, u32)], node: i32) -> (i32, u32) {
+        let index = (node - 1) as usize;
+        let (parent, rank) = nodes[index];
 
-                if parent == 0 {
-                    (node, rank)
-                } else {
-                    let (root, root_rank) = Self::get_root(nodes, parent);
+        if parent == 0 {
+            (node, rank)
+        } else {
+            let (root, root_rank) = Self::get_root(nodes, parent);
 
-                    nodes.get_mut(&node).unwrap().0 = root;
+            nodes[index].0 = root;
 
-                    (root, root_rank)
-                }
-            }
-            Entry::Vacant(entry) => {
-                entry.insert((0, 0));
-
-                (node, 0)
-            }
+            (root, root_rank)
         }
     }
 
-    fn union(nodes: &mut HashMap<i32, (i32, u32)>, left_root: i32, left_rank: u32, right_root: i32, right_rank: u32) {
+    fn union(nodes: &mut [(i32, u32)], left_root: i32, left_rank: u32, right_root: i32, right_rank: u32) {
         match left_rank.cmp(&right_rank) {
-            Ordering::Less => nodes.get_mut(&left_root).unwrap().0 = right_root,
+            Ordering::Less => nodes[(left_root - 1) as usize].0 = right_root,
             Ordering::Equal => {
-                nodes.get_mut(&left_root).unwrap().0 = right_root;
-                nodes.get_mut(&right_root).unwrap().1 += 1;
+                nodes[(left_root - 1) as usize].0 = right_root;
+                nodes[(right_root - 1) as usize].1 += 1;
             }
-            Ordering::Greater => nodes.get_mut(&right_root).unwrap().0 = left_root,
+            Ordering::Greater => nodes[(right_root - 1) as usize].0 = left_root,
         }
     }
 
     pub fn find_redundant_connection(edges: Vec<Vec<i32>>) -> Vec<i32> {
         let mut edges = edges.into_iter();
-        let mut nodes = HashMap::new();
+        let mut nodes = vec![(0, 0); edges.len()];
 
         loop {
             let edge = edges.next().unwrap();
