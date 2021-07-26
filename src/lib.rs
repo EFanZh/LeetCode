@@ -547,6 +547,7 @@ pub mod problem_0679_24_game;
 pub mod problem_0680_valid_palindrome_ii;
 pub mod problem_0682_baseball_game;
 pub mod problem_0684_redundant_connection;
+pub mod problem_0685_redundant_connection_ii;
 pub mod problem_0686_repeated_string_match;
 pub mod problem_0687_longest_univalue_path;
 pub mod problem_0688_knight_probability_in_chessboard;
