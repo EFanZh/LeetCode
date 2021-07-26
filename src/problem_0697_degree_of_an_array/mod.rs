@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod hash_map;
 
 pub trait Solution {
     fn find_shortest_sub_array(nums: Vec<i32>) -> i32;

@@ -19,7 +19,7 @@ mod tests {
                 (&[Some(4), Some(2), Some(7), Some(1), Some(3)] as &[_], 2),
                 &[Some(2), Some(1), Some(3)] as &[_],
             ),
-            ((&[Some(4), Some(2), Some(7), Some(1), Some(3)] as &[_], 5), &[]),
+            ((&[Some(4), Some(2), Some(7), Some(1), Some(3)], 5), &[]),
         ];
 
         for ((root, val), expected) in test_cases {
