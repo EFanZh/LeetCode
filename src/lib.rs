@@ -558,6 +558,7 @@ pub mod problem_0695_max_area_of_island;
 pub mod problem_0696_count_binary_substrings;
 pub mod problem_0697_degree_of_an_array;
 pub mod problem_0700_search_in_a_binary_search_tree;
+pub mod problem_0701_insert_into_a_binary_search_tree;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
 pub mod problem_0721_accounts_merge;

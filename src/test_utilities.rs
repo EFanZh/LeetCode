@@ -37,7 +37,11 @@ pub fn make_tree<I: IntoIterator<Item = Option<i32>>>(values: I) -> Option<Rc<Re
 
             drop(target_ref);
 
-            target = queue.pop_front().unwrap();
+            if let Some(next_target) = queue.pop_front() {
+                target = next_target;
+            } else {
+                break;
+            }
         }
 
         root
