@@ -562,6 +562,7 @@ pub mod problem_0701_insert_into_a_binary_search_tree;
 pub mod problem_0703_kth_largest_element_in_a_stream;
 pub mod problem_0704_binary_search;
 pub mod problem_0709_to_lower_case;
+pub mod problem_0712_minimum_ascii_delete_sum_for_two_strings;
 pub mod problem_0721_accounts_merge;
 pub mod problem_0733_flood_fill;
 pub mod problem_0739_daily_temperatures;
