@@ -45,7 +45,6 @@
     clippy::useless_let_if_seq,
     clippy::useless_transmute,
     clippy::verbose_file_reads,
-    clippy::wrong_pub_self_convention
 )]
 #![allow(
     clippy::cast_possible_truncation,

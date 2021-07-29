@@ -10,7 +10,7 @@ impl Solution {
         if let (Some(mut left), Some(mut right)) = (iter.next(), iter.next_back()) {
             'outer: loop {
                 if left < right {
-                    while let Some(middle) = iter.next() {
+                    for middle in &mut iter {
                         if middle < left {
                             result += left - middle;
                         } else {
