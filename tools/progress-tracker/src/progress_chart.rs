@@ -8,7 +8,7 @@ use plotters::prelude::SVGBackend;
 use plotters::series::LineSeries;
 use plotters::style::{colors, Color, ShapeStyle, TextStyle};
 use std::collections::HashMap;
-use std::fs;
+use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 
@@ -125,7 +125,7 @@ fn draw_chart(data: &[(DateTime<Utc>, usize)], total: usize, output: &Path) {
             .unwrap();
     }
 
-    fs::File::create(output)
+    File::create(output)
         .unwrap()
         .write_all(fix_svg_size(&svg, ZOOM).as_bytes())
         .unwrap();
