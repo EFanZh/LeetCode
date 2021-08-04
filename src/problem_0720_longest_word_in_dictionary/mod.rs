@@ -10,8 +10,8 @@ mod tests {
 
     pub fn run<S: Solution>() {
         let test_cases = [
-            ((&["w", "wo", "wor", "worl", "world"] as &[_]), "world"),
-            ((&["a", "banana", "app", "appl", "ap", "apply", "apple"]), "apple"),
+            (&["w", "wo", "wor", "worl", "world"] as &[_], "world"),
+            (&["a", "banana", "app", "appl", "ap", "apply", "apple"], "apple"),
         ];
 
         for (words, expected) in test_cases {

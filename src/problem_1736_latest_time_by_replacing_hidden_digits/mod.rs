@@ -18,8 +18,8 @@ mod tests {
             ("??:01", "23:01"),
         ];
 
-        for (s, expected) in test_cases {
-            assert!(S::maximum_time(s.to_string()) == expected);
+        for (time, expected) in test_cases {
+            assert_eq!(S::maximum_time(time.to_string()), expected);
         }
     }
 }

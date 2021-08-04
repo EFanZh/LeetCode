@@ -27,7 +27,7 @@ mod tests {
             result.sort_unstable();
 
             for window in result.windows(2) {
-                assert!(window[1] == window[0] + 1);
+                assert_eq!(window[1], window[0] + 1);
             }
         }
     }
