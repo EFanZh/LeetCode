@@ -571,6 +571,7 @@ pub mod problem_0720_longest_word_in_dictionary;
 pub mod problem_0721_accounts_merge;
 pub mod problem_0724_find_pivot_index;
 pub mod problem_0725_split_linked_list_in_parts;
+pub mod problem_0726_number_of_atoms;
 pub mod problem_0733_flood_fill;
 pub mod problem_0739_daily_temperatures;
 pub mod problem_0763_partition_labels;
