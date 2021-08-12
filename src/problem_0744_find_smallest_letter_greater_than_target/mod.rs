@@ -1,4 +1,4 @@
-pub mod dynamic_programming;
+pub mod binary_search;
 
 pub trait Solution {
     fn next_greatest_letter(letters: Vec<char>, target: char) -> char;
