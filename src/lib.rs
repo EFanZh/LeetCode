@@ -578,6 +578,7 @@ pub mod problem_0726_number_of_atoms;
 pub mod problem_0728_self_dividing_numbers;
 pub mod problem_0733_flood_fill;
 pub mod problem_0735_asteroid_collision;
+pub mod problem_0736_parse_lisp_expression;
 pub mod problem_0739_daily_temperatures;
 pub mod problem_0744_find_smallest_letter_greater_than_target;
 pub mod problem_0763_partition_labels;
