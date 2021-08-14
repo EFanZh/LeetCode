@@ -1,6 +1,6 @@
-pub mod binary_tree;
 pub mod fenwick_tree;
-pub mod heap_like_binary_tree;
+pub mod segment_tree;
+pub mod segment_tree_2;
 
 pub trait NumArray {
     fn new(nums: Vec<i32>) -> Self;
