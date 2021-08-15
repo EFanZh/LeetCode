@@ -558,6 +558,7 @@ pub mod problem_0695_max_area_of_island;
 pub mod problem_0696_count_binary_substrings;
 pub mod problem_0697_degree_of_an_array;
 pub mod problem_0698_partition_to_k_equal_sum_subsets;
+pub mod problem_0699_falling_squares;
 pub mod problem_0700_search_in_a_binary_search_tree;
 pub mod problem_0701_insert_into_a_binary_search_tree;
 pub mod problem_0703_kth_largest_element_in_a_stream;
