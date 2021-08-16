@@ -570,6 +570,7 @@ pub mod problem_0709_to_lower_case;
 pub mod problem_0712_minimum_ascii_delete_sum_for_two_strings;
 pub mod problem_0713_subarray_product_less_than_k;
 pub mod problem_0714_best_time_to_buy_and_sell_stock_with_transaction_fee;
+pub mod problem_0715_range_module;
 pub mod problem_0717_1_bit_and_2_bit_characters;
 pub mod problem_0720_longest_word_in_dictionary;
 pub mod problem_0721_accounts_merge;
