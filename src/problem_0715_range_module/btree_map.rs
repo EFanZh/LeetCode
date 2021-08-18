@@ -67,11 +67,11 @@ impl RangeModule {
 
         if let Some((&last_left, &last_right)) = iter.next_back() {
             if last_right >= left {
-                if last_left > left {
+                if last_left >= left {
                     self.remove_buffer.push(last_left);
 
                     for (&current_left, &current_right) in iter.rev() {
-                        if current_left > left {
+                        if current_left >= left {
                             self.remove_buffer.push(current_left);
                         } else {
                             if current_right >= left {
