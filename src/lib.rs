@@ -581,6 +581,7 @@ pub mod problem_0724_find_pivot_index;
 pub mod problem_0725_split_linked_list_in_parts;
 pub mod problem_0726_number_of_atoms;
 pub mod problem_0728_self_dividing_numbers;
+pub mod problem_0729_my_calendar_i;
 pub mod problem_0733_flood_fill;
 pub mod problem_0735_asteroid_collision;
 pub mod problem_0736_parse_lisp_expression;
