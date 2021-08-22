@@ -585,6 +585,7 @@ pub mod problem_0729_my_calendar_i;
 pub mod problem_0733_flood_fill;
 pub mod problem_0735_asteroid_collision;
 pub mod problem_0736_parse_lisp_expression;
+pub mod problem_0738_monotone_increasing_digits;
 pub mod problem_0739_daily_temperatures;
 pub mod problem_0744_find_smallest_letter_greater_than_target;
 pub mod problem_0746_min_cost_climbing_stairs;
