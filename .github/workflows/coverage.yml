@@ -9,7 +9,7 @@ jobs:
           - run: vcpkg install gtest
           - uses: actions-rs/toolchain@v1
             with:
-                toolchain: nightly
+                toolchain: nightly-2021-08-21
                 override: true
                 components: llvm-tools-preview
           - uses: actions-rs/install@v0.1
@@ -19,6 +19,7 @@ jobs:
           - run: >-
                 cargo xtask coverage
                 --cmake-toolchain-file "$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+                --rust-toolchain nightly-2021-08-21
                 -o coverage/lcov.info
           - uses: codecov/codecov-action@v1
             with:

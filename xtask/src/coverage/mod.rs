@@ -53,6 +53,9 @@ pub struct Subcommand {
     #[structopt(long)]
     cmake_toolchain_file: Option<PathBuf>,
 
+    #[structopt(long, default_value = "nightly")]
+    rust_toolchain: String,
+
     #[structopt(short, long)]
     output_path: PathBuf,
 
@@ -135,7 +138,7 @@ impl Subcommand {
         // Run Rust.
 
         assert!(Command::new("cargo")
-            .args(&["+nightly", "test"])
+            .args(&[format!("+{}", self.rust_toolchain).as_str(), "test"])
             .envs(
                 [
                     ("LLVM_PROFILE_FILE", profile_dir.path().join("rust.profraw").as_os_str()),
@@ -171,7 +174,7 @@ impl Subcommand {
                 OsStr::new("."),
                 profile_dir.path().as_os_str()
             ])
-            .env("RUSTUP_TOOLCHAIN", "nightly")
+            .env("RUSTUP_TOOLCHAIN", self.rust_toolchain)
             .status()
             .unwrap()
             .success());
