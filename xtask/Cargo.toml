@@ -5,8 +5,10 @@ name = "xtask"
 version = "0.1.0"
 
 [dependencies]
-cc = "*"
 lazy_static = "*"
 structopt = "*"
 tempfile = "*"
 which = "*"
+
+[target.'cfg(target_os="windows")'.dependencies]
+cc = "*"

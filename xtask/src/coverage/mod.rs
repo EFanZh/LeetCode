@@ -1,10 +1,10 @@
 use crate::tools;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter};
+use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
-use std::{env, fs};
 use structopt::StructOpt;
 
 enum OutputType {
@@ -119,18 +119,6 @@ impl Subcommand {
         let mut cmake_build_command = Command::new(cmake_executable);
 
         cmake_build_command.args(&["--build", CPP_COVERAGE_TARGET_DIR, "-j"]);
-
-        // Workaround for https://github.com/microsoft/vcpkg/issues/11467.
-
-        #[cfg(target_os = "windows")]
-        {
-            let mut paths = tools::get_msvc_binary_tools_dir().unwrap().as_os_str().to_os_string();
-
-            paths.push(";");
-            paths.push(env::var_os("Path").unwrap());
-
-            cmake_build_command.env("Path", paths);
-        }
 
         assert!(cmake_build_command.status().unwrap().success());
 
