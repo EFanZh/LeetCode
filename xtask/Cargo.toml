@@ -5,6 +5,7 @@ name = "xtask"
 version = "0.1.0"
 
 [dependencies]
+cfg-if = "*"
 lazy_static = "*"
 serde_json = "*"
 structopt = "*"

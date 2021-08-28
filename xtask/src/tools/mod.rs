@@ -1,3 +1,5 @@
+use crate::utilities;
+use std::io::{BufRead, BufReader};
 use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
@@ -10,25 +12,25 @@ lazy_static::lazy_static! {
     static ref NINJA_PATH: Option<PathBuf> = find_ninja();
 }
 
-fn run_rustc(toolchain: &str, args: &[&str]) -> String {
-    let mut command = Command::new("rustc");
-
-    command.arg(format!("+{}", toolchain));
-    command.args(args);
-
-    String::from_utf8(command.output().unwrap().stdout).unwrap()
-}
-
 fn find_rustc_host(toolchain: &str) -> String {
-    run_rustc(toolchain, &["-vV"])
-        .lines()
-        .find_map(|line| line.strip_prefix("host: "))
-        .map(str::to_string)
-        .unwrap()
+    utilities::run_command_and_stream_output(
+        Command::new("rustc").args([format!("+{}", toolchain).as_str(), "-vV"]),
+        |stdout| {
+            BufReader::new(stdout)
+                .lines()
+                .find_map(|line| line.unwrap().strip_prefix("host: ").map(str::to_string))
+        },
+    )
+    .unwrap()
 }
 
 pub fn find_rust_lib(toolchain: &str) -> PathBuf {
-    let mut path_buffer = run_rustc(toolchain, &["--print", "sysroot"]);
+    let mut path_buffer = String::from_utf8(utilities::run_command_and_get_output(Command::new("rustc").args([
+        format!("+{}", toolchain).as_str(),
+        "--print",
+        "sysroot",
+    ])))
+    .unwrap();
 
     path_buffer.pop();
 
@@ -43,14 +45,16 @@ fn find_cmake_common() -> Option<PathBuf> {
     which::which("cmake").ok()
 }
 
-#[cfg(target_os = "windows")]
-fn find_cmake() -> Option<PathBuf> {
-    find_cmake_common().or_else(windows::find_cmake)
-}
-
-#[cfg(not(target_os = "windows"))]
-fn find_cmake() -> Option<PathBuf> {
-    find_cmake_common()
+cfg_if::cfg_if! {
+    if #[cfg(target_os = "windows")] {
+        fn find_cmake() -> Option<PathBuf> {
+            find_cmake_common().or_else(windows::find_cmake)
+        }
+    } else {
+        fn find_cmake() -> Option<PathBuf> {
+            find_cmake_common()
+        }
+    }
 }
 
 pub fn get_cmake() -> Option<&'static Path> {
@@ -61,14 +65,16 @@ fn find_ninja_common() -> Option<PathBuf> {
     which::which("ninja").ok()
 }
 
-#[cfg(target_os = "windows")]
-fn find_ninja() -> Option<PathBuf> {
-    find_ninja_common().or_else(windows::find_ninja)
-}
-
-#[cfg(not(target_os = "windows"))]
-fn find_ninja() -> Option<PathBuf> {
-    find_ninja_common()
+cfg_if::cfg_if! {
+    if #[cfg(target_os = "windows")] {
+        fn find_ninja() -> Option<PathBuf> {
+            find_ninja_common().or_else(windows::find_ninja)
+        }
+    } else {
+        fn find_ninja() -> Option<PathBuf> {
+            find_ninja_common()
+        }
+    }
 }
 
 pub fn get_ninja() -> Option<&'static Path> {

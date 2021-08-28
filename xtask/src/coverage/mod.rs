@@ -1,11 +1,11 @@
-use crate::tools;
+use crate::{tools, utilities};
 use serde_json::{Deserializer, Value};
 use std::ffi::{OsStr, OsString};
 use std::fmt::Write;
 use std::fmt::{self, Display, Formatter};
-use std::fs::{self, OpenOptions};
+use std::fs::File;
 use std::path::{Path, PathBuf};
-use std::process::{Command, Stdio};
+use std::process::Command;
 use std::str::FromStr;
 use structopt::StructOpt;
 
@@ -68,42 +68,18 @@ pub struct Subcommand {
     output_type: OutputType,
 }
 
-fn run_coverage_tests(test_executable: &Path, llvm_profdata: &Path, llvm_cov: &Path, output: &Path) {
+fn run_coverage_tests(test_executable: &Path, llvm_profdata: &Path, output: &Path) {
     let profile_dir = tempfile::tempdir().unwrap();
     let profraw_file = profile_dir.path().join("coverage.profraw");
 
-    assert!(Command::new(test_executable)
-        .env("LLVM_PROFILE_FILE", profraw_file.as_os_str())
-        .status()
-        .unwrap()
-        .success());
+    utilities::run_command(Command::new(test_executable).env("LLVM_PROFILE_FILE", profraw_file.as_os_str()));
 
-    let profdata_file = profile_dir.path().join("coverage.profdata");
-
-    assert!(Command::new(llvm_profdata)
-        .args([
-            "merge".as_ref(),
-            "-o".as_ref(),
-            profdata_file.as_os_str(),
-            profraw_file.as_ref(),
-        ])
-        .status()
-        .unwrap()
-        .success());
-
-    assert!(Command::new(llvm_cov)
-        .args([
-            "export".as_ref(),
-            "--format".as_ref(),
-            "lcov".as_ref(),
-            "--instr-profile".as_ref(),
-            profdata_file.as_os_str(),
-            test_executable.as_os_str(),
-        ])
-        .stdout(OpenOptions::new().append(true).create(true).open(output).unwrap())
-        .status()
-        .unwrap()
-        .success());
+    utilities::run_command(Command::new(llvm_profdata).args([
+        "merge".as_ref(),
+        "-o".as_ref(),
+        output.as_os_str(),
+        profraw_file.as_ref(),
+    ]));
 }
 
 fn add_cmake_variable(command: &mut Command, variable: &str, value: &OsStr) {
@@ -117,17 +93,22 @@ fn add_cmake_variable(command: &mut Command, variable: &str, value: &OsStr) {
     command.arg(arg);
 }
 
-fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>, output: &Path) {
-    const CPP_COVERAGE_TARGET_DIR: &str = "target/c++-coverage";
+fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>, output: &Path) -> PathBuf {
+    cfg_if::cfg_if! {
+        if #[cfg(target_os = "windows")] {
+            const CPP_COVERAGE_TARGET_DIR: &str = "target\\c++-coverage";
+        } else {
+            const CPP_COVERAGE_TARGET_DIR: &str = "target/c++-coverage";
+        }
+    }
 
     let cmake_executable = tools::get_cmake().unwrap();
     let mut clang = String::from("clang");
     let mut clang_plus_plus = String::from("clang++");
     let mut llvm_profdata = String::from("llvm-profdata");
-    let mut llvm_cov = String::from("llvm-cov");
 
     if let Some(llvm_version) = llvm_version {
-        for tool in [&mut clang, &mut clang_plus_plus, &mut llvm_profdata, &mut llvm_cov] {
+        for tool in [&mut clang, &mut clang_plus_plus, &mut llvm_profdata] {
             write!(tool, "-{}", llvm_version).unwrap();
         }
     }
@@ -167,40 +148,63 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
         );
     }
 
-    assert!(cmake_command.status().unwrap().success());
+    utilities::run_command(&mut cmake_command);
 
     // Build.
 
-    let mut cmake_build_command = Command::new(cmake_executable);
-
-    cmake_build_command.args(["--build", CPP_COVERAGE_TARGET_DIR, "-j"]);
-
-    assert!(cmake_build_command.status().unwrap().success());
+    utilities::run_command(Command::new(cmake_executable).args(["--build", CPP_COVERAGE_TARGET_DIR, "-j"]));
 
     // Run.
 
-    #[cfg(target_os = "windows")]
-    let executable = "leet-code-tests.exe";
+    cfg_if::cfg_if! {
+        if #[cfg(target_os = "windows")] {
+            let executable_name = "leet-code-tests.exe";
+        } else {
+            let executable_name = "leet-code-tests";
+        }
+    }
 
-    #[cfg(not(target_os = "windows"))]
-    let executable = "leet-code-tests";
+    let test_executable = Path::new(CPP_COVERAGE_TARGET_DIR).join(executable_name);
 
-    run_coverage_tests(
-        &Path::new(CPP_COVERAGE_TARGET_DIR).join(executable),
-        llvm_profdata.as_ref(),
-        llvm_cov.as_ref(),
-        output,
-    );
+    run_coverage_tests(&test_executable, llvm_profdata.as_ref(), output);
+
+    test_executable
 }
 
-fn get_cargo_test_command(toolchain: &str) -> Command {
-    let mut command = Command::new("cargo");
+fn run_rust_tests(toolchain: &str, llvm_profdata: &Path, output: &Path) -> PathBuf {
+    // Build.
 
-    command
-        .args([format!("+{}", toolchain).as_str(), "test"])
-        .env("RUSTFLAGS", "-Zinstrument-coverage");
+    let test_executable = utilities::run_command_and_stream_output(
+        Command::new("cargo")
+            .args([
+                format!("+{}", toolchain).as_str(),
+                "test",
+                "--no-run",
+                "--message-format",
+                "json",
+            ])
+            .env("RUSTFLAGS", "-Zinstrument-coverage"),
+        |stdout| {
+            Deserializer::from_reader(stdout).into_iter::<Value>().find_map(|item| {
+                if let Ok(Value::Object(mut item)) = item {
+                    if let Some(Value::String(executable)) = item.remove("executable") {
+                        Some(executable)
+                    } else {
+                        None
+                    }
+                } else {
+                    None
+                }
+            })
+        },
+    )
+    .unwrap();
 
-    command
+    // Run.
+
+    run_coverage_tests(test_executable.as_ref(), llvm_profdata, output);
+
+    PathBuf::from(test_executable)
 }
 
 fn get_llvm_tools(toolchain: &str) -> (PathBuf, PathBuf) {
@@ -216,73 +220,70 @@ fn get_llvm_tools(toolchain: &str) -> (PathBuf, PathBuf) {
     (llvm_profdata, llvm_cov)
 }
 
-fn run_rust_tests(toolchain: &str, output: &Path) {
-    let mut build_process = get_cargo_test_command(toolchain)
-        .args(["--no-run", "--message-format", "json"])
-        .stdout(Stdio::piped())
-        .spawn()
-        .unwrap();
-
-    let test_executable = Deserializer::from_reader(build_process.stdout.as_mut().unwrap())
-        .into_iter::<Value>()
-        .find_map(|item| {
-            if let Ok(Value::Object(mut item)) = item {
-                if let Some(Value::String(executable)) = item.remove("executable") {
-                    Some(executable)
-                } else {
-                    None
-                }
-            } else {
-                None
-            }
-        })
-        .unwrap();
-
-    assert!(build_process.wait_with_output().unwrap().status.success());
-
-    let (llvm_profdata, llvm_cov) = get_llvm_tools(toolchain);
-
-    run_coverage_tests(test_executable.as_ref(), &llvm_profdata, &llvm_cov, output);
-}
-
-fn run_all_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>, rust_toolchain: &str, output: &Path) {
-    run_cpp_tests(cmake_toolchain_file.as_deref(), llvm_version, output);
-    run_rust_tests(rust_toolchain, output);
-}
-
 impl Subcommand {
     pub fn run(self) {
         let coverage_dir = tempfile::tempdir().unwrap();
-        let coverage_file = coverage_dir.path().join("coverage.info");
+        let cpp_profdata = coverage_dir.path().join("c++.profdata");
+        let rust_profdata = coverage_dir.path().join("rust.profdata");
+        let all_profdata = coverage_dir.path().join("all.profdata");
+        let (llvm_profdata, llvm_cov) = get_llvm_tools(&self.rust_toolchain);
 
-        run_all_tests(
+        // Run tests.
+
+        let cpp_test_executable = run_cpp_tests(
             self.cmake_toolchain_file.as_deref(),
             self.llvm_version.as_deref(),
-            &self.rust_toolchain,
-            &coverage_file,
+            &cpp_profdata,
         );
 
-        if let Some(parent) = self.output_path.parent() {
-            fs::create_dir_all(parent).unwrap();
-        }
+        let rust_test_executable = run_rust_tests(&self.rust_toolchain, &llvm_profdata, &rust_profdata);
 
-        assert!(Command::new("grcov")
-            .args([
-                OsStr::new("--branch"),
-                OsStr::new("--keep-only"),
-                OsStr::new("c++/*"),
-                OsStr::new("--keep-only"),
-                OsStr::new("src/*"),
-                OsStr::new("-o"),
-                self.output_path.as_os_str(),
-                OsStr::new("-t"),
-                self.output_type.value().as_ref(),
-                OsStr::new("-s"),
-                OsStr::new("."),
-                coverage_file.as_os_str()
-            ])
-            .status()
-            .unwrap()
-            .success());
+        // Merge profile data.
+
+        utilities::run_command(Command::new(llvm_profdata).args([
+            "merge".as_ref(),
+            "-o".as_ref(),
+            all_profdata.as_os_str(),
+            cpp_profdata.as_ref(),
+            rust_profdata.as_ref(),
+        ]));
+
+        // Generate report.
+
+        match self.output_type {
+            OutputType::Html => {
+                utilities::run_command(Command::new(llvm_cov).args([
+                    "show".as_ref(),
+                    "--format".as_ref(),
+                    "html".as_ref(),
+                    "--output-dir".as_ref(),
+                    self.output_path.as_os_str(),
+                    "--Xdemangler".as_ref(),
+                    "rustfilt".as_ref(),
+                    "--instr-profile".as_ref(),
+                    all_profdata.as_os_str(),
+                    cpp_test_executable.as_os_str(),
+                    "--object".as_ref(),
+                    rust_test_executable.as_os_str(),
+                    // "c++".as_ref(),
+                    // "src".as_ref(),
+                ]));
+            }
+            OutputType::Lcov => utilities::run_command_and_redirect_output(
+                Command::new(llvm_cov).args([
+                    "export".as_ref(),
+                    "--format".as_ref(),
+                    "lcov".as_ref(),
+                    "--instr-profile".as_ref(),
+                    all_profdata.as_os_str(),
+                    cpp_test_executable.as_os_str(),
+                    "--object".as_ref(),
+                    rust_test_executable.as_os_str(),
+                    "c++".as_ref(),
+                    "src".as_ref(),
+                ]),
+                File::create(self.output_path).unwrap(),
+            ),
+        }
     }
 }
