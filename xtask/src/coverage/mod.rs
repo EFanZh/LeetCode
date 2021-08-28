@@ -101,7 +101,7 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
         }
     }
 
-    let cmake_executable = tools::get_cmake().unwrap();
+    let cmake_executable = tools::find_cmake().unwrap();
     let mut clang = String::from("clang");
     let mut clang_plus_plus = String::from("clang++");
     let mut llvm_profdata = String::from("llvm-profdata");
@@ -114,7 +114,7 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
 
     // Configure.
 
-    let mut cmake_command = Command::new(cmake_executable);
+    let mut cmake_command = Command::new(&cmake_executable);
 
     cmake_command.args([
         "-S",
@@ -136,7 +136,7 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
     add_cmake_variable(
         &mut cmake_command,
         "CMAKE_MAKE_PROGRAM",
-        tools::get_ninja().unwrap().as_os_str(),
+        tools::find_ninja().unwrap().as_os_str(),
     );
 
     if let Some(cmake_toolchain_file) = cmake_toolchain_file {
@@ -219,6 +219,13 @@ fn get_llvm_tools(toolchain: &str) -> (PathBuf, PathBuf) {
     (llvm_profdata, llvm_cov)
 }
 
+fn closure_type_deduction_helper<T>(f: T) -> T
+where
+    T: for<'a> FnOnce(&'a mut Command) -> &'a mut Command,
+{
+    f
+}
+
 impl Subcommand {
     pub fn run(self) {
         let coverage_dir = tempfile::tempdir().unwrap();
@@ -249,32 +256,40 @@ impl Subcommand {
 
         // Generate report.
 
-        let mut path_equivalence = OsString::from("src,");
+        let add_common_llvm_cov_args = closure_type_deduction_helper(|command: &mut Command| {
+            let mut path_equivalence = OsString::from("src,");
 
-        path_equivalence.push(utilities::get_project_dir());
-        path_equivalence.push(path::MAIN_SEPARATOR.encode_utf8(&mut [0]));
-        path_equivalence.push("src");
+            path_equivalence.push(utilities::get_project_dir());
+            path_equivalence.push(path::MAIN_SEPARATOR.encode_utf8(&mut [0]));
+            path_equivalence.push("src");
+
+            command.args([
+                "--path-equivalence".as_ref(),
+                path_equivalence.as_os_str(),
+                "--instr-profile".as_ref(),
+                all_profdata.as_os_str(),
+                cpp_test_executable.as_os_str(),
+                "--object".as_ref(),
+                rust_test_executable.as_os_str(),
+            ]);
+
+            #[cfg(not(target_os = "windows"))]
+            command.args(["c++", "src"]);
+
+            command
+        });
 
         match self.output_type {
             OutputType::Html => {
-                utilities::run_command(Command::new(llvm_cov).args([
+                utilities::run_command(add_common_llvm_cov_args(Command::new(llvm_cov).args([
                     "show".as_ref(),
                     "--format".as_ref(),
                     "html".as_ref(),
                     "--output-dir".as_ref(),
                     self.output_path.as_os_str(),
                     "--Xdemangler".as_ref(),
-                    "--path-equivalence".as_ref(),
-                    path_equivalence.as_os_str(),
                     "rustfilt".as_ref(),
-                    "--instr-profile".as_ref(),
-                    all_profdata.as_os_str(),
-                    cpp_test_executable.as_os_str(),
-                    "--object".as_ref(),
-                    rust_test_executable.as_os_str(),
-                    // "c++".as_ref(),
-                    // "src".as_ref(),
-                ]));
+                ])));
             }
             OutputType::Lcov => {
                 if let Some(parent_dir) = self.output_path.parent() {
@@ -282,20 +297,7 @@ impl Subcommand {
                 }
 
                 utilities::run_command_and_redirect_output(
-                    Command::new(llvm_cov).args([
-                        "export".as_ref(),
-                        "--format".as_ref(),
-                        "lcov".as_ref(),
-                        "--path-equivalence".as_ref(),
-                        path_equivalence.as_os_str(),
-                        "--instr-profile".as_ref(),
-                        all_profdata.as_os_str(),
-                        cpp_test_executable.as_os_str(),
-                        "--object".as_ref(),
-                        rust_test_executable.as_os_str(),
-                        "c++".as_ref(),
-                        "src".as_ref(),
-                    ]),
+                    add_common_llvm_cov_args(Command::new(llvm_cov).args(["export", "--format", "lcov"])),
                     File::create(self.output_path).unwrap(),
                 );
             }

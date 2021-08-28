@@ -1,15 +1,10 @@
 use crate::utilities;
 use std::io::{BufRead, BufReader};
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::process::Command;
 
 #[cfg(target_os = "windows")]
 mod windows;
-
-lazy_static::lazy_static! {
-    static ref CMAKE_PATH: Option<PathBuf> = find_cmake();
-    static ref NINJA_PATH: Option<PathBuf> = find_ninja();
-}
 
 fn find_rustc_host(toolchain: &str) -> String {
     utilities::run_command_and_stream_output(
@@ -46,18 +41,14 @@ fn find_cmake_common() -> Option<PathBuf> {
 
 cfg_if::cfg_if! {
     if #[cfg(target_os = "windows")] {
-        fn find_cmake() -> Option<PathBuf> {
+        pub fn find_cmake() -> Option<PathBuf> {
             find_cmake_common().or_else(windows::find_cmake)
         }
     } else {
-        fn find_cmake() -> Option<PathBuf> {
+        pub fn find_cmake() -> Option<PathBuf> {
             find_cmake_common()
         }
     }
-}
-
-pub fn get_cmake() -> Option<&'static Path> {
-    CMAKE_PATH.as_deref()
 }
 
 fn find_ninja_common() -> Option<PathBuf> {
@@ -66,16 +57,12 @@ fn find_ninja_common() -> Option<PathBuf> {
 
 cfg_if::cfg_if! {
     if #[cfg(target_os = "windows")] {
-        fn find_ninja() -> Option<PathBuf> {
+        pub fn find_ninja() -> Option<PathBuf> {
             find_ninja_common().or_else(windows::find_ninja)
         }
     } else {
-        fn find_ninja() -> Option<PathBuf> {
+        pub fn find_ninja() -> Option<PathBuf> {
             find_ninja_common()
         }
     }
-}
-
-pub fn get_ninja() -> Option<&'static Path> {
-    NINJA_PATH.as_deref()
 }
