@@ -3,7 +3,7 @@ use serde_json::{Deserializer, Value};
 use std::ffi::{OsStr, OsString};
 use std::fmt::Write;
 use std::fmt::{self, Display, Formatter};
-use std::fs::File;
+use std::fs::{self, File};
 use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
@@ -269,21 +269,27 @@ impl Subcommand {
                     // "src".as_ref(),
                 ]));
             }
-            OutputType::Lcov => utilities::run_command_and_redirect_output(
-                Command::new(llvm_cov).args([
-                    "export".as_ref(),
-                    "--format".as_ref(),
-                    "lcov".as_ref(),
-                    "--instr-profile".as_ref(),
-                    all_profdata.as_os_str(),
-                    cpp_test_executable.as_os_str(),
-                    "--object".as_ref(),
-                    rust_test_executable.as_os_str(),
-                    "c++".as_ref(),
-                    "src".as_ref(),
-                ]),
-                File::create(self.output_path).unwrap(),
-            ),
+            OutputType::Lcov => {
+                if let Some(parent_dir) = self.output_path.parent() {
+                    fs::create_dir_all(parent_dir).unwrap();
+                }
+
+                utilities::run_command_and_redirect_output(
+                    Command::new(llvm_cov).args([
+                        "export".as_ref(),
+                        "--format".as_ref(),
+                        "lcov".as_ref(),
+                        "--instr-profile".as_ref(),
+                        all_profdata.as_os_str(),
+                        cpp_test_executable.as_os_str(),
+                        "--object".as_ref(),
+                        rust_test_executable.as_os_str(),
+                        "c++".as_ref(),
+                        "src".as_ref(),
+                    ]),
+                    File::create(self.output_path).unwrap(),
+                );
+            }
         }
     }
 }
