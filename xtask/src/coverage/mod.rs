@@ -1,10 +1,9 @@
 use crate::{tools, utilities};
 use serde_json::{Deserializer, Value};
 use std::ffi::{OsStr, OsString};
-use std::fmt::Write;
-use std::fmt::{self, Display, Formatter};
+use std::fmt::{self, Display, Formatter, Write};
 use std::fs::{self, File};
-use std::path::{Path, PathBuf};
+use std::path::{self, Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
 use structopt::StructOpt;
@@ -250,6 +249,12 @@ impl Subcommand {
 
         // Generate report.
 
+        let mut path_equivalence = OsString::from("src,");
+
+        path_equivalence.push(utilities::get_project_dir());
+        path_equivalence.push(path::MAIN_SEPARATOR.encode_utf8(&mut [0]));
+        path_equivalence.push("src");
+
         match self.output_type {
             OutputType::Html => {
                 utilities::run_command(Command::new(llvm_cov).args([
@@ -259,6 +264,8 @@ impl Subcommand {
                     "--output-dir".as_ref(),
                     self.output_path.as_os_str(),
                     "--Xdemangler".as_ref(),
+                    "--path-equivalence".as_ref(),
+                    path_equivalence.as_os_str(),
                     "rustfilt".as_ref(),
                     "--instr-profile".as_ref(),
                     all_profdata.as_os_str(),
@@ -279,6 +286,8 @@ impl Subcommand {
                         "export".as_ref(),
                         "--format".as_ref(),
                         "lcov".as_ref(),
+                        "--path-equivalence".as_ref(),
+                        path_equivalence.as_os_str(),
                         "--instr-profile".as_ref(),
                         all_profdata.as_os_str(),
                         cpp_test_executable.as_os_str(),

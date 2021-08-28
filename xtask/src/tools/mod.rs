@@ -1,7 +1,6 @@
 use crate::utilities;
 use std::io::{BufRead, BufReader};
-use std::path::Path;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 
 #[cfg(target_os = "windows")]
