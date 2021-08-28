@@ -283,6 +283,10 @@ impl Subcommand {
             OutputType::Html => {
                 utilities::run_command(add_common_llvm_cov_args(Command::new(llvm_cov).args([
                     "show".as_ref(),
+                    "--show-branches".as_ref(),
+                    "count".as_ref(),
+                    "--show-expansions".as_ref(),
+                    "--show-line-counts-or-regions".as_ref(),
                     "--format".as_ref(),
                     "html".as_ref(),
                     "--output-dir".as_ref(),
