@@ -22,6 +22,9 @@ mod tests {
             ("LPLPLPLPLPL", true),
             ("LLPPPLPAPP", true),
             ("PPAPPLPPLP", true),
+            ("P", true),
+            ("LL", true),
+            ("AL", true),
         ];
 
         for (s, expected) in test_cases {

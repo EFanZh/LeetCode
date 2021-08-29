@@ -19,10 +19,13 @@ void run() {
 
     const auto test_cases = initializer_list<tuple<vector<optional<int>>, vector<optional<int>>>>{
         {{1, 2, 3, 4, 5, std::nullopt, 7}, {1, std::nullopt, 2, 3, std::nullopt, 4, 5, 7, std::nullopt}},
+        {{}, {}},
         {{1, std::nullopt, 2}, {1, std::nullopt, 2, std::nullopt}},
         {{1, 2}, {1, std::nullopt, 2, std::nullopt}},
         {{0, 2, 4, 1, std::nullopt, 3, -1, 5, 1, std::nullopt, 6, std::nullopt, 8},
          {0, std::nullopt, 2, 4, std::nullopt, 1, 3, -1, std::nullopt, 5, 1, 6, 8, std::nullopt}},
+        {{1, 2, 2, 3, 3, std::nullopt, std::nullopt, 4, 4},
+         {1, std::nullopt, 2, 2, std::nullopt, 3, 3, std::nullopt, 4, 4, std::nullopt}},
     };
 
     for (const auto &[tree, expected] : test_cases) {

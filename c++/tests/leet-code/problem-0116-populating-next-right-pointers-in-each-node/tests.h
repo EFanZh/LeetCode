@@ -18,6 +18,7 @@ void run() {
 
     const auto test_cases = initializer_list<tuple<vector<optional<int>>, vector<optional<int>>>>{
         {{1, 2, 3, 4, 5, 6, 7}, {1, std::nullopt, 2, 3, std::nullopt, 4, 5, 6, 7, std::nullopt}},
+        {{}, {}},
     };
 
     for (const auto &[tree, expected] : test_cases) {
