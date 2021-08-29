@@ -5,7 +5,7 @@ use crate::data_structures::NestedInteger;
 use std::mem;
 use std::vec::IntoIter;
 
-struct NestedIterator {
+pub struct NestedIterator {
     state: Option<(i32, IntoIter<NestedInteger>, Vec<IntoIter<NestedInteger>>)>,
 }
 

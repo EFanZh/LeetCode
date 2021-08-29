@@ -1,6 +1,6 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-struct MyCircularQueue {
+pub struct MyCircularQueue {
     buffer: Box<[i32]>,
     head: usize,
     tail: usize,

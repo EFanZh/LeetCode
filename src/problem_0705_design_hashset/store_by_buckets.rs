@@ -1,8 +1,6 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-struct MyHashSet {
+pub struct MyHashSet {
     buckets: Vec<Vec<i32>>,
     length: usize,
 }

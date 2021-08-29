@@ -1,7 +1,7 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 #[derive(Default)]
-struct Trie {
+pub struct Trie {
     children: [Option<Box<Trie>>; 26],
     has_value: bool,
 }

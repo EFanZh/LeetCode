@@ -1,10 +1,8 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::BTreeMap;
 
-struct RangeModule {
+pub struct RangeModule {
     ranges: BTreeMap<i32, i32>,
     remove_buffer: Vec<i32>,
 }

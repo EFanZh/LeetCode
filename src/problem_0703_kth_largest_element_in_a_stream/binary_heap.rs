@@ -3,7 +3,7 @@
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
-struct KthLargest {
+pub struct KthLargest {
     heap: BinaryHeap<Reverse<i32>>,
 }
 

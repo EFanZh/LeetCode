@@ -118,7 +118,7 @@ impl IndexMut<usize> for Blocks {
     }
 }
 
-struct LFUCache {
+pub struct LFUCache {
     capacity: usize,
     key_to_node: HashMap<i32, usize>,
     node_memory: Nodes,

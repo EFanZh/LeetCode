@@ -1,5 +1,3 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cell::Cell;
@@ -11,7 +9,7 @@ struct Node {
     next: Cell<Option<Rc<Self>>>,
 }
 
-struct MyLinkedList {
+pub struct MyLinkedList {
     head: Option<Rc<Node>>,
     tail: Weak<Node>,
     length: i32,

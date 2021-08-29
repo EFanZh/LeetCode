@@ -2,7 +2,7 @@
 
 use std::collections::{HashMap, HashSet};
 
-struct MagicDictionary {
+pub struct MagicDictionary {
     keys: HashMap<Box<[u8]>, Vec<HashSet<u8>>>,
 }
 

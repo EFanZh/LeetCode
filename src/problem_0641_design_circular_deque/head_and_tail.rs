@@ -1,6 +1,6 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-struct MyCircularDeque {
+pub struct MyCircularDeque {
     buffer: Box<[i32]>,
     head: usize,
     tail: usize,

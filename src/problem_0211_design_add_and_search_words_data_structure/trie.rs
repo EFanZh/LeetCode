@@ -1,7 +1,7 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 #[derive(Default)]
-struct WordDictionary {
+pub struct WordDictionary {
     children: [Option<Box<WordDictionary>>; 26],
     has_value: bool,
 }

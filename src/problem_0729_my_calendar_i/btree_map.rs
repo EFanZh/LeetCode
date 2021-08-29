@@ -1,11 +1,9 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
 use std::collections::BTreeMap;
 
-struct MyCalendar {
+pub struct MyCalendar {
     ranges: BTreeMap<i32, i32>,
 }
 

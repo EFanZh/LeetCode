@@ -1,5 +1,3 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 #[derive(Default)]
@@ -8,7 +6,7 @@ struct Node {
     children: [Option<Box<Self>>; 27],
 }
 
-struct WordFilter {
+pub struct WordFilter {
     trie: Node,
 }
 

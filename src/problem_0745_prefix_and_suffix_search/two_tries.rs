@@ -1,5 +1,3 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
@@ -10,7 +8,7 @@ struct Node {
     children: [Option<Box<Self>>; 26],
 }
 
-struct WordFilter {
+pub struct WordFilter {
     forward_trie: Node,
     backward_trie: Node,
 }

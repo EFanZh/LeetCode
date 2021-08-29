@@ -14,7 +14,7 @@ struct Node {
     next: usize,
 }
 
-struct AllOne {
+pub struct AllOne {
     nodes: Vec<Node>,
     free_nodes: usize,
     key_to_node: HashMap<Rc<str>, usize>,

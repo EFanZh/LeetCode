@@ -4,7 +4,7 @@ use std::collections::{HashMap, HashSet};
 
 type KeyMap = HashMap<Box<[u8]>, Vec<HashSet<u8>>>;
 
-struct MagicDictionary {
+pub struct MagicDictionary {
     keys: HashMap<usize, KeyMap>,
 }
 

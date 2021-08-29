@@ -13,7 +13,7 @@ struct Node {
     next: Cell<Weak<Node>>,
 }
 
-struct LRUCache {
+pub struct LRUCache {
     capacity: usize,
     map: HashMap<i32, Rc<Node>>,
     newest: Weak<Node>,

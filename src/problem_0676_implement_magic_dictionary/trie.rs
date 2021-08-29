@@ -34,7 +34,7 @@ impl Node {
     }
 }
 
-struct MagicDictionary {
+pub struct MagicDictionary {
     roots: HashMap<usize, Node>,
 }
 

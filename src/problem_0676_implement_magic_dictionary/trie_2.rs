@@ -34,7 +34,7 @@ impl Node {
     }
 }
 
-struct MagicDictionary {
+pub struct MagicDictionary {
     root: Node,
 }
 

@@ -12,7 +12,7 @@ struct CacheEntry {
     next: usize,
 }
 
-struct LRUCache {
+pub struct LRUCache {
     map: HashMap<i32, (i32, usize)>,
     memory: Vec<CacheEntry>,
     newest: usize,

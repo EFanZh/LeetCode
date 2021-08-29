@@ -1,8 +1,6 @@
-pub struct Solution;
-
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-struct MyHashMap {
+pub struct MyHashMap {
     buckets: Vec<Vec<(i32, i32)>>,
     length: usize,
 }
