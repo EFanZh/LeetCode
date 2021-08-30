@@ -20,6 +20,7 @@ mod tests {
             (("aaaaaa", &["aa", "aa"]), &[0, 1, 2]),
             (("a", &["a"]), &[0]),
             (("abc", &["ab", "cd"]), &[]),
+            (("thethethethe", &["foo", "foo", "the", "man"]), &[]),
         ];
 
         for ((s, words), expected) in test_cases {

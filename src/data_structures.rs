@@ -1,7 +1,7 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-#[derive(PartialEq, Eq, Clone, Debug)]
+#[derive(PartialEq, Eq)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<Self>>,
@@ -35,5 +35,31 @@ impl TreeNode {
             left: None,
             right: None,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{NestedInteger, TreeNode};
+
+    #[test]
+    fn test_debug_tree_node() {
+        assert_eq!(
+            format!("{:?}", TreeNode::new(2)),
+            "TreeNode { val: 2, left: None, right: None }"
+        );
+    }
+
+    #[test]
+    fn test_debug_nested_integer() {
+        assert_eq!(format!("{:?}", NestedInteger::Int(2)), "Int(2)");
+
+        assert_eq!(
+            format!(
+                "{:?}",
+                NestedInteger::List(vec![NestedInteger::Int(3), NestedInteger::Int(5)])
+            ),
+            "List([Int(3), Int(5)])"
+        );
     }
 }

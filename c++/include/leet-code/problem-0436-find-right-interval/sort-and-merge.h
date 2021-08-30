@@ -35,24 +35,22 @@ public:
         auto right_iter = rights.cbegin();
         const auto right_end = rights.cend();
 
-        if (left_iter != left_end) {
-            for (;;) {
-                if (std::get<0>(*left_iter) < std::get<0>(*right_iter)) {
-                    result[static_cast<size_t>(std::get<1>(*right_iter))] = prev;
+        for (;;) {
+            if (std::get<0>(*left_iter) < std::get<0>(*right_iter)) {
+                result[static_cast<size_t>(std::get<1>(*right_iter))] = prev;
 
-                    ++right_iter;
+                ++right_iter;
 
-                    if (right_iter == right_end) {
-                        break;
-                    }
-                } else {
-                    prev = std::get<1>(*left_iter);
+                if (right_iter == right_end) {
+                    break;
+                }
+            } else {
+                prev = std::get<1>(*left_iter);
 
-                    ++left_iter;
+                ++left_iter;
 
-                    if (left_iter == left_end) {
-                        break;
-                    }
+                if (left_iter == left_end) {
+                    break;
                 }
             }
         }
