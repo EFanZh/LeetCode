@@ -583,6 +583,7 @@ pub mod problem_0726_number_of_atoms;
 pub mod problem_0728_self_dividing_numbers;
 pub mod problem_0729_my_calendar_i;
 pub mod problem_0730_count_different_palindromic_subsequences;
+pub mod problem_0731_my_calendar_ii;
 pub mod problem_0733_flood_fill;
 pub mod problem_0735_asteroid_collision;
 pub mod problem_0736_parse_lisp_expression;
