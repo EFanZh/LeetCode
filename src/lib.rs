@@ -591,6 +591,7 @@ pub mod problem_0736_parse_lisp_expression;
 pub mod problem_0738_monotone_increasing_digits;
 pub mod problem_0739_daily_temperatures;
 pub mod problem_0740_delete_and_earn;
+pub mod problem_0741_cherry_pickup;
 pub mod problem_0743_network_delay_time;
 pub mod problem_0744_find_smallest_letter_greater_than_target;
 pub mod problem_0745_prefix_and_suffix_search;
