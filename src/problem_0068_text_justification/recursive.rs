@@ -56,10 +56,9 @@ impl Solution {
 
     pub fn full_justify(mut words: Vec<String>, max_width: i32) -> Vec<String> {
         let mut result = Vec::new();
+        let (first_word, rest_words) = words.split_first_mut().unwrap();
 
-        if let Some((first_word, rest_words)) = words.split_first_mut() {
-            Self::full_justify_helper(mem::take(first_word), rest_words, max_width as _, &mut result);
-        }
+        Self::full_justify_helper(mem::take(first_word), rest_words, max_width as _, &mut result);
 
         result
     }
