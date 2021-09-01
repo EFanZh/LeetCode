@@ -21,6 +21,21 @@ mod tests {
             (&[Some(5), Some(1), Some(4), None, None, Some(3), Some(6)], false),
             (&[Some(-2_147_483_648), Some(-2_147_483_648)], false),
             (&[], true),
+            (&[Some(79), Some(-96), None, None, Some(-85), None, Some(34)], true),
+            (
+                &[
+                    Some(32),
+                    Some(26),
+                    Some(47),
+                    Some(19),
+                    None,
+                    None,
+                    Some(56),
+                    None,
+                    Some(27),
+                ],
+                false,
+            ),
         ];
 
         for (root, expected) in test_cases {

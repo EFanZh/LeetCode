@@ -28,13 +28,12 @@ impl Solution {
     }
 
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
-        if let Some(first) = nums.first().copied() {
-            let new_length = Self::remove_duplicates_single(nums, 1, first, 1);
+        let first = *nums.first().unwrap();
+        let new_length = Self::remove_duplicates_single(nums, 1, first, 1);
 
-            nums.truncate(new_length);
-        }
+        nums.truncate(new_length);
 
-        nums.len() as _
+        new_length as _
     }
 }
 
