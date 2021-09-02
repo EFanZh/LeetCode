@@ -39,6 +39,7 @@ mod tests {
                     (("ccbca", "cbcababac"), 1),
                 ],
             ),
+            (&["apple"], &[(("b", "e"), -1), (("a", "a"), -1), (("a", "f"), -1)]),
         ];
 
         for (words, operations) in test_cases {
