@@ -32,11 +32,11 @@ impl Solution {
         bindings_buffer: &mut Vec<(&'a str, Option<i32>)>,
     ) -> Option<(i32, &'a str)> {
         let input = Self::strip_prefix(input, "(")?;
-        let (key, mut input) = Self::symbol(input)?;
+        let (key, mut input) = Self::symbol(input).unwrap();
 
         if matches!(key, "add" | "mult") {
-            let (lhs, input) = Self::expression(&input[1..], context, bindings_buffer)?;
-            let (rhs, input) = Self::expression(&input[1..], context, bindings_buffer)?;
+            let (lhs, input) = Self::expression(&input[1..], context, bindings_buffer).unwrap();
+            let (rhs, input) = Self::expression(&input[1..], context, bindings_buffer).unwrap();
 
             Some((if key == "add" { lhs + rhs } else { lhs * rhs }, &input[1..]))
         } else {
@@ -55,7 +55,7 @@ impl Solution {
                         break symbol.parse().unwrap_or_else(|_| context[symbol]);
                     }
                 } else {
-                    let (value, next_input) = Self::application(next_input, context, bindings_buffer)?;
+                    let (value, next_input) = Self::application(next_input, context, bindings_buffer).unwrap();
 
                     input = next_input;
 

@@ -31,20 +31,18 @@ impl Solution {
 
             for emails in accounts {
                 let (first_email, rest) = emails.split_first().unwrap();
-
-                graph.entry(first_email).or_insert_with(Vec::new);
+                let mut first_email_connections = graph.remove(first_email.as_str()).unwrap_or_default();
 
                 for email in rest {
-                    graph
-                        .entry(first_email)
-                        .and_modify(|nexts| nexts.push(email))
-                        .or_insert_with(|| vec![email]);
+                    first_email_connections.push(email.as_str());
 
                     graph
                         .entry(email)
                         .and_modify(|nexts| nexts.push(first_email))
                         .or_insert_with(|| vec![first_email]);
                 }
+
+                graph.insert(first_email, first_email_connections);
             }
 
             // Find connected components.
