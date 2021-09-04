@@ -602,6 +602,7 @@ pub mod problem_0752_open_the_lock;
 pub mod problem_0754_reach_a_number;
 pub mod problem_0763_partition_labels;
 pub mod problem_0764_largest_plus_sign;
+pub mod problem_0766_toeplitz_matrix;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0832_flipping_an_image;
