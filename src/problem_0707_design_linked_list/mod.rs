@@ -95,6 +95,7 @@ mod tests {
                 Operation::DeleteAtIndex(4),
                 Operation::Get(5, -1),
             ],
+            &[Operation::AddAtIndex(100, 4), Operation::Get(0, -1)],
         ];
 
         for operations in test_cases {

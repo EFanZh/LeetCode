@@ -139,6 +139,7 @@ mod tests {
     fn test_clone_rational() {
         let x = Rational(2, 3);
 
-        assert!(matches!(Clone::clone(&x), Rational(2, 3)));
+        assert_eq!(Clone::clone(&x).0, 2);
+        assert_eq!(Clone::clone(&x).1, 3);
     }
 }
