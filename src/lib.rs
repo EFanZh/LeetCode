@@ -598,6 +598,7 @@ pub mod problem_0745_prefix_and_suffix_search;
 pub mod problem_0746_min_cost_climbing_stairs;
 pub mod problem_0747_largest_number_at_least_twice_of_others;
 pub mod problem_0748_shortest_completing_word;
+pub mod problem_0749_contain_virus;
 pub mod problem_0752_open_the_lock;
 pub mod problem_0754_reach_a_number;
 pub mod problem_0763_partition_labels;
