@@ -321,3 +321,7 @@ Investigate the *n* log(*n*) time complexity solution.
 ## [675. Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)
 
 Is there a best solution?
+
+## [753. Cracking the Safe](https://leetcode.com/problems/cracking-the-safe/)
+
+Why are all of those solutions correct?
