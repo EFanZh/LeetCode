@@ -2,7 +2,6 @@ use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-pub mod generic_recursive;
 pub mod specialized_recursive;
 
 pub trait Solution {

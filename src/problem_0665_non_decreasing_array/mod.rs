@@ -14,6 +14,7 @@ mod tests {
             (&[4, 2, 1], false),
             (&[3, 4, 2, 3], false),
             (&[1], true),
+            (&[5, 7, 1, 8], true),
         ];
 
         for (nums, expected) in test_cases {
