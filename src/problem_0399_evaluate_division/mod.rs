@@ -38,23 +38,38 @@ mod tests {
                 ),
                 &[-1.0, -1.0, 1.0, 1.0],
             ),
+            (
+                (
+                    &[["a", "b"], ["e", "f"], ["b", "e"]],
+                    &[3.4, 1.4, 2.3],
+                    &[
+                        ["b", "a"],
+                        ["a", "f"],
+                        ["f", "f"],
+                        ["e", "e"],
+                        ["c", "c"],
+                        ["a", "c"],
+                        ["f", "e"],
+                    ],
+                ),
+                &[5.0 / 17.0, 10.948, 1.0, 1.0, -1.0, -1.0, 5.0 / 7.0],
+            ),
         ];
 
         for ((equations, values, queries), expected) in test_cases {
-            assert_eq!(
-                S::calc_equation(
-                    equations
-                        .iter()
-                        .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
-                        .collect(),
-                    values.to_vec(),
-                    queries
-                        .iter()
-                        .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
-                        .collect(),
-                ),
-                expected
+            let result = S::calc_equation(
+                equations
+                    .iter()
+                    .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
+                    .collect(),
+                values.to_vec(),
+                queries
+                    .iter()
+                    .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
+                    .collect(),
             );
+
+            approx::assert_ulps_eq!(result.as_slice(), expected);
         }
     }
 }

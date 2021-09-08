@@ -115,6 +115,22 @@ mod tests {
                 Operation::DeleteLast(false),
             ],
         ),
+        (
+            3,
+            &[
+                Operation::InsertFront(8, true),
+                Operation::InsertLast(8, true),
+                Operation::InsertLast(2, true),
+                Operation::GetFront(8),
+                Operation::DeleteLast(true),
+                Operation::GetRear(8),
+                Operation::InsertFront(9, true),
+                Operation::DeleteFront(true),
+                Operation::GetRear(8),
+                Operation::InsertLast(2, true),
+                Operation::IsFull(true),
+            ],
+        ),
     ];
 
     pub fn run<Q: MyCircularDeque>() {

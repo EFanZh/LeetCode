@@ -68,12 +68,12 @@ impl Solution {
         }
     }
 
-    fn heap_pop<T, K: Ord>(heap: &mut Vec<T>, get_key: impl FnMut(&T) -> K) -> Option<T> {
+    fn heap_pop<T, K: Ord>(heap: &mut Vec<T>, mut get_key: impl FnMut(&T) -> K) -> Option<T> {
         heap.pop().map(|mut result| {
             if let Some(top) = heap.first_mut() {
                 mem::swap(top, &mut result);
 
-                Self::heap_fix(heap, 0, get_key);
+                Self::heap_fix(heap, 0, &mut get_key);
             }
 
             result

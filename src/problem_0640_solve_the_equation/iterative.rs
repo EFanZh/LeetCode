@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn parse_number(input: &[u8]) -> Option<(i32, &[u8])> {
-        let (first, mut rest) = input.split_first()?;
+        let (first, mut rest) = input.split_first().unwrap();
 
         if first.is_ascii_digit() {
             let mut result = i32::from(first - b'0');

@@ -6,12 +6,9 @@ use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::iter;
 
-#[derive(Clone, Copy, Eq, Hash, PartialEq)]
-struct State(u32);
-
-impl State {
-    fn get_choosable_integers(self) -> impl Iterator<Item = u32> {
-        let mut choosable_integers = self.0 & ((1 << 20) - 1);
+impl Solution {
+    fn get_choosable_integers(state: u32) -> impl Iterator<Item = u32> {
+        let mut choosable_integers = state & ((1 << 20) - 1);
 
         iter::from_fn(move || {
             if choosable_integers == 0 {
@@ -26,28 +23,25 @@ impl State {
         })
     }
 
-    fn can_i_win_this_round(self) -> bool {
-        let max_choosable_integer = 32 - (self.0 & ((1 << 20) - 1)).leading_zeros();
-        let desired_total = self.0 >> 20;
+    fn can_i_win_this_round(state: u32) -> bool {
+        let max_choosable_integer = 32 - (state & ((1 << 20) - 1)).leading_zeros();
+        let desired_total = state >> 20;
 
         max_choosable_integer >= desired_total
     }
 
-    fn remove_integer(self, integer: u32) -> Self {
-        Self((self.0 & !(1 << (integer - 1))) - (integer << 20))
+    fn remove_integer(state: u32, integer: u32) -> u32 {
+        (state & !(1 << (integer - 1))) - (integer << 20)
     }
-}
 
-impl Solution {
-    fn helper(state: State, cache: &mut HashMap<State, bool>) -> bool {
+    fn helper(state: u32, cache: &mut HashMap<u32, bool>) -> bool {
         if let Some(&result) = cache.get(&state) {
             result
-        } else if state.can_i_win_this_round() {
+        } else if Self::can_i_win_this_round(state) {
             true
         } else {
-            let result = state
-                .get_choosable_integers()
-                .any(|choose| !Self::helper(state.remove_integer(choose), cache));
+            let result = Self::get_choosable_integers(state)
+                .any(|choose| !Self::helper(Self::remove_integer(state, choose), cache));
 
             cache.insert(state, result);
 
@@ -64,10 +58,7 @@ impl Solution {
             Ordering::Greater => {
                 let choosable_integers = (1 << max_choosable_integer) - 1;
 
-                Self::helper(
-                    State((choosable_integers | (desired_total << 20)) as _),
-                    &mut HashMap::new(),
-                )
+                Self::helper((choosable_integers | (desired_total << 20)) as _, &mut HashMap::new())
             }
         }
     }

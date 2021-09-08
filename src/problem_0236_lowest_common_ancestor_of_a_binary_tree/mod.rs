@@ -34,28 +34,21 @@ mod tests {
         })
     }
 
+    fn inverted(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNode>>> {
+        root.map(|root| {
+            let root = root.borrow();
+
+            Rc::new(RefCell::new(TreeNode {
+                val: root.val,
+                left: inverted(root.left.as_deref()),
+                right: inverted(root.right.as_deref()),
+            }))
+        })
+    }
+
     pub fn run<S: Solution>() {
         let test_cases = [
-            (
-                (
-                    &[
-                        Some(3),
-                        Some(5),
-                        Some(1),
-                        Some(6),
-                        Some(2),
-                        Some(0),
-                        Some(8),
-                        None,
-                        None,
-                        Some(7),
-                        Some(4),
-                    ] as &[_],
-                    5,
-                    1,
-                ),
-                3,
-            ),
+            ((&[Some(3), Some(5), Some(1)] as &[_], 5, 1), 3),
             (
                 (
                     &[
@@ -79,15 +72,53 @@ mod tests {
             ((&[Some(1), Some(2)], 1, 2), 1),
             ((&[Some(1), Some(2), Some(3)], 3, 2), 1),
             ((&[Some(1), Some(2), Some(3), None, Some(4)], 4, 3), 1),
+            (
+                (&[Some(-1), Some(0), None, Some(1), None, Some(2), None, Some(3)], 3, 2),
+                2,
+            ),
+            (
+                (
+                    &[Some(-1), Some(0), Some(3), Some(-2), Some(4), None, None, Some(8)],
+                    8,
+                    4,
+                ),
+                0,
+            ),
+            (
+                (
+                    &[
+                        Some(9),
+                        Some(-1),
+                        Some(-4),
+                        Some(10),
+                        Some(3),
+                        None,
+                        None,
+                        None,
+                        Some(5),
+                    ],
+                    3,
+                    5,
+                ),
+                -1,
+            ),
+            (
+                (&[Some(3), Some(5), Some(1), Some(6), Some(2), Some(0), Some(8)], 0, 8),
+                1,
+            ),
         ];
 
         for ((root, p, q), expected) in test_cases {
             let root = test_utilities::make_tree(root.iter().copied());
-            let p = find_node(&root, p);
-            let q = find_node(&root, q);
-            let expected = find_node(&root, expected);
+            let inverted_root = inverted(root.as_deref());
 
-            assert_eq!(S::lowest_common_ancestor(root, p, q), expected);
+            for (root, p, q) in [(root, p, q), (inverted_root, q, p)] {
+                let p = find_node(&root, p);
+                let q = find_node(&root, q);
+                let expected = find_node(&root, expected);
+
+                assert_eq!(S::lowest_common_ancestor(root, p, q), expected);
+            }
         }
     }
 }

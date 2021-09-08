@@ -14,6 +14,7 @@ mod tests {
             (&["aaa", "aaa", "aa"], -1),
             (&["aabbcc", "aabbcc", "bc", "bcc", "aabbccc"], 7),
             (&["aabbcc", "aabbcc", "cb"], 2),
+            (&["aabbcc", "aabbcc", "b", "bc"], -1),
         ];
 
         for (strs, expected) in test_cases {

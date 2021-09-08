@@ -18,6 +18,7 @@ mod tests {
             (("1", "1.1"), -1),
             (("1.0", "1"), 0),
             (("1", "0"), 1),
+            (("1", "1.0.1"), -1),
         ];
 
         for ((version1, version2), expected) in test_cases {

@@ -9,7 +9,11 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [((&[1, 1, 1] as &[_], 2), 2), ((&[1, 2, 3], 3), 2)];
+        let test_cases = [
+            ((&[1, 1, 1] as &[_], 2), 2),
+            ((&[1, 2, 3], 3), 2),
+            ((&[1, -1, 0], 0), 3),
+        ];
 
         for ((nums, k), expected) in test_cases {
             assert_eq!(S::subarray_sum(nums.to_vec(), k), expected);
