@@ -607,6 +607,7 @@ pub mod problem_0762_prime_number_of_set_bits_in_binary_representation;
 pub mod problem_0763_partition_labels;
 pub mod problem_0764_largest_plus_sign;
 pub mod problem_0766_toeplitz_matrix;
+pub mod problem_0767_reorganize_string;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0832_flipping_an_image;
