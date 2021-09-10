@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::branches_sharing_code)]
     pub fn find_max_consecutive_ones(nums: Vec<i32>) -> i32 {
         let mut i = 0;
         let mut result = 0;
