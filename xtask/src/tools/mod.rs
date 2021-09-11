@@ -6,19 +6,37 @@ use std::process::Command;
 #[cfg(target_os = "windows")]
 mod windows;
 
-fn find_rustc_host(toolchain: &str) -> String {
+pub struct RustVersionMeta {
+    pub host: String,
+    pub commit_hash: String,
+}
+
+pub fn find_rust_version_meta(toolchain: &str) -> RustVersionMeta {
+    let mut host = None;
+    let mut commit_hash = None;
+
     utilities::run_command_and_stream_output(
         Command::new("rustc").args([format!("+{}", toolchain).as_str(), "-vV"]),
         |stdout| {
-            BufReader::new(stdout)
-                .lines()
-                .find_map(|line| line.unwrap().strip_prefix("host: ").map(str::to_string))
+            for line in BufReader::new(stdout).lines() {
+                let line = line.unwrap();
+
+                if let Some(host_value) = line.strip_prefix("host: ") {
+                    host = Some(host_value.to_string());
+                } else if let Some(commit_hash_value) = line.strip_prefix("commit-hash: ") {
+                    commit_hash = Some(commit_hash_value.to_string());
+                }
+            }
         },
-    )
-    .unwrap()
+    );
+
+    RustVersionMeta {
+        host: host.unwrap(),
+        commit_hash: commit_hash.unwrap(),
+    }
 }
 
-pub fn find_rust_lib(toolchain: &str) -> PathBuf {
+pub fn find_rust_sysroot(toolchain: &str) -> PathBuf {
     let mut path_buffer = String::from_utf8(utilities::run_command_and_get_output(Command::new("rustc").args([
         format!("+{}", toolchain).as_str(),
         "--print",
@@ -28,11 +46,7 @@ pub fn find_rust_lib(toolchain: &str) -> PathBuf {
 
     path_buffer.pop();
 
-    let mut path = PathBuf::from(path_buffer);
-
-    path.extend(["lib", "rustlib", find_rustc_host(toolchain).as_str(), "bin"]);
-
-    path
+    PathBuf::from(path_buffer)
 }
 
 fn find_cmake_common() -> Option<PathBuf> {

@@ -1,9 +1,10 @@
 use crate::{tools, utilities};
 use serde_json::{Deserializer, Value};
+use std::env;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter, Write};
 use std::fs::{self, File};
-use std::path::{self, Path, PathBuf};
+use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
 use structopt::StructOpt;
@@ -93,13 +94,9 @@ fn add_cmake_variable(command: &mut Command, variable: &str, value: &OsStr) {
 }
 
 fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>, output: &Path) -> PathBuf {
-    cfg_if::cfg_if! {
-        if #[cfg(target_os = "windows")] {
-            const CPP_COVERAGE_TARGET_DIR: &str = "target\\c++-coverage";
-        } else {
-            const CPP_COVERAGE_TARGET_DIR: &str = "target/c++-coverage";
-        }
-    }
+    let mut cpp_coverage_target_dir = PathBuf::from("target");
+
+    cpp_coverage_target_dir.push(format!("c++-coverage-{}", env::consts::OS));
 
     let cmake_executable = tools::find_cmake().unwrap();
     let mut clang = String::from("clang");
@@ -117,20 +114,20 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
     let mut cmake_command = Command::new(&cmake_executable);
 
     cmake_command.args([
-        "-S",
-        "c++",
-        "-B",
-        CPP_COVERAGE_TARGET_DIR,
-        "-G",
-        "Ninja",
-        "-D",
-        "CMAKE_BUILD_TYPE=Debug",
-        "-D",
-        format!("CMAKE_C_COMPILER={}", clang).as_str(),
-        "-D",
-        format!("CMAKE_CXX_COMPILER={}", clang_plus_plus).as_str(),
-        "-D",
-        "ENABLE_SOURCE_BASED_CODE_COVERAGE=ON",
+        "-S".as_ref(),
+        "c++".as_ref(),
+        "-B".as_ref(),
+        cpp_coverage_target_dir.as_os_str(),
+        "-G".as_ref(),
+        "Ninja".as_ref(),
+        "-D".as_ref(),
+        "CMAKE_BUILD_TYPE=Debug".as_ref(),
+        "-D".as_ref(),
+        format!("CMAKE_C_COMPILER={}", clang).as_ref(),
+        "-D".as_ref(),
+        format!("CMAKE_CXX_COMPILER={}", clang_plus_plus).as_ref(),
+        "-D".as_ref(),
+        "ENABLE_SOURCE_BASED_CODE_COVERAGE=ON".as_ref(),
     ]);
 
     add_cmake_variable(
@@ -151,7 +148,11 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
 
     // Build.
 
-    utilities::run_command(Command::new(cmake_executable).args(["--build", CPP_COVERAGE_TARGET_DIR, "-j"]));
+    utilities::run_command(Command::new(cmake_executable).args([
+        "--build".as_ref(),
+        cpp_coverage_target_dir.as_os_str(),
+        "-j".as_ref(),
+    ]));
 
     // Run.
 
@@ -163,7 +164,7 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
         }
     }
 
-    let test_executable = Path::new(CPP_COVERAGE_TARGET_DIR).join(executable_name);
+    let test_executable = cpp_coverage_target_dir.join(executable_name);
 
     run_coverage_tests(&test_executable, llvm_profdata.as_ref(), output);
 
@@ -206,19 +207,6 @@ fn run_rust_tests(toolchain: &str, llvm_profdata: &Path, output: &Path) -> PathB
     PathBuf::from(test_executable)
 }
 
-fn get_llvm_tools(toolchain: &str) -> (PathBuf, PathBuf) {
-    let llvm_tool_dir = tools::find_rust_lib(toolchain);
-    let mut llvm_profdata = llvm_tool_dir.clone();
-
-    llvm_profdata.push("llvm-profdata");
-
-    let mut llvm_cov = llvm_tool_dir;
-
-    llvm_cov.push("llvm-cov");
-
-    (llvm_profdata, llvm_cov)
-}
-
 fn closure_type_deduction_helper<T>(f: T) -> T
 where
     T: for<'a> FnOnce(&'a mut Command) -> &'a mut Command,
@@ -228,11 +216,32 @@ where
 
 impl Subcommand {
     pub fn run(self) {
+        let rust_version_meta = tools::find_rust_version_meta(&self.rust_toolchain);
+
+        let rust_lib_path = {
+            let mut buffer = tools::find_rust_sysroot(&self.rust_toolchain);
+
+            buffer.extend(["lib", "rustlib"]);
+
+            buffer
+        };
+
         let coverage_dir = tempfile::tempdir().unwrap();
         let cpp_profdata = coverage_dir.path().join("c++.profdata");
         let rust_profdata = coverage_dir.path().join("rust.profdata");
         let all_profdata = coverage_dir.path().join("all.profdata");
-        let (llvm_profdata, llvm_cov) = get_llvm_tools(&self.rust_toolchain);
+
+        let (llvm_profdata, llvm_cov) = {
+            let mut buffer = rust_lib_path.join(rust_version_meta.host.as_str());
+
+            buffer.push("bin");
+
+            let llvm_profdata = buffer.join("llvm-profdata");
+
+            buffer.push("llvm-cov");
+
+            (llvm_profdata, buffer)
+        };
 
         // Run tests.
 
@@ -257,15 +266,17 @@ impl Subcommand {
         // Generate report.
 
         let add_common_llvm_cov_args = closure_type_deduction_helper(|command: &mut Command| {
-            let mut path_equivalence = OsString::from("src,");
+            let src_path_equivalence = {
+                let mut buffer = OsString::from("src,");
 
-            path_equivalence.push(utilities::get_project_dir());
-            path_equivalence.push(path::MAIN_SEPARATOR.encode_utf8(&mut [0]));
-            path_equivalence.push("src");
+                buffer.push(utilities::get_project_dir().join("src"));
+
+                buffer
+            };
 
             command.args([
                 "--path-equivalence".as_ref(),
-                path_equivalence.as_os_str(),
+                src_path_equivalence.as_os_str(),
                 "--instr-profile".as_ref(),
                 all_profdata.as_os_str(),
                 cpp_test_executable.as_os_str(),
