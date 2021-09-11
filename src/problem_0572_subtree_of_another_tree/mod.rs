@@ -2,6 +2,7 @@ use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
+pub mod hash_map;
 pub mod hashing;
 
 pub trait Solution {
@@ -28,6 +29,81 @@ mod tests {
                     &[Some(4), Some(1), Some(2)],
                 ),
                 false,
+            ),
+            (
+                (
+                    &[
+                        Some(29),
+                        Some(28),
+                        Some(30),
+                        Some(27),
+                        Some(29),
+                        Some(29),
+                        Some(31),
+                        Some(26),
+                        Some(26),
+                        Some(28),
+                        Some(28),
+                        Some(28),
+                        Some(28),
+                        Some(30),
+                        Some(32),
+                        Some(25),
+                        Some(25),
+                        Some(25),
+                        Some(25),
+                        Some(27),
+                        Some(29),
+                        None,
+                        Some(29),
+                        Some(29),
+                    ],
+                    &[Some(29)],
+                ),
+                true,
+            ),
+            (
+                (
+                    &[
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        Some(2),
+                    ],
+                    &[
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        None,
+                        Some(1),
+                        Some(2),
+                    ],
+                ),
+                true,
             ),
         ];
 
