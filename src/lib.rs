@@ -609,6 +609,7 @@ pub mod problem_0764_largest_plus_sign;
 pub mod problem_0766_toeplitz_matrix;
 pub mod problem_0767_reorganize_string;
 pub mod problem_0768_max_chunks_to_make_sorted_ii;
+pub mod problem_0771_jewels_and_stones;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0832_flipping_an_image;
