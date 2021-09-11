@@ -4,7 +4,7 @@ use std::env;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter, Write};
 use std::fs::{self, File};
-use std::path::{Path, PathBuf};
+use std::path::{self, Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
 use structopt::StructOpt;
@@ -275,6 +275,12 @@ impl Subcommand {
             };
 
             command.args([
+                "--ignore-filename-regex".as_ref(),
+                format!(
+                    "^(/rustc/|{})",
+                    regex_syntax::escape(&format!("{}{}", env!("CARGO_HOME"), path::MAIN_SEPARATOR))
+                )
+                .as_ref(),
                 "--path-equivalence".as_ref(),
                 src_path_equivalence.as_os_str(),
                 "--instr-profile".as_ref(),

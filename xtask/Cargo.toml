@@ -6,6 +6,7 @@ version = "0.1.0"
 
 [dependencies]
 cfg-if = "*"
+regex-syntax = "*"
 serde_json = "*"
 structopt = "*"
 tempfile = "*"
