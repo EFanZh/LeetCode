@@ -40,6 +40,11 @@ mod tests {
                 ],
             ),
             (&["apple"], &[(("b", "e"), -1), (("a", "a"), -1), (("a", "f"), -1)]),
+            (&["axyz", "abcb", "bxyz", "abcc", "cxyz"], &[(("abc", "xyz"), -1)]),
+            (
+                &["abca", "axyz", "abcb", "bxyz", "abcc", "cxyz"],
+                &[(("abc", "xyz"), -1)],
+            ),
         ];
 
         for (words, operations) in test_cases {

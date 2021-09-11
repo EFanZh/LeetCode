@@ -2,14 +2,18 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
 use std::convert::TryInto;
+use std::hash::BuildHasherDefault;
 use std::mem;
 
 impl Solution {
     pub fn restore_array(adjacent_pairs: Vec<Vec<i32>>) -> Vec<i32> {
         let n = adjacent_pairs.len() + 1;
-        let mut graph = HashMap::<_, (_, _)>::with_capacity(n);
+
+        let mut graph =
+            HashMap::<_, (_, _), _>::with_capacity_and_hasher(n, BuildHasherDefault::<DefaultHasher>::default());
 
         for pair in adjacent_pairs {
             let [a, b]: [i32; 2] = pair.as_slice().try_into().unwrap();

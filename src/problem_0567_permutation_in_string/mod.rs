@@ -14,6 +14,7 @@ mod tests {
             (("ab", "eidboaoo"), false),
             (("ab", "a"), false),
             (("ab", "ba"), true),
+            (("abc", "bbbca"), true),
         ];
 
         for ((s1, s2), expected) in test_cases {

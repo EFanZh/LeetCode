@@ -57,6 +57,8 @@ mod tests {
                  </DIV>",
                 true,
             ),
+            ("<A><![CDATA[</A>]]123></A>", false),
+            ("<TRUe><![CDATA[123123]]]]><![CDATA[>123123]]></TRUe>", false),
         ];
 
         for (code, expected) in test_cases {

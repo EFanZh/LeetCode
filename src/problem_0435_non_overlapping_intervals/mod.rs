@@ -10,14 +10,14 @@ mod tests {
 
     pub fn run<S: Solution>() {
         let test_cases = [
-            (&[(1, 2), (2, 3), (3, 4), (1, 3)] as &[_], 1),
-            (&[(1, 2), (1, 2), (1, 2)], 2),
-            (&[(1, 2), (2, 3)], 0),
+            (&[[1, 2], [2, 3], [3, 4], [1, 3]] as &[_], 1),
+            (&[[1, 2], [1, 2], [1, 2]], 2),
+            (&[[1, 2], [2, 3]], 0),
         ];
 
         for (intervals, expected) in test_cases {
             assert_eq!(
-                S::erase_overlap_intervals(intervals.iter().map(|&(s, f)| vec![s, f]).collect()),
+                S::erase_overlap_intervals(intervals.iter().copied().map(Vec::from).collect()),
                 expected
             );
         }

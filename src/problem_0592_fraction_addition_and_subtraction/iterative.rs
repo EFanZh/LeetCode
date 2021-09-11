@@ -27,7 +27,7 @@ impl Solution {
     fn parse_fraction(input: &[u8]) -> Option<(i16, &[u8])> {
         let (is_positive, input) = Self::parse_sign(input);
         let (numerator, input) = Self::parse_number(input)?;
-        let (denominator, input) = Self::parse_number(input.get(1..)?)?;
+        let (denominator, input) = Self::parse_number(&input[1..]).unwrap();
 
         let numerator = if is_positive {
             i16::from(numerator)

@@ -26,6 +26,7 @@ mod tests {
             ((&[Some(2), Some(1), Some(3)], 4), true),
             ((&[Some(2), Some(1), Some(3)], 1), false),
             ((&[Some(2), Some(1), Some(3)], 3), true),
+            ((&[Some(2)], 2), false),
         ];
 
         for ((root, k), expected) in test_cases {

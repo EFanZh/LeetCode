@@ -34,18 +34,6 @@ mod tests {
         })
     }
 
-    fn inverted(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNode>>> {
-        root.map(|root| {
-            let root = root.borrow();
-
-            Rc::new(RefCell::new(TreeNode {
-                val: root.val,
-                left: inverted(root.left.as_deref()),
-                right: inverted(root.right.as_deref()),
-            }))
-        })
-    }
-
     pub fn run<S: Solution>() {
         let test_cases = [
             ((&[Some(3), Some(5), Some(1)] as &[_], 5, 1), 3),
@@ -110,9 +98,14 @@ mod tests {
 
         for ((root, p, q), expected) in test_cases {
             let root = test_utilities::make_tree(root.iter().copied());
-            let inverted_root = inverted(root.as_deref());
+            let inverted_root = test_utilities::invert_tree(root.as_deref());
 
-            for (root, p, q) in [(root, p, q), (inverted_root, q, p)] {
+            for (root, p, q) in [
+                (root.clone(), p, q),
+                (inverted_root.clone(), p, q),
+                (root, q, p),
+                (inverted_root, q, p),
+            ] {
                 let p = find_node(&root, p);
                 let q = find_node(&root, q);
                 let expected = find_node(&root, expected);
