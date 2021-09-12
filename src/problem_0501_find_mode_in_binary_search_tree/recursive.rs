@@ -39,9 +39,7 @@ impl Solution {
             }
         });
 
-        if let Some(prev_val) = prev {
-            f(prev_val, length);
-        }
+        f(prev.unwrap(), length);
     }
 
     pub fn find_mode(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {

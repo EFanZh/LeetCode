@@ -144,6 +144,13 @@ mod tests {
 
     #[test]
     fn test_clone_vec6() {
-        assert!(matches!(Clone::clone(&Vec6(0, 1, 2, 3, 4, 5)), Vec6(0, 1, 2, 3, 4, 5)));
+        let cloned = Clone::clone(&Vec6(0, 1, 2, 3, 4, 5));
+
+        assert_eq!(cloned.0, 0);
+        assert_eq!(cloned.1, 1);
+        assert_eq!(cloned.2, 2);
+        assert_eq!(cloned.3, 3);
+        assert_eq!(cloned.4, 4);
+        assert_eq!(cloned.5, 5);
     }
 }
