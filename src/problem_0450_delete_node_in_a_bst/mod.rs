@@ -55,6 +55,7 @@ mod tests {
                 ),
                 &[Some(3), Some(1), Some(6), None, None, Some(5), None, Some(4)],
             ),
+            ((&[Some(2), Some(1)], 2), &[Some(1)]),
         ];
 
         for ((root, key), expected) in test_cases {

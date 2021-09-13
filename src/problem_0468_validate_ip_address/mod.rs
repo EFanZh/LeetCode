@@ -17,6 +17,7 @@ mod tests {
             ("1e1.4.5.6", "Neither"),
             ("2001:db8:85a3:0::8a2E:0370:7334", "Neither"),
             ("01.01.01.01", "Neither"),
+            ("234.234.234.224", "IPv4"),
         ];
 
         for (ip, expected) in test_cases {
