@@ -38,35 +38,39 @@ impl Node {
         }
     }
 
-    #[allow(clippy::option_if_let_else)]
+    #[allow(clippy::manual_map, clippy::option_if_let_else)]
     fn iter(&self) -> impl Iterator<Item = u8> + '_ {
         let mut state = State::Start(&self.children);
         let mut stack = Vec::new();
 
-        iter::from_fn(move || loop {
-            match &mut state {
-                State::Start(children) => {
-                    state = State::NextChild(children.iter());
+        iter::from_fn(move || match &mut state {
+            State::Start(children) => {
+                state = State::NextChild(children.iter());
 
-                    return Some(b'1');
-                }
-                State::NextChild(child_iter) => {
-                    return Some(if let Some(child) = child_iter.next() {
-                        stack.push(mem::replace(&mut state, State::NextChild(child.children.iter())));
+                Some(b'1')
+            }
+            State::NextChild(child_iter) => Some(if let Some(child) = child_iter.next() {
+                stack.push(mem::replace(child_iter, child.children.iter()));
+
+                b'1'
+            } else {
+                state = State::End;
+
+                b'0'
+            }),
+            State::End => {
+                if let Some(child_iter) = stack.last_mut() {
+                    Some(if let Some(child) = child_iter.next() {
+                        state = State::NextChild(child.children.iter());
 
                         b'1'
                     } else {
-                        state = State::End;
+                        stack.pop();
 
                         b'0'
                     })
-                }
-                State::End => {
-                    if let Some(top) = stack.pop() {
-                        state = top;
-                    } else {
-                        return None;
-                    }
+                } else {
+                    None
                 }
             }
         })
