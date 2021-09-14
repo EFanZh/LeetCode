@@ -608,6 +608,7 @@ pub mod problem_0761_special_binary_string;
 pub mod problem_0762_prime_number_of_set_bits_in_binary_representation;
 pub mod problem_0763_partition_labels;
 pub mod problem_0764_largest_plus_sign;
+pub mod problem_0765_couples_holding_hands;
 pub mod problem_0766_toeplitz_matrix;
 pub mod problem_0767_reorganize_string;
 pub mod problem_0768_max_chunks_to_make_sorted_ii;
