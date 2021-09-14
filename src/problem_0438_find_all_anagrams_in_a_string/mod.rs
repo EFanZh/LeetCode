@@ -14,6 +14,7 @@ mod tests {
             (("cbaebabacd", "abc"), &[0, 6] as &[_]),
             (("abab", "ab"), &[0, 1, 2]),
             (("abc", "abcd"), &[]),
+            (("aa", "bb"), &[]),
         ];
 
         for ((s, p), expected) in test_cases {

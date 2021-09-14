@@ -10,12 +10,15 @@ mod tests {
     use crate::test_utilities;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(
-            1,
-            &[
-                "0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00",
-            ] as &[_],
-        )];
+        let test_cases = [
+            (
+                1,
+                &[
+                    "0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00",
+                ] as &[_],
+            ),
+            (9, &[]),
+        ];
 
         for (num, expected) in test_cases {
             assert_eq!(test_utilities::unstable_sorted(S::read_binary_watch(num)), expected);

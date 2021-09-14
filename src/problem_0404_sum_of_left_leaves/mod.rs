@@ -34,6 +34,7 @@ mod tests {
                 ],
                 5,
             ),
+            (&[Some(1), Some(2)], 2),
         ];
 
         for (root, expected) in test_cases {
