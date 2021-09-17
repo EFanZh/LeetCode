@@ -615,6 +615,7 @@ pub mod problem_0768_max_chunks_to_make_sorted_ii;
 pub mod problem_0769_max_chunks_to_make_sorted;
 pub mod problem_0771_jewels_and_stones;
 pub mod problem_0773_sliding_puzzle;
+pub mod problem_0775_global_and_local_inversions;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0832_flipping_an_image;
