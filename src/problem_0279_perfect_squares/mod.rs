@@ -27,6 +27,7 @@ mod tests {
             (12, 3),
             (13, 2),
             (14, 3),
+            (15, 4),
         ];
 
         for (n, expected) in test_cases {

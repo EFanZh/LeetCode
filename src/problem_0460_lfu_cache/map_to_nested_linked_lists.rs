@@ -152,9 +152,7 @@ impl LFUCache {
             self.block_head = next_block_index;
         }
 
-        if let Some(next_block) = self.block_memory.get_mut(next_block_index) {
-            next_block.prev = prev_block_index;
-        }
+        self.block_memory.get_mut(next_block_index).unwrap().prev = prev_block_index;
 
         // Free block.
 

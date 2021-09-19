@@ -47,6 +47,7 @@ mod tests {
                 Unfollow(2, 1),
                 GetNewsFeed(2, &[]),
             ],
+            &[Unfollow(2, 3), GetNewsFeed(2, &[])],
         ];
 
         for operations in test_cases {
