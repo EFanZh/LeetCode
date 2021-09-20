@@ -5,15 +5,6 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
-    #![allow(clippy::manual_strip)]
-    fn strip_prefix<'a>(input: &'a str, prefix: &str) -> Option<&'a str> {
-        if input.starts_with(prefix) {
-            Some(&input[prefix.len()..])
-        } else {
-            None
-        }
-    }
-
     fn symbol(input: &str) -> Option<(&str, &str)> {
         let end = input
             .find(|c: char| matches!(c, '(' | ')' | ' '))
@@ -31,7 +22,7 @@ impl Solution {
         context: &mut HashMap<&'a str, i32>,
         bindings_buffer: &mut Vec<(&'a str, Option<i32>)>,
     ) -> Option<(i32, &'a str)> {
-        let input = Self::strip_prefix(input, "(")?;
+        let input = input.strip_prefix('(')?;
         let (key, mut input) = Self::symbol(input).unwrap();
 
         if matches!(key, "add" | "mult") {

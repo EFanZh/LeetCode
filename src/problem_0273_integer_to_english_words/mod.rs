@@ -12,6 +12,7 @@ mod tests {
         let test_cases = [
             (0, "Zero"),
             (20, "Twenty"),
+            (100, "One Hundred"),
             (123, "One Hundred Twenty Three"),
             (1000, "One Thousand"),
             (12345, "Twelve Thousand Three Hundred Forty Five"),

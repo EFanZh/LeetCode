@@ -20,12 +20,15 @@ mod tests {
                 &[Some(1), Some(2), Some(3), None, Some(5)] as &[_],
                 &["1->2->5", "1->3"] as &[_],
             ),
+            (&[Some(1)], &["1"]),
             (
                 &[Some(1), Some(2), Some(3), Some(5), Some(6)],
                 &["1->2->5", "1->2->6", "1->3"],
             ),
             (&[Some(1), Some(2)], &["1->2"]),
             (&[], &[]),
+            (&[Some(1), Some(2), Some(3), Some(4)], &["1->2->4", "1->3"]),
+            (&[Some(1), None, Some(3)], &["1->3"]),
         ];
 
         for (root, expected) in test_cases {

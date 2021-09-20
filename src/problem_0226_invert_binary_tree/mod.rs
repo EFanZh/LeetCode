@@ -15,10 +15,14 @@ mod tests {
     use crate::test_utilities;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(
-            &[Some(4), Some(2), Some(7), Some(1), Some(3), Some(6), Some(9)] as &[_],
-            &[Some(4), Some(7), Some(2), Some(9), Some(6), Some(3), Some(1)] as &[_],
-        )];
+        let test_cases = [
+            (
+                &[Some(4), Some(2), Some(7), Some(1), Some(3), Some(6), Some(9)] as &[_],
+                &[Some(4), Some(7), Some(2), Some(9), Some(6), Some(3), Some(1)] as &[_],
+            ),
+            (&[Some(2), Some(1), Some(3)], &[Some(2), Some(3), Some(1)]),
+            (&[], &[]),
+        ];
 
         for (root, expected) in test_cases {
             assert_eq!(

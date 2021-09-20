@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::collections::HashSet;
 
 impl Solution {
@@ -42,16 +41,12 @@ impl Solution {
                 }
             }
         } else if stack == 0 {
-            match base.len().cmp(max_length) {
-                Ordering::Less => {}
-                Ordering::Equal => {
-                    result.insert(base.clone());
-                }
-                Ordering::Greater => {
-                    result.clear();
-                    result.insert(base.clone());
-                    *max_length = base.len();
-                }
+            if base.len() == *max_length {
+                result.insert(base.clone());
+            } else {
+                result.clear();
+                result.insert(base.clone());
+                *max_length = base.len();
             }
         }
     }
