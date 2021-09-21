@@ -613,6 +613,7 @@ pub mod problem_0766_toeplitz_matrix;
 pub mod problem_0767_reorganize_string;
 pub mod problem_0768_max_chunks_to_make_sorted_ii;
 pub mod problem_0769_max_chunks_to_make_sorted;
+pub mod problem_0770_basic_calculator_iv;
 pub mod problem_0771_jewels_and_stones;
 pub mod problem_0773_sliding_puzzle;
 pub mod problem_0775_global_and_local_inversions;
