@@ -37,7 +37,10 @@ mod tests {
                 true,
             ),
             ((&[], 0), false),
+            ((&[Some(1), Some(2)], 0), false),
             ((&[Some(1), Some(2)], 1), false),
+            ((&[Some(1), Some(2), Some(3)], 5), false),
+            ((&[Some(-2), None, Some(-3)], -2), false),
         ];
 
         for ((root, sum), expected) in test_cases {

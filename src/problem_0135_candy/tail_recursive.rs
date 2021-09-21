@@ -51,10 +51,9 @@ impl Solution {
 
     pub fn candy(ratings: Vec<i32>) -> i32 {
         let mut result = 0;
+        let (&first, rest) = ratings.split_first().unwrap();
 
-        if let Some((first, rest)) = ratings.split_first() {
-            Self::going_up(*first, rest, 0, &mut result);
-        }
+        Self::going_up(first, rest, 0, &mut result);
 
         result
     }

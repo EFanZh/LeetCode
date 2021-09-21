@@ -37,7 +37,10 @@ mod tests {
                 ),
                 &[&[5, 4, 11, 2] as &[_], &[5, 8, 4, 5]] as &[&[_]],
             ),
+            ((&[Some(1), Some(2), Some(3)], 5), &[]),
+            ((&[Some(1), Some(2)], 5), &[]),
             ((&[], 0), &[]),
+            ((&[Some(-2), None, Some(-3)], -2), &[]),
         ];
 
         for ((root, sum), expected) in test_cases {

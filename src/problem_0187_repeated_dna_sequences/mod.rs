@@ -17,6 +17,7 @@ mod tests {
             ),
             ("", &[]),
             ("AAAAAAAAAAA", &["AAAAAAAAAA"]),
+            ("AAAAAAAAAAAAA", &["AAAAAAAAAA"]),
         ];
 
         for (s, expected) in test_cases {

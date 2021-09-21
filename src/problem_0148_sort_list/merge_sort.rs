@@ -20,37 +20,33 @@ impl Solution {
     }
 
     fn merge(
-        group_1: Option<Box<ListNode>>,
-        group_2: Option<Box<ListNode>>,
+        mut left: Box<ListNode>,
+        mut right: Box<ListNode>,
         mut target: &mut Option<Box<ListNode>>,
     ) -> &mut Option<Box<ListNode>> {
-        match (group_1, group_2) {
-            (None, None) => return target,
-            (None, Some(group)) | (Some(group), None) => target = &mut target.get_or_insert(group).next,
-            (Some(mut left), Some(mut right)) => loop {
-                if right.val < left.val {
-                    target = &mut target.get_or_insert(right).next;
+        loop {
+            if right.val < left.val {
+                target = &mut target.get_or_insert(right).next;
 
-                    if let Some(next_right) = target.take() {
-                        right = next_right;
-                    } else {
-                        target = &mut target.get_or_insert(left).next;
-
-                        break;
-                    }
+                if let Some(next_right) = target.take() {
+                    right = next_right;
                 } else {
                     target = &mut target.get_or_insert(left).next;
 
-                    if let Some(next_left) = target.take() {
-                        left = next_left;
-                    } else {
-                        target = &mut target.get_or_insert(right).next;
-
-                        break;
-                    }
+                    break;
                 }
-            },
-        };
+            } else {
+                target = &mut target.get_or_insert(left).next;
+
+                if let Some(next_left) = target.take() {
+                    left = next_left;
+                } else {
+                    target = &mut target.get_or_insert(right).next;
+
+                    break;
+                }
+            }
+        }
 
         while let Some(node) = target {
             target = &mut node.next;
@@ -59,12 +55,13 @@ impl Solution {
         target
     }
 
-    pub fn sort_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        let mut head = head;
         let length = iter::successors(head.as_deref(), |node| node.next.as_deref()).count();
         let mut group_length = 1;
 
         while group_length < length {
-            let next_group_length = group_length + group_length;
+            let next_group_length = group_length * 2;
             let mut next_head = None;
             let mut tail = &mut next_head;
 
@@ -72,7 +69,7 @@ impl Solution {
                 let (group_1, rest) = Self::split_at(head, group_length);
                 let (group_2, rest) = Self::split_at(rest, group_length);
 
-                tail = Self::merge(group_1, group_2, tail);
+                tail = Self::merge(group_1.unwrap(), group_2.unwrap(), tail);
                 head = rest;
             }
 
@@ -81,7 +78,7 @@ impl Solution {
             } else {
                 let (group_1, group_2) = Self::split_at(head, group_length);
 
-                Self::merge(group_1, group_2, tail);
+                Self::merge(group_1.unwrap(), group_2.unwrap(), tail);
             }
 
             head = next_head;

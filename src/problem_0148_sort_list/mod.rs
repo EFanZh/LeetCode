@@ -15,6 +15,7 @@ mod tests {
         let test_cases = [
             (&[4, 2, 1, 3] as &[_], &[1, 2, 3, 4] as &[_]),
             (&[-1, 5, 3, 4, 0], &[-1, 0, 3, 4, 5]),
+            (&[], &[]),
         ];
 
         for (head, expected) in test_cases {

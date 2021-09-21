@@ -2,36 +2,30 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     fn combination_sum3_helper(first: i32, k: i32, n: i32, base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
         let remaining_numbers = 10 - first;
 
-        match remaining_numbers.cmp(&k) {
-            Ordering::Less => {}
-            Ordering::Equal => {
-                if (first + 9) * remaining_numbers / 2 == n {
-                    let saved_length = base.len();
+        if remaining_numbers == k {
+            if (first + 9) * remaining_numbers / 2 == n {
+                let saved_length = base.len();
 
-                    base.extend(first..10);
+                base.extend(first..10);
 
-                    result.push(base.clone());
+                result.push(base.clone());
 
-                    base.truncate(saved_length);
-                }
+                base.truncate(saved_length);
             }
-            Ordering::Greater => {
-                if first <= n {
-                    base.push(first);
+        } else {
+            if first <= n {
+                base.push(first);
 
-                    Self::combination_sum3_helper(first + 1, k - 1, n - first, base, result);
+                Self::combination_sum3_helper(first + 1, k - 1, n - first, base, result);
 
-                    base.pop();
-                }
-
-                Self::combination_sum3_helper(first + 1, k, n, base, result);
+                base.pop();
             }
+
+            Self::combination_sum3_helper(first + 1, k, n, base, result);
         }
     }
 

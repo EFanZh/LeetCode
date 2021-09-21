@@ -24,13 +24,10 @@ impl Solution {
     }
 
     pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
-        match numbers
-            .split_first()
-            .and_then(|(first, rest)| Self::two_sum_head(0, *first, rest, target))
-        {
-            None => Vec::new(),
-            Some([i, j]) => vec![(i + 1) as _, (j + 1) as _],
-        }
+        let (first, rest) = numbers.split_first().unwrap();
+        let [i, j] = Self::two_sum_head(0, *first, rest, target).unwrap();
+
+        vec![(i + 1) as _, (j + 1) as _]
     }
 }
 

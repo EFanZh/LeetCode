@@ -43,7 +43,7 @@ std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(C &&values) {
     auto it = std::cbegin(values);
     const auto it_end = std::cend(values);
 
-    if (it != it_end && *it) {
+    if (it != it_end) {
         root = buffer.emplace_back(std::make_unique<T>(**it)).get();
 
         ++it;

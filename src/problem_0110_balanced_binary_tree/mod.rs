@@ -33,6 +33,41 @@ mod tests {
                 ],
                 false,
             ),
+            (&[], true),
+            (
+                &[
+                    Some(1),
+                    Some(2),
+                    Some(2),
+                    Some(3),
+                    None,
+                    None,
+                    Some(3),
+                    Some(4),
+                    None,
+                    None,
+                    Some(4),
+                ],
+                false,
+            ),
+            (
+                &[
+                    Some(1),
+                    Some(2),
+                    Some(3),
+                    Some(4),
+                    Some(5),
+                    None,
+                    Some(6),
+                    Some(7),
+                    None,
+                    None,
+                    None,
+                    None,
+                    Some(8),
+                ],
+                false,
+            ),
         ];
 
         for (root, expected) in test_cases {
