@@ -617,6 +617,7 @@ pub mod problem_0770_basic_calculator_iv;
 pub mod problem_0771_jewels_and_stones;
 pub mod problem_0773_sliding_puzzle;
 pub mod problem_0775_global_and_local_inversions;
+pub mod problem_0777_swap_adjacent_in_lr_string;
 pub mod problem_0778_swim_in_rising_water;
 pub mod problem_0779_k_th_symbol_in_grammar;
 pub mod problem_0781_rabbits_in_forest;
