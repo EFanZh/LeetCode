@@ -620,6 +620,7 @@ pub mod problem_0775_global_and_local_inversions;
 pub mod problem_0777_swap_adjacent_in_lr_string;
 pub mod problem_0778_swim_in_rising_water;
 pub mod problem_0779_k_th_symbol_in_grammar;
+pub mod problem_0780_reaching_points;
 pub mod problem_0781_rabbits_in_forest;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
