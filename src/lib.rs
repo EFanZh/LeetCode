@@ -623,6 +623,7 @@ pub mod problem_0779_k_th_symbol_in_grammar;
 pub mod problem_0780_reaching_points;
 pub mod problem_0781_rabbits_in_forest;
 pub mod problem_0782_transform_to_chessboard;
+pub mod problem_0783_minimum_distance_between_bst_nodes;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0832_flipping_an_image;
