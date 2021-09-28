@@ -627,6 +627,7 @@ pub mod problem_0783_minimum_distance_between_bst_nodes;
 pub mod problem_0784_letter_case_permutation;
 pub mod problem_0785_is_graph_bipartite;
 pub mod problem_0791_custom_sort_string;
+pub mod problem_0794_valid_tic_tac_toe_state;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0832_flipping_an_image;
 pub mod problem_0867_transpose_matrix;
