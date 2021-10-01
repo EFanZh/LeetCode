@@ -15,11 +15,7 @@ impl Solution {
         let mut root = Node::default();
 
         for c in s.iter().rev() {
-            let mut new_root = root.clone();
-
-            new_root.children[usize::from(c - b'a')] = Some(Rc::new(root));
-
-            root = new_root;
+            root.children[usize::from(c - b'a')] = Some(Rc::new(root.clone()));
         }
 
         root
