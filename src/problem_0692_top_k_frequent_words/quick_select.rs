@@ -21,9 +21,9 @@ impl Solution {
 
         values.swap(pivot, length - 1);
 
-        let (key, rest) = values.split_last_mut().unwrap();
         let mut left = 0;
-        let mut right = rest.len();
+        let mut right = length - 1;
+        let (key, rest) = values.split_last_mut().unwrap();
 
         'outer: while left != right {
             if rest[left] < *key {

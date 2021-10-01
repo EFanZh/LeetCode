@@ -4,38 +4,38 @@ pub struct Solution;
 
 use std::cmp::Ordering;
 use std::collections::hash_map::DefaultHasher;
-use std::hash::{Hash, Hasher};
+use std::hash::Hasher;
 
 impl Solution {
     fn select_pivot(length: usize, rng: &mut impl Hasher) -> usize {
-        length.hash(rng);
+        rng.write_usize(length);
 
         (rng.finish() % (length as u64)) as _
     }
 
-    fn partition(nums: &mut [i32], rng: &mut impl Hasher) -> usize {
-        let length = nums.len();
-        let pivot = Self::select_pivot(nums.len(), rng);
+    fn partition(values: &mut [i32], rng: &mut impl Hasher) -> usize {
+        let length = values.len();
+        let pivot = Self::select_pivot(length, rng);
 
-        nums.swap(pivot, length - 1);
+        values.swap(pivot, length - 1);
 
         let mut left = 0;
         let mut right = length - 1;
-        let key = nums[right];
+        let (&mut key, rest) = values.split_last_mut().unwrap();
 
         'outer: while left != right {
-            if nums[left] < key {
+            if rest[left] < key {
                 left += 1;
             } else {
                 loop {
-                    if left + 1 == right {
+                    right -= 1;
+
+                    if left == right {
                         break 'outer;
                     }
 
-                    right -= 1;
-
-                    if nums[right] < key {
-                        nums.swap(left, right);
+                    if rest[right] < key {
+                        rest.swap(left, right);
                         left += 1;
 
                         break;
@@ -44,24 +44,24 @@ impl Solution {
             }
         }
 
-        nums.swap(left, length - 1);
+        values.swap(left, length - 1);
 
         left
     }
 
-    fn select_nth(mut nums: &mut [i32], mut n: usize) {
+    fn select_nth(mut values: &mut [i32], mut n: usize) {
         let mut rng = DefaultHasher::new();
 
-        while nums.len() > 1 {
-            let pivot = Self::partition(nums, &mut rng);
+        while values.len() > 1 {
+            let pivot = Self::partition(values, &mut rng);
 
             match pivot.cmp(&n) {
                 Ordering::Less => {
-                    nums = &mut nums[pivot + 1..];
+                    values = &mut values[pivot + 1..];
                     n -= pivot + 1;
                 }
                 Ordering::Equal => break,
-                Ordering::Greater => nums = &mut nums[..pivot],
+                Ordering::Greater => values = &mut values[..pivot],
             }
         }
     }
