@@ -3,8 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 #[derive(Default)]
-struct TrieNode {
-    children: [Option<Box<TrieNode>>; 26],
+struct Node {
+    children: [Option<Box<Node>>; 26],
     value: Option<i32>,
 }
 
@@ -25,7 +25,7 @@ impl Solution {
         true
     }
 
-    fn find_index(mut node: &TrieNode, word: impl Iterator<Item = u8>) -> Option<i32> {
+    fn find_index(mut node: &Node, word: impl Iterator<Item = u8>) -> Option<i32> {
         for c in word {
             if let Some(next) = node.children[usize::from(c - b'a')].as_deref() {
                 node = next;
@@ -38,7 +38,7 @@ impl Solution {
     }
 
     pub fn palindrome_pairs(words: Vec<String>) -> Vec<Vec<i32>> {
-        let mut trie = TrieNode::default();
+        let mut trie = Node::default();
 
         for (i, word) in (0..).zip(words.iter().map(String::as_bytes)) {
             let mut node = &mut trie;

@@ -5,8 +5,8 @@ pub struct Solution;
 use std::str;
 
 #[derive(Default)]
-struct TrieNode {
-    children: [Option<Box<TrieNode>>; 26],
+struct Node {
+    children: [Option<Box<Node>>; 26],
     has_value: bool,
 }
 
@@ -36,7 +36,7 @@ impl Solution {
 
     pub fn word_break(s: String, word_dict: Vec<String>) -> Vec<String> {
         let s = s.into_bytes();
-        let mut root = TrieNode::default();
+        let mut root = Node::default();
 
         for word in word_dict {
             let mut node = &mut root;

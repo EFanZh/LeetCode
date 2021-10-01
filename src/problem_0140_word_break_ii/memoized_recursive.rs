@@ -6,13 +6,13 @@ use std::collections::HashMap;
 use std::rc::Rc;
 
 #[derive(Default)]
-struct TrieNode {
-    children: [Option<Box<TrieNode>>; 26],
+struct Node {
+    children: [Option<Box<Node>>; 26],
     has_value: bool,
 }
 
 impl Solution {
-    fn word_break_helper(s: &[u8], root: &TrieNode, cache: &mut HashMap<*const u8, Rc<[String]>>) -> Rc<[String]> {
+    fn word_break_helper(s: &[u8], root: &Node, cache: &mut HashMap<*const u8, Rc<[String]>>) -> Rc<[String]> {
         if let Some(result) = cache.get(&s.as_ptr()) {
             Rc::clone(result)
         } else {
@@ -54,7 +54,7 @@ impl Solution {
 
     pub fn word_break(s: String, word_dict: Vec<String>) -> Vec<String> {
         let s = s.into_bytes();
-        let mut root = TrieNode::default();
+        let mut root = Node::default();
 
         for word in word_dict {
             let mut node = &mut root;

@@ -5,15 +5,15 @@ pub struct Solution;
 use std::mem;
 
 #[derive(Default)]
-struct TrieNode {
-    children: [Option<Box<TrieNode>>; 26],
+struct Node {
+    children: [Option<Box<Node>>; 26],
     length: usize,
     value: Option<String>,
 }
 
 impl Solution {
-    fn build_trie(words: Vec<String>) -> TrieNode {
-        let mut trie = TrieNode::default();
+    fn build_trie(words: Vec<String>) -> Node {
+        let mut trie = Node::default();
 
         for word in words {
             let mut node = &mut trie;
@@ -31,7 +31,7 @@ impl Solution {
         trie
     }
 
-    fn dfs(board: &mut [Vec<char>], row: usize, column: usize, parent: &mut TrieNode, result: &mut Vec<String>) {
+    fn dfs(board: &mut [Vec<char>], row: usize, column: usize, parent: &mut Node, result: &mut Vec<String>) {
         if let Some(cell) = board.get_mut(row).and_then(|r| r.get_mut(column)) {
             if *cell != '*' {
                 let child = &mut parent.children[usize::from(*cell as u8 - b'a')];

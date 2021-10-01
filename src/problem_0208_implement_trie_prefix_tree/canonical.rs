@@ -1,12 +1,12 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 #[derive(Default)]
-pub struct Trie {
-    children: [Option<Box<Trie>>; 26],
+pub struct Node {
+    children: [Option<Box<Node>>; 26],
     has_value: bool,
 }
 
-impl Trie {
+impl Node {
     fn new() -> Self {
         Self::default()
     }
@@ -52,7 +52,7 @@ impl Trie {
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-impl super::Trie for Trie {
+impl super::Trie for Node {
     fn new() -> Self {
         Self::new()
     }
@@ -74,6 +74,6 @@ impl super::Trie for Trie {
 mod tests {
     #[test]
     fn test_solution() {
-        super::super::tests::run::<super::Trie>();
+        super::super::tests::run::<super::Node>();
     }
 }
