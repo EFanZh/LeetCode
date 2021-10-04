@@ -133,7 +133,9 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
     add_cmake_variable(
         &mut cmake_command,
         "CMAKE_MAKE_PROGRAM",
-        tools::find_ninja().unwrap().as_os_str(),
+        tools::find_ninja()
+            .expect("Unable to find ninja executable.")
+            .as_os_str(),
     );
 
     if let Some(cmake_toolchain_file) = cmake_toolchain_file {

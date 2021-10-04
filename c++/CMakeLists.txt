@@ -174,7 +174,7 @@ if(STANDALONE_PROJECT)
     # Source based coverage.
 
     if(ENABLE_SOURCE_BASED_CODE_COVERAGE)
-        if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+        if((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang"))
             target_compile_options("leet-code-tests" PRIVATE "-fprofile-instr-generate" "-fcoverage-mapping")
             target_link_options("leet-code-tests" PRIVATE "-fprofile-instr-generate" "-fcoverage-mapping")
         else()

@@ -39,9 +39,14 @@ pub fn run_command_and_stream_output<R>(command: &mut Command, callback: impl Fn
 
     let mut child = command.spawn().unwrap();
     let result = callback(child.stdout.as_mut().unwrap());
-    let status = child.wait_with_output().unwrap().status;
+    let output = child.wait_with_output().unwrap();
 
-    assert!(status.success());
+    assert!(
+        output.status.success(),
+        "Failed to run command {:?}:\n{:?}",
+        command,
+        String::from_utf8_lossy(&output.stderr)
+    );
 
     result
 }
