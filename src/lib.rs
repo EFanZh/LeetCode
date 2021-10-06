@@ -631,6 +631,7 @@ pub mod problem_0788_rotated_digits;
 pub mod problem_0789_escape_the_ghosts;
 pub mod problem_0790_domino_and_tromino_tiling;
 pub mod problem_0791_custom_sort_string;
+pub mod problem_0792_number_of_matching_subsequences;
 pub mod problem_0794_valid_tic_tac_toe_state;
 pub mod problem_0796_rotate_string;
 pub mod problem_0797_all_paths_from_source_to_target;
