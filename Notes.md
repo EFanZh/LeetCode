@@ -226,10 +226,6 @@ Why can I eliminate the usage of visited set?
 
 How can you think of the greedy solution?
 
-## [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
-
-Investigate the linear time complexity algorithm.
-
 ## [386. Lexicographical Numbers](https://leetcode.com/problems/lexicographical-numbers/)
 
 Make sure it can be solved again.
