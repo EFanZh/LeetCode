@@ -636,6 +636,7 @@ pub mod problem_0794_valid_tic_tac_toe_state;
 pub mod problem_0796_rotate_string;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0799_champagne_tower;
+pub mod problem_0802_find_eventual_safe_states;
 pub mod problem_0804_unique_morse_code_words;
 pub mod problem_0807_max_increase_to_keep_city_skyline;
 pub mod problem_0832_flipping_an_image;
