@@ -7,8 +7,6 @@ use std::collections::hash_map::DefaultHasher;
 use std::hash::Hasher;
 use std::ops::Index;
 
-// http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf.
-
 #[derive(Clone)]
 struct MatrixRef<'a> {
     matrix: &'a [Vec<i32>],
@@ -35,6 +33,8 @@ impl Index<usize> for MatrixRef<'_> {
         &self.matrix[self.start + index][self.start..self.end]
     }
 }
+
+// http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf.
 
 impl Solution {
     fn count_with(matrix: MatrixRef, depth: u32, mut pred: impl FnMut(i32) -> bool) -> usize {
@@ -67,7 +67,7 @@ impl Solution {
     }
 
     fn count_less_than_or_equal_to(matrix: MatrixRef, depth: u32, value: i32) -> usize {
-        Self::count_less_than(matrix, depth, value + 1)
+        Self::count_with(matrix, depth, |x| x <= value)
     }
 
     fn select_between(matrix: MatrixRef, depth: u32, low: i32, high: i32, target: &mut Vec<i32>) {
