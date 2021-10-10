@@ -626,6 +626,7 @@ pub mod problem_0782_transform_to_chessboard;
 pub mod problem_0783_minimum_distance_between_bst_nodes;
 pub mod problem_0784_letter_case_permutation;
 pub mod problem_0785_is_graph_bipartite;
+pub mod problem_0786_k_th_smallest_prime_fraction;
 pub mod problem_0787_cheapest_flights_within_k_stops;
 pub mod problem_0788_rotated_digits;
 pub mod problem_0789_escape_the_ghosts;
