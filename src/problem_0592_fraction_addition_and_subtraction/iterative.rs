@@ -69,7 +69,7 @@ impl Solution {
 
         expression.clear();
 
-        write!(&mut expression, "{}/{}", numerator, denominator).unwrap();
+        write!(expression, "{}/{}", numerator, denominator).unwrap();
 
         expression
     }

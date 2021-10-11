@@ -8,7 +8,7 @@ impl Solution {
 
         target.clear();
 
-        write!(&mut target, "{}", value).unwrap();
+        write!(target, "{}", value).unwrap();
 
         target
     }

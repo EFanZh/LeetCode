@@ -75,7 +75,7 @@ impl Solution {
                 "No solution"
             });
         } else {
-            write!(&mut equation, "x={}", total_n / total_x).unwrap();
+            write!(equation, "x={}", total_n / total_x).unwrap();
         }
 
         equation
