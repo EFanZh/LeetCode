@@ -644,6 +644,7 @@ pub mod problem_0804_unique_morse_code_words;
 pub mod problem_0806_number_of_lines_to_write_string;
 pub mod problem_0807_max_increase_to_keep_city_skyline;
 pub mod problem_0811_subdomain_visit_count;
+pub mod problem_0814_binary_tree_pruning;
 pub mod problem_0832_flipping_an_image;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_1143_longest_common_subsequence;
