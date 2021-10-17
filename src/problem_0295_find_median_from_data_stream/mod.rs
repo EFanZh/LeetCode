@@ -41,7 +41,7 @@ mod tests {
             for operation in operations {
                 match *operation {
                     AddNum(num) => median_finder.add_num(num),
-                    FindMedian(expected) => approx::assert_relative_eq!(median_finder.find_median(), expected),
+                    FindMedian(expected) => approx::assert_ulps_eq!(median_finder.find_median(), expected),
                 }
             }
         }

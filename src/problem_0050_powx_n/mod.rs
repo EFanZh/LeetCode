@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((x, n), expected) in test_cases {
-            approx::assert_relative_eq!(S::my_pow(x, n), expected);
+            approx::assert_ulps_eq!(S::my_pow(x, n), expected);
         }
     }
 }
