@@ -14,8 +14,8 @@ impl Solution {
         } else {
             let key = (NonNull::from(s1), NonNull::from(s2));
 
-            if let Some(result) = cache.get(&key) {
-                *result
+            if let Some(&result) = cache.get(&key) {
+                result
             } else {
                 let mut count = [0; 256];
 

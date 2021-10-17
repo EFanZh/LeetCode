@@ -23,6 +23,7 @@ mod tests {
                 ),
                 false,
             ),
+            (("ccbbcaccbccbbbcca", "ccbbcbbaabcccbccc"), false),
         ];
 
         for ((s1, s2), expected) in test_cases {
