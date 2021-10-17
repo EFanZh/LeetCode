@@ -1,10 +1,11 @@
-use crate::html::Writer;
+use crate::html::ElementWriter;
 use crate::problems::Problem;
 use crate::solutions::{self, Language, Solution};
 use git2::Tree;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
-use std::fs;
+use std::fs::File;
+use std::io::Write;
 use std::path::Path;
 
 fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<Vec<Solution>>> {
@@ -26,11 +27,11 @@ fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<Vec<Solution>>> {
     result
 }
 
-fn write_hyper_link(writer: &mut Writer, href: &str, text: &str) {
-    writer.element("a", &[("href", href)], |w| w.text(text));
+fn write_hyper_link<W: Write>(writer: &mut ElementWriter<W>, href: &str, text: &str) {
+    writer.add_element_with_attributes("a", [("href", href)]).add_text(text);
 }
 
-fn write_problem_link(writer: &mut Writer, problem: &Problem) {
+fn write_problem_link<W: Write>(writer: &mut ElementWriter<W>, problem: &Problem) {
     write_hyper_link(
         writer,
         &format!("https://leetcode.com/problems/{}/", problem.stat.title_slug),
@@ -38,7 +39,7 @@ fn write_problem_link(writer: &mut Writer, problem: &Problem) {
     );
 }
 
-fn write_solution_link(writer: &mut Writer, solution: &Solution) {
+fn write_solution_link<W: Write>(writer: &mut ElementWriter<W>, solution: &Solution) {
     write_hyper_link(
         writer,
         &format!(
@@ -49,26 +50,32 @@ fn write_solution_link(writer: &mut Writer, solution: &Solution) {
     );
 }
 
-fn write_difficulty(writer: &mut Writer, level: u8) {
+fn write_difficulty<W: Write>(writer: &mut ElementWriter<W>, level: u8) {
     for _ in 0..level {
-        writer.text("★");
+        writer.add_text("★");
     }
 }
 
-pub fn generate(problems: &[Problem], tree: &Tree, progress_chart: &str, output: &Path) {
+fn write_html(writer: &mut impl Write, problems: &[Problem], tree: &Tree, progress_chart: &str) {
     const TITLE: &str = "LeetCode Progress Report";
 
     let solution_map = make_solution_map(tree);
-    let mut result = String::from("<!DOCTYPE html>\n");
-    let mut html_writer = Writer::on(&mut result);
 
-    html_writer.element("html", &[("lang", "en")], |w| {
-        w.element("head", &[], |w| {
-            w.empty_element("meta", &[("charset", "utf-8")]);
-            w.element("title", &[], |w| w.text(TITLE));
-            w.element("style", &[], |w| {
-                w.raw(
-                    r#"body { font: 14px system-ui, sans-serif; }
+    writeln!(writer, "<!DOCTYPE html>").unwrap();
+
+    // `<html>`.
+
+    let mut html = ElementWriter::with_attributes(writer, "html", [("lang", "en")]);
+
+    // `<head>`.
+
+    let mut head = html.add_element("head");
+
+    head.add_empty_element_with_attributes("meta", [("charset", "utf-8")]);
+    head.add_element("title").add_text(TITLE);
+
+    head.add_element("style").add_raw(
+        r#"body { font: 14px system-ui, sans-serif; }
 h1,h2 { text-align: center; }
 figure { display: flex; justify-content: center; }
 .detail { border-collapse: collapse; }
@@ -80,76 +87,96 @@ figure { display: flex; justify-content: center; }
 .detail>tbody ul { margin: 0; padding: 0; list-style-type: none; }
 .not-done>td { color: rgba(0, 0, 0, 0.382); }
 .not-done>td a:link { color: rgba(0, 0, 255, 0.382); }"#,
-                );
-            });
-        });
-        w.element("body", &[], |w| {
-            w.element("h1", &[], |w| w.text(TITLE));
-            w.element("div", &[("style", "text-align: center;")], |w| {
-                write_hyper_link(w, "https://github.com/EFanZh/LeetCode", "Source code");
-            });
-            w.element("h2", &[], |w| w.text("Progress Chart"));
-            w.element("figure", &[], |w| {
-                w.empty_element("img", &[("src", progress_chart), ("alt", "Progress Chart")]);
-            });
-            w.element("h2", &[], |w| w.text("Detail"));
-            w.element("figure", &[], |w| {
-                w.element("table", &[("class", "detail")], |w| {
-                    w.element("thead", &[], |w| {
-                        w.element("tr", &[], |w| {
-                            w.element("th", &[], |w| w.text("Done"));
-                            w.element("th", &[], |w| w.text("ID"));
-                            w.element("th", &[], |w| w.text("Title"));
-                            w.element("th", &[], |w| w.text("Difficulty"));
+    );
 
-                            for language in &Language::list() {
-                                w.element("th", &[], |w| w.text(&format!("{} Solutions", language)));
-                            }
-                        });
-                    });
-                    w.element("tbody", &[], |w| {
-                        for problem in problems {
-                            if let Some(solution_list) = solution_map.get(&problem.get_id()) {
-                                w.element("tr", &[], |w| {
-                                    w.element("td", &[], |w| w.text("✔"));
-                                    w.element("td", &[], |w| {
-                                        w.text(&problem.stat.frontend_question_id.to_string());
-                                    });
-                                    w.element("td", &[], |w| write_problem_link(w, problem));
-                                    w.element("td", &[], |w| write_difficulty(w, problem.difficulty.level));
+    head.close();
 
-                                    for solutions in solution_list {
-                                        w.element("td", &[], |w| {
-                                            w.element("ul", &[], |w| {
-                                                for solution in solutions {
-                                                    w.element("li", &[], |w| {
-                                                        write_solution_link(w, solution);
-                                                    });
-                                                }
-                                            });
-                                        });
-                                    }
-                                });
-                            } else {
-                                w.element("tr", &[("class", "not-done")], |w| {
-                                    w.element("td", &[], |_| {});
-                                    w.element("td", &[], |w| w.text(&problem.stat.frontend_question_id.to_string()));
-                                    w.element("td", &[], |w| write_problem_link(w, problem));
-                                    w.element("td", &[], |w| write_difficulty(w, problem.difficulty.level));
+    // `<body>`.
 
-                                    for _ in &Language::list() {
-                                        w.element("td", &[], |_| {});
-                                    }
-                                });
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    });
+    let mut body = html.add_element("body");
 
-    result.push('\n');
+    body.add_element("h1").add_text(TITLE);
 
-    fs::write(output, result).unwrap();
+    write_hyper_link(
+        &mut body.add_element_with_attributes("div", [("style", "text-align: center;")]),
+        "https://github.com/EFanZh/LeetCode",
+        "Source code",
+    );
+
+    body.add_element("h2").add_text("Progress Chart");
+
+    body.add_element("figure")
+        .add_empty_element_with_attributes("img", [("src", progress_chart), ("alt", "Progress Chart")]);
+
+    body.add_element("h2").add_text("Detail");
+
+    let mut figure = body.add_element("figure");
+
+    // `<table>`.
+
+    let mut table = figure.add_element_with_attributes("table", [("class", "detail")]);
+
+    // `<thead>`.
+
+    {
+        let mut table_head = table.add_element("thead");
+        let mut thead_tr = table_head.add_element("tr");
+
+        for text in ["Done", "ID", "Title", "Difficulty"] {
+            thead_tr.add_element("th").add_text(text);
+        }
+
+        for language in Language::list() {
+            thead_tr.add_element("th").add_text(&format!("{} Solutions", language));
+        }
+    }
+
+    // `<tbody>`.
+
+    let mut table_body = table.add_element("tbody");
+
+    for problem in problems {
+        if let Some(solution_list) = solution_map.get(&problem.get_id()) {
+            let mut tr = table_body.add_element("tr");
+
+            tr.add_element("td").add_text("✔");
+
+            tr.add_element("td")
+                .add_text(&problem.stat.frontend_question_id.to_string());
+
+            write_problem_link(&mut tr.add_element("td"), problem);
+            write_difficulty(&mut tr.add_element("td"), problem.difficulty.level);
+
+            for solutions in solution_list {
+                let mut td = tr.add_element("td");
+                let mut ul = td.add_element("ul");
+
+                for solution in solutions {
+                    write_solution_link(&mut ul.add_element("li"), solution);
+                }
+            }
+        } else {
+            let mut tr = table_body.add_element_with_attributes("tr", [("class", "not-done")]);
+
+            tr.add_element("td");
+
+            tr.add_element("td")
+                .add_text(&problem.stat.frontend_question_id.to_string());
+
+            write_problem_link(&mut tr.add_element("td"), problem);
+            write_difficulty(&mut tr.add_element("td"), problem.difficulty.level);
+
+            for _ in Language::list() {
+                tr.add_element("td");
+            }
+        }
+    }
+}
+
+pub fn generate(problems: &[Problem], tree: &Tree, progress_chart: &str, output: &Path) {
+    let mut output_file = File::create(output).unwrap();
+
+    write_html(&mut output_file, problems, tree, progress_chart);
+
+    writeln!(output_file).unwrap();
 }
