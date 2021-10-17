@@ -638,6 +638,7 @@ pub mod problem_0794_valid_tic_tac_toe_state;
 pub mod problem_0795_number_of_subarrays_with_bounded_maximum;
 pub mod problem_0796_rotate_string;
 pub mod problem_0797_all_paths_from_source_to_target;
+pub mod problem_0798_smallest_rotation_with_highest_score;
 pub mod problem_0799_champagne_tower;
 pub mod problem_0802_find_eventual_safe_states;
 pub mod problem_0804_unique_morse_code_words;
