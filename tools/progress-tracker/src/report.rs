@@ -75,10 +75,11 @@ figure { display: flex; justify-content: center; }
 .detail>*>tr>* { padding: 0.125em 0.25em; text-align: left; }
 .detail>*>tr>*:nth-child(1) { text-align: center; }
 .detail>*>tr>*:nth-child(2) { text-align: right; }
-.detail>thead>tr>th { background: white; position: sticky; top: 0; z-index: 1; }
+.detail>thead { background: white; position: sticky; top: 0; z-index: 1; }
 .detail>tbody>tr:nth-child(odd) { background: #eee; }
-.detail>tbody>tr>td>ul { margin: 0; padding: 0; list-style-type: none; }
-.not-done>td { opacity: 0.382; }"#,
+.detail>tbody ul { margin: 0; padding: 0; list-style-type: none; }
+.not-done>td { color: rgba(0, 0, 0, 0.382); }
+.not-done>td a:link { color: rgba(0, 0, 255, 0.382); }"#,
                 );
             });
         });
