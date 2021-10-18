@@ -640,6 +640,7 @@ pub mod problem_0796_rotate_string;
 pub mod problem_0797_all_paths_from_source_to_target;
 pub mod problem_0798_smallest_rotation_with_highest_score;
 pub mod problem_0799_champagne_tower;
+pub mod problem_0801_minimum_swaps_to_make_sequences_increasing;
 pub mod problem_0802_find_eventual_safe_states;
 pub mod problem_0804_unique_morse_code_words;
 pub mod problem_0806_number_of_lines_to_write_string;
