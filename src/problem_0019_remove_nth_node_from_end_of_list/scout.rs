@@ -7,6 +7,7 @@ pub struct Solution;
 use std::ptr::NonNull;
 
 impl Solution {
+    #[allow(unsafe_code)]
     pub fn remove_nth_from_end(mut head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
         let mut scout = &head;
 

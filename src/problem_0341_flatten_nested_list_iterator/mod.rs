@@ -40,14 +40,8 @@ mod tests {
         for (nested_list, expected) in test_cases {
             let mut nested_iterator = I::new(nested_list);
 
-            let result = iter::from_fn(|| {
-                if nested_iterator.has_next() {
-                    Some(nested_iterator.next())
-                } else {
-                    None
-                }
-            })
-            .collect::<Box<_>>();
+            let result =
+                iter::from_fn(|| nested_iterator.has_next().then(|| nested_iterator.next())).collect::<Box<_>>();
 
             assert_eq!(result.as_ref(), expected);
         }

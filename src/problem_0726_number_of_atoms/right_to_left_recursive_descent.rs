@@ -23,6 +23,7 @@ impl Solution {
         (result, input)
     }
 
+    #[allow(clippy::if_then_some_else_none)]
     fn atom(input: &[u8]) -> Option<(&[u8], &[u8])> {
         let i = input.iter().rposition(|c| !c.is_ascii_lowercase())?;
 

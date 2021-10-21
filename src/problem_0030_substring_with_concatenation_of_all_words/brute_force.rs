@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::if_then_some_else_none)]
     pub fn find_substring(s: String, mut words: Vec<String>) -> Vec<i32> {
         if words.is_empty() {
             return vec![];

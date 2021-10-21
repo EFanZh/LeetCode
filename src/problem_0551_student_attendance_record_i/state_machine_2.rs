@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::unnested_or_patterns)]
     pub fn check_record(s: String) -> bool {
         let mut iter = s.bytes();
 

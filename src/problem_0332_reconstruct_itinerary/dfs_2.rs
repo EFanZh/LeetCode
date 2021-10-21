@@ -2,20 +2,21 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::borrow::BorrowMut;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 
 impl Solution {
-    fn dfs<'a>(
+    fn dfs(
         graph: &mut HashMap<String, Vec<String>>,
         node: String,
-        result: &mut impl Iterator<Item = &'a mut String>,
+        result: &mut impl Iterator<Item = impl BorrowMut<String>>,
     ) {
         while let Some(next) = graph.get_mut(&node).and_then(Vec::pop) {
             Self::dfs(graph, next, result);
         }
 
-        *result.next().unwrap() = node;
+        *result.next().unwrap().borrow_mut() = node;
     }
 
     pub fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {

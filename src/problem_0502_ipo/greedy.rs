@@ -5,6 +5,7 @@ pub struct Solution;
 use std::collections::BinaryHeap;
 
 impl Solution {
+    #[allow(clippy::if_then_some_else_none)]
     pub fn find_maximized_capital(k: i32, mut w: i32, profits: Vec<i32>, capital: Vec<i32>) -> i32 {
         let mut projects = profits.into_iter().zip(capital).collect::<Vec<_>>();
         let mut queue = BinaryHeap::with_capacity(projects.len());

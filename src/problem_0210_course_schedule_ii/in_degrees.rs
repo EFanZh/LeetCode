@@ -6,6 +6,7 @@ use std::collections::VecDeque;
 use std::convert::TryInto;
 
 impl Solution {
+    #[allow(clippy::if_then_some_else_none)]
     pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
         let num_courses = num_courses as _;
         let mut graph = vec![Vec::new(); num_courses];

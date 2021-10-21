@@ -33,6 +33,7 @@ impl Solution {
         num
     }
 
+    #[allow(clippy::unnested_or_patterns)]
     pub fn calculate(s: String) -> i32 {
         let mut iter = s.bytes().peekable();
         let mut first = Self::number(&mut iter);

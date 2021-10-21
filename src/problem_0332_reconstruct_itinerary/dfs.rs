@@ -2,6 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::borrow::BorrowMut;
 use std::cmp::Reverse;
 use std::collections::HashMap;
 use std::convert::TryInto;
@@ -19,12 +20,12 @@ impl Solution {
         String::from_utf8(vec![a, b, c]).unwrap()
     }
 
-    fn dfs<'a>(graph: &mut HashMap<u32, Vec<u32>>, node: u32, result: &mut impl Iterator<Item = &'a mut String>) {
+    fn dfs(graph: &mut HashMap<u32, Vec<u32>>, node: u32, result: &mut impl Iterator<Item = impl BorrowMut<String>>) {
         while let Some(next) = graph.get_mut(&node).and_then(Vec::pop) {
             Self::dfs(graph, next, result);
         }
 
-        *result.next().unwrap() = Self::id_to_name(node);
+        *result.next().unwrap().borrow_mut() = Self::id_to_name(node);
     }
 
     pub fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {

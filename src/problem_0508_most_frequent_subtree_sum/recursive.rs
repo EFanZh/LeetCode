@@ -21,6 +21,7 @@ impl Solution {
         })
     }
 
+    #[allow(clippy::if_then_some_else_none)]
     pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut count = HashMap::new();
 

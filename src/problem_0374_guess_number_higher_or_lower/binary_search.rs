@@ -7,6 +7,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(unsafe_code)]
     pub fn guessNumber(n: i32) -> i32 {
         let mut left = 1;
         let mut right = n;

@@ -2,13 +2,16 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::borrow::BorrowMut;
 use std::convert::TryInto;
 
 impl Solution {
-    fn update_line<'a>(line: impl Iterator<Item = &'a mut u8>) {
+    fn update_line(line: impl Iterator<Item = impl BorrowMut<u8>>) {
         let mut length = 0_u8;
 
-        for value in line {
+        for mut value in line {
+            let value = value.borrow_mut();
+
             if *value == 0 {
                 length = 0;
             } else {

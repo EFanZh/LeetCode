@@ -36,8 +36,8 @@ impl Codec {
         result
     }
 
-    fn deserialize_helper<'a>(&self, data: &mut impl Iterator<Item = &'a str>) -> Option<Rc<RefCell<TreeNode>>> {
-        data.next().unwrap().parse().ok().map(|val| {
+    fn deserialize_helper(&self, data: &mut impl Iterator<Item = impl AsRef<str>>) -> Option<Rc<RefCell<TreeNode>>> {
+        data.next().unwrap().as_ref().parse().ok().map(|val| {
             Rc::new(RefCell::new(TreeNode {
                 val,
                 left: self.deserialize_helper(data),

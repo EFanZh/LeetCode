@@ -8,6 +8,7 @@ use std::mem;
 use std::ptr::NonNull;
 
 impl Solution {
+    #[allow(unsafe_code)]
     pub fn reverse_between(mut head: Option<Box<ListNode>>, mut m: i32, n: i32) -> Option<Box<ListNode>> {
         m -= 1;
 

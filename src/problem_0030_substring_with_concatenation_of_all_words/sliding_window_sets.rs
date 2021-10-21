@@ -66,6 +66,7 @@ impl<T: Eq + Hash> Extend<T> for HashMultiSet<T> {
 }
 
 impl Solution {
+    #[allow(clippy::if_then_some_else_none)]
     pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
         let s = s.into_bytes();
         let word_length = words.first().map_or(0, String::len);

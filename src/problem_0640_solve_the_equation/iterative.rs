@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::if_then_some_else_none)]
     fn parse_number(input: &[u8]) -> Option<(i32, &[u8])> {
         let (first, mut rest) = input.split_first().unwrap();
 

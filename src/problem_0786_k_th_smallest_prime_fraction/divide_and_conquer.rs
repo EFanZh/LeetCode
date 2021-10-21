@@ -13,6 +13,7 @@ struct VectorRef<'a> {
 }
 
 impl VectorRef<'_> {
+    #[allow(clippy::if_then_some_else_none)]
     fn get(&self, index: usize) -> Option<(u32, u32)> {
         if index < self.length {
             Some((self.data[index] as _, self.data[self.data.len() - 1 - self.row] as _))

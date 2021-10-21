@@ -14,6 +14,7 @@ impl SummaryRanges {
         }
     }
 
+    #[allow(clippy::if_then_some_else_none)]
     fn add_num(&mut self, val: i32) {
         if let Some((right_from, right_to)) =
             self.intervals

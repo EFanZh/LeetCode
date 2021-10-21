@@ -52,6 +52,7 @@ impl MyHashMap {
         (hash_key(key) >> (32 - bucket_bits)) as _
     }
 
+    #[allow(clippy::if_then_some_else_none)]
     fn get(&self, key: i32) -> i32 {
         let bucket_index = self.bucket_index(key);
 

@@ -24,6 +24,7 @@ fn internal_guess(num: i32) -> i32 {
 /// # Safety
 ///
 /// The `unsafe` here is used to match official function signature, the function is actually safe to use.
+#[allow(unsafe_code)]
 pub unsafe fn guess(num: i32) -> i32 {
     internal_guess(num)
 }

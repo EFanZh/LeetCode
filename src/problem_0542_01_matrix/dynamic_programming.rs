@@ -21,9 +21,10 @@ where
 }
 
 impl Solution {
-    fn update<'a>(mut rows_iter: impl Iterator<Item = &'a mut [i32]>, make_iter: impl for<'b> MakeIter<'b>) {
+    #[allow(single_use_lifetimes)]
+    fn update(mut rows_iter: impl Iterator<Item = impl AsMut<[i32]>>, make_iter: impl for<'b> MakeIter<'b>) {
         let mut prev_row = rows_iter.next().unwrap();
-        let mut first_row_iter = make_iter.make_iter(prev_row);
+        let mut first_row_iter = make_iter.make_iter(prev_row.as_mut());
         let mut left = *first_row_iter.next().unwrap();
 
         for value in first_row_iter {
@@ -31,8 +32,10 @@ impl Solution {
             left = *value;
         }
 
-        for row in rows_iter {
-            let mut iter = make_iter.make_iter(prev_row).zip(make_iter.make_iter(row));
+        for mut row in rows_iter {
+            let mut iter = make_iter
+                .make_iter(prev_row.as_mut())
+                .zip(make_iter.make_iter(row.as_mut()));
 
             let (&mut top, left) = iter.next().unwrap();
 

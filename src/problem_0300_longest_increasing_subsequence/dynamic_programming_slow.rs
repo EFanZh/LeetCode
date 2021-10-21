@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::if_then_some_else_none)]
     pub fn length_of_lis(nums: Vec<i32>) -> i32 {
         let mut cache = vec![0; nums.len()];
         let mut result = 0;
