@@ -660,6 +660,7 @@ pub mod problem_0814_binary_tree_pruning;
 pub mod problem_0817_linked_list_components;
 pub mod problem_0819_most_common_word;
 pub mod problem_0820_short_encoding_of_words;
+pub mod problem_0821_shortest_distance_to_a_character;
 pub mod problem_0832_flipping_an_image;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_1143_longest_common_subsequence;
