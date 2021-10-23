@@ -108,7 +108,7 @@ where
     }
 }
 
-impl<'a, 'b, W> Drop for ElementWriter<'a, 'b, W>
+impl<W> Drop for ElementWriter<'_, '_, W>
 where
     W: Write + ?Sized,
 {

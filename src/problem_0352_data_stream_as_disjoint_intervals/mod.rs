@@ -11,6 +11,7 @@ pub trait SummaryRanges {
 mod tests {
     use super::SummaryRanges;
 
+    #[allow(variant_size_differences)]
     enum Operation<'a> {
         AddNum(i32),
         GetIntervals(&'a [[i32; 2]]),

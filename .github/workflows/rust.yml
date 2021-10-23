@@ -8,7 +8,7 @@ jobs:
           - uses: actions-rs/toolchain@v1
             with:
                 components: rustfmt
-          - run: cargo fmt -- --check
+          - run: cargo fmt --all -- --check
         strategy:
             matrix:
                 os:
@@ -22,7 +22,7 @@ jobs:
           - uses: actions-rs/toolchain@v1
             with:
                 components: clippy
-          - run: cargo clippy --all-targets --all-features -- -D warnings
+          - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
         strategy:
             matrix:
                 os:
@@ -34,7 +34,7 @@ jobs:
         steps:
           - uses: actions/checkout@v2
           - uses: actions-rs/toolchain@v1
-          - run: cargo test
+          - run: cargo test --workspace
         strategy:
             matrix:
                 os:

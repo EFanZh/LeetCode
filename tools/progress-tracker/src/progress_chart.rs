@@ -2,6 +2,8 @@ use crate::problems::Problems;
 use crate::solutions;
 use chrono::{DateTime, TimeZone, Utc};
 use git2::{Repository, Tree};
+use num::rational::Ratio;
+use num::ToPrimitive;
 use plotters::chart::ChartBuilder;
 use plotters::drawing::IntoDrawingArea;
 use plotters::prelude::SVGBackend;
@@ -61,7 +63,7 @@ fn fix_svg_size(svg: &str, zoom: u32) -> String {
 }
 
 fn get_progress(hits: usize, total: usize) -> f64 {
-    ((hits * 100) as f64) / (total as f64)
+    Ratio::new(hits * 100, total).to_f64().unwrap()
 }
 
 fn draw_chart(data: &[(DateTime<Utc>, usize)], total: usize, output: &Path) {

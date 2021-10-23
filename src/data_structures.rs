@@ -14,6 +14,7 @@ impl ListNode {
     }
 }
 
+#[allow(variant_size_differences)]
 #[derive(Debug, PartialEq, Eq)]
 pub enum NestedInteger {
     Int(i32),
