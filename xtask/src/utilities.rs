@@ -10,6 +10,7 @@ pub fn get_project_dir() -> PathBuf {
     path
 }
 
+#[allow(clippy::print_stdout, clippy::use_debug)]
 fn print_command_line(command: &Command) {
     println!("===> {:?}", command);
 }

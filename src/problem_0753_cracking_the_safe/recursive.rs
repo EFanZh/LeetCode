@@ -41,7 +41,7 @@ impl Solution {
                 result.push('0');
             }
 
-            dbg!(result)
+            result
         }
     }
 }

@@ -34,22 +34,6 @@ impl Solution {
         result.push(get_median(&window));
 
         for (i, (&old, &new)) in nums.iter().zip(&nums[k..]).enumerate() {
-            println!(
-                "{:?} {:?}",
-                window
-                    .0
-                    .iter()
-                    .copied()
-                    .filter_map(|(x, j)| if j.0 >= i { Some(x) } else { None })
-                    .collect::<Vec<_>>(),
-                window
-                    .1
-                    .iter()
-                    .copied()
-                    .filter_map(|Reverse((x, j))| if j >= i { Some(x) } else { None })
-                    .collect::<Vec<_>>(),
-            );
-
             if new >= window.1.peek().unwrap().0 .0 {
                 window.1.push(Reverse((new, k + i)));
 
