@@ -657,6 +657,7 @@ pub mod problem_0801_minimum_swaps_to_make_sequences_increasing;
 pub mod problem_0802_find_eventual_safe_states;
 pub mod problem_0803_bricks_falling_when_hit;
 pub mod problem_0804_unique_morse_code_words;
+pub mod problem_0805_split_array_with_same_average;
 pub mod problem_0806_number_of_lines_to_write_string;
 pub mod problem_0807_max_increase_to_keep_city_skyline;
 pub mod problem_0809_expressive_words;
