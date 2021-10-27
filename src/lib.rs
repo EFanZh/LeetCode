@@ -670,6 +670,7 @@ pub mod problem_0819_most_common_word;
 pub mod problem_0820_short_encoding_of_words;
 pub mod problem_0821_shortest_distance_to_a_character;
 pub mod problem_0823_binary_trees_with_factors;
+pub mod problem_0824_goat_latin;
 pub mod problem_0832_flipping_an_image;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_1143_longest_common_subsequence;
