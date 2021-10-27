@@ -1,8 +1,42 @@
 use crate::data_structures::{ListNode, TreeNode};
 use std::cell::RefCell;
 use std::collections::VecDeque;
+use std::fmt::Debug;
 use std::iter;
 use std::rc::Rc;
+
+pub trait Matrix<T>: Debug {
+    fn to_vec(&self) -> Vec<Vec<T>>;
+
+    fn equals_to_slice(&self, slice: &[Vec<T>]) -> bool
+    where
+        T: PartialEq;
+}
+
+impl<T, const M: usize, const N: usize> Matrix<T> for [[T; N]; M]
+where
+    T: Clone + Debug,
+{
+    fn to_vec(&self) -> Vec<Vec<T>> {
+        self.iter().map(|row| row.to_vec()).collect()
+    }
+
+    fn equals_to_slice(&self, slice: &[Vec<T>]) -> bool
+    where
+        T: PartialEq,
+    {
+        *slice == *self
+    }
+}
+
+impl<'a, T> PartialEq<&'a dyn Matrix<T>> for Vec<Vec<T>>
+where
+    T: PartialEq,
+{
+    fn eq(&self, other: &&'a dyn Matrix<T>) -> bool {
+        other.equals_to_slice(self)
+    }
+}
 
 pub fn invert_tree(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNode>>> {
     root.map(|root| {

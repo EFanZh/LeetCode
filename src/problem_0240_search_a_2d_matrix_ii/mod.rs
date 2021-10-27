@@ -8,18 +8,19 @@ pub trait Solution {
 #[cfg(test)]
 mod tests {
     use super::Solution;
+    use crate::test_utilities::Matrix;
 
     pub fn run<S: Solution>() {
         let test_cases = [
             (
                 (
                     &[
-                        &[1, 4, 7, 11, 15] as &[_],
-                        &[2, 5, 8, 12, 19],
-                        &[3, 6, 9, 16, 22],
-                        &[10, 13, 14, 17, 24],
-                        &[18, 21, 23, 26, 30],
-                    ] as &[&[_]],
+                        [1, 4, 7, 11, 15],
+                        [2, 5, 8, 12, 19],
+                        [3, 6, 9, 16, 22],
+                        [10, 13, 14, 17, 24],
+                        [18, 21, 23, 26, 30],
+                    ] as &dyn Matrix<_>,
                     5,
                 ),
                 true,
@@ -27,24 +28,21 @@ mod tests {
             (
                 (
                     &[
-                        &[1, 4, 7, 11, 15],
-                        &[2, 5, 8, 12, 19],
-                        &[3, 6, 9, 16, 22],
-                        &[10, 13, 14, 17, 24],
-                        &[18, 21, 23, 26, 30],
+                        [1, 4, 7, 11, 15],
+                        [2, 5, 8, 12, 19],
+                        [3, 6, 9, 16, 22],
+                        [10, 13, 14, 17, 24],
+                        [18, 21, 23, 26, 30],
                     ],
                     20,
                 ),
                 false,
             ),
-            ((&[&[-5]], -10), false),
+            ((&[[-5]], -10), false),
         ];
 
         for ((matrix, target), expected) in test_cases {
-            assert_eq!(
-                S::search_matrix(matrix.iter().copied().map(<[_]>::to_vec).collect(), target),
-                expected
-            );
+            assert_eq!(S::search_matrix(matrix.to_vec(), target), expected);
         }
     }
 }

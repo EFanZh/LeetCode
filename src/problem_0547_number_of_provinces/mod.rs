@@ -7,18 +7,16 @@ pub trait Solution {
 #[cfg(test)]
 mod tests {
     use super::Solution;
+    use crate::test_utilities::Matrix;
 
     pub fn run<S: Solution>() {
         let test_cases = [
-            (&[&[1, 1, 0] as &[_], &[1, 1, 0], &[0, 0, 1]] as &[&[_]], 2),
-            (&[&[1, 0, 0], &[0, 1, 0], &[0, 0, 1]], 3),
+            (&[[1, 1, 0], [1, 1, 0], [0, 0, 1]] as &dyn Matrix<_>, 2),
+            (&[[1, 0, 0], [0, 1, 0], [0, 0, 1]], 3),
         ];
 
         for (is_connected, expected) in test_cases {
-            assert_eq!(
-                S::find_circle_num(is_connected.iter().copied().map(<[_]>::to_vec).collect()),
-                expected
-            );
+            assert_eq!(S::find_circle_num(is_connected.to_vec()), expected);
         }
     }
 }

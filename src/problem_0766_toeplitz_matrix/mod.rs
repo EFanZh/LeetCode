@@ -7,18 +7,16 @@ pub trait Solution {
 #[cfg(test)]
 mod tests {
     use super::Solution;
+    use crate::test_utilities::Matrix;
 
     pub fn run<S: Solution>() {
         let test_cases = [
-            (&[&[1, 2, 3, 4] as &[_], &[5, 1, 2, 3], &[9, 5, 1, 2]] as &[&[_]], true),
-            (&[&[1, 2], &[2, 2]], false),
+            (&[[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]] as &dyn Matrix<_>, true),
+            (&[[1, 2], [2, 2]], false),
         ];
 
         for (matrix, expected) in test_cases {
-            assert_eq!(
-                S::is_toeplitz_matrix(matrix.iter().copied().map(<[_]>::to_vec).collect()),
-                expected
-            );
+            assert_eq!(S::is_toeplitz_matrix(matrix.to_vec()), expected);
         }
     }
 }
