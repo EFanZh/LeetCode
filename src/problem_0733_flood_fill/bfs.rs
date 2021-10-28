@@ -6,7 +6,8 @@ use std::collections::VecDeque;
 use std::mem;
 
 impl Solution {
-    pub fn flood_fill(mut image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
+    pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
+        let mut image = image;
         let mut y = sr as usize;
         let mut x = sc as usize;
         let old_color = mem::replace(&mut image[y][x], new_color);

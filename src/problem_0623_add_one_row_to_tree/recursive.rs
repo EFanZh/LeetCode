@@ -38,7 +38,9 @@ impl Solution {
         }
     }
 
-    pub fn add_one_row(mut root: Option<Rc<RefCell<TreeNode>>>, val: i32, depth: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    pub fn add_one_row(root: Option<Rc<RefCell<TreeNode>>>, val: i32, depth: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        let mut root = root;
+
         Self::helper(&mut root, val, depth, Self::new_node_with_left_child);
 
         root

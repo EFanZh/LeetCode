@@ -3,7 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn number_of_steps(mut num: i32) -> i32 {
+    pub fn number_of_steps(num: i32) -> i32 {
+        let mut num = num;
         let mut result = -1;
 
         while num != 0 {

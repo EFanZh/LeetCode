@@ -5,7 +5,8 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    pub fn find_closest_elements(mut arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {
+    pub fn find_closest_elements(arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {
+        let mut arr = arr;
         let k = k as usize;
         let base = arr.as_ptr() as usize;
 

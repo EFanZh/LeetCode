@@ -33,7 +33,8 @@ impl Solution {
         result
     }
 
-    pub fn max_area_of_island(mut grid: Vec<Vec<i32>>) -> i32 {
+    pub fn max_area_of_island(grid: Vec<Vec<i32>>) -> i32 {
+        let mut grid = grid;
         let rows = grid.len();
         let columns = grid.first().map_or(0, Vec::len);
         let mut queue = VecDeque::new();

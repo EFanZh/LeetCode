@@ -3,10 +3,11 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn can_place_flowers(flowerbed: Vec<i32>, mut n: i32) -> bool {
+    pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
         if n == 0 {
             true
         } else {
+            let mut n = n;
             let (&first, rest) = flowerbed.split_first().unwrap();
             let mut prev = (0, first);
 

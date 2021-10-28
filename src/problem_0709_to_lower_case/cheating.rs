@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn to_lower_case(mut str: String) -> String {
+    pub fn to_lower_case(str: String) -> String {
+        let mut str = str;
+
         str.make_ascii_lowercase();
 
         str

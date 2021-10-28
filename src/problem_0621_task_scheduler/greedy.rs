@@ -6,9 +6,8 @@ use std::collections::BinaryHeap;
 use std::collections::VecDeque;
 
 impl Solution {
-    pub fn least_interval(tasks: Vec<char>, mut n: i32) -> i32 {
-        n += 1;
-
+    pub fn least_interval(tasks: Vec<char>, n: i32) -> i32 {
+        let n = n + 1;
         let mut counts = [0; 26];
 
         for task in tasks {

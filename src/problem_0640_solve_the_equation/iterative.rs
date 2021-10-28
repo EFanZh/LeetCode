@@ -59,9 +59,10 @@ impl Solution {
         ((x_factor, constant), input)
     }
 
-    pub fn solve_equation(mut equation: String) -> String {
+    pub fn solve_equation(equation: String) -> String {
         use std::fmt::Write;
 
+        let mut equation = equation;
         let ((lhs_x, lhs_n), input) = Self::parse_one_side(equation.as_bytes());
         let ((rhs_x, rhs_n), _) = Self::parse_one_side(&input[1..]);
         let total_x = lhs_x - rhs_x;

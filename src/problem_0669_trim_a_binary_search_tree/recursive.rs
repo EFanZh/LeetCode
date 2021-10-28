@@ -69,7 +69,9 @@ impl Solution {
         }
     }
 
-    pub fn trim_bst(mut root: Option<Rc<RefCell<TreeNode>>>, low: i32, high: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    pub fn trim_bst(root: Option<Rc<RefCell<TreeNode>>>, low: i32, high: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        let mut root = root;
+
         Self::trim(&mut root, low, high);
 
         root
