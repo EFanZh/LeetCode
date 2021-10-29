@@ -662,6 +662,7 @@ pub mod problem_0806_number_of_lines_to_write_string;
 pub mod problem_0807_max_increase_to_keep_city_skyline;
 pub mod problem_0808_soup_servings;
 pub mod problem_0809_expressive_words;
+pub mod problem_0810_chalkboard_xor_game;
 pub mod problem_0811_subdomain_visit_count;
 pub mod problem_0813_largest_sum_of_averages;
 pub mod problem_0814_binary_tree_pruning;
