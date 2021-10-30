@@ -6,7 +6,9 @@ use std::cmp::Reverse;
 use std::convert::TryInto;
 
 impl Solution {
-    pub fn max_envelopes(mut envelopes: Vec<Vec<i32>>) -> i32 {
+    pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
+        let mut envelopes = envelopes;
+
         envelopes.sort_unstable_by_key(|envelope| {
             let [w, h]: [_; 2] = envelope.as_slice().try_into().unwrap();
 

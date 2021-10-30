@@ -3,10 +3,12 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn largest_divisible_subset(mut nums: Vec<i32>) -> Vec<i32> {
+    pub fn largest_divisible_subset(nums: Vec<i32>) -> Vec<i32> {
         if nums.len() < 2 {
             nums
         } else {
+            let mut nums = nums;
+
             nums.sort_unstable();
 
             let mut max_size = 1;

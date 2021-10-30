@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn get_sum(mut a: i32, mut b: i32) -> i32 {
+    pub fn get_sum(a: i32, b: i32) -> i32 {
+        let (mut a, mut b) = (a, b);
+
         while b != 0 {
             let sum = a ^ b;
             let carry = (a & b) << 1;

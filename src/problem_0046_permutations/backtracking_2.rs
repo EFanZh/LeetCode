@@ -2,6 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::convert;
+
 impl Solution {
     fn permute_helper(nums: &mut [i32], split: usize, result: &mut Vec<Vec<i32>>) {
         if split == nums.len() {
@@ -19,10 +21,10 @@ impl Solution {
         }
     }
 
-    pub fn permute(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
 
-        Self::permute_helper(&mut nums, 0, &mut result);
+        Self::permute_helper(&mut convert::identity(nums), 0, &mut result);
 
         result
     }

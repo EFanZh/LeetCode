@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn maximum_gap(mut nums: Vec<i32>) -> i32 {
+    pub fn maximum_gap(nums: Vec<i32>) -> i32 {
+        let mut nums = nums;
+
         nums.sort_unstable();
 
         nums.iter()

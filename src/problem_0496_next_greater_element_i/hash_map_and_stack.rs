@@ -5,7 +5,9 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
-    pub fn next_greater_element(mut nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
+    pub fn next_greater_element(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
+        let mut nums1 = nums1;
+
         let nums1_indices = nums1
             .iter()
             .copied()

@@ -8,9 +8,10 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn preorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         let mut stack = Vec::new();
+        let mut root = root;
 
         loop {
             if let Some(node) = root {

@@ -5,7 +5,9 @@ pub struct Solution;
 use std::convert::TryInto;
 
 impl Solution {
-    pub fn find_min_arrow_shots(mut points: Vec<Vec<i32>>) -> i32 {
+    pub fn find_min_arrow_shots(points: Vec<Vec<i32>>) -> i32 {
+        let mut points = points;
+
         points.sort_unstable_by_key(|point| point[1]);
 
         points.split_first().map_or(0, |(first, rest)| {

@@ -3,8 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn hammingWeight(mut n: u32) -> i32 {
+    pub fn hammingWeight(n: u32) -> i32 {
         let mut result = 0;
+        let mut n = n;
 
         while n != 0 {
             result += 1;

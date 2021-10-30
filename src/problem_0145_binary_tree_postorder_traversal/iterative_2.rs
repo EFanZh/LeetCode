@@ -9,10 +9,11 @@ use std::ptr::NonNull;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn postorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         let mut stack = Vec::new();
         let mut prev: Option<NonNull<RefCell<TreeNode>>> = None;
+        let mut root = root;
 
         'r: loop {
             if let Some(node) = root {

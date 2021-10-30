@@ -95,8 +95,9 @@ impl Solution {
         }
     }
 
-    pub fn reverse_pairs(mut nums: Vec<i32>) -> i32 {
+    pub fn reverse_pairs(nums: Vec<i32>) -> i32 {
         let mut result = 0;
+        let mut nums = nums;
         let mut buffer = vec![0; nums.len()];
 
         Self::merge_sort_to_self(&mut nums, &mut buffer, &mut result);

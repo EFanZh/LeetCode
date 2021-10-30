@@ -7,8 +7,9 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn insertion_sort_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut result: Option<Box<ListNode>> = None;
+        let mut head = head;
 
         while let Some(mut node) = head {
             let mut target = &mut result;

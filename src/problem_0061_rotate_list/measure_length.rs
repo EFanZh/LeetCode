@@ -7,7 +7,8 @@ pub struct Solution;
 use std::iter;
 
 impl Solution {
-    pub fn rotate_right(mut head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
+    pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
+        let mut head = head;
         let length = iter::successors(head.as_deref(), |node| node.next.as_deref()).count();
         let k = (k as usize).checked_rem(length).unwrap_or(0);
 

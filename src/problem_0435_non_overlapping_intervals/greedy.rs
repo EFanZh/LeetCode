@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn erase_overlap_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {
+    pub fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32 {
+        let mut intervals = intervals;
+
         intervals.sort_unstable_by_key(|x| x[1]);
 
         let mut last_finish_time = i32::MIN;

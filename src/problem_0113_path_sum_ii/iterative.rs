@@ -13,10 +13,11 @@ enum Frame {
 }
 
 impl Solution {
-    pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, mut sum: i32) -> Vec<Vec<i32>> {
+    pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
 
         if let Some(mut node) = root {
+            let mut sum = sum;
             let mut base = Vec::new();
             let mut stack = Vec::new();
 

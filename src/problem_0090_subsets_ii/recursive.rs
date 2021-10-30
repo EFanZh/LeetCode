@@ -52,7 +52,9 @@ impl Solution {
         }
     }
 
-    pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn subsets_with_dup(nums: Vec<i32>) -> Vec<Vec<i32>> {
+        let mut nums = nums;
+
         nums.sort_unstable();
 
         let (&first, rest) = nums.split_first().unwrap();

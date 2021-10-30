@@ -27,7 +27,8 @@ impl Solution {
         }
     }
 
-    pub fn exist(mut board: Vec<Vec<char>>, word: String) -> bool {
+    pub fn exist(board: Vec<Vec<char>>, word: String) -> bool {
+        let mut board = board;
         let columns = board.first().map_or(0, Vec::len);
 
         for row in 0..board.len() {

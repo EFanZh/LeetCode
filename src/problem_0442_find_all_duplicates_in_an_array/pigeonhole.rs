@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn find_duplicates(mut nums: Vec<i32>) -> Vec<i32> {
+    pub fn find_duplicates(nums: Vec<i32>) -> Vec<i32> {
+        let mut nums = nums;
+
         for i in 0..nums.len() {
             let mut num = nums[i];
             let expected = i as i32 + 1;

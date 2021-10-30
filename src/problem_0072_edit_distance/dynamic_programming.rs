@@ -5,10 +5,12 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn min_distance(mut word1: String, mut word2: String) -> i32 {
-        if word2.len() < word1.len() {
-            mem::swap(&mut word1, &mut word2);
-        }
+    pub fn min_distance(word1: String, word2: String) -> i32 {
+        let (word1, word2) = if word2.len() < word1.len() {
+            (word2, word1)
+        } else {
+            (word1, word2)
+        };
 
         let mut cache = (0..=word1.len() as _).rev().collect::<Box<_>>();
 

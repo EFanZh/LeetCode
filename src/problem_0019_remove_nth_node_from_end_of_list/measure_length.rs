@@ -7,7 +7,8 @@ pub struct Solution;
 use std::iter;
 
 impl Solution {
-    pub fn remove_nth_from_end(mut head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
+    pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
+        let mut head = head;
         let length = iter::successors(head.as_deref(), |node| node.next.as_deref()).count();
         let index_to_remove = length - (n as usize);
 

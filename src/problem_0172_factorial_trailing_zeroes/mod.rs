@@ -10,6 +10,8 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
+        // https://oeis.org/A027868.
+
         let test_cases = [
             (3, 0),
             (5, 1),

@@ -5,8 +5,9 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    pub fn convert_to_base7(mut num: i32) -> String {
+    pub fn convert_to_base7(num: i32) -> String {
         let mut result = Vec::new();
+        let mut num = num;
 
         match num.cmp(&0) {
             Ordering::Less => {

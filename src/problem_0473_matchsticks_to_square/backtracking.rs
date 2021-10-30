@@ -61,7 +61,7 @@ impl Solution {
         }
     }
 
-    pub fn makesquare(mut nums: Vec<i32>) -> bool {
+    pub fn makesquare(nums: Vec<i32>) -> bool {
         let sum = nums.iter().sum::<i32>();
 
         if sum != 0 && sum % 4 == 0 {
@@ -70,6 +70,7 @@ impl Solution {
             if nums.iter().any(|&num| num > target) {
                 false
             } else {
+                let mut nums = nums;
                 let (&mut first, rest) = nums.split_first_mut().unwrap();
 
                 Self::helper_0(target, target - first, rest)

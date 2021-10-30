@@ -3,10 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn trailing_zeroes(mut n: i32) -> i32 {
-        // https://oeis.org/A027868
-
+    pub fn trailing_zeroes(n: i32) -> i32 {
         let mut result = 0;
+        let mut n = n;
 
         while n != 0 {
             n /= 5;

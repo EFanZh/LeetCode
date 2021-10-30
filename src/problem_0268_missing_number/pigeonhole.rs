@@ -5,7 +5,8 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn missing_number(mut nums: Vec<i32>) -> i32 {
+    pub fn missing_number(nums: Vec<i32>) -> i32 {
+        let mut nums = nums;
         let n = nums.len() as i32;
         let mut extra = -1;
 

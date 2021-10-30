@@ -12,7 +12,9 @@ impl Solution {
         }
     }
 
-    pub fn find_words(mut words: Vec<String>) -> Vec<String> {
+    pub fn find_words(words: Vec<String>) -> Vec<String> {
+        let mut words = words;
+
         words.retain(|word| {
             let (&first, rest) = word.as_bytes().split_first().unwrap();
             let row = Self::get_row(first);

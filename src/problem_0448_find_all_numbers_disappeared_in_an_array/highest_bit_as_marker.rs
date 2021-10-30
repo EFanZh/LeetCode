@@ -3,8 +3,10 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn find_disappeared_numbers(mut nums: Vec<i32>) -> Vec<i32> {
+    pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {
         const MARKER: i32 = 1 << 31;
+
+        let mut nums = nums;
 
         for i in 0..nums.len() {
             let index = ((nums[i] & !MARKER) - 1) as usize;

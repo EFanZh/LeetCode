@@ -27,8 +27,9 @@ impl Solution {
         }
     }
 
-    pub fn magical_string(mut n: i32) -> i32 {
+    pub fn magical_string(n: i32) -> i32 {
         let mut result = 0;
+        let mut n = n;
 
         Self::helper_0(&mut |value| {
             result += i32::from(!value);

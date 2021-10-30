@@ -8,10 +8,11 @@ use std::iter;
 use std::mem;
 
 impl Solution {
-    pub fn reverse_k_group(mut head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
+    pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
         let mut result = None;
         let mut target = &mut result;
         let length = iter::successors(head.as_ref(), |node| node.next.as_ref()).count();
+        let mut head = head;
 
         for _ in 0..length / k as usize {
             // Build reversed group.

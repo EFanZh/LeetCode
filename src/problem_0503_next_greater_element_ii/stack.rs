@@ -5,7 +5,7 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn next_greater_elements(mut nums: Vec<i32>) -> Vec<i32> {
+    pub fn next_greater_elements(nums: Vec<i32>) -> Vec<i32> {
         let mut stack = Vec::with_capacity(nums.len());
 
         for &num in nums.iter().rev() {
@@ -15,6 +15,8 @@ impl Solution {
 
             stack.push(num);
         }
+
+        let mut nums = nums;
 
         for num in nums.iter_mut().rev() {
             let greater = loop {

@@ -2,14 +2,9 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
-
 impl Solution {
-    pub fn add_binary(mut a: String, mut b: String) -> String {
-        if b.len() < a.len() {
-            mem::swap(&mut a, &mut b);
-        }
-
+    pub fn add_binary(a: String, b: String) -> String {
+        let (a, b) = if b.len() < a.len() { (b, a) } else { (a, b) };
         let a_len = a.len();
         let mut b = b.into_bytes();
         let split = b.len() - a_len;

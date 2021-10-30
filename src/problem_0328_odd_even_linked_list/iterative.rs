@@ -5,11 +5,12 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn odd_even_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut odd = None;
         let mut odd_tail = &mut odd;
         let mut even = None;
         let mut even_tail = &mut even;
+        let mut head = head;
 
         while let Some(mut first) = head {
             if let Some(mut second) = first.next.take() {

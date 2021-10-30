@@ -54,7 +54,8 @@ impl Solution {
         result.push(line);
     }
 
-    pub fn full_justify(mut words: Vec<String>, max_width: i32) -> Vec<String> {
+    pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
+        let mut words = words;
         let mut result = Vec::new();
         let (first_word, rest_words) = words.split_first_mut().unwrap();
 

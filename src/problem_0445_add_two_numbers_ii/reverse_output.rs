@@ -7,14 +7,15 @@ pub struct Solution;
 use std::{iter, mem};
 
 impl Solution {
-    pub fn add_two_numbers(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        let mut length_1 = iter::successors(l1.as_deref(), |x| x.next.as_deref()).count();
-        let mut length_2 = iter::successors(l2.as_deref(), |x| x.next.as_deref()).count();
+    pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        let length_1 = iter::successors(l1.as_deref(), |x| x.next.as_deref()).count();
+        let length_2 = iter::successors(l2.as_deref(), |x| x.next.as_deref()).count();
 
-        if length_2 < length_1 {
-            mem::swap(&mut l1, &mut l2);
-            mem::swap(&mut length_1, &mut length_2);
-        }
+        let (l1, length_1, l2, length_2) = if length_2 < length_1 {
+            (l2, length_2, l1, length_1)
+        } else {
+            (l1, length_1, l2, length_2)
+        };
 
         let mut reversed_result = None;
         let iter_1 = iter::successors(l1.as_deref(), |x| x.next.as_deref()).map(|x| x.val);

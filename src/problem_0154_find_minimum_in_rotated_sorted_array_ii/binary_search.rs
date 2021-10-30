@@ -5,8 +5,9 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    pub fn find_min(mut nums: Vec<i32>) -> i32 {
+    pub fn find_min(nums: Vec<i32>) -> i32 {
         let first = nums[0];
+        let mut nums = nums;
 
         loop {
             if let Some(last) = nums.last() {

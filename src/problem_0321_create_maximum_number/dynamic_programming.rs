@@ -97,12 +97,14 @@ impl Solution {
         }
     }
 
-    pub fn max_number(mut nums1: Vec<i32>, mut nums2: Vec<i32>, k: i32) -> Vec<i32> {
-        let k = k as usize;
+    pub fn max_number(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<i32> {
+        let (mut nums1, mut nums2) = if nums2.len() < nums1.len() {
+            (nums2, nums1)
+        } else {
+            (nums1, nums2)
+        };
 
-        if nums2.len() < nums1.len() {
-            mem::swap(&mut nums1, &mut nums2);
-        }
+        let k = k as usize;
 
         let range = if k < nums1.len() {
             (0, k)

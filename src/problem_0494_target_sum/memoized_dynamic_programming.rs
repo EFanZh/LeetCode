@@ -29,7 +29,8 @@ impl Solution {
         }
     }
 
-    pub fn find_target_sum_ways(mut nums: Vec<i32>, s: i32) -> i32 {
+    pub fn find_target_sum_ways(nums: Vec<i32>, s: i32) -> i32 {
+        let mut nums = nums;
         let sum = nums.iter().sum::<i32>();
 
         if s >= -sum && s <= sum {

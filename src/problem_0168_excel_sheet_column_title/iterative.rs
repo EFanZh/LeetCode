@@ -3,8 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn convert_to_title(mut n: i32) -> String {
+    pub fn convert_to_title(n: i32) -> String {
         let mut result = Vec::new();
+        let mut n = n;
 
         while n != 0 {
             n -= 1;

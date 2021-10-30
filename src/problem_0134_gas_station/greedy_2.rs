@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn can_complete_circuit(mut gas: Vec<i32>, cost: Vec<i32>) -> i32 {
+    pub fn can_complete_circuit(gas: Vec<i32>, cost: Vec<i32>) -> i32 {
+        let mut gas = gas;
+
         for (g, c) in gas.iter_mut().zip(cost) {
             *g -= c;
         }

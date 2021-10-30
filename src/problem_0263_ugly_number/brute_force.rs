@@ -3,10 +3,12 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn is_ugly(mut num: i32) -> bool {
+    pub fn is_ugly(num: i32) -> bool {
         if num <= 0 {
             false
         } else {
+            let mut num = num;
+
             while num % 2 == 0 {
                 num /= 2;
             }

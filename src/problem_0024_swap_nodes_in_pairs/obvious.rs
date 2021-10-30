@@ -5,9 +5,10 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn swap_pairs(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut result = None;
         let mut target = &mut result;
+        let mut head = head;
 
         while let Some(mut node) = head {
             if let Some(mut next) = node.next.take() {

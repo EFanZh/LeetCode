@@ -62,9 +62,10 @@ impl Solution {
         (sum / gcd, 2520 / gcd)
     }
 
-    pub fn fraction_addition(mut expression: String) -> String {
+    pub fn fraction_addition(expression: String) -> String {
         use std::fmt::Write;
 
+        let mut expression = expression;
         let (numerator, denominator) = Self::parse_expression(expression.as_bytes());
 
         expression.clear();

@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn find_radius(mut houses: Vec<i32>, mut heaters: Vec<i32>) -> i32 {
+    pub fn find_radius(houses: Vec<i32>, heaters: Vec<i32>) -> i32 {
+        let (mut houses, mut heaters) = (houses, heaters);
+
         houses.sort_unstable();
         heaters.sort_unstable();
 

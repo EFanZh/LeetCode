@@ -52,7 +52,7 @@ impl Solution {
         }
     }
 
-    pub fn update_matrix(mut mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+    pub fn update_matrix(mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         fn iter_forward(slice: &mut [i32]) -> impl Iterator<Item = &mut i32> {
             slice.iter_mut()
         }
@@ -60,6 +60,8 @@ impl Solution {
         fn iter_backward(slice: &mut [i32]) -> impl Iterator<Item = &mut i32> {
             slice.iter_mut().rev()
         }
+
+        let mut mat = mat;
 
         for row in &mut mat {
             for cell in row {

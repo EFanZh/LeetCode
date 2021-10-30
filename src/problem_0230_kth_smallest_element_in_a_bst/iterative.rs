@@ -8,8 +8,10 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn kth_smallest(mut root: Option<Rc<RefCell<TreeNode>>>, mut k: i32) -> i32 {
+    pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
         let mut stack = Vec::new();
+        let mut root = root;
+        let mut k = k;
 
         loop {
             if let Some(node) = root {

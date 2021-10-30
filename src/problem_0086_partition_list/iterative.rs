@@ -5,11 +5,12 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn partition(mut head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
+    pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
         let mut left = None;
         let mut right = None;
         let mut left_tail = &mut left;
         let mut right_tail = &mut right;
+        let mut head = head;
 
         while let Some(mut node) = head {
             head = node.next.take();

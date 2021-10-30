@@ -9,9 +9,9 @@ use std::ptr::NonNull;
 
 impl Solution {
     #[allow(unsafe_code)]
-    pub fn reverse_between(mut head: Option<Box<ListNode>>, mut m: i32, n: i32) -> Option<Box<ListNode>> {
-        m -= 1;
-
+    pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {
+        let mut head = head;
+        let m = m - 1;
         let length = n - m;
 
         if length > 1 {

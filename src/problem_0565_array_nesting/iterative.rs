@@ -5,8 +5,9 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn array_nesting(mut nums: Vec<i32>) -> i32 {
+    pub fn array_nesting(nums: Vec<i32>) -> i32 {
         let mut result = 0;
+        let mut nums = nums;
 
         for i in 0..nums.len() {
             if nums[i] != -1 {

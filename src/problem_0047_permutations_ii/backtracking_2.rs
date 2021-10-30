@@ -37,12 +37,14 @@ impl Solution {
         }
     }
 
-    pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute_unique(nums: Vec<i32>) -> Vec<Vec<i32>> {
+        let mut nums = nums;
+
         nums.sort_unstable();
 
         let mut result = Vec::new();
 
-        Self::permute_unique_helper(nums.as_mut_slice(), &mut Vec::new(), &mut result);
+        Self::permute_unique_helper(&mut nums, &mut Vec::new(), &mut result);
 
         result
     }

@@ -8,12 +8,12 @@ use std::iter;
 use std::mem;
 
 impl Solution {
-    pub fn reorder_list(mut head: &mut Option<Box<ListNode>>) {
+    pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
         // Split at middle.
 
         let length = iter::successors(head.as_deref(), |node| node.next.as_deref()).count();
         let half = (length + 1) / 2;
-
+        let mut head = head;
         let mut node = &mut *head;
 
         for _ in 0..half {

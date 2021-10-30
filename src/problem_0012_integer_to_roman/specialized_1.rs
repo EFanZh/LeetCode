@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn int_to_roman(mut num: i32) -> String {
+    pub fn int_to_roman(num: i32) -> String {
         const DIGITS: [(i32, &str); 13] = [
             (1000, "M"),
             (900, "CM"),
@@ -20,6 +20,7 @@ impl Solution {
             (1, "I"),
         ];
 
+        let mut num = num;
         let mut result = String::new();
 
         for (base, symbol) in DIGITS.iter().copied() {

@@ -2,14 +2,9 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
-
 impl Solution {
-    pub fn unique_paths(mut m: i32, mut n: i32) -> i32 {
-        if m > n {
-            mem::swap(&mut m, &mut n);
-        }
-
+    pub fn unique_paths(m: i32, n: i32) -> i32 {
+        let (m, n) = if n < m { (n, m) } else { (m, n) };
         let m = m as usize;
 
         // The grid has m rows and n columns.

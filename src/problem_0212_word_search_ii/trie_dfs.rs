@@ -62,7 +62,8 @@ impl Solution {
         }
     }
 
-    pub fn find_words(mut board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
+    pub fn find_words(board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
+        let mut board = board;
         let mut trie = Self::build_trie(words);
         let rows = board.len();
         let columns = board.first().map_or(0, Vec::len);

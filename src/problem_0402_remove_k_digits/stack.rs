@@ -5,7 +5,8 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    pub fn remove_kdigits(mut num: String, k: i32) -> String {
+    pub fn remove_kdigits(num: String, k: i32) -> String {
+        let mut num = num;
         let n = num.len();
         let k = k as usize;
 

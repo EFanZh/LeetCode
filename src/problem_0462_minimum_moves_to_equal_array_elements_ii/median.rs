@@ -66,10 +66,11 @@ impl Solution {
         }
     }
 
-    pub fn min_moves2(mut nums: Vec<i32>) -> i32 {
+    pub fn min_moves2(nums: Vec<i32>) -> i32 {
         if nums.len() < 2 {
             0
         } else {
+            let mut nums = nums;
             let half = nums.len() / 2;
 
             Self::select_nth(&mut nums, half);

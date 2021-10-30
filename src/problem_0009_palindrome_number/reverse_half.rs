@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn is_palindrome(mut x: i32) -> bool {
+    pub fn is_palindrome(x: i32) -> bool {
         if x < 0 {
             false
         } else if x == 0 {
@@ -11,6 +11,7 @@ impl Solution {
         } else if x % 10 == 0 {
             false
         } else {
+            let mut x = x;
             let mut reversed = 0;
 
             while reversed < x {

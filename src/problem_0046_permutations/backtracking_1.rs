@@ -2,7 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
+use std::{convert, mem};
 
 impl Solution {
     fn permute_helper(nums: &mut [i32], base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
@@ -26,11 +26,15 @@ impl Solution {
         }
     }
 
-    pub fn permute(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
         let nums_len = nums.len();
 
-        Self::permute_helper(&mut nums, &mut Vec::with_capacity(nums_len), &mut result);
+        Self::permute_helper(
+            &mut convert::identity(nums),
+            &mut Vec::with_capacity(nums_len),
+            &mut result,
+        );
 
         result
     }

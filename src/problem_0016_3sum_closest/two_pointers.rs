@@ -55,7 +55,8 @@ impl Solution {
         }
     }
 
-    pub fn three_sum_closest(mut nums: Vec<i32>, target: i32) -> i32 {
+    pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
+        let mut nums = nums;
         let (&mut first, rest) = nums.split_first_mut().unwrap();
 
         rest.sort_unstable();

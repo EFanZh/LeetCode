@@ -3,7 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn reverse(mut x: i32) -> i32 {
+    pub fn reverse(x: i32) -> i32 {
+        let mut x = x;
         let mut result = 0_i32;
 
         while x != 0 {

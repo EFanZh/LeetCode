@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
+    pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
+        let mut digits = digits;
+
         for x in digits.iter_mut().rev() {
             if *x == 9 {
                 *x = 0;

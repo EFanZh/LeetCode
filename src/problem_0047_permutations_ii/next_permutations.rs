@@ -30,8 +30,9 @@ impl Solution {
         false
     }
 
-    pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute_unique(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
+        let mut nums = nums;
 
         nums.sort_unstable();
 

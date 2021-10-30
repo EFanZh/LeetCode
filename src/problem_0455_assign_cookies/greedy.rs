@@ -3,7 +3,9 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn find_content_children(mut g: Vec<i32>, mut s: Vec<i32>) -> i32 {
+    pub fn find_content_children(g: Vec<i32>, s: Vec<i32>) -> i32 {
+        let (mut g, mut s) = (g, s);
+
         g.sort_unstable();
         s.sort_unstable();
 

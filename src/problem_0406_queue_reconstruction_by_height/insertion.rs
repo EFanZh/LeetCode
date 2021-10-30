@@ -6,7 +6,9 @@ use std::cmp::Reverse;
 use std::convert::TryInto;
 
 impl Solution {
-    pub fn reconstruct_queue(mut people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+    pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        let mut people = people;
+
         people.sort_unstable_by_key(|p| {
             let [h, k]: [_; 2] = p.as_slice().try_into().unwrap();
 

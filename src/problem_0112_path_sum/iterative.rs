@@ -8,8 +8,9 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, mut sum: i32) -> bool {
+    pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
         if let Some(mut node) = root {
+            let mut sum = sum;
             let mut stack = Vec::new();
 
             loop {

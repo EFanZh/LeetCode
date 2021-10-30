@@ -8,7 +8,8 @@ use std::iter;
 use std::mem;
 
 impl Solution {
-    pub fn is_palindrome(mut head: Option<Box<ListNode>>) -> bool {
+    pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
+        let mut head = head;
         let length = iter::successors(head.as_deref(), |node| node.next.as_deref()).count();
         let half = length / 2;
         let mut reversed = None;

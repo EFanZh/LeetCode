@@ -5,7 +5,8 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn maximum_gap(mut nums: Vec<i32>) -> i32 {
+    pub fn maximum_gap(nums: Vec<i32>) -> i32 {
+        let mut nums = nums;
         let max_value = nums.iter().max().unwrap();
         let n = nums.len();
 

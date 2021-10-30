@@ -21,7 +21,8 @@ impl Solution {
         num % base
     }
 
-    pub fn int_to_roman(mut num: i32) -> String {
+    pub fn int_to_roman(num: i32) -> String {
+        let mut num = num;
         let mut result = vec![b'M'; (num / 1000) as _];
 
         num = Self::int_to_roman_helper(num % 1000, 100, (b'C', b'D', b'M'), &mut result);

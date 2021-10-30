@@ -63,7 +63,9 @@ impl Solution {
         }
     }
 
-    pub fn delete_node(mut root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        let mut root = root;
+
         Self::helper(&mut root, key);
 
         root

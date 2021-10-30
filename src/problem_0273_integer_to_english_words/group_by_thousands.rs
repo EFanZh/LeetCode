@@ -57,12 +57,14 @@ impl Solution {
         }
     }
 
-    pub fn number_to_words(mut num: i32) -> String {
+    pub fn number_to_words(num: i32) -> String {
         let mut result = String::new();
 
         if num == 0 {
             result.push_str("Zero");
         } else {
+            let mut num = num;
+
             for &(name, base) in &[("Billion", 1_000_000_000), ("Million", 1_000_000), ("Thousand", 1_000)] {
                 if num >= base {
                     Self::less_than_thousand(num / base, &mut result);

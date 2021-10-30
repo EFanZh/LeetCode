@@ -7,8 +7,9 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn reverse_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut result = None;
+        let mut head = head;
 
         while let Some(mut node) = head {
             head = mem::replace(&mut node.next, result);

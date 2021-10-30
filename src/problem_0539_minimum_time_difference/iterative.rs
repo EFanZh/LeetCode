@@ -11,7 +11,9 @@ impl Solution {
         600 * u16::from(h1) + 60 * u16::from(h2) + 10 * u16::from(m1) + u16::from(m2) - 671 * u16::from(b'0')
     }
 
-    pub fn find_min_difference(mut time_points: Vec<String>) -> i32 {
+    pub fn find_min_difference(time_points: Vec<String>) -> i32 {
+        let mut time_points = time_points;
+
         time_points.sort_unstable();
 
         let mut result = u16::MAX;

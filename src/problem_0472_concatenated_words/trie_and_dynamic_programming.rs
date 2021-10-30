@@ -53,7 +53,9 @@ impl Solution {
         root.has_value = true;
     }
 
-    pub fn find_all_concatenated_words_in_a_dict(mut words: Vec<String>) -> Vec<String> {
+    pub fn find_all_concatenated_words_in_a_dict(words: Vec<String>) -> Vec<String> {
+        let mut words = words;
+
         words.sort_by_key(String::len);
 
         let mut trie = Node::default();

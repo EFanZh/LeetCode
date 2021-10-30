@@ -5,8 +5,9 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    pub fn triangle_number(mut nums: Vec<i32>) -> i32 {
+    pub fn triangle_number(nums: Vec<i32>) -> i32 {
         let mut result = 0;
+        let mut nums = nums;
 
         nums.sort_unstable();
 

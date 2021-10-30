@@ -6,8 +6,9 @@ use std::collections::HashSet;
 use std::iter;
 
 impl Solution {
-    pub fn is_happy(mut n: i32) -> bool {
+    pub fn is_happy(n: i32) -> bool {
         let mut visited = iter::once(n).collect::<HashSet<_>>();
+        let mut n = n;
 
         loop {
             let mut next = 0;

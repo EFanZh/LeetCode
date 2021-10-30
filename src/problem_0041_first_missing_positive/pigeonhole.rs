@@ -5,7 +5,8 @@ pub struct Solution;
 use std::convert::TryFrom;
 
 impl Solution {
-    pub fn first_missing_positive(mut nums: Vec<i32>) -> i32 {
+    pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
+        let mut nums = nums;
         let mut i = 0;
 
         while let Some(mut num) = nums.get(i).copied() {

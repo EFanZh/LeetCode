@@ -23,7 +23,9 @@ impl Solution {
         }
     }
 
-    pub fn combination_sum4(mut nums: Vec<i32>, target: i32) -> i32 {
+    pub fn combination_sum4(nums: Vec<i32>, target: i32) -> i32 {
+        let mut nums = nums;
+
         nums.sort_unstable();
 
         Self::helper(&nums, target, &mut HashMap::new())

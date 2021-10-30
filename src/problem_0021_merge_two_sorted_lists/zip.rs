@@ -7,7 +7,8 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn merge_two_lists(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn merge_two_lists(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        let (mut l1, mut l2) = (l1, l2);
         let mut result = None;
         let mut target = &mut result;
 

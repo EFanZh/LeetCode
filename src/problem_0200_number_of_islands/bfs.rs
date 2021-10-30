@@ -25,8 +25,9 @@ impl Solution {
         }
     }
 
-    pub fn num_islands(mut grid: Vec<Vec<char>>) -> i32 {
+    pub fn num_islands(grid: Vec<Vec<char>>) -> i32 {
         let mut result = 0;
+        let mut grid = grid;
         let rows = grid.len();
         let columns = grid.first().map_or(0, Vec::len);
         let mut queue = VecDeque::new();

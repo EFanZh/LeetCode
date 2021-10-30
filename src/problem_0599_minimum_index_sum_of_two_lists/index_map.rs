@@ -3,13 +3,14 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
-use std::mem;
 
 impl Solution {
-    pub fn find_restaurant(mut list1: Vec<String>, mut list2: Vec<String>) -> Vec<String> {
-        if list2.len() < list1.len() {
-            mem::swap(&mut list1, &mut list2);
-        }
+    pub fn find_restaurant(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
+        let (list1, mut list2) = if list2.len() < list1.len() {
+            (list2, list1)
+        } else {
+            (list1, list2)
+        };
 
         let indices = list1
             .into_iter()

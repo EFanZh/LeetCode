@@ -5,7 +5,9 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
-    pub fn update_matrix(mut mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+    pub fn update_matrix(mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        let mut mat = mat;
+
         let mut queue = mat
             .iter_mut()
             .enumerate()

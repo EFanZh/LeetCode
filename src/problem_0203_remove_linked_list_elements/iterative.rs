@@ -15,7 +15,9 @@ impl Solution {
         }
     }
 
-    pub fn remove_elements(mut head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
+    pub fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
+        let mut head = head;
+
         Self::remove_elements_helper(&mut head, val);
 
         head

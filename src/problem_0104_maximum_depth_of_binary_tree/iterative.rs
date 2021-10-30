@@ -8,10 +8,11 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    pub fn max_depth(mut root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let mut result = 0;
         let mut depth = 0;
         let mut stack = Vec::new();
+        let mut root = root;
 
         loop {
             if let Some(node) = root {

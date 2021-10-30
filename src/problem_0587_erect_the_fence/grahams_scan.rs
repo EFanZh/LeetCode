@@ -66,7 +66,9 @@ impl Solution {
         Some(points)
     }
 
-    pub fn outer_trees(mut points: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+    pub fn outer_trees(points: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        let mut points = points;
+
         if points.len() >= 4 {
             if let Some(sorted_points) = Self::sort_points(&points) {
                 let (left, right) = sorted_points.split_at(3);

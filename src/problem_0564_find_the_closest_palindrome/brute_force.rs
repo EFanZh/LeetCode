@@ -75,9 +75,10 @@ impl Solution {
         }
     }
 
-    pub fn nearest_palindromic(mut n: String) -> String {
+    pub fn nearest_palindromic(n: String) -> String {
         use std::fmt::Write;
 
+        let mut n = n;
         let result = Self::helper(n.parse().unwrap(), n.len() as _);
 
         n.clear();

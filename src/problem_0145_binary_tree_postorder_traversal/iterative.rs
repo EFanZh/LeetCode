@@ -13,9 +13,10 @@ enum Frame {
 }
 
 impl Solution {
-    pub fn postorder_traversal(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
         let mut stack = Vec::new();
+        let mut root = root;
 
         'r: loop {
             if let Some(node) = root {

@@ -5,9 +5,10 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    pub fn reverse_k_group(mut head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
+    pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
         let mut result = None;
         let mut target = &mut result;
+        let mut head = head;
 
         'k: while let Some(mut head_node) = head {
             // Find a group that has the length of k.
