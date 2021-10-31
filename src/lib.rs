@@ -664,6 +664,7 @@ pub mod problem_0808_soup_servings;
 pub mod problem_0809_expressive_words;
 pub mod problem_0810_chalkboard_xor_game;
 pub mod problem_0811_subdomain_visit_count;
+pub mod problem_0812_largest_triangle_area;
 pub mod problem_0813_largest_sum_of_averages;
 pub mod problem_0814_binary_tree_pruning;
 pub mod problem_0817_linked_list_components;
