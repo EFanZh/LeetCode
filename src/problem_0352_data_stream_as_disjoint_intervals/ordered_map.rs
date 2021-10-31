@@ -23,15 +23,10 @@ impl SummaryRanges {
                 .and_then(|(&from, &to)| if from == val + 1 { Some((from, to)) } else { None })
         {
             if let Some(left_to) =
-                self.intervals.range_mut(..val).next_back().and_then(
-                    |(_, to)| {
-                        if *to == val - 1 {
-                            Some(to)
-                        } else {
-                            None
-                        }
-                    },
-                )
+                self.intervals
+                    .range_mut(..val)
+                    .next_back()
+                    .and_then(|(_, to)| if *to == val - 1 { Some(to) } else { None })
             {
                 *left_to = right_to;
             } else {
