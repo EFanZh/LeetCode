@@ -668,6 +668,7 @@ pub mod problem_0812_largest_triangle_area;
 pub mod problem_0813_largest_sum_of_averages;
 pub mod problem_0814_binary_tree_pruning;
 pub mod problem_0815_bus_routes;
+pub mod problem_0816_ambiguous_coordinates;
 pub mod problem_0817_linked_list_components;
 pub mod problem_0819_most_common_word;
 pub mod problem_0820_short_encoding_of_words;
