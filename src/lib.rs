@@ -678,6 +678,7 @@ pub mod problem_0824_goat_latin;
 pub mod problem_0825_friends_of_appropriate_ages;
 pub mod problem_0826_most_profit_assigning_work;
 pub mod problem_0827_making_a_large_island;
+pub mod problem_0828_count_unique_characters_of_all_substrings_of_a_given_string;
 pub mod problem_0829_consecutive_numbers_sum;
 pub mod problem_0830_positions_of_large_groups;
 pub mod problem_0832_flipping_an_image;
