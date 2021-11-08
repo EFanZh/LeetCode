@@ -321,3 +321,7 @@ Is there a best solution?
 ## [753. Cracking the Safe](https://leetcode.com/problems/cracking-the-safe/)
 
 Why are all of those solutions correct?
+
+## [818. Race Car](https://leetcode.com/problems/race-car/)
+
+Remember the dynamic programming solution.

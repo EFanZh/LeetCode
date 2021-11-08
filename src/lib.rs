@@ -670,6 +670,7 @@ pub mod problem_0814_binary_tree_pruning;
 pub mod problem_0815_bus_routes;
 pub mod problem_0816_ambiguous_coordinates;
 pub mod problem_0817_linked_list_components;
+pub mod problem_0818_race_car;
 pub mod problem_0819_most_common_word;
 pub mod problem_0820_short_encoding_of_words;
 pub mod problem_0821_shortest_distance_to_a_character;
