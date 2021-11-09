@@ -674,6 +674,7 @@ pub mod problem_0818_race_car;
 pub mod problem_0819_most_common_word;
 pub mod problem_0820_short_encoding_of_words;
 pub mod problem_0821_shortest_distance_to_a_character;
+pub mod problem_0822_card_flipping_game;
 pub mod problem_0823_binary_trees_with_factors;
 pub mod problem_0824_goat_latin;
 pub mod problem_0825_friends_of_appropriate_ages;
