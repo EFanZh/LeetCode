@@ -683,6 +683,7 @@ pub mod problem_0827_making_a_large_island;
 pub mod problem_0828_count_unique_characters_of_all_substrings_of_a_given_string;
 pub mod problem_0829_consecutive_numbers_sum;
 pub mod problem_0830_positions_of_large_groups;
+pub mod problem_0831_masking_personal_information;
 pub mod problem_0832_flipping_an_image;
 pub mod problem_0833_find_and_replace_in_string;
 pub mod problem_0867_transpose_matrix;
