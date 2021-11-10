@@ -1,4 +1,5 @@
 use std::env;
+use std::io::{self, Write};
 use std::path::PathBuf;
 use std::process::{ChildStdout, Command, Stdio};
 
@@ -12,7 +13,11 @@ pub fn get_project_dir() -> PathBuf {
 
 #[allow(clippy::print_stdout, clippy::use_debug)]
 fn print_command_line(command: &Command) {
-    println!("===> {:?}", command);
+    let stdout = io::stdout();
+    let mut stdout = stdout.lock();
+
+    writeln!(stdout, "===> {:?}", command).unwrap();
+    stdout.flush().unwrap();
 }
 
 pub fn run_command(command: &mut Command) {
