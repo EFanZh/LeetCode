@@ -12,6 +12,7 @@ mod tests {
         let test_cases = [
             ((&[1, 2, 4, 4, 7] as &[_], &[1, 3, 4, 1, 3] as &[_]), 2),
             ((&[1], &[1]), 0),
+            ((&[1, 1], &[1, 1]), 0),
         ];
 
         for ((fronts, backs), expected) in test_cases {
