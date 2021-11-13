@@ -688,6 +688,7 @@ pub mod problem_0832_flipping_an_image;
 pub mod problem_0833_find_and_replace_in_string;
 pub mod problem_0836_rectangle_overlap;
 pub mod problem_0838_push_dominoes;
+pub mod problem_0841_keys_and_rooms;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
