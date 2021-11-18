@@ -693,6 +693,7 @@ pub mod problem_0844_backspace_string_compare;
 pub mod problem_0845_longest_mountain_in_array;
 pub mod problem_0846_hand_of_straights;
 pub mod problem_0848_shifting_letters;
+pub mod problem_0849_maximize_distance_to_closest_person;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
