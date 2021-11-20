@@ -4,8 +4,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter;
-use std::mem;
+use std::{iter, mem};
 
 impl Solution {
     pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {

@@ -2,8 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter;
-use std::mem;
+use std::{iter, mem};
 
 impl Solution {
     fn iter_groups(s: &[u8]) -> impl Iterator<Item = (u8, u8)> + '_ {

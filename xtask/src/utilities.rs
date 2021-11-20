@@ -1,7 +1,7 @@
 use std::env;
-use std::io::{self, Write};
+use std::io::{self, Read, Write};
 use std::path::PathBuf;
-use std::process::{ChildStdout, Command, Stdio};
+use std::process::{Command, Stdio};
 
 pub fn get_project_dir() -> PathBuf {
     let mut path = PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap());
@@ -38,21 +38,15 @@ pub fn run_command_and_get_output(command: &mut Command) -> Vec<u8> {
     output.stdout
 }
 
-pub fn run_command_and_stream_output<R>(command: &mut Command, callback: impl FnOnce(&mut ChildStdout) -> R) -> R {
+pub fn run_command_and_stream_output<R>(command: &mut Command, callback: impl FnOnce(&mut dyn Read) -> R) -> R {
     command.stdout(Stdio::piped());
 
     print_command_line(command);
 
     let mut child = command.spawn().unwrap();
     let result = callback(child.stdout.as_mut().unwrap());
-    let output = child.wait_with_output().unwrap();
 
-    assert!(
-        output.status.success(),
-        "Failed to run command {:?}:\n{:?}",
-        command,
-        String::from_utf8_lossy(&output.stderr)
-    );
+    assert!(child.wait().unwrap().success());
 
     result
 }

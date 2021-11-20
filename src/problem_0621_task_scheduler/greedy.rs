@@ -2,8 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::BinaryHeap;
-use std::collections::VecDeque;
+use std::collections::{BinaryHeap, VecDeque};
 
 impl Solution {
     pub fn least_interval(tasks: Vec<char>, n: i32) -> i32 {

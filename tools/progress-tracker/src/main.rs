@@ -64,9 +64,8 @@
 use git2::Repository;
 use problems::Problems;
 use reqwest::blocking;
-use std::env;
-use std::fs;
 use std::path::Path;
+use std::{env, fs};
 
 mod html;
 mod problems;

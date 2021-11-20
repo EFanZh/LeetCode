@@ -62,9 +62,8 @@
 #![allow(clippy::non_ascii_literal)]
 
 use regex::Regex;
-use std::env;
-use std::fs;
 use std::path::PathBuf;
+use std::{env, fs};
 
 fn to_all_caps_case(id: &str) -> String {
     let mut result = String::with_capacity(id.len());

@@ -2,8 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter;
-use std::mem;
+use std::{iter, mem};
 
 impl Solution {
     fn full_justify_helper(mut line: String, words: &mut [String], max_width: usize, result: &mut Vec<String>) {

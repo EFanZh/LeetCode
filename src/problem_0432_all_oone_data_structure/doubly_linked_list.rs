@@ -1,9 +1,8 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::{HashMap, HashSet};
-use std::iter;
-use std::mem;
 use std::rc::Rc;
+use std::{iter, mem};
 
 const INVALID_HANDLE: usize = usize::MAX;
 

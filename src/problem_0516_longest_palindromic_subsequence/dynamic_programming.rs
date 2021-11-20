@@ -2,8 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter;
-use std::mem;
+use std::{iter, mem};
 
 impl Solution {
     pub fn longest_palindrome_subseq(s: String) -> i32 {

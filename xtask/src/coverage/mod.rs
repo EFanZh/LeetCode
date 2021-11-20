@@ -1,12 +1,12 @@
 use crate::{tools, utilities};
 use serde_json::{Deserializer, Value};
-use std::env;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter, Write};
 use std::fs::{self, File};
 use std::path::{self, Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
+use std::{env, io};
 use structopt::StructOpt;
 
 enum OutputType {
@@ -186,18 +186,32 @@ fn run_rust_tests(toolchain: &str, llvm_profdata: &Path, output: &Path) -> PathB
                 "json",
             ])
             .env("RUSTFLAGS", "-Zinstrument-coverage"),
-        |stdout| {
-            Deserializer::from_reader(stdout).into_iter::<Value>().find_map(|item| {
-                if let Ok(Value::Object(mut item)) = item {
-                    if let Some(Value::String(executable)) = item.remove("executable") {
-                        Some(executable)
+        |child_stdout| {
+            let stdout = io::stdout();
+            let mut stdout = stdout.lock();
+
+            Deserializer::from_reader(child_stdout)
+                .into_iter::<Value>()
+                .find_map(|item| {
+                    if let Ok(Value::Object(mut item)) = item {
+                        if let Some(Value::Object(mut message)) = item.remove("message") {
+                            if let Some(Value::String(rendered)) = message.remove("rendered") {
+                                use std::io::Write;
+
+                                stdout.write_all(rendered.as_bytes()).unwrap();
+                                stdout.flush().unwrap();
+                            }
+                        }
+
+                        if let Some(Value::String(executable)) = item.remove("executable") {
+                            Some(executable)
+                        } else {
+                            None
+                        }
                     } else {
                         None
                     }
-                } else {
-                    None
-                }
-            })
+                })
         },
     )
     .unwrap();

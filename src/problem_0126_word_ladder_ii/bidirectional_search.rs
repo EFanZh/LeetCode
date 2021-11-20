@@ -3,8 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::{HashMap, HashSet};
-use std::iter;
-use std::mem;
+use std::{iter, mem};
 
 type ConnectionKey<'a> = (&'a [u8], &'a [u8]);
 

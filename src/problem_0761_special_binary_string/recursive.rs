@@ -2,9 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter;
-use std::mem;
 use std::slice::Iter;
+use std::{iter, mem};
 
 struct Node {
     children: Vec<Self>,
