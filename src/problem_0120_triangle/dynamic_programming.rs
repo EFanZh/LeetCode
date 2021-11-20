@@ -6,8 +6,8 @@ use std::mem;
 
 impl Solution {
     pub fn minimum_total(triangle: Vec<Vec<i32>>) -> i32 {
-        let mut temp_cache = Vec::with_capacity(triangle.len());
-        let mut cache = Vec::with_capacity(triangle.len());
+        let mut temp_cache = Vec::<i32>::with_capacity(triangle.len()); // TODO: Remove explicit type annotation.
+        let mut cache = Vec::<i32>::with_capacity(triangle.len()); // TODO: Remove explicit type annotation.
 
         for row in triangle {
             temp_cache.resize(row.len(), 0);
