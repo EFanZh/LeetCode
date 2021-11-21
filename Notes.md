@@ -325,3 +325,7 @@ Why are all of those solutions correct?
 ## [818. Race Car](https://leetcode.com/problems/race-car/)
 
 Remember the dynamic programming solution.
+
+## [834. Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree/)
+
+Remember the solution.
