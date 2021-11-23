@@ -690,6 +690,7 @@ pub mod problem_0834_sum_of_distances_in_tree;
 pub mod problem_0835_image_overlap;
 pub mod problem_0836_rectangle_overlap;
 pub mod problem_0838_push_dominoes;
+pub mod problem_0840_magic_squares_in_grid;
 pub mod problem_0841_keys_and_rooms;
 pub mod problem_0844_backspace_string_compare;
 pub mod problem_0845_longest_mountain_in_array;
