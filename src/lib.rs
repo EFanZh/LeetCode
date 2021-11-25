@@ -700,6 +700,7 @@ pub mod problem_0849_maximize_distance_to_closest_person;
 pub mod problem_0852_peak_index_in_a_mountain_array;
 pub mod problem_0853_car_fleet;
 pub mod problem_0856_score_of_parentheses;
+pub mod problem_0858_mirror_reflection;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
