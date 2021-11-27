@@ -697,6 +697,7 @@ pub mod problem_0845_longest_mountain_in_array;
 pub mod problem_0846_hand_of_straights;
 pub mod problem_0848_shifting_letters;
 pub mod problem_0849_maximize_distance_to_closest_person;
+pub mod problem_0851_loud_and_rich;
 pub mod problem_0852_peak_index_in_a_mountain_array;
 pub mod problem_0853_car_fleet;
 pub mod problem_0856_score_of_parentheses;
