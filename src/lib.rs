@@ -707,6 +707,7 @@ pub mod problem_0858_mirror_reflection;
 pub mod problem_0859_buddy_strings;
 pub mod problem_0860_lemonade_change;
 pub mod problem_0867_transpose_matrix;
+pub mod problem_0868_binary_gap;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
