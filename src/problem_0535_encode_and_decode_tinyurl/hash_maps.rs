@@ -35,7 +35,6 @@ impl Codec {
         s.insert(0, MIN_CHAR);
     }
 
-    #[allow(clippy::option_if_let_else)]
     fn encode(&mut self, long_url: String) -> String {
         if let Some(short_url) = self.long_to_short.get(long_url.as_str()) {
             short_url.to_string()

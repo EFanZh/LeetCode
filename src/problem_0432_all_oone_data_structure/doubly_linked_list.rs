@@ -32,7 +32,6 @@ impl AllOne {
         }
     }
 
-    #[allow(clippy::option_if_let_else)]
     fn allocate_node(&mut self, key: Rc<str>, value: usize, prev: usize, next: usize) -> usize {
         if let Some(free_node) = self.nodes.get_mut(self.free_nodes) {
             let handle = mem::replace(&mut self.free_nodes, free_node.next);
@@ -213,15 +212,15 @@ impl AllOne {
     }
 
     fn get_max_key(&self) -> String {
-        self.nodes.get(self.tail).map_or_else(String::new, |node| {
-            node.keys.iter().next().as_deref().unwrap().to_string()
-        })
+        self.nodes
+            .get(self.tail)
+            .map_or_else(String::new, |node| node.keys.iter().next().unwrap().to_string())
     }
 
     fn get_min_key(&self) -> String {
-        self.nodes.get(self.head).map_or_else(String::new, |node| {
-            node.keys.iter().next().as_deref().unwrap().to_string()
-        })
+        self.nodes
+            .get(self.head)
+            .map_or_else(String::new, |node| node.keys.iter().next().unwrap().to_string())
     }
 }
 

@@ -73,7 +73,6 @@ impl Blocks {
         }
     }
 
-    #[allow(clippy::option_if_let_else)]
     fn allocate(&mut self, block: Block) -> usize {
         if let Some(slot) = self.storage.get_mut(self.free_head) {
             let result = mem::replace(&mut self.free_head, slot.next);
@@ -172,7 +171,7 @@ impl LFUCache {
         block.node_tail = node_index;
     }
 
-    fn increment_frequence(&mut self, node_index: usize) {
+    fn increment_frequency(&mut self, node_index: usize) {
         let node = &mut self.node_memory[node_index];
         let block = &mut self.block_memory[node.block];
         let frequency = block.frequency;
@@ -248,7 +247,7 @@ impl LFUCache {
 
     fn get(&mut self, key: i32) -> i32 {
         if let Some(&node_index) = self.key_to_node.get(&key) {
-            self.increment_frequence(node_index);
+            self.increment_frequency(node_index);
 
             self.node_memory[node_index].value
         } else {
@@ -259,7 +258,7 @@ impl LFUCache {
     fn put(&mut self, key: i32, value: i32) {
         if let Some(&node_index) = self.key_to_node.get(&key) {
             self.node_memory[node_index].value = value;
-            self.increment_frequence(node_index);
+            self.increment_frequency(node_index);
         } else if let Some(block) = self.block_memory.get_mut(self.block_head) {
             if self.key_to_node.len() == self.capacity {
                 // Reuse the first node.

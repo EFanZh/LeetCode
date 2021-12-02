@@ -14,7 +14,7 @@ impl Solution {
         let mut result = vec![0; s.len()];
         let mut iter = result.iter_mut();
 
-        for &c in chunks.clone().filter_map(|chunk| chunk.first()) {
+        for &c in chunks.clone().filter_map(<[_]>::first) {
             *iter.next().unwrap() = c;
         }
 

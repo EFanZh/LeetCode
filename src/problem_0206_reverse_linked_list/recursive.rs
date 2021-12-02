@@ -7,7 +7,6 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)]
     fn helper(reversed: Option<Box<ListNode>>, head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         if let Some(mut node) = head {
             let new_head = mem::replace(&mut node.next, reversed);

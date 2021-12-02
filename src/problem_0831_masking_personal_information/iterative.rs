@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)]
     pub fn mask_pii(s: String) -> String {
         let mut s = s;
 

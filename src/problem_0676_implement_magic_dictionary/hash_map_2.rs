@@ -32,7 +32,7 @@ impl MagicDictionary {
                 key.extend(&word[..i]);
                 key.extend(&word[i + 1..]);
 
-                Self::vec_get_or_default(&mut keys.entry(key.into_boxed_slice()).or_default(), i).insert(c);
+                Self::vec_get_or_default(keys.entry(key.into_boxed_slice()).or_default(), i).insert(c);
             }
         }
     }

@@ -16,6 +16,7 @@ mod tests {
         FindMedian(f64),
     }
 
+    #[allow(clippy::manual_assert)]
     pub fn run<M: MedianFinder>() {
         use Operation::{AddNum, FindMedian};
 
