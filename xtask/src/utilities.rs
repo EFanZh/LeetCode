@@ -16,7 +16,19 @@ fn print_command_line(command: &Command) {
     let stdout = io::stdout();
     let mut stdout = stdout.lock();
 
-    writeln!(stdout, "===> {:?}", command).unwrap();
+    write!(
+        stdout,
+        "===> {}",
+        shell_escape::escape(command.get_program().to_string_lossy())
+    )
+    .unwrap();
+
+    for arg in command.get_args() {
+        write!(stdout, " {}", shell_escape::escape(arg.to_string_lossy())).unwrap();
+    }
+
+    writeln!(stdout).unwrap();
+
     stdout.flush().unwrap();
 }
 
@@ -40,6 +52,7 @@ pub fn run_command_and_get_output(command: &mut Command) -> Vec<u8> {
 
 pub fn run_command_and_stream_output<R>(command: &mut Command, callback: impl FnOnce(&mut dyn Read) -> R) -> R {
     command.stdout(Stdio::piped());
+    command.stderr(Stdio::null());
 
     print_command_line(command);
 
