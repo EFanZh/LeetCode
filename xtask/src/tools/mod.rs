@@ -49,34 +49,30 @@ pub fn find_rust_sysroot(toolchain: &str) -> PathBuf {
     PathBuf::from(path_buffer)
 }
 
-fn find_cmake_common() -> Option<PathBuf> {
-    which::which("cmake").ok()
+fn which(name: &str) -> Option<PathBuf> {
+    which::which(name).is_ok().then(|| name.into())
 }
 
 cfg_if::cfg_if! {
     if #[cfg(target_os = "windows")] {
         pub fn find_cmake() -> Option<PathBuf> {
-            find_cmake_common().or_else(windows::find_cmake)
+            which("cmake").or_else(windows::find_cmake)
         }
     } else {
         pub fn find_cmake() -> Option<PathBuf> {
-            find_cmake_common()
+            which("cmake")
         }
     }
 }
 
-fn find_ninja_common() -> Option<PathBuf> {
-    which::which("ninja").ok()
-}
-
 cfg_if::cfg_if! {
     if #[cfg(target_os = "windows")] {
         pub fn find_ninja() -> Option<PathBuf> {
-            find_ninja_common().or_else(windows::find_ninja)
+            which("ninja").or_else(windows::find_ninja)
         }
     } else {
         pub fn find_ninja() -> Option<PathBuf> {
-            find_ninja_common()
+            which("ninja")
         }
     }
 }

@@ -98,7 +98,7 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
 
     cpp_coverage_target_dir.push(format!("c++-coverage-{}", env::consts::OS));
 
-    let cmake_executable = tools::find_cmake().unwrap();
+    let cmake_executable = tools::find_cmake().expect("Unable to find cmake executable.");
     let mut clang = String::from("clang");
     let mut clang_plus_plus = String::from("clang++");
     let mut llvm_profdata = String::from("llvm-profdata");
