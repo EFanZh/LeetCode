@@ -710,6 +710,7 @@ pub mod problem_0858_mirror_reflection;
 pub mod problem_0859_buddy_strings;
 pub mod problem_0860_lemonade_change;
 pub mod problem_0862_shortest_subarray_with_sum_at_least_k;
+pub mod problem_0865_smallest_subtree_with_all_the_deepest_nodes;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_0868_binary_gap;
 pub mod problem_0869_reordered_power_of_2;
