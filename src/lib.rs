@@ -724,6 +724,7 @@ pub mod problem_0875_koko_eating_bananas;
 pub mod problem_0876_middle_of_the_linked_list;
 pub mod problem_0877_stone_game;
 pub mod problem_0884_uncommon_words_from_two_sentences;
+pub mod problem_0892_surface_area_of_3d_shapes;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
