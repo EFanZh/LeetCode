@@ -1,4 +1,4 @@
-pub mod hash_set;
+pub mod hash_map;
 
 pub trait Solution {
     fn uncommon_from_sentences(s1: String, s2: String) -> Vec<String>;
