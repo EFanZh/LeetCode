@@ -707,6 +707,7 @@ pub mod problem_0851_loud_and_rich;
 pub mod problem_0852_peak_index_in_a_mountain_array;
 pub mod problem_0853_car_fleet;
 pub mod problem_0854_k_similar_strings;
+pub mod problem_0855_exam_room;
 pub mod problem_0856_score_of_parentheses;
 pub mod problem_0858_mirror_reflection;
 pub mod problem_0859_buddy_strings;
