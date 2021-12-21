@@ -709,6 +709,7 @@ pub mod problem_0853_car_fleet;
 pub mod problem_0854_k_similar_strings;
 pub mod problem_0855_exam_room;
 pub mod problem_0856_score_of_parentheses;
+pub mod problem_0857_minimum_cost_to_hire_k_workers;
 pub mod problem_0858_mirror_reflection;
 pub mod problem_0859_buddy_strings;
 pub mod problem_0860_lemonade_change;
