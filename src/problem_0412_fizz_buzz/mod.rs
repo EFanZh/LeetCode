@@ -1,4 +1,5 @@
 pub mod iterative;
+pub mod iterative_2;
 
 pub trait Solution {
     fn fizz_buzz(n: i32) -> Vec<String>;

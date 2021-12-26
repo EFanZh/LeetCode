@@ -1,3 +1,4 @@
+pub mod binary_search;
 pub mod iterative;
 
 pub trait Solution {
