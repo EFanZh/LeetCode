@@ -17,22 +17,7 @@ pub trait Solution {
 #[cfg(test)]
 mod tests {
     use super::Solution;
-    use crate::data_structures::TreeNode;
     use crate::test_utilities;
-    use std::cell::RefCell;
-    use std::rc::Rc;
-
-    fn find_node(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-        root.as_ref().and_then(|root| {
-            let root_ref = root.borrow();
-
-            if root_ref.val == val {
-                Some(Rc::clone(root))
-            } else {
-                find_node(&root_ref.left, val).or_else(|| find_node(&root_ref.right, val))
-            }
-        })
-    }
 
     pub fn run<S: Solution>() {
         let test_cases = [
@@ -106,9 +91,9 @@ mod tests {
                 (root, q, p),
                 (inverted_root, q, p),
             ] {
-                let p = find_node(&root, p);
-                let q = find_node(&root, q);
-                let expected = find_node(&root, expected);
+                let p = test_utilities::find_node(&root, p);
+                let q = test_utilities::find_node(&root, q);
+                let expected = test_utilities::find_node(&root, expected);
 
                 assert_eq!(S::lowest_common_ancestor(root, p, q), expected);
             }

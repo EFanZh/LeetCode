@@ -38,6 +38,18 @@ where
     }
 }
 
+pub fn find_node(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    root.as_ref().and_then(|root| {
+        let root_ref = root.borrow();
+
+        if root_ref.val == val {
+            Some(Rc::clone(root))
+        } else {
+            find_node(&root_ref.left, val).or_else(|| find_node(&root_ref.right, val))
+        }
+    })
+}
+
 pub fn invert_tree(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNode>>> {
     root.map(|root| {
         let root = root.borrow();
