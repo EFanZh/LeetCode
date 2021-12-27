@@ -715,6 +715,7 @@ pub mod problem_0859_buddy_strings;
 pub mod problem_0860_lemonade_change;
 pub mod problem_0861_score_after_flipping_matrix;
 pub mod problem_0862_shortest_subarray_with_sum_at_least_k;
+pub mod problem_0863_all_nodes_distance_k_in_binary_tree;
 pub mod problem_0863_projection_area_of_3d_shapes;
 pub mod problem_0865_smallest_subtree_with_all_the_deepest_nodes;
 pub mod problem_0867_transpose_matrix;
