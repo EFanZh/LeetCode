@@ -329,3 +329,7 @@ Remember the dynamic programming solution.
 ## [834. Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree/)
 
 Remember the solution.
+
+## [871. Minimum Number of Refueling Stops](https://leetcode.com/problems/minimum-number-of-refueling-stops/)
+
+Good problem. Why is the greedy solution correct?

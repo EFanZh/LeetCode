@@ -18,6 +18,22 @@ where
     T: Clone + Debug,
 {
     fn to_vec(&self) -> Vec<Vec<T>> {
+        Matrix::to_vec(self.as_slice())
+    }
+
+    fn equals_to_slice(&self, slice: &[Vec<T>]) -> bool
+    where
+        T: PartialEq,
+    {
+        *slice == *self
+    }
+}
+
+impl<T, const N: usize> Matrix<T> for [[T; N]]
+where
+    T: Clone + Debug,
+{
+    fn to_vec(&self) -> Vec<Vec<T>> {
         self.iter().map(|row| row.to_vec()).collect()
     }
 

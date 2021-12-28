@@ -722,6 +722,7 @@ pub mod problem_0867_transpose_matrix;
 pub mod problem_0868_binary_gap;
 pub mod problem_0869_reordered_power_of_2;
 pub mod problem_0870_advantage_shuffle;
+pub mod problem_0871_minimum_number_of_refueling_stops;
 pub mod problem_0872_leaf_similar_trees;
 pub mod problem_0874_walking_robot_simulation;
 pub mod problem_0875_koko_eating_bananas;
