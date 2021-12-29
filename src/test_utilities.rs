@@ -25,7 +25,7 @@ where
     where
         T: PartialEq,
     {
-        *slice == *self
+        self.as_slice().equals_to_slice(slice)
     }
 }
 
