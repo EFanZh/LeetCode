@@ -1,5 +1,7 @@
 use crate::{tools, utilities};
+use clap::Parser;
 use serde_json::{Deserializer, Value};
+use std::error::Error;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter, Write};
 use std::fs::{self, File};
@@ -7,7 +9,6 @@ use std::path::{self, Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
 use std::{env, io};
-use structopt::StructOpt;
 
 enum OutputType {
     Html,
@@ -22,6 +23,8 @@ impl Display for ParseOutputTypeError {
         f.write_str("Unknown output type.")
     }
 }
+
+impl Error for ParseOutputTypeError {}
 
 impl FromStr for OutputType {
     type Err = ParseOutputTypeError;
@@ -50,21 +53,17 @@ impl OutputType {
     }
 }
 
-#[derive(StructOpt)]
+#[derive(Parser)]
 pub struct Subcommand {
-    #[structopt(long)]
+    #[clap(long)]
     cmake_toolchain_file: Option<PathBuf>,
-
-    #[structopt(long)]
+    #[clap(long)]
     llvm_version: Option<String>,
-
-    #[structopt(long, default_value = "nightly")]
+    #[clap(long, default_value = "nightly")]
     rust_toolchain: String,
-
-    #[structopt(short, long)]
+    #[clap(short, long)]
     output_path: PathBuf,
-
-    #[structopt(short = "t", long, default_value = "lcov")]
+    #[clap(short = 't', long, default_value = "lcov")]
     output_type: OutputType,
 }
 

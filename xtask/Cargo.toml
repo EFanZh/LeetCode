@@ -6,10 +6,10 @@ version = "0.1.0"
 
 [dependencies]
 cfg-if = "*"
+clap = { version = "*", features = ["derive"] }
 regex-syntax = "*"
 serde_json = "*"
 shell-escape = "*"
-structopt = "*"
 tempfile = "*"
 which = "*"
 
