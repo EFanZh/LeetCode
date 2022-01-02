@@ -739,6 +739,7 @@ pub mod problem_0893_groups_of_special_equivalent_strings;
 pub mod problem_0896_monotonic_array;
 pub mod problem_0897_increasing_order_search_tree;
 pub mod problem_0904_fruit_into_baskets;
+pub mod problem_0905_sort_array_by_parity;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
