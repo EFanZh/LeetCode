@@ -719,6 +719,7 @@ pub mod problem_0863_all_nodes_distance_k_in_binary_tree;
 pub mod problem_0863_projection_area_of_3d_shapes;
 pub mod problem_0864_shortest_path_to_get_all_keys;
 pub mod problem_0865_smallest_subtree_with_all_the_deepest_nodes;
+pub mod problem_0866_prime_palindrome;
 pub mod problem_0867_transpose_matrix;
 pub mod problem_0868_binary_gap;
 pub mod problem_0869_reordered_power_of_2;
