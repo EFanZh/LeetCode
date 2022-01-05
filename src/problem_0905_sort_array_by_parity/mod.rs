@@ -1,4 +1,4 @@
-pub mod dynamic_programming;
+pub mod iterative;
 
 pub trait Solution {
     fn sort_array_by_parity(nums: Vec<i32>) -> Vec<i32>;
