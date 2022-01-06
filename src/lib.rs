@@ -733,6 +733,7 @@ pub mod problem_0876_middle_of_the_linked_list;
 pub mod problem_0877_stone_game;
 pub mod problem_0878_nth_magical_number;
 pub mod problem_0880_decoded_string_at_index;
+pub mod problem_0881_boats_to_save_people;
 pub mod problem_0883_projection_area_of_3d_shapes;
 pub mod problem_0884_uncommon_words_from_two_sentences;
 pub mod problem_0888_fair_candy_swap;
