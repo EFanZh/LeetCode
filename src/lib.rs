@@ -732,6 +732,7 @@ pub mod problem_0875_koko_eating_bananas;
 pub mod problem_0876_middle_of_the_linked_list;
 pub mod problem_0877_stone_game;
 pub mod problem_0878_nth_magical_number;
+pub mod problem_0879_profitable_schemes;
 pub mod problem_0880_decoded_string_at_index;
 pub mod problem_0881_boats_to_save_people;
 pub mod problem_0883_projection_area_of_3d_shapes;
