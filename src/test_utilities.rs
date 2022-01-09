@@ -103,6 +103,74 @@ pub fn iter_list(list: &Option<Box<ListNode>>) -> impl Iterator<Item = &i32> {
     iter::successors(list.as_deref(), |node| node.next.as_deref()).map(|node| &node.val)
 }
 
+pub fn iter_tree_pre_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = i32> {
+    let mut stack = root.into_iter().collect::<Vec<_>>();
+
+    iter::from_fn(move || {
+        stack.pop().map(|node| {
+            let node_ref = node.borrow();
+
+            if let Some(right) = node_ref.right.clone() {
+                stack.push(right);
+            }
+
+            if let Some(left) = node_ref.left.clone() {
+                stack.push(left);
+            }
+
+            node_ref.val
+        })
+    })
+}
+
+pub fn iter_tree_post_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = i32> {
+    enum State {
+        Start(Rc<RefCell<TreeNode>>),
+        Left(i32, Rc<RefCell<TreeNode>>),
+        Right(i32),
+    }
+
+    let mut stack = root.map(State::Start).into_iter().collect::<Vec<_>>();
+
+    iter::from_fn(move || {
+        stack.pop().map(|state| {
+            let mut node = match state {
+                State::Start(root) => root,
+                State::Left(value, right) => {
+                    stack.push(State::Right(value));
+
+                    right
+                }
+                State::Right(value) => return value,
+            };
+
+            loop {
+                let node_ref = node.borrow();
+
+                if let Some(left) = node_ref.left.clone() {
+                    stack.push(if let Some(right) = node_ref.right.clone() {
+                        State::Left(node_ref.val, right)
+                    } else {
+                        State::Right(node_ref.val)
+                    });
+
+                    drop(node_ref);
+
+                    node = left;
+                } else if let Some(right) = node_ref.right.clone() {
+                    stack.push(State::Right(node_ref.val));
+
+                    drop(node_ref);
+
+                    node = right;
+                } else {
+                    return node_ref.val;
+                }
+            }
+        })
+    })
+}
+
 pub fn make_list<I: IntoIterator<Item = i32>>(values: I) -> Option<Box<ListNode>> {
     let mut result = None;
     let mut node_ref = &mut result;
@@ -209,6 +277,43 @@ mod tests {
             let rhs = super::make_tree(rhs.iter().copied());
 
             assert_eq!(super::compare_tree(&lhs, &rhs), expected);
+        }
+    }
+
+    #[test]
+    fn test_iter_tree_post_order() {
+        let test_cases = [
+            (
+                &[
+                    Some(1),
+                    Some(2),
+                    Some(3),
+                    Some(4),
+                    Some(5),
+                    Some(6),
+                    Some(7),
+                    None,
+                    None,
+                    Some(8),
+                    None,
+                    None,
+                    Some(9),
+                    Some(10),
+                    Some(11),
+                ] as &[_],
+                &[4, 8, 5, 2, 9, 6, 10, 11, 7, 3, 1] as &[_],
+            ),
+            (&[], &[]),
+            (&[Some(1)], &[1]),
+            (&[Some(1), Some(2)], &[2, 1]),
+            (&[Some(1), None, Some(2)], &[2, 1]),
+        ];
+
+        for (root, expected) in test_cases {
+            assert_eq!(
+                super::iter_tree_post_order(super::make_tree(root.iter().copied())).collect::<Vec<_>>(),
+                expected
+            );
         }
     }
 }
