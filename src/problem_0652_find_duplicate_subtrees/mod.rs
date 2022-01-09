@@ -40,13 +40,14 @@ mod tests {
 
         for (root, expected) in test_cases {
             assert_eq!(
-                test_utilities::unstable_sorted(
-                    S::find_duplicate_subtrees(test_utilities::make_tree(root.iter().copied()))
-                        .into_iter()
-                        .map(|root| test_utilities::iter_tree(root).collect::<Vec<_>>())
-                        .collect::<Vec<_>>()
+                test_utilities::unstable_sorted_by(
+                    S::find_duplicate_subtrees(test_utilities::make_tree(root.iter().copied())),
+                    test_utilities::compare_tree
                 ),
                 expected
+                    .iter()
+                    .map(|root| test_utilities::make_tree(root.iter().copied()))
+                    .collect::<Vec<_>>()
             );
         }
     }

@@ -8,7 +8,6 @@ pub struct ListNode {
 }
 
 impl ListNode {
-    #[inline]
     pub fn new(val: i32) -> Self {
         Self { next: None, val }
     }
@@ -29,7 +28,6 @@ pub struct TreeNode {
 }
 
 impl TreeNode {
-    #[inline]
     pub fn new(val: i32) -> Self {
         Self {
             val,

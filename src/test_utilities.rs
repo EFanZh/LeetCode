@@ -1,5 +1,6 @@
 use crate::data_structures::{ListNode, TreeNode};
 use std::cell::RefCell;
+use std::cmp::Ordering;
 use std::collections::VecDeque;
 use std::fmt::Debug;
 use std::iter;
@@ -54,6 +55,26 @@ where
     }
 }
 
+pub fn compare_tree(lhs: &Option<Rc<RefCell<TreeNode>>>, rhs: &Option<Rc<RefCell<TreeNode>>>) -> Ordering {
+    fn inner(lhs: Option<&RefCell<TreeNode>>, rhs: Option<&RefCell<TreeNode>>) -> Ordering {
+        match (lhs, rhs) {
+            (None, None) => Ordering::Equal,
+            (None, Some(_)) => Ordering::Less,
+            (Some(_), None) => Ordering::Greater,
+            (Some(lhs), Some(rhs)) => {
+                let lhs = lhs.borrow();
+                let rhs = rhs.borrow();
+
+                i32::cmp(&lhs.val, &rhs.val)
+                    .then_with(|| inner(lhs.left.as_deref(), rhs.left.as_deref()))
+                    .then_with(|| inner(lhs.right.as_deref(), rhs.right.as_deref()))
+            }
+        }
+    }
+
+    inner(lhs.as_deref(), rhs.as_deref())
+}
+
 pub fn find_node(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
     root.as_ref().and_then(|root| {
         let root_ref = root.borrow();
@@ -80,26 +101,6 @@ pub fn invert_tree(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNo
 
 pub fn iter_list(list: &Option<Box<ListNode>>) -> impl Iterator<Item = &i32> {
     iter::successors(list.as_deref(), |node| node.next.as_deref()).map(|node| &node.val)
-}
-
-pub fn iter_tree(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = Option<i32>> {
-    let mut non_null_nodes = usize::from(root.is_some());
-    let mut queue = VecDeque::from(vec![root]);
-
-    iter::from_fn(move || {
-        (non_null_nodes != 0).then(|| {
-            queue.pop_front().unwrap().map(|node| {
-                let node = node.borrow();
-
-                non_null_nodes -= 1;
-                non_null_nodes += usize::from(node.left.is_some()) + usize::from(node.right.is_some());
-                queue.push_back(node.left.clone());
-                queue.push_back(node.right.clone());
-
-                node.val
-            })
-        })
-    })
 }
 
 pub fn make_list<I: IntoIterator<Item = i32>>(values: I) -> Option<Box<ListNode>> {
@@ -159,6 +160,14 @@ pub fn make_tree<I: IntoIterator<Item = Option<i32>>>(values: I) -> Option<Rc<Re
     })
 }
 
+pub fn unstable_sorted_by<T>(iter: impl IntoIterator<Item = T>, compare: impl FnMut(&T, &T) -> Ordering) -> Vec<T> {
+    let mut result = iter.into_iter().collect::<Vec<_>>();
+
+    result.sort_unstable_by(compare);
+
+    result
+}
+
 pub fn unstable_sorted_by_key<T, K: Ord>(iter: impl IntoIterator<Item = T>, f: impl FnMut(&T) -> K) -> Vec<T> {
     let mut result = iter.into_iter().collect::<Vec<_>>();
 
@@ -173,4 +182,33 @@ pub fn unstable_sorted<T: Ord>(iter: impl IntoIterator<Item = T>) -> Vec<T> {
     result.sort_unstable();
 
     result
+}
+
+mod tests {
+    use std::cmp::Ordering;
+
+    #[test]
+    fn test_compare_tree() {
+        let test_cases = [
+            ((&[Some(1)] as &[_], &[Some(1)] as &[_]), Ordering::Equal),
+            ((&[], &[]), Ordering::Equal),
+            ((&[Some(1), Some(2)], &[Some(1), Some(2)]), Ordering::Equal),
+            ((&[Some(1), None, Some(2)], &[Some(1), None, Some(2)]), Ordering::Equal),
+            (
+                (&[Some(1), Some(2), Some(3)], &[Some(1), Some(2), Some(3)]),
+                Ordering::Equal,
+            ),
+            ((&[], &[Some(1)]), Ordering::Less),
+            ((&[Some(1)], &[Some(3)]), Ordering::Less),
+            ((&[Some(1)], &[]), Ordering::Greater),
+            ((&[Some(3)], &[Some(1)]), Ordering::Greater),
+        ];
+
+        for ((lhs, rhs), expected) in test_cases {
+            let lhs = super::make_tree(lhs.iter().copied());
+            let rhs = super::make_tree(rhs.iter().copied());
+
+            assert_eq!(super::compare_tree(&lhs, &rhs), expected);
+        }
+    }
 }
