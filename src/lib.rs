@@ -740,6 +740,7 @@ pub mod problem_0883_projection_area_of_3d_shapes;
 pub mod problem_0884_uncommon_words_from_two_sentences;
 pub mod problem_0885_spiral_matrix_iii;
 pub mod problem_0886_possible_bipartition;
+pub mod problem_0887_super_egg_drop;
 pub mod problem_0888_fair_candy_swap;
 pub mod problem_0889_construct_binary_tree_from_preorder_and_postorder_traversal;
 pub mod problem_0890_find_and_replace_pattern;

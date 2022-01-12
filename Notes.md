@@ -333,3 +333,7 @@ Remember the solution.
 ## [871. Minimum Number of Refueling Stops](https://leetcode.com/problems/minimum-number-of-refueling-stops/)
 
 Good problem. Why is the greedy solution correct?
+
+## [887. Super Egg Drop](https://leetcode.com/problems/super-egg-drop/)
+
+The optimal solution requires some mathematical knowledge.
