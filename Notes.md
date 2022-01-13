@@ -1,9 +1,5 @@
 # Notes
 
-## [2. Add Two Numbers](https://leetcode.com/problems/two-sum/)
-
-Do it with zero overhead.
-
 ## [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) ★
 
 Make sure it can be solved again.
@@ -337,3 +333,7 @@ Good problem. Why is the greedy solution correct?
 ## [887. Super Egg Drop](https://leetcode.com/problems/super-egg-drop/)
 
 The optimal solution requires some mathematical knowledge.
+
+## [891. Sum of Subsequence Widths](https://leetcode.com/problems/sum-of-subsequence-widths/)
+
+Remember the solution.

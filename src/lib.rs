@@ -744,6 +744,7 @@ pub mod problem_0887_super_egg_drop;
 pub mod problem_0888_fair_candy_swap;
 pub mod problem_0889_construct_binary_tree_from_preorder_and_postorder_traversal;
 pub mod problem_0890_find_and_replace_pattern;
+pub mod problem_0891_sum_of_subsequence_widths;
 pub mod problem_0892_surface_area_of_3d_shapes;
 pub mod problem_0893_groups_of_special_equivalent_strings;
 pub mod problem_0896_monotonic_array;
