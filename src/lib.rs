@@ -750,6 +750,7 @@ pub mod problem_0893_groups_of_special_equivalent_strings;
 pub mod problem_0894_all_possible_full_binary_trees;
 pub mod problem_0896_monotonic_array;
 pub mod problem_0897_increasing_order_search_tree;
+pub mod problem_0898_bitwise_ors_of_subarrays;
 pub mod problem_0904_fruit_into_baskets;
 pub mod problem_0905_sort_array_by_parity;
 pub mod problem_1143_longest_common_subsequence;
