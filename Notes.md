@@ -337,3 +337,7 @@ The optimal solution requires some mathematical knowledge.
 ## [891. Sum of Subsequence Widths](https://leetcode.com/problems/sum-of-subsequence-widths/)
 
 Remember the solution.
+
+## [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/)
+
+Remember the solution.

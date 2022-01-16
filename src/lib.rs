@@ -748,6 +748,7 @@ pub mod problem_0891_sum_of_subsequence_widths;
 pub mod problem_0892_surface_area_of_3d_shapes;
 pub mod problem_0893_groups_of_special_equivalent_strings;
 pub mod problem_0894_all_possible_full_binary_trees;
+pub mod problem_0895_maximum_frequency_stack;
 pub mod problem_0896_monotonic_array;
 pub mod problem_0897_increasing_order_search_tree;
 pub mod problem_0898_bitwise_ors_of_subarrays;
