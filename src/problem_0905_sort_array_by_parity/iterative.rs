@@ -5,29 +5,38 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn sort_array_by_parity(nums: Vec<i32>) -> Vec<i32> {
-        let mut nums = nums;
+    pub fn partition_by(nums: &mut [i32], mut f: impl FnMut(i32) -> bool) {
         let mut iter = nums.iter_mut();
 
-        while let (Some(mut left), Some(mut right)) = (iter.next(), iter.next_back()) {
-            while *left % 2 == 0 {
-                if let Some(new_left) = iter.next() {
-                    left = new_left;
+        'outer: loop {
+            let left = loop {
+                if let Some(left) = iter.next() {
+                    if !f(*left) {
+                        break left;
+                    }
                 } else {
-                    return nums;
+                    break 'outer;
+                }
+            };
+
+            loop {
+                if let Some(right) = iter.next_back() {
+                    if f(*right) {
+                        mem::swap(left, right);
+
+                        break;
+                    }
+                } else {
+                    break 'outer;
                 }
             }
-
-            while *right % 2 != 0 {
-                if let Some(new_right) = iter.next_back() {
-                    right = new_right;
-                } else {
-                    return nums;
-                }
-            }
-
-            mem::swap(left, right);
         }
+    }
+
+    pub fn sort_array_by_parity(nums: Vec<i32>) -> Vec<i32> {
+        let mut nums = nums;
+
+        Self::partition_by(&mut nums, |x| x % 2 == 0);
 
         nums
     }

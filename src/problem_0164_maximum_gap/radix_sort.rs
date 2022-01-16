@@ -5,58 +5,66 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn maximum_gap(nums: Vec<i32>) -> i32 {
-        let mut nums = nums;
-        let max_value = nums.iter().max().unwrap();
+    fn radix_sort(mut nums: Vec<i32>, max: i32) -> Vec<i32> {
+        // From the book Introduction to Algorithms, third edition, page 199.
+
         let n = nums.len();
+        let num_bits = 32 - max.leading_zeros();
+        let log2_n = mem::size_of_val(&n) as u32 * 8 - 1 - n.leading_zeros();
+        let mask_bits = num_bits.min(log2_n);
+        let mask = (1 << mask_bits) - 1;
+        let mut counts = vec![0_u32; 1 << mask_bits];
+        let mut offset = 0;
+        let mut temp = vec![0; n];
 
-        if *max_value > 0 && n > 1 {
-            // From the book Introduction to Algorithms, third edition, page 199.
+        loop {
+            // Radix sort `n` `b`-bit numbers with  ⌈`b` / `r`⌉ `r`-bit digits.
 
-            let b = mem::size_of_val(max_value) * 8 - (max_value.leading_zeros() as usize);
-            let log2_n = mem::size_of_val(&n) * 8 - (n.leading_zeros() as usize) - 1;
-            let r = b.min(log2_n);
-            let num_digits = (b + (r - 1)) / r;
+            // Count numbers.
 
-            // Radix sort n b-bit numbers with  ⌈b / r⌉ r-bit digits.
-
-            let mut temp_nums = vec![0; n];
-            let mut counts = vec![0; 1 << r];
-            let mask = (1 << r) - 1;
-
-            for key_bit in (0..r * num_digits).step_by(r) {
-                // Sort by this digit with counting sort.
-
-                // Count numbers.
-
-                for value in &nums {
-                    counts[((value >> key_bit) & mask) as usize] += 1;
-                }
-
-                // Calculate indices.
-
-                for i in 1..counts.len() {
-                    counts[i] += counts[i - 1];
-                }
-
-                // Place result to temp_nums.
-
-                for value in nums.iter().rev() {
-                    let key = ((value >> key_bit) & mask) as usize;
-
-                    temp_nums[counts[key] - 1] = *value;
-
-                    counts[key] -= 1;
-                }
-
-                // Maintain loop invariant.
-
-                for c in &mut counts {
-                    *c = 0;
-                }
-
-                mem::swap(&mut nums, &mut temp_nums);
+            for num in &*nums {
+                counts[((num >> offset) & mask) as usize] += 1;
             }
+
+            // Calculate indices.
+
+            for i in 1..counts.len() {
+                counts[i] += counts[i - 1];
+            }
+
+            // Place result into `temp`.
+
+            for &num in nums.iter().rev() {
+                let key = ((num >> offset) & mask) as usize;
+
+                temp[counts[key] as usize - 1] = num;
+                counts[key] -= 1;
+            }
+
+            // Reset counters.
+
+            for count in &mut counts {
+                *count = 0;
+            }
+
+            mem::swap(&mut nums, &mut temp);
+
+            offset += mask_bits;
+
+            if offset >= num_bits {
+                break;
+            }
+        }
+
+        nums
+    }
+
+    pub fn maximum_gap(nums: Vec<i32>) -> i32 {
+        let n = nums.len() as u32;
+        let max = nums.iter().copied().max().unwrap();
+
+        if max > 0 && n > 1 {
+            let nums = Self::radix_sort(nums, max);
 
             nums.iter()
                 .zip(&nums[1..])

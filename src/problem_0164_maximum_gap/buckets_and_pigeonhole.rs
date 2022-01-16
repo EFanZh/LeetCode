@@ -5,12 +5,12 @@ pub struct Solution;
 impl Solution {
     pub fn maximum_gap(nums: Vec<i32>) -> i32 {
         let mut result = 0;
-        let maybe_min_value = nums.iter().min();
-        let maybe_max_value = nums.iter().max();
+        let maybe_min_value = nums.iter().copied().min();
+        let maybe_max_value = nums.iter().copied().max();
 
         if maybe_min_value != maybe_max_value {
-            let min_value = *maybe_min_value.unwrap();
-            let max_value = *maybe_max_value.unwrap();
+            let min_value = maybe_min_value.unwrap();
+            let max_value = maybe_max_value.unwrap();
             let length = max_value - min_value;
 
             // The maximum gap must be greater than or equal to length / (n - 1), so as long as the bucket size is less
