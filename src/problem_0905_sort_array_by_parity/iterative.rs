@@ -5,7 +5,7 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    pub fn partition_by(nums: &mut [i32], mut f: impl FnMut(i32) -> bool) {
+    fn partition_by(nums: &mut [i32], mut f: impl FnMut(i32) -> bool) {
         let mut iter = nums.iter_mut();
 
         'outer: loop {
