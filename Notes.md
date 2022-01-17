@@ -341,3 +341,7 @@ Remember the solution.
 ## [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack/)
 
 Remember the solution.
+
+## [899. Orderly Queue](https://leetcode.com/problems/orderly-queue/)
+
+Why is the Duval algorithm correct?
