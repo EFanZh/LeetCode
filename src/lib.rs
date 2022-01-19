@@ -754,6 +754,7 @@ pub mod problem_0897_increasing_order_search_tree;
 pub mod problem_0898_bitwise_ors_of_subarrays;
 pub mod problem_0899_orderly_queue;
 pub mod problem_0900_rle_iterator;
+pub mod problem_0901_online_stock_span;
 pub mod problem_0904_fruit_into_baskets;
 pub mod problem_0905_sort_array_by_parity;
 pub mod problem_1143_longest_common_subsequence;
