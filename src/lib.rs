@@ -755,6 +755,7 @@ pub mod problem_0898_bitwise_ors_of_subarrays;
 pub mod problem_0899_orderly_queue;
 pub mod problem_0900_rle_iterator;
 pub mod problem_0901_online_stock_span;
+pub mod problem_0902_numbers_at_most_n_given_digit_set;
 pub mod problem_0904_fruit_into_baskets;
 pub mod problem_0905_sort_array_by_parity;
 pub mod problem_0907_sum_of_subarray_minimums;
