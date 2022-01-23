@@ -13,7 +13,6 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    #[allow(clippy::manual_assert)]
     pub fn run<S: Solution>() {
         let test_cases = [
             ((&[1, 3] as &[_], &[2] as &[_]), 2.0),
@@ -25,11 +24,8 @@ mod tests {
             ((&[1], &[2, 3, 4]), 2.5),
         ];
 
-        for ((nums1, nums2), expected_result) in test_cases {
-            approx::assert_ulps_eq!(
-                S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()),
-                expected_result,
-            );
+        for ((nums1, nums2), expected) in test_cases {
+            approx::assert_ulps_eq!(S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()), expected,);
         }
     }
 }

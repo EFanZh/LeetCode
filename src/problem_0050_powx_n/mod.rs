@@ -8,7 +8,6 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    #[allow(clippy::manual_assert)]
     pub fn run<S: Solution>() {
         let test_cases = [
             ((2.0, 10), 1024.0),

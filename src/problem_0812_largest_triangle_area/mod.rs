@@ -10,7 +10,6 @@ mod tests {
     use super::Solution;
     use crate::test_utilities::Matrix;
 
-    #[allow(clippy::manual_assert)]
     pub fn run<S: Solution>() {
         let test_cases = [
             (&[[0, 0], [0, 1], [1, 0], [0, 2], [2, 0]] as &dyn Matrix<_>, 2.0),

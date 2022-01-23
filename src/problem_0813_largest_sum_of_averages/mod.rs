@@ -8,7 +8,6 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    #[allow(clippy::manual_assert)]
     pub fn run<S: Solution>() {
         let test_cases = [
             ((&[9, 1, 2, 3, 9] as &[_], 3), 20.0),

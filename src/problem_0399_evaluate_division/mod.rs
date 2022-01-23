@@ -8,7 +8,6 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    #[allow(clippy::manual_assert)]
     pub fn run<S: Solution>() {
         let test_cases = [
             (
@@ -58,19 +57,21 @@ mod tests {
         ];
 
         for ((equations, values, queries), expected) in test_cases {
-            let result = S::calc_equation(
-                equations
-                    .iter()
-                    .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
-                    .collect(),
-                values.to_vec(),
-                queries
-                    .iter()
-                    .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
-                    .collect(),
+            approx::assert_ulps_eq!(
+                S::calc_equation(
+                    equations
+                        .iter()
+                        .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
+                        .collect(),
+                    values.to_vec(),
+                    queries
+                        .iter()
+                        .map(|&[dividend, divisor]| vec![dividend.to_string(), divisor.to_string()])
+                        .collect(),
+                )
+                .as_slice(),
+                expected
             );
-
-            approx::assert_ulps_eq!(result.as_slice(), expected);
         }
     }
 }
