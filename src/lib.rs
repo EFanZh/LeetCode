@@ -759,6 +759,7 @@ pub mod problem_0902_numbers_at_most_n_given_digit_set;
 pub mod problem_0903_valid_permutations_for_di_sequence;
 pub mod problem_0904_fruit_into_baskets;
 pub mod problem_0905_sort_array_by_parity;
+pub mod problem_0906_super_palindromes;
 pub mod problem_0907_sum_of_subarray_minimums;
 pub mod problem_0912_sort_an_array;
 pub mod problem_1143_longest_common_subsequence;
