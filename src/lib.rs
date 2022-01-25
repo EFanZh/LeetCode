@@ -761,6 +761,7 @@ pub mod problem_0904_fruit_into_baskets;
 pub mod problem_0905_sort_array_by_parity;
 pub mod problem_0906_super_palindromes;
 pub mod problem_0907_sum_of_subarray_minimums;
+pub mod problem_0908_smallest_range_i;
 pub mod problem_0912_sort_an_array;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
