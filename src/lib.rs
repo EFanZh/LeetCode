@@ -764,6 +764,7 @@ pub mod problem_0907_sum_of_subarray_minimums;
 pub mod problem_0908_smallest_range_i;
 pub mod problem_0909_snakes_and_ladders;
 pub mod problem_0910_smallest_range_ii;
+pub mod problem_0911_online_election;
 pub mod problem_0912_sort_an_array;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
