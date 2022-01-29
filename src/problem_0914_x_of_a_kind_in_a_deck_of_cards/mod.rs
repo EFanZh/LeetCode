@@ -13,6 +13,7 @@ mod tests {
             (&[1, 2, 3, 4, 4, 3, 2, 1] as &[_], true),
             (&[1, 1, 1, 2, 2, 2, 3, 3], false),
             (&[1, 1, 1, 1, 2, 2, 2, 2, 2, 2], true),
+            (&[1], false),
         ];
 
         for (deck, expected) in test_cases {

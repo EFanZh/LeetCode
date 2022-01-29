@@ -3,22 +3,16 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
+use std::num::NonZeroU16;
 
 impl Solution {
-    fn gcd(mut lhs: u16, mut rhs: u16) -> u16 {
-        loop {
-            if rhs == 0 {
-                return lhs;
-            }
-
-            lhs %= rhs;
-
-            if lhs == 0 {
-                return rhs;
-            }
-
-            rhs %= lhs;
+    fn gcd(mut lhs: u16, mut rhs: NonZeroU16) -> NonZeroU16 {
+        while let Some(new_rhs) = NonZeroU16::new(lhs % rhs) {
+            lhs = rhs.get();
+            rhs = new_rhs;
         }
+
+        rhs
     }
 
     pub fn has_groups_size_x(deck: Vec<i32>) -> bool {
@@ -29,13 +23,13 @@ impl Solution {
         }
 
         let mut iter = counts.values().copied();
-        let mut x = iter.next().unwrap();
+        let mut gcd = iter.next().and_then(NonZeroU16::new).unwrap();
 
         for value in iter {
-            x = Self::gcd(value, x);
+            gcd = Self::gcd(value, gcd);
         }
 
-        x > 1
+        gcd.get() != 1
     }
 }
 
