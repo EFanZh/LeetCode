@@ -10,8 +10,6 @@ impl Solution {
             total_xor ^= num;
         }
 
-        dbg!((total_xor == 0, nums.len() % 2 == 0));
-
         total_xor == 0 || nums.len() % 2 == 0
     }
 }
