@@ -345,3 +345,7 @@ Remember the solution.
 ## [899. Orderly Queue](https://leetcode.com/problems/orderly-queue/)
 
 Why is the Duval algorithm correct?
+
+## [913. Cat and Mouse](https://leetcode.com/problems/cat-and-mouse/)
+
+Understand the minimax algorithm.
