@@ -349,3 +349,7 @@ Why is the Duval algorithm correct?
 ## [913. Cat and Mouse](https://leetcode.com/problems/cat-and-mouse/)
 
 Understand the minimax algorithm.
+
+## [920. Number of Music Playlists](https://leetcode.com/problems/number-of-music-playlists/)
+
+Make sure it can be solved again.
