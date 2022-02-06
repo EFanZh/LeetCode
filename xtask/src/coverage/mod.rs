@@ -184,7 +184,7 @@ fn run_rust_tests(toolchain: &str, llvm_profdata: &Path, output: &Path) -> PathB
                 "--message-format",
                 "json",
             ])
-            .env("RUSTFLAGS", "-Zinstrument-coverage"),
+            .env("RUSTFLAGS", "-C instrument-coverage"),
         |child_stdout| {
             let stdout = io::stdout();
             let mut stdout = stdout.lock();
