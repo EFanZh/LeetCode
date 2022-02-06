@@ -774,6 +774,7 @@ pub mod problem_0917_reverse_only_letters;
 pub mod problem_0918_maximum_sum_circular_subarray;
 pub mod problem_0919_complete_binary_tree_inserter;
 pub mod problem_0920_number_of_music_playlists;
+pub mod problem_0921_minimum_add_to_make_parentheses_valid;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
