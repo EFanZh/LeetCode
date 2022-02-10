@@ -778,6 +778,7 @@ pub mod problem_0921_minimum_add_to_make_parentheses_valid;
 pub mod problem_0922_sort_array_by_parity_ii;
 pub mod problem_0923_3sum_with_multiplicity;
 pub mod problem_0924_minimize_malware_spread;
+pub mod problem_0925_long_pressed_name;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
