@@ -780,6 +780,7 @@ pub mod problem_0923_3sum_with_multiplicity;
 pub mod problem_0924_minimize_malware_spread;
 pub mod problem_0925_long_pressed_name;
 pub mod problem_0926_flip_string_to_monotone_increasing;
+pub mod problem_0927_three_equal_parts;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
