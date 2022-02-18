@@ -786,6 +786,7 @@ pub mod problem_0929_unique_email_addresses;
 pub mod problem_0930_binary_subarrays_with_sum;
 pub mod problem_0931_minimum_falling_path_sum;
 pub mod problem_0932_beautiful_array;
+pub mod problem_0933_number_of_recent_calls;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
