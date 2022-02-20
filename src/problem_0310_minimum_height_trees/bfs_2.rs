@@ -6,7 +6,6 @@ use std::collections::VecDeque;
 use std::convert::TryInto;
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     pub fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
         let n = n as _;
         let mut graph = vec![Vec::with_capacity(1); n];
@@ -24,7 +23,7 @@ impl Solution {
         let mut queue = indegrees
             .iter()
             .enumerate()
-            .filter_map(|(i, &num)| if num < 2 { Some(i as _) } else { None })
+            .filter_map(|(i, &num)| (num < 2).then(|| i as _))
             .collect::<VecDeque<_>>();
 
         let mut internal_nodes = n - queue.len();

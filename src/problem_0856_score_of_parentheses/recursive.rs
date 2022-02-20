@@ -3,15 +3,12 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     fn item(s: &[u8]) -> Option<(i32, &[u8])> {
-        if s.first().copied() == Some(b'(') {
+        (s.first().copied() == Some(b'(')).then(|| {
             let (inner, rest) = Self::list(&s[1..]);
 
-            Some((if inner == 0 { 1 } else { inner * 2 }, &rest[1..]))
-        } else {
-            None
-        }
+            (if inner == 0 { 1 } else { inner * 2 }, &rest[1..])
+        })
     }
 
     fn list(mut s: &[u8]) -> (i32, &[u8]) {

@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     pub fn length_of_lis(nums: Vec<i32>) -> i32 {
         let mut cache = vec![0; nums.len()];
         let mut result = 0;
@@ -13,7 +12,7 @@ impl Solution {
                 .iter()
                 .enumerate()
                 .skip(i)
-                .filter_map(|(j, length)| if nums[j] > *num { Some(*length) } else { None })
+                .filter_map(|(j, length)| (nums[j] > *num).then(|| *length))
                 .max()
                 .map_or(1, |x| x + 1);
 

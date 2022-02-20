@@ -14,19 +14,18 @@ impl SummaryRanges {
         }
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     fn add_num(&mut self, val: i32) {
-        if let Some((right_from, right_to)) =
-            self.intervals
-                .range(val + 1..)
-                .next()
-                .and_then(|(&from, &to)| if from == val + 1 { Some((from, to)) } else { None })
+        if let Some((right_from, right_to)) = self
+            .intervals
+            .range(val + 1..)
+            .next()
+            .and_then(|(&from, &to)| (from == val + 1).then(|| (from, to)))
         {
-            if let Some(left_to) =
-                self.intervals
-                    .range_mut(..val)
-                    .next_back()
-                    .and_then(|(_, to)| if *to == val - 1 { Some(to) } else { None })
+            if let Some(left_to) = self
+                .intervals
+                .range_mut(..val)
+                .next_back()
+                .and_then(|(_, to)| (*to == val - 1).then(|| to))
             {
                 *left_to = right_to;
             } else {

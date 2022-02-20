@@ -5,7 +5,6 @@ pub struct Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     pub fn fair_candy_swap(alice_sizes: Vec<i32>, bob_sizes: Vec<i32>) -> Vec<i32> {
         let alice_total = alice_sizes.iter().sum::<i32>();
         let bob_total = bob_sizes.iter().sum::<i32>();
@@ -17,11 +16,7 @@ impl Solution {
             .find_map(|bob_size| {
                 let alice_size = bob_size - diff;
 
-                if alice_sizes.contains(&alice_size) {
-                    Some(vec![alice_size, bob_size])
-                } else {
-                    None
-                }
+                alice_sizes.contains(&alice_size).then(|| vec![alice_size, bob_size])
             })
             .unwrap()
     }

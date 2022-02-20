@@ -52,13 +52,12 @@ impl MyHashMap {
         (hash_key(key) >> (32 - bucket_bits)) as _
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     fn get(&self, key: i32) -> i32 {
         let bucket_index = self.bucket_index(key);
 
         self.buckets[bucket_index]
             .iter()
-            .find_map(|&(k, v)| if k == key { Some(v) } else { None })
+            .find_map(|&(k, v)| (k == key).then(|| v))
             .unwrap_or(-1)
     }
 

@@ -3,11 +3,10 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     fn parse_number(input: &[u8]) -> Option<(i32, &[u8])> {
         let (first, mut rest) = input.split_first().unwrap();
 
-        if first.is_ascii_digit() {
+        first.is_ascii_digit().then(|| {
             let mut result = i32::from(first - b'0');
 
             while let Some((c @ b'0'..=b'9', next_rest)) = rest.split_first() {
@@ -15,10 +14,8 @@ impl Solution {
                 rest = next_rest;
             }
 
-            Some((result, rest))
-        } else {
-            None
-        }
+            (result, rest)
+        })
     }
 
     fn parse_term(input: &[u8]) -> ((i32, i32), &[u8]) {

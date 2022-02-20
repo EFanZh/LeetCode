@@ -26,7 +26,6 @@ impl Solution {
         Window(BinaryHeap::from(data), right)
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     fn helper(mut window: Window, nums: &[i32], mut get_median: impl FnMut(&Window) -> f64) -> Vec<f64> {
         let k = window.0.len() + window.1.len();
         let mut result = Vec::with_capacity(nums.len() - k + 1);

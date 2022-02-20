@@ -13,18 +13,13 @@ impl Solution {
         true
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     fn find_chunk<'a>(s: &'a [u8], p: &[u8]) -> Option<&'a [u8]> {
         if p.is_empty() {
             Some(s)
         } else {
-            s.windows(p.len()).enumerate().find_map(|(i, chunk)| {
-                if Self::is_segment_match(chunk, p) {
-                    Some(&s[i + p.len()..])
-                } else {
-                    None
-                }
-            })
+            s.windows(p.len())
+                .enumerate()
+                .find_map(|(i, chunk)| Self::is_segment_match(chunk, p).then(|| &s[i + p.len()..]))
         }
     }
 

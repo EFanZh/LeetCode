@@ -5,14 +5,9 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     fn starts_with(first_digit: u8, s: &[u8], head: u64) -> Option<&[u8]> {
         if first_digit == 0 {
-            if head == 0 {
-                Some(s)
-            } else {
-                None
-            }
+            (head == 0).then(|| s)
         } else {
             let mut num = u64::from(first_digit);
             let mut iter = s.iter();

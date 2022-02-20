@@ -66,7 +66,6 @@ impl<T: Eq + Hash> Extend<T> for HashMultiSet<T> {
 }
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
         let s = s.into_bytes();
         let word_length = words.first().map_or(0, String::len);
@@ -82,7 +81,7 @@ impl Solution {
                 result.extend(s.windows(window_length).enumerate().filter_map(|(i, window)| {
                     words_cache.extend(window.chunks_exact(word_length));
 
-                    let r = if words_cache == words { Some(i as i32) } else { None };
+                    let r = (words_cache == words).then(|| i as i32);
 
                     words_cache.clear();
 
@@ -99,7 +98,7 @@ impl Solution {
                             words_cache.extend(window.chunks_exact(word_length));
                             cache.push_back(words_cache.clone());
 
-                            let r = if words_cache == words { Some(i as i32) } else { None };
+                            let r = (words_cache == words).then(|| i as i32);
 
                             words_cache.clear();
 
@@ -116,7 +115,7 @@ impl Solution {
                             current_words.remove(obsolete_word);
                             current_words.insert(new_word);
 
-                            let r = if current_words == words { Some(i as i32) } else { None };
+                            let r = (current_words == words).then(|| i as i32);
 
                             cache.push_back(current_words);
 

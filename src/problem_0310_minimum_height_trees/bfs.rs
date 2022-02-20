@@ -6,7 +6,6 @@ use std::convert::TryInto;
 use std::mem;
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     pub fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
         let mut graph = vec![Vec::with_capacity(1); n as _];
         let mut indegrees = vec![0; n as _];
@@ -23,7 +22,7 @@ impl Solution {
         let mut queue = indegrees
             .iter()
             .enumerate()
-            .filter_map(|(i, &num)| if num < 2 { Some(i as _) } else { None })
+            .filter_map(|(i, &num)| (num < 2).then(|| i as _))
             .collect::<Vec<_>>();
 
         let mut temp = Vec::new();

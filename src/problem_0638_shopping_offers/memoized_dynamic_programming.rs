@@ -14,7 +14,6 @@ impl Solution {
             && (offer & 0x_0000_000f) <= (needs & 0x_0000_000f)
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     fn helper(offers: &[(u32, i32)], needs: u32, cache: &mut HashMap<u32, i32>) -> i32 {
         if needs == 0 {
             0
@@ -24,11 +23,7 @@ impl Solution {
             let result = offers
                 .iter()
                 .filter_map(|&(offer, price)| {
-                    if Self::check_offer(offer, needs) {
-                        Some(price + Self::helper(offers, needs - offer, cache))
-                    } else {
-                        None
-                    }
+                    Self::check_offer(offer, needs).then(|| price + Self::helper(offers, needs - offer, cache))
                 })
                 .min()
                 .unwrap();

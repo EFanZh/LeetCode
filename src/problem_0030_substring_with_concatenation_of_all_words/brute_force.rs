@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::if_then_some_else_none)]
     pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
         if words.is_empty() {
             Vec::new()
@@ -23,15 +22,11 @@ impl Solution {
 
                     window_words.sort_unstable();
 
-                    if window_words
+                    window_words
                         .iter()
                         .map(AsRef::as_ref)
                         .eq(words.iter().map(String::as_bytes))
-                    {
-                        Some(i as _)
-                    } else {
-                        None
-                    }
+                        .then(|| i as _)
                 })
                 .collect()
         }

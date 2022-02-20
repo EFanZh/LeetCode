@@ -21,7 +21,6 @@ impl Solution {
         })
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut count = HashMap::new();
 
@@ -31,7 +30,7 @@ impl Solution {
 
         count
             .into_iter()
-            .filter_map(|(k, v)| if v == max_count { Some(k) } else { None })
+            .filter_map(|(k, v)| (v == max_count).then(|| k))
             .collect()
     }
 }

@@ -23,17 +23,14 @@ impl Solution {
         (result, input)
     }
 
-    #[allow(clippy::if_then_some_else_none)]
     fn atom(input: &[u8]) -> Option<(&[u8], &[u8])> {
         let i = input.iter().rposition(|c| !c.is_ascii_lowercase())?;
 
-        if input[i].is_ascii_uppercase() {
+        input[i].is_ascii_uppercase().then(|| {
             let (rest, result) = input.split_at(i);
 
-            Some((result, rest))
-        } else {
-            None
-        }
+            (result, rest)
+        })
     }
 
     fn group<'a>(mut input: &'a [u8], factor: u32, counts: &mut HashMap<&'a [u8], u32>) -> Option<&'a [u8]> {
