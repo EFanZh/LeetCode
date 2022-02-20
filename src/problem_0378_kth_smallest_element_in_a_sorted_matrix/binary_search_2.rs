@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     pub fn kth_smallest(matrix: Vec<Vec<i32>>, k: i32) -> i32 {
         let n = matrix.len();
@@ -16,9 +14,7 @@ impl Solution {
             let mut prev = n;
 
             for row in &matrix {
-                prev = row[..prev]
-                    .binary_search_by(|&v| if v <= middle { Ordering::Less } else { Ordering::Greater })
-                    .unwrap_err();
+                prev = row[..prev].partition_point(|&v| v <= middle);
 
                 if prev == 0 {
                     break;

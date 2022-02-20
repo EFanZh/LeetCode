@@ -85,7 +85,7 @@ impl Solution {
         p: Option<Rc<RefCell<TreeNode>>>,
         q: Option<Rc<RefCell<TreeNode>>>,
     ) -> Option<Rc<RefCell<TreeNode>>> {
-        Some(Self::helper(&root.unwrap(), p.unwrap().as_ref(), q.unwrap().as_ref()))
+        root.map(|root| Self::helper(&root, p.unwrap().as_ref(), q.unwrap().as_ref()))
     }
 }
 

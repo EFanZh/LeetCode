@@ -2,13 +2,9 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     pub fn next_greatest_letter(letters: Vec<char>, target: char) -> char {
-        let mut index = letters
-            .binary_search_by(|&c| if c <= target { Ordering::Less } else { Ordering::Greater })
-            .unwrap_err();
+        let mut index = letters.partition_point(|&c| c <= target);
 
         if index == letters.len() {
             index = 0;

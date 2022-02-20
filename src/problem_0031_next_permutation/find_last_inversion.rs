@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     pub fn next_permutation(nums: &mut [i32]) {
         if let Some((i, (current, _))) = nums
@@ -12,12 +10,7 @@ impl Solution {
             .enumerate()
             .rfind(|(_, (current, next))| current < next)
         {
-            let j = nums[i + 2..]
-                .binary_search_by(|x| match current.cmp(x) {
-                    Ordering::Less => Ordering::Less,
-                    _ => Ordering::Greater,
-                })
-                .unwrap_err();
+            let j = nums[i + 2..].partition_point(|x| current < x);
 
             nums.swap(i, i + 1 + j);
             nums[i + 1..].reverse();

@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::convert::TryInto;
 
 impl Solution {
@@ -33,10 +32,7 @@ impl Solution {
         if let Some(t) = buffer.iter().zip(&buffer[1..]).position(|(left, right)| left > right) {
             let digit_index = t + 1;
             let digit = buffer[digit_index];
-
-            let other_index = buffer[..digit_index]
-                .binary_search_by(|&v| if v <= digit { Ordering::Less } else { Ordering::Greater })
-                .unwrap_err();
+            let other_index = buffer[..digit_index].partition_point(|&v| v <= digit);
 
             buffer.swap(digit_index, other_index);
 

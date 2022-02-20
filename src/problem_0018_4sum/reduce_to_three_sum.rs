@@ -46,19 +46,11 @@ impl Solution {
                     let nums = &nums[i + 1..];
                     let target = target - first_value;
 
-                    let pivot = nums
-                        .binary_search_by({
-                            let k = target / 3;
+                    let pivot = nums.partition_point({
+                        let k = target / 3;
 
-                            move |x| {
-                                if *x <= k {
-                                    Ordering::Less
-                                } else {
-                                    Ordering::Greater
-                                }
-                            }
-                        })
-                        .unwrap_err();
+                        move |x| *x <= k
+                    });
 
                     for j in 0..pivot.min(nums.len() - 2) {
                         let second_value = nums[j];

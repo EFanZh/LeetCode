@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     pub fn remove_kdigits(num: String, k: i32) -> String {
         let mut num = num;
@@ -20,11 +18,7 @@ impl Solution {
             while i - stack.len() != k {
                 let start = i.saturating_sub(k);
                 let digit = num.as_bytes()[i];
-
-                let insertion_point = start
-                    + stack[start..]
-                        .binary_search_by(|&d| if d <= digit { Ordering::Less } else { Ordering::Greater })
-                        .unwrap_err();
+                let insertion_point = start + stack[start..].partition_point(|&d| d <= digit);
 
                 if let Some(target) = stack.get_mut(insertion_point) {
                     *target = digit;

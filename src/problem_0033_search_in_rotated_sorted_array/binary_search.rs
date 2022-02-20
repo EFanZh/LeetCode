@@ -2,15 +2,11 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         nums.first()
             .and_then(|first| {
-                let pivot = nums
-                    .binary_search_by(|x| if x < first { Ordering::Greater } else { Ordering::Less })
-                    .unwrap_err();
+                let pivot = nums.partition_point(|x| x >= first);
 
                 if target < *first {
                     nums[pivot..].binary_search(&target).map(|i| (pivot + i))

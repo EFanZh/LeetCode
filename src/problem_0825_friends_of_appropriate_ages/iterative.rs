@@ -2,19 +2,9 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     fn lower_bound(values: &[i32], target: i32) -> usize {
-        values
-            .binary_search_by(|&value| {
-                if value < target {
-                    Ordering::Less
-                } else {
-                    Ordering::Greater
-                }
-            })
-            .unwrap_err()
+        values.partition_point(|&value| value < target)
     }
 
     fn iter_chunks(values: &[i32], mut f: impl FnMut(&[i32], i32, usize)) {

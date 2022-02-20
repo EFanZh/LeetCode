@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::mem;
 
 impl Solution {
@@ -16,11 +15,7 @@ impl Solution {
             while i - stack_length != k {
                 let start = i.saturating_sub(k);
                 let digit = num[i];
-
-                let insertion_point = start
-                    + result[start..stack_length]
-                        .binary_search_by(|&v| if v < digit { Ordering::Greater } else { Ordering::Less })
-                        .unwrap_err();
+                let insertion_point = start + result[start..stack_length].partition_point(|&v| v >= digit);
 
                 if insertion_point != result_length {
                     result[insertion_point] = digit;

@@ -2,17 +2,10 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
     pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        let low = nums
-            .binary_search_by(|x| if *x < target { Ordering::Less } else { Ordering::Greater })
-            .unwrap_err();
-
-        let length = nums[low..]
-            .binary_search_by(|x| if target < *x { Ordering::Greater } else { Ordering::Less })
-            .unwrap_err();
+        let low = nums.partition_point(|x| *x < target);
+        let length = nums[low..].partition_point(|x| target >= *x);
 
         if length == 0 {
             vec![-1, -1]

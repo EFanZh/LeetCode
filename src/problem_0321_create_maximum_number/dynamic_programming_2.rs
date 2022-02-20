@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::mem;
 
 impl Solution {
@@ -31,11 +30,7 @@ impl Solution {
                     loop {
                         if let Some(&num) = nums.get(i) {
                             let start = stack_base + (i - stack_base).saturating_sub(to_remove);
-
-                            let insertion_point = start
-                                + nums[start..stack_top]
-                                    .binary_search_by(|&v| if v >= num { Ordering::Less } else { Ordering::Greater })
-                                    .unwrap_err();
+                            let insertion_point = start + nums[start..stack_top].partition_point(|&v| v >= num);
 
                             if i - insertion_point == to_remove {
                                 stack_top = insertion_point;

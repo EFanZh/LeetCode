@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::mem;
 
 impl Solution {
@@ -13,14 +12,7 @@ impl Solution {
             let end = first as *const _ as usize + mem::size_of_val(first) * n;
 
             let index = citations
-                .binary_search_by(|num| {
-                    if *num < ((end - num as *const _ as usize) / mem::size_of_val(num)) as i32 {
-                        Ordering::Less
-                    } else {
-                        Ordering::Greater
-                    }
-                })
-                .unwrap_err();
+                .partition_point(|num| *num < ((end - num as *const _ as usize) / mem::size_of_val(num)) as i32);
 
             (n - index) as _
         })
