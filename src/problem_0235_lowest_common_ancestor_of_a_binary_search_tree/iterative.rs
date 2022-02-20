@@ -14,29 +14,30 @@ impl Solution {
         p: Option<Rc<RefCell<TreeNode>>>,
         q: Option<Rc<RefCell<TreeNode>>>,
     ) -> Option<Rc<RefCell<TreeNode>>> {
-        let mut root = root.unwrap();
-        let mut p = p.unwrap().borrow().val;
-        let mut q = q.unwrap().borrow().val;
+        root.map(|mut root| {
+            let mut p = p.unwrap().borrow().val;
+            let mut q = q.unwrap().borrow().val;
 
-        if p > q {
-            mem::swap(&mut p, &mut q);
-        }
+            if p > q {
+                mem::swap(&mut p, &mut q);
+            }
 
-        loop {
-            root = {
-                let root_ref = root.borrow();
+            loop {
+                root = {
+                    let root_ref = root.borrow();
 
-                if q < root_ref.val {
-                    root_ref.left.clone().unwrap()
-                } else if p > root_ref.val {
-                    root_ref.right.clone().unwrap()
-                } else {
-                    break;
+                    if q < root_ref.val {
+                        root_ref.left.clone().unwrap()
+                    } else if p > root_ref.val {
+                        root_ref.right.clone().unwrap()
+                    } else {
+                        break;
+                    }
                 }
             }
-        }
 
-        Some(root)
+            root
+        })
     }
 }
 

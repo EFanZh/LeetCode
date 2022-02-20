@@ -25,16 +25,17 @@ impl Solution {
         p: Option<Rc<RefCell<TreeNode>>>,
         q: Option<Rc<RefCell<TreeNode>>>,
     ) -> Option<Rc<RefCell<TreeNode>>> {
-        let root = root.unwrap();
-        let p = p.unwrap();
-        let q = q.unwrap();
-        let p_ref = p.borrow();
-        let q_ref = q.borrow();
+        root.map(|root| {
+            let p = p.unwrap();
+            let q = q.unwrap();
+            let p_ref = p.borrow();
+            let q_ref = q.borrow();
 
-        Some(if p_ref.val < q_ref.val {
-            Self::helper(&root, &p_ref, &q_ref)
-        } else {
-            Self::helper(&root, &q_ref, &p_ref)
+            if p_ref.val < q_ref.val {
+                Self::helper(&root, &p_ref, &q_ref)
+            } else {
+                Self::helper(&root, &q_ref, &p_ref)
+            }
         })
     }
 }

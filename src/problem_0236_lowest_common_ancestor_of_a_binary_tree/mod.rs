@@ -1,5 +1,3 @@
-#![allow(clippy::unnecessary_wraps)]
-
 use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;

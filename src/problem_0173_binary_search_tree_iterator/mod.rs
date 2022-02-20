@@ -1,4 +1,4 @@
-#![allow(clippy::upper_case_acronyms)]
+#![allow(clippy::upper_case_acronyms)] // Expected.
 
 use crate::data_structures::TreeNode;
 use std::cell::RefCell;

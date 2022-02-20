@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 pub mod cheating;
 pub mod iterative;
 pub mod iterative_2;

@@ -1,4 +1,4 @@
-#![allow(clippy::upper_case_acronyms)]
+#![allow(clippy::upper_case_acronyms)] // Expected.
 
 pub mod map_to_doubly_linked_list;
 pub mod map_to_doubly_linked_list_2;

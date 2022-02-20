@@ -37,7 +37,7 @@ impl Node {
         }
     }
 
-    #[allow(clippy::manual_map)]
+    #[allow(clippy::manual_map)] // False positive.
     fn iter(&self) -> impl Iterator<Item = u8> + '_ {
         let mut state = State::Start(&self.children);
         let mut stack = Vec::new();

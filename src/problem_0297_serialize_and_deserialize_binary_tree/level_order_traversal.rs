@@ -1,4 +1,4 @@
-#![allow(clippy::unused_self)]
+#![allow(clippy::unused_self)] // Expected.
 
 use crate::data_structures::TreeNode;
 

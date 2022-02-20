@@ -1,4 +1,4 @@
-#![allow(clippy::many_single_char_names, clippy::too_many_arguments)]
+#![allow(clippy::many_single_char_names, clippy::too_many_arguments)] // Expected.
 
 pub mod normalize;
 

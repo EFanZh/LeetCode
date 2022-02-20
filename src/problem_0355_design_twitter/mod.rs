@@ -1,4 +1,4 @@
-#![allow(clippy::similar_names)]
+#![allow(clippy::similar_names)] // Expected.
 
 pub mod binary_heap;
 pub mod binary_heap_2;

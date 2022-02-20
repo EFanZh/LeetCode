@@ -21,7 +21,7 @@ where
 }
 
 impl Solution {
-    #[allow(single_use_lifetimes)]
+    #[allow(single_use_lifetimes)] // False positive.
     fn update(mut rows_iter: impl Iterator<Item = impl AsMut<[i32]>>, make_iter: impl for<'b> MakeIter<'b>) {
         let mut prev_row = rows_iter.next().unwrap();
         let mut first_row_iter = make_iter.make_iter(prev_row.as_mut());

@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #![allow(non_snake_case)] // Expected.
     pub fn hammingWeight(n: u32) -> i32 {
         let mut result = 0;
         let mut n = n;
