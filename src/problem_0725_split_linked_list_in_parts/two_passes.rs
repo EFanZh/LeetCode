@@ -27,7 +27,7 @@ impl Solution {
 
                     node = current.next.take();
 
-                    tail = &mut tail.get_or_insert(current).next;
+                    tail = &mut tail.insert(current).next;
                 }
 
                 result.push(sub_list);

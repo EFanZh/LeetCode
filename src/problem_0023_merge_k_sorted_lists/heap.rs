@@ -40,7 +40,7 @@ impl Solution {
             .collect::<BinaryHeap<_>>();
 
         while let Some(list) = heap.pop() {
-            target = &mut target.get_or_insert(list.0).next;
+            target = &mut target.insert(list.0).next;
 
             if let Some(next) = target.take() {
                 heap.push(Entry(next));

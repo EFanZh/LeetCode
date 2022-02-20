@@ -12,7 +12,7 @@ impl Solution {
             } else {
                 let next = node.next.take();
 
-                Self::delete_duplicates_helper(tail.next.get_or_insert(node), next);
+                Self::delete_duplicates_helper(tail.next.insert(node), next);
             }
         }
     }

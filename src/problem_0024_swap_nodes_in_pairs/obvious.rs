@@ -13,7 +13,7 @@ impl Solution {
         while let Some(mut node) = head {
             if let Some(mut next) = node.next.take() {
                 head = next.next.take();
-                target = &mut target.get_or_insert(next).next.get_or_insert(node).next;
+                target = &mut target.insert(next).next.insert(node).next;
             } else {
                 *target = Some(node);
 

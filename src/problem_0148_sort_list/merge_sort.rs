@@ -26,22 +26,22 @@ impl Solution {
     ) -> &mut Option<Box<ListNode>> {
         loop {
             if right.val < left.val {
-                target = &mut target.get_or_insert(right).next;
+                target = &mut target.insert(right).next;
 
                 if let Some(next_right) = target.take() {
                     right = next_right;
                 } else {
-                    target = &mut target.get_or_insert(left).next;
+                    target = &mut target.insert(left).next;
 
                     break;
                 }
             } else {
-                target = &mut target.get_or_insert(left).next;
+                target = &mut target.insert(left).next;
 
                 if let Some(next_left) = target.take() {
                     left = next_left;
                 } else {
-                    target = &mut target.get_or_insert(right).next;
+                    target = &mut target.insert(right).next;
 
                     break;
                 }

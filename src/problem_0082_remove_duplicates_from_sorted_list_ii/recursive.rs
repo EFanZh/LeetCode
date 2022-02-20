@@ -24,7 +24,7 @@ impl Solution {
             } else {
                 let next = node.next.take();
 
-                Self::delete_duplicates_single(node, next, &mut target.get_or_insert(prev).next);
+                Self::delete_duplicates_single(node, next, &mut target.insert(prev).next);
             }
         } else {
             *target = Some(prev);

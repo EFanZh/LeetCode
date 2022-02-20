@@ -14,7 +14,7 @@ impl Solution {
                 head = node.next.take();
 
                 if node.val != tail.val {
-                    tail = tail.next.get_or_insert(node);
+                    tail = tail.next.insert(node);
                 }
             }
 

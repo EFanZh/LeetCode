@@ -15,10 +15,10 @@ impl Solution {
         while let Some(mut first) = head {
             if let Some(mut second) = first.next.take() {
                 head = second.next.take();
-                odd_tail = &mut odd_tail.get_or_insert(first).next;
-                even_tail = &mut even_tail.get_or_insert(second).next;
+                odd_tail = &mut odd_tail.insert(first).next;
+                even_tail = &mut even_tail.insert(second).next;
             } else {
-                odd_tail = &mut odd_tail.get_or_insert(first).next;
+                odd_tail = &mut odd_tail.insert(first).next;
 
                 break;
             }

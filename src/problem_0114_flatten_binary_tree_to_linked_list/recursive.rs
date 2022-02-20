@@ -10,7 +10,7 @@ use std::rc::Rc;
 impl Solution {
     fn flatten_helper(tail: &mut Rc<RefCell<TreeNode>>, node: Option<Rc<RefCell<TreeNode>>>) {
         if let Some(node) = node {
-            let new_tail = Rc::clone(tail.borrow_mut().right.get_or_insert(node));
+            let new_tail = Rc::clone(tail.borrow_mut().right.insert(node));
 
             *tail = new_tail;
 

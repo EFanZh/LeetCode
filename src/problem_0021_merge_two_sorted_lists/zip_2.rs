@@ -15,11 +15,11 @@ impl Solution {
             while let Some(mut l2_box) = l2 {
                 if l1_box.val <= l2_box.val {
                     l2 = l1_box.next.take();
-                    target = &mut target.get_or_insert(l1_box).next; // TODO: Wait for `Option::insert` method.
+                    target = &mut target.insert(l1_box).next;
                     l1_box = l2_box;
                 } else {
                     l2 = l2_box.next.take();
-                    target = &mut target.get_or_insert(l2_box).next; // TODO: Wait for `Option::insert` method.
+                    target = &mut target.insert(l2_box).next;
                 }
             }
 

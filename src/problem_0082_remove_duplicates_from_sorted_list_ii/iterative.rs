@@ -29,7 +29,7 @@ impl Solution {
                         }
                     }
                 } else {
-                    target = &mut target.get_or_insert(prev).next;
+                    target = &mut target.insert(prev).next;
                     prev = node;
                 }
             } else {

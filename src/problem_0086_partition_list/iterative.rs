@@ -16,9 +16,9 @@ impl Solution {
             head = node.next.take();
 
             if node.val < x {
-                left_tail = &mut left_tail.get_or_insert(node).next;
+                left_tail = &mut left_tail.insert(node).next;
             } else {
-                right_tail = &mut right_tail.get_or_insert(node).next;
+                right_tail = &mut right_tail.insert(node).next;
             }
         }
 

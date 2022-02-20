@@ -15,9 +15,9 @@ impl Solution {
             let next = node.next.take();
 
             if node.val < x {
-                Self::partition_helper(&mut left_tail.get_or_insert(node).next, right_tail, next, x)
+                Self::partition_helper(&mut left_tail.insert(node).next, right_tail, next, x)
             } else {
-                Self::partition_helper(left_tail, &mut right_tail.get_or_insert(node).next, next, x)
+                Self::partition_helper(left_tail, &mut right_tail.insert(node).next, next, x)
             }
         } else {
             left_tail

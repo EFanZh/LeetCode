@@ -35,11 +35,11 @@ impl Solution {
 
         while let Some(mut node) = list_1 {
             list_1 = node.next.take();
-            head = &mut head.get_or_insert(node).next;
+            head = &mut head.insert(node).next;
 
             if let Some(mut node) = list_2 {
                 list_2 = node.next.take();
-                head = &mut head.get_or_insert(node).next;
+                head = &mut head.insert(node).next;
             } else {
                 break;
             }
