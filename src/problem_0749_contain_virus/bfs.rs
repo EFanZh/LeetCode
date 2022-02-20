@@ -47,7 +47,7 @@ impl Solution {
                     let mut region = region_pool.allocate();
 
                     loop {
-                        for &(next_y, next_x) in &[
+                        for (next_y, next_x) in [
                             (current_y.wrapping_sub(1), current_x),
                             (current_y, current_x.wrapping_sub(1)),
                             (current_y, current_x + 1),
@@ -102,7 +102,7 @@ impl Solution {
 
             // Expand the rest infected region.
 
-            for &regions in &[&regions[..i], &regions[i + 1..]] {
+            for regions in [&regions[..i], &regions[i + 1..]] {
                 for region in regions {
                     for &(y, x) in &region.threatens {
                         states[columns * y + x] = State::Infected;

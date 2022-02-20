@@ -60,7 +60,7 @@ impl Solution {
             let (y, x) = queue.pop_front().unwrap();
             let current_state = grid[y][x];
 
-            for &(next_y, next_x) in &[(y.wrapping_sub(1), x), (y, x.wrapping_sub(1)), (y, x + 1), (y + 1, x)] {
+            for (next_y, next_x) in [(y.wrapping_sub(1), x), (y, x.wrapping_sub(1)), (y, x + 1), (y + 1, x)] {
                 match grid.get_mut(next_y).and_then(|row| row.get_mut(next_x)) {
                     Some(state @ 0) => {
                         *state = current_state + 1;

@@ -97,7 +97,7 @@ impl Solution {
                 column,
             }) = queue.pop()
             {
-                for &(next_row, next_column) in &[
+                for (next_row, next_column) in [
                     (row.wrapping_sub(1), column),
                     (row, column.wrapping_sub(1)),
                     (row, column + 1),

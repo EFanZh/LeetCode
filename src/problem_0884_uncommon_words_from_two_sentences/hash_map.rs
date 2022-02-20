@@ -8,7 +8,7 @@ impl Solution {
     pub fn uncommon_from_sentences(s1: String, s2: String) -> Vec<String> {
         let mut states = HashMap::new();
 
-        for s in &[s1.as_str(), s2.as_str()] {
+        for s in [s1.as_str(), s2.as_str()] {
             for word in s.split(' ') {
                 states.entry(word).and_modify(|state| *state = true).or_insert(false);
             }

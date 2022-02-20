@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn dfs(grid: &mut Vec<Vec<char>>, i: usize, j: usize) {
-        for &(next_i, next_j) in &[(i.wrapping_sub(1), j), (i, j.wrapping_sub(1)), (i, j + 1), (i + 1, j)] {
+        for (next_i, next_j) in [(i.wrapping_sub(1), j), (i, j.wrapping_sub(1)), (i, j + 1), (i + 1, j)] {
             if let Some(cell @ '1') = grid.get_mut(next_i).and_then(|row| row.get_mut(next_j)) {
                 *cell = 'X';
 

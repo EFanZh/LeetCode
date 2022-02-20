@@ -37,7 +37,7 @@ impl Solution {
                         let mut max_count = -1;
 
                         if value_2 != -1 {
-                            for &(prev_y_1, prev_y_2) in &[
+                            for (prev_y_1, prev_y_2) in [
                                 (y_1.wrapping_sub(1), y_2.wrapping_sub(1)),
                                 (y_1.wrapping_sub(1), y_2),
                                 (y_1, y_2.wrapping_sub(1)),
@@ -62,7 +62,7 @@ impl Solution {
                     {
                         let mut max_count = -1;
 
-                        for &(prev_y_1, prev_y_2) in &[
+                        for (prev_y_1, prev_y_2) in [
                             (y_1.wrapping_sub(1), y_1.wrapping_sub(1)),
                             (y_1.wrapping_sub(1), y_1),
                             (y_1, y_1),

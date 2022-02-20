@@ -65,7 +65,7 @@ impl Solution {
         } else {
             let mut num = num;
 
-            for &(name, base) in &[("Billion", 1_000_000_000), ("Million", 1_000_000), ("Thousand", 1_000)] {
+            for (name, base) in [("Billion", 1_000_000_000), ("Million", 1_000_000), ("Thousand", 1_000)] {
                 if num >= base {
                     Self::less_than_thousand(num / base, &mut result);
                     result.push(' ');

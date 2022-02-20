@@ -12,7 +12,7 @@ impl Solution {
             *slot = 'V';
 
             loop {
-                for &(next_i, next_j) in &[(i.wrapping_sub(1), j), (i, j.wrapping_sub(1)), (i, j + 1), (i + 1, j)] {
+                for (next_i, next_j) in [(i.wrapping_sub(1), j), (i, j.wrapping_sub(1)), (i, j + 1), (i + 1, j)] {
                     if let Some(next @ 'O') = board.get_mut(next_i).and_then(|row| row.get_mut(next_j)) {
                         *next = 'V';
 

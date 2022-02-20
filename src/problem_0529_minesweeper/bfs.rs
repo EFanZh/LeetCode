@@ -7,7 +7,7 @@ use std::convert::TryInto;
 
 impl Solution {
     fn neighbors(board: &mut [Vec<char>], (row, column): (usize, usize), mut f: impl FnMut((usize, usize), &mut char)) {
-        for &(r, c) in &[
+        for (r, c) in [
             (row.wrapping_sub(1), column.wrapping_sub(1)),
             (row.wrapping_sub(1), column),
             (row.wrapping_sub(1), column + 1),

@@ -23,7 +23,7 @@ impl Solution {
         for rectangle in rectangles {
             let [left, bottom, right, top]: [i32; 4] = rectangle.as_slice().try_into().unwrap();
 
-            for &(point, corner) in &[
+            for (point, corner) in [
                 ((left, bottom), (BOTTOM_LEFT_CORNER)),
                 ((left, top), (TOP_LEFT_CORNER)),
                 ((right, bottom), (BOTTOM_RIGHT_CORNER)),

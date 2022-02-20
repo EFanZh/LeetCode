@@ -17,7 +17,7 @@ impl Solution {
         let mut result = Vec::with_capacity(k);
         let mut node = head;
 
-        for &(length, count) in &[(max_length, max_length_count), (min_length, min_length_count)] {
+        for (length, count) in [(max_length, max_length_count), (min_length, min_length_count)] {
             for _ in 0..count {
                 let mut sub_list = None;
                 let mut tail = &mut sub_list;

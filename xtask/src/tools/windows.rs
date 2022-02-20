@@ -17,7 +17,7 @@ fn find_visual_studio() -> Option<PathBuf> {
 }
 
 pub fn find_cmake() -> Option<PathBuf> {
-    for &path in &[
+    for path in [
         r"C:\Program Files\CMake\bin\cmake.exe",
         r"C:\Program Files (x86)\CMake\bin\cmake.exe",
     ] {

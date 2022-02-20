@@ -80,7 +80,7 @@ impl SegmentTree {
             right = right.parent();
         }
 
-        for &node in &[initial_left, initial_right - 1] {
+        for node in [initial_left, initial_right - 1] {
             let mut node = node / 2;
 
             loop {
@@ -100,13 +100,13 @@ impl SegmentTree {
     fn query(&mut self, start: usize, end: usize) -> i32 {
         let (mut left, mut right) = (start + self.n, end + self.n);
 
-        for &node in &[left, right - 1] {
+        for node in [left, right - 1] {
             for i in (1..=node.depth()).rev() {
                 let ancestor = node >> i;
                 let lazy = self.lazy[ancestor - 1];
 
                 if lazy != 0 {
-                    for &child in &[ancestor.left(), ancestor.right()] {
+                    for child in [ancestor.left(), ancestor.right()] {
                         if let Some(child_lazy) = self.lazy.get_mut(child - 1) {
                             *child_lazy = lazy;
                         }

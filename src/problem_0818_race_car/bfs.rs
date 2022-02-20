@@ -15,7 +15,7 @@ impl Solution {
             for _ in 0..queue.len() {
                 let (position, speed) = queue.pop_front().unwrap();
 
-                for &(next_position, next_speed) in &[
+                for (next_position, next_speed) in [
                     (position + speed, speed * 2),
                     (position, if speed > 0 { -1 } else { 1 }),
                 ] {

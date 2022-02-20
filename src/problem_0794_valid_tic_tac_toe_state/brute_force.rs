@@ -13,7 +13,7 @@ impl Solution {
 
         let mut wins = 0_u8;
 
-        for &line in &[
+        for line in [
             [cell_00, cell_01, cell_02],
             [cell_00, cell_10, cell_20],
             [cell_00, cell_11, cell_22],
@@ -45,7 +45,7 @@ impl Solution {
         let mut o_nums = 0;
         let mut x_nums = 0;
 
-        for &cell in &[
+        for cell in [
             cell_00, cell_01, cell_02, cell_10, cell_11, cell_12, cell_20, cell_21, cell_22,
         ] {
             match cell {

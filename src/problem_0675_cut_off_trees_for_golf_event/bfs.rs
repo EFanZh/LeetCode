@@ -22,7 +22,7 @@ impl Solution {
             for _ in 0..queue.len() {
                 let (row, column) = queue.pop_front().unwrap();
 
-                for &(next_row, next_column) in &[
+                for (next_row, next_column) in [
                     (row.wrapping_sub(1), column),
                     (row, column.wrapping_sub(1)),
                     (row, column + 1),

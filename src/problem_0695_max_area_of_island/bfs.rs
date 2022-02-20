@@ -9,7 +9,7 @@ impl Solution {
         let mut result = 1;
 
         loop {
-            for &(offset_i, offset_j) in &[(-1, 0), (0, -1), (0, 1), (1, 0)] {
+            for (offset_i, offset_j) in [(-1, 0), (0, -1), (0, 1), (1, 0)] {
                 let next_i = i.wrapping_add(offset_i as _);
                 let next_j = j.wrapping_add(offset_j as _);
 

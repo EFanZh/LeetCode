@@ -16,7 +16,7 @@ impl Solution {
 
         let mut result = i32::MAX;
 
-        for &nums in &[fronts.as_slice(), backs.as_slice()] {
+        for nums in [fronts.as_slice(), backs.as_slice()] {
             for &x in nums {
                 if !not_good.contains(&x) {
                     result = result.min(x);
