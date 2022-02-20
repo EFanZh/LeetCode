@@ -33,14 +33,13 @@ impl Solution {
         num
     }
 
-    #[allow(clippy::unnested_or_patterns)]
     pub fn calculate(s: String) -> i32 {
         let mut iter = s.bytes().peekable();
         let mut first = Self::number(&mut iter);
 
         let (mut op, mut second) = loop {
             match Self::op(&mut iter) {
-                Some(op @ b'+') | Some(op @ b'-') => break (op, Self::number(&mut iter)),
+                Some(op @ (b'+' | b'-')) => break (op, Self::number(&mut iter)),
                 Some(b'*') => first *= Self::number(&mut iter),
                 Some(b'/') => first /= Self::number(&mut iter),
                 _ => return first,
@@ -49,7 +48,7 @@ impl Solution {
 
         loop {
             match Self::op(&mut iter) {
-                Some(op_2 @ b'+') | Some(op_2 @ b'-') => {
+                Some(op_2 @ (b'+' | b'-')) => {
                     if mem::replace(&mut op, op_2) == b'+' {
                         first += mem::replace(&mut second, Self::number(&mut iter));
                     } else {

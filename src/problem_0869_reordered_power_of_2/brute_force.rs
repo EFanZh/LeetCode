@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::unnested_or_patterns)]
     pub fn reordered_power_of2(n: i32) -> bool {
         let mut n = n as u32;
         let mut digits = [0_u8; 10];
@@ -24,9 +23,9 @@ impl Solution {
         digits.sort_unstable();
 
         match digits.len() {
-            1 => matches!(digits, [1] | [2] | [4] | [8]),
-            2 => matches!(digits, [1, 6] | [2, 3] | [4, 6]),
-            3 => matches!(digits, [1, 2, 8] | [2, 5, 6] | [1, 2, 5]),
+            1 => matches!(digits, [1 | 2 | 4 | 8]),
+            2 => matches!(digits, [1 | 4, 6] | [2, 3]),
+            3 => matches!(digits, [1, 2, 5 | 8] | [2, 5, 6]),
             4 => matches!(digits, [0, 1, 2, 4] | [0, 2, 4, 8] | [0, 4, 6, 9] | [1, 2, 8, 9]),
             5 => matches!(digits, [1, 3, 4, 6, 8] | [2, 3, 6, 7, 8] | [3, 5, 5, 6, 6]),
             6 => matches!(digits, [0, 1, 1, 2, 3, 7] | [1, 2, 2, 4, 4, 6] | [2, 2, 4, 5, 8, 8]),
