@@ -791,6 +791,7 @@ pub mod problem_0934_shortest_bridge;
 pub mod problem_0935_knight_dialer;
 pub mod problem_0937_reorder_data_in_log_files;
 pub mod problem_0938_range_sum_of_bst;
+pub mod problem_0941_valid_mountain_array;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
