@@ -9,7 +9,7 @@ impl Solution {
         let length = search_area
             .bytes()
             .position(|c| !c.is_ascii_uppercase())
-            .unwrap_or_else(|| search_area.len());
+            .unwrap_or(search_area.len());
 
         if length == 0 {
             None
@@ -26,7 +26,7 @@ impl Solution {
     }
 
     fn parse_text(input: &str) -> Option<&str> {
-        let length = input.bytes().position(|c| c == b'<').unwrap_or_else(|| input.len());
+        let length = input.bytes().position(|c| c == b'<').unwrap_or(input.len());
 
         if length == 0 {
             None

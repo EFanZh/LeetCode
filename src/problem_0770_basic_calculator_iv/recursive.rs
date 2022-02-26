@@ -38,7 +38,7 @@ impl Solution {
         let end = input
             .bytes()
             .position(|c| !matches!(c, b'-' | b'0'..=b'9'| b'a'..=b'z'))
-            .unwrap_or_else(|| input.len());
+            .unwrap_or(input.len());
 
         if end == 0 {
             None

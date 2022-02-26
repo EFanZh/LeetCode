@@ -20,11 +20,7 @@ mod tests {
                 test_utilities::unstable_sorted(nums.iter().copied())
             );
 
-            let split = result
-                .iter()
-                .position(|&num| num % 2 != 0)
-                .unwrap_or_else(|| result.len());
-
+            let split = result.iter().position(|&num| num % 2 != 0).unwrap_or(result.len());
             let (left, right) = result.split_at(split);
 
             assert!(left.iter().all(|&num| num % 2 == 0));

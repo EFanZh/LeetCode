@@ -8,7 +8,7 @@ impl Solution {
     fn symbol(input: &str) -> Option<(&str, &str)> {
         let end = input
             .find(|c: char| matches!(c, '(' | ')' | ' '))
-            .unwrap_or_else(|| input.len());
+            .unwrap_or(input.len());
 
         if end == 0 {
             None

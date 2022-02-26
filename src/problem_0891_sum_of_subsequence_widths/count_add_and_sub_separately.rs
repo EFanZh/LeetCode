@@ -18,7 +18,7 @@ impl Solution {
         for (&high, &low) in nums.iter().zip(nums.iter().rev()) {
             let low = low as u32;
             let high = high as u32;
-            let diff = high.checked_sub(low).unwrap_or_else(|| high + MODULUS - low);
+            let diff = high.checked_sub(low).unwrap_or(high + MODULUS - low);
 
             result += (u64::from(diff) * u64::from(count) % u64::from(MODULUS)) as u32;
 

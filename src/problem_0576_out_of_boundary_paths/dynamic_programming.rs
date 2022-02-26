@@ -20,7 +20,7 @@ impl Solution {
             let border = if current_max_move == max_move - 1 { 1 } else { 0 };
 
             for y in start_row.saturating_sub(current_max_move)..(start_row + current_max_move + 1).min(m) {
-                let x_max_move = current_max_move - start_row.checked_sub(y).unwrap_or_else(|| y - start_row);
+                let x_max_move = current_max_move - start_row.checked_sub(y).unwrap_or(y - start_row);
 
                 for x in start_column.saturating_sub(x_max_move)..(start_column + x_max_move + 1).min(n) {
                     let top = if y == 0 { border } else { cache[n * (y - 1) + x] };
