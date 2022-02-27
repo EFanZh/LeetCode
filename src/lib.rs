@@ -789,6 +789,7 @@ pub mod problem_0932_beautiful_array;
 pub mod problem_0933_number_of_recent_calls;
 pub mod problem_0934_shortest_bridge;
 pub mod problem_0935_knight_dialer;
+pub mod problem_0936_stamping_the_sequence;
 pub mod problem_0937_reorder_data_in_log_files;
 pub mod problem_0938_range_sum_of_bst;
 pub mod problem_0941_valid_mountain_array;
