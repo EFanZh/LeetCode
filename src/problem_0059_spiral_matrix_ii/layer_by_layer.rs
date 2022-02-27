@@ -17,9 +17,7 @@ impl Solution {
         for i in 0..n / 2 {
             // Right.
 
-            for target in &mut result[i][i..n - i] {
-                *target = next_value();
-            }
+            result[i][i..n - i].fill_with(&mut next_value);
 
             // Down.
 

@@ -68,7 +68,7 @@ impl Solution {
                     }
                 }
 
-                row_sums.iter_mut().for_each(|x| *x = 0);
+                row_sums.fill(0);
             }
         } else {
             let mut column_sums = vec![0; columns];
@@ -80,7 +80,7 @@ impl Solution {
                     }
                 }
 
-                column_sums.iter_mut().for_each(|x| *x = 0);
+                column_sums.fill(0);
             }
         }
 

@@ -44,10 +44,7 @@ impl Solution {
         for (d, &count) in (b'0'..).zip(&digit_counts) {
             let (current, rest) = slice.split_at_mut(count);
 
-            for target in current {
-                *target = d;
-            }
-
+            current.fill(d);
             slice = rest;
         }
 

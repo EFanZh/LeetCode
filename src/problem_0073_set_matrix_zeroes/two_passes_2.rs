@@ -53,9 +53,7 @@ impl Solution {
             }
 
             if first_row_has_zero {
-                for cell in first_row {
-                    *cell = 0;
-                }
+                first_row.fill(0);
             }
         }
     }

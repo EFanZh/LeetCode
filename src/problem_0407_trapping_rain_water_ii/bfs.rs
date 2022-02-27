@@ -77,7 +77,7 @@ impl Solution {
             let mut queue = BinaryHeap::from(queue);
             let mut visited = vec![false; columns * rows];
 
-            visited[..columns].iter_mut().for_each(|x| *x = true);
+            visited[..columns].fill(true);
 
             visited[columns..columns * (rows - 1)]
                 .iter_mut()
@@ -89,7 +89,7 @@ impl Solution {
                 .step_by(columns)
                 .for_each(|x| *x = true);
 
-            visited[columns * (rows - 1)..].iter_mut().for_each(|x| *x = true);
+            visited[columns * (rows - 1)..].fill(true);
 
             while let Some(QueueItem {
                 max_height,

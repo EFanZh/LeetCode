@@ -43,9 +43,7 @@ impl Solution {
         for (num, &count) in (min..).zip(&counts) {
             let (left, right) = nums.split_at_mut(usize::from(count));
 
-            for target in left {
-                *target = num;
-            }
+            left.fill(num);
 
             nums = right;
         }

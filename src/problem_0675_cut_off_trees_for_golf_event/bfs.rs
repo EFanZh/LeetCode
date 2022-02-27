@@ -30,7 +30,7 @@ impl Solution {
                 ] {
                     if (next_row, next_column) == target {
                         queue.clear();
-                        visited.iter_mut().for_each(|v| *v = false);
+                        visited.fill(false);
 
                         return steps;
                     }
