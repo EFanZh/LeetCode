@@ -793,6 +793,7 @@ pub mod problem_0936_stamping_the_sequence;
 pub mod problem_0937_reorder_data_in_log_files;
 pub mod problem_0938_range_sum_of_bst;
 pub mod problem_0939_minimum_area_rectangle;
+pub mod problem_0940_distinct_subsequences_ii;
 pub mod problem_0941_valid_mountain_array;
 pub mod problem_0942_di_string_match;
 pub mod problem_0944_delete_columns_to_make_sorted;
