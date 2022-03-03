@@ -799,6 +799,7 @@ pub mod problem_0942_di_string_match;
 pub mod problem_0944_delete_columns_to_make_sorted;
 pub mod problem_0945_minimum_increment_to_make_array_unique;
 pub mod problem_0946_validate_stack_sequences;
+pub mod problem_0949_largest_time_for_given_digits;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
