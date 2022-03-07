@@ -803,6 +803,7 @@ pub mod problem_0949_largest_time_for_given_digits;
 pub mod problem_0950_reveal_cards_in_increasing_order;
 pub mod problem_0951_flip_equivalent_binary_trees;
 pub mod problem_0953_verifying_an_alien_dictionary;
+pub mod problem_0954_array_of_doubled_pairs;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
