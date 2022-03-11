@@ -807,6 +807,7 @@ pub mod problem_0954_array_of_doubled_pairs;
 pub mod problem_0955_delete_columns_to_make_sorted_ii;
 pub mod problem_0958_check_completeness_of_a_binary_tree;
 pub mod problem_0961_n_repeated_element_in_size_2n_array;
+pub mod problem_0965_univalued_binary_tree;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
