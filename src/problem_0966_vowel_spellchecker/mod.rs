@@ -13,7 +13,9 @@ mod tests {
             (
                 (
                     &["KiTe", "kite", "hare", "Hare"] as &[_],
-                    &["KiTe", "kite", "hare", "Hare"] as &[_],
+                    &[
+                        "kite", "Kite", "KiTe", "Hare", "HARE", "Hear", "hear", "keti", "keet", "keto",
+                    ] as &[_],
                 ),
                 &["kite", "KiTe", "KiTe", "Hare", "hare", "", "", "KiTe", "", "KiTe"] as &[_],
             ),
