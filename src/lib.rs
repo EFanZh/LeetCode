@@ -810,6 +810,7 @@ pub mod problem_0961_n_repeated_element_in_size_2n_array;
 pub mod problem_0965_univalued_binary_tree;
 pub mod problem_0966_vowel_spellchecker;
 pub mod problem_0973_k_closest_points_to_origin;
+pub mod problem_0976_largest_perimeter_triangle;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
