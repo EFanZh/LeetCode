@@ -804,6 +804,7 @@ pub mod problem_0950_reveal_cards_in_increasing_order;
 pub mod problem_0951_flip_equivalent_binary_trees;
 pub mod problem_0953_verifying_an_alien_dictionary;
 pub mod problem_0954_array_of_doubled_pairs;
+pub mod problem_0977_squares_of_a_sorted_array;
 pub mod problem_0955_delete_columns_to_make_sorted_ii;
 pub mod problem_0958_check_completeness_of_a_binary_tree;
 pub mod problem_0961_n_repeated_element_in_size_2n_array;
