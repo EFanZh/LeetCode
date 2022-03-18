@@ -810,6 +810,7 @@ pub mod problem_0961_n_repeated_element_in_size_2n_array;
 pub mod problem_0965_univalued_binary_tree;
 pub mod problem_0966_vowel_spellchecker;
 pub mod problem_0968_binary_tree_cameras;
+pub mod problem_0970_powerful_integers;
 pub mod problem_0973_k_closest_points_to_origin;
 pub mod problem_0974_subarray_sums_divisible_by_k;
 pub mod problem_0976_largest_perimeter_triangle;
