@@ -8,41 +8,38 @@ use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::rc::Rc;
 
-enum State {
-    Initial,
-    SeenX(i32),
-    SeenY(i32),
-}
-
 impl Solution {
+    fn find_node(
+        queue: &VecDeque<(Rc<RefCell<TreeNode>>, i32)>,
+        remaining: usize,
+        value: i32,
+        not_parent: i32,
+    ) -> bool {
+        for (node, parent) in queue.iter().take(remaining) {
+            if node.borrow().val == value {
+                return *parent != not_parent;
+            }
+        }
+
+        false
+    }
+
     pub fn is_cousins(root: Option<Rc<RefCell<TreeNode>>>, x: i32, y: i32) -> bool {
         let mut queue = VecDeque::from(vec![(root.unwrap(), -1)]);
 
         loop {
-            let mut state = State::Initial;
+            let mut remaining = queue.len();
 
-            for _ in 0..queue.len() {
+            while remaining != 0 {
                 let (node, parent) = queue.pop_front().unwrap();
                 let node = node.borrow();
 
-                match state {
-                    State::Initial => {
-                        if node.val == x {
-                            state = State::SeenX(parent);
-                        } else if node.val == y {
-                            state = State::SeenY(parent);
-                        }
-                    }
-                    State::SeenX(x_parent) => {
-                        if node.val == y {
-                            return parent != x_parent;
-                        }
-                    }
-                    State::SeenY(y_parent) => {
-                        if node.val == x {
-                            return parent != y_parent;
-                        }
-                    }
+                remaining -= 1;
+
+                if node.val == x {
+                    return Self::find_node(&queue, remaining, y, parent);
+                } else if node.val == y {
+                    return Self::find_node(&queue, remaining, x, parent);
                 }
 
                 if let Some(left) = node.left.clone() {
@@ -52,10 +49,6 @@ impl Solution {
                 if let Some(right) = node.right.clone() {
                     queue.push_back((right, node.val));
                 }
-            }
-
-            if !matches!(state, State::Initial) {
-                return false;
             }
         }
     }
