@@ -821,6 +821,7 @@ pub mod problem_0979_distribute_coins_in_binary_tree;
 pub mod problem_0984_string_without_aaa_or_bbb;
 pub mod problem_0986_interval_list_intersections;
 pub mod problem_0987_vertical_order_traversal_of_a_binary_tree;
+pub mod problem_0989_add_to_array_form_of_integer;
 pub mod problem_0993_cousins_in_binary_tree;
 pub mod problem_0997_find_the_town_judge;
 pub mod problem_1002_find_common_characters;
