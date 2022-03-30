@@ -47,8 +47,6 @@ impl Solution {
         let mut i = 0;
 
         for mut node in Self::iter_bitmap(nodes) {
-            nodes &= nodes - 1;
-
             if let component @ 0 = &mut components[usize::from(node)] {
                 i += 1;
 
