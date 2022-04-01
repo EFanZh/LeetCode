@@ -824,6 +824,7 @@ pub mod problem_0987_vertical_order_traversal_of_a_binary_tree;
 pub mod problem_0989_add_to_array_form_of_integer;
 pub mod problem_0990_satisfiability_of_equality_equations;
 pub mod problem_0993_cousins_in_binary_tree;
+pub mod problem_0994_rotting_oranges;
 pub mod problem_0997_find_the_town_judge;
 pub mod problem_0999_available_captures_for_rook;
 pub mod problem_1002_find_common_characters;
