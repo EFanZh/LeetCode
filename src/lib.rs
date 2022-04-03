@@ -819,6 +819,7 @@ pub mod problem_0977_squares_of_a_sorted_array;
 pub mod problem_0978_longest_turbulent_subarray;
 pub mod problem_0979_distribute_coins_in_binary_tree;
 pub mod problem_0984_string_without_aaa_or_bbb;
+pub mod problem_0985_sum_of_even_numbers_after_queries;
 pub mod problem_0986_interval_list_intersections;
 pub mod problem_0987_vertical_order_traversal_of_a_binary_tree;
 pub mod problem_0988_smallest_string_starting_from_leaf;
