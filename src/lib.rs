@@ -811,6 +811,7 @@ pub mod problem_0959_regions_cut_by_slashes;
 pub mod problem_0961_n_repeated_element_in_size_2n_array;
 pub mod problem_0965_univalued_binary_tree;
 pub mod problem_0966_vowel_spellchecker;
+pub mod problem_0967_numbers_with_same_consecutive_differences;
 pub mod problem_0968_binary_tree_cameras;
 pub mod problem_0970_powerful_integers;
 pub mod problem_0971_flip_binary_tree_to_match_preorder_traversal;
