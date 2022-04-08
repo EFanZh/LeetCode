@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    fn dfs(grid: &mut Vec<Vec<char>>, mut current: (usize, usize), stack: &mut Vec<(usize, usize)>) {
+    fn dfs(grid: &mut [Vec<char>], mut current: (usize, usize), stack: &mut Vec<(usize, usize)>) {
         loop {
             let (i, j) = current;
 

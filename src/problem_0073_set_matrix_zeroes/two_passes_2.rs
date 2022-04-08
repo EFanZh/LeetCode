@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
         if let Some((first_row, rest_rows)) = matrix.split_first_mut() {
             let first_row_has_zero = first_row.iter().any(|x| *x == 0);

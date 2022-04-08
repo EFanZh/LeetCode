@@ -5,7 +5,7 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
-    fn bfs(grid: &mut Vec<Vec<char>>, mut current: (usize, usize), queue: &mut VecDeque<(usize, usize)>) {
+    fn bfs(grid: &mut [Vec<char>], mut current: (usize, usize), queue: &mut VecDeque<(usize, usize)>) {
         loop {
             let (i, j) = current;
 

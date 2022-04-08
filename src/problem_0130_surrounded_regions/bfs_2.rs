@@ -5,7 +5,7 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
-    fn bfs(board: &mut Vec<Vec<char>>, mut i: usize, mut j: usize, queue: &mut VecDeque<(usize, usize)>) {
+    fn bfs(board: &mut [Vec<char>], mut i: usize, mut j: usize, queue: &mut VecDeque<(usize, usize)>) {
         let slot = &mut board[i][j];
 
         if *slot == 'O' {
@@ -30,6 +30,7 @@ impl Solution {
         }
     }
 
+    #[allow(clippy::ptr_arg)]
     pub fn solve(board: &mut Vec<Vec<char>>) {
         let rows = board.len();
         let columns = board.first().map_or(0, Vec::len);

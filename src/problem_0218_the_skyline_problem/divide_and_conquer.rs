@@ -86,6 +86,7 @@ impl Solution {
         skyline.splice(left.., buffer.drain(..));
     }
 
+    #[allow(clippy::ptr_arg)] // False positive.
     fn get_skyline_helper(buildings: &[Vec<i32>], target: &mut Vec<[i32; 2]>, merge_buffer: &mut Vec<[i32; 2]>) {
         if let [building] = buildings {
             let [left, right, height]: [i32; 3] = building.as_slice().try_into().unwrap();

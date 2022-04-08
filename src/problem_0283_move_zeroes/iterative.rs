@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn move_zeroes(nums: &mut Vec<i32>) {
         let mut i = 0;
         let mut tail;

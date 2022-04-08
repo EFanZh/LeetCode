@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::ptr_arg)]
     pub fn sort_colors(nums: &mut Vec<i32>) {
         let mut counts = [0; 3];
 

@@ -14,6 +14,7 @@ impl Solution {
         x
     }
 
+    #[allow(clippy::ptr_arg)]
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         let length = nums.len();
         let k = (k as usize) % length;
