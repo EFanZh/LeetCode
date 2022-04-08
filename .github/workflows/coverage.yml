@@ -9,8 +9,6 @@ jobs:
           - run: vcpkg install gtest
           - uses: actions-rs/toolchain@v1
             with:
-                toolchain: nightly
-                override: true
                 components: llvm-tools-preview
           - run: >-
                 cargo xtask coverage

@@ -59,8 +59,6 @@ pub struct Subcommand {
     cmake_toolchain_file: Option<PathBuf>,
     #[clap(long)]
     llvm_version: Option<String>,
-    #[clap(long, default_value = "nightly")]
-    rust_toolchain: String,
     #[clap(short, long)]
     output_path: PathBuf,
     #[clap(short = 't', long, default_value = "lcov")]
@@ -172,18 +170,12 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
     test_executable
 }
 
-fn run_rust_tests(toolchain: &str, llvm_profdata: &Path, output: &Path) -> PathBuf {
+fn run_rust_tests(llvm_profdata: &Path, output: &Path) -> PathBuf {
     // Build.
 
     let test_executable = utilities::run_command_and_stream_output(
         Command::new("cargo")
-            .args([
-                format!("+{}", toolchain).as_str(),
-                "test",
-                "--no-run",
-                "--message-format",
-                "json",
-            ])
+            .args(["test", "--no-run", "--message-format", "json"])
             .env("RUSTFLAGS", "-C instrument-coverage"),
         |child_stdout| {
             let stdout = io::stdout();
@@ -231,10 +223,10 @@ where
 
 impl Subcommand {
     pub fn run(self) {
-        let rust_version_meta = tools::find_rust_version_meta(&self.rust_toolchain);
+        let rust_version_meta = tools::find_rust_version_meta();
 
         let rust_lib_path = {
-            let mut buffer = tools::find_rust_sysroot(&self.rust_toolchain);
+            let mut buffer = tools::find_rust_sysroot();
 
             buffer.extend(["lib", "rustlib"]);
 
@@ -266,7 +258,7 @@ impl Subcommand {
             &cpp_profdata,
         );
 
-        let rust_test_executable = run_rust_tests(&self.rust_toolchain, &llvm_profdata, &rust_profdata);
+        let rust_test_executable = run_rust_tests(&llvm_profdata, &rust_profdata);
 
         // Merge profile data.
 
