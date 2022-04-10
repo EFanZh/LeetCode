@@ -803,6 +803,7 @@ pub mod problem_0948_bag_of_tokens;
 pub mod problem_0949_largest_time_for_given_digits;
 pub mod problem_0950_reveal_cards_in_increasing_order;
 pub mod problem_0951_flip_equivalent_binary_trees;
+pub mod problem_0952_largest_component_size_by_common_factor;
 pub mod problem_0953_verifying_an_alien_dictionary;
 pub mod problem_0954_array_of_doubled_pairs;
 pub mod problem_0955_delete_columns_to_make_sorted_ii;
