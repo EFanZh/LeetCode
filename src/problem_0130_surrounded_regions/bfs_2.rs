@@ -30,7 +30,7 @@ impl Solution {
         }
     }
 
-    #[allow(clippy::ptr_arg)]
+    #[allow(clippy::ptr_arg)] // Expected.
     pub fn solve(board: &mut Vec<Vec<char>>) {
         let rows = board.len();
         let columns = board.first().map_or(0, Vec::len);
