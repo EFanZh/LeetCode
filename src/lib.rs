@@ -811,6 +811,7 @@ pub mod problem_0957_prison_cells_after_n_days;
 pub mod problem_0958_check_completeness_of_a_binary_tree;
 pub mod problem_0959_regions_cut_by_slashes;
 pub mod problem_0961_n_repeated_element_in_size_2n_array;
+pub mod problem_0962_maximum_width_ramp;
 pub mod problem_0965_univalued_binary_tree;
 pub mod problem_0966_vowel_spellchecker;
 pub mod problem_0967_numbers_with_same_consecutive_differences;

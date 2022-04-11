@@ -353,3 +353,7 @@ Understand the minimax algorithm.
 ## [920. Number of Music Playlists](https://leetcode.com/problems/number-of-music-playlists/)
 
 Make sure it can be solved again.
+
+## [962. Maximum Width Ramp](https://leetcode.com/problems/maximum-binary-tree-ii/)
+
+Make sure it can be solved again.
