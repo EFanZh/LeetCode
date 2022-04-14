@@ -840,6 +840,7 @@ pub mod problem_1002_find_common_characters;
 pub mod problem_1004_max_consecutive_ones_iii;
 pub mod problem_1005_maximize_sum_of_array_after_k_negations;
 pub mod problem_1006_clumsy_factorial;
+pub mod problem_1008_construct_binary_search_tree_from_preorder_traversal;
 pub mod problem_1009_complement_of_base_10_integer;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
