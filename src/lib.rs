@@ -842,6 +842,7 @@ pub mod problem_1005_maximize_sum_of_array_after_k_negations;
 pub mod problem_1006_clumsy_factorial;
 pub mod problem_1008_construct_binary_search_tree_from_preorder_traversal;
 pub mod problem_1009_complement_of_base_10_integer;
+pub mod problem_1010_pairs_of_songs_with_total_durations_divisible_by_60;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
