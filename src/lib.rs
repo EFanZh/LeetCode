@@ -837,6 +837,7 @@ pub mod problem_0994_rotting_oranges;
 pub mod problem_0997_find_the_town_judge;
 pub mod problem_0999_available_captures_for_rook;
 pub mod problem_1002_find_common_characters;
+pub mod problem_1003_check_if_word_is_valid_after_substitutions;
 pub mod problem_1004_max_consecutive_ones_iii;
 pub mod problem_1005_maximize_sum_of_array_after_k_negations;
 pub mod problem_1006_clumsy_factorial;
