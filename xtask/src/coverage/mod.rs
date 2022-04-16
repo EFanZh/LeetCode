@@ -170,12 +170,19 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
     test_executable
 }
 
-fn run_rust_tests(llvm_profdata: &Path, output: &Path) -> PathBuf {
+fn run_rust_tests(target_dir: &Path, llvm_profdata: &Path, output: &Path) -> PathBuf {
     // Build.
 
     let test_executable = utilities::run_command_and_stream_output(
         Command::new("cargo")
-            .args(["test", "--no-run", "--message-format", "json"])
+            .args::<_, &OsStr>([
+                "test".as_ref(),
+                "--no-run".as_ref(),
+                "--target-dir".as_ref(),
+                target_dir.as_ref(),
+                "--message-format".as_ref(),
+                "json".as_ref(),
+            ])
             .env("RUSTFLAGS", "-C instrument-coverage"),
         |child_stdout| {
             let stdout = io::stdout();
@@ -258,7 +265,13 @@ impl Subcommand {
             &cpp_profdata,
         );
 
-        let rust_test_executable = run_rust_tests(&llvm_profdata, &rust_profdata);
+        let mut rust_target_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+
+        rust_target_dir.pop();
+        rust_target_dir.push("target");
+        rust_target_dir.push("rust-coverage");
+
+        let rust_test_executable = run_rust_tests(&rust_target_dir, &llvm_profdata, &rust_profdata);
 
         // Merge profile data.
 
