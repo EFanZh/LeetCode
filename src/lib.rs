@@ -842,6 +842,7 @@ pub mod problem_1003_check_if_word_is_valid_after_substitutions;
 pub mod problem_1004_max_consecutive_ones_iii;
 pub mod problem_1005_maximize_sum_of_array_after_k_negations;
 pub mod problem_1006_clumsy_factorial;
+pub mod problem_1007_minimum_domino_rotations_for_equal_row;
 pub mod problem_1008_construct_binary_search_tree_from_preorder_traversal;
 pub mod problem_1009_complement_of_base_10_integer;
 pub mod problem_1010_pairs_of_songs_with_total_durations_divisible_by_60;
