@@ -836,6 +836,7 @@ pub mod problem_0990_satisfiability_of_equality_equations;
 pub mod problem_0993_cousins_in_binary_tree;
 pub mod problem_0994_rotting_oranges;
 pub mod problem_0997_find_the_town_judge;
+pub mod problem_0998_maximum_binary_tree_ii;
 pub mod problem_0999_available_captures_for_rook;
 pub mod problem_1002_find_common_characters;
 pub mod problem_1003_check_if_word_is_valid_after_substitutions;
