@@ -849,6 +849,7 @@ pub mod problem_1009_complement_of_base_10_integer;
 pub mod problem_1010_pairs_of_songs_with_total_durations_divisible_by_60;
 pub mod problem_1011_capacity_to_ship_packages_within_d_days;
 pub mod problem_1013_partition_array_into_three_parts_with_equal_sum;
+pub mod problem_1014_best_sightseeing_pair;
 pub mod problem_1015_smallest_integer_divisible_by_k;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
