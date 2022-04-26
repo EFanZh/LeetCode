@@ -851,6 +851,7 @@ pub mod problem_1011_capacity_to_ship_packages_within_d_days;
 pub mod problem_1013_partition_array_into_three_parts_with_equal_sum;
 pub mod problem_1014_best_sightseeing_pair;
 pub mod problem_1015_smallest_integer_divisible_by_k;
+pub mod problem_1016_binary_string_with_substrings_representing_1_to_n;
 pub mod problem_1018_binary_prefix_divisible_by_5;
 pub mod problem_1019_next_greater_node_in_linked_list;
 pub mod problem_1143_longest_common_subsequence;
