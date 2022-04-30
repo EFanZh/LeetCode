@@ -857,6 +857,7 @@ pub mod problem_1019_next_greater_node_in_linked_list;
 pub mod problem_1020_number_of_enclaves;
 pub mod problem_1021_remove_outermost_parentheses;
 pub mod problem_1022_sum_of_root_to_leaf_binary_numbers;
+pub mod problem_1023_camelcase_matching;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
