@@ -858,6 +858,7 @@ pub mod problem_1020_number_of_enclaves;
 pub mod problem_1021_remove_outermost_parentheses;
 pub mod problem_1022_sum_of_root_to_leaf_binary_numbers;
 pub mod problem_1023_camelcase_matching;
+pub mod problem_1024_video_stitching;
 pub mod problem_1025_divisor_game;
 pub mod problem_1026_maximum_difference_between_node_and_ancestor;
 pub mod problem_1030_matrix_cells_in_distance_order;
