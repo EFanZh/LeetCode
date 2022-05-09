@@ -865,6 +865,7 @@ pub mod problem_1028_recover_a_tree_from_preorder_traversal;
 pub mod problem_1029_two_city_scheduling;
 pub mod problem_1030_matrix_cells_in_distance_order;
 pub mod problem_1031_maximum_sum_of_two_non_overlapping_subarrays;
+pub mod problem_1033_moving_stones_until_consecutive;
 pub mod problem_1037_valid_boomerang;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
