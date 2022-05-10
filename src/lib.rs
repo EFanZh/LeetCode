@@ -861,6 +861,7 @@ pub mod problem_1023_camelcase_matching;
 pub mod problem_1024_video_stitching;
 pub mod problem_1025_divisor_game;
 pub mod problem_1026_maximum_difference_between_node_and_ancestor;
+pub mod problem_1027_longest_arithmetic_subsequence;
 pub mod problem_1028_recover_a_tree_from_preorder_traversal;
 pub mod problem_1029_two_city_scheduling;
 pub mod problem_1030_matrix_cells_in_distance_order;
