@@ -870,6 +870,7 @@ pub mod problem_1033_moving_stones_until_consecutive;
 pub mod problem_1034_coloring_a_border;
 pub mod problem_1037_valid_boomerang;
 pub mod problem_1038_binary_search_tree_to_greater_sum_tree;
+pub mod problem_1041_robot_bounded_in_circle;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
