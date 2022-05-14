@@ -47,8 +47,8 @@ impl Display for OutputType {
 impl OutputType {
     fn value(&self) -> &'static str {
         match self {
-            OutputType::Html => "html",
-            OutputType::Lcov => "lcov",
+            Self::Html => "html",
+            Self::Lcov => "lcov",
         }
     }
 }

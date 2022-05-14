@@ -14,11 +14,11 @@ enum State {
 
 impl State {
     fn open_1(&self) -> bool {
-        matches!(self, State::Open1 | State::BothOpen(_))
+        matches!(self, Self::Open1 | Self::BothOpen(_))
     }
 
     fn open_2(&self) -> bool {
-        matches!(self, State::Open2 | State::BothOpen(_))
+        matches!(self, Self::Open2 | Self::BothOpen(_))
     }
 }
 

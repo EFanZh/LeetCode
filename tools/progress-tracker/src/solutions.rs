@@ -16,8 +16,8 @@ impl Language {
 impl Display for Language {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         f.write_str(match self {
-            Language::Rust => "Rust",
-            Language::Cpp => "C++",
+            Self::Rust => "Rust",
+            Self::Cpp => "C++",
         })
     }
 }

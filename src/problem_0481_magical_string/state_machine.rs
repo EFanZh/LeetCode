@@ -7,26 +7,26 @@ use std::mem;
 enum State {
     S0,
     S1,
-    S2(Box<State>),
-    S3(Box<State>),
-    S4(Box<State>),
-    S5(Box<State>),
+    S2(Box<Self>),
+    S3(Box<Self>),
+    S4(Box<Self>),
+    S5(Box<Self>),
 }
 
 impl State {
     fn next(&mut self) -> bool {
         match mem::replace(self, Self::S0) {
-            State::S0 => {
+            Self::S0 => {
                 *self = Self::S1;
 
                 true
             }
-            State::S1 => {
+            Self::S1 => {
                 *self = Self::S2(Box::new(Self::S0));
 
                 false
             }
-            State::S2(mut inner) => {
+            Self::S2(mut inner) => {
                 if inner.next() {
                     *self = Self::S3(inner);
 
@@ -37,12 +37,12 @@ impl State {
                     true
                 }
             }
-            State::S3(inner) => {
+            Self::S3(inner) => {
                 *self = Self::S4(inner);
 
                 true
             }
-            State::S4(mut inner) => {
+            Self::S4(mut inner) => {
                 if inner.next() {
                     *self = Self::S5(inner);
 
@@ -53,7 +53,7 @@ impl State {
                     false
                 }
             }
-            State::S5(inner) => {
+            Self::S5(inner) => {
                 *self = Self::S2(inner);
 
                 false
