@@ -36,9 +36,7 @@ impl Solution {
     pub fn max_ancestor_diff(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let mut result = 0;
 
-        if let Some(root) = root {
-            Self::helper(&root, &mut result);
-        }
+        Self::helper(&root.unwrap(), &mut result);
 
         result
     }
