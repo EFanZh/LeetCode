@@ -868,6 +868,7 @@ pub mod problem_1030_matrix_cells_in_distance_order;
 pub mod problem_1031_maximum_sum_of_two_non_overlapping_subarrays;
 pub mod problem_1033_moving_stones_until_consecutive;
 pub mod problem_1034_coloring_a_border;
+pub mod problem_1035_uncrossed_lines;
 pub mod problem_1037_valid_boomerang;
 pub mod problem_1038_binary_search_tree_to_greater_sum_tree;
 pub mod problem_1041_robot_bounded_in_circle;
