@@ -872,6 +872,7 @@ pub mod problem_1035_uncrossed_lines;
 pub mod problem_1037_valid_boomerang;
 pub mod problem_1038_binary_search_tree_to_greater_sum_tree;
 pub mod problem_1041_robot_bounded_in_circle;
+pub mod problem_1042_flower_planting_with_no_adjacent;
 pub mod problem_1043_partition_array_for_maximum_sum;
 pub mod problem_1046_last_stone_weight;
 pub mod problem_1047_remove_all_adjacent_duplicates_in_string;
