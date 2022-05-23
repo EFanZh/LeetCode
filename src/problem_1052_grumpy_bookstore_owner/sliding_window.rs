@@ -4,34 +4,25 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_satisfied(customers: Vec<i32>, grumpy: Vec<i32>, minutes: i32) -> i32 {
-        let make_iter = || {
-            customers
-                .iter()
-                .zip(&grumpy)
-                .map(|(customer, is_grumpy)| customer * is_grumpy)
-        };
-
+        let make_iter = || customers.iter().zip(&grumpy);
+        let mut base = 0;
         let mut extra = 0;
         let mut iter_right = make_iter();
 
-        for weight in iter_right.by_ref().take(minutes as _) {
-            extra += weight;
+        for (customer, is_grumpy) in iter_right.by_ref().take(minutes as _) {
+            base += customer * (1 - is_grumpy);
+            extra += customer * is_grumpy;
         }
 
         let mut max_extra = extra;
 
         for (old, new) in make_iter().zip(iter_right) {
-            extra = extra - old + new;
+            base += new.0 * (1 - new.1);
+            extra = extra - old.0 * old.1 + new.0 * new.1;
             max_extra = max_extra.max(extra);
         }
 
-        let mut result = max_extra;
-
-        for (customer, is_grumpy) in customers.iter().zip(&grumpy) {
-            result += customer * (1 - is_grumpy);
-        }
-
-        result
+        base + max_extra
     }
 }
 
