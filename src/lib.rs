@@ -887,6 +887,7 @@ pub mod problem_1089_duplicate_zeros;
 pub mod problem_1091_shortest_path_in_binary_matrix;
 pub mod problem_1092_shortest_common_supersequence;
 pub mod problem_1108_defanging_an_ip_address;
+pub mod problem_1122_relative_sort_array;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
