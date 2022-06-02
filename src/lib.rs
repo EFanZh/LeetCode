@@ -888,6 +888,7 @@ pub mod problem_1091_shortest_path_in_binary_matrix;
 pub mod problem_1092_shortest_common_supersequence;
 pub mod problem_1108_defanging_an_ip_address;
 pub mod problem_1122_relative_sort_array;
+pub mod problem_1123_lowest_common_ancestor_of_deepest_leaves;
 pub mod problem_1128_number_of_equivalent_domino_pairs;
 pub mod problem_1129_shortest_path_with_alternating_colors;
 pub mod problem_1143_longest_common_subsequence;
