@@ -892,6 +892,7 @@ pub mod problem_1123_lowest_common_ancestor_of_deepest_leaves;
 pub mod problem_1128_number_of_equivalent_domino_pairs;
 pub mod problem_1129_shortest_path_with_alternating_colors;
 pub mod problem_1131_maximum_of_absolute_value_expression;
+pub mod problem_1137_n_th_tribonacci_number;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
