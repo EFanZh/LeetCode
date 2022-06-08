@@ -891,6 +891,7 @@ pub mod problem_1108_defanging_an_ip_address;
 pub mod problem_1110_delete_nodes_and_return_forest;
 pub mod problem_1122_relative_sort_array;
 pub mod problem_1123_lowest_common_ancestor_of_deepest_leaves;
+pub mod problem_1124_longest_well_performing_interval;
 pub mod problem_1128_number_of_equivalent_domino_pairs;
 pub mod problem_1129_shortest_path_with_alternating_colors;
 pub mod problem_1131_maximum_of_absolute_value_expression;
