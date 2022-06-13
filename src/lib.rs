@@ -902,6 +902,7 @@ pub mod problem_1154_day_of_the_year;
 pub mod problem_1160_find_words_that_can_be_formed_by_characters;
 pub mod problem_1161_maximum_level_sum_of_a_binary_tree;
 pub mod problem_1162_as_far_from_land_as_possible;
+pub mod problem_1189_maximum_number_of_balloons;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
