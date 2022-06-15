@@ -905,6 +905,7 @@ pub mod problem_1162_as_far_from_land_as_possible;
 pub mod problem_1189_maximum_number_of_balloons;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1200_minimum_absolute_difference;
+pub mod problem_1207_unique_number_of_occurrences;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
