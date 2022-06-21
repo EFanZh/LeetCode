@@ -882,6 +882,7 @@ pub mod problem_1052_grumpy_bookstore_owner;
 pub mod problem_1053_previous_permutation_with_one_swap;
 pub mod problem_1054_distant_barcodes;
 pub mod problem_1071_greatest_common_divisor_of_strings;
+pub mod problem_1073_adding_two_negabinary_numbers;
 pub mod problem_1078_occurrences_after_bigram;
 pub mod problem_1081_smallest_subsequence_of_distinct_characters;
 pub mod problem_1089_duplicate_zeros;
