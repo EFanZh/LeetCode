@@ -889,6 +889,7 @@ pub mod problem_1089_duplicate_zeros;
 pub mod problem_1091_shortest_path_in_binary_matrix;
 pub mod problem_1092_shortest_common_supersequence;
 pub mod problem_1103_distribute_candies_to_people;
+pub mod problem_1104_path_in_zigzag_labelled_binary_tree;
 pub mod problem_1108_defanging_an_ip_address;
 pub mod problem_1110_delete_nodes_and_return_forest;
 pub mod problem_1122_relative_sort_array;
