@@ -921,6 +921,7 @@ pub mod problem_1200_minimum_absolute_difference;
 pub mod problem_1207_unique_number_of_occurrences;
 pub mod problem_1217_minimum_cost_to_move_chips_to_the_same_position;
 pub mod problem_1221_split_a_string_in_balanced_strings;
+pub mod problem_1232_check_if_it_is_a_straight_line;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
