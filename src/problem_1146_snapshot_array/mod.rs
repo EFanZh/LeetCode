@@ -39,6 +39,16 @@ mod tests {
                     Operation::Set(1, 4),
                 ],
             ),
+            (
+                1,
+                &[
+                    Operation::Set(0, 4),
+                    Operation::Set(0, 16),
+                    Operation::Set(0, 13),
+                    Operation::Snap(0),
+                    Operation::Get(0, 0, 13),
+                ],
+            ),
         ];
 
         for (length, operations) in test_cases {
