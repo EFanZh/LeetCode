@@ -820,6 +820,7 @@ pub mod problem_0965_univalued_binary_tree;
 pub mod problem_0966_vowel_spellchecker;
 pub mod problem_0967_numbers_with_same_consecutive_differences;
 pub mod problem_0968_binary_tree_cameras;
+pub mod problem_0969_pancake_sorting;
 pub mod problem_0970_powerful_integers;
 pub mod problem_0971_flip_binary_tree_to_match_preorder_traversal;
 pub mod problem_0973_k_closest_points_to_origin;
