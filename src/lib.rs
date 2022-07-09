@@ -826,6 +826,7 @@ pub mod problem_0971_flip_binary_tree_to_match_preorder_traversal;
 pub mod problem_0972_equal_rational_numbers;
 pub mod problem_0973_k_closest_points_to_origin;
 pub mod problem_0974_subarray_sums_divisible_by_k;
+pub mod problem_0975_odd_even_jump;
 pub mod problem_0976_largest_perimeter_triangle;
 pub mod problem_0977_squares_of_a_sorted_array;
 pub mod problem_0978_longest_turbulent_subarray;
