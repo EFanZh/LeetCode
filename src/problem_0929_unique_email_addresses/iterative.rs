@@ -5,8 +5,8 @@ pub struct Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    pub fn num_unique_emails(words: Vec<String>) -> i32 {
-        words
+    pub fn num_unique_emails(emails: Vec<String>) -> i32 {
+        emails
             .into_iter()
             .map(|word| {
                 let mut word = word.into_bytes();
