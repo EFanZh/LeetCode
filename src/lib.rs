@@ -885,6 +885,7 @@ pub mod problem_1042_flower_planting_with_no_adjacent;
 pub mod problem_1043_partition_array_for_maximum_sum;
 pub mod problem_1046_last_stone_weight;
 pub mod problem_1047_remove_all_adjacent_duplicates_in_string;
+pub mod problem_1048_longest_string_chain;
 pub mod problem_1051_height_checker;
 pub mod problem_1052_grumpy_bookstore_owner;
 pub mod problem_1053_previous_permutation_with_one_swap;
