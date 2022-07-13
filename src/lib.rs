@@ -933,6 +933,7 @@ pub mod problem_1221_split_a_string_in_balanced_strings;
 pub mod problem_1222_queens_that_can_attack_the_king;
 pub mod problem_1232_check_if_it_is_a_straight_line;
 pub mod problem_1233_remove_sub_folders_from_the_filesystem;
+pub mod problem_1252_cells_with_odd_values_in_a_matrix;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
