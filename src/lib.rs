@@ -833,6 +833,7 @@ pub mod problem_0978_longest_turbulent_subarray;
 pub mod problem_0979_distribute_coins_in_binary_tree;
 pub mod problem_0980_unique_paths_iii;
 pub mod problem_0981_time_based_key_value_store;
+pub mod problem_0982_triples_with_bitwise_and_equal_to_zero;
 pub mod problem_0983_minimum_cost_for_tickets;
 pub mod problem_0984_string_without_aaa_or_bbb;
 pub mod problem_0985_sum_of_even_numbers_after_queries;
