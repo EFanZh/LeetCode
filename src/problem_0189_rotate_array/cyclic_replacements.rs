@@ -2,6 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::mem;
+
 impl Solution {
     fn gcd(mut x: usize, mut y: usize) -> usize {
         while y != 0 {
@@ -14,7 +16,6 @@ impl Solution {
         x
     }
 
-    #[allow(clippy::ptr_arg)] // Expected.
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         let length = nums.len();
         let k = (k as usize) % length;
@@ -22,20 +23,20 @@ impl Solution {
 
         for i in 0..gcd {
             let mut next = i;
+            let mut value = nums[i];
 
             loop {
-                next = if next < length - k {
-                    next + k
-                } else {
-                    next.wrapping_add(k).wrapping_sub(length)
-                };
+                next += k;
+                next = next.checked_sub(length).unwrap_or(next);
 
                 if next == i {
                     break;
                 }
 
-                nums.swap(i, next);
+                mem::swap(&mut value, &mut nums[next]);
             }
+
+            nums[i] = value;
         }
     }
 }
