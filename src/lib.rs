@@ -843,6 +843,7 @@ pub mod problem_0988_smallest_string_starting_from_leaf;
 pub mod problem_0989_add_to_array_form_of_integer;
 pub mod problem_0990_satisfiability_of_equality_equations;
 pub mod problem_0991_broken_calculator;
+pub mod problem_0992_subarrays_with_k_different_integers;
 pub mod problem_0993_cousins_in_binary_tree;
 pub mod problem_0994_rotting_oranges;
 pub mod problem_0997_find_the_town_judge;
