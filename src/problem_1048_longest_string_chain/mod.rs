@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod dfs;
 
 pub trait Solution {
     fn longest_str_chain(words: Vec<String>) -> i32;
