@@ -934,6 +934,7 @@ pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1200_minimum_absolute_difference;
 pub mod problem_1207_unique_number_of_occurrences;
 pub mod problem_1217_minimum_cost_to_move_chips_to_the_same_position;
+pub mod problem_1218_longest_arithmetic_subsequence_of_given_difference;
 pub mod problem_1220_count_vowels_permutation;
 pub mod problem_1221_split_a_string_in_balanced_strings;
 pub mod problem_1222_queens_that_can_attack_the_king;
