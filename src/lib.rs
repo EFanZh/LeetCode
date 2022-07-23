@@ -487,7 +487,7 @@ pub mod problem_0554_brick_wall;
 pub mod problem_0556_next_greater_element_iii;
 pub mod problem_0557_reverse_words_in_a_string_iii;
 pub mod problem_0560_subarray_sum_equals_k;
-pub mod problem_0561_array_partition_i;
+pub mod problem_0561_array_partition;
 pub mod problem_0563_binary_tree_tilt;
 pub mod problem_0564_find_the_closest_palindrome;
 pub mod problem_0565_array_nesting;
