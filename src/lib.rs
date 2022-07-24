@@ -850,6 +850,7 @@ pub mod problem_0995_minimum_number_of_k_consecutive_bit_flips;
 pub mod problem_0997_find_the_town_judge;
 pub mod problem_0998_maximum_binary_tree_ii;
 pub mod problem_0999_available_captures_for_rook;
+pub mod problem_1000_minimum_cost_to_merge_stones;
 pub mod problem_1002_find_common_characters;
 pub mod problem_1003_check_if_word_is_valid_after_substitutions;
 pub mod problem_1004_max_consecutive_ones_iii;

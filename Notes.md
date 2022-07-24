@@ -357,3 +357,7 @@ Make sure it can be solved again.
 ## [962. Maximum Width Ramp](https://leetcode.com/problems/maximum-binary-tree-ii/)
 
 Make sure it can be solved again.
+
+## [1000. Minimum Cost to Merge Stones](https://leetcode.com/problems/minimum-cost-to-merge-stones/)
+
+Make sure it can be solved again.
