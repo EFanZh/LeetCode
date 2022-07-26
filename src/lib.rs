@@ -935,6 +935,7 @@ pub mod problem_1189_maximum_number_of_balloons;
 pub mod problem_1190_reverse_substrings_between_each_pair_of_parentheses;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1200_minimum_absolute_difference;
+pub mod problem_1201_ugly_number_iii;
 pub mod problem_1207_unique_number_of_occurrences;
 pub mod problem_1217_minimum_cost_to_move_chips_to_the_same_position;
 pub mod problem_1218_longest_arithmetic_subsequence_of_given_difference;
