@@ -937,6 +937,7 @@ pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1200_minimum_absolute_difference;
 pub mod problem_1201_ugly_number_iii;
 pub mod problem_1207_unique_number_of_occurrences;
+pub mod problem_1209_remove_all_adjacent_duplicates_in_string_ii;
 pub mod problem_1217_minimum_cost_to_move_chips_to_the_same_position;
 pub mod problem_1218_longest_arithmetic_subsequence_of_given_difference;
 pub mod problem_1220_count_vowels_permutation;
