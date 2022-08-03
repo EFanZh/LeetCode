@@ -2,7 +2,7 @@ use crate::data_structures::TreeNode;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-pub mod iterative;
+pub mod recursive;
 
 pub trait Solution {
     fn sufficient_subset(root: Option<Rc<RefCell<TreeNode>>>, limit: i32) -> Option<Rc<RefCell<TreeNode>>>;
