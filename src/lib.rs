@@ -956,6 +956,7 @@ pub mod problem_1250_check_if_it_is_a_good_array;
 pub mod problem_1252_cells_with_odd_values_in_a_matrix;
 pub mod problem_1260_shift_2d_grid;
 pub mod problem_1262_greatest_sum_divisible_by_three;
+pub mod problem_1266_minimum_time_visiting_all_points;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
