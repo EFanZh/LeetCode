@@ -79,6 +79,7 @@ impl StreamChecker {
 
         let root = pool.first().unwrap();
         let mut current_state: Rc<[&Node]> = Rc::new([root]);
+        let mut next_state_buffer = Vec::new();
         let mut transitions = Vec::new();
         let mut state_ids = HashMap::from([(Rc::clone(&current_state), 0)]);
         let mut terminal_states = HashSet::new();
@@ -88,19 +89,21 @@ impl StreamChecker {
             let mut transition = [0; 26];
 
             for (c, next) in transition.iter_mut().enumerate() {
-                let mut next_state = vec![root];
-
                 for &sub_state in current_state.iter() {
                     if let Some(child) = pool.get(sub_state.children[c]) {
-                        next_state.push(child);
+                        next_state_buffer.push(child);
                     }
                 }
 
-                if next_state.len() > 1 {
-                    next_state.sort_unstable_by_key(|node| node.address());
-                    next_state.dedup();
+                if !next_state_buffer.is_empty() {
+                    next_state_buffer.push(root);
+                    next_state_buffer.sort_unstable_by_key(|node| node.address());
+                    next_state_buffer.dedup();
 
-                    let next_state = Rc::from(next_state);
+                    let next_state = Rc::from(next_state_buffer.as_slice());
+
+                    next_state_buffer.clear();
+
                     let candidate_id = state_ids.len();
 
                     *next = match state_ids.entry(next_state) {
