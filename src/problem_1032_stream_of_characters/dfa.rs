@@ -81,7 +81,7 @@ impl StreamChecker {
         let mut current_state: Rc<[&Node]> = Rc::new([root]);
         let mut next_state_buffer = Vec::new();
         let mut transitions = Vec::new();
-        let mut state_ids = HashMap::from([(Rc::clone(&current_state), 0)]);
+        let mut state_ids = HashMap::<Rc<[_]>, _>::new();
         let mut terminal_states = HashSet::new();
         let mut queue = VecDeque::new();
 
@@ -104,7 +104,7 @@ impl StreamChecker {
 
                     next_state_buffer.clear();
 
-                    let candidate_id = state_ids.len();
+                    let candidate_id = state_ids.len() + 1;
 
                     *next = match state_ids.entry(next_state) {
                         Entry::Occupied(entry) => *entry.get(),
