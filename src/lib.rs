@@ -887,6 +887,7 @@ pub mod problem_1032_stream_of_characters;
 pub mod problem_1033_moving_stones_until_consecutive;
 pub mod problem_1034_coloring_a_border;
 pub mod problem_1035_uncrossed_lines;
+pub mod problem_1036_escape_a_large_maze;
 pub mod problem_1037_valid_boomerang;
 pub mod problem_1038_binary_search_tree_to_greater_sum_tree;
 pub mod problem_1041_robot_bounded_in_circle;
