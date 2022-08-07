@@ -18,17 +18,28 @@ impl Solution {
         }
     }
 
-    fn enumerate_combinations(digits: &[u8], prefix: &mut Vec<u8>, result: &mut Vec<String>) {
+    fn push_to_result(result: &mut Vec<String>, item: &[u8]) {
+        result.push(str::from_utf8(item).unwrap().to_string());
+    }
+
+    fn no_op(_: &mut Vec<String>, _: &[u8]) {}
+
+    fn enumerate_combinations(
+        digits: &[u8],
+        prefix: &mut Vec<u8>,
+        result: &mut Vec<String>,
+        operation: impl FnOnce(&mut Vec<String>, &[u8]),
+    ) {
         if let Some((&first, rest)) = digits.split_first() {
             for &letter in Self::get_letter(first) {
                 prefix.push(letter);
 
-                Self::enumerate_combinations(rest, prefix, result);
+                Self::enumerate_combinations(rest, prefix, result, Self::push_to_result);
 
                 prefix.pop();
             }
         } else {
-            result.push(str::from_utf8(prefix).unwrap().to_string());
+            operation(result, prefix);
         }
     }
 
@@ -36,17 +47,7 @@ impl Solution {
         let digits = digits.into_bytes();
         let mut result = Vec::new();
 
-        if let Some((&first, rest)) = digits.split_first() {
-            let mut prefix = Vec::with_capacity(digits.len());
-
-            for &letter in Self::get_letter(first) {
-                prefix.push(letter);
-
-                Self::enumerate_combinations(rest, &mut prefix, &mut result);
-
-                prefix.pop();
-            }
-        }
+        Self::enumerate_combinations(&digits, &mut Vec::new(), &mut result, Self::no_op);
 
         result
     }
