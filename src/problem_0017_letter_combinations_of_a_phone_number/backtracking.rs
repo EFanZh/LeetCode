@@ -2,6 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::str;
+
 impl Solution {
     fn get_letter(digit: u8) -> &'static [u8] {
         match digit {
@@ -17,16 +19,16 @@ impl Solution {
     }
 
     fn enumerate_combinations(digits: &[u8], prefix: &mut Vec<u8>, result: &mut Vec<String>) {
-        if let Some((first, rest)) = digits.split_first() {
-            for letter in Self::get_letter(*first) {
-                prefix.push(*letter);
+        if let Some((&first, rest)) = digits.split_first() {
+            for &letter in Self::get_letter(first) {
+                prefix.push(letter);
 
                 Self::enumerate_combinations(rest, prefix, result);
 
                 prefix.pop();
             }
         } else {
-            result.push(String::from_utf8(prefix.clone()).unwrap());
+            result.push(str::from_utf8(prefix).unwrap().to_string());
         }
     }
 
@@ -34,10 +36,16 @@ impl Solution {
         let digits = digits.into_bytes();
         let mut result = Vec::new();
 
-        if !digits.is_empty() {
-            let mut prefix = Vec::new();
+        if let Some((&first, rest)) = digits.split_first() {
+            let mut prefix = Vec::with_capacity(digits.len());
 
-            Self::enumerate_combinations(&digits, &mut prefix, &mut result);
+            for &letter in Self::get_letter(first) {
+                prefix.push(letter);
+
+                Self::enumerate_combinations(rest, &mut prefix, &mut result);
+
+                prefix.pop();
+            }
         }
 
         result
