@@ -937,6 +937,7 @@ pub mod problem_1170_compare_strings_by_frequency_of_the_smallest_character;
 pub mod problem_1175_prime_arrangements;
 pub mod problem_1177_can_make_palindrome_from_substring;
 pub mod problem_1184_distance_between_bus_stops;
+pub mod problem_1185_day_of_the_week;
 pub mod problem_1189_maximum_number_of_balloons;
 pub mod problem_1190_reverse_substrings_between_each_pair_of_parentheses;
 pub mod problem_1192_critical_connections_in_a_network;
