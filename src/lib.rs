@@ -894,6 +894,7 @@ pub mod problem_1040_moving_stones_until_consecutive_ii;
 pub mod problem_1041_robot_bounded_in_circle;
 pub mod problem_1042_flower_planting_with_no_adjacent;
 pub mod problem_1043_partition_array_for_maximum_sum;
+pub mod problem_1044_longest_duplicate_substring;
 pub mod problem_1046_last_stone_weight;
 pub mod problem_1047_remove_all_adjacent_duplicates_in_string;
 pub mod problem_1048_longest_string_chain;
