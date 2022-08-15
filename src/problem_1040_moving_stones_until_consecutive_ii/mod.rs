@@ -7,6 +7,7 @@ pub trait Solution {
 #[cfg(test)]
 mod tests {
     use super::Solution;
+
     pub fn run<S: Solution>() {
         let test_cases = [(&[7, 4, 9] as &[_], [1, 2]), (&[6, 5, 4, 3, 10], [2, 3])];
 
