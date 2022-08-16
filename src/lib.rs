@@ -890,6 +890,7 @@ pub mod problem_1035_uncrossed_lines;
 pub mod problem_1036_escape_a_large_maze;
 pub mod problem_1037_valid_boomerang;
 pub mod problem_1038_binary_search_tree_to_greater_sum_tree;
+pub mod problem_1039_minimum_score_triangulation_of_polygon;
 pub mod problem_1040_moving_stones_until_consecutive_ii;
 pub mod problem_1041_robot_bounded_in_circle;
 pub mod problem_1042_flower_planting_with_no_adjacent;
