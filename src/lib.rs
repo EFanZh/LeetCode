@@ -905,6 +905,7 @@ pub mod problem_1052_grumpy_bookstore_owner;
 pub mod problem_1053_previous_permutation_with_one_swap;
 pub mod problem_1054_distant_barcodes;
 pub mod problem_1071_greatest_common_divisor_of_strings;
+pub mod problem_1072_flip_columns_for_maximum_number_of_equal_rows;
 pub mod problem_1073_adding_two_negabinary_numbers;
 pub mod problem_1078_occurrences_after_bigram;
 pub mod problem_1080_insufficient_nodes_in_root_to_leaf_paths;
