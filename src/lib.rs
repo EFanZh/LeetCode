@@ -909,6 +909,7 @@ pub mod problem_1072_flip_columns_for_maximum_number_of_equal_rows;
 pub mod problem_1073_adding_two_negabinary_numbers;
 pub mod problem_1074_number_of_submatrices_that_sum_to_target;
 pub mod problem_1078_occurrences_after_bigram;
+pub mod problem_1079_letter_tile_possibilities;
 pub mod problem_1080_insufficient_nodes_in_root_to_leaf_paths;
 pub mod problem_1081_smallest_subsequence_of_distinct_characters;
 pub mod problem_1089_duplicate_zeros;
