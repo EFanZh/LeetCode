@@ -913,6 +913,7 @@ pub mod problem_1079_letter_tile_possibilities;
 pub mod problem_1080_insufficient_nodes_in_root_to_leaf_paths;
 pub mod problem_1081_smallest_subsequence_of_distinct_characters;
 pub mod problem_1089_duplicate_zeros;
+pub mod problem_1090_largest_values_from_labels;
 pub mod problem_1091_shortest_path_in_binary_matrix;
 pub mod problem_1092_shortest_common_supersequence;
 pub mod problem_1093_statistics_from_a_large_sample;
