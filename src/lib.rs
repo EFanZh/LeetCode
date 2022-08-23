@@ -917,6 +917,7 @@ pub mod problem_1090_largest_values_from_labels;
 pub mod problem_1091_shortest_path_in_binary_matrix;
 pub mod problem_1092_shortest_common_supersequence;
 pub mod problem_1093_statistics_from_a_large_sample;
+pub mod problem_1094_car_pooling;
 pub mod problem_1096_brace_expansion_ii;
 pub mod problem_1103_distribute_candies_to_people;
 pub mod problem_1104_path_in_zigzag_labelled_binary_tree;
