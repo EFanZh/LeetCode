@@ -922,6 +922,7 @@ pub mod problem_1095_find_in_mountain_array;
 pub mod problem_1096_brace_expansion_ii;
 pub mod problem_1103_distribute_candies_to_people;
 pub mod problem_1104_path_in_zigzag_labelled_binary_tree;
+pub mod problem_1105_filling_bookcase_shelves;
 pub mod problem_1106_parsing_a_boolean_expression;
 pub mod problem_1108_defanging_an_ip_address;
 pub mod problem_1110_delete_nodes_and_return_forest;
