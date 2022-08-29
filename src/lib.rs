@@ -925,6 +925,7 @@ pub mod problem_1104_path_in_zigzag_labelled_binary_tree;
 pub mod problem_1105_filling_bookcase_shelves;
 pub mod problem_1106_parsing_a_boolean_expression;
 pub mod problem_1108_defanging_an_ip_address;
+pub mod problem_1109_corporate_flight_bookings;
 pub mod problem_1110_delete_nodes_and_return_forest;
 pub mod problem_1122_relative_sort_array;
 pub mod problem_1123_lowest_common_ancestor_of_deepest_leaves;
