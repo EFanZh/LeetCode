@@ -983,6 +983,7 @@ pub mod problem_1295_find_numbers_with_even_number_of_digits;
 pub mod problem_1296_divide_array_in_sets_of_k_consecutive_numbers;
 pub mod problem_1299_replace_elements_with_greatest_element_on_right_side;
 pub mod problem_1302_deepest_leaves_sum;
+pub mod problem_1304_find_n_unique_integers_sum_up_to_zero;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
