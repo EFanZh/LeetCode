@@ -988,6 +988,7 @@ pub mod problem_1304_find_n_unique_integers_sum_up_to_zero;
 pub mod problem_1305_all_elements_in_two_binary_search_trees;
 pub mod problem_1309_decrypt_string_from_alphabet_to_integer_mapping;
 pub mod problem_1313_decompress_run_length_encoded_list;
+pub mod problem_1315_sum_of_nodes_with_even_valued_grandparent;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
