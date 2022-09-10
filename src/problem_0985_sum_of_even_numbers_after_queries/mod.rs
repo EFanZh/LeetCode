@@ -17,9 +17,9 @@ mod tests {
             ((&[1], &[[4, 0]]), &[0]),
         ];
 
-        for ((num, queries), expected) in test_cases {
+        for ((nums, queries), expected) in test_cases {
             assert_eq!(
-                S::sum_even_after_queries(num.to_vec(), queries.iter().copied().map(Vec::from).collect()),
+                S::sum_even_after_queries(nums.to_vec(), queries.iter().copied().map(Vec::from).collect()),
                 expected
             );
         }
