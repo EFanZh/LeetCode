@@ -934,6 +934,7 @@ pub mod problem_1124_longest_well_performing_interval;
 pub mod problem_1125_smallest_sufficient_team;
 pub mod problem_1128_number_of_equivalent_domino_pairs;
 pub mod problem_1129_shortest_path_with_alternating_colors;
+pub mod problem_1130_minimum_cost_tree_from_leaf_values;
 pub mod problem_1131_maximum_of_absolute_value_expression;
 pub mod problem_1137_n_th_tribonacci_number;
 pub mod problem_1143_longest_common_subsequence;
