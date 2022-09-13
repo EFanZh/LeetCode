@@ -990,6 +990,7 @@ pub mod problem_1302_deepest_leaves_sum;
 pub mod problem_1304_find_n_unique_integers_sum_up_to_zero;
 pub mod problem_1305_all_elements_in_two_binary_search_trees;
 pub mod problem_1309_decrypt_string_from_alphabet_to_integer_mapping;
+pub mod problem_1310_xor_queries_of_a_subarray;
 pub mod problem_1313_decompress_run_length_encoded_list;
 pub mod problem_1315_sum_of_nodes_with_even_valued_grandparent;
 pub mod problem_1317_convert_integer_to_the_sum_of_two_no_zero_integers;
