@@ -938,6 +938,7 @@ pub mod problem_1130_minimum_cost_tree_from_leaf_values;
 pub mod problem_1131_maximum_of_absolute_value_expression;
 pub mod problem_1137_n_th_tribonacci_number;
 pub mod problem_1138_alphabet_board_path;
+pub mod problem_1139_largest_1_bordered_square;
 pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1144_decrease_elements_to_make_array_zigzag;
 pub mod problem_1145_binary_tree_coloring_game;
