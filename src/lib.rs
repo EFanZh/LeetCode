@@ -996,6 +996,7 @@ pub mod problem_1313_decompress_run_length_encoded_list;
 pub mod problem_1315_sum_of_nodes_with_even_valued_grandparent;
 pub mod problem_1317_convert_integer_to_the_sum_of_two_no_zero_integers;
 pub mod problem_1318_minimum_flips_to_make_a_or_b_equal_to_c;
+pub mod problem_1319_number_of_operations_to_make_network_connected;
 pub mod problem_1323_maximum_69_number;
 pub mod problem_1324_print_words_vertically;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
