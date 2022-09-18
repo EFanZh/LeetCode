@@ -944,6 +944,7 @@ pub mod problem_1143_longest_common_subsequence;
 pub mod problem_1144_decrease_elements_to_make_array_zigzag;
 pub mod problem_1145_binary_tree_coloring_game;
 pub mod problem_1146_snapshot_array;
+pub mod problem_1147_longest_chunked_palindrome_decomposition;
 pub mod problem_1154_day_of_the_year;
 pub mod problem_1155_number_of_dice_rolls_with_target_sum;
 pub mod problem_1160_find_words_that_can_be_formed_by_characters;
