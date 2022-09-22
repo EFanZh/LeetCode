@@ -10,12 +10,12 @@ impl Solution {
 
         match digit {
             0..=3 => result.extend(iter::repeat(digits.0).take(digit)),
-            4 => result.extend(&[digits.0, digits.1]),
+            4 => result.extend([digits.0, digits.1]),
             5..=8 => {
                 result.push(digits.1);
                 result.extend(iter::repeat(digits.0).take(digit - 5));
             }
-            _ => result.extend(&[digits.0, digits.2]),
+            _ => result.extend([digits.0, digits.2]),
         }
 
         num % base

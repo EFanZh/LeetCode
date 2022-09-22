@@ -8,13 +8,9 @@ impl Solution {
     fn iter_diff(mut prev: i32, nums: &[i32], mut f: impl FnMut(Ordering)) {
         let mut iter = nums.iter().copied();
 
-        loop {
-            if let Some(x) = iter.next() {
-                f(prev.cmp(&x));
-                prev = x;
-            } else {
-                break;
-            }
+        while let Some(x) = iter.next() {
+            f(prev.cmp(&x));
+            prev = x;
 
             if let Some(x) = iter.next() {
                 f(x.cmp(&prev));

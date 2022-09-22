@@ -19,7 +19,7 @@ impl Solution {
             let mut result = Vec::new();
 
             if s.is_empty() {
-                result.push("".to_string());
+                result.push(String::new());
             } else {
                 let mut node = root;
 
