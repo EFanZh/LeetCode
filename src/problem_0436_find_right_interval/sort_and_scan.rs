@@ -13,7 +13,7 @@ impl Solution {
         for (i, interval) in (0..).zip(intervals) {
             let [start, end]: [i32; 2] = interval.as_slice().try_into().unwrap();
 
-            endpoints.extend(&[(end, false, i), (start, true, i)]);
+            endpoints.extend([(end, false, i), (start, true, i)]);
         }
 
         endpoints.sort_unstable_by_key(|&(position, is_start, _)| Reverse((position, is_start)));

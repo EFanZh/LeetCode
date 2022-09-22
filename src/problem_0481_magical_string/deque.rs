@@ -12,7 +12,7 @@ impl Solution {
             let mut cache = VecDeque::new();
             let mut result = 2;
 
-            cache.extend(&[true, false]);
+            cache.extend([true, false]);
 
             while n != 0 {
                 if cache.pop_front().unwrap() {

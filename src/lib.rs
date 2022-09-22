@@ -67,7 +67,8 @@
     clippy::missing_panics_doc,
     clippy::must_use_candidate,
     clippy::needless_pass_by_value,
-    clippy::non_ascii_literal
+    clippy::non_ascii_literal,
+    clippy::unnecessary_lazy_evaluations // Not supported by LeetCode.
 )]
 
 pub(crate) mod data_structures;

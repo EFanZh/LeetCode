@@ -30,7 +30,7 @@ pub fn find_cmake() -> Option<PathBuf> {
         .as_deref()?
         .join(r"Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe");
 
-    cmake_path.is_file().then(|| cmake_path)
+    cmake_path.is_file().then_some(cmake_path)
 }
 
 pub fn find_ninja() -> Option<PathBuf> {
@@ -38,5 +38,5 @@ pub fn find_ninja() -> Option<PathBuf> {
         .as_deref()?
         .join(r"Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja\ninja.exe");
 
-    ninja_path.is_file().then(|| ninja_path)
+    ninja_path.is_file().then_some(ninja_path)
 }

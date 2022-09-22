@@ -82,7 +82,7 @@ impl super::Codec for Codec {
     }
 
     fn encode(&mut self, long_url: String) -> String {
-        (&*self).encode(long_url)
+        (*self).encode(long_url)
     }
 
     fn decode(&self, short_url: String) -> String {

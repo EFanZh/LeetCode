@@ -16,7 +16,7 @@ impl Solution {
         if let Some(&first) = iter.next() {
             let i = base.len();
 
-            base.extend(&[b'+', first]);
+            base.extend([b'+', first]);
 
             if first == b'0' {
                 Self::add_operators_helper(lhs + rhs, 0, iter.clone(), target, base, result);

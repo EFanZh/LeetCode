@@ -44,7 +44,7 @@ impl Solution {
 
             // Fill queue.
 
-            queue.extend(&[(cat, 0, false), (cat, 0, true), (cat, cat, false), (cat, cat, true)]);
+            queue.extend([(cat, 0, false), (cat, 0, true), (cat, cat, false), (cat, cat, true)]);
         }
 
         // Minimax.

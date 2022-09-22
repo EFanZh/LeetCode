@@ -18,7 +18,7 @@ impl Solution {
             let i = base.len();
             let forth = (digit - b'0').into();
 
-            base.extend(&[b'+', digit]);
+            base.extend([b'+', digit]);
 
             Self::add_operators_helper(first + second * third, 1, forth, iter.clone(), target, base, result);
 
