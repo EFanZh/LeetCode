@@ -1007,6 +1007,7 @@ pub mod problem_1319_number_of_operations_to_make_network_connected;
 pub mod problem_1323_maximum_69_number;
 pub mod problem_1324_print_words_vertically;
 pub mod problem_1325_delete_leaves_with_a_given_value;
+pub mod problem_1328_break_a_palindrome;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
