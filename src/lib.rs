@@ -1011,6 +1011,7 @@ pub mod problem_1328_break_a_palindrome;
 pub mod problem_1331_rank_transform_of_an_array;
 pub mod problem_1332_remove_palindromic_subsequences;
 pub mod problem_1337_the_k_weakest_rows_in_a_matrix;
+pub mod problem_1338_reduce_array_size_to_the_half;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
