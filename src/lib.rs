@@ -973,6 +973,7 @@ pub mod problem_1221_split_a_string_in_balanced_strings;
 pub mod problem_1222_queens_that_can_attack_the_king;
 pub mod problem_1232_check_if_it_is_a_straight_line;
 pub mod problem_1233_remove_sub_folders_from_the_filesystem;
+pub mod problem_1239_maximum_length_of_a_concatenated_string_with_unique_characters;
 pub mod problem_1247_minimum_swaps_to_make_strings_equal;
 pub mod problem_1248_count_number_of_nice_subarrays;
 pub mod problem_1250_check_if_it_is_a_good_array;
