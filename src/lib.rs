@@ -1009,6 +1009,7 @@ pub mod problem_1323_maximum_69_number;
 pub mod problem_1324_print_words_vertically;
 pub mod problem_1325_delete_leaves_with_a_given_value;
 pub mod problem_1328_break_a_palindrome;
+pub mod problem_1329_sort_the_matrix_diagonally;
 pub mod problem_1331_rank_transform_of_an_array;
 pub mod problem_1332_remove_palindromic_subsequences;
 pub mod problem_1337_the_k_weakest_rows_in_a_matrix;
