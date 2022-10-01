@@ -797,6 +797,7 @@ pub mod problem_0939_minimum_area_rectangle;
 pub mod problem_0940_distinct_subsequences_ii;
 pub mod problem_0941_valid_mountain_array;
 pub mod problem_0942_di_string_match;
+pub mod problem_0943_find_the_shortest_superstring;
 pub mod problem_0944_delete_columns_to_make_sorted;
 pub mod problem_0945_minimum_increment_to_make_array_unique;
 pub mod problem_0946_validate_stack_sequences;
