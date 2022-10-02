@@ -818,6 +818,7 @@ pub mod problem_0960_delete_columns_to_make_sorted_iii;
 pub mod problem_0961_n_repeated_element_in_size_2n_array;
 pub mod problem_0962_maximum_width_ramp;
 pub mod problem_0963_minimum_area_rectangle_ii;
+pub mod problem_0964_least_operators_to_express_number;
 pub mod problem_0965_univalued_binary_tree;
 pub mod problem_0966_vowel_spellchecker;
 pub mod problem_0967_numbers_with_same_consecutive_differences;
