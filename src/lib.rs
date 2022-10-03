@@ -950,6 +950,7 @@ pub mod problem_1146_snapshot_array;
 pub mod problem_1147_longest_chunked_palindrome_decomposition;
 pub mod problem_1154_day_of_the_year;
 pub mod problem_1155_number_of_dice_rolls_with_target_sum;
+pub mod problem_1156_swap_for_longest_repeated_character_substring;
 pub mod problem_1160_find_words_that_can_be_formed_by_characters;
 pub mod problem_1161_maximum_level_sum_of_a_binary_tree;
 pub mod problem_1162_as_far_from_land_as_possible;
