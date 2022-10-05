@@ -22,8 +22,8 @@ impl Solution {
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
-    fn break_palindrome(s: String) -> String {
-        Self::break_palindrome(s)
+    fn break_palindrome(palindrome: String) -> String {
+        Self::break_palindrome(palindrome)
     }
 }
 
