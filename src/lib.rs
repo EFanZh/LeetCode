@@ -955,6 +955,7 @@ pub mod problem_1157_online_majority_element_in_subarray;
 pub mod problem_1160_find_words_that_can_be_formed_by_characters;
 pub mod problem_1161_maximum_level_sum_of_a_binary_tree;
 pub mod problem_1162_as_far_from_land_as_possible;
+pub mod problem_1163_last_substring_in_lexicographical_order;
 pub mod problem_1169_invalid_transactions;
 pub mod problem_1170_compare_strings_by_frequency_of_the_smallest_character;
 pub mod problem_1175_prime_arrangements;
