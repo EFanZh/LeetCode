@@ -959,6 +959,7 @@ pub mod problem_1163_last_substring_in_lexicographical_order;
 pub mod problem_1169_invalid_transactions;
 pub mod problem_1170_compare_strings_by_frequency_of_the_smallest_character;
 pub mod problem_1171_remove_zero_sum_consecutive_nodes_from_linked_list;
+pub mod problem_1172_dinner_plate_stacks;
 pub mod problem_1175_prime_arrangements;
 pub mod problem_1177_can_make_palindrome_from_substring;
 pub mod problem_1184_distance_between_bus_stops;
