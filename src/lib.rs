@@ -962,6 +962,7 @@ pub mod problem_1171_remove_zero_sum_consecutive_nodes_from_linked_list;
 pub mod problem_1172_dinner_plate_stacks;
 pub mod problem_1175_prime_arrangements;
 pub mod problem_1177_can_make_palindrome_from_substring;
+pub mod problem_1178_number_of_valid_words_for_each_puzzle;
 pub mod problem_1184_distance_between_bus_stops;
 pub mod problem_1185_day_of_the_week;
 pub mod problem_1189_maximum_number_of_balloons;
