@@ -10,6 +10,7 @@ use std::process::Command;
 use std::str::FromStr;
 use std::{env, io};
 
+#[derive(Clone)]
 enum OutputType {
     Html,
     Lcov,
