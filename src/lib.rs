@@ -1023,6 +1023,7 @@ pub mod problem_1328_break_a_palindrome;
 pub mod problem_1329_sort_the_matrix_diagonally;
 pub mod problem_1331_rank_transform_of_an_array;
 pub mod problem_1332_remove_palindromic_subsequences;
+pub mod problem_1333_filter_restaurants_by_vegan_friendly_price_and_distance;
 pub mod problem_1337_the_k_weakest_rows_in_a_matrix;
 pub mod problem_1338_reduce_array_size_to_the_half;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
