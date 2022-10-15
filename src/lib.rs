@@ -1029,6 +1029,7 @@ pub mod problem_1338_reduce_array_size_to_the_half;
 pub mod problem_1339_maximum_product_of_splitted_binary_tree;
 pub mod problem_1340_jump_game_v;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
+pub mod problem_1343_number_of_sub_arrays_of_size_k_and_average_greater_than_or_equal_to_threshold;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
