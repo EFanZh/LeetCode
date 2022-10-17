@@ -969,6 +969,7 @@ pub mod problem_1186_maximum_subarray_sum_with_one_deletion;
 pub mod problem_1187_make_array_strictly_increasing;
 pub mod problem_1189_maximum_number_of_balloons;
 pub mod problem_1190_reverse_substrings_between_each_pair_of_parentheses;
+pub mod problem_1191_k_concatenation_maximum_sum;
 pub mod problem_1192_critical_connections_in_a_network;
 pub mod problem_1200_minimum_absolute_difference;
 pub mod problem_1201_ugly_number_iii;
