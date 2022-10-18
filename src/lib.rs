@@ -1011,6 +1011,7 @@ pub mod problem_1301_number_of_paths_with_max_score;
 pub mod problem_1302_deepest_leaves_sum;
 pub mod problem_1304_find_n_unique_integers_sum_up_to_zero;
 pub mod problem_1305_all_elements_in_two_binary_search_trees;
+pub mod problem_1306_jump_game_iii;
 pub mod problem_1309_decrypt_string_from_alphabet_to_integer_mapping;
 pub mod problem_1310_xor_queries_of_a_subarray;
 pub mod problem_1313_decompress_run_length_encoded_list;
