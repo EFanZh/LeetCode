@@ -1047,6 +1047,7 @@ pub mod problem_1358_number_of_substrings_containing_all_three_characters;
 pub mod problem_1361_validate_binary_tree_nodes;
 pub mod problem_1362_closest_divisors;
 pub mod problem_1365_how_many_numbers_are_smaller_than_the_current_number;
+pub mod problem_1370_increasing_decreasing_string;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
