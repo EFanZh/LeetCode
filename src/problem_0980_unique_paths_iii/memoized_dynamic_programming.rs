@@ -13,11 +13,7 @@ impl Solution {
             let start = (state >> 24) as u8;
 
             if start == end {
-                if (state & ((1 << 24) - 1)).count_ones() as u8 == columns.get() * rows {
-                    1
-                } else {
-                    0
-                }
+                u32::from((state & ((1 << 24) - 1)).count_ones() as u8 == columns.get() * rows)
             } else {
                 let start_row = start / columns;
                 let start_column = start % columns;

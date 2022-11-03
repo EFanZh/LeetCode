@@ -148,17 +148,17 @@ impl Solution {
         }
     }
 
-    fn segment_tree_remove(tree: &mut Tree, ys: &[u32], start: u32, end: u32) {
-        fn remove_left_aligned(mut tree: NonLeafTree, ys: &[u32], start: u32, end: u32) {
+    fn segment_tree_remove(tree: &mut Tree, start: u32, end: u32) {
+        fn remove_left_aligned(mut tree: NonLeafTree, end: u32) {
             let middle = tree.middle();
 
             if end < middle {
-                remove_left_aligned(tree.left.as_non_leaf_tree(), ys, start, end);
+                remove_left_aligned(tree.left.as_non_leaf_tree(), end);
             } else {
                 remove_aligned(&mut tree.left);
 
                 if end > middle {
-                    remove_left_aligned(tree.right.as_non_leaf_tree(), ys, middle, end);
+                    remove_left_aligned(tree.right.as_non_leaf_tree(), end);
                 }
             }
 
@@ -167,16 +167,16 @@ impl Solution {
             }
         }
 
-        fn remove_right_aligned(mut tree: NonLeafTree, ys: &[u32], start: u32, end: u32) {
+        fn remove_right_aligned(mut tree: NonLeafTree, start: u32) {
             let middle = tree.middle();
 
             if start > middle {
-                remove_right_aligned(tree.right.as_non_leaf_tree(), ys, start, end);
+                remove_right_aligned(tree.right.as_non_leaf_tree(), start);
             } else {
                 remove_aligned(&mut tree.right);
 
                 if start < middle {
-                    remove_right_aligned(tree.left.as_non_leaf_tree(), ys, start, middle);
+                    remove_right_aligned(tree.left.as_non_leaf_tree(), start);
                 }
             }
 
@@ -185,20 +185,20 @@ impl Solution {
             }
         }
 
-        fn remove_not_aligned(mut tree: NonLeafTree, ys: &[u32], start: u32, end: u32) {
+        fn remove_not_aligned(mut tree: NonLeafTree, start: u32, end: u32) {
             let middle = tree.middle();
 
             match start.cmp(&middle) {
                 Ordering::Less => match end.cmp(&middle) {
-                    Ordering::Less => remove_not_aligned(tree.left.as_non_leaf_tree(), ys, start, end),
-                    Ordering::Equal => remove_right_aligned(tree.left.as_non_leaf_tree(), ys, start, end),
+                    Ordering::Less => remove_not_aligned(tree.left.as_non_leaf_tree(), start, end),
+                    Ordering::Equal => remove_right_aligned(tree.left.as_non_leaf_tree(), start),
                     Ordering::Greater => {
-                        remove_right_aligned(tree.left.as_non_leaf_tree(), ys, start, middle);
-                        remove_left_aligned(tree.right.as_non_leaf_tree(), ys, middle, end);
+                        remove_right_aligned(tree.left.as_non_leaf_tree(), start);
+                        remove_left_aligned(tree.right.as_non_leaf_tree(), end);
                     }
                 },
-                Ordering::Equal => remove_left_aligned(tree.right.as_non_leaf_tree(), ys, start, end),
-                Ordering::Greater => remove_not_aligned(tree.right.as_non_leaf_tree(), ys, start, end),
+                Ordering::Equal => remove_left_aligned(tree.right.as_non_leaf_tree(), end),
+                Ordering::Greater => remove_not_aligned(tree.right.as_non_leaf_tree(), start, end),
             }
 
             if tree.root.count == 0 {
@@ -222,12 +222,12 @@ impl Solution {
             if end == tree.end() {
                 remove_aligned(tree);
             } else {
-                remove_left_aligned(tree.as_non_leaf_tree(), ys, start, end);
+                remove_left_aligned(tree.as_non_leaf_tree(), end);
             }
         } else if end == tree.end() {
-            remove_right_aligned(tree.as_non_leaf_tree(), ys, start, end);
+            remove_right_aligned(tree.as_non_leaf_tree(), start);
         } else {
-            remove_not_aligned(tree.as_non_leaf_tree(), ys, start, end);
+            remove_not_aligned(tree.as_non_leaf_tree(), start, end);
         }
     }
 
@@ -278,7 +278,7 @@ impl Solution {
             if y_1 & 0x8000_0000 == 0 {
                 Self::segment_tree_insert(&mut tree, &ys, y_map[&y_1], y_map[&y_2]);
             } else {
-                Self::segment_tree_remove(&mut tree, &ys, y_map[&(y_1 & 0x7FFF_FFFF)], y_map[&y_2]);
+                Self::segment_tree_remove(&mut tree, y_map[&(y_1 & 0x7FFF_FFFF)], y_map[&y_2]);
             }
         }
 

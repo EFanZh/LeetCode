@@ -12,7 +12,7 @@ impl Codec {
         Self
     }
 
-    fn serialize_helper(&self, root: Option<&RefCell<TreeNode>>, result: &mut String) {
+    fn serialize_helper(root: Option<&RefCell<TreeNode>>, result: &mut String) {
         use std::fmt::Write;
 
         if let Some(node) = root {
@@ -20,34 +20,37 @@ impl Codec {
 
             write!(result, "{} ", node_ref.val).unwrap();
 
-            self.serialize_helper(node_ref.left.as_deref(), result);
+            Self::serialize_helper(node_ref.left.as_deref(), result);
 
             result.push(' ');
 
-            self.serialize_helper(node_ref.right.as_deref(), result);
+            Self::serialize_helper(node_ref.right.as_deref(), result);
         }
     }
 
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
+        let _ = self;
         let mut result = String::new();
 
-        self.serialize_helper(root.as_deref(), &mut result);
+        Self::serialize_helper(root.as_deref(), &mut result);
 
         result
     }
 
-    fn deserialize_helper(&self, data: &mut impl Iterator<Item = impl AsRef<str>>) -> Option<Rc<RefCell<TreeNode>>> {
+    fn deserialize_helper(data: &mut impl Iterator<Item = impl AsRef<str>>) -> Option<Rc<RefCell<TreeNode>>> {
         data.next().unwrap().as_ref().parse().ok().map(|val| {
             Rc::new(RefCell::new(TreeNode {
                 val,
-                left: self.deserialize_helper(data),
-                right: self.deserialize_helper(data),
+                left: Self::deserialize_helper(data),
+                right: Self::deserialize_helper(data),
             }))
         })
     }
 
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
-        self.deserialize_helper(&mut data.split(' '))
+        let _ = self;
+
+        Self::deserialize_helper(&mut data.split(' '))
     }
 }
 

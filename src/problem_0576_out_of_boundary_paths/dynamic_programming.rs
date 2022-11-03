@@ -25,7 +25,7 @@ impl Solution {
         let mut temp = vec![0_u32; n * m];
 
         for current_max_move in (0..max_move).rev() {
-            let border = if current_max_move == max_move - 1 { 1 } else { 0 };
+            let border = u32::from(current_max_move == max_move - 1);
 
             for y in start_row.saturating_sub(current_max_move)..(start_row + current_max_move + 1).min(m) {
                 let x_max_move = current_max_move - Self::abs_diff(start_row, y);
