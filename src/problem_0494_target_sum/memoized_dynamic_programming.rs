@@ -17,10 +17,8 @@ impl Solution {
                 } else {
                     Self::helper(rest, target, cache)
                 }
-            } else if target == 0 {
-                1
             } else {
-                0
+                i32::from(target == 0)
             };
 
             cache.insert(key, result);

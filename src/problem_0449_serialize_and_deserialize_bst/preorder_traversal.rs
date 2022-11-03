@@ -13,28 +13,28 @@ impl Codec {
         Self
     }
 
-    fn serialize_helper(&self, root: Option<&RefCell<TreeNode>>, result: &mut Vec<u8>) {
+    fn serialize_helper(root: Option<&RefCell<TreeNode>>, result: &mut Vec<u8>) {
         if let Some(node) = root {
             let node_ref = node.borrow();
 
             result.push((node_ref.val / 128) as _);
             result.push((node_ref.val % 128) as _);
 
-            self.serialize_helper(node_ref.left.as_deref(), result);
-            self.serialize_helper(node_ref.right.as_deref(), result);
+            Self::serialize_helper(node_ref.left.as_deref(), result);
+            Self::serialize_helper(node_ref.right.as_deref(), result);
         }
     }
 
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
+        let _ = self;
         let mut result = Vec::new();
 
-        self.serialize_helper(root.as_deref(), &mut result);
+        Self::serialize_helper(root.as_deref(), &mut result);
 
         String::from_utf8(result).unwrap()
     }
 
     fn deserialize_helper(
-        &self,
         data: &mut Peekable<impl Iterator<Item = i32>>,
         lower: i32,
         upper: i32,
@@ -47,13 +47,15 @@ impl Codec {
 
                 Rc::new(RefCell::new(TreeNode {
                     val,
-                    left: self.deserialize_helper(data, lower, val),
-                    right: self.deserialize_helper(data, val, upper),
+                    left: Self::deserialize_helper(data, lower, val),
+                    right: Self::deserialize_helper(data, val, upper),
                 }))
             })
     }
 
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
+        let _ = self;
+
         let mut iter = data
             .bytes()
             .zip(data.bytes().skip(1))
@@ -61,7 +63,7 @@ impl Codec {
             .map(|(high, low)| 128 * i32::from(high) + i32::from(low))
             .peekable();
 
-        self.deserialize_helper(&mut iter, i32::MIN, i32::MAX)
+        Self::deserialize_helper(&mut iter, i32::MIN, i32::MAX)
     }
 }
 
