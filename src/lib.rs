@@ -1050,6 +1050,7 @@ pub mod problem_1365_how_many_numbers_are_smaller_than_the_current_number;
 pub mod problem_1370_increasing_decreasing_string;
 pub mod problem_1372_longest_zigzag_path_in_a_binary_tree;
 pub mod problem_1373_maximum_sum_bst_in_binary_tree;
+pub mod problem_1374_generate_a_string_with_characters_that_have_odd_counts;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
