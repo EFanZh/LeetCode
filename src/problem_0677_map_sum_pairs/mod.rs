@@ -10,9 +10,9 @@ pub trait MapSum {
 mod tests {
     use super::MapSum;
 
-    enum Operation<'a> {
-        Insert(&'a str, i32),
-        Sum(&'a str, i32),
+    enum Operation {
+        Insert(&'static str, i32),
+        Sum(&'static str, i32),
     }
 
     pub fn run<M: MapSum>() {

@@ -15,9 +15,9 @@ pub trait Twitter {
 mod tests {
     use super::Twitter;
 
-    enum Operation<'a> {
+    enum Operation {
         PostTweet(i32, i32),
-        GetNewsFeed(i32, &'a [i32]),
+        GetNewsFeed(i32, &'static [i32]),
         Follow(i32, i32),
         Unfollow(i32, i32),
     }

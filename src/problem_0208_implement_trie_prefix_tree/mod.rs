@@ -11,10 +11,10 @@ pub trait Trie {
 mod tests {
     use super::Trie;
 
-    enum Operation<'a> {
-        Insert(&'a str),
-        Search(&'a str, bool),
-        StartsWith(&'a str, bool),
+    enum Operation {
+        Insert(&'static str),
+        Search(&'static str, bool),
+        StartsWith(&'static str, bool),
     }
 
     pub fn run<T: Trie>() {

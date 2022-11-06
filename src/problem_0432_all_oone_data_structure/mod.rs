@@ -12,11 +12,11 @@ pub trait AllOne {
 mod tests {
     use super::AllOne;
 
-    enum Operation<'a> {
-        Inc(&'a str),
-        Dec(&'a str),
-        GetMaxKey(&'a [&'a str]),
-        GetMinKey(&'a [&'a str]),
+    enum Operation {
+        Inc(&'static str),
+        Dec(&'static str),
+        GetMaxKey(&'static [&'static str]),
+        GetMinKey(&'static [&'static str]),
     }
 
     #[allow(clippy::too_many_lines)]

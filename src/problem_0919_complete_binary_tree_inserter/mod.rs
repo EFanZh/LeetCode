@@ -15,9 +15,9 @@ mod tests {
     use super::CBTInserter;
     use crate::test_utilities;
 
-    enum Operation<'a> {
+    enum Operation {
         Insert(i32, i32),
-        GetRoot(&'a [i32]),
+        GetRoot(&'static [i32]),
     }
 
     pub fn run<S: CBTInserter>() {

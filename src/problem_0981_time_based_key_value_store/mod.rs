@@ -11,9 +11,9 @@ pub trait TimeMap {
 mod tests {
     use super::TimeMap;
 
-    enum Operation<'a> {
-        Set(&'a str, &'a str, i32),
-        Get(&'a str, i32, &'a str),
+    enum Operation {
+        Set(&'static str, &'static str, i32),
+        Get(&'static str, i32, &'static str),
     }
 
     pub fn run<M: TimeMap>() {
