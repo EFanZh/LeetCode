@@ -10,9 +10,9 @@ pub trait WordDictionary {
 mod tests {
     use super::WordDictionary;
 
-    enum Operation<'a> {
-        AddWord(&'a str),
-        Search(&'a str, bool),
+    enum Operation {
+        AddWord(&'static str),
+        Search(&'static str, bool),
     }
 
     pub fn run<D: WordDictionary>() {

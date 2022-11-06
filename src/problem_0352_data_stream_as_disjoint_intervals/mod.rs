@@ -12,9 +12,9 @@ mod tests {
     use super::SummaryRanges;
 
     #[allow(variant_size_differences)]
-    enum Operation<'a> {
+    enum Operation {
         AddNum(i32),
-        GetIntervals(&'a [[i32; 2]]),
+        GetIntervals(&'static [[i32; 2]]),
     }
 
     #[allow(clippy::too_many_lines)]
