@@ -1,4 +1,4 @@
-pub mod hash_map;
+pub mod hash_set;
 
 pub trait Solution {
     fn check_if_exist(arr: Vec<i32>) -> bool;
