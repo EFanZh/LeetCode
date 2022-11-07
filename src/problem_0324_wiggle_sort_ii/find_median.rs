@@ -16,7 +16,7 @@ impl Solution {
         let mut rng = StdRng::seed_from_u64(0);
 
         while end - start > 1 {
-            nums.swap(index(start), index(rng.gen_range(start..end)));
+            nums.swap(index(start), index(rng.gen_range(start, end)));
 
             let x = nums[index(start)];
             let mut i = start;
