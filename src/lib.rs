@@ -1055,6 +1055,7 @@ pub mod problem_1373_maximum_sum_bst_in_binary_tree;
 pub mod problem_1374_generate_a_string_with_characters_that_have_odd_counts;
 pub mod problem_1375_number_of_times_binary_string_is_prefix_aligned;
 pub mod problem_1376_time_needed_to_inform_all_employees;
+pub mod problem_1387_sort_integers_by_the_power_value;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
