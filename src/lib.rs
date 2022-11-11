@@ -1049,6 +1049,7 @@ pub mod problem_1361_validate_binary_tree_nodes;
 pub mod problem_1362_closest_divisors;
 pub mod problem_1363_largest_multiple_of_three;
 pub mod problem_1365_how_many_numbers_are_smaller_than_the_current_number;
+pub mod problem_1366_rank_teams_by_votes;
 pub mod problem_1370_increasing_decreasing_string;
 pub mod problem_1372_longest_zigzag_path_in_a_binary_tree;
 pub mod problem_1373_maximum_sum_bst_in_binary_tree;
