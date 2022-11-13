@@ -18,7 +18,7 @@ impl Solution {
         let mut result = 0;
 
         for (candidate, num) in (1..).zip(nums) {
-            if count_count_count == 1 {
+            if count_count_count < 2 {
                 result = candidate;
             }
 
