@@ -988,6 +988,7 @@ pub mod problem_1221_split_a_string_in_balanced_strings;
 pub mod problem_1222_queens_that_can_attack_the_king;
 pub mod problem_1223_dice_roll_simulation;
 pub mod problem_1224_maximum_equal_frequency;
+pub mod problem_1227_airplane_seat_assignment_probability;
 pub mod problem_1232_check_if_it_is_a_straight_line;
 pub mod problem_1233_remove_sub_folders_from_the_filesystem;
 pub mod problem_1234_replace_the_substring_for_balanced_string;
