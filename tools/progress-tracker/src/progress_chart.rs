@@ -112,7 +112,7 @@ fn draw_chart(data: &[(DateTime<Utc>, usize)], total: usize, output: &Path) {
             )))
             .light_line_style(ShapeStyle::from(&colors::BLACK.mix(0.1)).stroke_width(ZOOM))
             .set_all_tick_mark_size(5 * ZOOM)
-            .x_label_formatter(&|v| v.date().format("%F").to_string())
+            .x_label_formatter(&|v| v.date_naive().format("%F").to_string())
             .x_labels(10)
             .y_label_formatter(&|v| format!("{}%", v))
             .y_labels(10)
@@ -145,7 +145,7 @@ pub fn draw(repository: &Repository, problems: &Problems, output: &Path) {
             let date = commit.author().when();
             let hits = get_hits(&commit.tree().unwrap(), &mut hits_cache);
 
-            (Utc.timestamp(date.seconds(), 0), hits)
+            (Utc.timestamp_opt(date.seconds(), 0).unwrap(), hits)
         })
         .collect::<Vec<_>>();
 
