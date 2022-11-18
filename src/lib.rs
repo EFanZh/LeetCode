@@ -998,6 +998,7 @@ pub mod problem_1238_circular_permutation_in_binary_representation;
 pub mod problem_1239_maximum_length_of_a_concatenated_string_with_unique_characters;
 pub mod problem_1247_minimum_swaps_to_make_strings_equal;
 pub mod problem_1248_count_number_of_nice_subarrays;
+pub mod problem_1249_minimum_remove_to_make_valid_parentheses;
 pub mod problem_1250_check_if_it_is_a_good_array;
 pub mod problem_1252_cells_with_odd_values_in_a_matrix;
 pub mod problem_1254_number_of_closed_islands;
