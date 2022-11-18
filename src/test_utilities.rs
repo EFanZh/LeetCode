@@ -99,6 +99,39 @@ pub fn invert_tree(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNo
     })
 }
 
+pub fn is_full_stack_operations(operations: impl IntoIterator<Item = bool>) -> bool {
+    let mut depth = 0_usize;
+
+    for operation in operations {
+        if operation {
+            if depth == 0 {
+                return false;
+            }
+
+            depth -= 1;
+        } else {
+            depth += 1;
+        }
+    }
+
+    depth == 0
+}
+
+pub fn is_subsequence<T, U>(lhs: impl IntoIterator<Item = T>, rhs: impl IntoIterator<Item = U>) -> bool
+where
+    T: PartialEq<U>,
+{
+    let mut iter = rhs.into_iter();
+
+    for left in lhs {
+        if iter.all(|right| left != right) {
+            return false;
+        }
+    }
+
+    true
+}
+
 pub fn iter_list(list: &Option<Box<ListNode>>) -> impl Iterator<Item = &i32> {
     iter::successors(list.as_deref(), |node| node.next.as_deref()).map(|node| &node.val)
 }
@@ -277,6 +310,34 @@ mod tests {
             let rhs = super::make_tree(rhs.iter().copied());
 
             assert_eq!(super::compare_tree(&lhs, &rhs), expected);
+        }
+    }
+
+    #[test]
+    fn test_is_full_stack_operations() {
+        let test_cases = [
+            (")", false),
+            ("(", false),
+            ("", true),
+            ("()", true),
+            (")(", false),
+            ("((()()))", true),
+        ];
+
+        for (operations, expected) in test_cases {
+            assert_eq!(
+                super::is_full_stack_operations(operations.bytes().map(|c| c == b')')),
+                expected
+            );
+        }
+    }
+
+    #[test]
+    fn test_is_subsequence() {
+        let test_cases = [(("ab", "acb"), true), (("ac", "cab"), false)];
+
+        for ((lhs, rhs), expected) in test_cases {
+            assert_eq!(super::is_subsequence(lhs.bytes(), rhs.bytes()), expected);
         }
     }
 
