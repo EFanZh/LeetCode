@@ -7,14 +7,8 @@ impl Solution {
         let mut iter_2 = t.bytes();
 
         for left in s.bytes() {
-            loop {
-                if let Some(right) = iter_2.next() {
-                    if left == right {
-                        break;
-                    }
-                } else {
-                    return false;
-                }
+            if iter_2.all(|right| right != left) {
+                return false;
             }
         }
 
