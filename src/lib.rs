@@ -1003,6 +1003,7 @@ pub mod problem_1250_check_if_it_is_a_good_array;
 pub mod problem_1252_cells_with_odd_values_in_a_matrix;
 pub mod problem_1253_reconstruct_a_2_row_binary_matrix;
 pub mod problem_1254_number_of_closed_islands;
+pub mod problem_1255_maximum_score_words_formed_by_letters;
 pub mod problem_1260_shift_2d_grid;
 pub mod problem_1262_greatest_sum_divisible_by_three;
 pub mod problem_1266_minimum_time_visiting_all_points;
