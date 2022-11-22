@@ -1005,6 +1005,7 @@ pub mod problem_1253_reconstruct_a_2_row_binary_matrix;
 pub mod problem_1254_number_of_closed_islands;
 pub mod problem_1255_maximum_score_words_formed_by_letters;
 pub mod problem_1260_shift_2d_grid;
+pub mod problem_1261_find_elements_in_a_contaminated_binary_tree;
 pub mod problem_1262_greatest_sum_divisible_by_three;
 pub mod problem_1266_minimum_time_visiting_all_points;
 pub mod problem_1267_count_servers_that_communicate;
