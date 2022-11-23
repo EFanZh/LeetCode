@@ -1007,6 +1007,7 @@ pub mod problem_1255_maximum_score_words_formed_by_letters;
 pub mod problem_1260_shift_2d_grid;
 pub mod problem_1261_find_elements_in_a_contaminated_binary_tree;
 pub mod problem_1262_greatest_sum_divisible_by_three;
+pub mod problem_1263_minimum_moves_to_move_a_box_to_their_target_location;
 pub mod problem_1266_minimum_time_visiting_all_points;
 pub mod problem_1267_count_servers_that_communicate;
 pub mod problem_1268_search_suggestions_system;
