@@ -3,22 +3,24 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    fn combine_helper(n: i32, k: i32, base: &mut [i32], result: &mut Vec<Vec<i32>>) {
-        if k == 0 {
-            result.push(base.to_vec());
-        } else {
-            for i in k..=n {
-                base[(k - 1) as usize] = i;
+    fn combine_helper(n: usize, k: usize, base: &mut [i32], result: &mut Vec<Vec<i32>>) {
+        let index = k.wrapping_sub(1);
 
-                Self::combine_helper(i - 1, k - 1, base, result);
+        if index < base.len() {
+            for i in k..=n {
+                base[index] = i as _;
+
+                Self::combine_helper(i - 1, index, base, result);
             }
+        } else {
+            result.push(base.to_vec());
         }
     }
 
     pub fn combine(n: i32, k: i32) -> Vec<Vec<i32>> {
         let mut result = Vec::new();
 
-        Self::combine_helper(n, k, &mut vec![0; k as usize], &mut result);
+        Self::combine_helper(n as _, k as _, &mut vec![0; k as usize], &mut result);
 
         result
     }
