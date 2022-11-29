@@ -9,7 +9,7 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [((2, 3), 3), ((5, 8), 5), ((11, 13), 6)];
+        let test_cases = [((2, 3), 3), ((5, 8), 5), ((11, 13), 6), ((13, 11), 6)];
 
         for ((n, m), expected) in test_cases {
             assert_eq!(S::tiling_rectangle(n, m), expected);
