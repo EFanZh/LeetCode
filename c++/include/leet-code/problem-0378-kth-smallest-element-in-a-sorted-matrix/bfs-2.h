@@ -2,6 +2,7 @@
 #define LEET_CODE_PROBLEM_0378_KTH_SMALLEST_ELEMENT_IN_A_SORTED_MATRIX_BFS_2_H
 
 #include <algorithm>
+#include <tuple>
 #include <vector>
 
 namespace leet_code::problem_0378_kth_smallest_element_in_a_sorted_matrix::bfs_2 {
