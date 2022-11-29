@@ -2,6 +2,7 @@
 #define LEET_CODE_PROBLEM_0436_FIND_RIGHT_INTERVAL_SORT_AND_MERGE_H
 
 #include <algorithm>
+#include <tuple>
 #include <vector>
 
 namespace leet_code::problem_0436_find_right_interval::sort_and_merge {
