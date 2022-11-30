@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod greedy;
 
 pub trait Solution {
     fn video_stitching(clips: Vec<Vec<i32>>, time: i32) -> i32;
@@ -37,6 +37,7 @@ mod tests {
                 3,
             ),
             ((&[[0, 2], [4, 8]], 5), -1),
+            ((&[[0, 4], [2, 8]], 5), 2),
         ];
 
         for ((clips, time), expected) in test_cases {
