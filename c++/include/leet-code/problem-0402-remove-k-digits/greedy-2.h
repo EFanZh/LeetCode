@@ -12,6 +12,7 @@ using std::string;
 
 class Solution {
 public:
+    // NOLINTBEGIN(readability-function-cognitive-complexity)
     string removeKdigits(string num, int k) {
         const auto n = num.length();
         const auto k_2 = static_cast<size_t>(k);
@@ -79,6 +80,7 @@ public:
 
         return num;
     }
+    // NOLINTEND(readability-function-cognitive-complexity)
 };
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //

@@ -10,6 +10,7 @@ using data_structures::tree_node_with_next_right_pointer::Node;
 
 class Solution {
 public:
+    // NOLINTBEGIN(readability-function-cognitive-complexity)
     Node *connect(Node *root) {
         if (root != nullptr) {
             auto *row = root;
@@ -68,6 +69,7 @@ public:
 
         return root;
     }
+    // NOLINTEND(readability-function-cognitive-complexity)
 };
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //

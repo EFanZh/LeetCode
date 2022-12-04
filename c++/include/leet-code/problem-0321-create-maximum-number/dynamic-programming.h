@@ -13,6 +13,7 @@ using std::vector;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 class Solution {
+    // NOLINTBEGIN(readability-function-cognitive-complexity)
     static vector<vector<int>> single_max_numbers(int *nums, size_t nums_length, size_t min_length, size_t max_length) {
         auto *const nums_end = nums + nums_length;
         const auto expected_items = max_length - min_length + 1;
@@ -121,6 +122,7 @@ class Solution {
 
         return result;
     }
+    // NOLINTEND(readability-function-cognitive-complexity)
 
     static void merge(const int *nums_1, const int *nums_1_end, const int *nums_2, const int *nums_2_end, int *result) {
         if (nums_1 == nums_1_end) {
