@@ -23,6 +23,7 @@ jobs:
                 -S c++
                 -B target/c++
                 -D CMAKE_BUILD_TYPE=Debug
+                -D CMAKE_CXX_COMPILER=clang++
                 -D CMAKE_TOOLCHAIN_FILE="$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
                 -D ENABLE_CLANG_TIDY=clang-tidy
           - run: cmake --build target/c++ -j
