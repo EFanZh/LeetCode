@@ -1,14 +1,7 @@
-cmake_minimum_required(VERSION "3.19")
-project("leet-code")
+cmake_minimum_required(VERSION "3.21")
+project("leet-code" CXX)
 
 # Global configuration.
-
-if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-    set(STANDALONE_PROJECT ON)
-else()
-    set(STANDALONE_PROJECT OFF)
-endif()
-
 if(MSVC)
     set(CMAKE_INCLUDE_SYSTEM_FLAG_C "/external:I")
     set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX "/external:I")
@@ -17,10 +10,9 @@ if(MSVC)
 endif()
 
 # The main library.
-
 add_library("leet-code" INTERFACE)
 
-if(STANDALONE_PROJECT)
+if(PROJECT_IS_TOP_LEVEL)
     target_include_directories("leet-code" INTERFACE "include")
 else()
     target_include_directories("leet-code" SYSTEM INTERFACE "include")
@@ -29,21 +21,20 @@ endif()
 target_compile_features("leet-code" INTERFACE cxx_std_17)
 
 # Tests.
-
-if(STANDALONE_PROJECT)
+if(PROJECT_IS_TOP_LEVEL)
     include("GoogleTest")
     find_package("GTest" CONFIG REQUIRED)
 
     enable_testing()
 
     # Common compile options.
-
     add_library("common-compile-options" INTERFACE)
 
     if(MSVC)
         target_compile_options(
             "common-compile-options"
             INTERFACE
+            "/permissive-"
             "/W4"
             "/we4287" # 'expression': unsigned/negative constant mismatch
             "/we4365" # 'expression': conversion from 'type' to 'type', signed/unsigned mismatch
@@ -64,7 +55,6 @@ if(STANDALONE_PROJECT)
     endif()
 
     # Check headers.
-
     set(
         LEET_CODE_HEADERS
         "include/leet-code/data-structures/list-node.h"
@@ -118,12 +108,14 @@ if(STANDALONE_PROJECT)
     target_include_directories("check-leet-code-headers" PRIVATE "tests")
     target_link_libraries("check-leet-code-headers" PRIVATE "common-compile-options" "leet-code" "GTest::gtest_main")
 
-    set_target_properties("check-leet-code-headers"
-                          PROPERTIES CXX_EXTENSIONS OFF
-                                     CXX_STANDARD_REQUIRED ON)
+    set_target_properties(
+        "check-leet-code-headers"
+        PROPERTIES
+        CXX_EXTENSIONS OFF
+        CXX_STANDARD_REQUIRED ON
+    )
 
     # Test executable.
-
     add_executable(
         "leet-code-tests"
         "tests/leet-code/problem-0116-populating-next-right-pointers-in-each-node/iterative.cpp"
@@ -151,19 +143,20 @@ if(STANDALONE_PROJECT)
 
     target_link_libraries("leet-code-tests" PRIVATE "common-compile-options" "leet-code" "GTest::gtest_main")
 
-    set_target_properties("leet-code-tests"
-                          PROPERTIES CXX_EXTENSIONS OFF
-                                     CXX_STANDARD_REQUIRED ON)
+    set_target_properties(
+        "leet-code-tests"
+        PROPERTIES
+        CXX_EXTENSIONS OFF
+        CXX_STANDARD_REQUIRED ON
+    )
 
     gtest_discover_tests("leet-code-tests")
 
     # Options.
-
     set(ENABLE_CLANG_TIDY OFF CACHE STRING "Enable Clang-Tidy check.")
     set(ENABLE_SOURCE_BASED_CODE_COVERAGE OFF CACHE BOOL "Enable source-based code coverage.")
 
     # Clang-Tidy check.
-
     if(ENABLE_CLANG_TIDY)
         set_target_properties(
             "leet-code-tests"
@@ -172,9 +165,8 @@ if(STANDALONE_PROJECT)
     endif()
 
     # Source based coverage.
-
     if(ENABLE_SOURCE_BASED_CODE_COVERAGE)
-        if((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang"))
+        if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
             target_compile_options("leet-code-tests" PRIVATE "-fprofile-instr-generate" "-fcoverage-mapping")
             target_link_options("leet-code-tests" PRIVATE "-fprofile-instr-generate" "-fcoverage-mapping")
         else()

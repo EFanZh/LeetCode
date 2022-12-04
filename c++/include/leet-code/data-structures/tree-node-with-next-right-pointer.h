@@ -3,12 +3,12 @@
 
 namespace leet_code::data_structures::tree_node_with_next_right_pointer {
 struct Node {
-    int val;     // NOLINT(misc-non-private-member-variables-in-classes)
-    Node *left;  // NOLINT(misc-non-private-member-variables-in-classes)
-    Node *right; // NOLINT(misc-non-private-member-variables-in-classes)
-    Node *next;  // NOLINT(misc-non-private-member-variables-in-classes)
+    int val;
+    Node *left = nullptr;
+    Node *right = nullptr;
+    Node *next = nullptr;
 
-    explicit Node(int val) : val{val}, left{nullptr}, right{nullptr}, next{nullptr} {
+    explicit Node(int val) : val{val} {
     }
 };
 } // namespace leet_code::data_structures::tree_node_with_next_right_pointer
