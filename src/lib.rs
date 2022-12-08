@@ -1053,6 +1053,7 @@ pub mod problem_1319_number_of_operations_to_make_network_connected;
 pub mod problem_1323_maximum_69_number;
 pub mod problem_1324_print_words_vertically;
 pub mod problem_1325_delete_leaves_with_a_given_value;
+pub mod problem_1326_minimum_number_of_taps_to_open_to_water_a_garden;
 pub mod problem_1328_break_a_palindrome;
 pub mod problem_1329_sort_the_matrix_diagonally;
 pub mod problem_1331_rank_transform_of_an_array;
