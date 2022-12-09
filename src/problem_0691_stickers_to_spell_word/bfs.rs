@@ -47,7 +47,7 @@ impl Solution {
         let target = Key::from_str(&target);
         let mut result = 1;
         let mut visited = iter::once(target.clone()).collect::<HashSet<_>>();
-        let mut queue = VecDeque::from(vec![target]);
+        let mut queue = VecDeque::from([target]);
 
         loop {
             for _ in 0..queue.len() {

@@ -64,7 +64,7 @@ impl Codec {
 
         iter.next().map(|val| {
             let root = Rc::new(RefCell::new(TreeNode::new(val.parse().unwrap())));
-            let mut queue = VecDeque::from(vec![Rc::clone(&root)]);
+            let mut queue = VecDeque::from([Rc::clone(&root)]);
 
             while let Some(item) = iter.next() {
                 let target = queue.pop_front().unwrap();

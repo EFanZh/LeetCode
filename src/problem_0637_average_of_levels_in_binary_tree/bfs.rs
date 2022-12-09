@@ -14,7 +14,7 @@ impl Solution {
         let mut result = Vec::new();
 
         if let Some(node) = root {
-            let mut queue = VecDeque::from(vec![node]);
+            let mut queue = VecDeque::from([node]);
 
             loop {
                 let mut sum = 0_i64;

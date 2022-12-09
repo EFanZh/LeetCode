@@ -16,7 +16,7 @@ impl Solution {
             graph[from as usize].push((to as u32, price as u32));
         }
 
-        let mut queue = VecDeque::from(vec![src]);
+        let mut queue = VecDeque::from([src]);
         let mut prices = vec![(u32::MAX, u32::MAX); n];
         let mut visited = HashSet::new();
 

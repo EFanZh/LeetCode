@@ -77,8 +77,8 @@ impl Solution {
         let target = Self::encode([1, 2, 3, 4, 5]);
 
         if start != target {
-            let mut left_queue = VecDeque::from(vec![start]);
-            let mut right_queue = VecDeque::from(vec![target]);
+            let mut left_queue = VecDeque::from([start]);
+            let mut right_queue = VecDeque::from([target]);
             let mut states = HashMap::new();
 
             states.insert(start, false);

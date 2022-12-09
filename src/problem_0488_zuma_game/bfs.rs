@@ -154,7 +154,7 @@ impl Solution {
     pub fn find_min_step(board: String, hand: String) -> i32 {
         let mut depth = 1;
         let node = State::new(board.as_bytes(), hand.as_bytes());
-        let mut queue = VecDeque::from(vec![node]);
+        let mut queue = VecDeque::from([node]);
         let mut visited = Some(node).into_iter().collect::<HashSet<_>>();
 
         loop {

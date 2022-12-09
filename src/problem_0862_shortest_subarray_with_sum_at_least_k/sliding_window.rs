@@ -9,7 +9,7 @@ impl Solution {
         let k = i64::from(k);
         let mut result = u32::MAX;
         let mut sum = 0;
-        let mut queue = VecDeque::from(vec![(0, 0)]);
+        let mut queue = VecDeque::from([(0, 0)]);
 
         for (i, &num) in (1..).zip(&nums) {
             sum += i64::from(num);

@@ -51,7 +51,7 @@ impl Solution {
         let mut result = 0;
 
         if s1 != s2 {
-            let mut queue = VecDeque::from(vec![State::from_slice(s1.as_bytes())]);
+            let mut queue = VecDeque::from([State::from_slice(s1.as_bytes())]);
             let mut visited = HashSet::new();
             let target = s2.as_bytes();
 

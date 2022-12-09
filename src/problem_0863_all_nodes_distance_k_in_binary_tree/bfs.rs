@@ -42,7 +42,7 @@ impl Solution {
 
         Self::get_parents(&root, &mut parents);
 
-        let mut queue = VecDeque::from(vec![(target, Direction::Void)]);
+        let mut queue = VecDeque::from([(target, Direction::Void)]);
 
         for _ in 0..k {
             for _ in 0..queue.len() {

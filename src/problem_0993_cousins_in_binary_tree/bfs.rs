@@ -25,7 +25,7 @@ impl Solution {
     }
 
     pub fn is_cousins(root: Option<Rc<RefCell<TreeNode>>>, x: i32, y: i32) -> bool {
-        let mut queue = VecDeque::from(vec![(root.unwrap(), -1)]);
+        let mut queue = VecDeque::from([(root.unwrap(), -1)]);
 
         loop {
             let mut remaining = queue.len();

@@ -17,7 +17,7 @@ impl Solution {
 
         max_budgets[0] = k;
 
-        let mut queue = VecDeque::<(usize, usize, i32)>::from(vec![(0, 0, k)]);
+        let mut queue = VecDeque::<(usize, usize, i32)>::from([(0, 0, k)]);
         let mut result = 1;
 
         loop {

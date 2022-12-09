@@ -38,7 +38,7 @@ impl Solution {
             if !mem::replace(&mut visited[0], true) {
                 let target = target.parse::<u16>().unwrap();
                 let mut result = 1;
-                let mut queue = VecDeque::from(vec![0]);
+                let mut queue = VecDeque::from([0]);
 
                 loop {
                     for _ in 0..queue.len() {
