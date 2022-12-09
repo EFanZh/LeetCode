@@ -14,7 +14,7 @@ struct CBTInserter {
 impl CBTInserter {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
         let root = root.unwrap();
-        let mut slots = VecDeque::from(vec![Rc::clone(&root)]);
+        let mut slots = VecDeque::from([Rc::clone(&root)]);
 
         loop {
             let node = slots.front().unwrap();

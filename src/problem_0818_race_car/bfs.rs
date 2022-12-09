@@ -9,7 +9,7 @@ impl Solution {
     pub fn racecar(target: i32) -> i32 {
         let mut steps = 1;
         let mut visited = HashSet::new();
-        let mut queue = VecDeque::from(vec![(target, -1)]);
+        let mut queue = VecDeque::from([(target, -1)]);
 
         loop {
             for _ in 0..queue.len() {

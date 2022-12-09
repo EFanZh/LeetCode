@@ -47,8 +47,8 @@ impl Solution {
             if matches!(mem::replace(&mut states[0], State::LeftVisited), State::NotVisited) {
                 let target = target.parse::<usize>().unwrap();
                 let mut result = 1;
-                let mut left_queue = VecDeque::from(vec![0]);
-                let mut right_queue = VecDeque::from(vec![target]);
+                let mut left_queue = VecDeque::from([0]);
+                let mut right_queue = VecDeque::from([target]);
 
                 states[target] = State::RightVisited;
 

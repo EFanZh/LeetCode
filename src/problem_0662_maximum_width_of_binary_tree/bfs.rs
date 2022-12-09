@@ -10,7 +10,7 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut queue = VecDeque::from(vec![(0, root.unwrap())]);
+        let mut queue = VecDeque::from([(0, root.unwrap())]);
         let mut result = 0;
 
         loop {

@@ -10,7 +10,7 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn max_level_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut queue = VecDeque::from(vec![root.unwrap()]);
+        let mut queue = VecDeque::from([root.unwrap()]);
         let mut max_sum = i32::MIN;
         let mut max_level = 0;
         let mut level = 1;

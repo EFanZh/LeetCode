@@ -10,7 +10,7 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut queue = VecDeque::from(vec![root.unwrap()]);
+        let mut queue = VecDeque::from([root.unwrap()]);
 
         loop {
             let mut sum = 0;

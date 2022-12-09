@@ -10,7 +10,7 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut queue = VecDeque::from(vec![root.unwrap()]);
+        let mut queue = VecDeque::from([root.unwrap()]);
 
         loop {
             let first_value = queue.front().unwrap().borrow().val;

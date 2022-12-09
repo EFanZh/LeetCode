@@ -13,7 +13,7 @@ impl Solution {
         } else {
             let n = n as usize;
             let mut visited = vec![false; n * n];
-            let mut queue = VecDeque::from(vec![(1_usize, 0_usize)]);
+            let mut queue = VecDeque::from([(1_usize, 0_usize)]);
             let mut depth = 1;
 
             visited[n] = true;

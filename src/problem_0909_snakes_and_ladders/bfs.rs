@@ -31,7 +31,7 @@ impl Solution {
 
         let target = n * n - 1;
         let mut result = 1;
-        let mut queue = VecDeque::from(vec![0]);
+        let mut queue = VecDeque::from([0]);
         let mut visited = vec![false; n * n];
 
         visited[0] = true;
