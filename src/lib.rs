@@ -1042,6 +1042,7 @@ pub mod problem_1305_all_elements_in_two_binary_search_trees;
 pub mod problem_1306_jump_game_iii;
 pub mod problem_1309_decrypt_string_from_alphabet_to_integer_mapping;
 pub mod problem_1310_xor_queries_of_a_subarray;
+pub mod problem_1311_get_watched_videos_by_your_friends;
 pub mod problem_1312_minimum_insertion_steps_to_make_a_string_palindrome;
 pub mod problem_1313_decompress_run_length_encoded_list;
 pub mod problem_1314_matrix_block_sum;
