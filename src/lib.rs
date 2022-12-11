@@ -1057,6 +1057,7 @@ pub mod problem_1325_delete_leaves_with_a_given_value;
 pub mod problem_1326_minimum_number_of_taps_to_open_to_water_a_garden;
 pub mod problem_1328_break_a_palindrome;
 pub mod problem_1329_sort_the_matrix_diagonally;
+pub mod problem_1330_reverse_subarray_to_maximize_array_value;
 pub mod problem_1331_rank_transform_of_an_array;
 pub mod problem_1332_remove_palindromic_subsequences;
 pub mod problem_1333_filter_restaurants_by_vegan_friendly_price_and_distance;
