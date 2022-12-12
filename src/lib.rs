@@ -1072,6 +1072,7 @@ pub mod problem_1346_check_if_n_and_its_double_exist;
 pub mod problem_1347_minimum_number_of_steps_to_make_two_strings_anagram;
 pub mod problem_1349_maximum_students_taking_exam;
 pub mod problem_1351_count_negative_numbers_in_a_sorted_matrix;
+pub mod problem_1352_product_of_the_last_k_numbers;
 pub mod problem_1356_sort_integers_by_the_number_of_1_bits;
 pub mod problem_1358_number_of_substrings_containing_all_three_characters;
 pub mod problem_1361_validate_binary_tree_nodes;
