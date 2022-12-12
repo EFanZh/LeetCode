@@ -1,5 +1,6 @@
 pub mod backtracking_1;
 pub mod backtracking_2;
+pub mod backtracking_3;
 pub mod heap;
 
 pub trait Solution {
