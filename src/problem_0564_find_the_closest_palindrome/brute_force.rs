@@ -83,7 +83,7 @@ impl Solution {
 
         n.clear();
 
-        write!(&mut n, "{}", result).unwrap();
+        write!(&mut n, "{result}").unwrap();
 
         n
     }

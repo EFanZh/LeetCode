@@ -58,7 +58,7 @@ where
         name: &'b str,
         attributes: impl IntoIterator<Item = (impl AsRef<str>, impl AsRef<str>)>,
     ) -> Self {
-        write!(writer, "<{}", name).unwrap();
+        write!(writer, "<{name}").unwrap();
 
         for (name, value) in attributes {
             write!(writer, " {}=\"{}\"", name.as_ref(), AttributeValue(value.as_ref())).unwrap();
@@ -78,7 +78,7 @@ where
         name: &str,
         attributes: impl IntoIterator<Item = (impl AsRef<str>, impl AsRef<str>)>,
     ) {
-        write!(self.writer, "<{}", name).unwrap();
+        write!(self.writer, "<{name}").unwrap();
 
         for (name, value) in attributes {
             write!(self.writer, " {}=\"{}\"", name.as_ref(), AttributeValue(value.as_ref())).unwrap();
@@ -100,7 +100,7 @@ where
     }
 
     pub fn add_raw(&mut self, content: &str) {
-        write!(self.writer, "{}", content).unwrap();
+        write!(self.writer, "{content}").unwrap();
     }
 
     pub fn close(self) {

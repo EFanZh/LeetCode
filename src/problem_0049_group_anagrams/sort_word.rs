@@ -24,7 +24,7 @@ impl Solution {
             }
         }
 
-        buckets.into_iter().map(|(_, value)| value).collect()
+        buckets.into_values().collect()
     }
 }
 

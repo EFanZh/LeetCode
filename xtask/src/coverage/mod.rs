@@ -103,7 +103,7 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
 
     if let Some(llvm_version) = llvm_version {
         for tool in [&mut clang, &mut clang_plus_plus, &mut llvm_profdata] {
-            write!(tool, "-{}", llvm_version).unwrap();
+            write!(tool, "-{llvm_version}").unwrap();
         }
     }
 
@@ -121,9 +121,9 @@ fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>
         "-D".as_ref(),
         "CMAKE_BUILD_TYPE=Debug".as_ref(),
         "-D".as_ref(),
-        format!("CMAKE_C_COMPILER={}", clang).as_ref(),
+        format!("CMAKE_C_COMPILER={clang}").as_ref(),
         "-D".as_ref(),
-        format!("CMAKE_CXX_COMPILER={}", clang_plus_plus).as_ref(),
+        format!("CMAKE_CXX_COMPILER={clang_plus_plus}").as_ref(),
         "-D".as_ref(),
         "ENABLE_SOURCE_BASED_CODE_COVERAGE=ON".as_ref(),
     ]);

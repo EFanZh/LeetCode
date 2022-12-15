@@ -79,7 +79,7 @@ impl Solution {
             result.extend(name);
 
             if count > 1 {
-                write!(&mut result, "{}", count).unwrap();
+                write!(&mut result, "{count}").unwrap();
             }
         }
 

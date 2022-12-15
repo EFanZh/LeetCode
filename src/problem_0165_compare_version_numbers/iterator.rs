@@ -23,13 +23,7 @@ impl Solution {
                         -1
                     }
                 }
-                (Some(lhs), None) => {
-                    if lhs == 0 && iter_1.all(|c| c == 0) {
-                        0
-                    } else {
-                        1
-                    }
-                }
+                (Some(lhs), None) => i32::from(lhs != 0 || iter_1.any(|c| c != 0)),
                 (Some(lhs), Some(rhs)) => match lhs.cmp(&rhs) {
                     Ordering::Less => -1,
                     Ordering::Equal => continue,

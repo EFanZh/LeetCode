@@ -16,14 +16,14 @@ impl Solution {
                                 if num == last + 1 {
                                     last = num;
                                 } else {
-                                    result.push(format!("{}->{}", first, last));
+                                    result.push(format!("{first}->{last}"));
 
                                     first = num;
 
                                     break;
                                 }
                             } else {
-                                result.push(format!("{}->{}", first, last));
+                                result.push(format!("{first}->{last}"));
 
                                 break 'outer;
                             }

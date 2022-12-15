@@ -26,7 +26,7 @@ impl Solution {
 
         counts
             .into_iter()
-            .map(|(domain, count)| format!("{} {}", count, domain))
+            .map(|(domain, count)| format!("{count} {domain}"))
             .collect()
     }
 }

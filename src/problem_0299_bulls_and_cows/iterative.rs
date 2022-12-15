@@ -28,7 +28,7 @@ impl Solution {
             }
         }
 
-        format!("{}A{}B", bulls, cows)
+        format!("{bulls}A{cows}B")
     }
 }
 
