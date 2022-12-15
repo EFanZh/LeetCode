@@ -10,12 +10,12 @@ impl Solution {
             if num == last + 1 {
                 Self::summary_ranges_helper_multiple(iter, first, num, result);
             } else {
-                result.push(format!("{}->{}", first, last));
+                result.push(format!("{first}->{last}"));
 
                 Self::summary_ranges_helper_single(iter, num, result);
             }
         } else {
-            result.push(format!("{}->{}", first, last));
+            result.push(format!("{first}->{last}"));
         }
     }
 

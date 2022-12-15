@@ -29,10 +29,8 @@ impl Solution {
 
         if p % 2 == 0 {
             2
-        } else if q % 2 == 0 {
-            0
         } else {
-            1
+            i32::from(q % 2 != 0)
         }
     }
 }

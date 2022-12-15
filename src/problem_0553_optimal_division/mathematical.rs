@@ -13,12 +13,12 @@ impl Solution {
 
         if let Some(second) = iter.next() {
             if iter.len() == 0 {
-                write!(&mut result, "/{}", second).unwrap();
+                write!(&mut result, "/{second}").unwrap();
             } else {
-                write!(&mut result, "/({}", second).unwrap();
+                write!(&mut result, "/({second}").unwrap();
 
                 for num in iter {
-                    write!(&mut result, "/{}", num).unwrap();
+                    write!(&mut result, "/{num}").unwrap();
                 }
 
                 result.push(')');

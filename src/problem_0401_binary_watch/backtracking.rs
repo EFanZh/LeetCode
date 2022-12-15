@@ -9,7 +9,7 @@ impl Solution {
             let minute = base & 0b_0011_1111;
 
             if hour < 12 && minute < 60 {
-                result.push(format!("{}:{:02}", hour, minute));
+                result.push(format!("{hour}:{minute:02}"));
             }
         } else {
             for first in start..11 - n {

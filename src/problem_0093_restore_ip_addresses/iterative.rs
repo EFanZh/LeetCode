@@ -26,7 +26,7 @@ impl Solution {
                             let (third, s) = s.split_at(length_3);
 
                             if Self::is_component(third) && Self::is_component(s) {
-                                result.push(format!("{}.{}.{}.{}", first, second, third, s));
+                                result.push(format!("{first}.{second}.{third}.{s}"));
                             }
                         }
                     }

@@ -118,7 +118,7 @@ fn main() {
             .strip_prefix("problem-")
             .map(str::to_string)
     }) {
-        println!("Checking problem “{}” ...", problem_id);
+        println!("Checking problem “{problem_id}” ...");
 
         let problem_include_guard = to_all_caps_case(&problem_id);
         let problem_namespace = problem_id.replace('-', "_");
@@ -142,21 +142,21 @@ fn main() {
             problem_namespace = problem_namespace.as_str(),
         );
 
-        let problem_test_path = leet_code_tests_path.join(format!("problem-{}", problem_id));
+        let problem_test_path = leet_code_tests_path.join(format!("problem-{problem_id}"));
         let problem_tests_source = fs::read_to_string(problem_test_path.join("tests.h")).unwrap();
 
         check_regex(&solution_tests_regex, &problem_tests_source);
 
         println!("    Checking solutions ...");
 
-        let problem_path = leet_code_include_path.join(format!("problem-{}", problem_id));
+        let problem_path = leet_code_include_path.join(format!("problem-{problem_id}"));
         let problem_name = to_title_case(&problem_id);
 
         for solution_id in fs::read_dir(&problem_path)
             .unwrap()
             .map(|entry| entry.unwrap().path().file_stem().unwrap().to_str().unwrap().to_string())
         {
-            println!("        Checking solution “{}” ...", solution_id);
+            println!("        Checking solution “{solution_id}” ...");
             println!("            Checking solution ...");
 
             let solution_namespace = solution_id.replace('-', "_");
@@ -177,7 +177,7 @@ fn main() {
                 solution_namespace = solution_namespace.as_str(),
             );
 
-            let solution_source = fs::read_to_string(problem_path.join(format!("{}.h", solution_id))).unwrap();
+            let solution_source = fs::read_to_string(problem_path.join(format!("{solution_id}.h"))).unwrap();
 
             check_regex(&solution_regex, &solution_source);
 
@@ -202,7 +202,7 @@ fn main() {
             );
 
             let solution_tests_source =
-                fs::read_to_string(problem_test_path.join(format!("{}.cpp", solution_id))).unwrap();
+                fs::read_to_string(problem_test_path.join(format!("{solution_id}.cpp"))).unwrap();
 
             check_regex(&solution_tests_regex, &solution_tests_source);
         }

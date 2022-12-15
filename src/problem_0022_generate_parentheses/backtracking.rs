@@ -12,7 +12,7 @@ impl Solution {
             for i in (0..n).rev() {
                 for left in Self::generate_parenthesis(i) {
                     for right in Self::generate_parenthesis(n - i - 1) {
-                        result.push(format!("({}){}", left, right));
+                        result.push(format!("({left}){right}"));
                     }
                 }
             }

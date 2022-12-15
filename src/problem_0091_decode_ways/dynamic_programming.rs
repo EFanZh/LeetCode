@@ -10,7 +10,7 @@ impl Solution {
 
         if let Some(last) = s.last() {
             let mut cache_2 = 1;
-            let mut cache_1 = if *last == b'0' { 0 } else { 1 };
+            let mut cache_1 = i32::from(*last != b'0');
 
             for window in s.windows(2).rev() {
                 cache_2 = match window {

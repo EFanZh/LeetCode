@@ -127,7 +127,7 @@ figure { display: flex; justify-content: center; }
         }
 
         for language in Language::list() {
-            thead_tr.add_element("th").add_text(&format!("{} Solutions", language));
+            thead_tr.add_element("th").add_text(&format!("{language} Solutions"));
         }
     }
 

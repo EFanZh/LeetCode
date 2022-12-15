@@ -45,7 +45,7 @@ impl Solution {
 
         result.clear();
 
-        write!(&mut result, "{}+{}i", result_real, result_imaginary).unwrap();
+        write!(&mut result, "{result_real}+{result_imaginary}i").unwrap();
 
         result
     }

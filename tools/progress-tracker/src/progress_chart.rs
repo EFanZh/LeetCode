@@ -114,7 +114,7 @@ fn draw_chart(data: &[(DateTime<Utc>, usize)], total: usize, output: &Path) {
             .set_all_tick_mark_size(5 * ZOOM)
             .x_label_formatter(&|v| v.date_naive().format("%F").to_string())
             .x_labels(10)
-            .y_label_formatter(&|v| format!("{}%", v))
+            .y_label_formatter(&|v| format!("{v}%"))
             .y_labels(10)
             .draw()
             .unwrap();

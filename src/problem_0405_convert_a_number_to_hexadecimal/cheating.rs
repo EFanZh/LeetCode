@@ -6,7 +6,7 @@ impl Solution {
     pub fn to_hex(num: i32) -> String {
         let num = u32::from_le_bytes(num.to_le_bytes());
 
-        format!("{:x}", num)
+        format!("{num:x}")
     }
 }
 

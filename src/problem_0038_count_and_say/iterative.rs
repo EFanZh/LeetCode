@@ -15,14 +15,14 @@ impl Solution {
             if next == first {
                 length += 1;
             } else {
-                write!(target, "{}{}", length, char::from(*first)).unwrap();
+                write!(target, "{length}{}", char::from(*first)).unwrap();
 
                 first = next;
                 length = 1;
             }
         }
 
-        write!(target, "{}{}", length, char::from(*first)).unwrap();
+        write!(target, "{length}{}", char::from(*first)).unwrap();
     }
 
     pub fn count_and_say(n: i32) -> String {

@@ -10,7 +10,7 @@ impl Solution {
 
         if let Some(mut prev) = s.pop() {
             let mut cache_2 = 1;
-            let mut cache_1 = if prev == b'0' { 0 } else { 1 };
+            let mut cache_1 = i32::from(prev != b'0');
 
             while let Some(current) = s.pop() {
                 cache_2 = match (current, prev) {
