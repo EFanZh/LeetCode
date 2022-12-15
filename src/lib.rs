@@ -1051,6 +1051,7 @@ pub mod problem_1316_distinct_echo_substrings;
 pub mod problem_1317_convert_integer_to_the_sum_of_two_no_zero_integers;
 pub mod problem_1318_minimum_flips_to_make_a_or_b_equal_to_c;
 pub mod problem_1319_number_of_operations_to_make_network_connected;
+pub mod problem_1320_minimum_distance_to_type_a_word_using_two_fingers;
 pub mod problem_1323_maximum_69_number;
 pub mod problem_1324_print_words_vertically;
 pub mod problem_1325_delete_leaves_with_a_given_value;
