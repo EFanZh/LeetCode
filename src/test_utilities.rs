@@ -156,6 +156,26 @@ pub fn iter_tree_pre_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator
     })
 }
 
+pub fn iter_tree_in_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = i32> {
+    let mut state = root;
+    let mut stack = Vec::new();
+
+    iter::from_fn(move || {
+        while let Some(node) = state.take() {
+            state = node.borrow().left.clone();
+            stack.push(node);
+        }
+
+        stack.pop().map(|node| {
+            let node_ref = node.borrow();
+
+            state = node_ref.right.clone();
+
+            node_ref.val
+        })
+    })
+}
+
 pub fn iter_tree_post_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = i32> {
     enum State {
         Start(Rc<RefCell<TreeNode>>),
