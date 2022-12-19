@@ -1080,6 +1080,7 @@ pub mod problem_1353_maximum_number_of_events_that_can_be_attended;
 pub mod problem_1356_sort_integers_by_the_number_of_1_bits;
 pub mod problem_1358_number_of_substrings_containing_all_three_characters;
 pub mod problem_1359_count_all_valid_pickup_and_delivery_options;
+pub mod problem_1360_number_of_days_between_two_dates;
 pub mod problem_1361_validate_binary_tree_nodes;
 pub mod problem_1362_closest_divisors;
 pub mod problem_1363_largest_multiple_of_three;
