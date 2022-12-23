@@ -1096,6 +1096,7 @@ pub mod problem_1374_generate_a_string_with_characters_that_have_odd_counts;
 pub mod problem_1375_number_of_times_binary_string_is_prefix_aligned;
 pub mod problem_1376_time_needed_to_inform_all_employees;
 pub mod problem_1380_lucky_numbers_in_a_matrix;
+pub mod problem_1381_design_a_stack_with_increment_operation;
 pub mod problem_1382_balance_a_binary_search_tree;
 pub mod problem_1387_sort_integers_by_the_power_value;
 pub mod problem_1720_decode_xored_array;
