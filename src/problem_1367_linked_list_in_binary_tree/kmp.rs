@@ -37,9 +37,7 @@ impl Solution {
     }
 
     fn helper(node: Option<&RefCell<TreeNode>>, list_and_prefix_function: &[(u8, u8)], mut matched: usize) -> bool {
-        if matched == list_and_prefix_function.len() {
-            true
-        } else if let Some(node) = node.map(RefCell::borrow) {
+        if let Some(node) = node.map(RefCell::borrow) {
             let c = node.val as u8;
 
             loop {
@@ -54,7 +52,8 @@ impl Solution {
                 }
             }
 
-            Self::helper(node.left.as_deref(), list_and_prefix_function, matched)
+            matched == list_and_prefix_function.len()
+                || Self::helper(node.left.as_deref(), list_and_prefix_function, matched)
                 || Self::helper(node.right.as_deref(), list_and_prefix_function, matched)
         } else {
             false
