@@ -3,6 +3,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 pub mod kmp;
+pub mod kmp_2;
 
 pub trait Solution {
     fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool;
