@@ -1104,6 +1104,7 @@ pub mod problem_1382_balance_a_binary_search_tree;
 pub mod problem_1385_find_the_distance_value_between_two_arrays;
 pub mod problem_1386_cinema_seat_allocation;
 pub mod problem_1387_sort_integers_by_the_power_value;
+pub mod problem_1390_four_divisors;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
