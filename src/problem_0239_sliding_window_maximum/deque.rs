@@ -7,37 +7,31 @@ use std::collections::VecDeque;
 impl Solution {
     pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
         let k = k as _;
-        let mut result = Vec::with_capacity(nums.len() - k + 1);
+        let mut result = Vec::with_capacity(nums.len() - (k - 1));
+        let mut queue = VecDeque::with_capacity(k - 1);
+        let (left, right) = nums.split_at(k);
 
-        if !nums.is_empty() {
-            let mut stack = VecDeque::with_capacity(k);
-            let (nums_1, nums_2) = nums.split_at(k);
-
-            for num in nums_1 {
-                if let Some(i) = stack.iter().position(|x| x < num) {
-                    stack.truncate(i);
-                }
-
-                stack.push_back(*num);
+        for &num in left {
+            while queue.back().map_or(false, |&back| back < num) {
+                queue.pop_back();
             }
 
-            for (new_num, old_num) in nums_2.iter().zip(&nums) {
-                let front = stack[0];
+            queue.push_back(num);
+        }
 
-                result.push(front);
+        result.push(queue[0]);
 
-                if front == *old_num {
-                    stack.pop_front();
-                }
-
-                if let Some(i) = stack.iter().position(|x| x < new_num) {
-                    stack.truncate(i);
-                }
-
-                stack.push_back(*new_num);
+        for (&old, &num) in nums.iter().zip(right) {
+            if queue[0] == old {
+                queue.pop_front();
             }
 
-            result.push(stack[0]);
+            while queue.back().map_or(false, |&back| back < num) {
+                queue.pop_back();
+            }
+
+            queue.push_back(num);
+            result.push(queue[0]);
         }
 
         result
