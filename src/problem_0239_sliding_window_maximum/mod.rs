@@ -11,7 +11,8 @@ mod tests {
     pub fn run<S: Solution>() {
         let test_cases = [
             ((&[1, 3, -1, -3, 5, 3, 6, 7] as &[_], 3), &[3, 3, 5, 5, 6, 7] as &[_]),
-            ((&[], 0), &[]),
+            ((&[1], 1), &[1]),
+            ((&[-7, -8, 7, 5, 7, 1, 6, 0], 4), &[7, 7, 7, 7, 7]),
         ];
 
         for ((nums, k), expected) in test_cases {
