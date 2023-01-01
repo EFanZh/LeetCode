@@ -361,3 +361,7 @@ Make sure it can be solved again.
 ## [1000. Minimum Cost to Merge Stones](https://leetcode.com/problems/minimum-cost-to-merge-stones/)
 
 Make sure it can be solved again.
+
+## [1335. Minimum Difficulty of a Job Schedule](https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/)
+
+Why is this solution correct?
