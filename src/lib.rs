@@ -1072,6 +1072,7 @@ pub mod problem_1340_jump_game_v;
 pub mod problem_1342_number_of_steps_to_reduce_a_number_to_zero;
 pub mod problem_1343_number_of_sub_arrays_of_size_k_and_average_greater_than_or_equal_to_threshold;
 pub mod problem_1344_angle_between_hands_of_a_clock;
+pub mod problem_1345_jump_game_iv;
 pub mod problem_1346_check_if_n_and_its_double_exist;
 pub mod problem_1347_minimum_number_of_steps_to_make_two_strings_anagram;
 pub mod problem_1348_tweet_counts_per_frequency;
