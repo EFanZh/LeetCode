@@ -1104,6 +1104,7 @@ pub mod problem_1377_frog_position_after_t_seconds;
 pub mod problem_1380_lucky_numbers_in_a_matrix;
 pub mod problem_1381_design_a_stack_with_increment_operation;
 pub mod problem_1382_balance_a_binary_search_tree;
+pub mod problem_1383_maximum_performance_of_a_team;
 pub mod problem_1385_find_the_distance_value_between_two_arrays;
 pub mod problem_1386_cinema_seat_allocation;
 pub mod problem_1387_sort_integers_by_the_power_value;
