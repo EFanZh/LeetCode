@@ -1111,6 +1111,7 @@ pub mod problem_1387_sort_integers_by_the_power_value;
 pub mod problem_1390_four_divisors;
 pub mod problem_1391_check_if_there_is_a_valid_path_in_a_grid;
 pub mod problem_1392_longest_happy_prefix;
+pub mod problem_1394_find_lucky_integer_in_an_array;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
