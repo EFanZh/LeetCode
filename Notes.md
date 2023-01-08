@@ -365,3 +365,7 @@ Make sure it can be solved again.
 ## [1335. Minimum Difficulty of a Job Schedule](https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/)
 
 Why is this solution correct?
+
+## [1388. Pizza With 3n Slices](https://leetcode.com/problems/pizza-with-3n-slices/)
+
+Why is this solution correct?
