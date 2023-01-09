@@ -1109,6 +1109,7 @@ pub mod problem_1385_find_the_distance_value_between_two_arrays;
 pub mod problem_1386_cinema_seat_allocation;
 pub mod problem_1387_sort_integers_by_the_power_value;
 pub mod problem_1388_pizza_with_3n_slices;
+pub mod problem_1389_create_target_array_in_the_given_order;
 pub mod problem_1390_four_divisors;
 pub mod problem_1391_check_if_there_is_a_valid_path_in_a_grid;
 pub mod problem_1392_longest_happy_prefix;
