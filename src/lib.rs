@@ -1117,6 +1117,7 @@ pub mod problem_1394_find_lucky_integer_in_an_array;
 pub mod problem_1396_design_underground_system;
 pub mod problem_1399_count_largest_group;
 pub mod problem_1400_construct_k_palindrome_strings;
+pub mod problem_1401_circle_and_rectangle_overlapping;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
