@@ -1120,6 +1120,7 @@ pub mod problem_1399_count_largest_group;
 pub mod problem_1400_construct_k_palindrome_strings;
 pub mod problem_1401_circle_and_rectangle_overlapping;
 pub mod problem_1403_minimum_subsequence_in_non_increasing_order;
+pub mod problem_1404_number_of_steps_to_reduce_a_number_in_binary_representation_to_one;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
