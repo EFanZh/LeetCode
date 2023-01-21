@@ -1127,6 +1127,7 @@ pub mod problem_1406_stone_game_iii;
 pub mod problem_1408_string_matching_in_an_array;
 pub mod problem_1410_html_entity_parser;
 pub mod problem_1411_number_of_ways_to_paint_n_3_grid;
+pub mod problem_1413_minimum_value_to_get_positive_step_by_step_sum;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
