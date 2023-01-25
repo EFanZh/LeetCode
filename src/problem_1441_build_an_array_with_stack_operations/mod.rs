@@ -1,4 +1,5 @@
 pub mod iterative;
+pub mod iterative_2;
 
 pub trait Solution {
     fn build_array(target: Vec<i32>, n: i32) -> Vec<String>;
