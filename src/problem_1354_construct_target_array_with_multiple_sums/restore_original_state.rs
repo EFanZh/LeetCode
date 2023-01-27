@@ -10,6 +10,7 @@ impl Solution {
         let mut sum = target.iter().copied().sum::<i32>() as u32;
         let mut queue = target.into_iter().map(|value| value as u32).collect::<BinaryHeap<_>>();
 
+        #[allow(clippy::manual_let_else)]
         loop {
             let mut top = queue.peek_mut().unwrap();
             let old_top = *top;

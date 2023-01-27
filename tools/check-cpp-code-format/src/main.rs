@@ -95,9 +95,7 @@ fn to_title_case(id: &str) -> String {
 fn check_regex(re: &str, text: &str) {
     assert!(
         Regex::new(re).unwrap().is_match(text),
-        "regex = {:?}, text = {:?}",
-        re,
-        text
+        "regex = {re:?}, text = {text:?}",
     );
 }
 

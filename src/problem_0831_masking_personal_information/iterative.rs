@@ -15,7 +15,7 @@ impl Solution {
         } else {
             let mut s_vec = s.into_bytes();
 
-            s_vec.retain(|c| matches!(c, b'0'..=b'9'));
+            s_vec.retain(u8::is_ascii_digit);
 
             s = String::from_utf8(s_vec).unwrap();
 

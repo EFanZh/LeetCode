@@ -12,7 +12,7 @@ impl Solution {
 
         let mut counts = HashMap::new();
 
-        for word in paragraph.split(|c: char| !matches!(c, 'a'..='z')) {
+        for word in paragraph.split(|c: char| !c.is_ascii_lowercase()) {
             if !word.is_empty() {
                 counts.entry(word).and_modify(|count| *count += 1).or_insert(1);
             }

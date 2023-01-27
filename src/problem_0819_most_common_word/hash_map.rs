@@ -13,7 +13,7 @@ impl Solution {
         let mut counts = HashMap::new();
         let banned = banned.iter().map(String::as_str).collect::<HashSet<_>>();
 
-        for word in paragraph.split(|c: char| !matches!(c, 'a'..='z')) {
+        for word in paragraph.split(|c: char| !c.is_ascii_lowercase()) {
             if !(word.is_empty() || banned.contains(word)) {
                 counts.entry(word).and_modify(|count| *count += 1).or_insert(1);
             }
