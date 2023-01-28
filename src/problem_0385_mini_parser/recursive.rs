@@ -36,7 +36,7 @@ impl Solution {
         if let Some(item) = Self::nested_integer(iter) {
             result.push(item);
 
-            while let Some(b',') = iter.peek() {
+            while iter.peek().copied() == Some(b',') {
                 iter.next();
                 result.push(Self::nested_integer(iter).unwrap());
             }
@@ -46,7 +46,7 @@ impl Solution {
     }
 
     fn nested_integer(iter: &mut Peekable<impl Iterator<Item = u8>>) -> Option<NestedInteger> {
-        if let Some(b'[') = iter.peek() {
+        if iter.peek().copied() == Some(b'[') {
             iter.next();
 
             let list = Self::list(iter);

@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn advantage_count(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         let mut nums1 = nums1;
         let mut result = vec![0; nums1.len()];

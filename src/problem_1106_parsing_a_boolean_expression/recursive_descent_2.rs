@@ -11,7 +11,7 @@ impl Solution {
 
         let mut result = Self::parse_expression(input);
 
-        while let Some(b',') = input.next() {
+        while input.next() == Some(b',') {
             result = f(result, Self::parse_expression(input));
         }
 

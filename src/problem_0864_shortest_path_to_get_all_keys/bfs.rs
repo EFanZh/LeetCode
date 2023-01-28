@@ -24,11 +24,7 @@ impl Solution {
         }
 
         let mut queue = VecDeque::from([(start_row, start_column, remaining)]);
-
-        let mut visited = Some((start_row, start_column, remaining))
-            .into_iter()
-            .collect::<HashSet<_>>();
-
+        let mut visited = HashSet::from([(start_row, start_column, remaining)]);
         let mut result = 1;
 
         loop {

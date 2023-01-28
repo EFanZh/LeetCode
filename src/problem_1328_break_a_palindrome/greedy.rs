@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn break_palindrome(palindrome: String) -> String {
         let mut bytes = palindrome.into_bytes();
         let n = bytes.len();

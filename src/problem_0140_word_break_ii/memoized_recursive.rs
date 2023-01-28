@@ -12,9 +12,10 @@ struct Node {
 }
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     fn word_break_helper(s: &[u8], root: &Node, cache: &mut HashMap<*const u8, Rc<[String]>>) -> Rc<[String]> {
-        if let Some(result) = cache.get(&s.as_ptr()) {
-            Rc::clone(result)
+        Rc::clone(if let Some(result) = cache.get(&s.as_ptr()) {
+            result
         } else {
             let mut result = Vec::new();
 
@@ -48,8 +49,8 @@ impl Solution {
                 }
             }
 
-            Rc::clone(cache.entry(s.as_ptr()).or_insert_with(|| result.into()))
-        }
+            cache.entry(s.as_ptr()).or_insert_with(|| result.into())
+        })
     }
 
     pub fn word_break(s: String, word_dict: Vec<String>) -> Vec<String> {

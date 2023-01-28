@@ -8,7 +8,7 @@ impl Solution {
     pub fn num_decodings(s: String) -> i32 {
         let mut s = s.into_bytes();
 
-        if let Some(mut prev) = s.pop() {
+        s.pop().map_or(1, |mut prev| {
             let mut cache_2 = 1;
             let mut cache_1 = i32::from(prev != b'0');
 
@@ -27,9 +27,7 @@ impl Solution {
             }
 
             cache_1
-        } else {
-            1
-        }
+        })
     }
 }
 

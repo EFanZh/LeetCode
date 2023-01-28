@@ -12,13 +12,14 @@ struct Pool {
 
 impl Pool {
     fn allocate(&mut self, item: usize) -> Vec<usize> {
-        if let Some(mut result) = self.inner.pop() {
-            result.push(item);
+        self.inner.pop().map_or_else(
+            || vec![item],
+            |mut result| {
+                result.push(item);
 
-            result
-        } else {
-            vec![item]
-        }
+                result
+            },
+        )
     }
 
     fn free(&mut self, mut value: Vec<usize>) {
@@ -110,6 +111,7 @@ impl Solution {
         None
     }
 
+    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn longest_dup_substring(s: String) -> String {
         let mut left = 1;
         let mut right = s.len();

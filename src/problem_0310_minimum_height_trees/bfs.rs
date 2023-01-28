@@ -6,6 +6,7 @@ use std::convert::TryInto;
 use std::mem;
 
 impl Solution {
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
         let mut graph = vec![Vec::with_capacity(1); n as _];
         let mut indegrees = vec![0; n as _];

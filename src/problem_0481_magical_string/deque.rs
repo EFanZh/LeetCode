@@ -8,7 +8,7 @@ impl Solution {
     pub fn magical_string(n: i32) -> i32 {
         let n = n as usize;
 
-        if let Some(mut n) = n.checked_sub(4) {
+        n.checked_sub(4).map_or(1, |mut n| {
             let mut cache = VecDeque::new();
             let mut result = 2;
 
@@ -47,9 +47,7 @@ impl Solution {
             }
 
             result
-        } else {
-            1
-        }
+        })
     }
 }
 

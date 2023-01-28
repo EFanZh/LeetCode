@@ -10,7 +10,7 @@ impl Solution {
     fn unwrap_occupied<K, V>(entry: Entry<K, V>) -> OccupiedEntry<K, V> {
         match entry {
             Entry::Occupied(entry) => entry,
-            Entry::Vacant(_) => panic!(),
+            Entry::Vacant(_) => unreachable!(),
         }
     }
 

@@ -6,6 +6,7 @@ use std::collections::HashMap;
 use std::mem;
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     fn dfs(word: &mut [u8], cache: &mut HashMap<&[u8], u32>) -> u32 {
         if let Some(length) = cache.get_mut(word) {
             if *length == 0 {

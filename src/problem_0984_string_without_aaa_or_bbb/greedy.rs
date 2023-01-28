@@ -17,11 +17,7 @@ impl Solution {
 
         let extra = b - a;
 
-        let (extra, extra_2) = if let Some(extra_2) = extra.checked_sub(a) {
-            (a, extra_2)
-        } else {
-            (extra, 0)
-        };
+        let (extra, extra_2) = extra.checked_sub(a).map_or((extra, 0), |extra_2| (a, extra_2));
 
         for _ in 0..extra {
             result.push_str(s1);

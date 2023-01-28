@@ -45,13 +45,17 @@ impl Solution {
         } else {
             let (left, right) = input.split_at(end);
 
-            if let Ok(value) = left.parse() {
-                Some((Ok(value), right))
-            } else {
-                let index = symbol_map.get_index(left);
+            Some((
+                left.parse().map_or_else(
+                    |_| {
+                        let index = symbol_map.get_index(left);
 
-                Some((values.get(usize::from(index)).copied().ok_or(index), right))
-            }
+                        values.get(usize::from(index)).copied().ok_or(index)
+                    },
+                    Ok,
+                ),
+                right,
+            ))
         }
     }
 

@@ -35,7 +35,7 @@ impl Solution {
                 let new_box = new_box as usize;
                 let state = &mut discovery[new_box];
 
-                if let State::NotDiscovered = state {
+                if matches!(state, State::NotDiscovered) {
                     *state = State::HasBox;
                 } else {
                     *state = State::Visited;

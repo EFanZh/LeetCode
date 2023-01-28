@@ -4,6 +4,7 @@ pub struct Solution;
 
 use std::cmp::Reverse;
 use std::convert::TryInto;
+use std::mem;
 
 struct Node {
     length: usize,
@@ -66,11 +67,13 @@ impl Solution {
 
         let mut tree = None;
 
-        for p in people.drain(..) {
+        for p in &mut people {
             let index = p[1] as _;
 
-            Self::insert_tree(&mut tree, index, p);
+            Self::insert_tree(&mut tree, index, mem::take(p));
         }
+
+        people.clear();
 
         Self::dfs(tree, &mut people);
 

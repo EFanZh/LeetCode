@@ -22,11 +22,10 @@ impl Solution {
     }
 
     fn mul_sub_div(lhs: u64, rhs: u64, subtract: u64, denominator: u64) -> u64 {
-        if let Some(numerator) = lhs.checked_mul(rhs) {
-            (numerator - subtract) / denominator
-        } else {
-            ((u128::from(lhs) * u128::from(rhs) - u128::from(subtract)) / u128::from(denominator)) as _
-        }
+        lhs.checked_mul(rhs).map_or_else(
+            || ((u128::from(lhs) * u128::from(rhs) - u128::from(subtract)) / u128::from(denominator)) as _,
+            |numerator| (numerator - subtract) / denominator,
+        )
     }
 
     pub fn nth_magical_number(n: i32, a: i32, b: i32) -> i32 {

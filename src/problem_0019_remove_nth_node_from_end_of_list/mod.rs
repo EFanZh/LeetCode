@@ -1,7 +1,6 @@
 use crate::data_structures::ListNode;
 
 pub mod measure_length;
-pub mod scout;
 
 pub trait Solution {
     fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>>;

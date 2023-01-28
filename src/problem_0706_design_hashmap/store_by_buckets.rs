@@ -52,6 +52,7 @@ impl MyHashMap {
         (hash_key(key) >> (32 - bucket_bits)) as _
     }
 
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     fn get(&self, key: i32) -> i32 {
         let bucket_index = self.bucket_index(key);
 

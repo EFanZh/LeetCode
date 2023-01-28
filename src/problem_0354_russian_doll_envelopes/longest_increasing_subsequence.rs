@@ -6,6 +6,7 @@ use std::cmp::Reverse;
 use std::convert::TryInto;
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
         let mut envelopes = envelopes;
 

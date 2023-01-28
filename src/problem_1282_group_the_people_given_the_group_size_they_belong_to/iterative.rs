@@ -5,6 +5,7 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn group_the_people(group_sizes: Vec<i32>) -> Vec<Vec<i32>> {
         let mut buckets = Vec::<Vec<_>>::with_capacity(group_sizes.len());
         let mut result = Vec::new();
