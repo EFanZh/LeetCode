@@ -5,6 +5,7 @@ pub struct Solution;
 use std::collections::BinaryHeap;
 
 impl Solution {
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_maximized_capital(k: i32, w: i32, profits: Vec<i32>, capital: Vec<i32>) -> i32 {
         let mut w = w;
         let mut projects = profits.into_iter().zip(capital).collect::<Vec<_>>();

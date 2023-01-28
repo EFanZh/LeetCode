@@ -31,9 +31,11 @@ impl Solution {
                         to_remove.push(x);
                     }
 
-                    for x in to_remove.drain(..) {
-                        skyline.remove(&x);
+                    for x in &to_remove {
+                        skyline.remove(x);
                     }
+
+                    to_remove.clear();
 
                     if last_x == right {
                         let height = base + length;

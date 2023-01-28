@@ -15,6 +15,8 @@ impl Solution {
         loop {
             let middle = left + (right - left) / 2;
 
+            // SAFETY:
+            // Function requirement.
             match unsafe { guess(middle) } {
                 -1 => right = middle - 1,
                 0 => return middle,

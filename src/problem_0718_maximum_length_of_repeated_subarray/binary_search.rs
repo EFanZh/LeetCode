@@ -60,13 +60,14 @@ impl Solution {
                 .entry(hash)
                 .and_modify(|v| v.push(slice))
                 .or_insert_with(|| {
-                    if let Some(mut v) = bucket_pool.pop() {
-                        v.push(slice);
+                    bucket_pool.pop().map_or_else(
+                        || vec![slice],
+                        |mut v| {
+                            v.push(slice);
 
-                        v
-                    } else {
-                        vec![slice]
-                    }
+                            v
+                        },
+                    )
                 });
 
             false

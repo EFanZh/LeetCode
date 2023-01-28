@@ -4,6 +4,7 @@ pub struct Solution;
 
 use std::collections::VecDeque;
 use std::convert::TryInto;
+use std::mem;
 
 impl Solution {
     pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
@@ -26,7 +27,7 @@ impl Solution {
         while let Some(node) = queue.pop_front() {
             removed += 1;
 
-            for next in graph[node as usize].drain(..) {
+            for next in mem::take(&mut graph[node as usize]) {
                 let in_degree = &mut in_degrees[next as usize];
 
                 if *in_degree == 1 {

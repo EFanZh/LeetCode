@@ -155,7 +155,7 @@ impl Solution {
         let mut depth = 1;
         let node = State::new(board.as_bytes(), hand.as_bytes());
         let mut queue = VecDeque::from([node]);
-        let mut visited = Some(node).into_iter().collect::<HashSet<_>>();
+        let mut visited = HashSet::from([node]);
 
         loop {
             for _ in 0..queue.len() {

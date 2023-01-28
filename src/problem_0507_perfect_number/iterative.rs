@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn check_perfect_number(num: i32) -> bool {
         let num = num as u32;
         let last = f64::from(num).sqrt() as u32;

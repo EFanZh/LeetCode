@@ -53,6 +53,7 @@ impl Heap {
         *target = index;
     }
 
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     fn sift_down_by_key<T>(&mut self, mut index: usize, value: usize, key: &T, mut key_fn: impl FnMut(usize) -> T)
     where
         T: Ord,
@@ -172,11 +173,9 @@ impl DinnerPlates {
     }
 
     fn pop(&mut self) -> i32 {
-        if let Some(index) = self.non_empty_heap.peek() {
-            self.pop_at(index).unwrap()
-        } else {
-            -1
-        }
+        self.non_empty_heap
+            .peek()
+            .map_or(-1, |index| self.pop_at(index).unwrap())
     }
 
     fn pop_at_stack(&mut self, index: i32) -> i32 {

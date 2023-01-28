@@ -5,6 +5,7 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
+    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn minimum_abs_difference(arr: Vec<i32>) -> Vec<Vec<i32>> {
         let mut arr = arr;
 

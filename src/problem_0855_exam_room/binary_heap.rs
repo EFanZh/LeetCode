@@ -53,8 +53,8 @@ impl ExamRoom {
                 start: 0,
                 end: n | 0x8000_0000,
             }],
-            starts: Some((0, 0)).into_iter().collect(),
-            ends: Some((n, 0)).into_iter().collect(),
+            starts: HashMap::from([(0, 0)]),
+            ends: HashMap::from([(n, 0)]),
             n,
         }
     }

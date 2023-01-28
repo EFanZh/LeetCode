@@ -23,7 +23,6 @@ impl Solution {
                     stack += 1;
 
                     s[result_length] = b'(';
-                    result_length += 1;
                 } else {
                     stack -= 1;
 
@@ -32,8 +31,9 @@ impl Solution {
                     }
 
                     s[result_length] = b')';
-                    result_length += 1;
                 }
+
+                result_length += 1;
             }
         }
 

@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn min_deletion_size(strs: Vec<String>) -> i32 {
         let columns = strs.first().map_or(0, String::len);
         let mut cache = Vec::with_capacity(columns);

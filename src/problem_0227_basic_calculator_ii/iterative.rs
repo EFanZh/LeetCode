@@ -7,7 +7,7 @@ use std::mem;
 
 impl Solution {
     fn whitespaces(iter: &mut Peekable<impl Iterator<Item = u8>>) {
-        while let Some(b' ') = iter.peek() {
+        while iter.peek().copied() == Some(b' ') {
             iter.next();
         }
     }

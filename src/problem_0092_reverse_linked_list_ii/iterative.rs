@@ -8,7 +8,7 @@ use std::mem;
 use std::ptr::NonNull;
 
 impl Solution {
-    #[allow(unsafe_code)]
+    #[allow(unsafe_code, clippy::undocumented_unsafe_blocks)] // TODO: Fix the solution.
     pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {
         let mut head = head;
         let m = m - 1;

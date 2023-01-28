@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::map_err_ignore)] // Expected.
     pub fn cal_points(ops: Vec<String>) -> i32 {
         let mut stack = Vec::with_capacity(ops.len());
 
