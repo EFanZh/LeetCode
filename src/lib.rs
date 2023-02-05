@@ -1183,6 +1183,7 @@ pub mod problem_1419_minimum_number_of_frogs_croaking;
 pub mod problem_1422_maximum_score_after_splitting_a_string;
 pub mod problem_1423_maximum_points_you_can_obtain_from_cards;
 pub mod problem_1424_diagonal_traverse_ii;
+pub mod problem_1425_constrained_subsequence_sum;
 pub mod problem_1431_kids_with_the_greatest_number_of_candies;
 pub mod problem_1433_check_if_a_string_can_break_another_string;
 pub mod problem_1436_destination_city;
