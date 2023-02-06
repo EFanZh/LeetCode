@@ -1185,6 +1185,7 @@ pub mod problem_1423_maximum_points_you_can_obtain_from_cards;
 pub mod problem_1424_diagonal_traverse_ii;
 pub mod problem_1425_constrained_subsequence_sum;
 pub mod problem_1431_kids_with_the_greatest_number_of_candies;
+pub mod problem_1432_max_difference_you_can_get_from_changing_an_integer;
 pub mod problem_1433_check_if_a_string_can_break_another_string;
 pub mod problem_1436_destination_city;
 pub mod problem_1437_check_if_all_1s_are_at_least_length_k_places_away;
