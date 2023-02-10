@@ -1194,6 +1194,7 @@ pub mod problem_1441_build_an_array_with_stack_operations;
 pub mod problem_1442_count_triplets_that_can_form_two_arrays_of_equal_xor;
 pub mod problem_1446_consecutive_characters;
 pub mod problem_1447_simplified_fractions;
+pub mod problem_1448_count_good_nodes_in_binary_tree;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
