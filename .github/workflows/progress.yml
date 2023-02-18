@@ -1,15 +1,19 @@
 name: Progress
 on: push
 jobs:
-    update-progress:
+    build:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v2
+          - uses: actions/checkout@v3
             with:
-                fetch-depth: "0"
-          - uses: actions-rs/toolchain@v1
-          - run: cargo run --package progress-tracker --release -- . progress-report
-          - uses: peaceiris/actions-gh-pages@v3
-            with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_dir: progress-report
+                fetch-depth: 0
+          - run: cargo run --package progress-tracker --release -- . _site
+          - uses: actions/upload-pages-artifact@v1
+    deploy:
+        needs: build
+        permissions:
+            id-token: write
+            pages: write
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/deploy-pages@v1
