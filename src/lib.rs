@@ -1181,6 +1181,7 @@ pub mod problem_1416_restore_the_array;
 pub mod problem_1417_reformat_the_string;
 pub mod problem_1418_display_table_of_food_orders_in_a_restaurant;
 pub mod problem_1419_minimum_number_of_frogs_croaking;
+pub mod problem_1420_build_array_where_you_can_find_the_maximum_exactly_k_comparisons;
 pub mod problem_1422_maximum_score_after_splitting_a_string;
 pub mod problem_1423_maximum_points_you_can_obtain_from_cards;
 pub mod problem_1424_diagonal_traverse_ii;
