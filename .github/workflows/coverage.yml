@@ -4,20 +4,18 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v2
+          - uses: actions/checkout@v3
+          - run: rustup component add llvm-tools
           - run: sudo apt-get install --no-install-recommends -y ninja-build
           - run: vcpkg install gtest
-          - uses: actions-rs/toolchain@v1
-            with:
-                components: llvm-tools-preview
           - run: >-
                 cargo xtask coverage
                 --cmake-toolchain-file "$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-                --llvm-version 12
+                --llvm-version 14
                 -o coverage/lcov.info
-          - uses: codecov/codecov-action@v1
+          - uses: codecov/codecov-action@v3
             with:
-                file: coverage/lcov.info
+                files: coverage/lcov.info
           - uses: coverallsapp/github-action@master
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}

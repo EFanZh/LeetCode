@@ -4,10 +4,7 @@ jobs:
     rustfmt:
         runs-on: ${{ matrix.os }}
         steps:
-          - uses: actions/checkout@v2
-          - uses: actions-rs/toolchain@v1
-            with:
-                components: rustfmt
+          - uses: actions/checkout@v3
           - run: cargo fmt --all -- --check
         strategy:
             matrix:
@@ -18,10 +15,7 @@ jobs:
     clippy:
         runs-on: ${{ matrix.os }}
         steps:
-          - uses: actions/checkout@v2
-          - uses: actions-rs/toolchain@v1
-            with:
-                components: clippy
+          - uses: actions/checkout@v3
           - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
         strategy:
             matrix:
@@ -32,8 +26,7 @@ jobs:
     tests:
         runs-on: ${{ matrix.os }}
         steps:
-          - uses: actions/checkout@v2
-          - uses: actions-rs/toolchain@v1
+          - uses: actions/checkout@v3
           - run: cargo test --workspace
         strategy:
             matrix:
