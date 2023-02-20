@@ -1,4 +1,4 @@
-pub mod dynamic_programming;
+pub mod sliding_window;
 
 pub trait Solution {
     fn max_vowels(s: String, k: i32) -> i32;
