@@ -1216,6 +1216,7 @@ pub mod problem_1480_running_sum_of_1d_array;
 pub mod problem_1481_least_number_of_unique_integers_after_k_removals;
 pub mod problem_1491_average_salary_excluding_the_minimum_and_maximum_salary;
 pub mod problem_1492_the_kth_factor_of_n;
+pub mod problem_1493_longest_subarray_of_1s_after_deleting_one_element;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
