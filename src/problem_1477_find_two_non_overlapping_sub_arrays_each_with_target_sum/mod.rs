@@ -1,3 +1,4 @@
+pub mod cached_sliding_window;
 pub mod sliding_window;
 
 pub trait Solution {
@@ -13,6 +14,7 @@ mod tests {
             ((&[3, 2, 2, 4, 3] as &[_], 3), 2),
             ((&[7, 3, 4, 7], 7), 2),
             ((&[4, 3, 2, 6, 2, 3, 4], 6), -1),
+            ((&[3, 1, 1, 1, 5, 1, 2, 1], 3), 3),
         ];
 
         for ((arr, target), expected) in test_cases {

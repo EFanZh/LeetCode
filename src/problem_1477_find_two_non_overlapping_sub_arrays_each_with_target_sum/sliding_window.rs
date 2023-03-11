@@ -32,20 +32,20 @@ impl Window {
 
 impl Solution {
     fn inner(arr: &[i32], target: u32) -> usize {
-        let mut left_window = Window::default();
-        let mut left_min_length = usize::MAX;
         let mut right_window = Window::default();
+        let mut left_window = Window::default();
+        let mut min_left_length = usize::MAX;
         let mut result = usize::MAX;
 
         for &right_num in arr {
             if right_window.slide(arr, target, right_num as _) {
                 for &left_num in &arr[left_window.start + left_window.length..right_window.start] {
                     if left_window.slide(arr, target, left_num as _) {
-                        left_min_length = left_min_length.min(left_window.length);
+                        min_left_length = min_left_length.min(left_window.length);
                     }
                 }
 
-                if let Some(new_result) = left_min_length.checked_add(right_window.length) {
+                if let Some(new_result) = min_left_length.checked_add(right_window.length) {
                     result = result.min(new_result);
                 }
             }
