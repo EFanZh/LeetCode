@@ -1227,6 +1227,7 @@ pub mod problem_1503_last_moment_before_all_ants_fall_out_of_a_plank;
 pub mod problem_1507_reformat_date;
 pub mod problem_1512_number_of_good_pairs;
 pub mod problem_1513_number_of_substrings_with_only_1s;
+pub mod problem_1518_water_bottles;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
