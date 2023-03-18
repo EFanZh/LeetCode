@@ -26,7 +26,7 @@ impl PartialOrd for Item {
 
 impl Ord for Item {
     fn cmp(&self, other: &Self) -> Ordering {
-        other.sum.cmp(&self.sum)
+        u32::cmp(&(other.sum as _), &(self.sum as _))
     }
 }
 
