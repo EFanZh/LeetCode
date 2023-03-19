@@ -1231,6 +1231,7 @@ pub mod problem_1513_number_of_substrings_with_only_1s;
 pub mod problem_1518_water_bottles;
 pub mod problem_1523_count_odd_numbers_in_an_interval_range;
 pub mod problem_1524_number_of_sub_arrays_with_odd_sum;
+pub mod problem_1525_number_of_good_ways_to_split_a_string;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
