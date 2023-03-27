@@ -1239,6 +1239,7 @@ pub mod problem_1529_minimum_suffix_flips;
 pub mod problem_1539_kth_missing_positive_number;
 pub mod problem_1541_minimum_insertions_to_balance_a_parentheses_string;
 pub mod problem_1544_make_the_string_great;
+pub mod problem_1546_maximum_number_of_non_overlapping_subarrays_with_sum_equals_target;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
