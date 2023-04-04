@@ -1247,6 +1247,7 @@ pub mod problem_1546_maximum_number_of_non_overlapping_subarrays_with_sum_equals
 pub mod problem_1550_three_consecutive_odds;
 pub mod problem_1551_minimum_operations_to_make_array_equal;
 pub mod problem_1552_magnetic_force_between_two_balls;
+pub mod problem_1556_thousand_separator;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
