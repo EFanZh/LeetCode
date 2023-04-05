@@ -41,33 +41,35 @@ impl Solution {
         }
 
         for (house, house_costs) in iter {
+            let mut row_iter = cache.chunks_exact_mut(n).rev();
+            let mut row = row_iter.next().unwrap();
+
             if house == 0 {
                 // `neighborhoods > 1`.
 
-                for neighborhoods in (2..=target).rev() {
-                    let (top_row, row) = cache[n * (neighborhoods - 2)..].split_at_mut(n);
+                for top_row in row_iter {
                     let (top_min_cost_1, top_min_cost_2) = Self::get_min_costs(top_row);
 
-                    for ((slot, &mut top_cost), &cost) in row.iter_mut().zip(top_row).zip(&house_costs) {
+                    for ((slot, &mut top_cost), &cost) in row.iter_mut().zip(top_row.iter_mut()).zip(&house_costs) {
                         *slot = (*slot).min(if top_cost == top_min_cost_1 {
                             top_min_cost_2
                         } else {
                             top_min_cost_1
                         }) + cost as u32;
                     }
+
+                    row = top_row;
                 }
 
                 // `neighborhoods == 1`.
 
-                for (slot, &cost) in cache.iter_mut().zip(&house_costs) {
-                    *slot = slot.saturating_add(cost as _);
+                for (slot, &cost) in row.iter_mut().zip(&house_costs) {
+                    *slot += cost as u32;
                 }
             } else {
                 // `neighborhoods > 1`.
 
-                for neighborhoods in (2..=target).rev() {
-                    let (top_row, row) = cache[n * (neighborhoods - 2)..].split_at_mut(n);
-
+                for top_row in row_iter {
                     row[..house - 1].fill(INVALID);
 
                     let slot = &mut row[house - 1];
@@ -83,13 +85,15 @@ impl Solution {
 
                     *slot = (*slot).min(min_top_cost);
 
-                    row[house..n].fill(INVALID);
+                    row[house..].fill(INVALID);
+
+                    row = top_row;
                 }
 
                 // `neighborhoods == 1`.
 
-                cache[..house - 1].fill(INVALID);
-                cache[house..n].fill(INVALID);
+                row[..house - 1].fill(INVALID);
+                row[house..].fill(INVALID);
             }
         }
 
