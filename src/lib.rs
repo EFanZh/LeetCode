@@ -1226,6 +1226,7 @@ pub mod problem_1480_running_sum_of_1d_array;
 pub mod problem_1481_least_number_of_unique_integers_after_k_removals;
 pub mod problem_1482_minimum_number_of_days_to_make_m_bouquets;
 pub mod problem_1486_xor_operation_in_an_array;
+pub mod problem_1487_making_file_names_unique;
 pub mod problem_1491_average_salary_excluding_the_minimum_and_maximum_salary;
 pub mod problem_1492_the_kth_factor_of_n;
 pub mod problem_1493_longest_subarray_of_1s_after_deleting_one_element;
