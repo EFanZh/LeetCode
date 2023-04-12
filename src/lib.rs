@@ -1255,6 +1255,7 @@ pub mod problem_1557_minimum_number_of_vertices_to_reach_all_nodes;
 pub mod problem_1561_maximum_number_of_coins_you_can_get;
 pub mod problem_1566_detect_pattern_of_length_m_repeated_k_or_more_times;
 pub mod problem_1572_matrix_diagonal_sum;
+pub mod problem_1573_number_of_ways_to_split_a_string;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
