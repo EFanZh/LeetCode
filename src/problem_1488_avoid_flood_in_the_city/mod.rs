@@ -1,4 +1,5 @@
 pub mod binary_heap;
+pub mod btree_set;
 
 pub trait Solution {
     fn avoid_flood(rains: Vec<i32>) -> Vec<i32>;
