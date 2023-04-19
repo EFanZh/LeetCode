@@ -1239,6 +1239,7 @@ pub mod problem_1507_reformat_date;
 pub mod problem_1512_number_of_good_pairs;
 pub mod problem_1513_number_of_substrings_with_only_1s;
 pub mod problem_1518_water_bottles;
+pub mod problem_1519_number_of_nodes_in_the_sub_tree_with_the_same_label;
 pub mod problem_1523_count_odd_numbers_in_an_interval_range;
 pub mod problem_1524_number_of_sub_arrays_with_odd_sum;
 pub mod problem_1525_number_of_good_ways_to_split_a_string;
