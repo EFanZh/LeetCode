@@ -1233,6 +1233,7 @@ pub mod problem_1492_the_kth_factor_of_n;
 pub mod problem_1493_longest_subarray_of_1s_after_deleting_one_element;
 pub mod problem_1496_path_crossing;
 pub mod problem_1497_check_if_array_pairs_are_divisible_by_k;
+pub mod problem_1499_max_value_of_equation;
 pub mod problem_1502_can_make_arithmetic_progression_from_sequence;
 pub mod problem_1503_last_moment_before_all_ants_fall_out_of_a_plank;
 pub mod problem_1507_reformat_date;
