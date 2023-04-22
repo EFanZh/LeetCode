@@ -20,8 +20,8 @@ impl Solution {
         result
     }
 
+    #[allow(unused_variables)] // Expected.
     pub fn min_cost(houses: Vec<i32>, cost: Vec<Vec<i32>>, m: i32, n: i32, target: i32) -> i32 {
-        let _ = (m, n);
         let n = cost.first().map_or(0, Vec::len);
         let target = target as u32 as usize;
         let mut cache = vec![INVALID; n * target].into_boxed_slice();

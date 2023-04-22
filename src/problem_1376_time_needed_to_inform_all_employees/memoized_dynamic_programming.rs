@@ -21,8 +21,8 @@ impl Solution {
         }
     }
 
+    #[allow(unused_variables)] // Expected.
     pub fn num_of_minutes(n: i32, head_id: i32, manager: Vec<i32>, inform_time: Vec<i32>) -> i32 {
-        let _ = (n, head_id);
         let n = manager.len();
         let managers = manager.as_slice();
         let inform_times = inform_time.as_slice();

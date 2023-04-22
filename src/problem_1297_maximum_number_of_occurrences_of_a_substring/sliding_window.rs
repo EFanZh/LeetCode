@@ -5,10 +5,10 @@ pub struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
+    #[allow(unused_variables)] // Expected.
     pub fn max_freq(s: String, max_letters: i32, min_size: i32, max_size: i32) -> i32 {
         let max_letters = max_letters as u32;
         let min_size = min_size as _;
-        let _ = max_size;
         let (left, right) = s.as_bytes().split_at(min_size);
         let mut counts = [0_u8; 26];
         let mut unique = 0;
