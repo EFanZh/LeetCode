@@ -3,8 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(unused_variables)] // Expected.
     pub fn build_array(target: Vec<i32>, n: i32) -> Vec<String> {
-        let _ = n;
         let mut result = Vec::new();
         let mut i = 0;
 

@@ -6,8 +6,8 @@ use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
 impl Solution {
+    #[allow(unused_variables)] // Expected.
     pub fn max_performance(n: i32, speed: Vec<i32>, efficiency: Vec<i32>, k: i32) -> i32 {
-        let _ = n;
         let i_as_u = |x: i32| x as u32;
         let k = k as usize;
 

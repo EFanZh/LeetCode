@@ -3,9 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(unused_variables)] // Expected.
     pub fn kth_grammar(n: i32, k: i32) -> i32 {
-        let _ = n;
-
         ((k - 1).count_ones() & 1) as _
     }
 }
