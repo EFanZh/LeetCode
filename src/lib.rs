@@ -1271,6 +1271,7 @@ pub mod problem_1590_make_sum_divisible_by_p;
 pub mod problem_1593_split_a_string_into_the_max_number_of_unique_substrings;
 pub mod problem_1594_maximum_non_negative_product_in_a_matrix;
 pub mod problem_1598_crawler_log_folder;
+pub mod problem_1604_alert_using_same_key_card_three_or_more_times_in_a_one_hour_period;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
