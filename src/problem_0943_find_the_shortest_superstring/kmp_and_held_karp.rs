@@ -14,10 +14,11 @@ impl Solution {
         let mut matched = 0;
         let mut i = 1;
 
-        for &c in &s[1..] {
+        while let Some(&c) = s.get(i) {
             loop {
                 if s[matched] == c {
                     matched += 1;
+                    buffer[i] = matched;
 
                     break;
                 } else if let Some(&next_matched) = buffer.get(matched.wrapping_sub(1)) {
@@ -27,7 +28,6 @@ impl Solution {
                 }
             }
 
-            buffer[i] = matched;
             i += 1;
         }
     }
