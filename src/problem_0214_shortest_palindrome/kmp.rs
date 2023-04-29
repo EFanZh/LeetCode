@@ -4,25 +4,24 @@ pub struct Solution;
 
 impl Solution {
     fn compute_prefix_function(mut s: impl FnMut(usize) -> Option<u8>, length: usize) -> usize {
-        let mut result = vec![0; length];
-        let mut j = 0;
+        let mut result = vec![0; length].into_boxed_slice();
+        let mut matched = 0;
 
         for i in 1..length {
             let c = s(i);
 
             loop {
-                if s(j) == c {
-                    j += 1;
+                if s(matched) == c {
+                    matched += 1;
+                    result[i] = matched;
 
                     break;
-                } else if let Some(next_j) = result.get(j.wrapping_sub(1)) {
-                    j = *next_j;
+                } else if let Some(&next_matches) = result.get(matched.wrapping_sub(1)) {
+                    matched = next_matches;
                 } else {
                     break;
                 }
             }
-
-            result[i] = j;
         }
 
         *result.last().unwrap()

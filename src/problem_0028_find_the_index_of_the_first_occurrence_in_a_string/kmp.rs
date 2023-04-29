@@ -3,27 +3,29 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    fn compute_prefix_function(needle: &[u8]) -> Box<[usize]> {
-        let mut prefix_function = vec![0; needle.len()];
-        let mut j = 0_usize;
+    fn compute_prefix_function(s: &[u8]) -> Box<[usize]> {
+        let mut result = vec![0; s.len()].into_boxed_slice();
+        let mut i = 1;
+        let mut matched = 0;
 
-        for (i, c) in needle.iter().copied().enumerate().skip(1) {
+        while let Some(&c) = s.get(i) {
             loop {
-                if needle[j] == c {
-                    j += 1;
+                if s[matched] == c {
+                    matched += 1;
+                    result[i] = matched;
 
                     break;
-                } else if let Some(next_j) = prefix_function.get(j.wrapping_sub(1)) {
-                    j = *next_j;
+                } else if let Some(&next_matched) = result.get(matched.wrapping_sub(1)) {
+                    matched = next_matched;
                 } else {
                     break;
                 }
             }
 
-            prefix_function[i] = j;
+            i += 1;
         }
 
-        prefix_function.into_boxed_slice()
+        result
     }
 
     pub fn str_str(haystack: String, needle: String) -> i32 {
