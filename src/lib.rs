@@ -1164,6 +1164,7 @@ pub mod problem_1392_longest_happy_prefix;
 pub mod problem_1394_find_lucky_integer_in_an_array;
 pub mod problem_1395_count_number_of_teams;
 pub mod problem_1396_design_underground_system;
+pub mod problem_1397_find_all_good_strings;
 pub mod problem_1399_count_largest_group;
 pub mod problem_1400_construct_k_palindrome_strings;
 pub mod problem_1401_circle_and_rectangle_overlapping;
