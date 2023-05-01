@@ -1174,6 +1174,7 @@ pub mod problem_1404_number_of_steps_to_reduce_a_number_in_binary_representation
 pub mod problem_1405_longest_happy_string;
 pub mod problem_1406_stone_game_iii;
 pub mod problem_1408_string_matching_in_an_array;
+pub mod problem_1409_queries_on_a_permutation_with_key;
 pub mod problem_1410_html_entity_parser;
 pub mod problem_1411_number_of_ways_to_paint_n_3_grid;
 pub mod problem_1413_minimum_value_to_get_positive_step_by_step_sum;
