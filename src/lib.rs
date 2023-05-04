@@ -1226,6 +1226,7 @@ pub mod problem_1471_the_k_strongest_values_in_an_array;
 pub mod problem_1472_design_browser_history;
 pub mod problem_1473_paint_house_iii;
 pub mod problem_1475_final_prices_with_a_special_discount_in_a_shop;
+pub mod problem_1476_subrectangle_queries;
 pub mod problem_1477_find_two_non_overlapping_sub_arrays_each_with_target_sum;
 pub mod problem_1480_running_sum_of_1d_array;
 pub mod problem_1481_least_number_of_unique_integers_after_k_removals;
