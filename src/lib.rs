@@ -1228,6 +1228,7 @@ pub mod problem_1473_paint_house_iii;
 pub mod problem_1475_final_prices_with_a_special_discount_in_a_shop;
 pub mod problem_1476_subrectangle_queries;
 pub mod problem_1477_find_two_non_overlapping_sub_arrays_each_with_target_sum;
+pub mod problem_1478_allocate_mailboxes;
 pub mod problem_1480_running_sum_of_1d_array;
 pub mod problem_1481_least_number_of_unique_integers_after_k_removals;
 pub mod problem_1482_minimum_number_of_days_to_make_m_bouquets;
