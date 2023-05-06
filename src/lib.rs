@@ -1232,6 +1232,7 @@ pub mod problem_1478_allocate_mailboxes;
 pub mod problem_1480_running_sum_of_1d_array;
 pub mod problem_1481_least_number_of_unique_integers_after_k_removals;
 pub mod problem_1482_minimum_number_of_days_to_make_m_bouquets;
+pub mod problem_1483_kth_ancestor_of_a_tree_node;
 pub mod problem_1486_xor_operation_in_an_array;
 pub mod problem_1487_making_file_names_unique;
 pub mod problem_1488_avoid_flood_in_the_city;
