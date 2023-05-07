@@ -1236,6 +1236,7 @@ pub mod problem_1483_kth_ancestor_of_a_tree_node;
 pub mod problem_1486_xor_operation_in_an_array;
 pub mod problem_1487_making_file_names_unique;
 pub mod problem_1488_avoid_flood_in_the_city;
+pub mod problem_1489_find_critical_and_pseudo_critical_edges_in_minimum_spanning_tree;
 pub mod problem_1491_average_salary_excluding_the_minimum_and_maximum_salary;
 pub mod problem_1492_the_kth_factor_of_n;
 pub mod problem_1493_longest_subarray_of_1s_after_deleting_one_element;
