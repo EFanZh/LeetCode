@@ -1240,6 +1240,7 @@ pub mod problem_1489_find_critical_and_pseudo_critical_edges_in_minimum_spanning
 pub mod problem_1491_average_salary_excluding_the_minimum_and_maximum_salary;
 pub mod problem_1492_the_kth_factor_of_n;
 pub mod problem_1493_longest_subarray_of_1s_after_deleting_one_element;
+pub mod problem_1494_parallel_courses_ii;
 pub mod problem_1496_path_crossing;
 pub mod problem_1497_check_if_array_pairs_are_divisible_by_k;
 pub mod problem_1499_max_value_of_equation;
