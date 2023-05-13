@@ -1286,6 +1286,7 @@ pub mod problem_1604_alert_using_same_key_card_three_or_more_times_in_a_one_hour
 pub mod problem_1609_even_odd_tree;
 pub mod problem_1614_maximum_nesting_depth_of_the_parentheses;
 pub mod problem_1619_mean_of_array_after_removing_some_elements;
+pub mod problem_1629_slowest_key;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
