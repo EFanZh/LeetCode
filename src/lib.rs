@@ -1248,6 +1248,7 @@ pub mod problem_1499_max_value_of_equation;
 pub mod problem_1502_can_make_arithmetic_progression_from_sequence;
 pub mod problem_1503_last_moment_before_all_ants_fall_out_of_a_plank;
 pub mod problem_1504_count_submatrices_with_all_ones;
+pub mod problem_1505_minimum_possible_integer_after_at_most_k_adjacent_swaps_on_digits;
 pub mod problem_1507_reformat_date;
 pub mod problem_1510_stone_game_iv;
 pub mod problem_1512_number_of_good_pairs;
