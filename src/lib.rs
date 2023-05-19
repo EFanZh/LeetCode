@@ -1292,6 +1292,7 @@ pub mod problem_1631_path_with_minimum_effort;
 pub mod problem_1636_sort_array_by_increasing_frequency;
 pub mod problem_1646_get_maximum_in_generated_array;
 pub mod problem_1647_minimum_deletions_to_make_character_frequencies_unique;
+pub mod problem_1653_minimum_deletions_to_make_string_balanced;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
