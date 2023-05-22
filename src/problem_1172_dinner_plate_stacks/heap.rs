@@ -5,7 +5,7 @@ use std::convert;
 
 #[derive(Default)]
 struct Heap {
-    data: Vec<usize>,
+    heap: Vec<usize>,
     indices: Vec<usize>,
 }
 
@@ -14,15 +14,17 @@ impl Heap {
     where
         T: Ord,
     {
-        while index != 0 {
-            let parent_index = (index - 1) / 2;
-            let parent_value = self.data[parent_index];
-            let parent_key = key_fn(parent_value);
+        loop {
+            let parent_index = index.wrapping_sub(1) / 2;
 
-            if *key > parent_key {
-                self.data[index] = parent_value;
-                self.indices[parent_value] = index;
-                index = parent_index;
+            if let Some(&parent_node) = self.heap.get(parent_index) {
+                if key > &key_fn(parent_node) {
+                    self.heap[index] = parent_node;
+                    self.indices[parent_node] = index;
+                    index = parent_index;
+                } else {
+                    break;
+                }
             } else {
                 break;
             }
@@ -35,13 +37,13 @@ impl Heap {
     where
         T: Ord,
     {
-        let index = self.data.len();
+        let mut index = self.heap.len();
 
-        self.data.push(0); // The value here does not matter.
+        self.heap.push(0); // The value here does not matter.
 
-        let index = self.partial_sift_up_by_key(index, &key_fn(value), key_fn);
+        index = self.partial_sift_up_by_key(index, &key_fn(value), key_fn);
 
-        self.data[index] = value;
+        self.heap[index] = value;
 
         let target = if let Some(target) = self.indices.get_mut(value) {
             target
@@ -53,31 +55,30 @@ impl Heap {
         *target = index;
     }
 
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     fn sift_down_by_key<T>(&mut self, mut index: usize, value: usize, key: &T, mut key_fn: impl FnMut(usize) -> T)
     where
         T: Ord,
     {
         loop {
-            let left_index = index * 2 + 1;
+            let mut child_index = index * 2 + 1;
 
-            if let Some(&left_value) = self.data.get(left_index) {
-                let left_key = key_fn(left_value);
-                let right_index = left_index + 1;
+            if let Some(mut child_node) = self.heap.get(child_index).copied() {
+                let mut child_key = key_fn(child_node);
+                let right_index = child_index + 1;
 
-                let (child_index, child_value, child_key) = self
-                    .data
-                    .get(right_index)
-                    .and_then(|&right_value| {
-                        let right_key = key_fn(right_value);
+                if let Some(&right_node) = self.heap.get(right_index) {
+                    let right_key = key_fn(right_node);
 
-                        (right_key > left_key).then(|| (right_index, right_value, right_key))
-                    })
-                    .unwrap_or((left_index, left_value, left_key));
+                    if right_key > child_key {
+                        child_index = right_index;
+                        child_node = right_node;
+                        child_key = right_key;
+                    }
+                }
 
                 if child_key > *key {
-                    self.data[index] = child_value;
-                    self.indices[child_value] = index;
+                    self.heap[index] = child_node;
+                    self.indices[child_node] = index;
                     index = child_index;
                 } else {
                     break;
@@ -87,7 +88,7 @@ impl Heap {
             }
         }
 
-        self.data[index] = value;
+        self.heap[index] = value;
         self.indices[value] = index;
     }
 
@@ -96,11 +97,10 @@ impl Heap {
         T: Ord,
     {
         let index = self.indices[value];
-        let last = self.data.pop().unwrap();
+        let last = self.heap.pop().unwrap();
 
-        if index != self.data.len() {
+        if index != self.heap.len() {
             let key = key_fn(last);
-
             let index = self.partial_sift_up_by_key(index, &key, key_fn);
 
             self.sift_down_by_key(index, last, &key, key_fn);
@@ -108,7 +108,7 @@ impl Heap {
     }
 
     fn peek(&self) -> Option<usize> {
-        self.data.first().copied()
+        self.heap.first().copied()
     }
 }
 
