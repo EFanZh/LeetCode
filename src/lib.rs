@@ -1255,6 +1255,7 @@ pub mod problem_1509_minimum_difference_between_largest_and_smallest_value_in_th
 pub mod problem_1510_stone_game_iv;
 pub mod problem_1512_number_of_good_pairs;
 pub mod problem_1513_number_of_substrings_with_only_1s;
+pub mod problem_1514_path_with_maximum_probability;
 pub mod problem_1518_water_bottles;
 pub mod problem_1519_number_of_nodes_in_the_sub_tree_with_the_same_label;
 pub mod problem_1523_count_odd_numbers_in_an_interval_range;
