@@ -1298,6 +1298,7 @@ pub mod problem_1640_check_array_formation_through_concatenation;
 pub mod problem_1646_get_maximum_in_generated_array;
 pub mod problem_1647_minimum_deletions_to_make_character_frequencies_unique;
 pub mod problem_1653_minimum_deletions_to_make_string_balanced;
+pub mod problem_1656_design_an_ordered_stream;
 pub mod problem_1658_minimum_operations_to_reduce_x_to_zero;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
