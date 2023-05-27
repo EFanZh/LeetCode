@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::convert::TryInto;
-use std::mem;
 
 impl Solution {
     pub fn find_the_city(n: i32, edges: Vec<Vec<i32>>, distance_threshold: i32) -> i32 {
@@ -12,8 +11,7 @@ impl Solution {
 
         // Floyd–Warshall algorithm.
 
-        let mut buffer = vec![u32::MAX; n * n * 2];
-        let (mut cache, mut temp) = buffer.split_at_mut(n * n);
+        let mut cache = vec![u32::MAX; n * n].into_boxed_slice();
 
         for edge in edges {
             let [from, to, weight]: [_; 3] = edge.try_into().ok().unwrap();
@@ -29,19 +27,13 @@ impl Solution {
             *distance = 0;
         }
 
-        for node in 0..n {
-            let node_to_ends = &cache[n * node..n * node + n];
-            let mut iter = temp.iter_mut().zip(cache.iter().copied());
-
-            for &start_to_node in cache[node..].iter().step_by(n) {
-                for &node_to_end in node_to_ends {
-                    let (target, prev) = iter.next().unwrap();
-
-                    *target = prev.min(start_to_node.saturating_add(node_to_end));
+        for middle in 0..n {
+            for start in 0..n {
+                for end in 0..n {
+                    cache[n * start + end] =
+                        cache[n * start + end].min(cache[n * start + middle].saturating_add(cache[n * middle + end]));
                 }
             }
-
-            mem::swap(&mut cache, &mut temp);
         }
 
         // Search.
