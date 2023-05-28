@@ -1259,6 +1259,7 @@ pub mod problem_1514_path_with_maximum_probability;
 pub mod problem_1515_best_position_for_a_service_centre;
 pub mod problem_1518_water_bottles;
 pub mod problem_1519_number_of_nodes_in_the_sub_tree_with_the_same_label;
+pub mod problem_1520_maximum_number_of_non_overlapping_substrings;
 pub mod problem_1523_count_odd_numbers_in_an_interval_range;
 pub mod problem_1524_number_of_sub_arrays_with_odd_sum;
 pub mod problem_1525_number_of_good_ways_to_split_a_string;
