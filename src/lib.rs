@@ -1264,6 +1264,7 @@ pub mod problem_1521_find_a_value_of_a_mysterious_function_closest_to_target;
 pub mod problem_1523_count_odd_numbers_in_an_interval_range;
 pub mod problem_1524_number_of_sub_arrays_with_odd_sum;
 pub mod problem_1525_number_of_good_ways_to_split_a_string;
+pub mod problem_1526_minimum_number_of_increments_on_subarrays_to_form_a_target_array;
 pub mod problem_1528_shuffle_string;
 pub mod problem_1529_minimum_suffix_flips;
 pub mod problem_1539_kth_missing_positive_number;
