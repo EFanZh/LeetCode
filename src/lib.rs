@@ -1295,6 +1295,7 @@ pub mod problem_1608_special_array_with_x_elements_greater_than_or_equal_x;
 pub mod problem_1609_even_odd_tree;
 pub mod problem_1614_maximum_nesting_depth_of_the_parentheses;
 pub mod problem_1619_mean_of_array_after_removing_some_elements;
+pub mod problem_1624_largest_substring_between_two_equal_characters;
 pub mod problem_1629_slowest_key;
 pub mod problem_1631_path_with_minimum_effort;
 pub mod problem_1636_sort_array_by_increasing_frequency;
