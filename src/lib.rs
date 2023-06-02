@@ -1306,6 +1306,7 @@ pub mod problem_1653_minimum_deletions_to_make_string_balanced;
 pub mod problem_1656_design_an_ordered_stream;
 pub mod problem_1658_minimum_operations_to_reduce_x_to_zero;
 pub mod problem_1662_check_if_two_string_arrays_are_equivalent;
+pub mod problem_1669_merge_in_between_linked_lists;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
