@@ -206,7 +206,7 @@ impl Solution {
             }
         }
 
-        fn remove_aligned(mut tree: &mut Tree) {
+        fn remove_aligned(tree: &mut Tree) {
             tree.root.count -= 1;
 
             if tree.root.count == 0 {
