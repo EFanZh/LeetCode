@@ -159,8 +159,8 @@ impl LFUCache {
     }
 
     fn append_to_block(&mut self, node_index: usize, block_index: usize) {
-        let mut node = &mut self.node_memory[node_index];
-        let mut block = &mut self.block_memory[block_index];
+        let node = &mut self.node_memory[node_index];
+        let block = &mut self.block_memory[block_index];
 
         node.block = block_index;
         node.prev = block.node_tail;

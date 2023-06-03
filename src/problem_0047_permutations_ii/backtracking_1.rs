@@ -7,7 +7,7 @@ use std::collections::HashMap;
 
 impl Solution {
     fn permute_unique_helper(nums: &mut [(i32, i32)], base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
-        if let Some((mut first, rest)) = nums.split_first_mut() {
+        if let Some((first, rest)) = nums.split_first_mut() {
             base.push(first.0);
 
             if first.1 == 1 {
