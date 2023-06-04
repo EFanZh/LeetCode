@@ -1267,6 +1267,7 @@ pub mod problem_1525_number_of_good_ways_to_split_a_string;
 pub mod problem_1526_minimum_number_of_increments_on_subarrays_to_form_a_target_array;
 pub mod problem_1528_shuffle_string;
 pub mod problem_1529_minimum_suffix_flips;
+pub mod problem_1530_number_of_good_leaf_nodes_pairs;
 pub mod problem_1539_kth_missing_positive_number;
 pub mod problem_1541_minimum_insertions_to_balance_a_parentheses_string;
 pub mod problem_1544_make_the_string_great;
