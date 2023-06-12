@@ -1,4 +1,4 @@
-pub mod montonic_stack;
+pub mod monotonic_stack;
 
 pub trait Solution {
     fn most_competitive(nums: Vec<i32>, k: i32) -> Vec<i32>;
