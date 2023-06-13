@@ -1281,6 +1281,7 @@ pub mod problem_1552_magnetic_force_between_two_balls;
 pub mod problem_1556_thousand_separator;
 pub mod problem_1557_minimum_number_of_vertices_to_reach_all_nodes;
 pub mod problem_1559_detect_cycles_in_2d_grid;
+pub mod problem_1560_most_visited_sector_in_a_circular_track;
 pub mod problem_1561_maximum_number_of_coins_you_can_get;
 pub mod problem_1566_detect_pattern_of_length_m_repeated_k_or_more_times;
 pub mod problem_1567_maximum_length_of_subarray_with_positive_product;
