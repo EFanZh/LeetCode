@@ -1280,6 +1280,7 @@ pub mod problem_1551_minimum_operations_to_make_array_equal;
 pub mod problem_1552_magnetic_force_between_two_balls;
 pub mod problem_1556_thousand_separator;
 pub mod problem_1557_minimum_number_of_vertices_to_reach_all_nodes;
+pub mod problem_1558_minimum_numbers_of_function_calls_to_make_target_array;
 pub mod problem_1559_detect_cycles_in_2d_grid;
 pub mod problem_1560_most_visited_sector_in_a_circular_track;
 pub mod problem_1561_maximum_number_of_coins_you_can_get;
