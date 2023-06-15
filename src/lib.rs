@@ -1319,6 +1319,7 @@ pub mod problem_1672_richest_customer_wealth;
 pub mod problem_1673_find_the_most_competitive_subsequence;
 pub mod problem_1678_goal_parser_interpretation;
 pub mod problem_1679_max_number_of_k_sum_pairs;
+pub mod problem_1684_count_the_number_of_consistent_strings;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
