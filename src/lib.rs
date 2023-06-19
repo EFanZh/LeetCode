@@ -1270,6 +1270,7 @@ pub mod problem_1529_minimum_suffix_flips;
 pub mod problem_1530_number_of_good_leaf_nodes_pairs;
 pub mod problem_1531_string_compression_ii;
 pub mod problem_1535_find_the_winner_of_an_array_game;
+pub mod problem_1537_get_the_maximum_score;
 pub mod problem_1539_kth_missing_positive_number;
 pub mod problem_1540_can_convert_string_in_k_moves;
 pub mod problem_1541_minimum_insertions_to_balance_a_parentheses_string;
