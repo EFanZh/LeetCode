@@ -1301,6 +1301,7 @@ pub mod problem_1590_make_sum_divisible_by_p;
 pub mod problem_1593_split_a_string_into_the_max_number_of_unique_substrings;
 pub mod problem_1594_maximum_non_negative_product_in_a_matrix;
 pub mod problem_1598_crawler_log_folder;
+pub mod problem_1603_design_parking_system;
 pub mod problem_1604_alert_using_same_key_card_three_or_more_times_in_a_one_hour_period;
 pub mod problem_1608_special_array_with_x_elements_greater_than_or_equal_x;
 pub mod problem_1609_even_odd_tree;
