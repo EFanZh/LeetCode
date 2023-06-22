@@ -7,30 +7,27 @@ use std::num::NonZeroU32;
 impl Solution {
     fn min_max(values: &[i32]) -> (u32, u32) {
         let mut iter = values.iter().map(|&num| num as u32);
-        let min = iter.next().unwrap();
-        let mut result = (min, min);
+        let mut min = iter.next().unwrap();
+        let mut max = min;
 
         while let Some(left) = iter.next() {
             if let Some(right) = iter.next() {
-                if right < left {
-                    result.0 = result.0.min(right);
-                    result.1 = result.1.max(left);
-                } else {
-                    result.0 = result.0.min(left);
-                    result.1 = result.1.max(right);
-                }
+                let (new_min, new_max) = if right < left { (right, left) } else { (left, right) };
+
+                min = min.min(new_min);
+                max = max.max(new_max);
             } else {
-                if left < result.0 {
-                    result.0 = left;
-                } else if left > result.1 {
-                    result.1 = left;
+                if left < min {
+                    min = left;
+                } else if left > max {
+                    max = left;
                 }
 
                 break;
             }
         }
 
-        result
+        (min, max)
     }
 
     fn inner(bloom_day: &[i32], m: u32, k: NonZeroU32) -> u32 {
