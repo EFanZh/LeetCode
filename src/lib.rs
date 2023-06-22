@@ -1318,6 +1318,7 @@ pub mod problem_1653_minimum_deletions_to_make_string_balanced;
 pub mod problem_1656_design_an_ordered_stream;
 pub mod problem_1658_minimum_operations_to_reduce_x_to_zero;
 pub mod problem_1662_check_if_two_string_arrays_are_equivalent;
+pub mod problem_1663_smallest_string_with_a_given_numeric_value;
 pub mod problem_1669_merge_in_between_linked_lists;
 pub mod problem_1670_design_front_middle_back_queue;
 pub mod problem_1672_richest_customer_wealth;
