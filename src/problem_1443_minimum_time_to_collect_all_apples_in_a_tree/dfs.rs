@@ -23,8 +23,9 @@ impl Solution {
         }
     }
 
-    #[allow(unused_variables)] // Expected.
     pub fn min_time(n: i32, edges: Vec<Vec<i32>>, has_apple: Vec<bool>) -> i32 {
+        let _ = n;
+
         let mut graph = has_apple
             .into_iter()
             .map(|has_apple| (Vec::new(), has_apple))

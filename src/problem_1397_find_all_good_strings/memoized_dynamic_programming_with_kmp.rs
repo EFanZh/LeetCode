@@ -84,8 +84,8 @@ impl Solution {
         }
     }
 
-    #[allow(unused_variables)] // Expected.
     pub fn find_good_strings(n: i32, s1: String, s2: String, evil: String) -> i32 {
+        let _ = n;
         let s = s1.into_bytes().into_iter().zip(s2.into_bytes()).collect::<Box<_>>();
         let lookup_table = Self::build_lookup_table(&evil);
         let plane_size = evil.len() * s.len();
