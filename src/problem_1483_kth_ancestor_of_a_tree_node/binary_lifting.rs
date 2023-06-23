@@ -8,8 +8,8 @@ pub struct TreeAncestor {
 }
 
 impl TreeAncestor {
-    #[allow(unused_variables)]
     fn new(n: i32, parent: Vec<i32>) -> Self {
+        let _ = n;
         let mut parents = vec![NOT_CALCULATED; COLUMNS * parent.len()].into_boxed_slice();
 
         for (target, parent) in parents.iter_mut().step_by(COLUMNS).zip(parent) {
