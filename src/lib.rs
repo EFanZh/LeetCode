@@ -1278,6 +1278,7 @@ pub mod problem_1540_can_convert_string_in_k_moves;
 pub mod problem_1541_minimum_insertions_to_balance_a_parentheses_string;
 pub mod problem_1542_find_longest_awesome_substring;
 pub mod problem_1544_make_the_string_great;
+pub mod problem_1545_find_kth_bit_in_nth_binary_string;
 pub mod problem_1546_maximum_number_of_non_overlapping_subarrays_with_sum_equals_target;
 pub mod problem_1550_three_consecutive_odds;
 pub mod problem_1551_minimum_operations_to_make_array_equal;
