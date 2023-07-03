@@ -1303,6 +1303,7 @@ pub mod problem_1578_minimum_time_to_make_rope_colorful;
 pub mod problem_1582_special_positions_in_a_binary_matrix;
 pub mod problem_1588_sum_of_all_odd_length_subarrays;
 pub mod problem_1590_make_sum_divisible_by_p;
+pub mod problem_1592_rearrange_spaces_between_words;
 pub mod problem_1593_split_a_string_into_the_max_number_of_unique_substrings;
 pub mod problem_1594_maximum_non_negative_product_in_a_matrix;
 pub mod problem_1598_crawler_log_folder;
