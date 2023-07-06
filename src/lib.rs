@@ -1309,6 +1309,7 @@ pub mod problem_1594_maximum_non_negative_product_in_a_matrix;
 pub mod problem_1598_crawler_log_folder;
 pub mod problem_1603_design_parking_system;
 pub mod problem_1604_alert_using_same_key_card_three_or_more_times_in_a_one_hour_period;
+pub mod problem_1605_find_valid_matrix_given_row_and_column_sums;
 pub mod problem_1608_special_array_with_x_elements_greater_than_or_equal_x;
 pub mod problem_1609_even_odd_tree;
 pub mod problem_1614_maximum_nesting_depth_of_the_parentheses;
