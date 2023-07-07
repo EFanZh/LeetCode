@@ -1341,6 +1341,7 @@ pub mod problem_1695_maximum_erasure_value;
 pub mod problem_1700_number_of_students_unable_to_eat_lunch;
 pub mod problem_1701_average_waiting_time;
 pub mod problem_1704_determine_if_string_halves_are_alike;
+pub mod problem_1706_where_will_the_ball_fall;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
