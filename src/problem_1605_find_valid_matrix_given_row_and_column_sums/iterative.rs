@@ -15,13 +15,11 @@ impl Solution {
             if column_sum < row.1 {
                 row.0[x] = column_sum;
 
-                if let Some(next_column_sum) = column_iter.next() {
-                    row.1 -= column_sum;
-                    column_sum = next_column_sum;
-                    x += 1;
-                } else {
-                    break;
-                }
+                let next_column_sum = column_iter.next().unwrap();
+
+                row.1 -= column_sum;
+                column_sum = next_column_sum;
+                x += 1;
             } else {
                 row.0[x] = row.1;
 
