@@ -1349,6 +1349,7 @@ pub mod problem_1710_maximum_units_on_a_truck;
 pub mod problem_1711_count_good_meals;
 pub mod problem_1716_calculate_money_in_leetcode_bank;
 pub mod problem_1720_decode_xored_array;
+pub mod problem_1721_swapping_nodes_in_a_linked_list;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
