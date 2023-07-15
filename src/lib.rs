@@ -1295,6 +1295,7 @@ pub mod problem_1562_find_latest_group_of_size_m;
 pub mod problem_1563_stone_game_v;
 pub mod problem_1566_detect_pattern_of_length_m_repeated_k_or_more_times;
 pub mod problem_1567_maximum_length_of_subarray_with_positive_product;
+pub mod problem_1568_minimum_number_of_days_to_disconnect_island;
 pub mod problem_1572_matrix_diagonal_sum;
 pub mod problem_1573_number_of_ways_to_split_a_string;
 pub mod problem_1574_shortest_subarray_to_be_removed_to_make_array_sorted;
