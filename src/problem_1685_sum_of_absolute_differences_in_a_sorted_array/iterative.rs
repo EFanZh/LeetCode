@@ -1,0 +1,36 @@
+pub struct Solution;
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
+impl Solution {
+    pub fn get_sum_absolute_differences(nums: Vec<i32>) -> Vec<i32> {
+        let mut nums = nums;
+        let n = nums.len() as i32;
+        let total_sum = nums.iter().sum::<i32>();
+        let mut sum = 0;
+
+        for (i, target) in (1..).zip(&mut nums) {
+            sum += *target;
+
+            *target = *target * (i * 2 - n) + total_sum - sum * 2;
+        }
+
+        nums
+    }
+}
+
+// ------------------------------------------------------ snip ------------------------------------------------------ //
+
+impl super::Solution for Solution {
+    fn get_sum_absolute_differences(nums: Vec<i32>) -> Vec<i32> {
+        Self::get_sum_absolute_differences(nums)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_solution() {
+        super::super::tests::run::<super::Solution>();
+    }
+}
