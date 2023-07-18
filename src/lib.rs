@@ -1340,6 +1340,7 @@ pub mod problem_1673_find_the_most_competitive_subsequence;
 pub mod problem_1678_goal_parser_interpretation;
 pub mod problem_1679_max_number_of_k_sum_pairs;
 pub mod problem_1684_count_the_number_of_consistent_strings;
+pub mod problem_1685_sum_of_absolute_differences_in_a_sorted_array;
 pub mod problem_1688_count_of_matches_in_tournament;
 pub mod problem_1689_partitioning_into_minimum_number_of_deci_binary_numbers;
 pub mod problem_1695_maximum_erasure_value;
