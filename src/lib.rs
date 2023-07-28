@@ -1366,6 +1366,7 @@ pub mod problem_1742_maximum_number_of_balls_in_a_box;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
 pub mod problem_1749_maximum_absolute_sum_of_any_subarray;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
+pub mod problem_1759_count_number_of_homogenous_substrings;
 pub mod problem_1773_count_items_matching_a_rule;
 
 #[cfg(test)]
