@@ -1368,6 +1368,7 @@ pub mod problem_1749_maximum_absolute_sum_of_any_subarray;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
 pub mod problem_1759_count_number_of_homogenous_substrings;
 pub mod problem_1768_merge_strings_alternately;
+pub mod problem_1769_minimum_number_of_operations_to_move_all_balls_to_each_box;
 pub mod problem_1773_count_items_matching_a_rule;
 
 #[cfg(test)]
