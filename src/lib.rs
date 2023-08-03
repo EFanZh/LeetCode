@@ -1367,6 +1367,7 @@ pub mod problem_1734_decode_xored_permutation;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1742_maximum_number_of_balls_in_a_box;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
+pub mod problem_1748_sum_of_unique_elements;
 pub mod problem_1749_maximum_absolute_sum_of_any_subarray;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
 pub mod problem_1759_count_number_of_homogenous_substrings;
