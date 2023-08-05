@@ -1375,6 +1375,7 @@ pub mod problem_1765_map_of_highest_peak;
 pub mod problem_1768_merge_strings_alternately;
 pub mod problem_1769_minimum_number_of_operations_to_move_all_balls_to_each_box;
 pub mod problem_1773_count_items_matching_a_rule;
+pub mod problem_1779_find_nearest_point_that_has_the_same_x_or_y_coordinate;
 
 #[cfg(test)]
 mod test_utilities;
