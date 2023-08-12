@@ -1382,6 +1382,7 @@ pub mod problem_1769_minimum_number_of_operations_to_move_all_balls_to_each_box;
 pub mod problem_1773_count_items_matching_a_rule;
 pub mod problem_1779_find_nearest_point_that_has_the_same_x_or_y_coordinate;
 pub mod problem_1780_check_if_number_is_a_sum_of_powers_of_three;
+pub mod problem_1781_sum_of_beauty_of_all_substrings;
 
 #[cfg(test)]
 mod test_utilities;
