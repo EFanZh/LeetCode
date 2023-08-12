@@ -32,7 +32,7 @@ mod tests {
 
                         for neighbor in [(y.wrapping_sub(1), x), (y, x.wrapping_sub(1)), (y, x + 1), (y + 1, x)] {
                             if let Some(&neighbor_height) = result.get(neighbor.0).and_then(|row| row.get(neighbor.1)) {
-                                assert!(matches!(result_height - neighbor_height, -1 | 0 | 1));
+                                assert!((result_height - neighbor_height).abs() < 2);
                             }
                         }
 

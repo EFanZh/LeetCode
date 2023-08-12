@@ -9,7 +9,7 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [((2, 4, 6), 6), ((4, 4, 6), 7), ((1, 8, 8), 8)];
+        let test_cases = [((2, 4, 6), 6), ((4, 4, 6), 7), ((1, 8, 8), 8), ((6, 2, 1), 3)];
 
         for ((a, b, c), expected) in test_cases {
             assert_eq!(S::maximum_score(a, b, c), expected);

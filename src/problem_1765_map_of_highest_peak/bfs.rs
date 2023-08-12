@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
 use std::collections::VecDeque;
 
 impl Solution {
@@ -31,15 +30,11 @@ impl Solution {
                         .get_mut(usize::from(neighbor.0))
                         .and_then(|row| row.get_mut(usize::from(neighbor.1)))
                     {
-                        *state = match (*state).cmp(&0) {
-                            Ordering::Less => continue,
-                            Ordering::Equal => {
-                                queue.push_back(neighbor);
+                        if *state == 0 {
+                            *state = distance;
 
-                                distance
-                            }
-                            Ordering::Greater => -1,
-                        };
+                            queue.push_back(neighbor);
+                        }
                     }
                 }
             }
