@@ -1310,6 +1310,7 @@ pub mod problem_1583_count_unhappy_friends;
 pub mod problem_1584_min_cost_to_connect_all_points;
 pub mod problem_1585_check_if_string_is_transformable_with_substring_sort_operations;
 pub mod problem_1588_sum_of_all_odd_length_subarrays;
+pub mod problem_1589_maximum_sum_obtained_of_any_permutation;
 pub mod problem_1590_make_sum_divisible_by_p;
 pub mod problem_1592_rearrange_spaces_between_words;
 pub mod problem_1593_split_a_string_into_the_max_number_of_unique_substrings;
