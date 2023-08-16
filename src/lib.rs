@@ -1386,6 +1386,7 @@ pub mod problem_1773_count_items_matching_a_rule;
 pub mod problem_1779_find_nearest_point_that_has_the_same_x_or_y_coordinate;
 pub mod problem_1780_check_if_number_is_a_sum_of_powers_of_three;
 pub mod problem_1781_sum_of_beauty_of_all_substrings;
+pub mod problem_1784_check_if_binary_string_has_at_most_one_segment_of_ones;
 
 #[cfg(test)]
 mod test_utilities;
