@@ -1331,6 +1331,7 @@ pub mod problem_1629_slowest_key;
 pub mod problem_1630_arithmetic_subarrays;
 pub mod problem_1631_path_with_minimum_effort;
 pub mod problem_1636_sort_array_by_increasing_frequency;
+pub mod problem_1637_widest_vertical_area_between_two_points_containing_no_points;
 pub mod problem_1640_check_array_formation_through_concatenation;
 pub mod problem_1641_count_sorted_vowel_strings;
 pub mod problem_1646_get_maximum_in_generated_array;
