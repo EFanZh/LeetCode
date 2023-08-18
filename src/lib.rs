@@ -1369,6 +1369,7 @@ pub mod problem_1716_calculate_money_in_leetcode_bank;
 pub mod problem_1720_decode_xored_array;
 pub mod problem_1721_swapping_nodes_in_a_linked_list;
 pub mod problem_1725_number_of_rectangles_that_can_form_the_largest_square;
+pub mod problem_1726_tuple_with_same_product;
 pub mod problem_1732_find_the_highest_altitude;
 pub mod problem_1734_decode_xored_permutation;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
