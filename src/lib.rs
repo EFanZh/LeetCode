@@ -1392,6 +1392,7 @@ pub mod problem_1780_check_if_number_is_a_sum_of_powers_of_three;
 pub mod problem_1781_sum_of_beauty_of_all_substrings;
 pub mod problem_1784_check_if_binary_string_has_at_most_one_segment_of_ones;
 pub mod problem_1785_minimum_elements_to_add_to_form_a_given_sum;
+pub mod problem_1790_check_if_one_string_swap_can_make_strings_equal;
 
 #[cfg(test)]
 mod test_utilities;
