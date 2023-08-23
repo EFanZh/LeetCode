@@ -39,7 +39,7 @@ mod tests {
             for operation in operations {
                 match *operation {
                     Operation::Birth(parent_name, child_name) => {
-                        throne_inheritance.birth(parent_name.to_string(), child_name.to_string())
+                        throne_inheritance.birth(parent_name.to_string(), child_name.to_string());
                     }
                     Operation::Death(name) => throne_inheritance.death(name.to_string()),
                     Operation::GetInheritanceOrder(expected) => {
