@@ -17,7 +17,7 @@ impl Solution {
 
             sum_counts.insert(0, 1);
 
-            for value in buffer.iter() {
+            for value in &*buffer {
                 sum += *value;
 
                 if let Some(&count) = sum_counts.get(&(sum - target)) {

@@ -51,7 +51,7 @@ impl Solution {
             match digit {
                 0 => {}
                 1 => result -= u32::pow(3, i),
-                2 | 3 | 4 | 5 | 6 | 7 => {
+                2..=7 => {
                     result -= u32::pow(3, i) * 2;
 
                     break;

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn get_hint(secret: String, guess: String) -> String {
-        let mut secret_digits = vec![0; 10];
+        let mut secret_digits = [0; 10];
         let mut bulls = 0;
         let mut cows = 0;
 
