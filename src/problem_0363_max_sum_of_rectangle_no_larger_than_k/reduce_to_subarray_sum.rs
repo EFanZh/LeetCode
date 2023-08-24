@@ -33,7 +33,7 @@ impl Solution {
 
             prefix_sum = 0;
 
-            for sum in sums.iter() {
+            for sum in &*sums {
                 prefix_sum += sum;
 
                 let min_prefix_sum = prefix_sum - k;

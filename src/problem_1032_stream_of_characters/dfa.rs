@@ -87,7 +87,7 @@ impl StreamChecker {
             let mut transitions = [0; 26];
 
             for (c, next) in transitions.iter_mut().enumerate() {
-                for &sub_state in current_state.iter() {
+                for &sub_state in &*current_state {
                     if let Some(child) = pool.get(usize::from(sub_state.children[c])) {
                         next_state_buffer.push(child);
                     }

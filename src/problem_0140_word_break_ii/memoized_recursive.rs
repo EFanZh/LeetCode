@@ -27,7 +27,7 @@ impl Solution {
                 for (i, c) in s.iter().copied().enumerate() {
                     if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
                         if child.has_value {
-                            for tail in Self::word_break_helper(&s[i + 1..], root, cache).iter() {
+                            for tail in &*Self::word_break_helper(&s[i + 1..], root, cache) {
                                 if tail.is_empty() {
                                     result.push(s[..=i].iter().copied().map(char::from).collect());
                                 } else {

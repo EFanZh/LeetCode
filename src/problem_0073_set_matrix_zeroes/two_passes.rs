@@ -16,7 +16,7 @@ impl Solution {
                     )
                 };
 
-                for row in rest_rows.iter_mut() {
+                for row in &mut *rest_rows {
                     let (first_cell, rest_cells) = row.split_first_mut().unwrap();
 
                     for (cell, cache_cell) in rest_cells.iter().zip(first_row_rest_cells.iter_mut()) {
