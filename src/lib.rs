@@ -1358,6 +1358,7 @@ pub mod problem_1685_sum_of_absolute_differences_in_a_sorted_array;
 pub mod problem_1686_stone_game_vi;
 pub mod problem_1688_count_of_matches_in_tournament;
 pub mod problem_1689_partitioning_into_minimum_number_of_deci_binary_numbers;
+pub mod problem_1690_stone_game_vii;
 pub mod problem_1694_reformat_phone_number;
 pub mod problem_1695_maximum_erasure_value;
 pub mod problem_1700_number_of_students_unable_to_eat_lunch;
