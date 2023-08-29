@@ -1399,6 +1399,7 @@ pub mod problem_1791_find_center_of_star_graph;
 pub mod problem_1796_second_largest_digit_in_a_string;
 pub mod problem_1800_maximum_ascending_subarray_sum;
 pub mod problem_1805_number_of_different_integers_in_a_string;
+pub mod problem_1807_evaluate_the_bracket_pairs_of_a_string;
 
 #[cfg(test)]
 mod test_utilities;
