@@ -1401,6 +1401,7 @@ pub mod problem_1800_maximum_ascending_subarray_sum;
 pub mod problem_1805_number_of_different_integers_in_a_string;
 pub mod problem_1807_evaluate_the_bracket_pairs_of_a_string;
 pub mod problem_1812_determine_color_of_a_chessboard_square;
+pub mod problem_1814_count_nice_pairs_in_an_array;
 
 #[cfg(test)]
 mod test_utilities;
