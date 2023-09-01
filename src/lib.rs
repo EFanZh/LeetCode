@@ -1384,6 +1384,7 @@ pub mod problem_1748_sum_of_unique_elements;
 pub mod problem_1749_maximum_absolute_sum_of_any_subarray;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
 pub mod problem_1753_maximum_score_from_removing_stones;
+pub mod problem_1758_minimum_changes_to_make_alternating_binary_string;
 pub mod problem_1759_count_number_of_homogenous_substrings;
 pub mod problem_1765_map_of_highest_peak;
 pub mod problem_1768_merge_strings_alternately;
