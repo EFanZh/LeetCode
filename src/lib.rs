@@ -1404,6 +1404,7 @@ pub mod problem_1807_evaluate_the_bracket_pairs_of_a_string;
 pub mod problem_1812_determine_color_of_a_chessboard_square;
 pub mod problem_1814_count_nice_pairs_in_an_array;
 pub mod problem_1816_truncate_sentence;
+pub mod problem_1817_finding_the_users_active_minutes;
 
 #[cfg(test)]
 mod test_utilities;
