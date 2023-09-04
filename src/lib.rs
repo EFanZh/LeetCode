@@ -1339,6 +1339,7 @@ pub mod problem_1641_count_sorted_vowel_strings;
 pub mod problem_1642_furthest_building_you_can_reach;
 pub mod problem_1646_get_maximum_in_generated_array;
 pub mod problem_1647_minimum_deletions_to_make_character_frequencies_unique;
+pub mod problem_1652_defuse_the_bomb;
 pub mod problem_1653_minimum_deletions_to_make_string_balanced;
 pub mod problem_1656_design_an_ordered_stream;
 pub mod problem_1657_determine_if_two_strings_are_close;
