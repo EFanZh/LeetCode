@@ -1407,6 +1407,7 @@ pub mod problem_1814_count_nice_pairs_in_an_array;
 pub mod problem_1816_truncate_sentence;
 pub mod problem_1817_finding_the_users_active_minutes;
 pub mod problem_1818_minimum_absolute_sum_difference;
+pub mod problem_1822_sign_of_the_product_of_an_array;
 
 #[cfg(test)]
 mod test_utilities;
