@@ -1409,6 +1409,7 @@ pub mod problem_1817_finding_the_users_active_minutes;
 pub mod problem_1818_minimum_absolute_sum_difference;
 pub mod problem_1822_sign_of_the_product_of_an_array;
 pub mod problem_1824_minimum_sideway_jumps;
+pub mod problem_1827_minimum_operations_to_make_the_array_increasing;
 
 #[cfg(test)]
 mod test_utilities;
