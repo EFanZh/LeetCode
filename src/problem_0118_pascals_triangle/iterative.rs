@@ -4,20 +4,27 @@ pub struct Solution;
 
 impl Solution {
     pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
-        let num_rows = num_rows as usize;
-        let mut result = Vec::with_capacity(num_rows);
+        let num_rows = num_rows as u32 as usize;
+        let mut result = (1..=num_rows).map(Vec::with_capacity).collect::<Vec<_>>();
+        let mut iter = result.iter_mut();
+        let mut top_row = iter.next().unwrap();
 
-        result.push(vec![1]);
+        top_row.push(1);
 
-        for length in 2..=num_rows {
-            let mut row = Vec::with_capacity(length);
-            let previous_row = result.last().unwrap().as_slice();
+        for row in iter {
+            let mut top_left = 0;
+
+            row.extend(top_row.iter().map(|&top| {
+                let result = top_left + top;
+
+                top_left = top;
+
+                result
+            }));
 
             row.push(1);
-            row.extend(previous_row.iter().zip(&previous_row[1..]).map(|(lhs, rhs)| lhs + rhs));
-            row.push(1);
 
-            result.push(row);
+            top_row = row;
         }
 
         result
