@@ -1414,6 +1414,7 @@ pub mod problem_1824_minimum_sideway_jumps;
 pub mod problem_1827_minimum_operations_to_make_the_array_increasing;
 pub mod problem_1832_check_if_the_sentence_is_pangram;
 pub mod problem_1833_maximum_ice_cream_bars;
+pub mod problem_1837_sum_of_digits_in_base_k;
 
 #[cfg(test)]
 mod test_utilities;
