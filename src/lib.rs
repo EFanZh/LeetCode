@@ -1416,6 +1416,7 @@ pub mod problem_1832_check_if_the_sentence_is_pangram;
 pub mod problem_1833_maximum_ice_cream_bars;
 pub mod problem_1837_sum_of_digits_in_base_k;
 pub mod problem_1839_longest_substring_of_all_vowels_in_order;
+pub mod problem_1844_replace_all_digits_with_characters;
 
 #[cfg(test)]
 mod test_utilities;
