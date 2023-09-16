@@ -1329,6 +1329,7 @@ pub mod problem_1610_maximum_number_of_visible_points;
 pub mod problem_1611_minimum_one_bit_operations_to_make_integers_zero;
 pub mod problem_1614_maximum_nesting_depth_of_the_parentheses;
 pub mod problem_1615_maximal_network_rank;
+pub mod problem_1616_split_two_strings_to_make_palindrome;
 pub mod problem_1619_mean_of_array_after_removing_some_elements;
 pub mod problem_1624_largest_substring_between_two_equal_characters;
 pub mod problem_1629_slowest_key;
