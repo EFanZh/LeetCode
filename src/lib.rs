@@ -1420,6 +1420,7 @@ pub mod problem_1837_sum_of_digits_in_base_k;
 pub mod problem_1839_longest_substring_of_all_vowels_in_order;
 pub mod problem_1844_replace_all_digits_with_characters;
 pub mod problem_1845_seat_reservation_manager;
+pub mod problem_1846_maximum_element_after_decreasing_and_rearranging;
 
 #[cfg(test)]
 mod test_utilities;
