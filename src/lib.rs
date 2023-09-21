@@ -1422,6 +1422,7 @@ pub mod problem_1844_replace_all_digits_with_characters;
 pub mod problem_1845_seat_reservation_manager;
 pub mod problem_1846_maximum_element_after_decreasing_and_rearranging;
 pub mod problem_1848_minimum_distance_to_the_target_element;
+pub mod problem_1854_maximum_population_year;
 
 #[cfg(test)]
 mod test_utilities;
