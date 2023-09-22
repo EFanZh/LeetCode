@@ -1423,6 +1423,7 @@ pub mod problem_1845_seat_reservation_manager;
 pub mod problem_1846_maximum_element_after_decreasing_and_rearranging;
 pub mod problem_1848_minimum_distance_to_the_target_element;
 pub mod problem_1854_maximum_population_year;
+pub mod problem_1855_maximum_distance_between_a_pair_of_values;
 
 #[cfg(test)]
 mod test_utilities;
