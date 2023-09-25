@@ -4,7 +4,7 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v3
+          - uses: actions/checkout@v4
           - run: rustup component add llvm-tools
           - run: sudo apt-get install --no-install-recommends -y ninja-build
           - run: vcpkg install gtest
@@ -16,6 +16,6 @@ jobs:
           - uses: codecov/codecov-action@v3
             with:
                 files: coverage/lcov.info
-          - uses: coverallsapp/github-action@master
+          - uses: coverallsapp/github-action@v2
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}

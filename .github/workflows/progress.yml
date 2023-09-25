@@ -4,11 +4,11 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v3
+          - uses: actions/checkout@v4
             with:
                 fetch-depth: 0
           - run: cargo run --package progress-tracker --release -- . _site
-          - uses: actions/upload-pages-artifact@v1
+          - uses: actions/upload-pages-artifact@v2
     deploy:
         needs: build
         permissions:
@@ -16,4 +16,4 @@ jobs:
             pages: write
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/deploy-pages@v1
+          - uses: actions/deploy-pages@v2
