@@ -1427,6 +1427,7 @@ pub mod problem_1848_minimum_distance_to_the_target_element;
 pub mod problem_1854_maximum_population_year;
 pub mod problem_1855_maximum_distance_between_a_pair_of_values;
 pub mod problem_1859_sorting_the_sentence;
+pub mod problem_1860_incremental_memory_leak;
 
 #[cfg(test)]
 mod test_utilities;
