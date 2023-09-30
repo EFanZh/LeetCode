@@ -1334,6 +1334,7 @@ pub mod problem_1617_count_subtrees_with_max_distance_between_cities;
 pub mod problem_1619_mean_of_array_after_removing_some_elements;
 pub mod problem_1620_coordinate_with_maximum_network_quality;
 pub mod problem_1621_number_of_sets_of_k_non_overlapping_line_segments;
+pub mod problem_1622_fancy_sequence;
 pub mod problem_1624_largest_substring_between_two_equal_characters;
 pub mod problem_1629_slowest_key;
 pub mod problem_1630_arithmetic_subarrays;
