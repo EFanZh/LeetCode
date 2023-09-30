@@ -2,8 +2,8 @@
 
 struct Fancy {
     values: Vec<u32>,
-    mul: u32,
-    inc: u32,
+    mul: u64,
+    inc: u64,
 }
 
 impl Fancy {
@@ -40,35 +40,34 @@ impl Fancy {
     }
 
     fn append(&mut self, val: i32) {
-        let val = val as u32;
+        let val = u64::from(val as u32);
 
-        self.values.push(
-            (u64::from(val + (Self::MODULUS as u32 - self.inc)) * Self::mod_inv(u64::from(self.mul)) % Self::MODULUS)
-                as _,
-        );
+        self.values
+            .push(((val + (Self::MODULUS - self.inc)) * Self::mod_inv(self.mul) % Self::MODULUS) as _);
     }
 
     fn add_all(&mut self, inc: i32) {
-        let modulus = Self::MODULUS as _;
-        let inc = inc as u32;
+        let inc = u64::from(inc as u32);
 
         self.inc += inc;
 
-        if self.inc >= modulus {
-            self.inc -= modulus;
+        if self.inc >= Self::MODULUS {
+            self.inc -= Self::MODULUS;
         }
     }
 
     fn mult_all(&mut self, m: i32) {
-        let m = m as u32;
+        let m = u64::from(m as u32);
 
-        self.mul = (u64::from(self.mul) * u64::from(m) % Self::MODULUS) as _;
-        self.inc = (u64::from(self.inc) * u64::from(m) % Self::MODULUS) as _;
+        self.mul = self.mul * m % Self::MODULUS;
+        self.inc = self.inc * m % Self::MODULUS;
     }
 
     fn get_index(&mut self, idx: i32) -> i32 {
-        self.values.get(idx as u32 as usize).map_or(-1, |&value| {
-            ((u64::from(value) * u64::from(self.mul) + u64::from(self.inc)) % Self::MODULUS) as _
+        let idx = idx as u32 as usize;
+
+        self.values.get(idx).map_or(-1, |&value| {
+            ((u64::from(value) * self.mul + self.inc) % Self::MODULUS) as _
         })
     }
 }
