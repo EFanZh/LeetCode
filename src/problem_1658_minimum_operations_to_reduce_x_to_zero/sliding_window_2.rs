@@ -74,6 +74,7 @@ impl Solution {
         n.wrapping_sub(max_excluded) as _
     }
 }
+
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
