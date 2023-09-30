@@ -1,5 +1,6 @@
 pub mod lazy;
 pub mod mod_inverse;
+pub mod mod_inverse_2;
 
 pub trait Fancy {
     fn new() -> Self;
