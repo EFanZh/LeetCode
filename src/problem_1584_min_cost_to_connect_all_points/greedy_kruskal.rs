@@ -41,7 +41,7 @@ impl Solution {
         } else {
             let root = Self::find_root(union_find, parent);
 
-            union_find[node as usize].0 = root;
+            union_find[usize::from(node)].0 = root;
 
             root
         }
@@ -54,13 +54,16 @@ impl Solution {
         if left_root == right_root {
             false
         } else {
-            match union_find[left_root as usize].1.cmp(&union_find[right_root as usize].1) {
-                Ordering::Less => union_find[left_root as usize].0 = right_root,
+            match union_find[usize::from(left_root)]
+                .1
+                .cmp(&union_find[usize::from(right_root)].1)
+            {
+                Ordering::Less => union_find[usize::from(left_root)].0 = right_root,
                 Ordering::Equal => {
-                    union_find[left_root as usize].1 += 1;
-                    union_find[right_root as usize].0 = left_root;
+                    union_find[usize::from(left_root)].1 += 1;
+                    union_find[usize::from(right_root)].0 = left_root;
                 }
-                Ordering::Greater => union_find[right_root as usize].0 = left_root,
+                Ordering::Greater => union_find[usize::from(right_root)].0 = left_root,
             }
 
             true
