@@ -1336,6 +1336,7 @@ pub mod problem_1620_coordinate_with_maximum_network_quality;
 pub mod problem_1621_number_of_sets_of_k_non_overlapping_line_segments;
 pub mod problem_1622_fancy_sequence;
 pub mod problem_1624_largest_substring_between_two_equal_characters;
+pub mod problem_1625_lexicographically_smallest_string_after_applying_operations;
 pub mod problem_1629_slowest_key;
 pub mod problem_1630_arithmetic_subarrays;
 pub mod problem_1631_path_with_minimum_effort;
