@@ -31,7 +31,8 @@ impl Solution {
 
         count
             .into_iter()
-            .filter_map(|(k, v)| (v == max_count).then(|| k))
+            .filter(|&(_, v)| v == max_count)
+            .map(|(k, _)| k)
             .collect()
     }
 }

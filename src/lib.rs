@@ -114,6 +114,7 @@
     clippy::missing_panics_doc,
     clippy::must_use_candidate,
     clippy::needless_pass_by_value,
+    clippy::redundant_locals, // False positive.
     clippy::same_name_method,
     clippy::wildcard_dependencies
 )]

@@ -13,7 +13,8 @@ impl Solution {
                 .iter()
                 .enumerate()
                 .skip(i)
-                .filter_map(|(j, length)| (nums[j] > *num).then(|| *length))
+                .filter(|&(j, _)| nums[j] > *num)
+                .map(|(_, &length)| length)
                 .max()
                 .map_or(1, |x| x + 1);
 
