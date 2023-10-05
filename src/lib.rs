@@ -1345,6 +1345,7 @@ pub mod problem_1631_path_with_minimum_effort;
 pub mod problem_1632_rank_transform_of_a_matrix;
 pub mod problem_1636_sort_array_by_increasing_frequency;
 pub mod problem_1637_widest_vertical_area_between_two_points_containing_no_points;
+pub mod problem_1638_count_substrings_that_differ_by_one_character;
 pub mod problem_1640_check_array_formation_through_concatenation;
 pub mod problem_1641_count_sorted_vowel_strings;
 pub mod problem_1642_furthest_building_you_can_reach;
