@@ -15,7 +15,7 @@ impl Solution {
                 let substring_ones = ones / 3;
 
                 #[allow(clippy::unnecessary_lazy_evaluations)]
-                let mut iter = (0..).zip(s.bytes()).filter_map(|(i, c)| (c == b'1').then(|| i));
+                let mut iter = (0..).zip(s.bytes()).filter(|&(_, c)| c == b'1').map(|(i, _)| i);
 
                 let start_1 = iter.nth(substring_ones - 1).unwrap();
                 let end_1 = iter.next().unwrap();

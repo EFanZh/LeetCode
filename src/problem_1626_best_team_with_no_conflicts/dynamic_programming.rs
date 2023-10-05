@@ -24,9 +24,8 @@ impl Solution {
             let total_score = left_cache
                 .iter()
                 .zip(&*players)
-                .filter_map(|(&left_total_score, &(left_age, left_score))| {
-                    (left_age == age || left_score <= score).then(|| left_total_score as u32)
-                })
+                .filter(|&(_, &(left_age, left_score))| left_age == age || left_score <= score)
+                .map(|(&left_total_score, _)| left_total_score as u32)
                 .max()
                 .map_or(score, |left_score| left_score + score);
 

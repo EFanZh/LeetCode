@@ -22,9 +22,8 @@ impl Solution {
         } else {
             let result = offers
                 .iter()
-                .filter_map(|&(offer, price)| {
-                    Self::check_offer(offer, needs).then(|| price + Self::helper(offers, needs - offer, cache))
-                })
+                .filter(|&&(offer, _)| Self::check_offer(offer, needs))
+                .map(|&(offer, price)| price + Self::helper(offers, needs - offer, cache))
                 .min()
                 .unwrap();
 

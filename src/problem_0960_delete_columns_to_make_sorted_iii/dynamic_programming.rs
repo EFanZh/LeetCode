@@ -13,7 +13,8 @@ impl Solution {
             let length = cache
                 .iter()
                 .enumerate()
-                .filter_map(|(j, &length)| strs.iter().map(String::as_bytes).all(|s| s[j] <= s[i]).then(|| length))
+                .filter(|&(j, _)| strs.iter().map(String::as_bytes).all(|s| s[j] <= s[i]))
+                .map(|(_, &length)| length)
                 .max()
                 .map_or(1, |length| length + 1);
 

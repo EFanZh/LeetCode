@@ -117,9 +117,9 @@ impl Solution {
                             .iter()
                             .copied()
                             .enumerate()
-                            .filter_map(|(next_first, (next_overlaps, _))| {
-                                (next_state & (1 << next_first) != 0)
-                                    .then(|| (graph[n * first + next_first] + next_overlaps, next_first))
+                            .filter(|&(next_first, _)| next_state & (1 << next_first) != 0)
+                            .map(|(next_first, (next_overlaps, _))| {
+                                (graph[n * first + next_first] + next_overlaps, next_first)
                             })
                             .max_by_key(|&(overlaps, _)| overlaps)
                             .unwrap();

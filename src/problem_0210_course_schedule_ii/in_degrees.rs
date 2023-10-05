@@ -22,7 +22,8 @@ impl Solution {
         let mut queue = in_degrees
             .iter()
             .enumerate()
-            .filter_map(|(i, &indegree)| (indegree == 0).then(|| i as _))
+            .filter(|&(_, &indegree)| indegree == 0)
+            .map(|(i, _)| i as _)
             .collect::<VecDeque<_>>();
 
         let mut result = Vec::new();

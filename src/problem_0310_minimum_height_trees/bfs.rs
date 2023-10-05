@@ -23,7 +23,8 @@ impl Solution {
         let mut queue = indegrees
             .iter()
             .enumerate()
-            .filter_map(|(i, &num)| (num < 2).then(|| i as _))
+            .filter(|&(_, &num)| num < 2)
+            .map(|(i, _)| i as _)
             .collect::<Vec<_>>();
 
         let mut temp = Vec::new();
