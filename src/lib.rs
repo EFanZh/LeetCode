@@ -1438,6 +1438,7 @@ pub mod problem_1854_maximum_population_year;
 pub mod problem_1855_maximum_distance_between_a_pair_of_values;
 pub mod problem_1859_sorting_the_sentence;
 pub mod problem_1860_incremental_memory_leak;
+pub mod problem_1861_rotating_the_box;
 pub mod problem_1869_longer_contiguous_segments_of_ones_than_zeros;
 
 #[cfg(test)]
