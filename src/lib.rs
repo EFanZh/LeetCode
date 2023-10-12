@@ -1444,6 +1444,7 @@ pub mod problem_1869_longer_contiguous_segments_of_ones_than_zeros;
 pub mod problem_1876_substrings_of_size_three_with_distinct_characters;
 pub mod problem_1877_minimize_maximum_pair_sum_in_array;
 pub mod problem_1880_check_if_word_equals_summation_of_two_words;
+pub mod problem_1881_maximum_value_after_insertion;
 
 #[cfg(test)]
 mod test_utilities;
