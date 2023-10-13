@@ -1392,6 +1392,7 @@ pub mod problem_1726_tuple_with_same_product;
 pub mod problem_1732_find_the_highest_altitude;
 pub mod problem_1734_decode_xored_permutation;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
+pub mod problem_1737_change_minimum_characters_to_satisfy_one_of_three_conditions;
 pub mod problem_1738_find_kth_largest_xor_coordinate_value;
 pub mod problem_1742_maximum_number_of_balls_in_a_box;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
