@@ -5,6 +5,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         steps:
           - uses: actions/checkout@v4
+          - run: rustup update
           - run: cargo fmt --all -- --check
         strategy:
             matrix:
@@ -16,6 +17,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         steps:
           - uses: actions/checkout@v4
+          - run: rustup update
           - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
         strategy:
             matrix:
@@ -27,6 +29,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         steps:
           - uses: actions/checkout@v4
+          - run: rustup update
           - run: cargo test --workspace
         strategy:
             matrix:
