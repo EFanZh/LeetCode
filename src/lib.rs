@@ -1450,6 +1450,7 @@ pub mod problem_1877_minimize_maximum_pair_sum_in_array;
 pub mod problem_1880_check_if_word_equals_summation_of_two_words;
 pub mod problem_1881_maximum_value_after_insertion;
 pub mod problem_1884_egg_drop_with_2_eggs_and_n_floors;
+pub mod problem_1886_determine_whether_matrix_can_be_obtained_by_rotation;
 
 #[cfg(test)]
 mod test_utilities;
