@@ -15,6 +15,7 @@ mod tests {
             ((4, 0, 4), 1),
             ((5, 0, 28), 7),
             ((3, 2, 18), 7),
+            ((8, 7, 14), 4),
         ];
 
         for ((n, index, max_sum), expected) in test_cases {
