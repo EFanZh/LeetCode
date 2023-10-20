@@ -1452,6 +1452,7 @@ pub mod problem_1881_maximum_value_after_insertion;
 pub mod problem_1884_egg_drop_with_2_eggs_and_n_floors;
 pub mod problem_1886_determine_whether_matrix_can_be_obtained_by_rotation;
 pub mod problem_1887_reduction_operations_to_make_the_array_elements_equal;
+pub mod problem_1893_check_if_all_the_integers_in_a_range_are_covered;
 
 #[cfg(test)]
 mod test_utilities;
