@@ -1351,6 +1351,7 @@ pub mod problem_1639_number_of_ways_to_form_a_target_string_given_a_dictionary;
 pub mod problem_1640_check_array_formation_through_concatenation;
 pub mod problem_1641_count_sorted_vowel_strings;
 pub mod problem_1642_furthest_building_you_can_reach;
+pub mod problem_1643_kth_smallest_instructions;
 pub mod problem_1646_get_maximum_in_generated_array;
 pub mod problem_1647_minimum_deletions_to_make_character_frequencies_unique;
 pub mod problem_1652_defuse_the_bomb;
