@@ -39,7 +39,7 @@ impl Solution {
         const MODULUS: u64 = 1_000_000_007;
 
         let mut orders = orders as u32;
-        let mut count_counts = HashMap::<u32, u32>::new();
+        let mut count_counts = HashMap::<u32, u32>::with_capacity(inventory.len());
 
         for count in inventory {
             *count_counts.entry(count as _).or_default() += 1;
