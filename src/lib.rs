@@ -1355,6 +1355,7 @@ pub mod problem_1643_kth_smallest_instructions;
 pub mod problem_1646_get_maximum_in_generated_array;
 pub mod problem_1647_minimum_deletions_to_make_character_frequencies_unique;
 pub mod problem_1648_sell_diminishing_valued_colored_balls;
+pub mod problem_1649_create_sorted_array_through_instructions;
 pub mod problem_1652_defuse_the_bomb;
 pub mod problem_1653_minimum_deletions_to_make_string_balanced;
 pub mod problem_1656_design_an_ordered_stream;
