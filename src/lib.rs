@@ -1358,6 +1358,7 @@ pub mod problem_1648_sell_diminishing_valued_colored_balls;
 pub mod problem_1649_create_sorted_array_through_instructions;
 pub mod problem_1652_defuse_the_bomb;
 pub mod problem_1653_minimum_deletions_to_make_string_balanced;
+pub mod problem_1655_distribute_repeating_integers;
 pub mod problem_1656_design_an_ordered_stream;
 pub mod problem_1657_determine_if_two_strings_are_close;
 pub mod problem_1658_minimum_operations_to_reduce_x_to_zero;
