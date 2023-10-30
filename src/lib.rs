@@ -1462,6 +1462,7 @@ pub mod problem_1903_largest_odd_number_in_string;
 pub mod problem_1909_remove_one_element_to_make_the_array_strictly_increasing;
 pub mod problem_1911_maximum_alternating_subsequence_sum;
 pub mod problem_1913_maximum_product_difference_between_two_pairs;
+pub mod problem_1915_number_of_wonderful_substrings;
 
 #[cfg(test)]
 mod test_utilities;
