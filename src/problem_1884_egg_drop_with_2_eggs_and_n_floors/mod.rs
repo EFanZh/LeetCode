@@ -1,3 +1,4 @@
+pub mod dynamic_programming;
 pub mod mathematical;
 
 pub trait Solution {
