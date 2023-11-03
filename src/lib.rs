@@ -1464,6 +1464,7 @@ pub mod problem_1911_maximum_alternating_subsequence_sum;
 pub mod problem_1913_maximum_product_difference_between_two_pairs;
 pub mod problem_1915_number_of_wonderful_substrings;
 pub mod problem_1920_build_array_from_permutation;
+pub mod problem_1922_count_good_numbers;
 pub mod problem_1926_nearest_exit_from_entrance_in_maze;
 pub mod problem_1929_concatenation_of_array;
 
