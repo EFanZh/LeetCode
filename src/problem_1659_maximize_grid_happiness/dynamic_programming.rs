@@ -73,9 +73,9 @@ impl Solution {
 
             score = score.wrapping_add(match top * 3 + current {
                 0 | 1 | 2 | 3 | 6 => 0,       // 00 | 01 | 02 | 10 | 20.
-                4 => 6_u8.wrapping_neg(),     // 11
-                5 | 7 => 1_u8.wrapping_neg(), // 12 | 21
-                _ => 4,                       // 22
+                4 => 6_u8.wrapping_neg(),     // 11.
+                5 | 7 => 1_u8.wrapping_neg(), // 12 | 21.
+                _ => 4,                       // 22.
             });
         }
 
