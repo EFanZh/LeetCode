@@ -1372,6 +1372,7 @@ pub mod problem_1670_design_front_middle_back_queue;
 pub mod problem_1671_minimum_number_of_removals_to_make_mountain_array;
 pub mod problem_1672_richest_customer_wealth;
 pub mod problem_1673_find_the_most_competitive_subsequence;
+pub mod problem_1675_minimize_deviation_in_array;
 pub mod problem_1678_goal_parser_interpretation;
 pub mod problem_1679_max_number_of_k_sum_pairs;
 pub mod problem_1684_count_the_number_of_consistent_strings;
