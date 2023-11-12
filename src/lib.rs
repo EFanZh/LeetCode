@@ -1475,6 +1475,7 @@ pub mod problem_1929_concatenation_of_array;
 pub mod problem_1935_maximum_number_of_words_you_can_type;
 pub mod problem_1941_check_if_all_characters_have_equal_number_of_occurrences;
 pub mod problem_1945_sum_of_digits_of_string_after_convert;
+pub mod problem_1952_three_divisors;
 
 #[cfg(test)]
 mod test_utilities;
