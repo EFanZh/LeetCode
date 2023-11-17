@@ -1480,6 +1480,7 @@ pub mod problem_1945_sum_of_digits_of_string_after_convert;
 pub mod problem_1952_three_divisors;
 pub mod problem_1957_delete_characters_to_make_fancy_string;
 pub mod problem_1961_check_if_string_is_a_prefix_of_array;
+pub mod problem_1962_remove_stones_to_minimize_the_total;
 
 #[cfg(test)]
 mod test_utilities;
