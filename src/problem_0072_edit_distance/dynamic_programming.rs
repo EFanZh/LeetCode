@@ -2,35 +2,33 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
-
 impl Solution {
     pub fn min_distance(word1: String, word2: String) -> i32 {
         let (word1, word2) = if word2.len() < word1.len() {
-            (word2, word1)
+            (word2.as_str(), word1.as_str())
         } else {
-            (word1, word2)
+            (word1.as_str(), word2.as_str())
         };
 
-        let mut cache = (0..=word1.len() as _).rev().collect::<Box<_>>();
+        let mut cache = (1..=word1.len() as u16).collect::<Box<_>>();
 
-        for (prev_base, c2) in word2.as_bytes().iter().rev().enumerate() {
-            let mut prev = prev_base as _;
+        for (mut top_left, c1) in (0..).zip(word2.bytes()) {
+            let mut left = top_left + 1;
 
-            cache[word1.len()] = prev + 1;
-
-            for (i, c1) in word1.as_bytes().iter().enumerate().rev() {
+            for (target, c2) in cache.iter_mut().zip(word1.bytes()) {
                 let distance = if c1 == c2 {
-                    prev
+                    top_left
                 } else {
-                    cache[i].min(cache[i + 1]).min(prev) + 1
+                    top_left.min(*target).min(left) + 1
                 };
 
-                prev = mem::replace(&mut cache[i], distance);
+                top_left = *target;
+                left = distance;
+                *target = distance;
             }
         }
 
-        cache[0]
+        cache.last().map_or(word2.len() as _, |&last| i32::from(last))
     }
 }
 
