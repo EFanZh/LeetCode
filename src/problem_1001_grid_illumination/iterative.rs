@@ -117,7 +117,7 @@ mod tests {
     }
 
     #[test]
-    #[should_panic]
+    #[should_panic(expected = "internal error: entered unreachable code")]
     fn test_unwrap_occupied_failure() {
         super::Counter::unwrap_occupied(HashMap::from([(2_u32, 5_u16)]).entry(5));
     }

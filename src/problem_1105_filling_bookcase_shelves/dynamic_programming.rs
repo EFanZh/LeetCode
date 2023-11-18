@@ -6,18 +6,14 @@ use std::convert::TryInto;
 
 impl Solution {
     pub fn min_height_shelves(books: Vec<Vec<i32>>, shelf_width: i32) -> i32 {
-        let books = {
-            let books = books;
+        let books = books
+            .into_iter()
+            .map(|book| {
+                let [thickness, height]: [_; 2] = book.try_into().ok().unwrap();
 
-            books
-                .iter()
-                .map(|book| {
-                    let [thickness, height]: [_; 2] = book.as_slice().try_into().unwrap();
-
-                    (thickness as u32, height as u32)
-                })
-                .collect::<Vec<_>>()
-        };
+                (thickness as u32, height as u32)
+            })
+            .collect::<Vec<_>>();
 
         let shelf_width = shelf_width as u32;
         let mut cache = Vec::with_capacity(books.len());

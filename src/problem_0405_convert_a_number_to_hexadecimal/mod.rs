@@ -1,4 +1,4 @@
-#![allow(clippy::wrong_self_convention)]
+#![allow(clippy::wrong_self_convention)] // Expected.
 
 pub mod cheating;
 pub mod iterative;
