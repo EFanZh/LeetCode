@@ -11,8 +11,6 @@ impl Solution {
         let mut waiting = 0;
 
         for (i, customer) in (1..).zip(customers) {
-            let customer = customer;
-
             waiting += customer;
 
             let onboard = waiting.min(4);

@@ -15,18 +15,14 @@ impl Solution {
     pub fn is_escape_possible(blocked: Vec<Vec<i32>>, source: Vec<i32>, target: Vec<i32>) -> bool {
         const MAZE_SIZE: u32 = 1_000_000;
 
-        let blocked = {
-            let blocked = blocked;
+        let blocked = blocked
+            .into_iter()
+            .map(|point| {
+                let [x, y]: [_; 2] = point.try_into().ok().unwrap();
 
-            blocked
-                .iter()
-                .map(|point| {
-                    let [x, y]: [_; 2] = point.as_slice().try_into().unwrap();
-
-                    (x as u32, y as u32)
-                })
-                .collect::<HashSet<_>>()
-        };
+                (x as u32, y as u32)
+            })
+            .collect::<HashSet<_>>();
 
         let source = Self::unwrap_point(source);
         let target = Self::unwrap_point(target);
