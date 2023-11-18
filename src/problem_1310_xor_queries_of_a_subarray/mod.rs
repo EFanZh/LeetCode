@@ -19,7 +19,7 @@ mod tests {
 
         for ((arr, queries), expected) in test_cases {
             assert_eq!(
-                S::xor_queries(arr.to_vec(), queries.iter().copied().map(Vec::from).collect()),
+                S::xor_queries(arr.to_vec(), queries.iter().map(Vec::from).collect()),
                 expected
             );
         }

@@ -17,7 +17,7 @@ mod tests {
 
         for ((points, k), expected) in test_cases {
             assert_eq!(
-                S::find_max_value_of_equation(points.iter().copied().map(Vec::from).collect(), k),
+                S::find_max_value_of_equation(points.iter().map(Vec::from).collect(), k),
                 expected,
             );
         }

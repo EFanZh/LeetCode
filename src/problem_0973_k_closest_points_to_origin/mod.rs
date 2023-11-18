@@ -18,7 +18,7 @@ mod tests {
 
         for ((points, k), expected) in test_cases {
             assert_eq!(
-                test_utilities::unstable_sorted(S::k_closest(points.iter().copied().map(Vec::from).collect(), k)),
+                test_utilities::unstable_sorted(S::k_closest(points.iter().map(Vec::from).collect(), k)),
                 expected
             );
         }

@@ -37,7 +37,7 @@ mod tests {
         for ((blocked, source, target), expected) in test_cases {
             assert_eq!(
                 S::is_escape_possible(
-                    blocked.iter().copied().map(Vec::from).collect(),
+                    blocked.iter().map(Vec::from).collect(),
                     source.to_vec(),
                     target.to_vec()
                 ),

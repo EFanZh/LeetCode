@@ -18,7 +18,7 @@ mod tests {
 
         for ((nums, requests), expected) in test_cases {
             assert_eq!(
-                S::max_sum_range_query(nums.to_vec(), requests.iter().copied().map(Vec::from).collect()),
+                S::max_sum_range_query(nums.to_vec(), requests.iter().map(Vec::from).collect()),
                 expected
             );
         }

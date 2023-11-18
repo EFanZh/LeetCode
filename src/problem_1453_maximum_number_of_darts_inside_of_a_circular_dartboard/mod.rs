@@ -16,10 +16,7 @@ mod tests {
         ];
 
         for ((darts, r), expected) in test_cases {
-            assert_eq!(
-                S::num_points(darts.iter().copied().map(Vec::from).collect(), r),
-                expected,
-            );
+            assert_eq!(S::num_points(darts.iter().map(Vec::from).collect(), r), expected,);
         }
     }
 }

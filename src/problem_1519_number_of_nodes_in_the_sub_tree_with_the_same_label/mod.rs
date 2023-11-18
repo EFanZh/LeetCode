@@ -20,7 +20,7 @@ mod tests {
 
         for ((n, edges, labels), expected) in test_cases {
             assert_eq!(
-                S::count_sub_trees(n, edges.iter().copied().map(Vec::from).collect(), labels.to_string()),
+                S::count_sub_trees(n, edges.iter().map(Vec::from).collect(), labels.to_string()),
                 expected,
             );
         }

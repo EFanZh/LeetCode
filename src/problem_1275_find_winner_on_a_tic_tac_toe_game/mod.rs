@@ -20,7 +20,7 @@ mod tests {
         ];
 
         for (moves, expected) in test_cases {
-            assert_eq!(S::tictactoe(moves.iter().copied().map(Vec::from).collect()), expected);
+            assert_eq!(S::tictactoe(moves.iter().map(Vec::from).collect()), expected);
         }
     }
 }

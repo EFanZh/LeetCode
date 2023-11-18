@@ -75,7 +75,7 @@ fn write_html(writer: &mut impl Write, problems: &[Problem], tree: &Tree, progre
     head.add_element("title").add_text(TITLE);
 
     head.add_element("style").add_raw(
-        r#"body { font: 14px system-ui, sans-serif; }
+        r"body { font: 14px system-ui, sans-serif; }
 h1,h2 { text-align: center; }
 figure { display: flex; justify-content: center; }
 .detail { border-collapse: collapse; }
@@ -86,7 +86,7 @@ figure { display: flex; justify-content: center; }
 .detail>tbody>tr:nth-child(odd) { background: #eee; }
 .detail>tbody ul { margin: 0; padding: 0; list-style-type: none; }
 .not-done>td { color: rgba(0, 0, 0, 0.382); }
-.not-done>td a:link { color: rgba(0, 0, 255, 0.382); }"#,
+.not-done>td a:link { color: rgba(0, 0, 255, 0.382); }",
     );
 
     head.close();

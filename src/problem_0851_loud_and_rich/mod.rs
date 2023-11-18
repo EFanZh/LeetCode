@@ -20,7 +20,7 @@ mod tests {
 
         for ((richer, quiet), expected) in test_cases {
             assert_eq!(
-                S::loud_and_rich(richer.iter().copied().map(Vec::from).collect(), quiet.to_vec()),
+                S::loud_and_rich(richer.iter().map(Vec::from).collect(), quiet.to_vec()),
                 expected
             );
         }

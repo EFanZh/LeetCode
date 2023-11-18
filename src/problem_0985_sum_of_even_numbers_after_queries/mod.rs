@@ -19,7 +19,7 @@ mod tests {
 
         for ((nums, queries), expected) in test_cases {
             assert_eq!(
-                S::sum_even_after_queries(nums.to_vec(), queries.iter().copied().map(Vec::from).collect()),
+                S::sum_even_after_queries(nums.to_vec(), queries.iter().map(Vec::from).collect()),
                 expected
             );
         }

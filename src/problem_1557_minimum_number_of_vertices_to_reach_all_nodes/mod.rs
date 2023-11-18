@@ -19,7 +19,7 @@ mod tests {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_smallest_set_of_vertices(
                     n,
-                    edges.iter().copied().map(Vec::from).collect(),
+                    edges.iter().map(Vec::from).collect(),
                 )),
                 expected,
             );

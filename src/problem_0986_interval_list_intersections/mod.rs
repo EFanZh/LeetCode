@@ -29,8 +29,8 @@ mod tests {
         for ((first_list, second_list), expected) in test_cases {
             assert_eq!(
                 S::interval_intersection(
-                    first_list.iter().copied().map(Vec::from).collect(),
-                    second_list.iter().copied().map(Vec::from).collect(),
+                    first_list.iter().map(Vec::from).collect(),
+                    second_list.iter().map(Vec::from).collect(),
                 ),
                 expected
             );

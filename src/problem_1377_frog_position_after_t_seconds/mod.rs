@@ -29,7 +29,7 @@ mod tests {
 
         for ((n, edges, t, target), expected) in test_cases {
             approx::assert_ulps_eq!(
-                S::frog_position(n, edges.iter().copied().map(Vec::from).collect(), t, target),
+                S::frog_position(n, edges.iter().map(Vec::from).collect(), t, target),
                 expected,
             );
         }

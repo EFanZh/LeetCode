@@ -42,7 +42,7 @@ mod tests {
         ];
 
         for (events, expected) in test_cases {
-            assert_eq!(S::max_events(events.iter().copied().map(Vec::from).collect()), expected);
+            assert_eq!(S::max_events(events.iter().map(Vec::from).collect()), expected);
         }
     }
 }

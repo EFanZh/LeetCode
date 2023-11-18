@@ -23,7 +23,7 @@ mod tests {
 
         for ((n, edges), expected) in test_cases {
             assert_eq!(
-                S::max_num_edges_to_remove(n, edges.iter().copied().map(Vec::from).collect()),
+                S::max_num_edges_to_remove(n, edges.iter().map(Vec::from).collect()),
                 expected,
             );
         }

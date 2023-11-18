@@ -45,7 +45,7 @@ mod tests {
 
         for ((s, queries), expected) in test_cases {
             assert_eq!(
-                S::can_make_pali_queries(s.to_string(), queries.iter().copied().map(Vec::from).collect()),
+                S::can_make_pali_queries(s.to_string(), queries.iter().map(Vec::from).collect()),
                 expected
             );
         }

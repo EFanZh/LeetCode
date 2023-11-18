@@ -167,7 +167,7 @@ mod tests {
                     contained_boxes.iter().copied().map(Vec::from).collect(),
                     initial_boxes.to_vec()
                 ),
-                expected
+                expected,
             );
         }
     }

@@ -18,7 +18,7 @@ mod tests {
 
         for ((trips, capacity), expected) in test_cases {
             assert_eq!(
-                S::car_pooling(trips.iter().copied().map(Vec::from).collect(), capacity),
+                S::car_pooling(trips.iter().map(Vec::from).collect(), capacity),
                 expected
             );
         }

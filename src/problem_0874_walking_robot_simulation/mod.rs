@@ -17,7 +17,7 @@ mod tests {
 
         for ((commands, obstacles), expected) in test_cases {
             assert_eq!(
-                S::robot_sim(commands.to_vec(), obstacles.iter().copied().map(Vec::from).collect()),
+                S::robot_sim(commands.to_vec(), obstacles.iter().map(Vec::from).collect()),
                 expected
             );
         }

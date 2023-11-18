@@ -17,7 +17,7 @@ mod tests {
 
         for ((towers, radius), expected) in test_cases {
             assert_eq!(
-                S::best_coordinate(towers.iter().copied().map(Vec::from).collect(), radius),
+                S::best_coordinate(towers.iter().map(Vec::from).collect(), radius),
                 expected,
             );
         }

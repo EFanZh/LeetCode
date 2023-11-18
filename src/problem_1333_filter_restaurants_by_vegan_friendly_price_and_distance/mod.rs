@@ -65,7 +65,7 @@ mod tests {
         for ((restaurants, vegan_friendly, max_price, max_distance), expected) in test_cases {
             assert_eq!(
                 S::filter_restaurants(
-                    restaurants.iter().copied().map(Vec::from).collect(),
+                    restaurants.iter().map(Vec::from).collect(),
                     vegan_friendly,
                     max_price,
                     max_distance

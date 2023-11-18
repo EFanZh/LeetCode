@@ -16,7 +16,7 @@ mod tests {
 
         for ((ranges, left, right), expected) in test_cases {
             assert_eq!(
-                S::is_covered(ranges.iter().copied().map(Vec::from).collect(), left, right),
+                S::is_covered(ranges.iter().map(Vec::from).collect(), left, right),
                 expected,
             );
         }

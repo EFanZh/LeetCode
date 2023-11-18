@@ -347,7 +347,7 @@ mod tests {
 
         for ((n, threshold, queries), expected) in test_cases {
             assert_eq!(
-                S::are_connected(n, threshold, queries.iter().copied().map(Vec::from).collect()),
+                S::are_connected(n, threshold, queries.iter().map(Vec::from).collect()),
                 expected,
             );
         }

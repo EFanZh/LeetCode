@@ -64,7 +64,7 @@ mod tests {
 
         for ((queens, king), expected) in test_cases {
             assert_eq!(
-                S::queens_attackthe_king(queens.iter().copied().map(Vec::from).collect(), king.to_vec()),
+                S::queens_attackthe_king(queens.iter().map(Vec::from).collect(), king.to_vec()),
                 expected
             );
         }
