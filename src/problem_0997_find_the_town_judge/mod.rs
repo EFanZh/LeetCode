@@ -17,10 +17,7 @@ mod tests {
         ];
 
         for ((n, trust), expected) in test_cases {
-            assert_eq!(
-                S::find_judge(n, trust.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::find_judge(n, trust.iter().map(Vec::from).collect()), expected);
         }
     }
 }

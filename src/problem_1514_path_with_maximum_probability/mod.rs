@@ -266,13 +266,7 @@ mod tests {
 
         for ((n, edges, succ_prob, start, end), expected) in test_cases {
             approx::assert_ulps_eq!(
-                S::max_probability(
-                    n,
-                    edges.iter().copied().map(Vec::from).collect(),
-                    succ_prob.to_vec(),
-                    start,
-                    end
-                ),
+                S::max_probability(n, edges.iter().map(Vec::from).collect(), succ_prob.to_vec(), start, end),
                 expected,
             );
         }

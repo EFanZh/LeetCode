@@ -16,7 +16,7 @@ mod tests {
 
         for (customers, expected) in test_cases {
             approx::assert_ulps_eq!(
-                S::average_waiting_time(customers.iter().copied().map(Vec::from).collect()),
+                S::average_waiting_time(customers.iter().map(Vec::from).collect()),
                 expected,
             );
         }

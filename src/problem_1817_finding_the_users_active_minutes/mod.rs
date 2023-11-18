@@ -19,7 +19,7 @@ mod tests {
 
         for ((logs, k), expected) in test_cases {
             assert_eq!(
-                S::finding_users_active_minutes(logs.iter().copied().map(Vec::from).collect(), k),
+                S::finding_users_active_minutes(logs.iter().map(Vec::from).collect(), k),
                 expected,
             );
         }

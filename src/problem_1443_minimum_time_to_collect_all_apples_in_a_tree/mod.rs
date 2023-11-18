@@ -46,7 +46,7 @@ mod tests {
 
         for ((n, edges, has_apple), expected) in test_cases {
             assert_eq!(
-                S::min_time(n, edges.iter().copied().map(Vec::from).collect(), has_apple.to_vec()),
+                S::min_time(n, edges.iter().map(Vec::from).collect(), has_apple.to_vec()),
                 expected
             );
         }

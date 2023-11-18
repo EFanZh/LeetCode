@@ -35,7 +35,7 @@ mod tests {
 
         for ((box_types, truck_size), expected) in test_cases {
             assert_eq!(
-                S::maximum_units(box_types.iter().copied().map(Vec::from).collect(), truck_size),
+                S::maximum_units(box_types.iter().map(Vec::from).collect(), truck_size),
                 expected,
             );
         }

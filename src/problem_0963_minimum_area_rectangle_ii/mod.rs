@@ -19,10 +19,7 @@ mod tests {
         ];
 
         for (points, expected) in test_cases {
-            approx::assert_ulps_eq!(
-                S::min_area_free_rect(points.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            approx::assert_ulps_eq!(S::min_area_free_rect(points.iter().map(Vec::from).collect()), expected);
         }
     }
 }

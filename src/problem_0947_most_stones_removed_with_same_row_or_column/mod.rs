@@ -17,10 +17,7 @@ mod tests {
         ];
 
         for (stones, expected) in test_cases {
-            assert_eq!(
-                S::remove_stones(stones.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::remove_stones(stones.iter().map(Vec::from).collect()), expected);
         }
     }
 }

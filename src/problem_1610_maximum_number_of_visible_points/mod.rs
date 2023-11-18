@@ -21,11 +21,7 @@ mod tests {
 
         for ((points, angle, location), expected) in test_cases {
             assert_eq!(
-                S::visible_points(
-                    points.iter().copied().map(Vec::from).collect(),
-                    angle,
-                    location.to_vec()
-                ),
+                S::visible_points(points.iter().map(Vec::from).collect(), angle, location.to_vec()),
                 expected,
             );
         }

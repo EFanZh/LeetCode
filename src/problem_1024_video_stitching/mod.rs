@@ -42,7 +42,7 @@ mod tests {
 
         for ((clips, time), expected) in test_cases {
             assert_eq!(
-                S::video_stitching(clips.iter().copied().map(Vec::from).collect(), time),
+                S::video_stitching(clips.iter().map(Vec::from).collect(), time),
                 expected
             );
         }

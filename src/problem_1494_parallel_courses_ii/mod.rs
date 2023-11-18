@@ -39,7 +39,7 @@ mod tests {
 
         for ((n, relations, k), expected) in test_cases {
             assert_eq!(
-                S::min_number_of_semesters(n, relations.iter().copied().map(Vec::from).collect(), k),
+                S::min_number_of_semesters(n, relations.iter().map(Vec::from).collect(), k),
                 expected
             );
         }

@@ -42,7 +42,7 @@ mod tests {
 
         for ((triplets, target), expected) in test_cases {
             assert_eq!(
-                S::merge_triplets(triplets.iter().copied().map(Vec::from).collect(), target.into()),
+                S::merge_triplets(triplets.iter().map(Vec::from).collect(), target.into()),
                 expected,
             );
         }

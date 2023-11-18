@@ -31,7 +31,7 @@ mod tests {
 
         for ((num_courses, prerequisites), expected) in test_cases {
             assert_eq!(
-                S::can_finish(num_courses, prerequisites.iter().copied().map(Vec::from).collect()),
+                S::can_finish(num_courses, prerequisites.iter().map(Vec::from).collect()),
                 expected
             );
         }

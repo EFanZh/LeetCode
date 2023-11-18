@@ -35,7 +35,7 @@ impl Codec {
 
                 drop(node_ref);
 
-                while non_null_nodes != 0 {
+                if non_null_nodes != 0 {
                     loop {
                         if let Some(next) = queue.pop_front().unwrap() {
                             node = next;

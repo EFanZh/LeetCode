@@ -17,7 +17,7 @@ mod tests {
 
         for ((n, connections), expected) in test_cases {
             assert_eq!(
-                S::make_connected(n, connections.iter().copied().map(Vec::from).collect()),
+                S::make_connected(n, connections.iter().map(Vec::from).collect()),
                 expected,
             );
         }

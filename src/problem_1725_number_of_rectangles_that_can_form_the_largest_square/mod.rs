@@ -16,7 +16,7 @@ mod tests {
 
         for (rectangles, expected) in test_cases {
             assert_eq!(
-                S::count_good_rectangles(rectangles.iter().copied().map(Vec::from).collect()),
+                S::count_good_rectangles(rectangles.iter().map(Vec::from).collect()),
                 expected
             );
         }

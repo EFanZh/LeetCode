@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for (adjacent_pairs, expected) in test_cases {
-            let mut result = S::restore_array(adjacent_pairs.iter().copied().map(Vec::from).collect());
+            let mut result = S::restore_array(adjacent_pairs.iter().map(Vec::from).collect());
 
             if result.iter().rev().lt(&result) {
                 result.reverse();

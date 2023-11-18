@@ -22,8 +22,8 @@ mod tests {
             assert_eq!(
                 S::grid_illumination(
                     n,
-                    lamps.iter().copied().map(Vec::from).collect(),
-                    queries.iter().copied().map(Vec::from).collect()
+                    lamps.iter().map(Vec::from).collect(),
+                    queries.iter().map(Vec::from).collect()
                 ),
                 expected
             );

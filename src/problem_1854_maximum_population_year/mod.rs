@@ -15,10 +15,7 @@ mod tests {
         ];
 
         for (logs, expected) in test_cases {
-            assert_eq!(
-                S::maximum_population(logs.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::maximum_population(logs.iter().map(Vec::from).collect()), expected);
         }
     }
 }

@@ -78,7 +78,7 @@ mod tests {
 
         for ((times, n, k), expected) in test_cases {
             assert_eq!(
-                S::network_delay_time(times.iter().copied().map(Vec::from).collect(), n, k),
+                S::network_delay_time(times.iter().map(Vec::from).collect(), n, k),
                 expected
             );
         }

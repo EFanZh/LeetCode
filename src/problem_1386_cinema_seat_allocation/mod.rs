@@ -17,7 +17,7 @@ mod tests {
 
         for ((n, reserved_seats), expected) in test_cases {
             assert_eq!(
-                S::max_number_of_families(n, reserved_seats.iter().copied().map(Vec::from).collect()),
+                S::max_number_of_families(n, reserved_seats.iter().map(Vec::from).collect()),
                 expected,
             );
         }

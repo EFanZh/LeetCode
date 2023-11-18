@@ -12,33 +12,28 @@ impl Solution {
         let mut left_iter = left.iter().copied();
         let mut right_iter = right.iter().copied();
 
-        iter::from_fn(move || loop {
-            if let Some(mut left) = left_iter.next() {
-                if let Some(mut right) = right_iter.next() {
-                    loop {
-                        match left.cmp(&right) {
-                            Ordering::Less => {
-                                if let Some(next_left) = left_iter.next() {
-                                    left = next_left;
-                                } else {
-                                    return None;
-                                }
-                            }
-                            Ordering::Equal => return Some(left),
-                            Ordering::Greater => {
-                                if let Some(next_right) = right_iter.next() {
-                                    right = next_right;
-                                } else {
-                                    return None;
-                                }
-                            }
+        iter::from_fn(move || {
+            let mut left = left_iter.next()?;
+            let mut right = right_iter.next()?;
+
+            loop {
+                match left.cmp(&right) {
+                    Ordering::Less => {
+                        if let Some(next_left) = left_iter.next() {
+                            left = next_left;
+                        } else {
+                            return None;
                         }
                     }
-                } else {
-                    return None;
+                    Ordering::Equal => return Some(left),
+                    Ordering::Greater => {
+                        if let Some(next_right) = right_iter.next() {
+                            right = next_right;
+                        } else {
+                            return None;
+                        }
+                    }
                 }
-            } else {
-                return None;
             }
         })
     }

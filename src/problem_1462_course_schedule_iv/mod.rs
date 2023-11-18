@@ -89,8 +89,8 @@ mod tests {
             assert_eq!(
                 S::check_if_prerequisite(
                     num_courses,
-                    prerequisites.iter().copied().map(Vec::from).collect(),
-                    queries.iter().copied().map(Vec::from).collect(),
+                    prerequisites.iter().map(Vec::from).collect(),
+                    queries.iter().map(Vec::from).collect(),
                 ),
                 expected,
             );
