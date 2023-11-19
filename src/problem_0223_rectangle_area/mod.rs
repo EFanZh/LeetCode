@@ -1,4 +1,3 @@
-
 pub mod normalize;
 
 pub trait Solution {
