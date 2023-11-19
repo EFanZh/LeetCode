@@ -18,4 +18,3 @@ which = "*"
 
 [target.'cfg(target_os="windows")'.dependencies]
 cc = "*"
-lazy_static = "*"
