@@ -4,13 +4,16 @@ edition = "2021"
 name = "progress-tracker"
 version = "0.1.0"
 
+[lints]
+workspace = true
+
 [dependencies]
 chrono = "*"
 git2 = "*"
 num = "*"
 plotters = "*"
-reqwest = {version = "*", features = ["blocking", "json"]}
-serde = {version = "*", features = ["derive"]}
+reqwest = { version = "*", features = ["blocking", "json"] }
+serde = { version = "*", features = ["derive"] }
 
 [dev-dependencies]
 serde_json = "*"

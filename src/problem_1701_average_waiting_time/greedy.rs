@@ -17,7 +17,7 @@ impl Solution {
             total_waiting_time += i64::from(free_time - arrival);
         }
 
-        #[allow(clippy::cast_precision_loss)]
+        #[allow(clippy::cast_precision_loss)] // Expected.
         let result = (total_waiting_time as f64) / (n as f64);
 
         result

@@ -27,7 +27,7 @@ enum State {
 }
 
 impl Solution {
-    #[allow(clippy::too_many_lines)]
+    #[allow(clippy::too_many_lines)] // Expected.
     pub fn entity_parser(text: String) -> String {
         let mut result = Vec::new();
         let mut state = State::NotAnd;

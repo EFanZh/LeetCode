@@ -9,7 +9,7 @@ mod tests {
     use super::Solution;
     use std::collections::HashSet;
 
-    #[allow(clippy::too_many_lines)]
+    #[allow(clippy::too_many_lines)] // Expected.
     pub fn run<S: Solution>() {
         let test_cases = [
             (

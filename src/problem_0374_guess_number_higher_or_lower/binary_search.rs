@@ -1,5 +1,3 @@
-#![allow(non_snake_case)] // Expected.
-
 use super::guess;
 
 pub struct Solution;
@@ -7,7 +5,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(unsafe_code)]
+    #[allow(non_snake_case, unsafe_code)] // Expected.
     pub fn guessNumber(n: i32) -> i32 {
         let mut left = 1;
         let mut right = n;

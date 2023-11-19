@@ -17,7 +17,7 @@ mod tests {
         PopAtStack(i32, i32),
     }
 
-    #[allow(clippy::too_many_lines)]
+    #[allow(clippy::too_many_lines)] // Expected.
     pub fn run<D: DinnerPlates>() {
         let test_cases = [
             (

@@ -15,7 +15,6 @@ mod tests {
         GetProduct(i32, i32),
     }
 
-    #[allow(clippy::too_many_lines)]
     pub fn run<P: ProductOfNumbers>() {
         let test_cases = [
             &[

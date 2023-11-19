@@ -70,7 +70,7 @@ impl CBTInserter {
         result
     }
 
-    #[allow(clippy::unnecessary_wraps)]
+    #[allow(clippy::unnecessary_wraps)] // Expected.
     fn get_root(&self) -> Option<Rc<RefCell<TreeNode>>> {
         Some(Rc::clone(&self.root))
     }

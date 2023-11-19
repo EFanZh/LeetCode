@@ -5,7 +5,7 @@ pub struct Solution;
 use std::cmp::Reverse;
 
 impl Solution {
-    #[allow(clippy::cast_precision_loss)]
+    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn trim_mean(arr: Vec<i32>) -> f64 {
         let mut arr = arr;
         let split = arr.len() / 20 - 1;

@@ -1,5 +1,3 @@
-#![allow(clippy::unused_self)] // Expected.
-
 use crate::data_structures::TreeNode;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
@@ -15,6 +13,7 @@ impl Codec {
         Self
     }
 
+    #[allow(clippy::unused_self)] // Expected.
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
         use std::fmt::Write;
 
@@ -59,6 +58,7 @@ impl Codec {
         result
     }
 
+    #[allow(clippy::unused_self)] // Expected.
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
         let mut iter = data[1..data.len() - 1].split_terminator(',');
 

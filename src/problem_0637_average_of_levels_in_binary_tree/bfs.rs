@@ -9,7 +9,6 @@ use std::collections::VecDeque;
 use std::rc::Rc;
 
 impl Solution {
-    #[allow(clippy::cast_precision_loss)]
     pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
         let mut result = Vec::new();
 
@@ -35,6 +34,7 @@ impl Solution {
                     };
                 }
 
+                #[allow(clippy::cast_precision_loss)] // Expected.
                 result.push((sum as f64) / (length as f64));
 
                 if queue.is_empty() {

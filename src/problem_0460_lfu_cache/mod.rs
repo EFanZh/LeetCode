@@ -1,5 +1,3 @@
-#![allow(clippy::upper_case_acronyms)] // Expected.
-
 pub mod map_to_nested_linked_lists;
 
 pub trait LFUCache {

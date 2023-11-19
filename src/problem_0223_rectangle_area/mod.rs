@@ -1,8 +1,8 @@
-#![allow(clippy::many_single_char_names, clippy::too_many_arguments)] // Expected.
 
 pub mod normalize;
 
 pub trait Solution {
+    #[allow(clippy::many_single_char_names, clippy::too_many_arguments)] // Expected.
     fn compute_area(a: i32, b: i32, c: i32, d: i32, e: i32, f: i32, g: i32, h: i32) -> i32;
 }
 

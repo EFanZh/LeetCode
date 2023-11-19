@@ -19,7 +19,7 @@ mod tests {
         Erase(i32, bool),
     }
 
-    #[allow(clippy::too_many_lines)]
+    #[allow(clippy::too_many_lines)] // Expected.
     pub fn run<S: Skiplist>() {
         let test_cases = [
             &[

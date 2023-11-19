@@ -1,5 +1,3 @@
-#![allow(clippy::similar_names)] // Expected.
-
 pub mod binary_heap;
 pub mod binary_heap_2;
 
@@ -22,6 +20,7 @@ mod tests {
         Unfollow(i32, i32),
     }
 
+    #[allow(clippy::similar_names)] // Expected.
     pub fn run<T: Twitter>() {
         use Operation::{Follow, GetNewsFeed, PostTweet, Unfollow};
 

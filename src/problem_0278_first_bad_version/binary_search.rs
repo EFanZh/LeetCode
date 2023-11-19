@@ -34,6 +34,7 @@ impl super::Solution for Solution {
         Self { bad }
     }
 
+    #[allow(non_snake_case)] // Expected.
     fn isBadVersion(&self, version: i32) -> bool {
         version >= self.bad
     }

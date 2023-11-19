@@ -27,7 +27,7 @@ impl Solution {
         result
     }
 
-    #[allow(clippy::cast_precision_loss)]
+    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn get_probability(balls: Vec<i32>) -> f64 {
         const MAX_COLORS: usize = 8;
         const MAX_BALLS_PER_COLOR: usize = 6;

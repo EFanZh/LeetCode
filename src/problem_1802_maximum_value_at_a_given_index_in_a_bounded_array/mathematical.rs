@@ -7,7 +7,7 @@ impl Solution {
         (start + end) * (end + 1 - start) / 2
     }
 
-    #[allow(clippy::cast_precision_loss)]
+    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn max_value(n: i32, index: i32, max_sum: i32) -> i32 {
         let n = n as u32;
         let index = index as u32;

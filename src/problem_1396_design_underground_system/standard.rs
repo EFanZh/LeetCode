@@ -55,7 +55,7 @@ impl UndergroundSystem {
             });
     }
 
-    #[allow(clippy::cast_precision_loss)]
+    #[allow(clippy::cast_precision_loss)] // Expected.
     fn get_average_time(&self, start_station: String, end_station: String) -> f64 {
         let start_station = Self::get_station_name(start_station);
         let end_station = Self::get_station_name(end_station);
