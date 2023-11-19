@@ -4,6 +4,9 @@ edition = "2021"
 name = "xtask"
 version = "0.1.0"
 
+[lints]
+workspace = true
+
 [dependencies]
 cfg-if = "*"
 clap = { version = "*", features = ["derive"] }

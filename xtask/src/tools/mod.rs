@@ -19,6 +19,7 @@ pub fn find_rust_version_meta() -> RustVersionMeta {
         for line in BufReader::new(stdout).lines() {
             let line = line.unwrap();
 
+            #[allow(clippy::option_if_let_else)] // False positive.
             if let Some(host_value) = line.strip_prefix("host: ") {
                 host = Some(host_value.to_string());
             } else if let Some(commit_hash_value) = line.strip_prefix("commit-hash: ") {

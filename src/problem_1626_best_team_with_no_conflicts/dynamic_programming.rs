@@ -17,7 +17,6 @@ impl Solution {
         let mut cache = scores; // Reuse already allocated memory.
         let mut result = 0;
 
-        #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported.
         for (i, &(age, score)) in players.iter().enumerate() {
             let (target, left_cache) = cache[..=i].split_last_mut().unwrap();
 

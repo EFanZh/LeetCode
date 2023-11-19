@@ -18,7 +18,7 @@ impl Solution {
         let mut node = Node::First(nums.iter());
 
         loop {
-            #[allow(clippy::never_loop)]
+            #[allow(clippy::never_loop)] // Not supported by LeetCode.
             loop {
                 let mut iter = match node {
                     Node::First(mut iter) => {

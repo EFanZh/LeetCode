@@ -14,7 +14,7 @@ pub trait Solution {
 mod tests {
     use super::Solution;
 
-    #[allow(clippy::too_many_lines)]
+    #[allow(clippy::too_many_lines)] // Expected.
     pub fn run<S: Solution>() {
         let test_cases = [
             (

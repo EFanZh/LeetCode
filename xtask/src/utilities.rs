@@ -11,7 +11,7 @@ pub fn get_project_dir() -> PathBuf {
     path
 }
 
-#[allow(clippy::print_stdout, clippy::use_debug)]
+#[allow(clippy::print_stdout)] // Expected.
 fn print_command_line(command: &Command) {
     let stdout = io::stdout();
     let mut stdout = stdout.lock();
@@ -19,7 +19,7 @@ fn print_command_line(command: &Command) {
     write!(
         stdout,
         "===> {}",
-        shell_escape::escape(command.get_program().to_string_lossy())
+        shell_escape::escape(command.get_program().to_string_lossy()),
     )
     .unwrap();
 

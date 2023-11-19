@@ -13,7 +13,7 @@ mod tests {
     use super::Solution;
     use crate::test_utilities;
 
-    #[allow(clippy::too_many_lines)]
+    #[allow(clippy::too_many_lines)] // Expected.
     pub fn run<S: Solution>() {
         let test_cases = [
             ((&[Some(1), Some(2), Some(3), Some(4)] as &[_], 4, 3), false),

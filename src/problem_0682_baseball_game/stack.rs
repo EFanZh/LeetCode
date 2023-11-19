@@ -3,11 +3,11 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::map_err_ignore)] // Expected.
     pub fn cal_points(ops: Vec<String>) -> i32 {
         let mut stack = Vec::with_capacity(ops.len());
 
         for op in ops {
+            #[allow(clippy::map_err_ignore)] // Expected.
             match op.parse().map_err(|_| op.as_str()) {
                 Ok(value) => stack.push(value),
                 Err("C") => {

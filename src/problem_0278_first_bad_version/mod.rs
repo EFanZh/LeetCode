@@ -1,10 +1,11 @@
-#![allow(non_snake_case)] // Expected.
-
 pub mod binary_search;
 
 pub trait Solution {
     fn new(bad: i32) -> Self;
+
+    #[allow(non_snake_case)] // Expected.
     fn isBadVersion(&self, version: i32) -> bool;
+
     fn first_bad_version(&self, n: i32) -> i32;
 }
 

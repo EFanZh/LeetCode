@@ -13,10 +13,7 @@ impl Solution {
                 (n - 1) * (n - 2) / 2
             } else {
                 let substring_ones = ones / 3;
-
-                #[allow(clippy::unnecessary_lazy_evaluations)]
                 let mut iter = (0..).zip(s.bytes()).filter(|&(_, c)| c == b'1').map(|(i, _)| i);
-
                 let start_1 = iter.nth(substring_ones - 1).unwrap();
                 let end_1 = iter.next().unwrap();
                 let length_1 = end_1 - start_1;

@@ -31,7 +31,7 @@ impl Solution {
         base
     }
 
-    #[allow(clippy::unnecessary_lazy_evaluations)]
+    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn max_diff(num: i32) -> i32 {
         let mut num = num as u32;
         let mut digits = [0_u8; 10];

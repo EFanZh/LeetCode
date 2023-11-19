@@ -21,7 +21,6 @@ impl Solution {
         })
     }
 
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut count = HashMap::new();
 

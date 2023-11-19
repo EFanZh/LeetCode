@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::cast_precision_loss)]
+    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn average(salary: Vec<i32>) -> f64 {
         let mut iter = salary.iter().copied();
         let mut min = iter.next().unwrap();

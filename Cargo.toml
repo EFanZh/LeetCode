@@ -14,11 +14,11 @@ let_underscore_drop = "warn"
 macro_use_extern_crate = "warn"
 meta_variable_misuse = "warn"
 missing_abi = "warn"
-missing_docs = "allow"
+missing_docs = { level = "allow", priority = 1 }
 noop_method_call = "warn"
 pointer_structural_match = "warn"
 single_use_lifetimes = "warn"
-trivial_casts = "allow"
+trivial_casts = { level = "allow", priority = 1 }
 trivial_numeric_casts = "warn"
 unsafe_code = "warn"
 unsafe_op_in_unsafe_fn = "warn"
@@ -36,16 +36,16 @@ alloc_instead_of_core = "warn"
 allow_attributes_without_reason = "warn"
 as_ptr_cast_mut = "warn"
 branches_sharing_code = "warn"
-cargo_common_metadata = "allow"
-cast_possible_truncation = "allow"
-cast_possible_wrap = "allow"
-cast_sign_loss = "allow"
+cargo_common_metadata = { level = "allow", priority = 1 }
+cast_possible_truncation = { level = "allow", priority = 1 }
+cast_possible_wrap = { level = "allow", priority = 1 }
+cast_sign_loss = { level = "allow", priority = 1 }
 clone_on_ref_ptr = "warn"
 cognitive_complexity = "warn"
 create_dir = "warn"
 dbg_macro = "warn"
 debug_assert_with_mut_call = "warn"
-decimal_literal_representation = "allow"
+decimal_literal_representation = { level = "allow", priority = 1 }
 deref_by_slicing = "warn"
 derive_partial_eq_without_eq = "warn"
 empty_drop = "warn"
@@ -67,14 +67,14 @@ let_underscore_must_use = "warn"
 lossy_float_literal = "warn"
 manual_clamp = "warn"
 map_err_ignore = "warn"
-missing_panics_doc = "allow"
+missing_panics_doc = { level = "allow", priority = 1 }
 mixed_read_write_in_expression = "warn"
 multiple_inherent_impl = "warn"
-must_use_candidate = "allow"
+must_use_candidate = { level = "allow", priority = 1 }
 mutex_atomic = "warn"
 mutex_integer = "warn"
 needless_collect = "warn"
-needless_pass_by_value = "allow"
+needless_pass_by_value = { level = "allow", priority = 1 }
 negative_feature_names = "warn"
 non_send_fields_in_send_ty = "warn"
 nonstandard_macro_braces = "warn"
@@ -90,10 +90,10 @@ print_stdout = "warn"
 rc_buffer = "warn"
 rc_mutex = "warn"
 redundant_feature_names = "warn"
-redundant_locals = "allow"               # False positive.
+redundant_locals = { level = "allow", priority = 1 }               # False positive.
 redundant_pub_crate = "warn"
 rest_pat_in_fully_bound_structs = "warn"
-same_name_method = "allow"
+same_name_method = { level = "allow", priority = 1 }
 self_named_module_files = "warn"
 significant_drop_in_scrutinee = "warn"
 string_lit_as_bytes = "warn"
@@ -119,7 +119,10 @@ use_debug = "warn"
 use_self = "warn"
 useless_let_if_seq = "warn"
 verbose_file_reads = "warn"
-wildcard_dependencies = "allow"
+wildcard_dependencies = { level = "allow", priority = 1 }
+
+[lints]
+workspace = true
 
 [dependencies]
 rand = "0.6"
