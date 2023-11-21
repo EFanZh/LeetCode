@@ -1363,6 +1363,7 @@ pub mod problem_1957_delete_characters_to_make_fancy_string;
 pub mod problem_1961_check_if_string_is_a_prefix_of_array;
 pub mod problem_1962_remove_stones_to_minimize_the_total;
 pub mod problem_1967_number_of_strings_that_appear_as_substrings_in_word;
+pub mod problem_1968_array_with_elements_not_equal_to_average_of_neighbors;
 
 #[cfg(test)]
 mod test_utilities;
