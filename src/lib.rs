@@ -1366,6 +1366,7 @@ pub mod problem_1963_minimum_number_of_swaps_to_make_the_string_balanced;
 pub mod problem_1967_number_of_strings_that_appear_as_substrings_in_word;
 pub mod problem_1968_array_with_elements_not_equal_to_average_of_neighbors;
 pub mod problem_1971_find_if_path_exists_in_graph;
+pub mod problem_1974_minimum_time_to_type_word_using_special_typewriter;
 
 #[cfg(test)]
 mod test_utilities;
