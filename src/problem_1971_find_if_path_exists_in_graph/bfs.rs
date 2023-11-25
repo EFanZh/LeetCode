@@ -2,6 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::collections::VecDeque;
 use std::convert::TryInto;
 use std::mem;
 
@@ -22,7 +23,7 @@ impl Solution {
                 graph[to as usize].push(from);
             }
 
-            let mut stack = Vec::new();
+            let mut queue = VecDeque::new();
             let mut neighbors = mem::take(&mut graph[source as u32 as usize]);
 
             loop {
@@ -34,11 +35,11 @@ impl Solution {
                     let next_neighbors = mem::take(&mut graph[neighbor as usize]);
 
                     if !next_neighbors.is_empty() {
-                        stack.push(next_neighbors);
+                        queue.push_back(next_neighbors);
                     }
                 }
 
-                if let Some(next_node) = stack.pop() {
+                if let Some(next_node) = queue.pop_front() {
                     neighbors = next_node;
                 } else {
                     break;

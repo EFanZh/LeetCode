@@ -23,29 +23,23 @@ impl Solution {
             }
 
             let mut stack = Vec::new();
-            let mut neighbors = mem::take(&mut graph[source as u32 as usize]);
+            let mut iter = mem::take(&mut graph[source as u32 as usize]).into_iter();
 
             loop {
-                for neighbor in neighbors {
-                    if neighbor == destination {
+                if let Some(node) = iter.next() {
+                    if node == destination {
                         return true;
                     }
 
-                    let next_neighbors = mem::take(&mut graph[neighbor as usize]);
+                    stack.push(iter);
 
-                    if !next_neighbors.is_empty() {
-                        stack.push(next_neighbors);
-                    }
-                }
-
-                if let Some(next_node) = stack.pop() {
-                    neighbors = next_node;
+                    iter = mem::take(&mut graph[node as usize]).into_iter();
+                } else if let Some(next_iter) = stack.pop() {
+                    iter = next_iter;
                 } else {
-                    break;
+                    return false;
                 }
             }
-
-            false
         }
     }
 }
