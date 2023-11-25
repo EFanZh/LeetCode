@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod backtracking;
 
 pub trait Solution {
     fn construct_distanced_sequence(n: i32) -> Vec<i32>;
