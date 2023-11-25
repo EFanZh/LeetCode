@@ -1,7 +1,8 @@
-pub mod iterative;
+pub mod pseudo_dfs;
+pub mod union_find;
 
 pub trait Solution {
-    fn min_time_to_type(word: String) -> i32;
+    fn valid_path(n: i32, edges: Vec<Vec<i32>>, source: i32, destination: i32) -> bool;
 }
 
 #[cfg(test)]
@@ -9,10 +10,16 @@ mod tests {
     use super::Solution;
 
     pub fn run<S: Solution>() {
-        let test_cases = [("abc", 5), ("bza", 7), ("zjpc", 34)];
+        let test_cases = [
+            ((3, &[[0, 1], [1, 2], [2, 0]] as &[_], 0, 2), true),
+            ((6, &[[0, 1], [0, 2], [3, 5], [5, 4], [4, 3]], 0, 5), false),
+        ];
 
-        for (word, expected) in test_cases {
-            assert_eq!(S::min_time_to_type(word.to_string()), expected);
+        for ((n, edges, source, destination), expected) in test_cases {
+            assert_eq!(
+                S::valid_path(n, edges.iter().map(Vec::from).collect(), source, destination),
+                expected,
+            );
         }
     }
 }
