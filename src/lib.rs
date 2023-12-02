@@ -1246,6 +1246,7 @@ pub mod problem_1662_check_if_two_string_arrays_are_equivalent;
 pub mod problem_1663_smallest_string_with_a_given_numeric_value;
 pub mod problem_1664_ways_to_make_a_fair_array;
 pub mod problem_1665_minimum_initial_energy_to_finish_tasks;
+pub mod problem_1668_maximum_repeating_substring;
 pub mod problem_1669_merge_in_between_linked_lists;
 pub mod problem_1670_design_front_middle_back_queue;
 pub mod problem_1671_minimum_number_of_removals_to_make_mountain_array;
