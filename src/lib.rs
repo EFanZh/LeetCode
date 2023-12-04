@@ -1376,6 +1376,7 @@ pub mod problem_1974_minimum_time_to_type_word_using_special_typewriter;
 pub mod problem_1975_maximum_matrix_sum;
 pub mod problem_1979_find_greatest_common_divisor_of_array;
 pub mod problem_1980_find_unique_binary_string;
+pub mod problem_1984_minimum_difference_between_highest_and_lowest_of_k_scores;
 
 #[cfg(test)]
 mod test_utilities;
