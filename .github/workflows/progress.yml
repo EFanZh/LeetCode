@@ -17,4 +17,4 @@ jobs:
             pages: write
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/deploy-pages@v2
+          - uses: actions/deploy-pages@v3
