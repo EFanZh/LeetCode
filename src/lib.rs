@@ -1379,6 +1379,7 @@ pub mod problem_1980_find_unique_binary_string;
 pub mod problem_1984_minimum_difference_between_highest_and_lowest_of_k_scores;
 pub mod problem_1985_find_the_kth_largest_integer_in_the_array;
 pub mod problem_1991_find_the_middle_index_in_array;
+pub mod problem_2000_reverse_prefix_of_word;
 
 #[cfg(test)]
 mod test_utilities;
