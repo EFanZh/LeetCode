@@ -1269,6 +1269,7 @@ pub mod problem_1691_maximum_height_by_stacking_cuboids;
 pub mod problem_1694_reformat_phone_number;
 pub mod problem_1695_maximum_erasure_value;
 pub mod problem_1696_jump_game_vi;
+pub mod problem_1697_checking_existence_of_edge_length_limited_paths;
 pub mod problem_1700_number_of_students_unable_to_eat_lunch;
 pub mod problem_1701_average_waiting_time;
 pub mod problem_1702_maximum_binary_string_after_change;
