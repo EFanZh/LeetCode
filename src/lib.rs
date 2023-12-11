@@ -1273,6 +1273,7 @@ pub mod problem_1697_checking_existence_of_edge_length_limited_paths;
 pub mod problem_1700_number_of_students_unable_to_eat_lunch;
 pub mod problem_1701_average_waiting_time;
 pub mod problem_1702_maximum_binary_string_after_change;
+pub mod problem_1703_minimum_adjacent_swaps_for_k_consecutive_ones;
 pub mod problem_1704_determine_if_string_halves_are_alike;
 pub mod problem_1705_maximum_number_of_eaten_apples;
 pub mod problem_1706_where_will_the_ball_fall;
