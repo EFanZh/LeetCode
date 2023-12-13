@@ -6,16 +6,10 @@ use std::iter;
 
 impl Solution {
     fn is_legal(board: &[u8; 64], mut location: (u8, u8), step: (u8, u8), middle: u8, end: u8) -> bool {
-        location = (location.0.wrapping_add(step.0), location.1.wrapping_add(step.1));
-
         let mut iter = iter::from_fn(|| {
-            (location.0 < 8 && location.1 < 8).then(|| {
-                let result = board[usize::from(location.0 * 8 + location.1)];
+            location = (location.0.wrapping_add(step.0), location.1.wrapping_add(step.1));
 
-                location = (location.0.wrapping_add(step.0), location.1.wrapping_add(step.1));
-
-                result
-            })
+            (location.0 < 8 && location.1 < 8).then(|| board[usize::from(location.0 * 8 + location.1)])
         });
 
         if iter.next() == Some(middle) {
