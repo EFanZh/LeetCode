@@ -11,22 +11,22 @@ impl Solution {
             .map(|(i, num)| (num, i))
             .collect::<HashMap<_, _>>();
 
-        let mut length_to_min_index = Vec::with_capacity(ranks.len());
+        let mut length_to_min_rank = Vec::with_capacity(ranks.len());
 
         for target in arr {
             if let Some(&rank) = ranks.get(&target) {
-                let length = length_to_min_index.partition_point(|&left_index| left_index < rank);
+                let length = length_to_min_rank.partition_point(|&left_index| left_index < rank);
 
                 #[allow(clippy::option_if_let_else)] // False positive.
-                if let Some(min_rank) = length_to_min_index.get_mut(length) {
+                if let Some(min_rank) = length_to_min_rank.get_mut(length) {
                     *min_rank = rank;
                 } else {
-                    length_to_min_index.push(rank);
+                    length_to_min_rank.push(rank);
                 }
             }
         }
 
-        (ranks.len() - length_to_min_index.len()) as _
+        (ranks.len() - length_to_min_rank.len()) as _
     }
 }
 
