@@ -1280,6 +1280,7 @@ pub mod problem_1706_where_will_the_ball_fall;
 pub mod problem_1710_maximum_units_on_a_truck;
 pub mod problem_1711_count_good_meals;
 pub mod problem_1712_ways_to_split_array_into_three_subarrays;
+pub mod problem_1713_minimum_operations_to_make_a_subsequence;
 pub mod problem_1716_calculate_money_in_leetcode_bank;
 pub mod problem_1717_maximum_score_from_removing_substrings;
 pub mod problem_1718_construct_the_lexicographically_largest_valid_sequence;
