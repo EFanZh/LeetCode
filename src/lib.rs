@@ -1277,6 +1277,7 @@ pub mod problem_1703_minimum_adjacent_swaps_for_k_consecutive_ones;
 pub mod problem_1704_determine_if_string_halves_are_alike;
 pub mod problem_1705_maximum_number_of_eaten_apples;
 pub mod problem_1706_where_will_the_ball_fall;
+pub mod problem_1707_maximum_xor_with_an_element_from_array;
 pub mod problem_1710_maximum_units_on_a_truck;
 pub mod problem_1711_count_good_meals;
 pub mod problem_1712_ways_to_split_array_into_three_subarrays;
