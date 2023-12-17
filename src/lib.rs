@@ -1297,6 +1297,7 @@ pub mod problem_1737_change_minimum_characters_to_satisfy_one_of_three_condition
 pub mod problem_1738_find_kth_largest_xor_coordinate_value;
 pub mod problem_1742_maximum_number_of_balls_in_a_box;
 pub mod problem_1743_restore_the_array_from_adjacent_pairs;
+pub mod problem_1745_palindrome_partitioning_iv;
 pub mod problem_1748_sum_of_unique_elements;
 pub mod problem_1749_maximum_absolute_sum_of_any_subarray;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
