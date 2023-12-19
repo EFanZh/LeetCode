@@ -1391,6 +1391,7 @@ pub mod problem_1996_the_number_of_weak_characters_in_the_game;
 pub mod problem_2000_reverse_prefix_of_word;
 pub mod problem_2006_count_number_of_pairs_with_absolute_difference_k;
 pub mod problem_2007_find_original_array_from_doubled_array;
+pub mod problem_2011_final_value_of_variable_after_performing_operations;
 
 #[cfg(test)]
 mod test_utilities;
