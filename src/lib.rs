@@ -1393,6 +1393,7 @@ pub mod problem_2006_count_number_of_pairs_with_absolute_difference_k;
 pub mod problem_2007_find_original_array_from_doubled_array;
 pub mod problem_2011_final_value_of_variable_after_performing_operations;
 pub mod problem_2012_sum_of_beauty_in_the_array;
+pub mod problem_2016_maximum_difference_between_increasing_elements;
 
 #[cfg(test)]
 mod test_utilities;
