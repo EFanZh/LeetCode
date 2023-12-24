@@ -1291,6 +1291,7 @@ pub mod problem_1722_minimize_hamming_distance_after_swap_operations;
 pub mod problem_1723_find_minimum_time_to_finish_all_jobs;
 pub mod problem_1725_number_of_rectangles_that_can_form_the_largest_square;
 pub mod problem_1726_tuple_with_same_product;
+pub mod problem_1727_largest_submatrix_with_rearrangements;
 pub mod problem_1732_find_the_highest_altitude;
 pub mod problem_1734_decode_xored_permutation;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
