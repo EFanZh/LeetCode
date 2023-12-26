@@ -1398,6 +1398,7 @@ pub mod problem_2012_sum_of_beauty_in_the_array;
 pub mod problem_2016_maximum_difference_between_increasing_elements;
 pub mod problem_2022_find_original_array_from_doubled_array;
 pub mod problem_2027_minimum_moves_to_convert_string;
+pub mod problem_2028_find_missing_observations;
 
 #[cfg(test)]
 mod test_utilities;
