@@ -1400,6 +1400,7 @@ pub mod problem_2022_convert_1d_array_into_2d_array;
 pub mod problem_2027_minimum_moves_to_convert_string;
 pub mod problem_2028_find_missing_observations;
 pub mod problem_2032_two_out_of_three;
+pub mod problem_2038_remove_colored_pieces_if_both_neighbors_are_the_same_color;
 
 #[cfg(test)]
 mod test_utilities;
