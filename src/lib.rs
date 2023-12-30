@@ -1402,6 +1402,7 @@ pub mod problem_2028_find_missing_observations;
 pub mod problem_2032_two_out_of_three;
 pub mod problem_2038_remove_colored_pieces_if_both_neighbors_are_the_same_color;
 pub mod problem_2042_check_if_numbers_are_ascending_in_a_sentence;
+pub mod problem_2043_simple_bank_system;
 
 #[cfg(test)]
 mod test_utilities;
