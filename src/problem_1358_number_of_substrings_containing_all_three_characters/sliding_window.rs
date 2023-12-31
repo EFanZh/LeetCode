@@ -4,17 +4,17 @@ pub struct Solution;
 
 #[derive(Default)]
 struct Counter {
-    a_count: u32,
-    b_count: u32,
-    c_count: u32,
+    a: u32,
+    b: u32,
+    c: u32,
 }
 
 impl Counter {
     fn get(&mut self, c: u8) -> &mut u32 {
         match c {
-            b'a' => &mut self.a_count,
-            b'b' => &mut self.b_count,
-            _ => &mut self.c_count,
+            b'a' => &mut self.a,
+            b'b' => &mut self.b,
+            _ => &mut self.c,
         }
     }
 }
