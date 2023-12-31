@@ -25,9 +25,9 @@ impl Display for Language {
 pub struct Solution {
     pub language: Language,
     pub problem_id: String,
-    pub solution_id: String,
-    pub solution_root: String,
-    pub solution_file: String,
+    pub id: String,
+    pub root: String,
+    pub file: String,
 }
 
 pub fn list(tree: &Tree, mut f: impl FnMut(Solution)) {
@@ -38,24 +38,24 @@ pub fn list(tree: &Tree, mut f: impl FnMut(Solution)) {
             .strip_prefix("c++/include/leet-code/problem-")
             .and_then(|s| s.strip_suffix('/'))
         {
-            if let Some(solution_id) = name.strip_suffix(".h") {
+            if let Some(id) = name.strip_suffix(".h") {
                 f(Solution {
                     language: Language::Cpp,
                     problem_id: problem_id.to_string(),
-                    solution_id: solution_id.to_string(),
-                    solution_root: root.to_string(),
-                    solution_file: name.to_string(),
+                    id: id.to_string(),
+                    root: root.to_string(),
+                    file: name.to_string(),
                 });
             }
         } else if let Some(problem_id) = root.strip_prefix("src/problem_").and_then(|s| s.strip_suffix('/')) {
-            if let Some(solution_id) = name.strip_suffix(".rs") {
+            if let Some(id) = name.strip_suffix(".rs") {
                 if name != "mod.rs" {
                     f(Solution {
                         language: Language::Rust,
                         problem_id: problem_id.replace('_', "-"),
-                        solution_id: solution_id.to_string(),
-                        solution_root: root.to_string(),
-                        solution_file: name.to_string(),
+                        id: id.to_string(),
+                        root: root.to_string(),
+                        file: name.to_string(),
                     });
                 }
             }
