@@ -1293,6 +1293,7 @@ pub mod problem_1725_number_of_rectangles_that_can_form_the_largest_square;
 pub mod problem_1726_tuple_with_same_product;
 pub mod problem_1727_largest_submatrix_with_rearrangements;
 pub mod problem_1732_find_the_highest_altitude;
+pub mod problem_1733_minimum_number_of_people_to_teach;
 pub mod problem_1734_decode_xored_permutation;
 pub mod problem_1736_latest_time_by_replacing_hidden_digits;
 pub mod problem_1737_change_minimum_characters_to_satisfy_one_of_three_conditions;
