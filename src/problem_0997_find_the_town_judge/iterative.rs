@@ -5,7 +5,6 @@ pub struct Solution;
 use std::convert::TryInto;
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
         let n = n as u16;
         let mut degrees = vec![0_u16; usize::from(n)];
@@ -23,7 +22,7 @@ impl Solution {
 
         (1..)
             .zip(degrees)
-            .find_map(|(i, degree)| (degree == n - 1).then(|| i))
+            .find_map(|(i, degree)| (degree == n - 1).then_some(i))
             .unwrap_or(-1)
     }
 }

@@ -66,7 +66,6 @@ impl<T: Eq + Hash> Extend<T> for HashMultiSet<T> {
 }
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
         let s = s.into_bytes();
         let word_length = words.first().map_or(0, String::len);
@@ -82,7 +81,7 @@ impl Solution {
                 result.extend(s.windows(window_length).enumerate().filter_map(|(i, window)| {
                     words_cache.extend(window.chunks_exact(word_length));
 
-                    let r = (words_cache == words).then(|| i as i32);
+                    let r = (words_cache == words).then_some(i as i32);
 
                     words_cache.clear();
 
@@ -99,7 +98,7 @@ impl Solution {
                             words_cache.extend(window.chunks_exact(word_length));
                             cache.push_back(words_cache.clone());
 
-                            let r = (words_cache == words).then(|| i as i32);
+                            let r = (words_cache == words).then_some(i as i32);
 
                             words_cache.clear();
 
@@ -116,7 +115,7 @@ impl Solution {
                             current_words.remove(obsolete_word);
                             current_words.insert(new_word);
 
-                            let r = (current_words == words).then(|| i as i32);
+                            let r = (current_words == words).then_some(i as i32);
 
                             cache.push_back(current_words);
 

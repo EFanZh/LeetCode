@@ -74,8 +74,7 @@ impl Solution {
                     loop {
                         let mut writer = &mut temp_stack_name.buffer[base_length..];
 
-                        #[allow(clippy::uninlined_format_args)] // Not supported by LeetCode.
-                        write!(writer, "{})", i).unwrap();
+                        write!(writer, "{i})").unwrap();
 
                         temp_stack_name.length = (MAX_NAME_LENGTH - writer.len()) as _;
 

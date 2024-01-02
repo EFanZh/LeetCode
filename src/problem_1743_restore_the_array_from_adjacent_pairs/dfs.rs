@@ -9,7 +9,6 @@ use std::hash::BuildHasherDefault;
 use std::mem;
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn restore_array(adjacent_pairs: Vec<Vec<i32>>) -> Vec<i32> {
         let n = adjacent_pairs.len() + 1;
 
@@ -34,7 +33,7 @@ impl Solution {
 
         let (mut prev, mut node) = graph
             .iter()
-            .find_map(|(&node, &(a, b))| b.is_none().then(|| (node, a)))
+            .find_map(|(&node, &(a, b))| b.is_none().then_some((node, a)))
             .unwrap();
 
         result.push(prev);

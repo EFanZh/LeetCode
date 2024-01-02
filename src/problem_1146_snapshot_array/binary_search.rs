@@ -13,14 +13,13 @@ impl SnapshotArray {
         }
     }
 
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     fn set(&mut self, index: i32, val: i32) {
         let slot = &mut self.data[index as usize];
         let current_version = self.version;
 
         if let Some(last_val) = slot
             .last_mut()
-            .and_then(|(last_val, last_version)| (*last_version == current_version).then(|| last_val))
+            .and_then(|(last_val, last_version)| (*last_version == current_version).then_some(last_val))
         {
             *last_val = val;
         } else {

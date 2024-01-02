@@ -31,7 +31,6 @@ impl Solution {
         base
     }
 
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn max_diff(num: i32) -> i32 {
         let mut num = num as u32;
         let mut digits = [0_u8; 10];
@@ -47,12 +46,12 @@ impl Solution {
 
         let (min, max) = match iter.next().unwrap() {
             1 => (
-                Self::find_and_replace(iter.clone(), 1, |digit| (digit > 1).then(|| 0)),
+                Self::find_and_replace(iter.clone(), 1, |digit| (digit > 1).then_some(0)),
                 Self::replace(iter, 9, 1, 9),
             ),
             9 => (
                 Self::replace(iter.clone(), 1, 9, 1),
-                Self::find_and_replace(iter, 9, |digit| (digit < 9).then(|| 9)),
+                Self::find_and_replace(iter, 9, |digit| (digit < 9).then_some(9)),
             ),
             first => (
                 Self::replace(iter.clone(), 1, first, 1),
