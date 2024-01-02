@@ -3,14 +3,13 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::never_loop)] // Not supported by LeetCode.
     pub fn check_overlap(radius: i32, x_center: i32, y_center: i32, x1: i32, y1: i32, x2: i32, y2: i32) -> bool {
-        let (x, y) = loop {
+        let (x, y) = 'block: {
             let distance = if y_center < y1 {
                 if x_center < x1 {
                     // Bottom left.
 
-                    break (x1, y1);
+                    break 'block (x1, y1);
                 } else if x_center < x2 {
                     // Bottom.
 
@@ -18,7 +17,7 @@ impl Solution {
                 } else {
                     // Bottom right.
 
-                    break (x2, y1);
+                    break 'block (x2, y1);
                 }
             } else if y_center < y2 {
                 if x_center < x1 {
@@ -37,7 +36,7 @@ impl Solution {
             } else if x_center < x1 {
                 // Top left.
 
-                break (x1, y2);
+                break 'block (x1, y2);
             } else if x_center < x2 {
                 // Top.
 
@@ -45,7 +44,7 @@ impl Solution {
             } else {
                 // Top right.
 
-                break (x2, y2);
+                break 'block (x2, y2);
             };
 
             return distance <= radius;

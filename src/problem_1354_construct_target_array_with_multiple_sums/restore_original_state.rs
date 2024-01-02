@@ -10,15 +10,12 @@ impl Solution {
         let mut sum = target.iter().copied().sum::<i32>() as u32;
         let mut queue = target.into_iter().map(|value| value as u32).collect::<BinaryHeap<_>>();
 
-        #[allow(clippy::manual_let_else)] // Not supported by LeetCode.
         loop {
             let mut top = queue.peek_mut().unwrap();
             let old_top = *top;
             let rest = sum - old_top;
 
-            let rest = if let Some(rest) = NonZeroU32::new(rest).filter(|_| old_top >= rest) {
-                rest
-            } else {
+            let Some(rest) = NonZeroU32::new(rest).filter(|_| old_top >= rest) else {
                 return old_top == 1;
             };
 

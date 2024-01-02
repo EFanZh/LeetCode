@@ -5,7 +5,6 @@ pub struct Solution;
 use std::convert::TryInto;
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
         let num_courses = num_courses as _;
         let mut graph = vec![Vec::new(); num_courses];

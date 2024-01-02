@@ -5,7 +5,6 @@ pub struct Solution;
 use std::convert::TryInto;
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn largest_number(cost: Vec<i32>, target: i32) -> String {
         let cost: &[_; 9] = cost.as_slice().try_into().ok().unwrap();
         let mut target = target as u32 as usize;
@@ -20,7 +19,7 @@ impl Solution {
                 .filter_map(|(i, &digit_cost)| {
                     let prev_length = cache.get(current_cost.wrapping_sub(digit_cost as u32 as _))?.1;
 
-                    (prev_length != u16::MAX).then(|| (i, prev_length))
+                    (prev_length != u16::MAX).then_some((i, prev_length))
                 })
                 .max_by_key(|&(_, prev_length)| prev_length)
                 .map_or((u16::MAX, u16::MAX), |(i, length)| (i as _, length + 1));

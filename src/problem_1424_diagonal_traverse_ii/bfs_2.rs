@@ -18,8 +18,7 @@ impl Solution {
         let mut node = Node::First(nums.iter());
 
         loop {
-            #[allow(clippy::never_loop)] // Not supported by LeetCode.
-            loop {
+            'block: {
                 let mut iter = match node {
                     Node::First(mut iter) => {
                         if let Some(row) = iter.next() {
@@ -27,7 +26,7 @@ impl Solution {
 
                             row.iter().copied()
                         } else {
-                            break;
+                            break 'block;
                         }
                     }
                     Node::Rest(iter) => iter,
@@ -37,8 +36,6 @@ impl Solution {
                     queue.push_back(Node::Rest(iter));
                     result.push(num);
                 }
-
-                break;
             }
 
             if let Some(new_node) = queue.pop_front() {

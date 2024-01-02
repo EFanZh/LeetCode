@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
         if words.is_empty() {
             Vec::new()
@@ -27,7 +26,7 @@ impl Solution {
                         .iter()
                         .map(AsRef::as_ref)
                         .eq(words.iter().map(String::as_bytes))
-                        .then(|| i as _)
+                        .then_some(i as _)
                 })
                 .collect()
         }

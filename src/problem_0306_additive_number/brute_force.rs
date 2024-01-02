@@ -5,10 +5,9 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    #[allow(clippy::unnecessary_lazy_evaluations)] // Not supported by LeetCode.
     fn starts_with(first_digit: u8, s: &[u8], head: u64) -> Option<&[u8]> {
         if first_digit == 0 {
-            (head == 0).then(|| s)
+            (head == 0).then_some(s)
         } else {
             let mut num = u64::from(first_digit);
             let mut iter = s.iter();
