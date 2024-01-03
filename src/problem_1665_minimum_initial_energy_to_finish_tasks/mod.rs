@@ -16,7 +16,7 @@ mod tests {
         ];
 
         for (tasks, expected) in test_cases {
-            assert_eq!(S::minimum_effort(tasks.iter().map(Vec::from).collect()), expected,);
+            assert_eq!(S::minimum_effort(tasks.iter().map(Vec::from).collect()), expected);
         }
     }
 }

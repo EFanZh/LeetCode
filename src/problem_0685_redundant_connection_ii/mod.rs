@@ -17,7 +17,7 @@ mod tests {
 
         for (edges, expected) in test_cases {
             assert_eq!(
-                S::find_redundant_directed_connection(edges.iter().copied().map(Vec::from).collect()),
+                S::find_redundant_directed_connection(edges.iter().map(Vec::from).collect()),
                 expected
             );
         }

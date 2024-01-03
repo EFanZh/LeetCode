@@ -18,7 +18,7 @@ mod tests {
         ];
 
         for ((sequence, word), expected) in test_cases {
-            assert_eq!(S::max_repeating(sequence.to_string(), word.to_string()), expected,);
+            assert_eq!(S::max_repeating(sequence.to_string(), word.to_string()), expected);
         }
     }
 }

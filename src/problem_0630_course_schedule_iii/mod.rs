@@ -18,10 +18,7 @@ mod tests {
         ];
 
         for (courses, expected) in test_cases {
-            assert_eq!(
-                S::schedule_course(courses.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::schedule_course(courses.iter().map(Vec::from).collect()), expected);
         }
     }
 }

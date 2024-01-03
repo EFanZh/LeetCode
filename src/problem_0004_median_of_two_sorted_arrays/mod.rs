@@ -25,7 +25,7 @@ mod tests {
         ];
 
         for ((nums1, nums2), expected) in test_cases {
-            approx::assert_ulps_eq!(S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()), expected,);
+            approx::assert_ulps_eq!(S::find_median_sorted_arrays(nums1.to_vec(), nums2.to_vec()), expected);
         }
     }
 }

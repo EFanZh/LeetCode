@@ -17,7 +17,7 @@ mod tests {
 
         for (intervals, expected) in test_cases {
             assert_eq!(
-                S::intersection_size_two(intervals.iter().copied().map(Vec::from).collect()),
+                S::intersection_size_two(intervals.iter().map(Vec::from).collect()),
                 expected
             );
         }

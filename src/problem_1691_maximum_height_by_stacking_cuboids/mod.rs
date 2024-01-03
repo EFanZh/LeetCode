@@ -82,7 +82,7 @@ mod tests {
         ];
 
         for (cuboids, expected) in test_cases {
-            assert_eq!(S::max_height(cuboids.iter().map(Vec::from).collect()), expected,);
+            assert_eq!(S::max_height(cuboids.iter().map(Vec::from).collect()), expected);
         }
     }
 }

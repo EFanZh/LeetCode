@@ -20,10 +20,7 @@ mod tests {
         ];
 
         for (positions, expected) in test_cases {
-            assert_eq!(
-                S::falling_squares(positions.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::falling_squares(positions.iter().map(Vec::from).collect()), expected);
         }
     }
 }

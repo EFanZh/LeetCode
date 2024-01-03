@@ -36,10 +36,7 @@ mod tests {
         ];
 
         for ((m, n, ops), expected) in test_cases {
-            assert_eq!(
-                S::max_count(m, n, ops.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::max_count(m, n, ops.iter().map(Vec::from).collect()), expected);
         }
     }
 }

@@ -16,7 +16,7 @@ mod tests {
         ];
 
         for ((n, connections), expected) in test_cases {
-            assert_eq!(S::min_reorder(n, connections.iter().map(Vec::from).collect()), expected,);
+            assert_eq!(S::min_reorder(n, connections.iter().map(Vec::from).collect()), expected);
         }
     }
 }

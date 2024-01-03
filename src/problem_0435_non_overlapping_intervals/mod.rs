@@ -17,7 +17,7 @@ mod tests {
 
         for (intervals, expected) in test_cases {
             assert_eq!(
-                S::erase_overlap_intervals(intervals.iter().copied().map(Vec::from).collect()),
+                S::erase_overlap_intervals(intervals.iter().map(Vec::from).collect()),
                 expected
             );
         }
