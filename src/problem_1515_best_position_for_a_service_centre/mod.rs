@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for (positions, expected) in test_cases {
-            approx::assert_ulps_eq!(S::get_min_dist_sum(positions.iter().map(Vec::from).collect()), expected,);
+            approx::assert_ulps_eq!(S::get_min_dist_sum(positions.iter().map(Vec::from).collect()), expected);
         }
     }
 }

@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((arr1, arr2, d), expected) in test_cases {
-            assert_eq!(S::find_the_distance_value(arr1.to_vec(), arr2.to_vec(), d), expected,);
+            assert_eq!(S::find_the_distance_value(arr1.to_vec(), arr2.to_vec(), d), expected);
         }
     }
 }

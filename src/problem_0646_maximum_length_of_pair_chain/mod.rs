@@ -19,10 +19,7 @@ mod tests {
         ];
 
         for (pairs, expected) in test_cases {
-            assert_eq!(
-                S::find_longest_chain(pairs.iter().copied().map(Vec::from).collect()),
-                expected
-            );
+            assert_eq!(S::find_longest_chain(pairs.iter().map(Vec::from).collect()), expected);
         }
     }
 }

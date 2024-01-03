@@ -23,10 +23,7 @@ mod tests {
         ];
 
         for &(queries, expected) in &test_cases[3..] {
-            assert_eq!(
-                S::ways_to_fill_array(queries.iter().copied().map(Vec::from).collect()),
-                expected,
-            );
+            assert_eq!(S::ways_to_fill_array(queries.iter().map(Vec::from).collect()), expected);
         }
     }
 }
