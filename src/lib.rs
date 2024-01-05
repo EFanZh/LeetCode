@@ -1408,6 +1408,7 @@ pub mod problem_2038_remove_colored_pieces_if_both_neighbors_are_the_same_color;
 pub mod problem_2042_check_if_numbers_are_ascending_in_a_sentence;
 pub mod problem_2043_simple_bank_system;
 pub mod problem_2047_number_of_valid_words_in_a_sentence;
+pub mod problem_2053_kth_distinct_string_in_an_array;
 
 #[cfg(test)]
 mod test_utilities;
