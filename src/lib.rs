@@ -1412,6 +1412,7 @@ pub mod problem_2042_check_if_numbers_are_ascending_in_a_sentence;
 pub mod problem_2043_simple_bank_system;
 pub mod problem_2047_number_of_valid_words_in_a_sentence;
 pub mod problem_2053_kth_distinct_string_in_an_array;
+pub mod problem_2057_smallest_index_with_equal_value;
 
 #[cfg(test)]
 mod test_utilities;
