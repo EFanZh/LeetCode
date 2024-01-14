@@ -1306,6 +1306,7 @@ pub mod problem_1745_palindrome_partitioning_iv;
 pub mod problem_1748_sum_of_unique_elements;
 pub mod problem_1749_maximum_absolute_sum_of_any_subarray;
 pub mod problem_1750_minimum_length_of_string_after_deleting_similar_ends;
+pub mod problem_1751_maximum_number_of_events_that_can_be_attended_ii;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
 pub mod problem_1753_maximum_score_from_removing_stones;
 pub mod problem_1754_largest_merge_of_two_strings;
