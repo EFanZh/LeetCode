@@ -1310,6 +1310,7 @@ pub mod problem_1751_maximum_number_of_events_that_can_be_attended_ii;
 pub mod problem_1752_check_if_array_is_sorted_and_rotated;
 pub mod problem_1753_maximum_score_from_removing_stones;
 pub mod problem_1754_largest_merge_of_two_strings;
+pub mod problem_1755_closest_subsequence_sum;
 pub mod problem_1758_minimum_changes_to_make_alternating_binary_string;
 pub mod problem_1759_count_number_of_homogenous_substrings;
 pub mod problem_1760_minimum_limit_of_balls_in_a_bag;
