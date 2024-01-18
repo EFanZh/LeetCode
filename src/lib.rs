@@ -1421,6 +1421,7 @@ pub mod problem_2057_smallest_index_with_equal_value;
 pub mod problem_2063_vowels_of_all_substrings;
 pub mod problem_2068_check_whether_two_strings_are_almost_equivalent;
 pub mod problem_2069_walking_robot_simulation_ii;
+pub mod problem_2070_most_beautiful_item_for_each_query;
 
 #[cfg(test)]
 mod test_utilities;
