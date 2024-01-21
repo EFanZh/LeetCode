@@ -1424,6 +1424,7 @@ pub mod problem_2063_vowels_of_all_substrings;
 pub mod problem_2068_check_whether_two_strings_are_almost_equivalent;
 pub mod problem_2069_walking_robot_simulation_ii;
 pub mod problem_2070_most_beautiful_item_for_each_query;
+pub mod problem_2085_count_common_words_with_one_occurrence;
 
 #[cfg(test)]
 mod test_utilities;
