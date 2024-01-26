@@ -1429,6 +1429,7 @@ pub mod problem_2078_two_furthest_houses_with_different_colors;
 pub mod problem_2085_count_common_words_with_one_occurrence;
 pub mod problem_2089_find_target_indices_after_sorting_array;
 pub mod problem_2090_k_radius_subarray_averages;
+pub mod problem_2091_removing_minimum_and_maximum_from_array;
 
 #[cfg(test)]
 mod test_utilities;
