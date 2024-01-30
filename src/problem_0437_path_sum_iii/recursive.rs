@@ -13,9 +13,9 @@ use std::rc::Rc;
 impl Solution {
     fn helper(
         node: Option<&RefCell<TreeNode>>,
-        sum: i32,
-        mut prefix_sum: i32,
-        prefix_sums: &mut HashMap<i32, i32>,
+        sum: i64,
+        mut prefix_sum: i64,
+        prefix_sums: &mut HashMap<i64, i32>,
         result: &mut i32,
     ) {
         if let Some(node) = node {
@@ -23,7 +23,7 @@ impl Solution {
             let left = node.left.as_deref();
             let right = node.right.as_deref();
 
-            prefix_sum += node.val;
+            prefix_sum += i64::from(node.val);
 
             if let Some(count) = prefix_sums.get(&(prefix_sum - sum)) {
                 *result += count;
@@ -53,7 +53,13 @@ impl Solution {
     pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
         let mut result = 0;
 
-        Self::helper(root.as_deref(), sum, 0, &mut iter::once((0, 1)).collect(), &mut result);
+        Self::helper(
+            root.as_deref(),
+            i64::from(sum),
+            0,
+            &mut iter::once((0, 1)).collect(),
+            &mut result,
+        );
 
         result
     }

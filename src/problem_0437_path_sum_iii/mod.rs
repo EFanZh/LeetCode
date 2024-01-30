@@ -62,6 +62,24 @@ mod tests {
                 ),
                 1,
             ),
+            (
+                (
+                    &[
+                        Some(1_000_000_000),
+                        Some(1_000_000_000),
+                        None,
+                        Some(294_967_296),
+                        None,
+                        Some(1_000_000_000),
+                        None,
+                        Some(1_000_000_000),
+                        None,
+                        Some(1_000_000_000),
+                    ],
+                    0,
+                ),
+                0,
+            ),
         ];
 
         for ((root, sum), expected) in test_cases {
