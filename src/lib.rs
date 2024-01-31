@@ -1434,6 +1434,7 @@ pub mod problem_2090_k_radius_subarray_averages;
 pub mod problem_2091_removing_minimum_and_maximum_from_array;
 pub mod problem_2095_delete_the_middle_node_of_a_linked_list;
 pub mod problem_2099_find_subsequence_of_length_k_with_the_largest_sum;
+pub mod problem_2103_rings_and_rods;
 
 #[cfg(test)]
 mod test_utilities;
