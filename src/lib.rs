@@ -1437,6 +1437,7 @@ pub mod problem_2099_find_subsequence_of_length_k_with_the_largest_sum;
 pub mod problem_2103_rings_and_rods;
 pub mod problem_2108_find_first_palindromic_string_in_the_array;
 pub mod problem_2109_adding_spaces_to_a_string;
+pub mod problem_2114_maximum_number_of_words_found_in_sentences;
 
 #[cfg(test)]
 mod test_utilities;
