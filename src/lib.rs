@@ -1439,6 +1439,7 @@ pub mod problem_2108_find_first_palindromic_string_in_the_array;
 pub mod problem_2109_adding_spaces_to_a_string;
 pub mod problem_2114_maximum_number_of_words_found_in_sentences;
 pub mod problem_2119_a_number_after_a_double_reversal;
+pub mod problem_2124_check_if_all_as_appears_before_all_bs;
 
 #[cfg(test)]
 mod test_utilities;
