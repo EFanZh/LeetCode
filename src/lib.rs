@@ -1440,6 +1440,7 @@ pub mod problem_2109_adding_spaces_to_a_string;
 pub mod problem_2114_maximum_number_of_words_found_in_sentences;
 pub mod problem_2119_a_number_after_a_double_reversal;
 pub mod problem_2124_check_if_all_as_appears_before_all_bs;
+pub mod problem_2129_capitalize_the_title;
 
 #[cfg(test)]
 mod test_utilities;
