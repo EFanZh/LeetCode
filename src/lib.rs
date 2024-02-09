@@ -1359,6 +1359,7 @@ pub mod problem_1859_sorting_the_sentence;
 pub mod problem_1860_incremental_memory_leak;
 pub mod problem_1861_rotating_the_box;
 pub mod problem_1864_minimum_number_of_swaps_to_make_the_binary_string_alternating;
+pub mod problem_1865_finding_pairs_with_a_certain_sum;
 pub mod problem_1869_longer_contiguous_segments_of_ones_than_zeros;
 pub mod problem_1876_substrings_of_size_three_with_distinct_characters;
 pub mod problem_1877_minimize_maximum_pair_sum_in_array;
