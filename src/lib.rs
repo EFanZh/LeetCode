@@ -1315,6 +1315,7 @@ pub mod problem_1755_closest_subsequence_sum;
 pub mod problem_1758_minimum_changes_to_make_alternating_binary_string;
 pub mod problem_1759_count_number_of_homogenous_substrings;
 pub mod problem_1760_minimum_limit_of_balls_in_a_bag;
+pub mod problem_1761_minimum_degree_of_a_connected_trio_in_a_graph;
 pub mod problem_1763_longest_nice_substring;
 pub mod problem_1764_form_array_by_concatenating_subarrays_of_another_array;
 pub mod problem_1765_map_of_highest_peak;
