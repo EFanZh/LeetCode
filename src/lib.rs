@@ -1319,6 +1319,7 @@ pub mod problem_1761_minimum_degree_of_a_connected_trio_in_a_graph;
 pub mod problem_1763_longest_nice_substring;
 pub mod problem_1764_form_array_by_concatenating_subarrays_of_another_array;
 pub mod problem_1765_map_of_highest_peak;
+pub mod problem_1766_tree_of_coprimes;
 pub mod problem_1768_merge_strings_alternately;
 pub mod problem_1769_minimum_number_of_operations_to_move_all_balls_to_each_box;
 pub mod problem_1770_maximum_score_from_performing_multiplication_operations;
