@@ -1323,6 +1323,7 @@ pub mod problem_1766_tree_of_coprimes;
 pub mod problem_1768_merge_strings_alternately;
 pub mod problem_1769_minimum_number_of_operations_to_move_all_balls_to_each_box;
 pub mod problem_1770_maximum_score_from_performing_multiplication_operations;
+pub mod problem_1771_maximize_palindrome_length_from_subsequences;
 pub mod problem_1773_count_items_matching_a_rule;
 pub mod problem_1774_closest_dessert_cost;
 pub mod problem_1775_equal_sum_arrays_with_minimum_number_of_operations;
