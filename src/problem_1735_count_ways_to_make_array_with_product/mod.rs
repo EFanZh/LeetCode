@@ -22,7 +22,7 @@ mod tests {
             ),
         ];
 
-        for &(queries, expected) in &test_cases[3..] {
+        for (queries, expected) in test_cases {
             assert_eq!(S::ways_to_fill_array(queries.iter().map(Vec::from).collect()), expected);
         }
     }
