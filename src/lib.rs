@@ -1327,6 +1327,7 @@ pub mod problem_1771_maximize_palindrome_length_from_subsequences;
 pub mod problem_1773_count_items_matching_a_rule;
 pub mod problem_1774_closest_dessert_cost;
 pub mod problem_1775_equal_sum_arrays_with_minimum_number_of_operations;
+pub mod problem_1776_car_fleet_ii;
 pub mod problem_1779_find_nearest_point_that_has_the_same_x_or_y_coordinate;
 pub mod problem_1780_check_if_number_is_a_sum_of_powers_of_three;
 pub mod problem_1781_sum_of_beauty_of_all_substrings;
