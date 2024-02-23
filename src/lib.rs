@@ -1457,6 +1457,7 @@ pub mod problem_2130_maximum_twin_sum_of_a_linked_list;
 pub mod problem_2134_minimum_swaps_to_group_all_1s_together_ii;
 pub mod problem_2138_divide_a_string_into_groups_of_size_k;
 pub mod problem_2140_solving_questions_with_brainpower;
+pub mod problem_2144_minimum_cost_of_buying_candies_with_discount;
 
 #[cfg(test)]
 mod test_utilities;
