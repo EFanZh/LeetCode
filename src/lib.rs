@@ -1459,6 +1459,7 @@ pub mod problem_2138_divide_a_string_into_groups_of_size_k;
 pub mod problem_2140_solving_questions_with_brainpower;
 pub mod problem_2144_minimum_cost_of_buying_candies_with_discount;
 pub mod problem_2148_count_elements_with_strictly_smaller_and_greater_elements;
+pub mod problem_2149_rearrange_array_elements_by_sign;
 
 #[cfg(test)]
 mod test_utilities;
