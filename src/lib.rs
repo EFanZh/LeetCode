@@ -1455,6 +1455,7 @@ pub mod problem_2119_a_number_after_a_double_reversal;
 pub mod problem_2124_check_if_all_as_appears_before_all_bs;
 pub mod problem_2129_capitalize_the_title;
 pub mod problem_2130_maximum_twin_sum_of_a_linked_list;
+pub mod problem_2133_check_if_every_row_and_column_contains_all_numbers;
 pub mod problem_2134_minimum_swaps_to_group_all_1s_together_ii;
 pub mod problem_2138_divide_a_string_into_groups_of_size_k;
 pub mod problem_2140_solving_questions_with_brainpower;
