@@ -1464,6 +1464,7 @@ pub mod problem_2148_count_elements_with_strictly_smaller_and_greater_elements;
 pub mod problem_2149_rearrange_array_elements_by_sign;
 pub mod problem_2150_find_all_lonely_numbers_in_the_array;
 pub mod problem_2154_keep_multiplying_found_values_by_two;
+pub mod problem_2155_all_divisions_with_the_highest_score_of_a_binary_array;
 
 #[cfg(test)]
 mod test_utilities;
