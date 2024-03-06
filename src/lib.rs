@@ -1469,6 +1469,7 @@ pub mod problem_2154_keep_multiplying_found_values_by_two;
 pub mod problem_2155_all_divisions_with_the_highest_score_of_a_binary_array;
 pub mod problem_2160_minimum_sum_of_four_digit_number_after_splitting_digits;
 pub mod problem_2161_partition_array_according_to_given_pivot;
+pub mod problem_2165_smallest_value_of_the_rearranged_number;
 
 #[cfg(test)]
 mod test_utilities;
