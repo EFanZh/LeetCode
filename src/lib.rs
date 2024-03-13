@@ -1476,6 +1476,7 @@ pub mod problem_2161_partition_array_according_to_given_pivot;
 pub mod problem_2165_smallest_value_of_the_rearranged_number;
 pub mod problem_2166_design_bitset;
 pub mod problem_2169_count_operations_to_obtain_zero;
+pub mod problem_2185_counting_words_with_a_given_prefix;
 
 #[cfg(test)]
 mod test_utilities;
