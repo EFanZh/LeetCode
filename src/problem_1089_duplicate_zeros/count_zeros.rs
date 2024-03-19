@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[allow(clippy::ptr_arg)] // Expected.
     pub fn duplicate_zeros(arr: &mut Vec<i32>) {
         let n = arr.len();
         let mut required = 0;
