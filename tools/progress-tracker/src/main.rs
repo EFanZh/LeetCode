@@ -11,7 +11,10 @@ mod report;
 mod solutions;
 
 fn get_all_problems() -> Problems {
-    blocking::get("https://leetcode.com/api/problems/algorithms/")
+    blocking::Client::new()
+        .get("https://leetcode.com/api/problems/algorithms/")
+        .header("cookie", "LEETCODE_SESSION")
+        .send()
         .unwrap()
         .json()
         .unwrap()
