@@ -18,11 +18,13 @@ impl Solution {
             depth = 1;
 
             loop {
-                match {
+                let children = {
                     let node_ref = node.borrow();
 
                     (node_ref.left.clone(), node_ref.right.clone())
-                } {
+                };
+
+                match children {
                     (None, None) => break,
                     (None, Some(child)) | (Some(child), None) => {
                         if let Some((next, next_depth)) = queue.pop_front() {
