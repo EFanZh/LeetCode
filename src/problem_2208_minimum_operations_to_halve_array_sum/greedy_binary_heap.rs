@@ -68,6 +68,13 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::TotalF64;
+
+    #[test]
+    fn test_total_f64_partial_eq() {
+        assert!(TotalF64(0.0) == TotalF64(0.0));
+    }
+
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();
