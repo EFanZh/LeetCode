@@ -1,6 +1,7 @@
 use git2::Repository;
+use http::header;
 use problems::Problems;
-use reqwest::blocking;
+use reqwest::blocking::Client;
 use std::path::Path;
 use std::{env, fs};
 
@@ -11,7 +12,10 @@ mod report;
 mod solutions;
 
 fn get_all_problems() -> Problems {
-    blocking::get("https://leetcode.com/api/problems/algorithms/")
+    Client::new()
+        .get("https://leetcode.com/api/problems/algorithms/")
+        .header(header::COOKIE, "LEETCODE_SESSION=")
+        .send()
         .unwrap()
         .json()
         .unwrap()

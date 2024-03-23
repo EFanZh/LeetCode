@@ -10,6 +10,7 @@ workspace = true
 [dependencies]
 chrono = "*"
 git2 = "*"
+http = "*"
 num = "*"
 plotters = "*"
 reqwest = { version = "*", features = ["blocking", "json"] }
