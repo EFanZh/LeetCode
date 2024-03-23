@@ -10,7 +10,7 @@ pub trait Solution {
 // static NUM: AtomicI32 = AtomicI32::new(0);
 
 thread_local! {
-    static NUM: Cell<i32> = Cell::new(0);
+    static NUM: Cell<i32> = const { Cell::new(0) };
 }
 
 fn internal_guess(num: i32) -> i32 {
