@@ -1484,6 +1484,7 @@ pub mod problem_2190_most_frequent_number_following_key_in_an_array;
 pub mod problem_2194_cells_in_a_range_on_an_excel_sheet;
 pub mod problem_2206_divide_array_into_equal_pairs;
 pub mod problem_2208_minimum_operations_to_halve_array_sum;
+pub mod problem_2210_count_hills_and_valleys_in_an_array;
 pub mod problem_2215_find_the_difference_of_two_arrays;
 pub mod problem_2216_minimum_deletions_to_make_array_beautiful;
 pub mod problem_2220_minimum_bit_flips_to_convert_number;
