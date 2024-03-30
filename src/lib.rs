@@ -1481,6 +1481,7 @@ pub mod problem_2180_count_integers_with_even_digit_sum;
 pub mod problem_2185_counting_words_with_a_given_prefix;
 pub mod problem_2186_minimum_number_of_steps_to_make_two_strings_anagram_ii;
 pub mod problem_2190_most_frequent_number_following_key_in_an_array;
+pub mod problem_2191_sort_the_jumbled_numbers;
 pub mod problem_2194_cells_in_a_range_on_an_excel_sheet;
 pub mod problem_2206_divide_array_into_equal_pairs;
 pub mod problem_2208_minimum_operations_to_halve_array_sum;
