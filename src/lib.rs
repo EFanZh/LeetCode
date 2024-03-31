@@ -1494,6 +1494,7 @@ pub mod problem_2231_largest_number_after_digit_swaps_by_parity;
 pub mod problem_2235_add_two_integers;
 pub mod problem_2236_root_equals_sum_of_children;
 pub mod problem_2239_find_closest_number_to_zero;
+pub mod problem_2243_calculate_digit_sum_of_a_string;
 
 #[cfg(test)]
 mod test_utilities;
