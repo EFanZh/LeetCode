@@ -1497,6 +1497,7 @@ pub mod problem_2239_find_closest_number_to_zero;
 pub mod problem_2243_calculate_digit_sum_of_a_string;
 pub mod problem_2244_minimum_rounds_to_complete_all_tasks;
 pub mod problem_2248_intersection_of_multiple_arrays;
+pub mod problem_2255_count_prefixes_of_a_given_string;
 
 #[cfg(test)]
 mod test_utilities;
