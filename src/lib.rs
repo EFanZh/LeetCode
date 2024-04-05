@@ -1499,6 +1499,7 @@ pub mod problem_2244_minimum_rounds_to_complete_all_tasks;
 pub mod problem_2248_intersection_of_multiple_arrays;
 pub mod problem_2255_count_prefixes_of_a_given_string;
 pub mod problem_2260_minimum_consecutive_cards_to_pick_up;
+pub mod problem_2264_largest_3_same_digit_number_in_string;
 
 #[cfg(test)]
 mod test_utilities;
