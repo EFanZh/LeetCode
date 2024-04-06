@@ -2,12 +2,14 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
+use std::hash::BuildHasherDefault;
 
 impl Solution {
     fn find_top_2_frequent_numbers(
         nums: impl IntoIterator<Item = i32>,
-        buffer: &mut HashMap<i32, u32>,
+        buffer: &mut HashMap<i32, u32, BuildHasherDefault<DefaultHasher>>,
     ) -> ((i32, u32), u32) {
         for num in nums {
             buffer.entry(num).and_modify(|count| *count += 1).or_insert(1);
@@ -35,7 +37,7 @@ impl Solution {
     }
 
     pub fn minimum_operations(nums: Vec<i32>) -> i32 {
-        let mut buffer = HashMap::new();
+        let mut buffer = HashMap::with_hasher(BuildHasherDefault::default());
         let (even_1, even_2_count) = Self::find_top_2_frequent_numbers(nums.iter().step_by(2).copied(), &mut buffer);
         let (odd_1, odd_2_count) = Self::find_top_2_frequent_numbers(nums[1..].iter().step_by(2).copied(), &mut buffer);
 
