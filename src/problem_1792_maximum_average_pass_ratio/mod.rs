@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod greedy_binary_heap;
 
 pub trait Solution {
     fn max_average_ratio(classes: Vec<Vec<i32>>, extra_students: i32) -> f64;
