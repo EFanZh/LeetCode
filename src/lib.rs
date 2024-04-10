@@ -1493,6 +1493,7 @@ pub mod problem_2210_count_hills_and_valleys_in_an_array;
 pub mod problem_2215_find_the_difference_of_two_arrays;
 pub mod problem_2216_minimum_deletions_to_make_array_beautiful;
 pub mod problem_2220_minimum_bit_flips_to_convert_number;
+pub mod problem_2224_minimum_number_of_operations_to_convert_time;
 pub mod problem_2226_maximum_candies_allocated_to_k_children;
 pub mod problem_2231_largest_number_after_digit_swaps_by_parity;
 pub mod problem_2235_add_two_integers;
