@@ -2,54 +2,29 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Ordering;
-
 impl Solution {
-    fn get_digits(mut num: u32, buffer: &mut [u8; 10]) -> &mut [u8] {
-        let mut i = 0;
+    fn helper(mut n: u32) -> u32 {
+        let mut result = 0;
+        let mut base = 1;
+        let mut prev = 9;
 
-        while num != 0 {
-            buffer[i] = (num % 10) as _;
-            num /= 10;
-            i += 1;
-        }
+        while n != 0 {
+            let digit = n % 10;
 
-        &mut buffer[..i]
-    }
+            n /= 10;
 
-    fn helper(n: u32) -> u32 {
-        let mut buffer = [0_u8; 10];
-        let buffer = Self::get_digits(n, &mut buffer);
-        let mut iter = buffer.iter().copied().enumerate().rev();
-
-        if let Some((mut start, mut prev)) = iter.next() {
-            for (i, digit) in iter {
-                match digit.cmp(&prev) {
-                    Ordering::Less => {
-                        let mut result = 0;
-
-                        for &digit in buffer[start + 1..].iter().rev() {
-                            result = result * 10 + u32::from(digit);
-                        }
-
-                        result = result * 10 + u32::from(buffer[start] - 1);
-
-                        for _ in 0..start {
-                            result = result * 10 + 9;
-                        }
-
-                        return result;
-                    }
-                    Ordering::Equal => {}
-                    Ordering::Greater => {
-                        start = i;
-                        prev = digit;
-                    }
-                }
+            if digit > prev {
+                result = base * digit - 1;
+                prev = digit - 1;
+            } else {
+                result += digit * base;
+                prev = digit;
             }
+
+            base *= 10;
         }
 
-        n
+        result
     }
 
     pub fn monotone_increasing_digits(n: i32) -> i32 {
