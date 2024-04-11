@@ -81,12 +81,12 @@ mod tests {
     use super::Item;
 
     #[test]
-    fn test_solution() {
-        super::super::tests::run::<super::Solution>();
+    fn test_item_partial_eq() {
+        assert!(Item::new(&[2, 3]) == Item::new(&[2, 4, 5]));
     }
 
     #[test]
-    fn test_item_partial_eq() {
-        assert!(Item::new(&[2, 3]) == Item::new(&[2, 4, 5]));
+    fn test_solution() {
+        super::super::tests::run::<super::Solution>();
     }
 }
