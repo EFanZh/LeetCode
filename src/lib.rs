@@ -1342,6 +1342,7 @@ pub mod problem_1791_find_center_of_star_graph;
 pub mod problem_1792_maximum_average_pass_ratio;
 pub mod problem_1793_maximum_score_of_a_good_subarray;
 pub mod problem_1796_second_largest_digit_in_a_string;
+pub mod problem_1797_design_authentication_manager;
 pub mod problem_1798_maximum_number_of_consecutive_values_you_can_make;
 pub mod problem_1800_maximum_ascending_subarray_sum;
 pub mod problem_1802_maximum_value_at_a_given_index_in_a_bounded_array;
