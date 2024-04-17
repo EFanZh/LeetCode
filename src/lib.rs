@@ -1352,6 +1352,7 @@ pub mod problem_1803_count_pairs_with_xor_in_a_range;
 pub mod problem_1805_number_of_different_integers_in_a_string;
 pub mod problem_1806_minimum_number_of_operations_to_reinitialize_a_permutation;
 pub mod problem_1807_evaluate_the_bracket_pairs_of_a_string;
+pub mod problem_1808_maximize_number_of_nice_divisors;
 pub mod problem_1812_determine_color_of_a_chessboard_square;
 pub mod problem_1813_sentence_similarity_iii;
 pub mod problem_1814_count_nice_pairs_in_an_array;
