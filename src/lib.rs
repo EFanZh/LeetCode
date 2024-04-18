@@ -1356,6 +1356,7 @@ pub mod problem_1808_maximize_number_of_nice_divisors;
 pub mod problem_1812_determine_color_of_a_chessboard_square;
 pub mod problem_1813_sentence_similarity_iii;
 pub mod problem_1814_count_nice_pairs_in_an_array;
+pub mod problem_1815_maximum_number_of_groups_getting_fresh_donuts;
 pub mod problem_1816_truncate_sentence;
 pub mod problem_1817_finding_the_users_active_minutes;
 pub mod problem_1818_minimum_absolute_sum_difference;
