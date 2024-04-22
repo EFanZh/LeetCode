@@ -1378,6 +1378,7 @@ pub mod problem_1846_maximum_element_after_decreasing_and_rearranging;
 pub mod problem_1848_minimum_distance_to_the_target_element;
 pub mod problem_1854_maximum_population_year;
 pub mod problem_1855_maximum_distance_between_a_pair_of_values;
+pub mod problem_1856_maximum_subarray_min_product;
 pub mod problem_1859_sorting_the_sentence;
 pub mod problem_1860_incremental_memory_leak;
 pub mod problem_1861_rotating_the_box;
