@@ -1372,6 +1372,7 @@ pub mod problem_1835_find_xor_sum_of_all_pairs_bitwise_and;
 pub mod problem_1837_sum_of_digits_in_base_k;
 pub mod problem_1838_frequency_of_the_most_frequent_element;
 pub mod problem_1839_longest_substring_of_all_vowels_in_order;
+pub mod problem_1840_maximum_building_height;
 pub mod problem_1844_replace_all_digits_with_characters;
 pub mod problem_1845_seat_reservation_manager;
 pub mod problem_1846_maximum_element_after_decreasing_and_rearranging;
