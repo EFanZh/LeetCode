@@ -108,6 +108,18 @@ impl super::Solution for Solution {
 #[cfg(test)]
 mod tests {
     #[test]
+    #[should_panic(expected = "internal error: entered unreachable code")]
+    fn test_unwrap_visited_failure_1() {
+        super::Solution::unwrap_visited(&super::State::NotVisited);
+    }
+
+    #[test]
+    #[should_panic(expected = "internal error: entered unreachable code")]
+    fn test_unwrap_visited_failure_2() {
+        super::Solution::unwrap_visited(&super::State::Visiting);
+    }
+
+    #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();
     }

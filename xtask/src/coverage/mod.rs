@@ -40,7 +40,7 @@ impl FromStr for OutputType {
 }
 
 impl Display for OutputType {
-    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         f.write_str(self.value())
     }
 }
