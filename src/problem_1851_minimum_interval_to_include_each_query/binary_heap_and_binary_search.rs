@@ -105,6 +105,13 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::Item;
+
+    #[test]
+    fn test_item_partial_eq() {
+        assert!(Item { size: 2, index: 3 } == Item { size: 2, index: 5 });
+    }
+
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();

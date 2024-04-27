@@ -8,12 +8,10 @@ mod windows;
 
 pub struct RustVersionMeta {
     pub host: String,
-    pub commit_hash: String,
 }
 
 pub fn find_rust_version_meta() -> RustVersionMeta {
     let mut host = None;
-    let mut commit_hash = None;
 
     utilities::run_command_and_stream_output(Command::new("rustc").arg("-vV"), |stdout| {
         for line in BufReader::new(stdout).lines() {
@@ -22,16 +20,11 @@ pub fn find_rust_version_meta() -> RustVersionMeta {
             #[allow(clippy::option_if_let_else)] // False positive.
             if let Some(host_value) = line.strip_prefix("host: ") {
                 host = Some(host_value.to_string());
-            } else if let Some(commit_hash_value) = line.strip_prefix("commit-hash: ") {
-                commit_hash = Some(commit_hash_value.to_string());
             }
         }
     });
 
-    RustVersionMeta {
-        host: host.unwrap(),
-        commit_hash: commit_hash.unwrap(),
-    }
+    RustVersionMeta { host: host.unwrap() }
 }
 
 pub fn find_rust_sysroot() -> PathBuf {
