@@ -4,38 +4,32 @@ pub struct Solution;
 
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
+        let mut iter = height.iter().map(|&x| x as u32);
         let mut result = 0;
-        let mut iter = height.into_iter();
+        let mut left_max = 0;
+        let mut right_max = 0;
 
-        if let (Some(mut left), Some(mut right)) = (iter.next(), iter.next_back()) {
-            'outer: loop {
-                if left < right {
-                    for middle in &mut iter {
-                        if middle < left {
-                            result += left - middle;
-                        } else {
-                            left = middle;
+        'outer: while let Some(left) = iter.next() {
+            if left < left_max {
+                result += left_max - left;
+            } else {
+                left_max = left;
+            }
 
-                            continue 'outer;
-                        }
+            while right_max < left_max {
+                if let Some(right) = iter.next_back() {
+                    if right < right_max {
+                        result += right_max - right;
+                    } else {
+                        right_max = right;
                     }
                 } else {
-                    while let Some(middle) = iter.next_back() {
-                        if middle < right {
-                            result += right - middle;
-                        } else {
-                            right = middle;
-
-                            continue 'outer;
-                        }
-                    }
+                    break 'outer;
                 }
-
-                break;
             }
         }
 
-        result
+        result as _
     }
 }
 
