@@ -2,6 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::ptr;
+
 impl Solution {
     pub fn find_closest_elements(arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {
         let mut arr = arr;
@@ -9,7 +11,7 @@ impl Solution {
         let base = arr.as_ptr() as usize;
 
         let start = arr[..arr.len() - k].partition_point(|left| {
-            let i = (left as *const _ as usize - base) / 4; // TODO: Use `pointer::offset_from`.
+            let i = (ptr::from_ref(left) as usize - base) / 4;
             let right = arr[i + k];
 
             x - left > right - x

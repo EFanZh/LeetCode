@@ -17,7 +17,6 @@ impl Solution {
             if let Some(&rank) = ranks.get(&target) {
                 let length = length_to_min_rank.partition_point(|&left_index| left_index < rank);
 
-                #[allow(clippy::option_if_let_else)] // False positive.
                 if let Some(min_rank) = length_to_min_rank.get_mut(length) {
                     *min_rank = rank;
                 } else {

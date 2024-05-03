@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn length_of_lis(nums: Vec<i32>) -> i32 {
         // Invariant: The last element of the increasing subsequence of length i with the minimal last element is
         // smaller than the last element of the increasing subsequence of length i + 1 with the minimal last element

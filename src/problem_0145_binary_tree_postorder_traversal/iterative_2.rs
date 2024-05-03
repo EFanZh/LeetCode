@@ -16,6 +16,7 @@ impl Solution {
         let mut root = root;
 
         'r: loop {
+            #[allow(clippy::assigning_clones)] // False positive.
             if let Some(node) = root {
                 root = node.borrow().left.clone();
 

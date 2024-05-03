@@ -26,12 +26,12 @@ impl Solution {
 
         iter::from_fn(move || {
             while let Some(node) = state.take() {
-                state = RefCell::borrow(&node).left.clone();
+                state.clone_from(&RefCell::borrow(&node).left);
                 stack.push(node);
             }
 
             stack.pop().map(|node| {
-                state = RefCell::borrow(&node).right.clone();
+                state.clone_from(&RefCell::borrow(&node).right);
                 node
             })
         })

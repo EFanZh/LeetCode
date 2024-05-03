@@ -11,6 +11,7 @@ impl Solution {
     fn get_left_height(mut root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         let mut result = 0;
 
+        #[allow(clippy::assigning_clones)] // False positive.
         while let Some(node) = root {
             result += 1;
 

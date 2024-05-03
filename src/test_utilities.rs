@@ -162,14 +162,14 @@ pub fn iter_tree_in_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<
 
     iter::from_fn(move || {
         while let Some(node) = state.take() {
-            state = node.borrow().left.clone();
+            state.clone_from(&node.borrow().left);
             stack.push(node);
         }
 
         stack.pop().map(|node| {
             let node_ref = node.borrow();
 
-            state = node_ref.right.clone();
+            state.clone_from(&node_ref.right);
 
             node_ref.val
         })

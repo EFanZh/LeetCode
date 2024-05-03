@@ -35,7 +35,6 @@ impl Solution {
                     break;
                 }
             } else {
-                #[allow(clippy::option_if_let_else)] // False positive.
                 if let Some(slot) = stack.pop() {
                     *slot = value_1;
                 } else {
