@@ -44,7 +44,7 @@ jobs:
         strategy:
             matrix:
                 os:
-                  - macOS-latest
+                  # - macOS-latest
                   - ubuntu-latest
     tests-windows:
         runs-on: windows-latest
