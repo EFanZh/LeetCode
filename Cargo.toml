@@ -89,7 +89,6 @@ print_stdout = "warn"
 rc_buffer = "warn"
 rc_mutex = "warn"
 redundant_feature_names = "warn"
-redundant_locals = { level = "allow", priority = 1 }               # False positive.
 redundant_pub_crate = "warn"
 rest_pat_in_fully_bound_structs = "warn"
 same_name_method = { level = "allow", priority = 1 }

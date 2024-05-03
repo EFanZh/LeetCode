@@ -9,6 +9,7 @@ use std::rc::Rc;
 
 impl Solution {
     fn preorder_traversal_helper(mut root: Option<Rc<RefCell<TreeNode>>>, result: &mut Vec<i32>) {
+        #[allow(clippy::assigning_clones)] // False positive.
         while let Some(node) = root {
             let node_ref = node.borrow();
 

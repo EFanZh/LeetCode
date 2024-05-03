@@ -30,7 +30,6 @@ impl LRUCache {
         }
     }
 
-    #[allow(clippy::option_if_let_else)] // False positive.
     fn refresh(node: &Rc<Node>, newest: &mut Weak<Node>, oldest: &mut Weak<Node>) {
         if let Some(prev) = node.prev.take().upgrade() {
             newest.upgrade().unwrap().prev.set(Rc::downgrade(node));

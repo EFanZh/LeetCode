@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn length_longest_path(input: String) -> i32 {
         let mut result = 0;
         let mut lengths = vec![0];

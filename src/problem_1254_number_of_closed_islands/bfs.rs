@@ -5,7 +5,6 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn closed_island(grid: Vec<Vec<i32>>) -> i32 {
         let mut grid = grid;
         let rows = grid.len();

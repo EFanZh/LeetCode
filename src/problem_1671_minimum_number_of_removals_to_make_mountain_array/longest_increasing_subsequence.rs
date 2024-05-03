@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)] // False positive.
     fn update_longest_increasing_subsequence(stack: &mut Vec<i32>, num: i32) -> u16 {
         let i = stack.partition_point(|&x| x < num);
 

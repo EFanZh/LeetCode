@@ -3,6 +3,7 @@
 use std::collections::hash_map::Entry;
 use std::collections::{HashMap, VecDeque};
 use std::hash::{Hash, Hasher};
+use std::ptr;
 use std::rc::Rc;
 
 struct Node {
@@ -12,7 +13,7 @@ struct Node {
 
 impl Node {
     fn address(&self) -> usize {
-        self as *const _ as usize
+        ptr::from_ref(self) as _
     }
 }
 

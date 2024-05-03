@@ -111,7 +111,6 @@ impl Solution {
         None
     }
 
-    #[allow(clippy::option_if_let_else)] // False positive.
     pub fn longest_dup_substring(s: String) -> String {
         let mut left = 1;
         let mut right = s.len();

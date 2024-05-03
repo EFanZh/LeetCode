@@ -7,7 +7,6 @@ impl Solution {
         let mut bytes = palindrome.into_bytes();
         let n = bytes.len();
 
-        #[allow(clippy::option_if_let_else)] // False positive.
         if let Some(c) = bytes[..n / 2].iter_mut().find(|&&mut c| c != b'a') {
             *c = b'a';
         } else if n > 1 {

@@ -26,6 +26,7 @@ impl FindElements {
                 break;
             }
 
+            #[allow(clippy::assigning_clones)] // False positive.
             if let Some(node_rc) = node {
                 let node_ref = node_rc.borrow();
 
@@ -34,7 +35,6 @@ impl FindElements {
                 } else {
                     &node_ref.right
                 };
-
                 node = child.clone();
             } else {
                 return false;
