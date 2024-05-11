@@ -1423,6 +1423,7 @@ pub mod problem_1921_eliminate_maximum_number_of_monsters;
 pub mod problem_1922_count_good_numbers;
 pub mod problem_1925_count_square_sum_triples;
 pub mod problem_1926_nearest_exit_from_entrance_in_maze;
+pub mod problem_1927_sum_game;
 pub mod problem_1929_concatenation_of_array;
 pub mod problem_1935_maximum_number_of_words_you_can_type;
 pub mod problem_1936_add_minimum_number_of_rungs;
