@@ -1376,6 +1376,7 @@ pub mod problem_1840_maximum_building_height;
 pub mod problem_1844_replace_all_digits_with_characters;
 pub mod problem_1845_seat_reservation_manager;
 pub mod problem_1846_maximum_element_after_decreasing_and_rearranging;
+pub mod problem_1847_closest_room;
 pub mod problem_1848_minimum_distance_to_the_target_element;
 pub mod problem_1849_splitting_a_string_into_descending_consecutive_values;
 pub mod problem_1851_minimum_interval_to_include_each_query;
