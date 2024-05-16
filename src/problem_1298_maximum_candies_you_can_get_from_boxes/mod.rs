@@ -163,8 +163,8 @@ mod tests {
                 S::max_candies(
                     status.to_vec(),
                     candies.to_vec(),
-                    keys.iter().copied().map(Vec::from).collect(),
-                    contained_boxes.iter().copied().map(Vec::from).collect(),
+                    keys.iter().copied().map(<[_]>::to_vec).collect(),
+                    contained_boxes.iter().copied().map(<[_]>::to_vec).collect(),
                     initial_boxes.to_vec()
                 ),
                 expected,

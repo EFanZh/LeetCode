@@ -19,7 +19,7 @@ mod tests {
 
         for (graph, expected) in test_cases {
             assert_eq!(
-                S::eventual_safe_nodes(graph.iter().copied().map(Vec::from).collect()),
+                S::eventual_safe_nodes(graph.iter().copied().map(<[_]>::to_vec).collect()),
                 expected,
             );
         }
