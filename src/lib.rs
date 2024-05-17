@@ -1416,6 +1416,7 @@ pub mod problem_1899_merge_triplets_to_form_target_triplet;
 pub mod problem_1901_find_a_peak_element_ii;
 pub mod problem_1903_largest_odd_number_in_string;
 pub mod problem_1904_the_number_of_full_rounds_you_have_played;
+pub mod problem_1905_count_sub_islands;
 pub mod problem_1906_minimum_absolute_difference_queries;
 pub mod problem_1909_remove_one_element_to_make_the_array_strictly_increasing;
 pub mod problem_1910_remove_all_occurrences_of_a_substring;
