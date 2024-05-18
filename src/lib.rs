@@ -1422,6 +1422,7 @@ pub mod problem_1909_remove_one_element_to_make_the_array_strictly_increasing;
 pub mod problem_1910_remove_all_occurrences_of_a_substring;
 pub mod problem_1911_maximum_alternating_subsequence_sum;
 pub mod problem_1913_maximum_product_difference_between_two_pairs;
+pub mod problem_1914_cyclically_rotating_a_grid;
 pub mod problem_1915_number_of_wonderful_substrings;
 pub mod problem_1920_build_array_from_permutation;
 pub mod problem_1921_eliminate_maximum_number_of_monsters;
