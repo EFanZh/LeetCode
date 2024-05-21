@@ -1,9 +1,4 @@
 pub mod binary_search;
-pub mod fast_binary_search;
-pub mod simplified_binary_search;
-pub mod simplified_three_way_binary_search;
-pub mod three_way_binary_search;
-pub mod wrapping_fast_binary_search;
 
 pub trait Solution {
     fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64;
