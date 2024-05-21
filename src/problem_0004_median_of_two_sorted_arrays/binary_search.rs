@@ -5,53 +5,44 @@ pub struct Solution;
 impl Solution {
     pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
         let (nums1, nums2) = if nums2.len() < nums1.len() {
-            (nums2, nums1)
+            (nums2.as_slice(), nums1.as_slice())
         } else {
-            (nums1, nums2)
+            (nums1.as_slice(), nums2.as_slice())
         };
 
-        let total_count = nums1.len() + nums2.len();
-        let half_total_count = total_count / 2;
-
         let mut left = 0;
-        let mut size = nums1.len();
+        let mut right = nums1.len();
+        let total = nums1.len() + nums2.len();
+        let half = total / 2;
+        let half_minus_1 = half - 1;
 
-        while size > 0 {
-            let half_size = size / 2;
-            let i = left + half_size;
+        while left < right {
+            let middle = left + (right - left) / 2;
 
-            if nums2[half_total_count - i - 1] > nums1[i] {
-                left = i + 1;
-                size -= half_size + 1;
+            if nums1[middle] < nums2[half_minus_1 - middle] {
+                left = middle + 1;
             } else {
-                size = half_size;
+                right = middle;
             }
         }
 
-        let n = if let Some(&i_value) = nums1.get(left) {
-            if let Some(&j_value) = nums2.get(half_total_count - left) {
-                i_value.min(j_value)
-            } else {
-                i_value
-            }
-        } else {
-            nums2[half_total_count - left]
-        };
+        let index = left;
+        let other = half - index;
 
-        if total_count % 2 == 0 {
-            let m = if let Some(&i_left_value) = nums1.get(left.wrapping_sub(1)) {
-                if let Some(&j_left_value) = nums2.get((half_total_count - left).wrapping_sub(1)) {
-                    i_left_value.max(j_left_value)
-                } else {
-                    i_left_value
-                }
-            } else {
-                nums2[half_total_count - 1]
-            };
+        let right_min = i32::min(
+            nums1.get(index).copied().unwrap_or(i32::MAX),
+            nums2.get(other).copied().unwrap_or(i32::MAX),
+        );
 
-            f64::from(m + n) / 2.0
+        if total % 2 == 0 {
+            let left_max = i32::max(
+                nums1.get(index.wrapping_sub(1)).copied().unwrap_or(i32::MIN),
+                nums2.get(other.wrapping_sub(1)).copied().unwrap_or(i32::MIN),
+            );
+
+            (f64::from(left_max) + f64::from(right_min)) / 2.0
         } else {
-            f64::from(n)
+            f64::from(right_min)
         }
     }
 }
