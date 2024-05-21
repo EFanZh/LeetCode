@@ -29,20 +29,20 @@ impl Solution {
         let index = left;
         let other = half - index;
 
-        let right_min = i32::min(
+        let right_min = f64::from(i32::min(
             nums1.get(index).copied().unwrap_or(i32::MAX),
             nums2.get(other).copied().unwrap_or(i32::MAX),
-        );
+        ));
 
         if total % 2 == 0 {
-            let left_max = i32::max(
+            let left_max = f64::from(i32::max(
                 nums1.get(index.wrapping_sub(1)).copied().unwrap_or(i32::MIN),
                 nums2.get(other.wrapping_sub(1)).copied().unwrap_or(i32::MIN),
-            );
+            ));
 
-            (f64::from(left_max) + f64::from(right_min)) / 2.0
+            (left_max + right_min) / 2.0
         } else {
-            f64::from(right_min)
+            right_min
         }
     }
 }
