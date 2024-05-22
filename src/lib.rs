@@ -1440,6 +1440,7 @@ pub mod problem_1942_the_number_of_the_smallest_unoccupied_chair;
 pub mod problem_1943_describe_the_painting;
 pub mod problem_1944_number_of_visible_people_in_a_queue;
 pub mod problem_1945_sum_of_digits_of_string_after_convert;
+pub mod problem_1946_largest_number_after_mutating_substring;
 pub mod problem_1952_three_divisors;
 pub mod problem_1957_delete_characters_to_make_fancy_string;
 pub mod problem_1958_check_if_move_is_legal;
