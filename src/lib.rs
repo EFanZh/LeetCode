@@ -1444,6 +1444,7 @@ pub mod problem_1946_largest_number_after_mutating_substring;
 pub mod problem_1952_three_divisors;
 pub mod problem_1957_delete_characters_to_make_fancy_string;
 pub mod problem_1958_check_if_move_is_legal;
+pub mod problem_1959_minimum_total_space_wasted_with_k_resizing_operations;
 pub mod problem_1961_check_if_string_is_a_prefix_of_array;
 pub mod problem_1962_remove_stones_to_minimize_the_total;
 pub mod problem_1963_minimum_number_of_swaps_to_make_the_string_balanced;
