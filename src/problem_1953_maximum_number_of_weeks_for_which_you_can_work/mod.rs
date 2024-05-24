@@ -15,7 +15,7 @@ mod tests {
             (&[5, 2, 1], 7),
             (&[5, 9, 4, 4, 8, 9, 9, 8, 7, 3], 66),
             (&[5, 1, 5], 11),
-            (&[i32::MAX, i32::MAX, i32::MAX], 6_442_450_941),
+            (&[i32::MAX, i32::MAX, i32::MAX, i32::MAX], 8_589_934_588),
         ];
 
         for (milestones, expected) in test_cases {
