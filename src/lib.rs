@@ -1457,6 +1457,7 @@ pub mod problem_1971_find_if_path_exists_in_graph;
 pub mod problem_1974_minimum_time_to_type_word_using_special_typewriter;
 pub mod problem_1975_maximum_matrix_sum;
 pub mod problem_1976_number_of_ways_to_arrive_at_destination;
+pub mod problem_1977_number_of_ways_to_separate_numbers;
 pub mod problem_1979_find_greatest_common_divisor_of_array;
 pub mod problem_1980_find_unique_binary_string;
 pub mod problem_1984_minimum_difference_between_highest_and_lowest_of_k_scores;
