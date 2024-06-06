@@ -9,16 +9,13 @@ impl Solution {
         (lhs * rhs) % Self::MODULUS
     }
 
-    fn exp(mut base: u64, mut exp: u64) -> u64 {
+    /// Calculates base ^ ((2 ^ x) - 1)
+    fn exp(mut base: u64, x: u32) -> u64 {
         let mut result = 1;
 
-        while exp != 0 {
-            if exp & 1 != 0 {
-                result = Self::mul(result, base);
-            }
-
+        for _ in 0..x {
+            result = Self::mul(result, base);
             base = Self::mul(base, base);
-            exp >>= 1;
         }
 
         result
@@ -28,7 +25,7 @@ impl Solution {
         let p = p as u32;
         let max = (1 << p) - 1;
 
-        Self::mul(max % Self::MODULUS, Self::exp((max - 1) % Self::MODULUS, max >> 1)) as _
+        Self::mul(max % Self::MODULUS, Self::exp((max - 1) % Self::MODULUS, p - 1)) as _
     }
 }
 
