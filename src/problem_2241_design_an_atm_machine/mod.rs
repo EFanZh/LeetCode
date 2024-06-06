@@ -1,4 +1,5 @@
 pub mod greedy;
+pub mod greedy_2;
 
 #[allow(clippy::upper_case_acronyms)] // Expected.
 pub trait ATM {
