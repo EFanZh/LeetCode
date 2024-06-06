@@ -12,7 +12,7 @@ mod tests {
         let test_cases = [
             ((&[5, 1, 5] as &[_], 22), 0),
             ((&[3, 4, 1, 2], 25), 1),
-            ((&[i32::MAX, i32::MAX], 23), 0),
+            ((&[i32::MAX, i32::MAX, i32::MAX, i32::MAX], 23), 0),
         ];
 
         for ((chalk, k), expected) in test_cases {
