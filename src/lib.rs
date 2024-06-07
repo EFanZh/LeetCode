@@ -1467,6 +1467,7 @@ pub mod problem_1985_find_the_kth_largest_integer_in_the_array;
 pub mod problem_1986_minimum_number_of_work_sessions_to_finish_the_tasks;
 pub mod problem_1991_find_the_middle_index_in_array;
 pub mod problem_1994_the_number_of_good_subsets;
+pub mod problem_1995_count_special_quadruplets;
 pub mod problem_1996_the_number_of_weak_characters_in_the_game;
 pub mod problem_2000_reverse_prefix_of_word;
 pub mod problem_2006_count_number_of_pairs_with_absolute_difference_k;
