@@ -9,7 +9,7 @@ impl Solution {
         (lhs * rhs) % Self::MODULUS
     }
 
-    /// Calculates base ^ ((2 ^ x) - 1)
+    /// Calculates `base.pow(2.pow(x) - 1) % Self::MODULUS`.
     fn exp(mut base: u64, x: u32) -> u64 {
         let mut result = 1;
 
