@@ -18,15 +18,15 @@ impl Solution {
 
         let mut result = 0;
 
-        for i in 2..n - 1 {
-            let num = nums[i];
+        for c in 2..n - 1 {
+            let num_c = nums[c];
 
-            for &forth in &nums[i + 1..] {
-                result += sums.get(&(forth - num)).copied().unwrap_or(0);
+            for &num_d in &nums[c + 1..] {
+                result += sums.get(&(num_d - num_c)).copied().unwrap_or(0);
             }
 
-            for &first in &nums[..i] {
-                match sums.entry(first + num) {
+            for &num_a in &nums[..c] {
+                match sums.entry(num_a + num_c) {
                     Entry::Occupied(entry) => *entry.into_mut() += 1,
                     Entry::Vacant(entry) => {
                         entry.insert(1);
