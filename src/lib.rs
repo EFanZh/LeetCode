@@ -1480,6 +1480,7 @@ pub mod problem_2012_sum_of_beauty_in_the_array;
 pub mod problem_2016_maximum_difference_between_increasing_elements;
 pub mod problem_2017_grid_game;
 pub mod problem_2022_convert_1d_array_into_2d_array;
+pub mod problem_2023_number_of_pairs_of_strings_with_concatenation_equal_to_target;
 pub mod problem_2024_maximize_the_confusion_of_an_exam;
 pub mod problem_2027_minimum_moves_to_convert_string;
 pub mod problem_2028_find_missing_observations;
