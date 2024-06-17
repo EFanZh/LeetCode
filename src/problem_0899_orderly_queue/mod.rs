@@ -12,7 +12,7 @@ mod tests {
         let test_cases = [(("cba", 1), "acb"), (("baaca", 3), "aaabc")];
 
         for ((s, k), expected) in test_cases {
-            assert_eq!(S::orderly_queue(s.to_string(), k), expected.to_string());
+            assert_eq!(S::orderly_queue(s.to_string(), k), expected);
         }
     }
 }

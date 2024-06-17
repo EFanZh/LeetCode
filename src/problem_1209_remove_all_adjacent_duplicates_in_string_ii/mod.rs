@@ -16,7 +16,7 @@ mod tests {
         ];
 
         for ((s, k), expected) in test_cases {
-            assert_eq!(S::remove_duplicates(s.to_string(), k), expected.to_string());
+            assert_eq!(S::remove_duplicates(s.to_string(), k), expected);
         }
     }
 }
