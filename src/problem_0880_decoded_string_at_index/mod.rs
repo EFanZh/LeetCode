@@ -18,7 +18,7 @@ mod tests {
         ];
 
         for ((s, k), expected) in test_cases {
-            assert_eq!(S::decode_at_index(s.to_string(), k), expected.to_string());
+            assert_eq!(S::decode_at_index(s.to_string(), k), expected);
         }
     }
 }

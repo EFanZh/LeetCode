@@ -12,7 +12,7 @@ mod tests {
         let test_cases = [(("99", 9), "999"), (("-13", 2), "-123")];
 
         for ((n, x), expected) in test_cases {
-            assert_eq!(S::max_value(n.to_string(), x), expected.to_string());
+            assert_eq!(S::max_value(n.to_string(), x), expected);
         }
     }
 }
