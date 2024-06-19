@@ -10,11 +10,11 @@ mod tests {
 
     pub fn run<S: Solution>() {
         let test_cases = [
-            (("leet2code3", 10), 'o'),
-            (("ha22", 5), 'h'),
-            (("a2345678999999999999999", 1), 'a'),
-            (("a23", 6), 'a'),
-            (("a2b3c4d5e6f7g8h9", 3), 'b'),
+            (("leet2code3", 10), "o"),
+            (("ha22", 5), "h"),
+            (("a2345678999999999999999", 1), "a"),
+            (("a23", 6), "a"),
+            (("a2b3c4d5e6f7g8h9", 3), "b"),
         ];
 
         for ((s, k), expected) in test_cases {
