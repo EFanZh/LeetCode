@@ -13,6 +13,12 @@ mod tests {
             (&["lc", "cl", "gg"] as &[_], 6),
             (&["ab", "ty", "yt", "lc", "cl", "ab"], 8),
             (&["cc", "ll", "xx"], 2),
+            (
+                &[
+                    "dd", "aa", "bb", "dd", "aa", "dd", "bb", "dd", "aa", "cc", "bb", "cc", "dd", "cc",
+                ],
+                22,
+            ),
         ];
 
         for (words, expected) in test_cases {
