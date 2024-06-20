@@ -1571,6 +1571,7 @@ pub mod problem_2248_intersection_of_multiple_arrays;
 pub mod problem_2255_count_prefixes_of_a_given_string;
 pub mod problem_2259_remove_digit_from_number_to_maximize_result;
 pub mod problem_2260_minimum_consecutive_cards_to_pick_up;
+pub mod problem_2262_total_appeal_of_a_string;
 pub mod problem_2264_largest_3_same_digit_number_in_string;
 pub mod problem_2265_count_nodes_equal_to_average_of_subtree;
 pub mod problem_2266_count_number_of_texts;
