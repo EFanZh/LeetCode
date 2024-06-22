@@ -25,10 +25,10 @@ impl Solution {
                 if value % prime == 0 {
                     f(prime.get());
 
-                    value = value / prime;
+                    value /= prime;
 
                     while value % prime == 0 {
-                        value = value / prime;
+                        value /= prime;
                     }
                 }
             } else {

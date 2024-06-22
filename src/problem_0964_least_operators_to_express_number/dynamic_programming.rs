@@ -14,7 +14,7 @@ impl Solution {
         let mut base = 1;
 
         loop {
-            target = target / x;
+            target /= x;
 
             if target == 0 {
                 break;

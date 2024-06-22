@@ -56,9 +56,9 @@ impl Solution {
             let (top, row) = cache[..n * (length - 1) + (n + 1 - length)].split_at_mut(n * (length - 1));
 
             for (start, slot) in row.iter_mut().enumerate() {
-                let mut min = std::f64::INFINITY;
+                let mut min = f64::INFINITY;
                 let mut min_left_length = 0;
-                let mut max = std::f64::NEG_INFINITY;
+                let mut max = f64::NEG_INFINITY;
                 let mut max_left_length = 0;
 
                 for left_length in 1..length {

@@ -12,7 +12,7 @@ impl Solution {
 
         while n != 0 {
             result += n % k;
-            n = n / k;
+            n /= k;
         }
 
         i32::from(result)
