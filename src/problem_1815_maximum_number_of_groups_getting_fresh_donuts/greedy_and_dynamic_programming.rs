@@ -70,7 +70,7 @@ impl Solution {
 
                 for (group_size, &count) in (1..).zip(&group_states[..usize::from(batch_size.get()) - 1]) {
                     total_count += group_size * (x % count);
-                    x = x / count;
+                    x /= count;
                 }
 
                 (total_count % batch_size) as u8
@@ -86,7 +86,7 @@ impl Solution {
                             max_count.max(cache[usize::from(state - base.get())] + u8::from(last_group == total_count));
                     }
 
-                    state_iter = state_iter / count;
+                    state_iter /= count;
                 }
 
                 max_count
