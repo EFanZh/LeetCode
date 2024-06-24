@@ -1442,6 +1442,7 @@ pub mod problem_1943_describe_the_painting;
 pub mod problem_1944_number_of_visible_people_in_a_queue;
 pub mod problem_1945_sum_of_digits_of_string_after_convert;
 pub mod problem_1946_largest_number_after_mutating_substring;
+pub mod problem_1948_delete_duplicate_folders_in_system;
 pub mod problem_1952_three_divisors;
 pub mod problem_1953_maximum_number_of_weeks_for_which_you_can_work;
 pub mod problem_1954_minimum_garden_perimeter_to_collect_enough_apples;
