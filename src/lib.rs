@@ -1425,6 +1425,7 @@ pub mod problem_1911_maximum_alternating_subsequence_sum;
 pub mod problem_1913_maximum_product_difference_between_two_pairs;
 pub mod problem_1914_cyclically_rotating_a_grid;
 pub mod problem_1915_number_of_wonderful_substrings;
+pub mod problem_1916_count_ways_to_build_rooms_in_an_ant_colony;
 pub mod problem_1920_build_array_from_permutation;
 pub mod problem_1921_eliminate_maximum_number_of_monsters;
 pub mod problem_1922_count_good_numbers;
