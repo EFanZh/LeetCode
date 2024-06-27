@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod recursive_with_mod_inverse;
 
 pub trait Solution {
     fn ways_to_build_rooms(prev_room: Vec<i32>) -> i32;
