@@ -1399,6 +1399,7 @@ pub mod problem_1871_jump_game_vii;
 pub mod problem_1872_stone_game_viii;
 pub mod problem_1876_substrings_of_size_three_with_distinct_characters;
 pub mod problem_1877_minimize_maximum_pair_sum_in_array;
+pub mod problem_1878_get_biggest_three_rhombus_sums_in_a_grid;
 pub mod problem_1879_minimum_xor_sum_of_two_arrays;
 pub mod problem_1880_check_if_word_equals_summation_of_two_words;
 pub mod problem_1881_maximum_value_after_insertion;
