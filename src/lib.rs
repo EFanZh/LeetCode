@@ -1531,6 +1531,7 @@ pub mod problem_2116_check_if_a_parentheses_string_can_be_valid;
 pub mod problem_2119_a_number_after_a_double_reversal;
 pub mod problem_2124_check_if_all_as_appears_before_all_bs;
 pub mod problem_2125_number_of_laser_beams_in_a_bank;
+pub mod problem_2126_destroying_asteroids;
 pub mod problem_2129_capitalize_the_title;
 pub mod problem_2130_maximum_twin_sum_of_a_linked_list;
 pub mod problem_2131_longest_palindrome_by_concatenating_two_letter_words;
