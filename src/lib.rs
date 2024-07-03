@@ -1587,6 +1587,7 @@ pub mod problem_2262_total_appeal_of_a_string;
 pub mod problem_2264_largest_3_same_digit_number_in_string;
 pub mod problem_2265_count_nodes_equal_to_average_of_subtree;
 pub mod problem_2266_count_number_of_texts;
+pub mod problem_2269_find_the_k_beauty_of_a_number;
 pub mod problem_2270_number_of_ways_to_split_array;
 
 #[cfg(test)]
