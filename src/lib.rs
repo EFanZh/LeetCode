@@ -1559,6 +1559,7 @@ pub mod problem_2165_smallest_value_of_the_rearranged_number;
 pub mod problem_2166_design_bitset;
 pub mod problem_2169_count_operations_to_obtain_zero;
 pub mod problem_2170_minimum_operations_to_make_the_array_alternating;
+pub mod problem_2171_removing_minimum_number_of_magic_beans;
 pub mod problem_2177_find_three_consecutive_integers_that_sum_to_a_given_number;
 pub mod problem_2180_count_integers_with_even_digit_sum;
 pub mod problem_2181_merge_nodes_in_between_zeros;
