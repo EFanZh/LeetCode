@@ -4,8 +4,6 @@ pub struct Solution;
 
 // See <https://leetcode.com/problems/car-fleet-ii/discuss/1085987/JavaC%2B%2BPython-O(n)-Stack-Solution>.
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn get_collision_times(cars: Vec<Vec<i32>>) -> Vec<f64> {
         let mut result = vec![-1.0; cars.len()];

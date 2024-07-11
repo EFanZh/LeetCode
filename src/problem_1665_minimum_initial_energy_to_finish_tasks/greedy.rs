@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn minimum_effort(tasks: Vec<Vec<i32>>) -> i32 {
         let mut tasks = tasks

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn get_digits(mut num: u32, buffer: &mut [u8; 10]) -> &mut [u8] {
         if num == 0 {

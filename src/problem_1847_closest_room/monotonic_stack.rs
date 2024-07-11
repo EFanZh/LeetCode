@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn into_array(value: Vec<i32>) -> (u32, u32) {
         let [x, y]: [_; 2] = value.try_into().ok().unwrap();

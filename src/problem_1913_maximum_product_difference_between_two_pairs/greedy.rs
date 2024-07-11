@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn max_product_difference(nums: Vec<i32>) -> i32 {

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryFrom;
-
 impl Solution {
     pub fn num_equiv_domino_pairs(dominoes: Vec<Vec<i32>>) -> i32 {
         let mut result = 0;

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn interval_overlaps(left: (u32, u32), right: (u32, u32)) -> bool {
         left.0 <= right.1 && left.1 >= right.0

@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
-use std::convert::TryInto;
 use std::mem;
 
 impl Solution {

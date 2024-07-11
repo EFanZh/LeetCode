@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
-use std::iter::FromIterator;
 
 // See <https://leetcode.com/problems/rank-transform-of-a-matrix/discuss/1391380/C%2B%2BPython-HashMap-and-Sorting-and-Union-Find-Clean-and-Concise>.
 

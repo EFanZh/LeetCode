@@ -4,8 +4,6 @@ pub struct Solution;
 
 // <https://leetcode.com/problems/sum-of-distances-in-tree/solution/>.
 
-use std::convert::TryInto;
-
 impl Solution {
     fn dfs(graph: &[Vec<usize>], node: usize, parent: usize, counts: &mut [i32]) -> (i32, i32) {
         let mut count = 1;

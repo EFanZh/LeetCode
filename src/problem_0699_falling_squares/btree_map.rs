@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::BTreeMap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn falling_squares(positions: Vec<Vec<i32>>) -> Vec<i32> {

@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
-use std::convert::TryInto;
 use std::hash::{Hash, Hasher};
 use std::num::NonZeroU32;
 

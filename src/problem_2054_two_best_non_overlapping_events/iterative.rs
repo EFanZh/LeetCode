@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn parse_event(event: &[i32]) -> &[i32; 3] {
         event.try_into().ok().unwrap()

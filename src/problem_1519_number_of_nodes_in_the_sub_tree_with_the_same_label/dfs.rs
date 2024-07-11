@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn dfs(graph: &[(u8, Vec<usize>)], counts: &mut [i32; 26], result: &mut [i32], node: usize, parent: usize) {
         let (label, ref children) = graph[node];

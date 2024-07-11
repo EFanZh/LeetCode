@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn max_events(events: Vec<Vec<i32>>) -> i32 {

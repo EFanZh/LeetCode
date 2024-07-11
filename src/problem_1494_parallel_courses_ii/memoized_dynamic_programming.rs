@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 struct Context<'a> {
     graph: &'a [u16],
     cache: &'a mut [u8],

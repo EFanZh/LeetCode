@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn get_root(roots: &mut [i32], node: i32) -> i32 {
         let index = (node - 1) as usize;

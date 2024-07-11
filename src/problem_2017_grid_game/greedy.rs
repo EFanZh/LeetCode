@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn grid_game(grid: Vec<Vec<i32>>) -> i64 {
         let [first_row, second_row]: &[_; 2] = grid.as_slice().try_into().ok().unwrap();

@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::{Entry, OccupiedEntry};
 use std::collections::{HashMap, HashSet};
-use std::convert::TryInto;
 
 #[derive(Default)]
 struct Counter(HashMap<u32, u16>);

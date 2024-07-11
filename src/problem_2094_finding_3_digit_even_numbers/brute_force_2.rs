@@ -6,10 +6,7 @@ use std::cell::Cell;
 
 impl Solution {
     pub fn find_even_numbers(digits: Vec<i32>) -> Vec<i32> {
-        #[allow(clippy::declare_interior_mutable_const)] // TODO: Use inline
-        const ZERO_CELL: Cell<u8> = Cell::new(0);
-
-        let mut counts = [ZERO_CELL; 10];
+        let mut counts = [const { Cell::new(0) }; 10];
 
         for digit in digits {
             *counts[digit as u32 as usize].get_mut() += 1;

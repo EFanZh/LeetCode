@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn car_pooling(trips: Vec<Vec<i32>>, capacity: i32) -> bool {

@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::convert::TryInto;
 
 impl Solution {
     fn get_root(nodes: &mut [(i32, u32)], node: i32) -> (i32, u32) {

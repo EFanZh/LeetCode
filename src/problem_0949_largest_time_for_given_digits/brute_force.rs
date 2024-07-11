@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn largest_time_from_digits(arr: Vec<i32>) -> String {
         let [a, b, c, d]: [_; 4] = arr.try_into().unwrap();

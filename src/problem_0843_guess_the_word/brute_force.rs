@@ -6,7 +6,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
-use std::convert::TryFrom;
 
 impl Solution {
     fn get_matches(left: [u8; 6], right: [u8; 6]) -> u8 {

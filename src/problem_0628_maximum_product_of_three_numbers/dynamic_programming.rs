@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn maximum_product(nums: Vec<i32>) -> i32 {
         let (left, right) = nums.split_at(2);

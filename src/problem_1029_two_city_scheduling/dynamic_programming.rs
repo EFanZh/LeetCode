@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryFrom;
-
 impl Solution {
     pub fn two_city_sched_cost(costs: Vec<Vec<i32>>) -> i32 {
         let n = costs.len() / 2;

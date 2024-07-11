@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn alert_names(key_name: Vec<String>, key_time: Vec<String>) -> Vec<String> {

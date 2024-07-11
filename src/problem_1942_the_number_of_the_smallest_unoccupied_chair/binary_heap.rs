@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::cmp::{Ordering, Reverse};
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 use std::mem;
 
 struct Item {

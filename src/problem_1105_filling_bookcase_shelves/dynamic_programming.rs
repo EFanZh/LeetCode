@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn min_height_shelves(books: Vec<Vec<i32>>, shelf_width: i32) -> i32 {
         let books = books

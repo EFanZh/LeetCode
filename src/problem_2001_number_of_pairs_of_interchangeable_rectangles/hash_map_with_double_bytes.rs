@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn interchangeable_rectangles(rectangles: Vec<Vec<i32>>) -> i64 {

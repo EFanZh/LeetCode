@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::VecDeque;
-use std::convert::TryInto;
 
 impl Solution {
     fn neighbors(board: &mut [Vec<char>], (row, column): (usize, usize), mut f: impl FnMut((usize, usize), &mut char)) {

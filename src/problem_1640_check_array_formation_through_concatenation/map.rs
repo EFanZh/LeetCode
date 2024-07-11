@@ -4,9 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn can_form_array(arr: Vec<i32>, pieces: Vec<Vec<i32>>) -> bool {
-        const EMPTY: Vec<i32> = Vec::new();
-
-        let mut pieces_by_first = [EMPTY; 100];
+        let mut pieces_by_first = [const { Vec::new() }; 100];
 
         for piece in pieces {
             let first = piece[0] as u32 as usize;

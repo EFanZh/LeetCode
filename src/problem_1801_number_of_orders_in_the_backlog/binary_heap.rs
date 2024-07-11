@@ -5,7 +5,6 @@ pub struct Solution;
 use std::cmp::{Ordering, Reverse};
 use std::collections::binary_heap::PeekMut;
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 
 struct Order {
     price: u32,

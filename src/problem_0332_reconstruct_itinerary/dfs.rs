@@ -5,7 +5,6 @@ pub struct Solution;
 use std::borrow::BorrowMut;
 use std::cmp::Reverse;
 use std::collections::HashMap;
-use std::convert::TryInto;
 
 impl Solution {
     fn name_to_id(name: &str) -> u32 {

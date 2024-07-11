@@ -4,7 +4,6 @@ pub struct Solution;
 
 // See <https://en.wikipedia.org/wiki/Geometric_median>.
 
-use std::convert::TryInto;
 use std::f64::consts;
 
 impl Solution {

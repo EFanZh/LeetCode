@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn decode(rec: &[i32]) -> (i32, i32, i32, i32) {
         let [x1, y1, x2, y2]: [_; 4] = rec.try_into().unwrap();

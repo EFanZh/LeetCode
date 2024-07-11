@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn find_min_arrow_shots(points: Vec<Vec<i32>>) -> i32 {
         let mut points = points;

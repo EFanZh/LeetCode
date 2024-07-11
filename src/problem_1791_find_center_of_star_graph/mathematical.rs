@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn find_center(edges: Vec<Vec<i32>>) -> i32 {
         let [first, second]: &[_; 2] = edges[..2].try_into().ok().unwrap();

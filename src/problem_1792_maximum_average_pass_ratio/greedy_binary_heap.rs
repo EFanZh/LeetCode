@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 
 struct Class {
     not_pass: u32,

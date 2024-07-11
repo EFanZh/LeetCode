@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashSet;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn min_area_free_rect(points: Vec<Vec<i32>>) -> f64 {

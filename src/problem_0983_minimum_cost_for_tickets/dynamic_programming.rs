@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn update_min_cost(cache: &[(u32, u32)], min_day: u32, start_index: &mut usize, prev_cost: &mut u32) {
         while let Some(&(day, cost)) = cache.get(*start_index) {

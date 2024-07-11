@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn most_points(questions: Vec<Vec<i32>>) -> i64 {
         let mut cache = vec![0; questions.len()].into_boxed_slice();

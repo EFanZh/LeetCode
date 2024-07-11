@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn average_waiting_time(customers: Vec<Vec<i32>>) -> f64 {
         let mut total_waiting_time = 0;

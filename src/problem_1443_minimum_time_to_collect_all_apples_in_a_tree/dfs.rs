@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn dfs(graph: &[(Vec<usize>, bool)], parent: usize, node: usize) -> i32 {
         let (neighbors, has_apple) = &graph[node];

@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::cmp::Ordering;
 use std::collections::HashMap;
-use std::convert::TryInto;
 use std::iter;
 
 impl Solution {

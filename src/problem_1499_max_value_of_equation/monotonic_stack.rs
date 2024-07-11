@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::VecDeque;
-use std::convert::TryInto;
 
 struct Item {
     x_minus_y: i32,
