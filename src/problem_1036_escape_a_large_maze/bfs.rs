@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::{HashSet, VecDeque};
-use std::convert::TryInto;
 
 impl Solution {
     fn unwrap_point(point: Vec<i32>) -> (u32, u32) {

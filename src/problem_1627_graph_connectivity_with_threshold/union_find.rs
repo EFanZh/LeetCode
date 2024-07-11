@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn find_root(union_find: &mut [(u16, u16)], node: u16) -> (u16, u16) {
         let state = union_find[usize::from(node)];

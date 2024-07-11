@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn car_pooling(trips: Vec<Vec<i32>>, capacity: i32) -> bool {
         let mut events = Vec::with_capacity(trips.len() * 2);

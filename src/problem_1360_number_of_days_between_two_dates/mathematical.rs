@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn parse_date(date: &str) -> u32 {
         static COMMON_YEAR_DAYS: [u32; 11] = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304];

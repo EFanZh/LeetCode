@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn square_is_white(coordinates: String) -> bool {
         let [column, row]: [_; 2] = coordinates.as_bytes().try_into().ok().unwrap();

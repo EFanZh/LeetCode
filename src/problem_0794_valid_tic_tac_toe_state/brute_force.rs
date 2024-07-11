@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn valid_tic_tac_toe(board: Vec<String>) -> bool {
         let [row_0, row_1, row_2]: &[String; 3] = board.as_slice().try_into().unwrap();

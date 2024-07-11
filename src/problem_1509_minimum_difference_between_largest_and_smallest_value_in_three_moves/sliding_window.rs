@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp;
-use std::convert::TryInto;
 
 impl Solution {
     fn insert(buffer: &mut [i32; 8], value: i32) {

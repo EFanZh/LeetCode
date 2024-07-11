@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
-use std::convert::TryInto;
 use std::hash::BuildHasherDefault;
 use std::mem;
 

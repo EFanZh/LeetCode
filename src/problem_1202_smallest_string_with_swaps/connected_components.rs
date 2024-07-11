@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::cmp::Reverse;
 use std::collections::VecDeque;
-use std::convert::TryInto;
 use std::mem;
 
 impl Solution {

@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn schedule_course(courses: Vec<Vec<i32>>) -> i32 {

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn parse_month(m1: u8, m2: u8) -> [u8; 2] {
         match m2 {

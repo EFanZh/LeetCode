@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::{Ordering, Reverse};
-use std::convert::TryInto;
 
 impl Solution {
     fn partition<T, K>(values: &mut [T], mut key_fn: impl FnMut(&T) -> K) -> (usize, usize)

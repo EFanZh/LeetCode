@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryFrom;
-
 impl Solution {
     pub fn is_boomerang(points: Vec<Vec<i32>>) -> bool {
         let [p_0, p_1, p_2] = <[_; 3]>::try_from(points).unwrap();

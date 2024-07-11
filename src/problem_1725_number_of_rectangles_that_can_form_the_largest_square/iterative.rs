@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn count_good_rectangles(rectangles: Vec<Vec<i32>>) -> i32 {

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn unwrap_edge(edge: Vec<i32>) -> (usize, usize) {
         let [from, to]: [_; 2] = edge.try_into().ok().unwrap();

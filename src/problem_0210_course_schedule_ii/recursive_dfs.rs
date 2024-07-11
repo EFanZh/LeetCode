@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn is_acyclic(graph: &[Vec<i32>], node: i32, states: &mut [u8], result: &mut Vec<i32>) -> bool {
         match &mut states[node as usize] {

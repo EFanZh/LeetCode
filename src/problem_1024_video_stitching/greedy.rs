@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryFrom;
-
 impl Solution {
     pub fn video_stitching(clips: Vec<Vec<i32>>, time: i32) -> i32 {
         let mut clips = clips

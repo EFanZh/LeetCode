@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::{HashMap, HashSet, VecDeque};
-use std::convert::TryInto;
 
 impl Solution {
     fn extract_edge(edge: &[String]) -> (&str, &str) {

@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::Entry;
 use std::collections::{HashMap, HashSet};
-use std::convert::TryInto;
 
 impl Solution {
     pub fn finding_users_active_minutes(logs: Vec<Vec<i32>>, k: i32) -> Vec<i32> {

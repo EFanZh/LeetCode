@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn find_root_helper(union_find: &mut [(u32, u32)], node: u32) -> Option<(u32, u32)> {
         let node = node as usize;

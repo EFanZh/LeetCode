@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
-use std::convert::TryInto;
 
 impl Solution {
     fn gcd(mut x: i32, mut y: i32) -> i32 {

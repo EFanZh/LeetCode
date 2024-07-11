@@ -6,7 +6,6 @@ pub struct Solution;
 
 use std::cell::RefCell;
 use std::collections::HashSet;
-use std::iter::FromIterator;
 use std::rc::Rc;
 
 impl Solution {

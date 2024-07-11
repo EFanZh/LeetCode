@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryFrom;
-
 impl Solution {
     pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
         let mut nums = nums;

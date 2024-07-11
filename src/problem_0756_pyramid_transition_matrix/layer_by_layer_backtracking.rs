@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 const MAX_BOTTOM_LENGTH: usize = 6;
 const MAX_LETTERS: u8 = 6;
 

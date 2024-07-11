@@ -1,7 +1,5 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 #[allow(clippy::struct_field_names, clippy::upper_case_acronyms)]
 pub struct ATM {
     counts: [u32; 5],

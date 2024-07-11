@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::VecDeque;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn possible_bipartition(n: i32, dislikes: Vec<Vec<i32>>) -> bool {

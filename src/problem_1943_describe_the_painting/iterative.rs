@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn split_painting(segments: Vec<Vec<i32>>) -> Vec<Vec<i64>> {
         let n = segments.len();

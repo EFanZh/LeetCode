@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn is_rectangle_cover(rectangles: Vec<Vec<i32>>) -> bool {

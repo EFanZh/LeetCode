@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryFrom;
-
 impl Solution {
     pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
         let n = n as u32;

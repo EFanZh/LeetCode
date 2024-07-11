@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
         let n = n as u16;

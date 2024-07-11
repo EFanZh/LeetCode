@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn displacement((x1, y1): (i32, i32), (x2, y2): (i32, i32)) -> (i32, i32) {
         (x2 - x1, y2 - y1)

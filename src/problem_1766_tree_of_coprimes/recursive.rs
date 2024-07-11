@@ -2,7 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
 use std::mem;
 
 struct Context<'a> {

@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cell::Cell;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn max_value(events: Vec<Vec<i32>>, k: i32) -> i32 {

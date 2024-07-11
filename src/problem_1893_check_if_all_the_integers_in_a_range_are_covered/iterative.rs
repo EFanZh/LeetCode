@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn make_range([start, end]: [i32; 2]) -> u64 {
         ((1 << end) - 1) ^ ((1 << (start - 1)) - 1)

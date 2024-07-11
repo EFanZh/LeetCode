@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn plates_between_candles(s: String, queries: Vec<Vec<i32>>) -> Vec<i32> {
         let mut prefix_sums = vec![(0_u32, 0_u32); s.len()].into_boxed_slice();

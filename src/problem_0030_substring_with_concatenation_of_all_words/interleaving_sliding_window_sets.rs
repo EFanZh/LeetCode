@@ -6,7 +6,6 @@ use std::borrow::Borrow;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::hash::Hash;
-use std::iter::FromIterator;
 
 #[derive(PartialEq)]
 struct HashMultiSet<T: Hash + Eq> {

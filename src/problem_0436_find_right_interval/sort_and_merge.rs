@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn find_right_interval(intervals: Vec<Vec<i32>>) -> Vec<i32> {

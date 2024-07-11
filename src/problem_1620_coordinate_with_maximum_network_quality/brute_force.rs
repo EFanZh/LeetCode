@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn best_coordinate(towers: Vec<Vec<i32>>, radius: i32) -> Vec<i32> {
         const N: usize = 51;

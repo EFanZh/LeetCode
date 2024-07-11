@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn dfs(graph: &[Vec<usize>], node: usize, parent: usize, count: &mut i32) {
         for &neighbor in &graph[node] {

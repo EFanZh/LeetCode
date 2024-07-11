@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn dfs(graph: &[Vec<usize>], quiet: &[i32], node: usize, loudest: &mut [i32]) -> usize {
         let mut result = loudest[node] as _;

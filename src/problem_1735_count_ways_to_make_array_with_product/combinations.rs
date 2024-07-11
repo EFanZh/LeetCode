@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
-use std::convert::TryInto;
 
 impl Solution {
     const MODULUS: u32 = 1_000_000_007;

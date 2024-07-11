@@ -5,7 +5,6 @@ pub struct Solution;
 use std::cell::Cell;
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;
-use std::convert::TryInto;
 use std::ptr;
 
 struct Node<'a> {

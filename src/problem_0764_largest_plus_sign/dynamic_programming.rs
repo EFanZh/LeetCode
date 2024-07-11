@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::borrow::BorrowMut;
-use std::convert::TryInto;
 
 impl Solution {
     fn update_line(line: impl Iterator<Item = impl BorrowMut<u8>>) {

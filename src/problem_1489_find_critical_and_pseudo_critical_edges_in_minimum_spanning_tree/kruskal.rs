@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::convert::TryInto;
 
 const UNKNOWN: u8 = 0;
 const MAYBE_CRITICAL: u8 = 1;

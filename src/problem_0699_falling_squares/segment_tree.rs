@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::{HashMap, HashSet};
-use std::convert::TryInto;
 use std::mem;
 
 trait Node {

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn helper(moves: Vec<Vec<i32>>) -> &'static str {
         let n = moves.len();

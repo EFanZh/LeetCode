@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn merge_triplets(triplets: Vec<Vec<i32>>, target: Vec<i32>) -> bool {
         let [target_a, target_b, target_c]: [_; 3] = target.try_into().ok().unwrap();

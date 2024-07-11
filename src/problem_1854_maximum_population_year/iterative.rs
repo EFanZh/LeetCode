@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn maximum_population(logs: Vec<Vec<i32>>) -> i32 {
         const MIN_YEAR: usize = 1950;

@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     pub fn sample_stats(count: Vec<i32>) -> Vec<f64> {
         let count: &[_; 256] = count.as_slice().try_into().unwrap();

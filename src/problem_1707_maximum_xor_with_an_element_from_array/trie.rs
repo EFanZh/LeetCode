@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn query(nodes: &[(u32, u32)], mut probe: u32, x: u32) -> u32 {
         let mut result = x & !((probe << 1) - 1);

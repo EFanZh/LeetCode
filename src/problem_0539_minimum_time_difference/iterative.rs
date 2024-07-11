@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::TryInto;
-
 impl Solution {
     fn parse_time(s: &str) -> u16 {
         let [h1, h2, _, m1, m2]: [u8; 5] = s.as_bytes().try_into().unwrap();

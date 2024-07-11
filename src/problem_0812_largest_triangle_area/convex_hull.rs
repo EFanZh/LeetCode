@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::convert::TryInto;
 
 impl Solution {
     fn vec_subtract((lhs_x, lhs_y): (i32, i32), (rhs_x, rhs_y): (i32, i32)) -> (i32, i32) {

@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::convert::TryInto;
 
 impl Solution {
     fn prefix_sum(tree: &[usize], mut length: usize) -> usize {

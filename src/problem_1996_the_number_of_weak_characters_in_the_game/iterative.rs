@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::convert::TryInto;
 
 impl Solution {
     pub fn number_of_weak_characters(properties: Vec<Vec<i32>>) -> i32 {
