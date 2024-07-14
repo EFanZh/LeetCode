@@ -17,60 +17,45 @@ impl Solution {
     }
 
     pub fn count_pairs(nums: Vec<i32>, k: i32) -> i64 {
-        let k = k as u32;
+        let k = NonZeroU32::new(k as _).unwrap();
+        let mut factors = Vec::new();
+        let middle = NonZeroU32::new(f64::from(k.get()).sqrt() as _).unwrap();
 
-        (if k < 2 {
-            let n = nums.len() as u64;
+        for candidate in 1..middle.get() {
+            let candidate = NonZeroU32::new(candidate).unwrap();
 
-            n * (n - 1) / 2
-        } else {
-            let k = NonZeroU32::new(k).unwrap();
-            let mut factors = Vec::from([NonZeroU32::MIN, k]);
+            if k.get() % candidate == 0 {
+                factors.extend([candidate, NonZeroU32::new(k.get() / candidate).unwrap()]);
+            }
+        }
 
-            if k.get() > 3 {
-                let middle = NonZeroU32::new(f64::from(k.get()).sqrt() as _).unwrap();
+        if k.get() % middle == 0 {
+            if middle.get() * middle.get() == k.get() {
+                factors.push(middle);
+            } else {
+                factors.extend([middle, NonZeroU32::new(k.get() / middle).unwrap()]);
+            }
+        }
 
-                for candidate in 2..middle.get() {
-                    let candidate = NonZeroU32::new(candidate).unwrap();
+        let mut counts = HashMap::<_, u32>::new();
 
-                    if k.get() % candidate == 0 {
-                        factors.extend([candidate, NonZeroU32::new(k.get() / candidate).unwrap()]);
-                    }
-                }
+        nums.into_iter().fold(0_u64, |mut result, num| {
+            let num = num as u32;
 
-                if k.get() % middle == 0 {
-                    if middle.get() * middle.get() == k.get() {
-                        factors.push(middle);
-                    } else {
-                        factors.extend([middle, NonZeroU32::new(k.get() / middle).unwrap()]);
+            result += u64::from(counts.get(&(k.get() / Self::gcd(num, k))).copied().unwrap_or(0));
+
+            for &factor in &factors {
+                if num % factor == 0 {
+                    match counts.entry(factor.get()) {
+                        Entry::Occupied(entry) => *entry.into_mut() += 1,
+                        Entry::Vacant(entry) => {
+                            entry.insert(1);
+                        }
                     }
                 }
             }
 
-            println!("factors = {factors:?}");
-
-            let mut counts = HashMap::<_, u32>::new();
-
-            nums.into_iter().fold(0_u64, |mut result, num| {
-                let num = num as u32;
-
-                result += u64::from(counts.get(&(k.get() / Self::gcd(num, k))).copied().unwrap_or(0));
-
-                for &factor in &factors {
-                    if num % factor == 0 {
-                        match counts.entry(factor.get()) {
-                            Entry::Occupied(entry) => *entry.into_mut() += 1,
-                            Entry::Vacant(entry) => {
-                                entry.insert(1);
-                            }
-                        }
-                    }
-                }
-
-                println!("{counts:?}");
-
-                result
-            })
+            result
         }) as _
     }
 }
