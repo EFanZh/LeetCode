@@ -1,4 +1,5 @@
 pub mod gcd_and_hash_map;
+pub mod gcd_and_hash_map_2;
 
 pub trait Solution {
     fn count_pairs(nums: Vec<i32>, k: i32) -> i64;
