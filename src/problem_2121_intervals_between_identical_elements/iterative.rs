@@ -25,21 +25,19 @@ impl Solution {
         }
 
         for targets in indices.values_mut() {
-            let mut sum = targets
-                .iter()
-                .fold(0_u64, |sum, index| sum + Self::address(index) as u64);
-
+            let mut sum = targets.iter().fold(0, |sum, index| sum + Self::address(index) as u64);
             let mut count_diff = (targets.len() as u64).wrapping_neg();
             let mut prev = 0;
 
             for target in targets {
+                let target = &mut **target;
                 let address = Self::address(target) as u64;
 
                 sum = sum.wrapping_add((address - prev).wrapping_mul(count_diff));
                 count_diff = count_diff.wrapping_add(2);
                 prev = address;
 
-                **target = (sum / (u64::from(usize::BITS) / 8)) as _;
+                *target = (sum / (u64::from(usize::BITS / 8))) as _;
             }
         }
 
