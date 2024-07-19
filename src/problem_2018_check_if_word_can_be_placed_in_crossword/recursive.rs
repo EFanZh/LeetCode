@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    fn check(mut line_iter: impl Iterator<Item = u8>, word: &[u8], tag: u8) -> bool {
+    fn check(mut line_iter: impl Iterator<Item = u8>, word: &[u8]) -> bool {
         'outer: loop {
             let mut word_iter = word.iter().copied();
 
@@ -57,7 +57,7 @@ impl Solution {
         let word = word.as_bytes();
 
         for row in flat_board.chunks_exact(columns) {
-            if Self::check(row.iter().copied(), word, 0) || Self::check(row.iter().copied().rev(), word, 1) {
+            if Self::check(row.iter().copied(), word) || Self::check(row.iter().copied().rev(), word) {
                 return true;
             }
         }
@@ -67,7 +67,7 @@ impl Solution {
         for _ in 0..columns {
             let column_iter = iter.clone().step_by(columns);
 
-            if Self::check(column_iter.clone(), word, 2) || Self::check(column_iter.rev(), word, 3) {
+            if Self::check(column_iter.clone(), word) || Self::check(column_iter.rev(), word) {
                 return true;
             }
 
