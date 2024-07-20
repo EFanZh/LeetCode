@@ -1,4 +1,5 @@
 pub mod greedy;
+pub mod quick_select;
 
 pub trait Solution {
     fn minimal_k_sum(nums: Vec<i32>, k: i32) -> i64;
@@ -22,6 +23,7 @@ mod tests {
                 ),
                 794,
             ),
+            ((&[1, 4, 25, 10, 25], 2), 5),
         ];
 
         for ((nums, k), expected) in test_cases {
