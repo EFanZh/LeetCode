@@ -1,4 +1,5 @@
 pub mod greedy;
+pub mod greedy_2;
 pub mod quick_select;
 
 pub trait Solution {
