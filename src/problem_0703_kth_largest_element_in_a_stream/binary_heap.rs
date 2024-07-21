@@ -1,6 +1,6 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::cmp::Reverse;
+use std::cmp::{Ordering, Reverse};
 use std::collections::BinaryHeap;
 
 pub struct KthLargest {
@@ -8,27 +8,22 @@ pub struct KthLargest {
 }
 
 impl KthLargest {
-    fn new(k: i32, mut nums: Vec<i32>) -> Self {
-        let k = k as usize;
+    fn new(k: i32, nums: Vec<i32>) -> Self {
+        let k = k as u32 as usize;
+        let mut nums = nums;
 
-        // TODO: use `select_nth_unstable`.
-
-        if nums.len() == k - 1 {
-            nums.push(i32::MIN);
-        }
-
-        let (left, right) = nums.split_at(k);
-        let mut heap = left.iter().copied().map(Reverse).collect::<BinaryHeap<_>>();
-
-        for &num in right {
-            let mut top = heap.peek_mut().unwrap();
-
-            if num > top.0 {
-                top.0 = num;
+        match nums.len().cmp(&k) {
+            Ordering::Less => nums.push(i32::MIN),
+            Ordering::Equal => {}
+            Ordering::Greater => {
+                nums.select_nth_unstable_by_key(k - 1, |&x| Reverse(x));
+                nums.truncate(k);
             }
         }
 
-        Self { heap }
+        Self {
+            heap: nums.into_iter().map(Reverse).collect(),
+        }
     }
 
     fn add(&mut self, val: i32) -> i32 {
