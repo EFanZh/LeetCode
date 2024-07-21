@@ -5,40 +5,45 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::mem;
-use std::ptr::NonNull;
 
 impl Solution {
-    #[allow(unsafe_code, clippy::undocumented_unsafe_blocks)] // TODO: Fix the solution.
     pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {
         let mut head = head;
-        let m = m - 1;
-        let length = n - m;
+        let m = m as u32 - 1;
+        let n = n as u32;
+        let mut rest = &mut head;
+        let mut i = 0;
 
-        if length > 1 {
-            let mut tail = &mut head;
+        // Left.
 
-            for _ in 0..m {
-                tail = &mut tail.as_mut().unwrap().next;
-            }
-
-            let mut reversed = tail.take();
-            let reversed_next = &mut reversed.as_deref_mut().unwrap().next;
-            let mut rest = reversed_next.take();
-            let mut reversed_tail = NonNull::from(reversed_next);
-
-            for _ in 1..length {
-                let mut node = rest.unwrap();
-
-                rest = mem::replace(&mut node.next, reversed);
-                reversed = Some(node);
-            }
-
-            unsafe {
-                *reversed_tail.as_mut() = rest;
-            }
-
-            *tail = reversed;
+        while i < m {
+            i += 1;
+            rest = &mut rest.as_deref_mut().unwrap().next;
         }
+
+        // Middle.
+
+        let mut iter = rest.take();
+        let mut middle = None;
+
+        while i < n {
+            i += 1;
+
+            let mut node = iter.unwrap();
+
+            iter = mem::replace(&mut node.next, middle);
+            middle = Some(node);
+        }
+
+        drop(mem::replace(rest, middle));
+
+        while let Some(node) = rest {
+            rest = &mut node.next;
+        }
+
+        // Right.
+
+        drop(mem::replace(rest, iter));
 
         head
     }
