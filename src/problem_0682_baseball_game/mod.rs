@@ -18,7 +18,7 @@ mod tests {
         for (ops, expected) in test_cases {
             assert_eq!(
                 S::cal_points(ops.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

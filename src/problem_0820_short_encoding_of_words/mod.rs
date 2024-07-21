@@ -16,7 +16,7 @@ mod tests {
         for (words, expected) in test_cases {
             assert_eq!(
                 S::minimum_length_encoding(words.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

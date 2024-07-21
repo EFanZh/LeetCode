@@ -25,7 +25,7 @@ mod tests {
         for ((difficulty, profit, worker), expected) in test_cases {
             assert_eq!(
                 S::max_profit_assignment(difficulty.to_vec(), profit.to_vec(), worker.to_vec()),
-                expected
+                expected,
             );
         }
     }

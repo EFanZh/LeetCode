@@ -52,7 +52,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::invalid_transactions(
                     transactions.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

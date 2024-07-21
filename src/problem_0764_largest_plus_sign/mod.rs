@@ -14,7 +14,7 @@ mod tests {
         for ((n, mines), expected) in test_cases {
             assert_eq!(
                 S::order_of_largest_plus_sign(n, mines.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

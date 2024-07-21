@@ -20,7 +20,7 @@ mod tests {
         for ((s, words), expected) in test_cases {
             assert_eq!(
                 S::num_matching_subseq(s.to_string(), words.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

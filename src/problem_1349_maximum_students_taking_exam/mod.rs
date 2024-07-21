@@ -24,7 +24,7 @@ mod tests {
         for (seats, expected) in test_cases {
             assert_eq!(
                 S::max_students(seats.iter().map(|row| row.chars().collect()).collect()),
-                expected
+                expected,
             );
         }
     }

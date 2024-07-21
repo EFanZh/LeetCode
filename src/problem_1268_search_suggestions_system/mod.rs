@@ -49,7 +49,7 @@ mod tests {
                     products.iter().copied().map(str::to_string).collect(),
                     search_word.to_string()
                 ),
-                expected
+                expected,
             );
         }
     }

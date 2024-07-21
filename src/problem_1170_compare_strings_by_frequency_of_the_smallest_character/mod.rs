@@ -50,7 +50,7 @@ mod tests {
                     queries.iter().copied().map(str::to_string).collect(),
                     words.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

@@ -37,7 +37,7 @@ mod tests {
         for ((n, logs), expected) in test_cases {
             assert_eq!(
                 S::exclusive_time(n, logs.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

@@ -70,7 +70,7 @@ mod tests {
 
             assert_eq!(
                 result.iter().zip(nums2).filter(|(lhs, rhs)| lhs > rhs).count(),
-                expected
+                expected,
             );
 
             result.sort_unstable();

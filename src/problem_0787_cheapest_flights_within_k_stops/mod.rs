@@ -89,7 +89,7 @@ mod tests {
         for ((n, flights, src, dst, k), expected) in test_cases {
             assert_eq!(
                 S::find_cheapest_price(n, flights.iter().map(Vec::from).collect(), src, dst, k),
-                expected
+                expected,
             );
         }
     }

@@ -29,7 +29,7 @@ mod tests {
                     .iter()
                     .map(|list| test_utilities::iter_list(list).copied().collect::<Vec<_>>())
                     .collect::<Vec<_>>(),
-                expected
+                expected,
             );
         }
     }

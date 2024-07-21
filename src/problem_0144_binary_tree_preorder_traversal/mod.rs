@@ -21,7 +21,7 @@ mod tests {
         for (root, expected) in test_cases {
             assert_eq!(
                 S::preorder_traversal(test_utilities::make_tree(root.iter().copied())),
-                expected
+                expected,
             );
         }
     }

@@ -21,7 +21,7 @@ mod tests {
         for ((s1, s2), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::uncommon_from_sentences(s1.to_string(), s2.to_string())),
-                expected
+                expected,
             );
         }
     }

@@ -57,7 +57,7 @@ mod tests {
                     license_plate.to_string(),
                     words.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

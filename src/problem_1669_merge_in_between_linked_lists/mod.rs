@@ -48,7 +48,7 @@ mod tests {
                 ))
                 .copied()
                 .collect::<Vec<_>>(),
-                expected
+                expected,
             );
         }
     }

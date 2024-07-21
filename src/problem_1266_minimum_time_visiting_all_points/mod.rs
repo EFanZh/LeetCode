@@ -14,7 +14,7 @@ mod tests {
         for (points, expected) in test_cases {
             assert_eq!(
                 S::min_time_to_visit_all_points(points.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

@@ -35,7 +35,7 @@ mod tests {
         for (graph, expected) in test_cases {
             assert_eq!(
                 S::shortest_path_length(graph.iter().copied().map(<[_]>::to_vec).collect()),
-                expected
+                expected,
             );
         }
     }

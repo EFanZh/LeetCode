@@ -21,7 +21,7 @@ mod tests {
         for (input, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::diff_ways_to_compute(input.to_string())),
-                expected
+                expected,
             );
         }
     }

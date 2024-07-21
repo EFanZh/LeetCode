@@ -65,7 +65,7 @@ mod tests {
         for (points, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::outer_trees(points.iter().map(Vec::from).collect())),
-                expected
+                expected,
             );
         }
     }

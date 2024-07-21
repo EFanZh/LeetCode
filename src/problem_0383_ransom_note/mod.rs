@@ -15,7 +15,7 @@ mod tests {
         for ((ransom_note, magazine), expected) in test_cases {
             assert_eq!(
                 S::can_construct(ransom_note.to_string(), magazine.to_string()),
-                expected
+                expected,
             );
         }
     }

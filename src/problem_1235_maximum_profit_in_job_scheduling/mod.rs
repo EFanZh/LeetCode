@@ -21,7 +21,7 @@ mod tests {
         for ((start_time, end_time, profit), expected) in test_cases {
             assert_eq!(
                 S::job_scheduling(start_time.to_vec(), end_time.to_vec(), profit.to_vec()),
-                expected
+                expected,
             );
         }
     }

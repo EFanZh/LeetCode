@@ -64,7 +64,7 @@ mod tests {
                                 start_time,
                                 end_time,
                             ),
-                            expected
+                            expected,
                         );
                     }
                 }

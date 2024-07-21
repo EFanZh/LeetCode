@@ -144,7 +144,7 @@ mod tests {
             } == Item {
                 expiration_time: 2,
                 token_id: Rc::from("bar")
-            }
+            },
         );
     }
 

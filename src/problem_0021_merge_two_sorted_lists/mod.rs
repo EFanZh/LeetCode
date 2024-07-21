@@ -26,7 +26,7 @@ mod tests {
 
             assert_eq!(
                 test_utilities::iter_list(&result).copied().collect::<Box<_>>().as_ref(),
-                expected
+                expected,
             );
         }
     }

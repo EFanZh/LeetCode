@@ -21,7 +21,7 @@ mod tests {
         for ((nums, k), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::top_k_frequent(nums.to_vec(), k)),
-                expected
+                expected,
             );
         }
     }

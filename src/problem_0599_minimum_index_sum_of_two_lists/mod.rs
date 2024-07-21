@@ -53,7 +53,7 @@ mod tests {
                     list1.iter().copied().map(str::to_string).collect(),
                     list2.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

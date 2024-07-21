@@ -23,7 +23,7 @@ mod tests {
         for ((left, right), expected) in test_cases {
             assert_eq!(
                 S::superpalindromes_in_range(left.to_string(), right.to_string()),
-                expected
+                expected,
             );
         }
     }

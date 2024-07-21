@@ -41,7 +41,7 @@ mod tests {
         for ((root, n, x), expected) in test_cases {
             assert_eq!(
                 S::btree_game_winning_move(test_utilities::make_tree(root.iter().copied()), n, x),
-                expected
+                expected,
             );
         }
     }

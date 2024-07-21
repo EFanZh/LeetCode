@@ -54,7 +54,7 @@ mod tests {
                         .into_iter()
                         .map(test_utilities::unstable_sorted)
                 ),
-                expected
+                expected,
             );
         }
     }

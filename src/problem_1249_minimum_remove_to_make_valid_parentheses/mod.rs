@@ -22,7 +22,7 @@ mod tests {
                     b'(' => Some(false),
                     b')' => Some(true),
                     _ => None,
-                }
+                },
             )));
 
             assert!(test_utilities::is_subsequence(result.bytes(), s.bytes()));

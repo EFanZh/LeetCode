@@ -24,7 +24,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::find_frequent_tree_sum(test_utilities::make_tree(
                     root.iter().copied()
                 ))),
-                expected
+                expected,
             );
         }
     }

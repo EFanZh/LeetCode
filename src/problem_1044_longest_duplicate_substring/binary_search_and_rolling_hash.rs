@@ -161,7 +161,7 @@ mod tests {
         for (s, expected) in test_cases {
             assert_eq!(
                 super::Solution::helper::<2>(s.as_bytes(), 2, &mut HashMap::new(), &mut Pool::default()),
-                expected
+                expected,
             );
         }
     }

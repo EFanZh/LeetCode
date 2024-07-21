@@ -58,7 +58,7 @@ mod tests {
                     rule_key.to_string(),
                     rule_value.to_string()
                 ),
-                expected
+                expected,
             );
         }
     }

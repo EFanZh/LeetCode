@@ -24,7 +24,7 @@ mod tests {
                     board.iter().map(|row| row.chars().collect()).collect(),
                     words.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

@@ -19,7 +19,7 @@ mod tests {
         for ((digits, n), expected) in test_cases {
             assert_eq!(
                 S::at_most_n_given_digit_set(digits.chars().map(|c| c.to_string()).collect(), n),
-                expected
+                expected,
             );
         }
     }

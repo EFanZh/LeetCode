@@ -121,7 +121,7 @@ mod tests {
             } == Item {
                 distance: 2,
                 node: (7, 11),
-            }
+            },
         );
     }
 

@@ -141,7 +141,7 @@ mod tests {
             } == Item {
                 price: Reverse(2),
                 timestamp: 5
-            }
+            },
         );
     }
 

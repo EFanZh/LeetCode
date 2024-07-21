@@ -53,9 +53,9 @@ mod tests {
                         .collect(),
                     friends.iter().copied().map(<[_]>::to_vec).collect(),
                     id,
-                    level
+                    level,
                 ),
-                expected
+                expected,
             );
         }
     }

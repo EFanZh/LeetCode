@@ -135,7 +135,7 @@ mod tests {
                     test_utilities::make_tree(root.iter().copied()),
                     voyage.to_vec()
                 )),
-                expected
+                expected,
             );
         }
     }

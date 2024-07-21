@@ -28,7 +28,7 @@ mod tests {
         for (root, expected) in test_cases {
             assert_eq!(
                 S::right_side_view(test_utilities::make_tree(root.iter().copied())),
-                expected
+                expected,
             );
         }
     }

@@ -158,7 +158,7 @@ mod tests {
         for ((routes, source, target), expected) in TEST_CASES {
             assert_eq!(
                 S::num_buses_to_destination(routes.iter().copied().map(<[_]>::to_vec).collect(), source, target),
-                expected
+                expected,
             );
         }
     }

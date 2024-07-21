@@ -60,7 +60,7 @@ mod tests {
         for (root, expected) in test_cases {
             assert_eq!(
                 S::longest_zig_zag(test_utilities::make_tree(root.iter().copied())),
-                expected
+                expected,
             );
         }
     }

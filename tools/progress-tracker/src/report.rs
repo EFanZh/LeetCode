@@ -44,7 +44,7 @@ fn write_solution_link<W: Write>(writer: &mut ElementWriter<W>, solution: &Solut
         writer,
         &format!(
             "https://github.com/EFanZh/LeetCode/blob/master/{}{}",
-            solution.root, solution.file
+            solution.root, solution.file,
         ),
         &solution.id,
     );

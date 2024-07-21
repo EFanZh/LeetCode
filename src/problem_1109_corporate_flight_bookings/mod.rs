@@ -20,7 +20,7 @@ mod tests {
         for ((bookings, n), expected) in test_cases {
             assert_eq!(
                 S::corp_flight_bookings(bookings.iter().map(Vec::from).collect(), n),
-                expected
+                expected,
             );
         }
     }

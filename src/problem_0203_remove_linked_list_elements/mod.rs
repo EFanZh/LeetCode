@@ -19,12 +19,12 @@ mod tests {
             assert_eq!(
                 test_utilities::iter_list(&S::remove_elements(
                     test_utilities::make_list(head.iter().copied()),
-                    val
+                    val,
                 ))
                 .copied()
                 .collect::<Box<_>>()
                 .as_ref(),
-                expected
+                expected,
             );
         }
     }

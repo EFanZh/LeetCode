@@ -20,7 +20,7 @@ mod tests {
         for ((text, first, second), expected) in test_cases {
             assert_eq!(
                 S::find_ocurrences(text.to_string(), first.to_string(), second.to_string()),
-                expected
+                expected,
             );
         }
     }

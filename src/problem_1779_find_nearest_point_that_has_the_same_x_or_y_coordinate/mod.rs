@@ -18,7 +18,7 @@ mod tests {
         for ((x, y, points), expected) in test_cases {
             assert_eq!(
                 S::nearest_valid_point(x, y, points.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

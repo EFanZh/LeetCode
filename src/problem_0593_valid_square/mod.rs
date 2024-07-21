@@ -19,7 +19,7 @@ mod tests {
         for ((p1, p2, p3, p4), expected) in test_cases {
             assert_eq!(
                 S::valid_square(p1.to_vec(), p2.to_vec(), p3.to_vec(), p4.to_vec()),
-                expected
+                expected,
             );
         }
     }

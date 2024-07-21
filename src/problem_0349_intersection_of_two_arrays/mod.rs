@@ -20,7 +20,7 @@ mod tests {
         for ((nums1, nums2), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::intersection(nums1.to_vec(), nums2.to_vec())),
-                expected
+                expected,
             );
         }
     }

@@ -16,7 +16,7 @@ mod tests {
         for (s, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::partition_labels(s.to_string())),
-                expected
+                expected,
             );
         }
     }

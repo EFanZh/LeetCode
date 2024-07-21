@@ -22,7 +22,7 @@ mod tests {
         for ((n, edges), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_min_height_trees(n, edges.iter().map(Vec::from).collect())),
-                expected
+                expected,
             );
         }
     }

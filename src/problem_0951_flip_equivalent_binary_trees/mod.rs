@@ -58,7 +58,7 @@ mod tests {
                     test_utilities::make_tree(root1.iter().copied()),
                     test_utilities::make_tree(root2.iter().copied())
                 ),
-                expected
+                expected,
             );
         }
     }

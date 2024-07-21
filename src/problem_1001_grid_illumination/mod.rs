@@ -25,7 +25,7 @@ mod tests {
                     lamps.iter().map(Vec::from).collect(),
                     queries.iter().map(Vec::from).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

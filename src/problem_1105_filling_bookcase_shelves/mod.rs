@@ -20,7 +20,7 @@ mod tests {
         for ((books, shelf_width), expected) in test_cases {
             assert_eq!(
                 S::min_height_shelves(books.iter().map(Vec::from).collect(), shelf_width),
-                expected
+                expected,
             );
         }
     }

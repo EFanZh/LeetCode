@@ -18,7 +18,7 @@ mod tests {
         for ((str1, str2), expected) in test_cases {
             assert_eq!(
                 S::shortest_common_supersequence(str1.to_string(), str2.to_string()),
-                expected
+                expected,
             );
         }
     }

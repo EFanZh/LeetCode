@@ -20,7 +20,7 @@ mod tests {
         for ((words, pattern), expected) in test_cases {
             assert_eq!(
                 S::find_and_replace_pattern(words.iter().copied().map(str::to_string).collect(), pattern.to_string()),
-                expected
+                expected,
             );
         }
     }

@@ -18,7 +18,7 @@ mod tests {
         for (head, expected) in test_cases {
             assert_eq!(
                 S::get_decimal_value(test_utilities::make_list(head.iter().copied())),
-                expected
+                expected,
             );
         }
     }

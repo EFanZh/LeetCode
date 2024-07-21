@@ -26,7 +26,7 @@ mod tests {
                         .map(|s| s.bytes().map(|c| i32::from(c - b'0')).collect())
                         .collect()
                 ),
-                expected
+                expected,
             );
         }
     }

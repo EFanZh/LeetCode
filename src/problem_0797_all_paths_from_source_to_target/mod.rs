@@ -29,7 +29,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::all_paths_source_target(
                     graph.iter().copied().map(<[_]>::to_vec).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

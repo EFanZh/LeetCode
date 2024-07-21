@@ -29,7 +29,7 @@ mod tests {
         for ((customfunction, z), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_solution(&CustomFunction(customfunction), z)),
-                expected
+                expected,
             );
         }
     }

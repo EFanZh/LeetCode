@@ -69,7 +69,7 @@ mod tests {
                     S::k_smallest_pairs(nums1.to_vec(), nums2.to_vec(), k),
                     |item| (item[0] + item[1], item[0], item[1])
                 ),
-                expected
+                expected,
             );
         }
     }

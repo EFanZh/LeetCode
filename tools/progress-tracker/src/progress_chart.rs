@@ -58,7 +58,7 @@ fn fix_svg_size(svg: &str, zoom: u32) -> String {
         width_str.parse::<f64>().unwrap() / f64::from(zoom),
         part_2,
         height_str.parse::<f64>().unwrap() / f64::from(zoom),
-        &svg[part_1.len() + width_str.len() + part_2.len() + height_str.len() + 3..]
+        &svg[part_1.len() + width_str.len() + part_2.len() + height_str.len() + 3..],
     )
 }
 
@@ -89,7 +89,7 @@ fn draw_chart(data: &[(DateTime<Utc>, usize)], total: usize, output: &Path) {
                     latest_hits,
                     total - latest_hits,
                     get_progress(latest_hits, total),
-                    latest_date_time
+                    latest_date_time,
                 ),
                 ("sans-serif", TITLE_FONT_SIZE * 1.24 * f64::from(ZOOM)),
             )

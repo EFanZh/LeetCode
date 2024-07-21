@@ -50,7 +50,7 @@ mod tests {
                     bottom.to_string(),
                     allowed.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

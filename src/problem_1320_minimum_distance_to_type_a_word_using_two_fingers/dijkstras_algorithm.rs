@@ -142,7 +142,7 @@ mod tests {
                 length: 11,
                 left_finger: 13,
                 right_finger: 17,
-            }
+            },
         );
 
         assert!(
@@ -156,7 +156,7 @@ mod tests {
                 length: 3,
                 left_finger: 5,
                 right_finger: 7,
-            }
+            },
         );
     }
 

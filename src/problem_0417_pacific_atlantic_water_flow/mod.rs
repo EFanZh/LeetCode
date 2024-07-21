@@ -27,7 +27,7 @@ mod tests {
         for (graph, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::pacific_atlantic(graph.to_vec())),
-                expected
+                expected,
             );
         }
     }

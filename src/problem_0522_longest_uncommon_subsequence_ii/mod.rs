@@ -20,7 +20,7 @@ mod tests {
         for (strs, expected) in test_cases {
             assert_eq!(
                 S::find_lu_slength(strs.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

@@ -93,7 +93,7 @@ mod tests {
         for ((root, low, high), expected) in test_cases {
             assert_eq!(
                 S::range_sum_bst(test_utilities::make_tree(root.iter().copied()), low, high),
-                expected
+                expected,
             );
         }
     }

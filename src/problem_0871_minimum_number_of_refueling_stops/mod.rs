@@ -20,7 +20,7 @@ mod tests {
         for ((target, start_fuel, stations), expected) in test_cases {
             assert_eq!(
                 S::min_refuel_stops(target, start_fuel, Matrix::to_vec(stations)),
-                expected
+                expected,
             );
         }
     }

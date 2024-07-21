@@ -17,7 +17,7 @@ mod tests {
         for (points, expected) in test_cases {
             assert_eq!(
                 S::max_width_of_vertical_area(points.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

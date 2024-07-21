@@ -22,7 +22,7 @@ mod tests {
         for ((n, k), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::nums_same_consec_diff(n, k)),
-                expected
+                expected,
             );
         }
     }

@@ -19,7 +19,7 @@ mod tests {
         for (board, expected) in test_cases {
             assert_eq!(
                 S::count_battleships(board.iter().map(|row| row.chars().collect()).collect()),
-                expected
+                expected,
             );
         }
     }

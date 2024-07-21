@@ -26,7 +26,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::palindrome_pairs(
                     words.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }
