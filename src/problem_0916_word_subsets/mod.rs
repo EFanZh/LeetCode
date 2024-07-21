@@ -30,7 +30,7 @@ mod tests {
                     words1.iter().copied().map(str::to_string).collect(),
                     words2.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

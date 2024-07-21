@@ -26,7 +26,7 @@ mod tests {
         for ((n, preferences, pairs), expected) in test_cases {
             assert_eq!(
                 S::unhappy_friends(n, preferences.to_vec(), pairs.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

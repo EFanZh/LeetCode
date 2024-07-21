@@ -19,7 +19,7 @@ mod tests {
         for ((distance, start, destination), expected) in test_cases {
             assert_eq!(
                 S::distance_between_bus_stops(distance.to_vec(), start, destination),
-                expected
+                expected,
             );
         }
     }

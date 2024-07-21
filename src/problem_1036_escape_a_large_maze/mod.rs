@@ -41,7 +41,7 @@ mod tests {
                     source.to_vec(),
                     target.to_vec()
                 ),
-                expected
+                expected,
             );
         }
     }

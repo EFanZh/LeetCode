@@ -30,7 +30,7 @@ mod tests {
         for ((n, red_edges, blue_edges), expected) in test_cases {
             assert_eq!(
                 S::shortest_alternating_paths(n, red_edges.to_vec(), blue_edges.to_vec()),
-                expected
+                expected,
             );
         }
     }

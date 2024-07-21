@@ -32,7 +32,7 @@ mod tests {
                     test_utilities::make_tree(p.iter().copied()),
                     test_utilities::make_tree(q.iter().copied())
                 ),
-                expected
+                expected,
             );
         }
     }

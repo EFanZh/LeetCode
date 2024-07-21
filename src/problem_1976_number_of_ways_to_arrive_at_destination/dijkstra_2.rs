@@ -123,7 +123,7 @@ mod tests {
             } == Node {
                 distance: 2,
                 state: &(vec![(13, 17), (23, 29)], Cell::new(31), Cell::new(37)),
-            }
+            },
         );
     }
 

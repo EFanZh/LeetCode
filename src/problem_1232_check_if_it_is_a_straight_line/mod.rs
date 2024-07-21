@@ -17,7 +17,7 @@ mod tests {
         for (coordinates, expected) in test_cases {
             assert_eq!(
                 S::check_straight_line(coordinates.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

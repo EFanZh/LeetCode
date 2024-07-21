@@ -17,7 +17,7 @@ mod tests {
         for ((a, b, c, d), expected) in test_cases {
             assert_eq!(
                 S::four_sum_count(a.to_vec(), b.to_vec(), c.to_vec(), d.to_vec()),
-                expected
+                expected,
             );
         }
     }

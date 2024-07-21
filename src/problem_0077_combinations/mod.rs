@@ -19,7 +19,7 @@ mod tests {
         for ((n, k), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::combine(n, k).into_iter().map(test_utilities::unstable_sorted)),
-                expected
+                expected,
             );
         }
     }

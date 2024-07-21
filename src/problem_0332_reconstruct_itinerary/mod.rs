@@ -40,7 +40,7 @@ mod tests {
                         .map(|&[from, to]| vec![from.to_string(), to.to_string()])
                         .collect()
                 ),
-                expected
+                expected,
             );
         }
     }

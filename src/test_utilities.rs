@@ -347,7 +347,7 @@ mod tests {
         for (operations, expected) in test_cases {
             assert_eq!(
                 super::is_full_stack_operations(operations.bytes().map(|c| c == b')')),
-                expected
+                expected,
             );
         }
     }
@@ -393,7 +393,7 @@ mod tests {
         for (root, expected) in test_cases {
             assert_eq!(
                 super::iter_tree_post_order(super::make_tree(root.iter().copied())).collect::<Vec<_>>(),
-                expected
+                expected,
             );
         }
     }

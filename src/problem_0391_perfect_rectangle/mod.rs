@@ -52,7 +52,7 @@ mod tests {
         for (rectangles, expected) in test_cases {
             assert_eq!(
                 S::is_rectangle_cover(rectangles.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

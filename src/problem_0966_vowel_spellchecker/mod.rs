@@ -28,7 +28,7 @@ mod tests {
                     wordlist.iter().copied().map(str::to_string).collect(),
                     queries.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

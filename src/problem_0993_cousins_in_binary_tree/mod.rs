@@ -40,7 +40,7 @@ mod tests {
         for ((root, x, y), expected) in test_cases {
             assert_eq!(
                 S::is_cousins(test_utilities::make_tree(root.iter().copied()), x, y),
-                expected
+                expected,
             );
         }
     }

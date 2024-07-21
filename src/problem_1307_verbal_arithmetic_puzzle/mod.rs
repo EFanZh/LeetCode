@@ -26,7 +26,7 @@ mod tests {
         for ((words, result), expected) in test_cases {
             assert_eq!(
                 S::is_solvable(words.iter().copied().map(str::to_string).collect(), result.to_string()),
-                expected
+                expected,
             );
         }
     }

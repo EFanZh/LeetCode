@@ -36,7 +36,7 @@ mod tests {
             assert_eq!(
                 test_utilities::unstable_sorted_by(
                     S::del_nodes(test_utilities::make_tree(root.iter().copied()), to_delete.to_vec()),
-                    test_utilities::compare_tree
+                    test_utilities::compare_tree,
                 ),
                 expected
                     .iter()

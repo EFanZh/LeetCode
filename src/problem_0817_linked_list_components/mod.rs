@@ -22,7 +22,7 @@ mod tests {
         for ((head, nums), expected) in test_cases {
             assert_eq!(
                 S::num_components(test_utilities::make_list(head.iter().copied()), nums.to_vec()),
-                expected
+                expected,
             );
         }
     }

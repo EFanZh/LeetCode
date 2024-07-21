@@ -23,7 +23,7 @@ mod tests {
         for (grid, expected) in test_cases {
             assert_eq!(
                 S::min_push_box(grid.iter().map(|row| row.chars().collect()).collect()),
-                expected
+                expected,
             );
         }
     }

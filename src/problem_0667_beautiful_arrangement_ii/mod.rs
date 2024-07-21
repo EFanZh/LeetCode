@@ -23,7 +23,7 @@ mod tests {
                     .map(|(lhs, rhs)| (lhs - rhs).abs())
                     .collect::<HashSet<_>>()
                     .len(),
-                k as usize
+                k as usize,
             );
 
             assert!(test_utilities::unstable_sorted(result).into_iter().eq(1..=n));

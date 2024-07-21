@@ -28,7 +28,7 @@ mod tests {
                     .copied()
                     .collect::<Box<_>>()
                     .as_ref(),
-                expected
+                expected,
             );
         }
     }

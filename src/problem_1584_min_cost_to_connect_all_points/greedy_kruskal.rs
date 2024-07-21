@@ -133,7 +133,7 @@ mod tests {
                 distance: 2,
                 from: 7,
                 to: 9,
-            }
+            },
         );
     }
 

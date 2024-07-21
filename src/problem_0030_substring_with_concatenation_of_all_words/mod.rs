@@ -29,7 +29,7 @@ mod tests {
                     s.to_string(),
                     words.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

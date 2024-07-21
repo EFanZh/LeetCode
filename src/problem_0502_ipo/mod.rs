@@ -18,7 +18,7 @@ mod tests {
         for ((k, w, profits, capital), expected) in test_cases {
             assert_eq!(
                 S::find_maximized_capital(k, w, profits.to_vec(), capital.to_vec()),
-                expected
+                expected,
             );
         }
     }

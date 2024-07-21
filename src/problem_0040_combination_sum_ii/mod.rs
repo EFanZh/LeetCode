@@ -28,9 +28,9 @@ mod tests {
                         item.sort_unstable();
 
                         item
-                    }
+                    },
                 )),
-                expected
+                expected,
             );
         }
     }

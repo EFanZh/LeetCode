@@ -24,7 +24,7 @@ mod tests {
         for (emails, expected) in test_cases {
             assert_eq!(
                 S::num_unique_emails(emails.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

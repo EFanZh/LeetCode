@@ -42,7 +42,7 @@ mod tests {
             assert_eq!(
                 test_utilities::unstable_sorted_by(
                     S::find_duplicate_subtrees(test_utilities::make_tree(root.iter().copied())),
-                    test_utilities::compare_tree
+                    test_utilities::compare_tree,
                 ),
                 expected
                     .iter()

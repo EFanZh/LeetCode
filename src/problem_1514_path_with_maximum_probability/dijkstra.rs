@@ -112,7 +112,7 @@ mod tests {
             } == Item {
                 node: 3,
                 probability: 5.0,
-            }
+            },
         );
     }
 

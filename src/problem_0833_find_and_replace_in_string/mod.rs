@@ -25,7 +25,7 @@ mod tests {
                     sources.iter().copied().map(str::to_string).collect(),
                     targets.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

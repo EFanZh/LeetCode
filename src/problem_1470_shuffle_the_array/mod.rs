@@ -20,7 +20,7 @@ mod tests {
         for ((arr, k), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::get_strongest(arr.to_vec(), k)),
-                expected
+                expected,
             );
         }
     }

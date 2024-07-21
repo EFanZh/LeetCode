@@ -20,7 +20,7 @@ mod tests {
         for ((s1, s2, s3), expected) in test_cases {
             assert_eq!(
                 S::is_interleave(s1.to_string(), s2.to_string(), s3.to_string()),
-                expected
+                expected,
             );
         }
     }

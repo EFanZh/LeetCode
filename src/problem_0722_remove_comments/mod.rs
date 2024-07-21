@@ -32,7 +32,7 @@ mod tests {
         for (source, expected) in test_cases {
             assert_eq!(
                 S::remove_comments(source.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

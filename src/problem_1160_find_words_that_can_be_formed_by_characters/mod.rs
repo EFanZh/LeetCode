@@ -17,7 +17,7 @@ mod tests {
         for ((words, chars), expected) in test_cases {
             assert_eq!(
                 S::count_characters(words.iter().copied().map(str::to_string).collect(), chars.to_string()),
-                expected
+                expected,
             );
         }
     }

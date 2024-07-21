@@ -68,9 +68,9 @@ mod tests {
                     restaurants.iter().map(Vec::from).collect(),
                     vegan_friendly,
                     max_price,
-                    max_distance
+                    max_distance,
                 ),
-                expected
+                expected,
             );
         }
     }

@@ -19,7 +19,7 @@ mod tests {
         for (equations, expected) in test_cases {
             assert_eq!(
                 S::equations_possible(equations.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

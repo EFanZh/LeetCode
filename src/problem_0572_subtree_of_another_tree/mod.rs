@@ -113,7 +113,7 @@ mod tests {
                     test_utilities::make_tree(s.iter().copied()),
                     test_utilities::make_tree(t.iter().copied())
                 ),
-                expected
+                expected,
             );
         }
     }

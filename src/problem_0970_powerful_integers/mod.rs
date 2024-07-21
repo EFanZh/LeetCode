@@ -22,7 +22,7 @@ mod tests {
         for ((x, y, bound), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::powerful_integers(x, y, bound)),
-                expected
+                expected,
             );
         }
     }

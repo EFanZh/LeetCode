@@ -17,7 +17,7 @@ mod tests {
         for ((strs, m, n), expected) in test_cases {
             assert_eq!(
                 S::find_max_form(strs.iter().copied().map(str::to_string).collect(), m, n),
-                expected
+                expected,
             );
         }
     }

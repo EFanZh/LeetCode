@@ -39,7 +39,7 @@ mod tests {
                     queries.iter().copied().map(str::to_string).collect(),
                     pattern.to_string()
                 ),
-                expected
+                expected,
             );
         }
     }

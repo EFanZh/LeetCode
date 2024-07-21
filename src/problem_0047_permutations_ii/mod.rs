@@ -64,7 +64,7 @@ mod tests {
         for (nums, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::permute_unique(nums.to_vec())),
-                expected
+                expected,
             );
         }
     }

@@ -36,7 +36,7 @@ mod tests {
         for (logs, expected) in test_cases {
             assert_eq!(
                 S::reorder_log_files(logs.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

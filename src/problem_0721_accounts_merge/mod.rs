@@ -67,7 +67,7 @@ mod tests {
                         .map(|account| account.iter().copied().map(str::to_string).collect())
                         .collect()
                 )),
-                expected
+                expected,
             );
         }
     }

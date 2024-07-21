@@ -120,7 +120,7 @@ mod tests {
                 node: 7,
                 steps: 11,
                 price: 5
-            }
+            },
         );
     }
 

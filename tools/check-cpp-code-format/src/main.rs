@@ -133,7 +133,7 @@ fn main() {
                 problem_namespace = problem_namespace,
                 problem_name = problem_name,
                 solution_name = to_title_case(&solution_id),
-                solution_namespace = solution_namespace
+                solution_namespace = solution_namespace,
             );
 
             let solution_tests_source =

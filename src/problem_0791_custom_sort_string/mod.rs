@@ -21,7 +21,7 @@ mod tests {
 
             assert_eq!(
                 str::from_utf8(&test_utilities::unstable_sorted(unordered.bytes())).unwrap(),
-                expected_unordered
+                expected_unordered,
             );
         }
     }

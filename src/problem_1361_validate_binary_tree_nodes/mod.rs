@@ -21,7 +21,7 @@ mod tests {
         for ((n, left_child, right_child), expected) in test_cases {
             assert_eq!(
                 S::validate_binary_tree_nodes(n, left_child.to_vec(), right_child.to_vec()),
-                expected
+                expected,
             );
         }
     }

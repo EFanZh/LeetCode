@@ -18,7 +18,7 @@ mod tests {
         for (words, expected) in test_cases {
             assert_eq!(
                 S::longest_str_chain(words.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

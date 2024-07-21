@@ -18,12 +18,12 @@ mod tests {
             assert_eq!(
                 test_utilities::iter_list(&S::remove_nth_from_end(
                     test_utilities::make_list(head.iter().copied()),
-                    n
+                    n,
                 ))
                 .copied()
                 .collect::<Box<_>>()
                 .as_ref(),
-                expected
+                expected,
             );
         }
     }

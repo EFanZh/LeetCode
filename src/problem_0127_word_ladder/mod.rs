@@ -25,7 +25,7 @@ mod tests {
                     end_word.to_string(),
                     word_list.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

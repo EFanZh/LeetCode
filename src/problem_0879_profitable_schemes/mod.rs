@@ -36,7 +36,7 @@ mod tests {
         for ((n, min_profit, group, profit), expected) in test_cases {
             assert_eq!(
                 S::profitable_schemes(n, min_profit, group.to_vec(), profit.to_vec()),
-                expected
+                expected,
             );
         }
     }

@@ -32,7 +32,7 @@ mod tests {
                     first_list.iter().map(Vec::from).collect(),
                     second_list.iter().map(Vec::from).collect(),
                 ),
-                expected
+                expected,
             );
         }
     }

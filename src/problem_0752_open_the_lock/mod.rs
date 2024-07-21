@@ -39,7 +39,7 @@ mod tests {
                     deadends.iter().copied().map(str::to_string).collect(),
                     target.to_string()
                 ),
-                expected
+                expected,
             );
         }
     }

@@ -18,7 +18,7 @@ mod tests {
         for (grid, expected) in test_cases {
             assert_eq!(
                 S::shortest_path_all_keys(grid.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

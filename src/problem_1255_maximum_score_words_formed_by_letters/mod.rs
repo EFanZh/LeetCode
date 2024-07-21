@@ -49,7 +49,7 @@ mod tests {
                     letters.chars().collect(),
                     score.to_vec(),
                 ),
-                expected
+                expected,
             );
         }
     }

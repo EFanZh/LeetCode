@@ -57,7 +57,7 @@ mod tests {
                     evalvars.iter().copied().map(str::to_string).collect(),
                     evalints.to_vec()
                 ),
-                expected
+                expected,
             );
         }
     }

@@ -34,7 +34,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::subdomain_visits(
                     cpdomains.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

@@ -27,7 +27,7 @@ mod tests {
                     paragraph.to_string(),
                     banned.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

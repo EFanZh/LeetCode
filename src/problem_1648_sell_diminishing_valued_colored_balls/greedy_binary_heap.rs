@@ -102,7 +102,7 @@ mod tests {
             } == Item {
                 count: 2,
                 count_count: 5
-            }
+            },
         );
     }
 

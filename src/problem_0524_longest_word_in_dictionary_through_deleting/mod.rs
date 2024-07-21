@@ -17,7 +17,7 @@ mod tests {
         for ((s, dictionary), expected) in test_cases {
             assert_eq!(
                 S::find_longest_word(s.to_string(), dictionary.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

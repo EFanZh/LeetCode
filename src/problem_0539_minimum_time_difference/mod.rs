@@ -14,7 +14,7 @@ mod tests {
         for (time_points, expected) in test_cases {
             assert_eq!(
                 S::find_min_difference(time_points.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

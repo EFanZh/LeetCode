@@ -24,7 +24,7 @@ mod tests {
         for (wall, expected) in test_cases {
             assert_eq!(
                 S::least_bricks(wall.iter().copied().map(<[_]>::to_vec).collect()),
-                expected
+                expected,
             );
         }
     }

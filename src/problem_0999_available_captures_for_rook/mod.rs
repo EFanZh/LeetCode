@@ -33,7 +33,7 @@ mod tests {
         for (board, expected) in test_cases {
             assert_eq!(
                 S::num_rook_captures(board.iter().map(|row| row.chars().collect()).collect()),
-                expected
+                expected,
             );
         }
     }

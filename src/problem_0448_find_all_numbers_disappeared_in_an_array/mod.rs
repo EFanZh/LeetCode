@@ -20,7 +20,7 @@ mod tests {
         for (nums, expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::find_disappeared_numbers(nums.to_vec())),
-                expected
+                expected,
             );
         }
     }

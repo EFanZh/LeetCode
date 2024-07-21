@@ -23,7 +23,7 @@ mod tests {
         for ((text1, text2), expected) in test_cases {
             assert_eq!(
                 S::longest_common_subsequence(text1.to_string(), text2.to_string()),
-                expected
+                expected,
             );
         }
     }

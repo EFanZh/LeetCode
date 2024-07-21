@@ -70,7 +70,7 @@ mod tests {
                         .collect(),
                 )
                 .as_slice(),
-                expected
+                expected,
             );
         }
     }

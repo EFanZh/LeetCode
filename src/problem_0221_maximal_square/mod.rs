@@ -15,7 +15,7 @@ mod tests {
         for (matrix, expected) in test_cases {
             assert_eq!(
                 S::maximal_square(matrix.iter().map(|row| row.chars().collect()).collect()),
-                expected
+                expected,
             );
         }
     }

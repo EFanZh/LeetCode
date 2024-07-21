@@ -18,7 +18,7 @@ mod tests {
         for ((values, labels, num_wanted, use_limit), expected) in test_cases {
             assert_eq!(
                 S::largest_vals_from_labels(values.to_vec(), labels.to_vec(), num_wanted, use_limit),
-                expected
+                expected,
             );
         }
     }

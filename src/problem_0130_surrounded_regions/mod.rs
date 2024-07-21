@@ -33,7 +33,7 @@ mod tests {
                     .map(|row| row.into_iter().collect::<String>())
                     .collect::<Box<_>>()
                     .as_ref(),
-                expected
+                expected,
             );
         }
     }

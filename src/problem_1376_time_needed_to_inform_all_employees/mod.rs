@@ -17,7 +17,7 @@ mod tests {
         for ((n, head_id, manager, inform_time), expected) in test_cases {
             assert_eq!(
                 S::num_of_minutes(n, head_id, manager.to_vec(), inform_time.to_vec()),
-                expected
+                expected,
             );
         }
     }

@@ -14,7 +14,7 @@ mod tests {
         for (grid, expected) in test_cases {
             assert_eq!(
                 S::regions_by_slashes(grid.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

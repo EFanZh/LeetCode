@@ -18,7 +18,7 @@ mod tests {
         for (board, expected) in test_cases {
             assert_eq!(
                 S::paths_with_max_score(board.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

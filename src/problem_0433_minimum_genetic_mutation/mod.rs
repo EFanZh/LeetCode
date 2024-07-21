@@ -39,7 +39,7 @@ mod tests {
                     end.to_string(),
                     bank.iter().copied().map(str::to_string).collect()
                 ),
-                expected
+                expected,
             );
         }
     }

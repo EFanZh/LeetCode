@@ -155,7 +155,7 @@ mod tests {
                 max_height: 3,
                 row: 11,
                 column: 13
-            }
+            },
         );
     }
 

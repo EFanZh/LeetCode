@@ -24,7 +24,7 @@ mod tests {
         for ((n, edges, distance_threshold), expected) in test_cases {
             assert_eq!(
                 S::find_the_city(n, edges.iter().map(Vec::from).collect(), distance_threshold),
-                expected
+                expected,
             );
         }
     }

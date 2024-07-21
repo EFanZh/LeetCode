@@ -20,7 +20,7 @@ mod tests {
         for ((ghosts, target), expected) in test_cases {
             assert_eq!(
                 S::escape_ghosts(ghosts.iter().map(Vec::from).collect(), target.to_vec()),
-                expected
+                expected,
             );
         }
     }

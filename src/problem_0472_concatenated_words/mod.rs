@@ -34,7 +34,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::find_all_concatenated_words_in_a_dict(
                     words.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

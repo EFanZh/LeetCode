@@ -124,7 +124,7 @@ mod tests {
         for ((words, k), expected) in TEST_CASES.iter().copied() {
             assert_eq!(
                 S::top_k_frequent(words.iter().copied().map(str::to_string).collect(), k),
-                expected
+                expected,
             );
         }
     }

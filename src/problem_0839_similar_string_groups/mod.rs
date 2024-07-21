@@ -18,7 +18,7 @@ mod tests {
         for (strs, expected) in test_cases {
             assert_eq!(
                 S::num_similar_groups(strs.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

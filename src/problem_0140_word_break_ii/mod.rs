@@ -24,10 +24,10 @@ mod tests {
             (
                 (
                     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    &["a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"]
+                    &["a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"],
                 ),
-                &[]
-            )
+                &[],
+            ),
         ];
 
         for ((s, word_dict), expected) in test_cases {
@@ -36,7 +36,7 @@ mod tests {
                     s.to_string(),
                     word_dict.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

@@ -19,7 +19,7 @@ mod tests {
         for ((s, pairs), expected) in test_cases {
             assert_eq!(
                 S::smallest_string_with_swaps(s.to_string(), pairs.iter().map(Vec::from).collect()),
-                expected
+                expected,
             );
         }
     }

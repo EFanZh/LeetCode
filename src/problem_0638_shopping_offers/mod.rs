@@ -29,7 +29,7 @@ mod tests {
         for ((price, special, needs), expected) in test_cases {
             assert_eq!(
                 S::shopping_offers(price.to_vec(), special.to_vec(), needs.to_vec()),
-                expected
+                expected,
             );
         }
     }

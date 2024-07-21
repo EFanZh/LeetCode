@@ -19,7 +19,7 @@ mod tests {
         for (votes, expected) in test_cases {
             assert_eq!(
                 S::rank_teams(votes.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

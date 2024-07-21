@@ -44,7 +44,7 @@ mod tests {
     fn test_debug_tree_node() {
         assert_eq!(
             format!("{:?}", TreeNode::new(2)),
-            "TreeNode { val: 2, left: None, right: None }"
+            "TreeNode { val: 2, left: None, right: None }",
         );
     }
 
@@ -57,7 +57,7 @@ mod tests {
                 "{:?}",
                 NestedInteger::List(vec![NestedInteger::Int(3), NestedInteger::Int(5)])
             ),
-            "List([Int(3), Int(5)])"
+            "List([Int(3), Int(5)])",
         );
     }
 }

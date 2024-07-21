@@ -38,7 +38,7 @@ mod tests {
                     dictionary.iter().copied().map(str::to_string).collect(),
                     sentence.to_string()
                 ),
-                expected
+                expected,
             );
         }
     }

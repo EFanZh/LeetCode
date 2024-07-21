@@ -19,7 +19,7 @@ mod tests {
         for ((nums, first_len, second_len), expected) in test_cases {
             assert_eq!(
                 S::max_sum_two_no_overlap(nums.to_vec(), first_len, second_len),
-                expected
+                expected,
             );
         }
     }

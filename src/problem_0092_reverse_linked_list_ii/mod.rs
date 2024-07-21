@@ -23,12 +23,12 @@ mod tests {
                 test_utilities::iter_list(&S::reverse_between(
                     test_utilities::make_list(head.iter().copied()),
                     m,
-                    n
+                    n,
                 ))
                 .copied()
                 .collect::<Box<_>>()
                 .as_ref(),
-                expected
+                expected,
             );
         }
     }

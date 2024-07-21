@@ -24,7 +24,7 @@ mod tests {
         for (nums, expected) in test_cases {
             assert_eq!(
                 S::smallest_range(nums.iter().copied().map(<[_]>::to_vec).collect()),
-                expected
+                expected,
             );
         }
     }

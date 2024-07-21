@@ -44,7 +44,7 @@ mod tests {
                     &MountainArray {
                         data: mountain_arr,
                         remaining_get_calls: Cell::new(100)
-                    }
+                    },
                 ),
                 expected,
             );

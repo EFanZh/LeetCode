@@ -40,7 +40,7 @@ mod tests {
         for ((nums, target), expected) in test_cases {
             assert_eq!(
                 test_utilities::unstable_sorted(S::four_sum(nums.to_vec(), target)),
-                expected
+                expected,
             );
         }
     }

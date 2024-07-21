@@ -19,7 +19,7 @@ mod tests {
         for (strs, expected) in test_cases {
             assert_eq!(
                 S::min_deletion_size(strs.iter().copied().map(str::to_string).collect()),
-                expected
+                expected,
             );
         }
     }

@@ -24,7 +24,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::remove_subfolders(
                     folder.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

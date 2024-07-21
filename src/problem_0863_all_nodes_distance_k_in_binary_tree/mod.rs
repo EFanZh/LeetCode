@@ -49,7 +49,7 @@ mod tests {
 
             assert_eq!(
                 test_utilities::unstable_sorted(S::distance_k(root, target, k)),
-                expected
+                expected,
             );
         }
     }

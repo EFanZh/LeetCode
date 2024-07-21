@@ -21,7 +21,7 @@ mod tests {
                 test_utilities::unstable_sorted(S::string_matching(
                     words.iter().copied().map(str::to_string).collect()
                 )),
-                expected
+                expected,
             );
         }
     }

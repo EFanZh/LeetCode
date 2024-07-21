@@ -24,7 +24,7 @@ mod tests {
                             edge
                         })
                 ),
-                expected
+                expected,
             );
         }
     }
