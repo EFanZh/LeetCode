@@ -19,7 +19,7 @@ mod tests {
         ];
 
         for ((n, edges), expected) in test_cases {
-            assert_eq!(S::min_trio_degree(n, edges.iter().map(Vec::from).collect()), expected,);
+            assert_eq!(S::min_trio_degree(n, edges.iter().map(Vec::from).collect()), expected);
         }
     }
 }

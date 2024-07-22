@@ -17,7 +17,7 @@ mod tests {
         ];
 
         for ((events, k), expected) in test_cases {
-            assert_eq!(S::max_value(events.iter().map(Vec::from).collect(), k), expected,);
+            assert_eq!(S::max_value(events.iter().map(Vec::from).collect(), k), expected);
         }
     }
 }
