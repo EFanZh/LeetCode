@@ -29,7 +29,7 @@ mod tests {
         ];
 
         for ((mapping, nums), expected) in test_cases {
-            assert_eq!(S::sort_jumbled(mapping.to_vec(), nums.to_vec()), expected,);
+            assert_eq!(S::sort_jumbled(mapping.to_vec(), nums.to_vec()), expected);
         }
     }
 }

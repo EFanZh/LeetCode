@@ -24,7 +24,7 @@ mod tests {
                 value.sort_unstable();
             }
 
-            assert_eq!(result, expected.map(Vec::from),);
+            assert_eq!(result, expected.map(Vec::from));
         }
     }
 }
