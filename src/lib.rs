@@ -1591,6 +1591,7 @@ pub mod problem_2224_minimum_number_of_operations_to_convert_time;
 pub mod problem_2225_find_players_with_zero_or_one_losses;
 pub mod problem_2226_maximum_candies_allocated_to_k_children;
 pub mod problem_2231_largest_number_after_digit_swaps_by_parity;
+pub mod problem_2233_maximum_product_after_k_increments;
 pub mod problem_2235_add_two_integers;
 pub mod problem_2236_root_equals_sum_of_children;
 pub mod problem_2239_find_closest_number_to_zero;
