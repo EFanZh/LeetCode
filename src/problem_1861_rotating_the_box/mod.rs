@@ -23,7 +23,7 @@ mod tests {
                 S::rotate_the_box(r#box.iter().map(|row| row.chars().collect()).collect())
                     .into_iter()
                     .map(String::from_iter)
-                    .collect::<Box<_>>()
+                    .collect::<Box<[_]>>()
                     .as_ref(),
                 expected,
             );

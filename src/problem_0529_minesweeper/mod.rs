@@ -25,7 +25,7 @@ mod tests {
                 S::update_board(board.iter().map(|row| row.chars().collect()).collect(), click.to_vec())
                     .into_iter()
                     .map(|row| row.into_iter().collect::<String>())
-                    .collect::<Box<_>>()
+                    .collect::<Box<[_]>>()
                     .as_ref(),
                 expected,
             );
