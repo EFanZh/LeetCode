@@ -30,6 +30,7 @@ impl Hash for Node {
 }
 
 impl Solution {
+    #[allow(clippy::mutable_key_type)] // TODO: Check this.
     fn dfs(
         node: Option<Rc<RefCell<TreeNode>>>,
         cache: &mut HashMap<Node, bool>,

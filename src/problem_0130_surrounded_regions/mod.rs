@@ -31,7 +31,7 @@ mod tests {
                 board
                     .into_iter()
                     .map(|row| row.into_iter().collect::<String>())
-                    .collect::<Box<_>>()
+                    .collect::<Box<[_]>>()
                     .as_ref(),
                 expected,
             );
