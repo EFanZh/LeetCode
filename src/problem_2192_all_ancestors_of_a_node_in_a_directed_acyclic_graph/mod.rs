@@ -1,4 +1,6 @@
 pub mod dfs;
+pub mod dfs_2;
+pub mod dfs_3;
 
 pub trait Solution {
     fn get_ancestors(n: i32, edges: Vec<Vec<i32>>) -> Vec<Vec<i32>>;
