@@ -1476,6 +1476,7 @@ pub mod problem_1992_find_all_groups_of_farmland;
 pub mod problem_1994_the_number_of_good_subsets;
 pub mod problem_1995_count_special_quadruplets;
 pub mod problem_1996_the_number_of_weak_characters_in_the_game;
+pub mod problem_1998_gcd_sort_of_an_array;
 pub mod problem_2000_reverse_prefix_of_word;
 pub mod problem_2001_number_of_pairs_of_interchangeable_rectangles;
 pub mod problem_2002_maximum_product_of_the_length_of_two_palindromic_subsequences;
