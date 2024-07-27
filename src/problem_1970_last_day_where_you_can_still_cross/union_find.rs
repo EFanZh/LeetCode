@@ -8,17 +8,17 @@ use std::{mem, ptr};
 type State = (Cell<u16>, Cell<u16>);
 
 impl Solution {
-    fn get_node(array: &[State], value: &State) -> u16 {
-        ((ptr::from_ref(value) as usize - array.as_ptr() as usize) / mem::size_of::<State>()) as _
+    fn get_node(union_find: &[State], state: &State) -> u16 {
+        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / mem::size_of::<State>()) as _
     }
 
-    fn find_root<'a>(union_find: &'a [State], node_state: &'a State) -> &'a State {
-        let parent = node_state.0.get();
+    fn find_root<'a>(union_find: &'a [State], state: &'a State) -> &'a State {
+        let parent = state.0.get();
 
-        union_find.get(usize::from(parent)).map_or(node_state, |parent_state| {
+        union_find.get(usize::from(parent)).map_or(state, |parent_state| {
             let root = Self::find_root(union_find, parent_state);
 
-            node_state.0.set(Self::get_node(union_find, root));
+            state.0.set(Self::get_node(union_find, root));
 
             root
         })
