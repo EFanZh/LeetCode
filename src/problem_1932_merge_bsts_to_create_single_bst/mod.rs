@@ -37,6 +37,15 @@ mod tests {
                 &[&[Some(1), None, Some(3)], &[Some(3), Some(1)], &[Some(4), Some(2)]],
                 &[],
             ),
+            (
+                &[
+                    &[Some(8), None, Some(9)],
+                    &[Some(4), None, Some(5)],
+                    &[Some(9), Some(4)],
+                ],
+                &[],
+            ),
+            (&[&[Some(3), Some(1)], &[Some(1)], &[Some(2), Some(1)]], &[]),
         ];
 
         for (trees, expected) in test_cases {
