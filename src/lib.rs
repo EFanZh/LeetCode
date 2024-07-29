@@ -1494,6 +1494,7 @@ pub mod problem_2023_number_of_pairs_of_strings_with_concatenation_equal_to_targ
 pub mod problem_2024_maximize_the_confusion_of_an_exam;
 pub mod problem_2027_minimum_moves_to_convert_string;
 pub mod problem_2028_find_missing_observations;
+pub mod problem_2029_stone_game_ix;
 pub mod problem_2032_two_out_of_three;
 pub mod problem_2033_minimum_operations_to_make_a_uni_value_grid;
 pub mod problem_2034_stock_price_fluctuation;
