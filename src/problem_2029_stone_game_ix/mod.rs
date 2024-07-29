@@ -37,6 +37,7 @@ mod tests {
                 ],
                 true,
             ),
+            (&[1], false),
         ];
 
         for (stones, expected) in test_cases {

@@ -16,6 +16,7 @@ mod tests {
             (24, false),
             (46, true),
             (124, false),
+            (125, true),
             (821, true),
             (1_420, true),
             (14_683, true),
