@@ -1586,6 +1586,7 @@ pub mod problem_2192_all_ancestors_of_a_node_in_a_directed_acyclic_graph;
 pub mod problem_2194_cells_in_a_range_on_an_excel_sheet;
 pub mod problem_2195_append_k_integers_with_minimal_sum;
 pub mod problem_2196_create_binary_tree_from_descriptions;
+pub mod problem_2197_replace_non_coprime_numbers_in_array;
 pub mod problem_2200_find_all_k_distant_indices_in_an_array;
 pub mod problem_2206_divide_array_into_equal_pairs;
 pub mod problem_2208_minimum_operations_to_halve_array_sum;
