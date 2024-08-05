@@ -1537,6 +1537,7 @@ pub mod problem_2096_step_by_step_directions_from_a_binary_tree_node_to_another;
 pub mod problem_2099_find_subsequence_of_length_k_with_the_largest_sum;
 pub mod problem_2100_find_good_days_to_rob_the_bank;
 pub mod problem_2103_rings_and_rods;
+pub mod problem_2104_sum_of_subarray_ranges;
 pub mod problem_2108_find_first_palindromic_string_in_the_array;
 pub mod problem_2109_adding_spaces_to_a_string;
 pub mod problem_2110_number_of_smooth_descent_periods_of_a_stock;
