@@ -1536,6 +1536,7 @@ pub mod problem_2091_removing_minimum_and_maximum_from_array;
 pub mod problem_2094_finding_3_digit_even_numbers;
 pub mod problem_2095_delete_the_middle_node_of_a_linked_list;
 pub mod problem_2096_step_by_step_directions_from_a_binary_tree_node_to_another;
+pub mod problem_2097_valid_arrangement_of_pairs;
 pub mod problem_2099_find_subsequence_of_length_k_with_the_largest_sum;
 pub mod problem_2100_find_good_days_to_rob_the_bank;
 pub mod problem_2103_rings_and_rods;
