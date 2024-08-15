@@ -1631,6 +1631,7 @@ pub mod problem_2266_count_number_of_texts;
 pub mod problem_2267_check_if_there_is_a_valid_parentheses_string_path;
 pub mod problem_2269_find_the_k_beauty_of_a_number;
 pub mod problem_2270_number_of_ways_to_split_array;
+pub mod problem_2273_find_resultant_array_after_removing_anagrams;
 
 #[cfg(test)]
 mod test_utilities;
