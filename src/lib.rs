@@ -1440,6 +1440,7 @@ pub mod problem_1932_merge_bsts_to_create_single_bst;
 pub mod problem_1935_maximum_number_of_words_you_can_type;
 pub mod problem_1936_add_minimum_number_of_rungs;
 pub mod problem_1937_maximum_number_of_points_with_cost;
+pub mod problem_1938_maximum_genetic_difference_query;
 pub mod problem_1941_check_if_all_characters_have_equal_number_of_occurrences;
 pub mod problem_1942_the_number_of_the_smallest_unoccupied_chair;
 pub mod problem_1943_describe_the_painting;
