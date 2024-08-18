@@ -1524,6 +1524,7 @@ pub mod problem_2064_minimized_maximum_of_products_distributed_to_any_store;
 pub mod problem_2068_check_whether_two_strings_are_almost_equivalent;
 pub mod problem_2069_walking_robot_simulation_ii;
 pub mod problem_2070_most_beautiful_item_for_each_query;
+pub mod problem_2071_maximum_number_of_tasks_you_can_assign;
 pub mod problem_2073_time_needed_to_buy_tickets;
 pub mod problem_2074_reverse_nodes_in_even_length_groups;
 pub mod problem_2075_decode_the_slanted_ciphertext;
