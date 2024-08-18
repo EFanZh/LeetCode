@@ -1,4 +1,4 @@
-pub(crate) mod data_structures;
+mod data_structures;
 pub mod problem_0001_two_sum;
 pub mod problem_0002_add_two_numbers;
 pub mod problem_0003_longest_substring_without_repeating_characters;
