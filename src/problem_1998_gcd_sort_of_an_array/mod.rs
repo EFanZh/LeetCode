@@ -129,6 +129,7 @@ mod tests {
             (&[7, 21, 3] as &[_], true),
             (&[5, 2, 6, 2], false),
             (&[10, 5, 9, 3, 15], true),
+            (&[10, 7, 3, 5, 2], false),
             EXTRA_TEST_CASE,
         ];
 

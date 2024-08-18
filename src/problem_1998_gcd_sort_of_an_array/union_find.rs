@@ -5,6 +5,7 @@ pub struct Solution;
 use std::cell::Cell;
 use std::collections::hash_map::Entry;
 use std::collections::{HashMap, HashSet};
+use std::hash::{BuildHasherDefault, DefaultHasher};
 use std::num::NonZeroU32;
 use std::{mem, ptr};
 
@@ -100,11 +101,13 @@ impl Solution {
     }
 
     pub fn gcd_sort(nums: Vec<i32>) -> bool {
+        type StableHasher = BuildHasherDefault<DefaultHasher>;
+
         let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
-        let nums_set = nums.iter().copied().collect::<HashSet<_>>();
+        let nums_set = nums.iter().copied().collect::<HashSet<_, StableHasher>>();
         let max_num = nums_set.iter().copied().max().unwrap();
         let min_factors = Self::get_min_factors(max_num);
-        let mut factors = HashMap::<_, Vec<_>>::new();
+        let mut factors = HashMap::<_, Vec<_>, _>::with_hasher(StableHasher::default());
 
         for num in nums_set {
             Self::get_prime_factors(&min_factors, num, |factor| match factors.entry(factor) {
