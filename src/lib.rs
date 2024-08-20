@@ -1477,6 +1477,7 @@ pub mod problem_1986_minimum_number_of_work_sessions_to_finish_the_tasks;
 pub mod problem_1987_number_of_unique_good_subsequences;
 pub mod problem_1991_find_the_middle_index_in_array;
 pub mod problem_1992_find_all_groups_of_farmland;
+pub mod problem_1993_operations_on_tree;
 pub mod problem_1994_the_number_of_good_subsets;
 pub mod problem_1995_count_special_quadruplets;
 pub mod problem_1996_the_number_of_weak_characters_in_the_game;
