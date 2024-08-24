@@ -1515,6 +1515,7 @@ pub mod problem_2044_count_number_of_maximum_bitwise_or_subsets;
 pub mod problem_2047_number_of_valid_words_in_a_sentence;
 pub mod problem_2048_next_greater_numerically_balanced_number;
 pub mod problem_2049_count_nodes_with_the_highest_score;
+pub mod problem_2050_parallel_courses_iii;
 pub mod problem_2053_kth_distinct_string_in_an_array;
 pub mod problem_2054_two_best_non_overlapping_events;
 pub mod problem_2055_plates_between_candles;
