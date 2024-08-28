@@ -1514,6 +1514,7 @@ pub mod problem_2039_the_time_when_the_network_becomes_idle;
 pub mod problem_2042_check_if_numbers_are_ascending_in_a_sentence;
 pub mod problem_2043_simple_bank_system;
 pub mod problem_2044_count_number_of_maximum_bitwise_or_subsets;
+pub mod problem_2045_second_minimum_time_to_reach_destination;
 pub mod problem_2047_number_of_valid_words_in_a_sentence;
 pub mod problem_2048_next_greater_numerically_balanced_number;
 pub mod problem_2049_count_nodes_with_the_highest_score;
