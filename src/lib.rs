@@ -1612,6 +1612,7 @@ pub mod problem_2195_append_k_integers_with_minimal_sum;
 pub mod problem_2196_create_binary_tree_from_descriptions;
 pub mod problem_2197_replace_non_coprime_numbers_in_array;
 pub mod problem_2200_find_all_k_distant_indices_in_an_array;
+pub mod problem_2202_maximize_the_topmost_element_after_k_moves;
 pub mod problem_2206_divide_array_into_equal_pairs;
 pub mod problem_2208_minimum_operations_to_halve_array_sum;
 pub mod problem_2210_count_hills_and_valleys_in_an_array;
