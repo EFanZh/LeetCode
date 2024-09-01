@@ -1437,6 +1437,7 @@ pub mod problem_1922_count_good_numbers;
 pub mod problem_1925_count_square_sum_triples;
 pub mod problem_1926_nearest_exit_from_entrance_in_maze;
 pub mod problem_1927_sum_game;
+pub mod problem_1928_minimum_cost_to_reach_destination_in_time;
 pub mod problem_1929_concatenation_of_array;
 pub mod problem_1930_unique_length_3_palindromic_subsequences;
 pub mod problem_1932_merge_bsts_to_create_single_bst;
