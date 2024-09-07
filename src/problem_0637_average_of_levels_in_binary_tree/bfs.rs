@@ -34,7 +34,7 @@ impl Solution {
                     };
                 }
 
-                #[allow(clippy::cast_precision_loss)] // Expected.
+                #[expect(clippy::cast_precision_loss, reason = "required")]
                 result.push((sum as f64) / (length as f64));
 
                 if queue.is_empty() {

@@ -11,7 +11,6 @@ pub trait LockingTree {
 mod tests {
     use super::LockingTree;
 
-    #[allow(variant_size_differences)] // Expected.
     enum Operation {
         Lock((i32, i32), bool),
         Unlock((i32, i32), bool),

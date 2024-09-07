@@ -50,7 +50,7 @@ impl Solution {
         }
     }
 
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn solve_sudoku(board: &mut Vec<Vec<char>>) {
         let mut row_hits = [false; 81];
         let mut column_hits = [false; 81];

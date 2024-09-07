@@ -31,7 +31,7 @@ impl Robot {
         let steps = self.steps & 0x_7fff;
         let half_cycle = self.cycle_length.get() / 2;
 
-        #[allow(clippy::option_if_let_else)] // Suggestion is too ugly.
+        #[expect(clippy::option_if_let_else, reason = "optimal")]
         let (x, y) = if let Some(second_half) = steps.checked_sub(half_cycle) {
             if let Some(x) = self.width_minus_1.checked_sub(second_half) {
                 (x, half_cycle - self.width_minus_1)
@@ -55,7 +55,7 @@ impl Robot {
                 let steps = self.steps - 1;
                 let half_cycle = self.cycle_length.get() / 2;
 
-                #[allow(clippy::option_if_let_else)] // Suggestion is too ugly.
+                #[expect(clippy::option_if_let_else, reason = "optimal")]
                 if let Some(second_half) = steps.checked_sub(half_cycle) {
                     if second_half < self.width_minus_1 {
                         "West"

@@ -15,7 +15,7 @@ pub trait Bitset {
 mod tests {
     use super::Bitset;
 
-    #[allow(variant_size_differences)] // Expected.
+    #[expect(variant_size_differences, reason = "optimal")]
     enum Operation {
         Fix(i32),
         Unfix(i32),

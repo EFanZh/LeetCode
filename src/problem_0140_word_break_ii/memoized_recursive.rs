@@ -12,7 +12,7 @@ struct Node {
 }
 
 impl Solution {
-    #[allow(clippy::option_if_let_else)] // False positive.
+    #[expect(clippy::option_if_let_else, reason = "false positive")]
     fn word_break_helper(s: &[u8], root: &Node, cache: &mut HashMap<*const u8, Rc<[String]>>) -> Rc<[String]> {
         Rc::clone(if let Some(result) = cache.get(&s.as_ptr()) {
             result

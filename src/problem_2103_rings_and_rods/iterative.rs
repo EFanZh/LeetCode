@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::naive_bytecount)] // Not supported by LeetCode.
+    #[expect(clippy::naive_bytecount, reason = "optimal")]
     pub fn count_points(rings: String) -> i32 {
         let mut iter_2 = rings.bytes();
 

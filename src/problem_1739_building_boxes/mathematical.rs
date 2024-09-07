@@ -5,10 +5,12 @@ pub struct Solution;
 // See <https://leetcode.com/problems/building-boxes/discuss/1288308/C%2B%2B-O(1)-~0ms-no-loop-math-solution-with-detailed-explanation>.
 
 impl Solution {
-    #[allow(clippy::cast_precision_loss)]
     pub fn minimum_boxes(n: i32) -> i32 {
         let mut n = u64::from(n as u32);
+
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let mut h = ((n * 6) as f64).cbrt() as u64;
+
         let mut full_box_count = h * (h + 1) * (h + 2) / 6;
 
         if full_box_count > n {
@@ -20,6 +22,7 @@ impl Solution {
 
         n -= full_box_count;
 
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let mut extra_count = ((n * 2) as f64).sqrt() as u64;
 
         if extra_count * (extra_count + 1) / 2 < n {

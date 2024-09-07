@@ -7,7 +7,7 @@ use rand::{Rng, SeedableRng};
 use std::cmp::Ordering;
 
 impl Solution {
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn wiggle_sort(nums: &mut Vec<i32>) {
         let mut start = 0;
         let mut end = nums.len();

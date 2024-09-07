@@ -13,7 +13,7 @@ impl Codec {
         Self
     }
 
-    #[allow(clippy::unused_self)] // Expected.
+    #[expect(clippy::unused_self, reason = "required")]
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
         use std::fmt::Write;
 
@@ -58,7 +58,7 @@ impl Codec {
         result
     }
 
-    #[allow(clippy::unused_self)] // Expected.
+    #[expect(clippy::unused_self, reason = "required")]
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
         let mut iter = data[1..data.len() - 1].split_terminator(',');
 

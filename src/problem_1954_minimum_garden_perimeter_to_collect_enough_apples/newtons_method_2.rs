@@ -9,7 +9,7 @@ impl Solution {
         let x = if num < 13 {
             u64::from(num != 0)
         } else {
-            #[allow(clippy::cast_precision_loss)]
+            #[expect(clippy::cast_precision_loss, reason = "optimal")]
             let mut x = ((num / 4) as f64).cbrt() as u64;
 
             // A single iteration is enough.

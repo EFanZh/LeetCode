@@ -28,7 +28,7 @@ impl Codec {
         }
     }
 
-    #[allow(clippy::unused_self)] // Expected.
+    #[expect(clippy::unused_self, reason = "required")]
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
         let mut result = String::new();
 
@@ -47,7 +47,7 @@ impl Codec {
         })
     }
 
-    #[allow(clippy::unused_self)] // Expected.
+    #[expect(clippy::unused_self, reason = "required")]
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
         Self::deserialize_helper(&mut data.split(' '))
     }

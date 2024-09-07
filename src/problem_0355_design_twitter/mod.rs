@@ -20,7 +20,7 @@ mod tests {
         Unfollow(i32, i32),
     }
 
-    #[allow(clippy::similar_names)] // Expected.
+    #[expect(clippy::similar_names, reason = "required")]
     pub fn run<T: Twitter>() {
         use Operation::{Follow, GetNewsFeed, PostTweet, Unfollow};
 

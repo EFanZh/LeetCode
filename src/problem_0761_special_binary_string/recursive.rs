@@ -47,7 +47,7 @@ impl Node {
 
                 Some(b'1')
             }
-            #[allow(clippy::option_if_let_else)] // False positive.
+            #[expect(clippy::option_if_let_else, reason = "false positive")]
             State::NextChild(child_iter) => Some(if let Some(child) = child_iter.next() {
                 stack.push(mem::replace(child_iter, child.children.iter()));
 
@@ -57,7 +57,7 @@ impl Node {
 
                 b'0'
             }),
-            #[allow(clippy::manual_map, clippy::option_if_let_else)] // False positive.
+            #[expect(clippy::manual_map, clippy::option_if_let_else, reason = "false positive")]
             State::End => {
                 if let Some(child_iter) = stack.last_mut() {
                     Some(if let Some(child) = child_iter.next() {

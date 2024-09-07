@@ -6,9 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     fn symbol(input: &str) -> Option<(&str, &str)> {
-        let end = input
-            .find(|c: char| matches!(c, '(' | ')' | ' '))
-            .unwrap_or(input.len());
+        let end = input.find(['(', ')', ' ']).unwrap_or(input.len());
 
         if end == 0 {
             None

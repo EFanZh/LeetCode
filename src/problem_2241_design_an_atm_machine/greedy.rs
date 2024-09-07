@@ -1,6 +1,6 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-#[allow(clippy::struct_field_names, clippy::upper_case_acronyms)]
+#[expect(clippy::struct_field_names, clippy::upper_case_acronyms, reason = "optimal")]
 pub struct ATM {
     count_20: u32,
     count_50: u32,
