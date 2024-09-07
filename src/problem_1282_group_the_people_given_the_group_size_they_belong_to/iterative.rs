@@ -12,7 +12,7 @@ impl Solution {
         for (i, size) in (0..).zip(group_sizes) {
             let size = size as usize;
 
-            #[allow(clippy::option_if_let_else)] // False positive.
+            #[expect(clippy::option_if_let_else, reason = "false positive")]
             let bucket = if let Some(bucket) = buckets.get_mut(size - 1) {
                 bucket
             } else {

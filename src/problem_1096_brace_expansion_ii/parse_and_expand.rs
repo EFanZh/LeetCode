@@ -4,7 +4,6 @@ pub struct Solution;
 
 use std::str::Bytes;
 
-#[allow(variant_size_differences)] // Expected.
 enum Atom {
     Char(u8),
     Set(Vec<Vec<Self>>),

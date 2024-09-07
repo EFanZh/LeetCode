@@ -1,7 +1,7 @@
 pub mod greedy;
 pub mod greedy_2;
 
-#[allow(clippy::upper_case_acronyms)] // Expected.
+#[expect(clippy::upper_case_acronyms, reason = "required")]
 pub trait ATM {
     fn new() -> Self;
     fn deposit(&mut self, banknotes_count: Vec<i32>);

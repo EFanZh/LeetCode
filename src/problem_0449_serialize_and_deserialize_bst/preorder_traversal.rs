@@ -25,7 +25,7 @@ impl Codec {
         }
     }
 
-    #[allow(clippy::unused_self)] // Expected.
+    #[expect(clippy::unused_self, reason = "required")]
     fn serialize(&self, root: Option<Rc<RefCell<TreeNode>>>) -> String {
         let mut result = Vec::new();
 
@@ -53,7 +53,7 @@ impl Codec {
             })
     }
 
-    #[allow(clippy::unused_self)] // Expected.
+    #[expect(clippy::unused_self, reason = "required")]
     fn deserialize(&self, data: String) -> Option<Rc<RefCell<TreeNode>>> {
         let mut iter = data
             .bytes()

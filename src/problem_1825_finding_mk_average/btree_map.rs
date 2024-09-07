@@ -41,7 +41,7 @@ impl MultiSet {
         let entry = self.0.first_entry().unwrap();
         let key = *entry.key();
 
-        #[allow(clippy::if_then_some_else_none)] // False positive.
+        #[expect(clippy::if_then_some_else_none, reason = "false positive")]
         if num > key {
             Self::remove_entry(entry);
             self.insert(num);
@@ -56,7 +56,7 @@ impl MultiSet {
         let entry = self.0.last_entry().unwrap();
         let key = *entry.key();
 
-        #[allow(clippy::if_then_some_else_none)] // False positive.
+        #[expect(clippy::if_then_some_else_none, reason = "false positive")]
         if num < key {
             Self::remove_entry(entry);
             self.insert(num);

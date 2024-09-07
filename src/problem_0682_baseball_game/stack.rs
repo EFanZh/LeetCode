@@ -7,7 +7,7 @@ impl Solution {
         let mut stack = Vec::with_capacity(ops.len());
 
         for op in ops {
-            #[allow(clippy::map_err_ignore)] // Expected.
+            #[expect(clippy::map_err_ignore, reason = "optimal")]
             match op.parse().map_err(|_| op.as_str()) {
                 Ok(value) => stack.push(value),
                 Err("C") => {

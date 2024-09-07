@@ -19,7 +19,7 @@ impl Solution {
             let dir_length = path_buffer.len();
 
             for file in path_iter {
-                let mut file_iter = file.split(|c: char| c == '(' || c == ')');
+                let mut file_iter = file.split(['(', ')']);
                 let file_name = file_iter.next().unwrap();
                 let file_content = file_iter.next().unwrap();
 

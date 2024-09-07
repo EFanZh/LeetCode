@@ -11,7 +11,6 @@ pub fn get_project_dir() -> PathBuf {
     path
 }
 
-#[allow(clippy::print_stdout)] // Expected.
 fn print_command_line(command: &Command) {
     let stdout = io::stdout();
     let mut stdout = stdout.lock();

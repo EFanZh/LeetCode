@@ -14,7 +14,7 @@ impl Solution {
         let mut root = root;
 
         loop {
-            #[allow(clippy::assigning_clones)] // False positive.
+            #[expect(clippy::assigning_clones, reason = "false positive")]
             if let Some(node) = root {
                 let node_ref = node.borrow();
 

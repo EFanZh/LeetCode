@@ -5,7 +5,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(non_snake_case, unsafe_code)] // Expected.
+    #[expect(non_snake_case, unsafe_code, reason = "required")]
     pub fn guessNumber(n: i32) -> i32 {
         let mut left = 1;
         let mut right = n;

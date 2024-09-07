@@ -27,7 +27,6 @@ impl Solution {
         result
     }
 
-    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn get_probability(balls: Vec<i32>) -> f64 {
         const MAX_COLORS: usize = 8;
         const MAX_BALLS_PER_COLOR: usize = 6;
@@ -83,7 +82,10 @@ impl Solution {
         let good_count = cache[columns * max_left_balls + total_colors];
         let total_count = combinations[combinations_columns * total_balls + max_left_balls];
 
-        good_count as f64 / total_count as f64
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
+        let result = good_count as f64 / total_count as f64;
+
+        result
     }
 }
 

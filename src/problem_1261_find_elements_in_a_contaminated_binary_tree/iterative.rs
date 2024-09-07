@@ -26,7 +26,7 @@ impl FindElements {
                 break;
             }
 
-            #[allow(clippy::assigning_clones)] // False positive.
+            #[expect(clippy::assigning_clones, reason = "false positive")]
             if let Some(node_rc) = node {
                 let node_ref = node_rc.borrow();
 

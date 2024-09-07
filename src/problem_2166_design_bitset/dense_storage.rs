@@ -62,7 +62,7 @@ impl Bitset {
         self.data.iter().map(|x| x.count_ones()).sum::<u32>() as _
     }
 
-    #[allow(clippy::inherent_to_string)] // Expected.
+    #[expect(clippy::inherent_to_string, reason = "required")]
     fn to_string(&self) -> String {
         let mut result = String::with_capacity(self.length);
 

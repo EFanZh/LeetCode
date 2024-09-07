@@ -36,7 +36,7 @@ impl Solution {
         }
     }
 
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn solve_sudoku(board: &mut Vec<Vec<char>>) {
         Self::solve_sudoku_helper(board, 0).unwrap_err();
     }

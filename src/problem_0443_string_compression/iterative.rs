@@ -21,7 +21,7 @@ impl Solution {
         i
     }
 
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn compress(chars: &mut Vec<char>) -> i32 {
         if let Some(mut i) = chars
             .get(1..)

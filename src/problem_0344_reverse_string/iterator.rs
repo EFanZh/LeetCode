@@ -5,7 +5,7 @@ pub struct Solution;
 use std::mem;
 
 impl Solution {
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn reverse_string(s: &mut Vec<char>) {
         let mut iter = s.iter_mut();
 

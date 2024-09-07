@@ -32,7 +32,7 @@ impl Solution {
             }
         }
 
-        #[allow(clippy::cast_precision_loss)] // Expected.
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let mean = (sum as f64) / f64::from(total_count);
 
         // Median.

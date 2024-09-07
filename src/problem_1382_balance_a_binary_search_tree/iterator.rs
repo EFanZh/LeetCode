@@ -30,10 +30,9 @@ impl Solution {
                 stack.push(node);
             }
 
-            stack.pop().map(|node| {
-                state.clone_from(&RefCell::borrow(&node).right);
-                node
-            })
+            stack
+                .pop()
+                .inspect(|node| state.clone_from(&RefCell::borrow(node).right))
         })
     }
 

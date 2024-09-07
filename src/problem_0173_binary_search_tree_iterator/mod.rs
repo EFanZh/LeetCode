@@ -15,7 +15,7 @@ mod tests {
     use super::BSTIterator;
     use crate::test_utilities;
 
-    #[allow(variant_size_differences)]
+    #[expect(variant_size_differences, reason = "optimal")]
     enum Operation {
         Next(i32),
         HasNext(bool),

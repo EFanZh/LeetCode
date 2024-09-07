@@ -36,7 +36,7 @@ fn check_regex(re: &str, text: &str) {
     );
 }
 
-#[allow(clippy::print_stdout)] // Expected.
+#[expect(clippy::print_stdout, reason = "by design")]
 fn main() {
     let project_path = PathBuf::from(env::args_os().nth(1).unwrap());
     let leet_code_include_path = project_path.join("include").join("leet-code");

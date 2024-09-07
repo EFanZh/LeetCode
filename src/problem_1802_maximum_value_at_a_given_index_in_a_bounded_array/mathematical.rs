@@ -7,7 +7,6 @@ impl Solution {
         (start + end) * (end + 1 - start) / 2
     }
 
-    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn max_value(n: i32, index: i32, max_sum: i32) -> i32 {
         let n = n as u32;
         let index = index as u32;
@@ -23,6 +22,7 @@ impl Solution {
             let threshold =
                 Self::get_area(1, n_u64 - index_u64) + Self::get_area(n_u64 - index_u64 * 2, n_u64 - index_u64 - 1);
 
+            #[expect(clippy::cast_precision_loss, reason = "optimal")]
             if max_sum_u64 <= threshold {
                 (f64::sqrt((8 * (max_sum_u64 + index_u64 * (index_u64 + 1)) + 1) as _) as u32 - index * 2 - 1) / 2
             } else {

@@ -9,7 +9,7 @@ use std::rc::Rc;
 
 impl Solution {
     fn inorder_traversal_helper(mut root: Option<Rc<RefCell<TreeNode>>>, result: &mut Vec<i32>) {
-        #[allow(clippy::assigning_clones)] // False positive.
+        #[expect(clippy::assigning_clones, reason = "false positive")]
         while let Some(node) = root {
             let node_ref = node.borrow();
 

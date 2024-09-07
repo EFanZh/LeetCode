@@ -22,11 +22,10 @@ impl Solution {
     pub fn smallest_good_base(n: String) -> String {
         let n_value = n.parse::<u64>().unwrap();
 
-        #[allow(clippy::cast_precision_loss)] // Expected;
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let n_f64 = n_value as f64;
 
         for length in (3..65 - n_value.leading_zeros()).rev() {
-            #[allow(clippy::cast_precision_loss)] // Expected;
             let base = n_f64.powf(f64::from(length - 1).recip()) as u64;
 
             if Self::get_value(base, length) == n_value {

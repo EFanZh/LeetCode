@@ -69,7 +69,7 @@ impl Solution {
             layer_max_column -= 2;
 
             Self::rotate_left(NonZeroUsize::new(length).unwrap(), k, grid.as_mut_slice(), |grid, i| {
-                #[allow(clippy::option_if_let_else)] // Expected.
+                #[expect(clippy::option_if_let_else, reason = "optimal")]
                 let (y, x) = if let Some(offset) = i.checked_sub(middle) {
                     if let Some(offset) = offset.checked_sub(layer_max_column) {
                         (max_row - offset, layer)

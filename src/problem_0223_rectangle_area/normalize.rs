@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::many_single_char_names, clippy::too_many_arguments)] // Expected.
+    #[expect(clippy::many_single_char_names, clippy::too_many_arguments, reason = "required")]
     pub fn compute_area(a: i32, b: i32, c: i32, d: i32, e: i32, f: i32, g: i32, h: i32) -> i32 {
         let left = a.max(e);
         let right = c.min(g);
@@ -26,7 +26,7 @@ impl Solution {
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl super::Solution for Solution {
-    #[allow(clippy::many_single_char_names, clippy::too_many_arguments)] // Expected.
+    #[expect(clippy::many_single_char_names, reason = "required")]
     fn compute_area(a: i32, b: i32, c: i32, d: i32, e: i32, f: i32, g: i32, h: i32) -> i32 {
         Self::compute_area(a, b, c, d, e, f, g, h)
     }

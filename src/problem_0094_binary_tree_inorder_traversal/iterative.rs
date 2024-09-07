@@ -14,7 +14,7 @@ impl Solution {
         let mut stack = Vec::new();
 
         loop {
-            #[allow(clippy::assigning_clones)] // False positive.
+            #[expect(clippy::assigning_clones, reason = "false positive")]
             if let Some(node) = root {
                 root = node.borrow().left.clone();
                 stack.push(node);

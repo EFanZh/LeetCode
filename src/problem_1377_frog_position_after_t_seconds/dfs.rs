@@ -23,7 +23,7 @@ impl Solution {
                 let children = context.tree[current].as_slice();
 
                 if children.len() != 1 {
-                    #[allow(clippy::cast_precision_loss)] // Expected.
+                    #[expect(clippy::cast_precision_loss, reason = "optimal")]
                     let child_probability = probability / (children.len() - 1) as f64;
 
                     let child_step = step + 1;

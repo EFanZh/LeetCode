@@ -9,7 +9,7 @@ use std::rc::Rc;
 
 impl Solution {
     fn helper(node: &mut Option<Rc<RefCell<TreeNode>>>, limit: i32) -> i32 {
-        #[allow(clippy::option_if_let_else)] // False positive.
+        #[expect(clippy::option_if_let_else, reason = "false positive")]
         if let Some(node_ref) = node.as_deref() {
             let mut node_ref = node_ref.borrow_mut();
             let child_limit = limit - node_ref.val;

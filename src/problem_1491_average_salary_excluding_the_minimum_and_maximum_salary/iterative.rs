@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::cast_precision_loss)] // Expected.
     pub fn average(salary: Vec<i32>) -> f64 {
         let mut iter = salary.iter().copied();
         let mut min = iter.next().unwrap();
@@ -20,7 +19,10 @@ impl Solution {
             }
         }
 
-        f64::from(sum - min - max) / ((salary.len() - 2) as f64)
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
+        let result = f64::from(sum - min - max) / ((salary.len() - 2) as f64);
+
+        result
     }
 }
 

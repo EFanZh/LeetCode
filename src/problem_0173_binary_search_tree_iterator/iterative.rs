@@ -13,7 +13,7 @@ impl BSTIterator {
     fn new(mut root: Option<Rc<RefCell<TreeNode>>>) -> Self {
         let mut stack = Vec::new();
 
-        #[allow(clippy::assigning_clones)] // False positive.
+        #[expect(clippy::assigning_clones, reason = "false positive")]
         while let Some(node) = root {
             root = node.borrow().left.clone();
 
@@ -28,7 +28,7 @@ impl BSTIterator {
         let node_ref = node.borrow();
         let mut root = node_ref.right.clone();
 
-        #[allow(clippy::assigning_clones)] // False positive.
+        #[expect(clippy::assigning_clones, reason = "false positive")]
         while let Some(node) = root {
             root = node.borrow().left.clone();
 

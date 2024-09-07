@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
         let n = matrix.len();
 

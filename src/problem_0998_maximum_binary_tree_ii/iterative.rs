@@ -8,7 +8,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    #[allow(clippy::unnecessary_wraps)] // Expected.
+    #[expect(clippy::unnecessary_wraps, reason = "required")]
     pub fn insert_into_max_tree(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
         let root = root.unwrap();
 

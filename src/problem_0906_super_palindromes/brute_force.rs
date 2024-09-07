@@ -6,7 +6,7 @@ use std::convert;
 
 impl Solution {
     fn sqrt(value: u64) -> u64 {
-        #[allow(clippy::cast_precision_loss)] // Expected.
+        #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let guess = (value as f64).sqrt() as u64;
 
         guess

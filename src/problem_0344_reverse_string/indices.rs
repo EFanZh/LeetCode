@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(clippy::ptr_arg)] // Expected.
+    #[expect(clippy::ptr_arg, reason = "required")]
     pub fn reverse_string(s: &mut Vec<char>) {
         let length = s.len();
 

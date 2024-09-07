@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[allow(non_snake_case)] // Expected.
+    #[expect(non_snake_case, reason = "required")]
     pub fn hammingWeight(n: u32) -> i32 {
         n.count_ones() as _
     }
