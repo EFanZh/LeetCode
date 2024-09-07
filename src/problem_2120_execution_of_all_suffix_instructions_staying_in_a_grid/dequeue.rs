@@ -6,66 +6,61 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn execute_instructions(n: i32, start_pos: Vec<i32>, s: String) -> Vec<i32> {
-        let [start_row, start_column]: [_; 2] = start_pos.try_into().ok().unwrap();
+        let n = n as u32 as usize;
+        let [start_row, start_column] = <[_; 2]>::map(start_pos.try_into().ok().unwrap(), |x| x as u32 as usize);
         let mut result = vec![0; s.len()];
         let mut vertical_queue = VecDeque::from([1]);
-        let mut vertical_queue_min = 0;
         let mut horizontal_queue = VecDeque::from([1]);
-        let mut horizontal_queue_min = 0;
-        let mut current_row = 0;
-        let mut current_column = 0;
+        let mut current_row = 0_usize;
+        let mut current_column = 0_usize;
 
         for (step, (target, c)) in (2_u32..).zip(result.iter_mut().zip(s.into_bytes()).rev()) {
             match c {
                 b'D' | b'U' => {
-                    current_row += if c == b'D' { -1 } else { 1 };
+                    current_row = current_row.wrapping_add(if c == b'D' { usize::MAX } else { 1 });
 
-                    if current_row < vertical_queue_min {
+                    if current_row == usize::MAX {
                         vertical_queue.push_front(step);
-                        vertical_queue_min -= 1;
-                    } else if let Some(i) = vertical_queue.get_mut((current_row - vertical_queue_min) as usize) {
+                        current_row = 0;
+                    } else if let Some(i) = vertical_queue.get_mut(current_row) {
                         *i = step;
                     } else {
                         vertical_queue.push_back(step);
                     }
 
-                    horizontal_queue[(current_column - horizontal_queue_min) as usize] = step;
+                    horizontal_queue[current_column] = step;
                 }
                 _ => {
-                    current_column += if c == b'R' { -1 } else { 1 };
+                    current_column = current_column.wrapping_add(if c == b'R' { usize::MAX } else { 1 });
 
-                    if current_column < horizontal_queue_min {
+                    if current_column == usize::MAX {
                         horizontal_queue.push_front(step);
-                        horizontal_queue_min -= 1;
-                    } else if let Some(i) = horizontal_queue.get_mut((current_column - horizontal_queue_min) as usize) {
+                        current_column = 0;
+                    } else if let Some(i) = horizontal_queue.get_mut(current_column) {
                         *i = step;
                     } else {
                         horizontal_queue.push_back(step);
                     }
 
-                    vertical_queue[(current_row - vertical_queue_min) as usize] = step;
+                    vertical_queue[current_row] = step;
                 }
             }
 
             let mut stop = 0;
 
-            if let Some(&i) = vertical_queue.get((current_row - (start_row + 1) - vertical_queue_min) as usize) {
+            if let Some(&i) = vertical_queue.get(current_row.wrapping_sub(start_row + 1)) {
                 stop = stop.max(i);
             }
 
-            if let Some(&i) = vertical_queue.get((current_row + (n - start_row) - vertical_queue_min) as usize) {
+            if let Some(&i) = vertical_queue.get(current_row + (n - start_row)) {
                 stop = stop.max(i);
             }
 
-            if let Some(&i) =
-                horizontal_queue.get((current_column - (start_column + 1) - horizontal_queue_min) as usize)
-            {
+            if let Some(&i) = horizontal_queue.get(current_column.wrapping_sub(start_column + 1)) {
                 stop = stop.max(i);
             }
 
-            if let Some(&i) =
-                horizontal_queue.get((current_column + (n - start_column) - horizontal_queue_min) as usize)
-            {
+            if let Some(&i) = horizontal_queue.get(current_column + (n - start_column)) {
                 stop = stop.max(i);
             }
 
