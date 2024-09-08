@@ -1486,6 +1486,7 @@ pub mod problem_1993_operations_on_tree;
 pub mod problem_1994_the_number_of_good_subsets;
 pub mod problem_1995_count_special_quadruplets;
 pub mod problem_1996_the_number_of_weak_characters_in_the_game;
+pub mod problem_1997_first_day_where_you_have_been_in_all_the_rooms;
 pub mod problem_1998_gcd_sort_of_an_array;
 pub mod problem_2000_reverse_prefix_of_word;
 pub mod problem_2001_number_of_pairs_of_interchangeable_rectangles;
