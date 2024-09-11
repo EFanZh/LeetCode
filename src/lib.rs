@@ -1542,6 +1542,7 @@ pub mod problem_2075_decode_the_slanted_ciphertext;
 pub mod problem_2078_two_furthest_houses_with_different_colors;
 pub mod problem_2079_watering_plants;
 pub mod problem_2080_range_frequency_queries;
+pub mod problem_2081_sum_of_k_mirror_numbers;
 pub mod problem_2085_count_common_words_with_one_occurrence;
 pub mod problem_2086_minimum_number_of_food_buckets_to_feed_the_hamsters;
 pub mod problem_2087_minimum_cost_homecoming_of_a_robot_in_a_grid;
