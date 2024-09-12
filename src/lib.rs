@@ -1625,6 +1625,7 @@ pub mod problem_2197_replace_non_coprime_numbers_in_array;
 pub mod problem_2200_find_all_k_distant_indices_in_an_array;
 pub mod problem_2202_maximize_the_topmost_element_after_k_moves;
 pub mod problem_2206_divide_array_into_equal_pairs;
+pub mod problem_2207_maximize_number_of_subsequences_in_a_string;
 pub mod problem_2208_minimum_operations_to_halve_array_sum;
 pub mod problem_2210_count_hills_and_valleys_in_an_array;
 pub mod problem_2215_find_the_difference_of_two_arrays;
