@@ -1546,6 +1546,7 @@ pub mod problem_2081_sum_of_k_mirror_numbers;
 pub mod problem_2085_count_common_words_with_one_occurrence;
 pub mod problem_2086_minimum_number_of_food_buckets_to_feed_the_hamsters;
 pub mod problem_2087_minimum_cost_homecoming_of_a_robot_in_a_grid;
+pub mod problem_2088_count_fertile_pyramids_in_a_land;
 pub mod problem_2089_find_target_indices_after_sorting_array;
 pub mod problem_2090_k_radius_subarray_averages;
 pub mod problem_2091_removing_minimum_and_maximum_from_array;
