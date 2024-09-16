@@ -1500,6 +1500,7 @@ pub mod problem_2009_minimum_number_of_operations_to_make_array_continuous;
 pub mod problem_2011_final_value_of_variable_after_performing_operations;
 pub mod problem_2012_sum_of_beauty_in_the_array;
 pub mod problem_2013_detect_squares;
+pub mod problem_2014_longest_subsequence_repeated_k_times;
 pub mod problem_2016_maximum_difference_between_increasing_elements;
 pub mod problem_2017_grid_game;
 pub mod problem_2018_check_if_word_can_be_placed_in_crossword;
