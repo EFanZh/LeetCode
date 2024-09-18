@@ -1512,6 +1512,7 @@ pub mod problem_2025_maximum_number_of_ways_to_partition_an_array;
 pub mod problem_2027_minimum_moves_to_convert_string;
 pub mod problem_2028_find_missing_observations;
 pub mod problem_2029_stone_game_ix;
+pub mod problem_2030_smallest_k_length_subsequence_with_occurrences_of_a_letter;
 pub mod problem_2032_two_out_of_three;
 pub mod problem_2033_minimum_operations_to_make_a_uni_value_grid;
 pub mod problem_2034_stock_price_fluctuation;
