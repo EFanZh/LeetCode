@@ -37,7 +37,13 @@ impl Solution {
                 let i = right_sums.partition_point(|&x| x < target);
 
                 if let Some(&right_sum) = right_sums.get(i) {
-                    min_sum = u32::min(min_sum, ((left_sum + right_sum) * 2 - sum) as _);
+                    let candidate = (left_sum + right_sum) * 2 - sum;
+
+                    if candidate == 0 {
+                        return 0;
+                    }
+
+                    min_sum = u32::min(min_sum, candidate as _);
                 }
             }
         }
