@@ -1532,6 +1532,7 @@ pub mod problem_2050_parallel_courses_iii;
 pub mod problem_2053_kth_distinct_string_in_an_array;
 pub mod problem_2054_two_best_non_overlapping_events;
 pub mod problem_2055_plates_between_candles;
+pub mod problem_2056_number_of_valid_move_combinations_on_chessboard;
 pub mod problem_2057_smallest_index_with_equal_value;
 pub mod problem_2058_find_the_minimum_and_maximum_number_of_nodes_between_critical_points;
 pub mod problem_2059_minimum_operations_to_convert_number;
