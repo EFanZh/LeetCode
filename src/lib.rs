@@ -1539,6 +1539,7 @@ pub mod problem_2059_minimum_operations_to_convert_number;
 pub mod problem_2062_count_vowel_substrings_of_a_string;
 pub mod problem_2063_vowels_of_all_substrings;
 pub mod problem_2064_minimized_maximum_of_products_distributed_to_any_store;
+pub mod problem_2065_maximum_path_quality_of_a_graph;
 pub mod problem_2068_check_whether_two_strings_are_almost_equivalent;
 pub mod problem_2069_walking_robot_simulation_ii;
 pub mod problem_2070_most_beautiful_item_for_each_query;
