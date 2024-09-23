@@ -1570,6 +1570,7 @@ pub mod problem_2102_sequentially_ordinal_rank_tracker;
 pub mod problem_2103_rings_and_rods;
 pub mod problem_2104_sum_of_subarray_ranges;
 pub mod problem_2105_watering_plants_ii;
+pub mod problem_2106_maximum_fruits_harvested_after_at_most_k_steps;
 pub mod problem_2108_find_first_palindromic_string_in_the_array;
 pub mod problem_2109_adding_spaces_to_a_string;
 pub mod problem_2110_number_of_smooth_descent_periods_of_a_stock;
