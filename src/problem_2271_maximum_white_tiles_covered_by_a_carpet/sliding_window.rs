@@ -35,7 +35,14 @@ impl Solution {
             }
 
             covered += right_end - right_start;
-            result = result.max(covered - right_end.saturating_sub(left_start + carpet_len));
+
+            let candidate = covered - right_end.saturating_sub(left_start + carpet_len);
+
+            if candidate == carpet_len {
+                return candidate as _;
+            }
+
+            result = result.max(candidate);
         }
 
         result as _
