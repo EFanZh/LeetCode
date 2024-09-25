@@ -7,14 +7,14 @@ impl Solution {
         let mut tiles = tiles
             .into_iter()
             .map(|tile| {
-                let [start, end]: [_; 2] = tile.as_slice().try_into().ok().unwrap();
+                let [start, end] = <[_; 2]>::map(tile.as_slice().try_into().ok().unwrap(), |x| x as u32);
 
                 (start, end + 1)
             })
             .collect::<Vec<_>>();
 
+        let carpet_len = carpet_len as u32;
         let mut start_index = 0;
-        let mut start_position = i32::MIN;
         let mut covered = 0;
         let mut result = 0;
 
@@ -26,58 +26,19 @@ impl Solution {
             loop {
                 (left_start, left_end) = tiles[start_index];
 
-                if start_position < left_start {
-                    if left_start + carpet_len < right_start {
-                        start_position = left_start;
-                    } else {
-                        break;
-                    }
-                }
-
-                if left_end + carpet_len < right_start {
-                    covered -= left_end - start_position;
-                    start_position = left_end;
+                if left_end + carpet_len <= right_end {
+                    covered -= left_end - left_start;
                     start_index += 1;
-                } else {
-                    covered -= right_start - carpet_len - start_position;
-
-                    break;
-                }
-            }
-
-            start_position = right_start - carpet_len;
-
-            loop {
-                if start_position < left_start {
-                    if left_start + carpet_len < right_end {
-                        covered += left_start - start_position;
-                    } else {
-                        covered += right_end - carpet_len - start_position;
-
-                        break;
-                    }
-                }
-
-                if left_end + carpet_len < right_end {
-                    start_position = left_end;
-                    start_index += 1;
-                    (left_start, left_end) = tiles[start_index];
                 } else {
                     break;
                 }
             }
 
-            if covered == carpet_len {
-                result = covered;
-
-                break;
-            }
-
-            start_position = right_end - carpet_len;
-            result = result.max(covered);
+            covered += right_end - right_start;
+            result = result.max(covered - right_end.saturating_sub(left_start + carpet_len));
         }
 
-        result
+        result as _
     }
 }
 
