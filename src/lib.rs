@@ -1657,6 +1657,7 @@ pub mod problem_2239_find_closest_number_to_zero;
 pub mod problem_2241_design_an_atm_machine;
 pub mod problem_2243_calculate_digit_sum_of_a_string;
 pub mod problem_2244_minimum_rounds_to_complete_all_tasks;
+pub mod problem_2245_maximum_trailing_zeros_in_a_cornered_path;
 pub mod problem_2248_intersection_of_multiple_arrays;
 pub mod problem_2250_count_number_of_rectangles_containing_each_point;
 pub mod problem_2255_count_prefixes_of_a_given_string;
