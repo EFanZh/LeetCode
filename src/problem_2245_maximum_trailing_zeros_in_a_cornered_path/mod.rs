@@ -1,4 +1,5 @@
 pub mod dynamic_programming;
+pub mod prefix_sums;
 
 pub trait Solution {
     fn max_trailing_zeros(grid: Vec<Vec<i32>>) -> i32;
