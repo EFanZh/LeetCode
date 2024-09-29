@@ -1547,6 +1547,7 @@ pub mod problem_2071_maximum_number_of_tasks_you_can_assign;
 pub mod problem_2073_time_needed_to_buy_tickets;
 pub mod problem_2074_reverse_nodes_in_even_length_groups;
 pub mod problem_2075_decode_the_slanted_ciphertext;
+pub mod problem_2076_process_restricted_friend_requests;
 pub mod problem_2078_two_furthest_houses_with_different_colors;
 pub mod problem_2079_watering_plants;
 pub mod problem_2080_range_frequency_queries;
