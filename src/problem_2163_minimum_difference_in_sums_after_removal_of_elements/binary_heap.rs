@@ -9,27 +9,23 @@ impl Solution {
         let mut nums = nums;
         let n = nums.len() / 3;
         let middle_original = nums[n..n * 2].to_vec().into_boxed_slice();
-        let mut rest = nums[n..].iter().copied().zip(n as u32..).collect::<Vec<_>>();
+        let mut rest = nums.drain(n..).zip(0_u32..).collect::<Box<_>>();
 
         rest.select_nth_unstable(n);
 
-        let mut right_sum = 0;
-
-        let mut right_min = rest.drain(n..).fold((i32::MAX, u32::MAX), |min, x| {
-            right_sum += i64::from(x.0);
-
-            min.min(x)
-        });
-
-        let mut middle = BinaryHeap::from(rest);
-
-        nums.truncate(n);
-
+        let (middle, right) = rest.split_at_mut(n);
         let mut left = BinaryHeap::from(nums);
-        let mut diff = left.iter().fold(0_i64, |sum, &x| sum + i64::from(x)) - right_sum;
+
+        let mut diff = left.iter().fold(0_i64, |sum, &x| sum + i64::from(x))
+            - right.iter().fold(0, |sum, &(x, _)| sum + i64::from(x));
+
         let mut min_diff = diff;
 
-        middle_original.iter().copied().zip(n as u32..).for_each(|item| {
+        middle.sort_unstable();
+
+        let mut middle_iter = middle.iter();
+
+        middle_original.iter().copied().zip(0_u32..).for_each(|item| {
             let mut left_top = left.peek_mut().unwrap();
 
             if item.0 < *left_top {
@@ -39,19 +35,20 @@ impl Solution {
 
             drop(left_top);
 
-            if item >= right_min {
-                let mut middle_top;
+            let mut middle_max = *middle_iter.as_slice().last().unwrap();
 
+            if item > middle_max {
                 loop {
-                    middle_top = middle.pop().unwrap();
+                    middle_iter.next_back();
 
-                    if middle_top.1 > item.1 {
+                    if middle_max.1 <= item.1 {
+                        middle_max = *middle_iter.as_slice().last().unwrap();
+                    } else {
                         break;
                     }
                 }
 
-                diff += i64::from(item.0 - middle_top.0);
-                right_min = right_min.min(middle_top);
+                diff += i64::from(item.0 - middle_max.0);
             }
 
             min_diff = min_diff.min(diff);
