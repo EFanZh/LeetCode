@@ -1582,6 +1582,7 @@ pub mod problem_2116_check_if_a_parentheses_string_can_be_valid;
 pub mod problem_2119_a_number_after_a_double_reversal;
 pub mod problem_2120_execution_of_all_suffix_instructions_staying_in_a_grid;
 pub mod problem_2121_intervals_between_identical_elements;
+pub mod problem_2122_recover_the_original_array;
 pub mod problem_2124_check_if_all_as_appears_before_all_bs;
 pub mod problem_2125_number_of_laser_beams_in_a_bank;
 pub mod problem_2126_destroying_asteroids;
