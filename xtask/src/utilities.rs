@@ -4,7 +4,7 @@ use std::path::PathBuf;
 use std::process::{Command, Stdio};
 
 pub fn get_project_dir() -> PathBuf {
-    let mut path = PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap());
+    let mut path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
 
     path.pop();
 

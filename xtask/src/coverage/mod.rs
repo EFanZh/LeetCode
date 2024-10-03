@@ -5,7 +5,7 @@ use std::error::Error;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{self, Display, Formatter, Write};
 use std::fs::{self, File};
-use std::path::{self, Path, PathBuf};
+use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::str::FromStr;
 use std::{env, io};
@@ -175,16 +175,17 @@ fn run_rust_tests(target_dir: &Path, llvm_profdata: &Path, output: &Path) -> Pat
     // Build.
 
     let test_executable = utilities::run_command_and_stream_output(
-        Command::new("cargo")
-            .args::<_, &OsStr>([
-                "test".as_ref(),
-                "--no-run".as_ref(),
-                "--target-dir".as_ref(),
-                target_dir.as_ref(),
-                "--message-format".as_ref(),
-                "json".as_ref(),
-            ])
-            .env("RUSTFLAGS", "-C instrument-coverage"),
+        Command::new("cargo").args::<_, &OsStr>([
+            "rustc".as_ref(),
+            "--tests".as_ref(),
+            "--target-dir".as_ref(),
+            target_dir.as_ref(),
+            "--message-format".as_ref(),
+            "json".as_ref(),
+            "--".as_ref(),
+            "-C".as_ref(),
+            "instrument-coverage".as_ref(),
+        ]),
         |child_stdout| {
             let stdout = io::stdout();
             let mut stdout = stdout.lock();
@@ -287,23 +288,15 @@ impl Subcommand {
         // Generate report.
 
         let add_common_llvm_cov_args = closure_type_deduction_helper(|command: &mut Command| {
-            let src_path_equivalence = {
-                let mut buffer = OsString::from("src,");
-
-                buffer.push(utilities::get_project_dir().join("src"));
-
-                buffer
-            };
+            const SEPARATOR_REGEX: &str = if cfg!(windows) { r"\\" } else { "/" };
 
             command.args([
                 "--ignore-filename-regex".as_ref(),
                 format!(
-                    "^(/rustc/|{})",
-                    regex_syntax::escape(&format!("{}{}", env!("CARGO_HOME"), path::MAIN_SEPARATOR))
+                    r"{SEPARATOR_REGEX}rustc{SEPARATOR_REGEX}([0-9a-f]+|[0-9]+\.[0-9]+\.[0-9]+)|^{}{SEPARATOR_REGEX}",
+                    regex_syntax::escape(env!("CARGO_HOME")),
                 )
                 .as_ref(),
-                "--path-equivalence".as_ref(),
-                src_path_equivalence.as_os_str(),
                 "--instr-profile".as_ref(),
                 all_profdata.as_os_str(),
                 cpp_test_executable.as_os_str(),
