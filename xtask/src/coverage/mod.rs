@@ -304,9 +304,6 @@ impl Subcommand {
                 rust_test_executable.as_os_str(),
             ]);
 
-            #[cfg(not(target_os = "windows"))]
-            command.args(["c++", "src"]);
-
             command
         });
 
