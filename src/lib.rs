@@ -1598,6 +1598,7 @@ pub mod problem_2136_earliest_possible_day_of_full_bloom;
 pub mod problem_2138_divide_a_string_into_groups_of_size_k;
 pub mod problem_2139_minimum_moves_to_reach_target_score;
 pub mod problem_2140_solving_questions_with_brainpower;
+pub mod problem_2141_maximum_running_time_of_n_computers;
 pub mod problem_2144_minimum_cost_of_buying_candies_with_discount;
 pub mod problem_2145_count_the_hidden_sequences;
 pub mod problem_2146_k_highest_ranked_items_within_a_price_range;
