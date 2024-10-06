@@ -6,18 +6,18 @@ use std::collections::VecDeque;
 
 impl Solution {
     fn fenwick_tree_add(tree: &mut [u16], mut index: usize, diff: u16) {
-        while let Some(value) = tree.get_mut(index.wrapping_sub(1)) {
+        while let Some(value) = tree.get_mut(index) {
             *value = value.wrapping_add(diff);
-            index += index & index.wrapping_neg();
+            index |= index + 1;
         }
     }
 
-    fn fenwick_tree_sum(tree: &[u16], mut index: usize) -> u16 {
+    fn fenwick_tree_sum_less_than(tree: &[u16], mut x: usize) -> u16 {
         let mut result = 0;
 
-        while let Some(&value) = tree.get(index.wrapping_sub(1)) {
+        while let Some(&value) = tree.get(x.wrapping_sub(1)) {
             result += value;
-            index &= index - 1;
+            x &= x - 1;
         }
 
         result
@@ -43,7 +43,7 @@ impl Solution {
 
                     digit_indices[digit].push_back(index as _);
                     non_empty_digits |= 1 << digit;
-                    Self::fenwick_tree_add(&mut fenwick_tree, index + 1, 1);
+                    Self::fenwick_tree_add(&mut fenwick_tree, index, 1);
                 }
 
                 end = new_end;
@@ -57,7 +57,9 @@ impl Solution {
                 let digit = digits_iter.trailing_zeros() as u8;
                 let indices = &mut digit_indices[usize::from(digit)];
                 let front_index = usize::from(*indices.front().unwrap());
-                let position_in_window = usize::from(Self::fenwick_tree_sum(&fenwick_tree, front_index + 1) - 1);
+
+                let position_in_window =
+                    usize::from(Self::fenwick_tree_sum_less_than(&fenwick_tree, front_index + 1) - 1);
 
                 // If we have enough moves left to use this digit.
 

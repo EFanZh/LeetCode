@@ -17,9 +17,6 @@ impl Solution {
     }
 
     fn update(tree: &mut [i32], mut index: usize) {
-        tree[index] += 1;
-        index |= index + 1;
-
         while let Some(value) = tree.get_mut(index) {
             *value += 1;
             index |= index + 1;
