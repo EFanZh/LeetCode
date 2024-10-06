@@ -4,18 +4,18 @@ pub struct Solution;
 
 impl Solution {
     fn add(tree: &mut [u16], mut index: usize, diff: u16) {
-        while let Some(value) = tree.get_mut(index.wrapping_sub(1)) {
+        while let Some(value) = tree.get_mut(index) {
             *value = value.wrapping_add(diff);
-            index += index & index.wrapping_neg();
+            index |= index + 1;
         }
     }
 
-    fn sum(tree: &[u16], mut index: usize) -> u16 {
+    fn sum_less_than(tree: &[u16], mut x: usize) -> u16 {
         let mut result = 0;
 
-        while let Some(&value) = tree.get(index.wrapping_sub(1)) {
+        while let Some(&value) = tree.get(x.wrapping_sub(1)) {
             result += value;
-            index &= index - 1;
+            x &= x - 1;
         }
 
         result
@@ -38,7 +38,7 @@ impl Solution {
         for slot in &mut queries {
             let query_index_in_tree = &mut value_indices[*slot as u32 as usize - 1];
 
-            *slot = i32::from(Self::sum(tree, usize::from(*query_index_in_tree))) - 1;
+            *slot = i32::from(Self::sum_less_than(tree, usize::from(*query_index_in_tree)));
 
             Self::add(tree, usize::from(*query_index_in_tree), u16::MAX);
             Self::add(tree, new_index, 1);
