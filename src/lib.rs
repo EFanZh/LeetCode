@@ -1625,6 +1625,7 @@ pub mod problem_2172_maximum_and_sum_of_array;
 pub mod problem_2176_count_equal_and_divisible_pairs_in_an_array;
 pub mod problem_2177_find_three_consecutive_integers_that_sum_to_a_given_number;
 pub mod problem_2178_maximum_split_of_positive_even_integers;
+pub mod problem_2179_count_good_triplets_in_an_array;
 pub mod problem_2180_count_integers_with_even_digit_sum;
 pub mod problem_2181_merge_nodes_in_between_zeros;
 pub mod problem_2182_construct_string_with_repeat_limit;
