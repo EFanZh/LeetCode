@@ -1688,6 +1688,7 @@ pub mod problem_2273_find_resultant_array_after_removing_anagrams;
 pub mod problem_2274_maximum_consecutive_floors_without_special_floors;
 pub mod problem_2275_largest_combination_with_bitwise_and_greater_than_zero;
 pub mod problem_2278_percentage_of_letter_in_string;
+pub mod problem_2279_maximum_bags_with_full_capacity_of_rocks;
 
 #[cfg(test)]
 mod test_utilities;
