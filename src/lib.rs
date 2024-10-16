@@ -1693,6 +1693,7 @@ pub mod problem_2278_percentage_of_letter_in_string;
 pub mod problem_2279_maximum_bags_with_full_capacity_of_rocks;
 pub mod problem_2280_minimum_lines_to_represent_a_line_chart;
 pub mod problem_2283_check_if_number_has_equal_digit_count_and_digit_value;
+pub mod problem_2284_sender_with_largest_word_count;
 
 #[cfg(test)]
 mod test_utilities;
