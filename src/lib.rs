@@ -1695,6 +1695,7 @@ pub mod problem_2280_minimum_lines_to_represent_a_line_chart;
 pub mod problem_2283_check_if_number_has_equal_digit_count_and_digit_value;
 pub mod problem_2284_sender_with_largest_word_count;
 pub mod problem_2285_maximum_total_importance_of_roads;
+pub mod problem_2287_rearrange_characters_to_make_target_string;
 
 #[cfg(test)]
 mod test_utilities;
