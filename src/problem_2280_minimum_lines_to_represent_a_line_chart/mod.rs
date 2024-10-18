@@ -1,4 +1,4 @@
-pub mod dfs;
+pub mod iterative;
 
 pub trait Solution {
     fn minimum_lines(stock_prices: Vec<Vec<i32>>) -> i32;
