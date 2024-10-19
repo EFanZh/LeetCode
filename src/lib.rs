@@ -1696,6 +1696,7 @@ pub mod problem_2283_check_if_number_has_equal_digit_count_and_digit_value;
 pub mod problem_2284_sender_with_largest_word_count;
 pub mod problem_2285_maximum_total_importance_of_roads;
 pub mod problem_2287_rearrange_characters_to_make_target_string;
+pub mod problem_2288_apply_discount_to_prices;
 
 #[cfg(test)]
 mod test_utilities;
