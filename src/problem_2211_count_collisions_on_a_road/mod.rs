@@ -1,6 +1,5 @@
 pub mod iterative;
 pub mod iterative_2;
-pub mod tail_recursive;
 
 pub trait Solution {
     fn count_collisions(directions: String) -> i32;
