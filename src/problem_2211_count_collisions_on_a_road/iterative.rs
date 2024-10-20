@@ -2,59 +2,26 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-enum State {
-    AllLeft,
-    Stop,
-    Right(u32),
-}
-
 impl Solution {
     pub fn count_collisions(directions: String) -> i32 {
         let mut result = 0;
-        let mut state = State::AllLeft;
         let mut iter = directions.bytes();
 
-        loop {
-            match state {
-                State::AllLeft => {
-                    if let Some(c) = iter.next() {
-                        match c {
-                            b'L' => {}
-                            b'R' => state = State::Right(1),
-                            _ => state = State::Stop,
-                        }
+        for c in iter.by_ref() {
+            if c != b'L' {
+                let mut count = u32::from(c == b'R');
+
+                for c in iter {
+                    if c == b'R' {
+                        count += 1;
                     } else {
-                        break;
+                        result += count + u32::from(c == b'L');
+
+                        count = 0;
                     }
                 }
-                State::Stop => {
-                    if let Some(c) = iter.next() {
-                        match c {
-                            b'L' => result += 1,
-                            b'R' => state = State::Right(1),
-                            _ => {}
-                        }
-                    } else {
-                        break;
-                    }
-                }
-                State::Right(count) => {
-                    if let Some(c) = iter.next() {
-                        match c {
-                            b'L' => {
-                                result += count + 1;
-                                state = State::Stop;
-                            }
-                            b'R' => state = State::Right(count + 1),
-                            _ => {
-                                result += count;
-                                state = State::Stop;
-                            }
-                        }
-                    } else {
-                        break;
-                    }
-                }
+
+                break;
             }
         }
 
