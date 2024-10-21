@@ -1651,6 +1651,7 @@ pub mod problem_2208_minimum_operations_to_halve_array_sum;
 pub mod problem_2209_minimum_white_tiles_after_covering_with_carpets;
 pub mod problem_2210_count_hills_and_valleys_in_an_array;
 pub mod problem_2211_count_collisions_on_a_road;
+pub mod problem_2212_maximum_points_in_an_archery_competition;
 pub mod problem_2215_find_the_difference_of_two_arrays;
 pub mod problem_2216_minimum_deletions_to_make_array_beautiful;
 pub mod problem_2218_maximum_value_of_k_coins_from_piles;
