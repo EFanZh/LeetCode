@@ -1654,6 +1654,7 @@ pub mod problem_2211_count_collisions_on_a_road;
 pub mod problem_2212_maximum_points_in_an_archery_competition;
 pub mod problem_2215_find_the_difference_of_two_arrays;
 pub mod problem_2216_minimum_deletions_to_make_array_beautiful;
+pub mod problem_2217_find_palindrome_with_fixed_length;
 pub mod problem_2218_maximum_value_of_k_coins_from_piles;
 pub mod problem_2220_minimum_bit_flips_to_convert_number;
 pub mod problem_2221_find_triangular_sum_of_an_array;
