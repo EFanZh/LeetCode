@@ -1677,6 +1677,7 @@ pub mod problem_2250_count_number_of_rectangles_containing_each_point;
 pub mod problem_2251_number_of_flowers_in_full_bloom;
 pub mod problem_2255_count_prefixes_of_a_given_string;
 pub mod problem_2256_minimum_average_difference;
+pub mod problem_2257_count_unguarded_cells_in_the_grid;
 pub mod problem_2258_escape_the_spreading_fire;
 pub mod problem_2259_remove_digit_from_number_to_maximize_result;
 pub mod problem_2260_minimum_consecutive_cards_to_pick_up;
