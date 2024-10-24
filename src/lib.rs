@@ -1701,6 +1701,7 @@ pub mod problem_2284_sender_with_largest_word_count;
 pub mod problem_2285_maximum_total_importance_of_roads;
 pub mod problem_2287_rearrange_characters_to_make_target_string;
 pub mod problem_2288_apply_discount_to_prices;
+pub mod problem_2293_min_max_game;
 
 #[cfg(test)]
 mod test_utilities;
