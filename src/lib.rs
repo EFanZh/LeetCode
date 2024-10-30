@@ -1707,6 +1707,7 @@ pub mod problem_2288_apply_discount_to_prices;
 pub mod problem_2293_min_max_game;
 pub mod problem_2294_partition_array_such_that_maximum_difference_is_k;
 pub mod problem_2295_replace_elements_in_an_array;
+pub mod problem_2299_strong_password_checker_ii;
 
 #[cfg(test)]
 mod test_utilities;
