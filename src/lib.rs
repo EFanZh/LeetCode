@@ -1713,6 +1713,7 @@ pub mod problem_2299_strong_password_checker_ii;
 pub mod problem_2300_successful_pairs_of_spells_and_potions;
 pub mod problem_2302_count_subarrays_with_score_less_than_k;
 pub mod problem_2303_calculate_amount_paid_in_taxes;
+pub mod problem_2305_fair_distribution_of_cookies;
 
 #[cfg(test)]
 mod test_utilities;
