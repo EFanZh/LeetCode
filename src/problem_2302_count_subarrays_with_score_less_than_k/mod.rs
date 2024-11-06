@@ -1,4 +1,4 @@
-pub mod iterative;
+pub mod sliding_window;
 
 pub trait Solution {
     fn count_subarrays(nums: Vec<i32>, k: i64) -> i64;
