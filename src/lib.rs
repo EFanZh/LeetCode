@@ -1716,6 +1716,7 @@ pub mod problem_2303_calculate_amount_paid_in_taxes;
 pub mod problem_2305_fair_distribution_of_cookies;
 pub mod problem_2309_greatest_english_letter_in_upper_and_lower_case;
 pub mod problem_2310_sum_of_numbers_with_units_digit_k;
+pub mod problem_2315_count_asterisks;
 
 #[cfg(test)]
 mod test_utilities;
