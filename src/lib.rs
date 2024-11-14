@@ -1722,6 +1722,7 @@ pub mod problem_2315_count_asterisks;
 pub mod problem_2316_count_unreachable_pairs_of_nodes_in_an_undirected_graph;
 pub mod problem_2317_maximum_xor_after_operations;
 pub mod problem_2319_check_if_matrix_is_x_matrix;
+pub mod problem_2320_count_number_of_ways_to_place_houses;
 
 #[cfg(test)]
 mod test_utilities;
