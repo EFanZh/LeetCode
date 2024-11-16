@@ -1,3 +1,4 @@
+# format_strings = true
 # group_imports = "One"
 # imports_granularity = "Module"
 max_width = 120

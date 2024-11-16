@@ -4,8 +4,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::iter;
-use std::mem;
+use std::{iter, mem};
 
 impl Solution {
     fn make_iter(list: Option<&ListNode>) -> impl Iterator<Item = &ListNode> {

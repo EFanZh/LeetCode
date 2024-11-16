@@ -2,8 +2,7 @@
 
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
-use std::mem;
-use std::str;
+use std::{mem, str};
 
 pub struct SORTracker {
     head: BinaryHeap<(Reverse<u32>, [u8; 10])>,
