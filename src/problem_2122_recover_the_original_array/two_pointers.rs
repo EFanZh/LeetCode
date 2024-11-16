@@ -3,8 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::mem;
-use std::ptr;
+use std::{mem, ptr};
 
 impl Solution {
     pub fn recover_array(nums: Vec<i32>) -> Vec<i32> {
