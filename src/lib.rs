@@ -1731,6 +1731,7 @@ pub mod problem_2325_decode_the_message;
 pub mod problem_2326_spiral_matrix_iv;
 pub mod problem_2331_evaluate_boolean_binary_tree;
 pub mod problem_2335_minimum_amount_of_time_to_fill_cups;
+pub mod problem_2336_smallest_number_in_infinite_set;
 
 #[cfg(test)]
 mod test_utilities;
