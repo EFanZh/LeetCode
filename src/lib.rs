@@ -1721,6 +1721,7 @@ pub mod problem_2306_naming_a_company;
 pub mod problem_2309_greatest_english_letter_in_upper_and_lower_case;
 pub mod problem_2310_sum_of_numbers_with_units_digit_k;
 pub mod problem_2311_longest_binary_subsequence_less_than_or_equal_to_k;
+pub mod problem_2312_selling_pieces_of_wood;
 pub mod problem_2315_count_asterisks;
 pub mod problem_2316_count_unreachable_pairs_of_nodes_in_an_undirected_graph;
 pub mod problem_2317_maximum_xor_after_operations;
