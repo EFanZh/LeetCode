@@ -16,10 +16,7 @@ mod tests {
 
         for (head, expected) in test_cases {
             let head = test_utilities::make_list(head.iter().copied());
-
-            let result = test_utilities::iter_list(&S::swap_pairs(head))
-                .copied()
-                .collect::<Box<_>>();
+            let result = test_utilities::iter_list(S::swap_pairs(head)).collect::<Box<_>>();
 
             assert_eq!(result.as_ref(), expected);
         }

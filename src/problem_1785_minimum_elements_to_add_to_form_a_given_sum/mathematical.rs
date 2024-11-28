@@ -8,7 +8,7 @@ impl Solution {
         let sum = nums.into_iter().map(i64::from).sum::<i64>();
         let diff = (i64::from(goal) - sum).unsigned_abs();
 
-        ((diff + limit - 1) / limit) as _
+        diff.div_ceil(limit) as _
     }
 }
 

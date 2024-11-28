@@ -22,10 +22,7 @@ mod tests {
 
             S::reorder_list(&mut head);
 
-            assert_eq!(
-                test_utilities::iter_list(&head).copied().collect::<Box<_>>().as_ref(),
-                expected,
-            );
+            assert_eq!(test_utilities::iter_list(head).collect::<Box<_>>().as_ref(), expected);
         }
     }
 }

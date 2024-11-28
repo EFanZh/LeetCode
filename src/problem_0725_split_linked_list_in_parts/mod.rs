@@ -26,8 +26,8 @@ mod tests {
         for ((head, k), expected) in test_cases {
             assert_eq!(
                 S::split_list_to_parts(test_utilities::make_list(head.iter().copied()), k)
-                    .iter()
-                    .map(|list| test_utilities::iter_list(list).copied().collect::<Vec<_>>())
+                    .into_iter()
+                    .map(|list| test_utilities::iter_list(list).collect::<Vec<_>>())
                     .collect::<Vec<_>>(),
                 expected,
             );

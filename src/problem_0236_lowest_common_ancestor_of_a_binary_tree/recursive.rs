@@ -5,13 +5,10 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cell::RefCell;
+use std::ptr;
 use std::rc::Rc;
 
 impl Solution {
-    fn is_same_object<T>(a: *const T, b: *const T) -> bool {
-        a == b
-    }
-
     fn has_node(
         root: Option<&RefCell<TreeNode>>,
         node: &RefCell<TreeNode>,
@@ -19,7 +16,7 @@ impl Solution {
         no: &dyn Fn() -> Rc<RefCell<TreeNode>>,
     ) -> Rc<RefCell<TreeNode>> {
         root.map_or_else(no, |root| {
-            if Self::is_same_object(root, node) {
+            if ptr::eq(root, node) {
                 yes()
             } else {
                 let root_ref = root.borrow();
@@ -31,6 +28,7 @@ impl Solution {
         })
     }
 
+    #[expect(clippy::ref_option, reason = "by-design")]
     fn find_nodes(
         root: &Option<Rc<RefCell<TreeNode>>>,
         p: &RefCell<TreeNode>,
@@ -42,11 +40,11 @@ impl Solution {
         root.as_ref().map_or_else(nothing, |root| {
             let root_ref = root.borrow();
 
-            if Self::is_same_object(root.as_ref(), p) {
+            if ptr::eq(root.as_ref(), p) {
                 Self::has_node(root_ref.left.as_deref(), q, &|| Rc::clone(root), &|| {
                     Self::has_node(root_ref.right.as_deref(), q, &|| Rc::clone(root), only_p)
                 })
-            } else if Self::is_same_object(root.as_ref(), q) {
+            } else if ptr::eq(root.as_ref(), q) {
                 Self::has_node(root_ref.left.as_deref(), p, &|| Rc::clone(root), &|| {
                     Self::has_node(root_ref.right.as_deref(), p, &|| Rc::clone(root), only_q)
                 })
@@ -64,7 +62,7 @@ impl Solution {
     }
 
     fn helper(root: &Rc<RefCell<TreeNode>>, p: &RefCell<TreeNode>, q: &RefCell<TreeNode>) -> Rc<RefCell<TreeNode>> {
-        if Self::is_same_object(root.as_ref(), p) || Self::is_same_object(root.as_ref(), q) {
+        if ptr::eq(root.as_ref(), p) || ptr::eq(root.as_ref(), q) {
             Rc::clone(root)
         } else {
             let root_ref = root.borrow();

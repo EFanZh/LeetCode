@@ -23,9 +23,7 @@ mod tests {
                 .map(|list| test_utilities::make_list(list.iter().copied()))
                 .collect();
 
-            let result = test_utilities::iter_list(&S::merge_k_lists(lists))
-                .copied()
-                .collect::<Box<_>>();
+            let result = test_utilities::iter_list(S::merge_k_lists(lists)).collect::<Box<_>>();
 
             assert_eq!(result.as_ref(), expected);
         }

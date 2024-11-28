@@ -15,7 +15,7 @@ impl Solution {
         for spell in &mut spells {
             let spell_strength = u64::from(*spell as u32);
 
-            *spell = u32::try_from((success + spell_strength - 1) / spell_strength)
+            *spell = u32::try_from(success.div_ceil(spell_strength))
                 .map_or(0, |target| potions.partition_point(|&x| x as u32 >= target)) as _;
         }
 

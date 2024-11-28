@@ -40,13 +40,12 @@ mod tests {
 
         for ((list1, a, b, list2), expected) in test_cases {
             assert_eq!(
-                test_utilities::iter_list(&S::merge_in_between(
+                test_utilities::iter_list(S::merge_in_between(
                     test_utilities::make_list(list1.iter().copied()),
                     a,
                     b,
                     test_utilities::make_list(list2.iter().copied())
                 ))
-                .copied()
                 .collect::<Vec<_>>(),
                 expected,
             );

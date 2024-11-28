@@ -17,13 +17,9 @@ mod tests {
 
         for ((head, val), expected) in test_cases {
             assert_eq!(
-                test_utilities::iter_list(&S::remove_elements(
-                    test_utilities::make_list(head.iter().copied()),
-                    val,
-                ))
-                .copied()
-                .collect::<Box<_>>()
-                .as_ref(),
+                test_utilities::iter_list(S::remove_elements(test_utilities::make_list(head.iter().copied()), val))
+                    .collect::<Box<_>>()
+                    .as_ref(),
                 expected,
             );
         }

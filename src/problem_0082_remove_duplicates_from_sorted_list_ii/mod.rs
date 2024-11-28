@@ -22,8 +22,7 @@ mod tests {
 
         for (head, expected) in test_cases {
             assert_eq!(
-                test_utilities::iter_list(&S::delete_duplicates(test_utilities::make_list(head.iter().copied())))
-                    .copied()
+                test_utilities::iter_list(S::delete_duplicates(test_utilities::make_list(head.iter().copied())))
                     .collect::<Box<_>>()
                     .as_ref(),
                 expected,

@@ -43,7 +43,7 @@ impl Solution {
 
         let total_trips = total_trips as u32;
         let (min, max) = Self::min_max(&time);
-        let count = u64::from((total_trips + time.len() as u32 - 1) / time.len() as u32);
+        let count = u64::from(total_trips.div_ceil(time.len() as u32));
         let mut left = u64::from(min.get()) * count;
         let mut right = u64::from(max.get()) * count;
 

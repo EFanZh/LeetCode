@@ -11,7 +11,7 @@ use std::{iter, mem};
 
 impl Solution {
     fn find_1(
-        node: &Option<Rc<RefCell<TreeNode>>>,
+        node: Option<&RefCell<TreeNode>>,
         path: &mut Vec<u8>,
         value: i32,
         target: &mut Vec<u8>,
@@ -34,18 +34,18 @@ impl Solution {
 
     fn find_1_children(node: &TreeNode, path: &mut Vec<u8>, value: i32, target: &mut Vec<u8>) -> ControlFlow<()> {
         path.push(b'L');
-        Self::find_1(&node.left, path, value, target)?;
+        Self::find_1(node.left.as_deref(), path, value, target)?;
         path.pop();
 
         path.push(b'R');
-        Self::find_1(&node.right, path, value, target)?;
+        Self::find_1(node.right.as_deref(), path, value, target)?;
         path.pop();
 
         ControlFlow::Continue(())
     }
 
     fn find_2(
-        node: &Option<Rc<RefCell<TreeNode>>>,
+        node: Option<&RefCell<TreeNode>>,
         path: &mut Vec<u8>,
         value_1: i32,
         target_1: &mut Vec<u8>,
@@ -62,11 +62,11 @@ impl Solution {
                 (target_2, value_1, target_1)
             } else {
                 path.push(b'L');
-                Self::find_2(&node.left, path, value_1, target_1, value_2, target_2)?;
+                Self::find_2(node.left.as_deref(), path, value_1, target_1, value_2, target_2)?;
                 path.pop();
 
                 path.push(b'R');
-                Self::find_2(&node.right, path, value_1, target_1, value_2, target_2)?;
+                Self::find_2(node.right.as_deref(), path, value_1, target_1, value_2, target_2)?;
                 path.pop();
 
                 return ControlFlow::Continue(());
@@ -85,7 +85,7 @@ impl Solution {
         let mut dest_path = Vec::new();
 
         Self::find_2(
-            &root,
+            root.as_deref(),
             &mut Vec::new(),
             start_value,
             &mut start_path,

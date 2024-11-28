@@ -8,27 +8,27 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
-    fn helper(node: &Option<Rc<RefCell<TreeNode>>>) -> bool {
-        let node = node.as_deref().unwrap().borrow();
+    fn helper(node: Option<&RefCell<TreeNode>>) -> bool {
+        let node = node.unwrap().borrow();
         let node = &*node;
 
         match node.val {
             0 => false,
             1 => true,
             operator => {
-                let lhs = Self::helper(&node.left);
+                let lhs = Self::helper(node.left.as_deref());
 
                 if operator == 2 {
-                    lhs || Self::helper(&node.right)
+                    lhs || Self::helper(node.right.as_deref())
                 } else {
-                    lhs && Self::helper(&node.right)
+                    lhs && Self::helper(node.right.as_deref())
                 }
             }
         }
     }
 
     pub fn evaluate_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        Self::helper(&root)
+        Self::helper(root.as_deref())
     }
 }
 
