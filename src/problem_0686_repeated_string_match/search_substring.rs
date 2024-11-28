@@ -7,8 +7,7 @@ impl Solution {
         let max_repeats = (a.len() * 2 + b.len() - 2) / a.len();
         let s = a.repeat(max_repeats);
 
-        s.find(b.as_str())
-            .map_or(-1, |i| ((i + b.len() + a.len() - 1) / a.len()) as _)
+        s.find(b.as_str()).map_or(-1, |i| (i + b.len()).div_ceil(a.len()) as _)
     }
 }
 

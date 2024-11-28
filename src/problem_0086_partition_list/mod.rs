@@ -17,8 +17,7 @@ mod tests {
 
         for ((head, x), expected) in test_cases {
             assert_eq!(
-                test_utilities::iter_list(&S::partition(test_utilities::make_list(head.iter().copied()), x))
-                    .copied()
+                test_utilities::iter_list(S::partition(test_utilities::make_list(head.iter().copied()), x))
                     .collect::<Box<_>>()
                     .as_ref(),
                 expected,

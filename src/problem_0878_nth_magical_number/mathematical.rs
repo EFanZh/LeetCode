@@ -22,7 +22,7 @@ impl Solution {
     }
 
     fn div_ceil(lhs: u64, rhs: u64) -> u64 {
-        (lhs + (rhs - 1)) / rhs
+        lhs.div_ceil(rhs)
     }
 
     fn search_in_cycle(n: u32, a: u32, b: u32) -> u32 {

@@ -5,6 +5,8 @@ pub struct Solution;
 use std::iter::Zip;
 use std::slice::Iter;
 
+type Double<T> = (T, T);
+
 impl Solution {
     fn get_overlaps<'a>(overlap: impl Iterator<Item = impl Iterator<Item = (&'a i32, &'a i32)>>) -> usize {
         overlap
@@ -12,15 +14,15 @@ impl Solution {
             .sum::<i32>() as _
     }
 
-    fn zip_left(start: usize) -> impl for<'a> Fn((&'a Vec<i32>, &'a Vec<i32>)) -> Zip<Iter<'a, i32>, Iter<'a, i32>> {
+    fn zip_left(start: usize) -> impl for<'a> Fn(Double<&'a Vec<i32>>) -> Zip<Iter<'a, i32>, Iter<'a, i32>> {
         move |(row_1, row_2)| row_1.iter().zip(&row_2[start..])
     }
 
-    fn zip_right(start: usize) -> impl for<'a> Fn((&'a Vec<i32>, &'a Vec<i32>)) -> Zip<Iter<'a, i32>, Iter<'a, i32>> {
+    fn zip_right(start: usize) -> impl for<'a> Fn(Double<&'a Vec<i32>>) -> Zip<Iter<'a, i32>, Iter<'a, i32>> {
         move |(row_1, row_2)| row_1[start..].iter().zip(row_2)
     }
 
-    fn zip_row<'a>((row_1, row_2): (&'a Vec<i32>, &'a Vec<i32>)) -> Zip<Iter<'a, i32>, Iter<'a, i32>> {
+    fn zip_row((row_1, row_2): Double<&Vec<i32>>) -> Zip<Iter<'_, i32>, Iter<'_, i32>> {
         row_1.iter().zip(row_2)
     }
 

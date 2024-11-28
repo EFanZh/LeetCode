@@ -32,7 +32,7 @@ impl Solution {
             let total = count * count_count;
 
             if total >= required {
-                result += (required + count - 1) / count;
+                result += required.div_ceil(count);
 
                 break;
             }

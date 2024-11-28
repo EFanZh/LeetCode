@@ -9,6 +9,7 @@ use std::cmp::Ordering;
 use std::rc::Rc;
 
 impl Solution {
+    #[expect(clippy::ref_option, reason = "by-design")]
     fn helper(node: &Option<Rc<RefCell<TreeNode>>>) -> (Option<Rc<RefCell<TreeNode>>>, usize) {
         if let Some(node_ref) = node.as_deref().map(RefCell::borrow) {
             let (left_node, left_height) = Self::helper(&node_ref.left);

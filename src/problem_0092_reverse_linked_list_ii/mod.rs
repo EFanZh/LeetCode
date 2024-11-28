@@ -20,12 +20,11 @@ mod tests {
 
         for ((head, m, n), expected) in test_cases {
             assert_eq!(
-                test_utilities::iter_list(&S::reverse_between(
+                test_utilities::iter_list(S::reverse_between(
                     test_utilities::make_list(head.iter().copied()),
                     m,
                     n,
                 ))
-                .copied()
                 .collect::<Box<_>>()
                 .as_ref(),
                 expected,

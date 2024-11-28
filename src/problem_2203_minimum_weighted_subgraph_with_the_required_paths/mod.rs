@@ -35,7 +35,7 @@ mod tests {
 
         for ((n, edges, src1, src2, dest), expected) in test_cases {
             assert_eq!(
-                S::minimum_weight(n, edges.iter().map(Vec::from).collect(), src1, src2, dest,),
+                S::minimum_weight(n, edges.iter().map(Vec::from).collect(), src1, src2, dest),
                 expected,
             );
         }

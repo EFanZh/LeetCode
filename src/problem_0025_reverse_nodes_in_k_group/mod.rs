@@ -20,10 +20,7 @@ mod tests {
 
         for ((head, k), expected) in test_cases {
             let head = test_utilities::make_list(head.iter().copied());
-
-            let result = test_utilities::iter_list(&S::reverse_k_group(head, k))
-                .copied()
-                .collect::<Box<_>>();
+            let result = test_utilities::iter_list(S::reverse_k_group(head, k)).collect::<Box<_>>();
 
             assert_eq!(result.as_ref(), expected);
         }

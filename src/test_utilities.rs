@@ -55,6 +55,7 @@ where
     }
 }
 
+#[expect(clippy::ref_option, reason = "by-design")]
 pub fn compare_tree(lhs: &Option<Rc<RefCell<TreeNode>>>, rhs: &Option<Rc<RefCell<TreeNode>>>) -> Ordering {
     fn inner(lhs: Option<&RefCell<TreeNode>>, rhs: Option<&RefCell<TreeNode>>) -> Ordering {
         match (lhs, rhs) {
@@ -75,6 +76,7 @@ pub fn compare_tree(lhs: &Option<Rc<RefCell<TreeNode>>>, rhs: &Option<Rc<RefCell
     inner(lhs.as_deref(), rhs.as_deref())
 }
 
+#[expect(clippy::ref_option, reason = "by-design")]
 pub fn find_node(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
     root.as_ref().and_then(|root| {
         let root_ref = root.borrow();
@@ -132,8 +134,14 @@ where
     true
 }
 
-pub fn iter_list(list: &Option<Box<ListNode>>) -> impl Iterator<Item = &i32> {
-    iter::successors(list.as_deref(), |node| node.next.as_deref()).map(|node| &node.val)
+pub fn iter_list(mut list: Option<Box<ListNode>>) -> impl Iterator<Item = i32> {
+    iter::from_fn(move || {
+        list.take().map(|mut node| {
+            list = node.next.take();
+
+            node.val
+        })
+    })
 }
 
 pub fn iter_tree_pre_order(root: Option<Rc<RefCell<TreeNode>>>) -> impl Iterator<Item = i32> {

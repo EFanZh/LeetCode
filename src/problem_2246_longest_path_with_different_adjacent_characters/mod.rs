@@ -15,7 +15,7 @@ mod tests {
         ];
 
         for ((parent, s), expected) in test_cases {
-            assert_eq!(S::longest_path(parent.to_vec(), s.to_string()), expected,);
+            assert_eq!(S::longest_path(parent.to_vec(), s.to_string()), expected);
         }
     }
 }

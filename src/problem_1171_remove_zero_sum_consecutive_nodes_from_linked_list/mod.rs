@@ -21,10 +21,9 @@ mod tests {
 
         for (head, expected) in test_cases {
             assert!(expected.contains(
-                &test_utilities::iter_list(&S::remove_zero_sum_sublists(test_utilities::make_list(
+                &test_utilities::iter_list(S::remove_zero_sum_sublists(test_utilities::make_list(
                     head.iter().copied()
                 )))
-                .copied()
                 .collect::<Vec<_>>()
                 .as_slice(),
             ));

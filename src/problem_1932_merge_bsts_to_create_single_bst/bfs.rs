@@ -10,19 +10,18 @@ use std::mem;
 use std::rc::Rc;
 
 impl Solution {
-    fn validate_binary_tree_option(prev: i32, node: &Option<Rc<RefCell<TreeNode>>>) -> Option<i32> {
-        node.as_ref()
-            .map_or(Some(prev), |node| Self::validate_binary_tree(prev, node))
+    fn validate_binary_tree_option(prev: i32, node: Option<&RefCell<TreeNode>>) -> Option<i32> {
+        node.map_or(Some(prev), |node| Self::validate_binary_tree(prev, node))
     }
 
-    fn validate_binary_tree(mut prev: i32, node: &Rc<RefCell<TreeNode>>) -> Option<i32> {
+    fn validate_binary_tree(mut prev: i32, node: &RefCell<TreeNode>) -> Option<i32> {
         let node = node.borrow();
         let node = &*node;
 
-        prev = Self::validate_binary_tree_option(prev, &node.left)?;
+        prev = Self::validate_binary_tree_option(prev, node.left.as_deref())?;
 
         if prev < node.val {
-            Self::validate_binary_tree_option(node.val, &node.right)
+            Self::validate_binary_tree_option(node.val, node.right.as_deref())
         } else {
             None
         }

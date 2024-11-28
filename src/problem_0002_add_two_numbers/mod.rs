@@ -21,11 +21,10 @@ mod tests {
 
         for ((l1, l2), expected) in test_cases {
             assert_eq!(
-                test_utilities::iter_list(&S::add_two_numbers(
+                test_utilities::iter_list(S::add_two_numbers(
                     test_utilities::make_list(l1.iter().copied()),
                     test_utilities::make_list(l2.iter().copied())
                 ))
-                .copied()
                 .collect::<Box<_>>()
                 .as_ref(),
                 expected,
