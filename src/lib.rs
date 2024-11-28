@@ -1736,6 +1736,7 @@ pub mod problem_2331_evaluate_boolean_binary_tree;
 pub mod problem_2335_minimum_amount_of_time_to_fill_cups;
 pub mod problem_2336_smallest_number_in_infinite_set;
 pub mod problem_2337_move_pieces_to_obtain_a_string;
+pub mod problem_2341_maximum_number_of_pairs_in_array;
 
 #[cfg(test)]
 mod test_utilities;
