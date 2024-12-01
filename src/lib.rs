@@ -1732,6 +1732,7 @@ pub mod problem_2321_maximum_score_of_spliced_array;
 pub mod problem_2325_decode_the_message;
 pub mod problem_2326_spiral_matrix_iv;
 pub mod problem_2327_number_of_people_aware_of_a_secret;
+pub mod problem_2328_number_of_increasing_paths_in_a_grid;
 pub mod problem_2331_evaluate_boolean_binary_tree;
 pub mod problem_2335_minimum_amount_of_time_to_fill_cups;
 pub mod problem_2336_smallest_number_in_infinite_set;
