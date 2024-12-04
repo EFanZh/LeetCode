@@ -1742,6 +1742,7 @@ pub mod problem_2342_max_sum_of_a_pair_with_equal_sum_of_digits;
 pub mod problem_2347_best_poker_hand;
 pub mod problem_2348_number_of_zero_filled_subarrays;
 pub mod problem_2349_design_a_number_container_system;
+pub mod problem_2351_first_letter_to_appear_twice;
 
 #[cfg(test)]
 mod test_utilities;
