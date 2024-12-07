@@ -49,7 +49,7 @@ mod tests {
                 n,
                 m,
                 group.to_vec(),
-                before_items.iter().copied().map(<[_]>::to_vec).collect(),
+                before_items.iter().copied().map(Vec::from).collect(),
             );
 
             if has_solution {

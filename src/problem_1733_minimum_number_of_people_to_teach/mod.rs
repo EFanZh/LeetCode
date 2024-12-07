@@ -33,8 +33,8 @@ mod tests {
             assert_eq!(
                 S::minimum_teachings(
                     n,
-                    languages.iter().copied().map(<[_]>::to_vec).collect(),
-                    friendships.iter().copied().map(<[_]>::to_vec).collect(),
+                    languages.iter().copied().map(Vec::from).collect(),
+                    friendships.iter().copied().map(Vec::from).collect(),
                 ),
                 expected,
             );

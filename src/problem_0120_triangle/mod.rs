@@ -14,7 +14,7 @@ mod tests {
 
         for (triangle, expected) in test_cases {
             assert_eq!(
-                S::minimum_total(triangle.iter().copied().map(<[_]>::to_vec).collect()),
+                S::minimum_total(triangle.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }

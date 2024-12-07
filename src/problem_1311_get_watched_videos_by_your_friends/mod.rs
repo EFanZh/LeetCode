@@ -51,7 +51,7 @@ mod tests {
                         .iter()
                         .map(|watched_videos| watched_videos.iter().copied().map(str::to_string).collect())
                         .collect(),
-                    friends.iter().copied().map(<[_]>::to_vec).collect(),
+                    friends.iter().copied().map(Vec::from).collect(),
                     id,
                     level,
                 ),

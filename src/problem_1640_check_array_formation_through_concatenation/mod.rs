@@ -21,7 +21,7 @@ mod tests {
 
         for ((arr, pieces), expected) in test_cases {
             assert_eq!(
-                S::can_form_array(arr.to_vec(), pieces.iter().copied().map(<[_]>::to_vec).collect()),
+                S::can_form_array(arr.to_vec(), pieces.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }

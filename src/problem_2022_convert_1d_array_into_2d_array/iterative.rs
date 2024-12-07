@@ -10,7 +10,7 @@ impl Solution {
         let mut result = Vec::new();
 
         if m * n == original.len() {
-            result.extend(original.chunks_exact(n).map(<[_]>::to_vec));
+            result.extend(original.chunks_exact(n).map(Vec::from));
         }
 
         result

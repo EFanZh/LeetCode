@@ -16,7 +16,7 @@ mod tests {
 
         for (rooms, expected) in test_cases {
             assert_eq!(
-                S::can_visit_all_rooms(rooms.iter().copied().map(<[_]>::to_vec).collect()),
+                S::can_visit_all_rooms(rooms.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }

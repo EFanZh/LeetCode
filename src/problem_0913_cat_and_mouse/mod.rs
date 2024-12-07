@@ -37,7 +37,7 @@ mod tests {
 
         for (graph, expected) in test_cases {
             assert_eq!(
-                S::cat_mouse_game(graph.iter().copied().map(<[_]>::to_vec).collect()),
+                S::cat_mouse_game(graph.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }

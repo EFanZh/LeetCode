@@ -39,7 +39,7 @@ mod tests {
 
         for (hats, expected) in test_cases {
             assert_eq!(
-                S::number_ways(hats.iter().copied().map(<[_]>::to_vec).collect()),
+                S::number_ways(hats.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }
