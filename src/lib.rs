@@ -1671,6 +1671,7 @@ pub mod problem_2235_add_two_integers;
 pub mod problem_2236_root_equals_sum_of_children;
 pub mod problem_2239_find_closest_number_to_zero;
 pub mod problem_2241_design_an_atm_machine;
+pub mod problem_2242_maximum_score_of_a_node_sequence;
 pub mod problem_2243_calculate_digit_sum_of_a_string;
 pub mod problem_2244_minimum_rounds_to_complete_all_tasks;
 pub mod problem_2245_maximum_trailing_zeros_in_a_cornered_path;
