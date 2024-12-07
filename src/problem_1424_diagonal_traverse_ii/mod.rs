@@ -23,7 +23,7 @@ mod tests {
 
         for (nums, expected) in test_cases {
             assert_eq!(
-                S::find_diagonal_order(nums.iter().copied().map(<[_]>::to_vec).collect()),
+                S::find_diagonal_order(nums.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }

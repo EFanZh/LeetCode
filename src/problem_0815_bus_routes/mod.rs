@@ -157,7 +157,7 @@ mod tests {
     pub fn run<S: Solution>() {
         for ((routes, source, target), expected) in TEST_CASES {
             assert_eq!(
-                S::num_buses_to_destination(routes.iter().copied().map(<[_]>::to_vec).collect(), source, target),
+                S::num_buses_to_destination(routes.iter().copied().map(Vec::from).collect(), source, target),
                 expected,
             );
         }

@@ -17,7 +17,7 @@ mod tests {
 
         for ((packages, boxes), expected) in test_cases {
             assert_eq!(
-                S::min_wasted_space(packages.to_vec(), boxes.iter().copied().map(<[_]>::to_vec).collect()),
+                S::min_wasted_space(packages.to_vec(), boxes.iter().copied().map(Vec::from).collect()),
                 expected,
             );
         }

@@ -24,7 +24,7 @@ mod tests {
 
         for ((groups, nums), expected) in test_cases {
             assert_eq!(
-                S::can_choose(groups.iter().copied().map(<[_]>::to_vec).collect(), nums.to_vec()),
+                S::can_choose(groups.iter().copied().map(Vec::from).collect(), nums.to_vec()),
                 expected,
             );
         }
