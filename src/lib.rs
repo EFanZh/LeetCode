@@ -1730,6 +1730,7 @@ pub mod problem_2318_number_of_distinct_roll_sequences;
 pub mod problem_2319_check_if_matrix_is_x_matrix;
 pub mod problem_2320_count_number_of_ways_to_place_houses;
 pub mod problem_2321_maximum_score_of_spliced_array;
+pub mod problem_2322_minimum_score_after_removals_on_a_tree;
 pub mod problem_2325_decode_the_message;
 pub mod problem_2326_spiral_matrix_iv;
 pub mod problem_2327_number_of_people_aware_of_a_secret;
