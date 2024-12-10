@@ -1748,6 +1748,7 @@ pub mod problem_2349_design_a_number_container_system;
 pub mod problem_2351_first_letter_to_appear_twice;
 pub mod problem_2352_equal_row_and_column_pairs;
 pub mod problem_2353_design_a_food_rating_system;
+pub mod problem_2357_make_array_zero_by_subtracting_equal_amounts;
 
 #[cfg(test)]
 mod test_utilities;
