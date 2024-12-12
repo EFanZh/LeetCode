@@ -38,10 +38,7 @@ mod tests {
         ];
 
         for (hats, expected) in test_cases {
-            assert_eq!(
-                S::number_ways(hats.iter().copied().map(Vec::from).collect()),
-                expected,
-            );
+            assert_eq!(S::number_ways(hats.iter().copied().map(Vec::from).collect()), expected);
         }
     }
 }
