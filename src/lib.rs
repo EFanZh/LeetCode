@@ -1753,6 +1753,7 @@ pub mod problem_2353_design_a_food_rating_system;
 pub mod problem_2357_make_array_zero_by_subtracting_equal_amounts;
 pub mod problem_2358_maximum_number_of_groups_entering_a_competition;
 pub mod problem_2360_longest_cycle_in_a_graph;
+pub mod problem_2363_merge_similar_items;
 
 #[cfg(test)]
 mod test_utilities;
