@@ -1757,6 +1757,7 @@ pub mod problem_2358_maximum_number_of_groups_entering_a_competition;
 pub mod problem_2360_longest_cycle_in_a_graph;
 pub mod problem_2363_merge_similar_items;
 pub mod problem_2364_count_number_of_bad_pairs;
+pub mod problem_2365_task_scheduler_ii;
 
 #[cfg(test)]
 mod test_utilities;
