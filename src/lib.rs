@@ -1740,6 +1740,7 @@ pub mod problem_2333_minimum_sum_of_squared_difference;
 pub mod problem_2335_minimum_amount_of_time_to_fill_cups;
 pub mod problem_2336_smallest_number_in_infinite_set;
 pub mod problem_2337_move_pieces_to_obtain_a_string;
+pub mod problem_2338_count_the_number_of_ideal_arrays;
 pub mod problem_2341_maximum_number_of_pairs_in_array;
 pub mod problem_2342_max_sum_of_a_pair_with_equal_sum_of_digits;
 pub mod problem_2343_query_kth_smallest_trimmed_number;
