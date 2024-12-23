@@ -1761,6 +1761,7 @@ pub mod problem_2363_merge_similar_items;
 pub mod problem_2364_count_number_of_bad_pairs;
 pub mod problem_2365_task_scheduler_ii;
 pub mod problem_2366_minimum_replacements_to_sort_the_array;
+pub mod problem_2367_number_of_arithmetic_triplets;
 
 #[cfg(test)]
 mod test_utilities;
