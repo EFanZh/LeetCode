@@ -1763,6 +1763,7 @@ pub mod problem_2365_task_scheduler_ii;
 pub mod problem_2366_minimum_replacements_to_sort_the_array;
 pub mod problem_2367_number_of_arithmetic_triplets;
 pub mod problem_2368_reachable_nodes_with_restrictions;
+pub mod problem_2369_check_if_there_is_a_valid_partition_for_the_array;
 pub mod problem_2370_longest_ideal_subsequence;
 
 #[cfg(test)]
