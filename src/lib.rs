@@ -1765,6 +1765,7 @@ pub mod problem_2367_number_of_arithmetic_triplets;
 pub mod problem_2368_reachable_nodes_with_restrictions;
 pub mod problem_2369_check_if_there_is_a_valid_partition_for_the_array;
 pub mod problem_2370_longest_ideal_subsequence;
+pub mod problem_2373_largest_local_values_in_a_matrix;
 
 #[cfg(test)]
 mod test_utilities;
