@@ -1766,6 +1766,7 @@ pub mod problem_2368_reachable_nodes_with_restrictions;
 pub mod problem_2369_check_if_there_is_a_valid_partition_for_the_array;
 pub mod problem_2370_longest_ideal_subsequence;
 pub mod problem_2373_largest_local_values_in_a_matrix;
+pub mod problem_2374_node_with_highest_edge_score;
 
 #[cfg(test)]
 mod test_utilities;
