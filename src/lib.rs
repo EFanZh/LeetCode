@@ -1770,6 +1770,7 @@ pub mod problem_2373_largest_local_values_in_a_matrix;
 pub mod problem_2374_node_with_highest_edge_score;
 pub mod problem_2379_minimum_recolors_to_get_k_consecutive_black_blocks;
 pub mod problem_2380_time_needed_to_rearrange_a_binary_string;
+pub mod problem_2381_shifting_letters_ii;
 
 #[cfg(test)]
 mod test_utilities;
