@@ -1772,6 +1772,7 @@ pub mod problem_2375_construct_smallest_number_from_di_string;
 pub mod problem_2379_minimum_recolors_to_get_k_consecutive_black_blocks;
 pub mod problem_2380_time_needed_to_rearrange_a_binary_string;
 pub mod problem_2381_shifting_letters_ii;
+pub mod problem_2382_maximum_segment_sum_after_removals;
 
 #[cfg(test)]
 mod test_utilities;
