@@ -1773,6 +1773,7 @@ pub mod problem_2379_minimum_recolors_to_get_k_consecutive_black_blocks;
 pub mod problem_2380_time_needed_to_rearrange_a_binary_string;
 pub mod problem_2381_shifting_letters_ii;
 pub mod problem_2382_maximum_segment_sum_after_removals;
+pub mod problem_2383_minimum_hours_of_training_to_win_a_competition;
 
 #[cfg(test)]
 mod test_utilities;
