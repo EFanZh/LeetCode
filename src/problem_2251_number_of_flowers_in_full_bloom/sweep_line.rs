@@ -84,7 +84,7 @@ mod tests {
     use super::Event;
 
     #[test]
-    fn test_item_partial_eq() {
+    fn test_event_partial_eq() {
         assert!(
             Event {
                 time_and_type: 2,
