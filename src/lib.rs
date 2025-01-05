@@ -1769,6 +1769,7 @@ pub mod problem_2370_longest_ideal_subsequence;
 pub mod problem_2373_largest_local_values_in_a_matrix;
 pub mod problem_2374_node_with_highest_edge_score;
 pub mod problem_2375_construct_smallest_number_from_di_string;
+pub mod problem_2376_count_special_integers;
 pub mod problem_2379_minimum_recolors_to_get_k_consecutive_black_blocks;
 pub mod problem_2380_time_needed_to_rearrange_a_binary_string;
 pub mod problem_2381_shifting_letters_ii;
