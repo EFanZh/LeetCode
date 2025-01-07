@@ -16,6 +16,8 @@ jobs:
     clippy:
         runs-on: ${{ matrix.os }}
         steps:
+          - if: ${{ matrix.os == 'ubuntu-latest' }}
+            run: sudo apt-get install --no-install-recommends libfontconfig-dev
           - uses: actions/checkout@v4
           - run: rustup update
           - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
@@ -28,6 +30,8 @@ jobs:
     tests:
         runs-on: ${{ matrix.os }}
         steps:
+          - if: ${{ matrix.os == 'ubuntu-latest' }}
+            run: sudo apt-get install --no-install-recommends libfontconfig-dev
           - uses: actions/checkout@v4
           - run: rustup update
           - run: cargo test --workspace
