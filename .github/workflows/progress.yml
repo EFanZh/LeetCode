@@ -4,6 +4,7 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
+          - run: sudo apt-get install --no-install-recommends libfontconfig-dev
           - uses: actions/checkout@v4
             with:
                 fetch-depth: 0

@@ -12,7 +12,7 @@
 namespace leet_code::test_utilities {
 template <class C>
 std::tuple<std::vector<std::unique_ptr<data_structures::list_node::ListNode>>, data_structures::list_node::ListNode *>
-make_list(C &&values) {
+make_list(const C &values) {
     using data_structures::list_node::ListNode;
     using std::unique_ptr;
     using std::vector;
@@ -24,7 +24,7 @@ make_list(C &&values) {
     auto *head = static_cast<ListNode *>(nullptr);
     auto *tail = &head;
 
-    for (const auto &value : values) {
+    for (const auto value : values) {
         *tail = buffer.emplace_back(std::make_unique<ListNode>(value)).get();
         tail = &(*tail)->next;
     }
@@ -33,7 +33,7 @@ make_list(C &&values) {
 }
 
 template <class T, class C>
-std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(C &&values) {
+std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(const C &values) {
     using std::deque;
     using std::unique_ptr;
     using std::vector;
@@ -44,7 +44,7 @@ std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(C &&values) {
     const auto it_end = std::cend(values);
 
     if (it != it_end) {
-        root = buffer.emplace_back(std::make_unique<T>(**it)).get();
+        root = buffer.emplace_back(std::make_unique<T>(**it)).get(); // NOLINT(bugprone-unchecked-optional-access)
 
         ++it;
 
@@ -52,10 +52,14 @@ std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(C &&values) {
         auto *target = root;
 
         for (; it != it_end; ++it) {
-            if (*it) {
-                target->left = buffer.emplace_back(std::make_unique<T>(**it)).get();
+            {
+                const auto value = *it;
 
-                queue.emplace_back(target->left);
+                if (value) {
+                    target->left = buffer.emplace_back(std::make_unique<T>(*value)).get();
+
+                    queue.emplace_back(target->left);
+                }
             }
 
             ++it;
@@ -64,10 +68,14 @@ std::tuple<std::vector<std::unique_ptr<T>>, T *> make_tree(C &&values) {
                 break;
             }
 
-            if (*it) {
-                target->right = buffer.emplace_back(std::make_unique<T>(**it)).get();
+            {
+                const auto value = *it;
 
-                queue.emplace_back(target->right);
+                if (value) {
+                    target->right = buffer.emplace_back(std::make_unique<T>(*value)).get();
+
+                    queue.emplace_back(target->right);
+                }
             }
 
             target = queue.front();
