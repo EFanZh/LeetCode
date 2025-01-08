@@ -1777,6 +1777,7 @@ pub mod problem_2382_maximum_segment_sum_after_removals;
 pub mod problem_2383_minimum_hours_of_training_to_win_a_competition;
 pub mod problem_2384_largest_palindromic_number;
 pub mod problem_2385_amount_of_time_for_binary_tree_to_be_infected;
+pub mod problem_2386_find_the_k_sum_of_an_array;
 
 #[cfg(test)]
 mod test_utilities;
