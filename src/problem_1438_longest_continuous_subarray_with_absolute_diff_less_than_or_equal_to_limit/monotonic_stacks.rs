@@ -12,13 +12,13 @@ impl Solution {
         let mut result = 0;
 
         for &num in &nums {
-            while min_stack.back().map_or(false, |&item| item > num) {
+            while min_stack.back().is_some_and(|&item| item > num) {
                 min_stack.pop_back();
             }
 
             min_stack.push_back(num);
 
-            while max_stack.back().map_or(false, |&item| item < num) {
+            while max_stack.back().is_some_and(|&item| item < num) {
                 max_stack.pop_back();
             }
 

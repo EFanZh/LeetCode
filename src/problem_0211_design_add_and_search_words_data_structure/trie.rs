@@ -28,7 +28,7 @@ impl WordDictionary {
                 .get(first.wrapping_sub(b'a') as usize)
                 .map(Option::as_deref)
             {
-                child_slot.map_or(false, |child| child.search_helper(rest))
+                child_slot.is_some_and(|child| child.search_helper(rest))
             } else {
                 for child in self.children.iter().filter_map(Option::as_deref) {
                     if child.search_helper(rest) {

@@ -38,7 +38,7 @@ impl MagicDictionary {
     }
 
     fn search(&self, search_word: String) -> bool {
-        self.keys.get(&search_word.len()).map_or(false, |keys| {
+        self.keys.get(&search_word.len()).is_some_and(|keys| {
             let search_word = search_word.into_bytes();
             let mut buffer = search_word[1..].to_vec().into_boxed_slice();
 

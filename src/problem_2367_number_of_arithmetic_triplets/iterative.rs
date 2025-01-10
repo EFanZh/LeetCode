@@ -13,7 +13,7 @@ impl Solution {
 
             result += i32::from(
                 seen.get((num - double_diff) as usize)
-                    .map_or(false, |&first| first && seen[(num - diff) as usize]),
+                    .is_some_and(|&first| first && seen[(num - diff) as usize]),
             );
         }
 

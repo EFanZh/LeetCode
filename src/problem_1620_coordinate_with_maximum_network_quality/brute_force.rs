@@ -8,7 +8,10 @@ impl Solution {
 
         let radius = radius as u16;
         let radius_squared = radius * radius;
+
+        #[expect(clippy::large_stack_arrays, reason = "by-design")]
         let mut multipliers = [0_f64; N * N];
+
         let radius_plus_1 = radius + 1;
 
         for x in 0..radius_plus_1 {

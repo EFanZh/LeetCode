@@ -69,12 +69,12 @@ impl MagicDictionary {
     fn search(&self, search_word: String) -> bool {
         let search_word = search_word.into_bytes();
 
-        self.roots.get(&search_word.len()).map_or(false, |root| {
+        self.roots.get(&search_word.len()).is_some_and(|root| {
             search_word.iter().enumerate().any(|(i, c)| {
                 root.get(&search_word[..i])
                     .and_then(|node| node.get(&search_word[i + 1..]))
                     .and_then(|node| node.removed.get(i))
-                    .map_or(false, |removed| {
+                    .is_some_and(|removed| {
                         if removed.contains(c) {
                             removed.len() > 1
                         } else {

@@ -35,7 +35,7 @@ impl Solution {
         for boxes in boxes {
             let boxes = Self::sort_as_u32(boxes);
 
-            if boxes.last().map_or(false, |&box_size| box_size >= max_package) {
+            if boxes.last().is_some_and(|&box_size| box_size >= max_package) {
                 let mut used = 0;
                 let mut prev_count = 0;
 

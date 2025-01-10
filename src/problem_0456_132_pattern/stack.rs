@@ -6,7 +6,7 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn find132pattern(nums: Vec<i32>) -> bool {
-        nums.split_first().map_or(false, |(&first, rest)| {
+        nums.split_first().is_some_and(|(&first, rest)| {
             let mut min = first;
             let mut stack = Vec::with_capacity(nums.len() / 2);
 

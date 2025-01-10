@@ -23,7 +23,7 @@ impl Solution {
                 }
             };
 
-            while queue.back().map_or(false, |back| back.1 <= current_cost) {
+            while queue.back().is_some_and(|back| back.1 <= current_cost) {
                 queue.pop_back();
             }
 

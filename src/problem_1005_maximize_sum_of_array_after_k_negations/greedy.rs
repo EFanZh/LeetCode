@@ -22,7 +22,7 @@ impl Solution {
             result += x;
         }
 
-        if k.checked_sub(i).map_or(false, |extra| extra % 2 != 0) {
+        if k.checked_sub(i).is_some_and(|extra| extra % 2 != 0) {
             if let Some(&left_min) = left.last() {
                 if let Some(&right_min) = right.first() {
                     result -= (-left_min).min(right_min) * 2;

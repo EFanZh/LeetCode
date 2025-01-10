@@ -11,7 +11,7 @@ impl Solution {
         while let Some(&c) = s.get(i) {
             i += 1;
 
-            if s.get(stack_length.wrapping_sub(1)).map_or(false, |&prev| prev == c) {
+            if s.get(stack_length.wrapping_sub(1)).is_some_and(|&prev| prev == c) {
                 stack_length -= 1;
             } else {
                 s[stack_length] = c;

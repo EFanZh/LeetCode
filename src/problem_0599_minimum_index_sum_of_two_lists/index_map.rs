@@ -35,7 +35,7 @@ impl Solution {
         let mut i = 0;
 
         list2.retain(|name| {
-            let result = i <= min_sum && indices.get(name).map_or(false, |j| i + j == min_sum);
+            let result = i <= min_sum && indices.get(name).is_some_and(|j| i + j == min_sum);
 
             i += 1;
 

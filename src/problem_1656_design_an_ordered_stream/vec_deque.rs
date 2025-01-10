@@ -28,7 +28,7 @@ impl OrderedStream {
             loop {
                 self.start += 1;
 
-                if self.queue.front().map_or(false, Option::is_some) {
+                if self.queue.front().is_some_and(Option::is_some) {
                     result.push(self.queue.pop_front().unwrap().unwrap());
                 } else {
                     break;

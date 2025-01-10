@@ -15,7 +15,7 @@ impl Solution {
     }
 
     fn has_columns(mut rows: IntoIter<Vec<i32>>, column: usize, target: i32) -> bool {
-        rows.next().map_or(false, |first_row| {
+        rows.next().is_some_and(|first_row| {
             let value = first_row[column];
 
             Self::dispatch(first_row, rows, column, target, value)
@@ -35,7 +35,7 @@ impl Solution {
             .first()
             .map_or(0, Vec::len)
             .checked_sub(1)
-            .map_or(false, |column| Self::has_columns(matrix.into_iter(), column, target))
+            .is_some_and(|column| Self::has_columns(matrix.into_iter(), column, target))
     }
 }
 

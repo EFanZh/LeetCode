@@ -12,7 +12,7 @@ impl Solution {
         let (left, right) = nums.split_at(k);
 
         for &num in left {
-            while queue.back().map_or(false, |&back| back < num) {
+            while queue.back().is_some_and(|&back| back < num) {
                 queue.pop_back();
             }
 
@@ -26,7 +26,7 @@ impl Solution {
                 queue.pop_front();
             }
 
-            while queue.back().map_or(false, |&back| back < num) {
+            while queue.back().is_some_and(|&back| back < num) {
                 queue.pop_back();
             }
 

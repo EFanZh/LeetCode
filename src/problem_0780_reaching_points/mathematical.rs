@@ -11,7 +11,7 @@ impl Solution {
         loop {
             match tx.cmp(&sx) {
                 Ordering::Less => return false,
-                Ordering::Equal => return ty.checked_sub(sy).map_or(false, |diff| diff % sx == 0),
+                Ordering::Equal => return ty.checked_sub(sy).is_some_and(|diff| diff % sx == 0),
                 Ordering::Greater => {
                     let (source_x, source_y, target_x, target_y) = (sy, sx, ty % tx, tx);
 

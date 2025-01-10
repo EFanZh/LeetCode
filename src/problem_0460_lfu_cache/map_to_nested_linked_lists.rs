@@ -183,7 +183,7 @@ impl LFUCache {
             if self
                 .block_memory
                 .get(next_block_index)
-                .map_or(false, |next_block| next_block.frequency == frequency + 1)
+                .is_some_and(|next_block| next_block.frequency == frequency + 1)
             {
                 // Move the node into the next block, then remove the current block.
 
@@ -218,7 +218,7 @@ impl LFUCache {
             if self
                 .block_memory
                 .get(next_block_index)
-                .map_or(false, |next_block| next_block.frequency == frequency + 1)
+                .is_some_and(|next_block| next_block.frequency == frequency + 1)
             {
                 // Insert node into the next block.
 

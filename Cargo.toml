@@ -57,6 +57,7 @@ format_push_string = "warn"
 get_unwrap = "warn"
 if_then_some_else_none = "warn"
 imprecise_flops = "warn"
+large_stack_arrays = "allow" # TODO remove when https://github.com/rust-lang/rust-clippy/issues/13774 is fixed
 iter_on_empty_collections = "warn"
 iter_on_single_items = "warn"
 iter_with_drain = "warn"
