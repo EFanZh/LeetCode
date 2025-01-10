@@ -18,7 +18,7 @@ impl Solution {
             if let Some(index) = indices[digit].pop_front() {
                 if indices[..digit]
                     .iter()
-                    .any(|indices| indices.front().map_or(false, |&index_2| index_2 < index))
+                    .any(|indices| indices.front().is_some_and(|&index_2| index_2 < index))
                 {
                     return false;
                 }

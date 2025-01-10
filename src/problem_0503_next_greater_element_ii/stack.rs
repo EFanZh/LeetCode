@@ -9,7 +9,7 @@ impl Solution {
         let mut stack = Vec::with_capacity(nums.len());
 
         for &num in nums.iter().rev() {
-            while stack.last().map_or(false, |&top| top <= num) {
+            while stack.last().is_some_and(|&top| top <= num) {
                 stack.pop();
             }
 

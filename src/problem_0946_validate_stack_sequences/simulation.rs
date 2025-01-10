@@ -11,7 +11,7 @@ impl Solution {
         for expected in popped {
             if pushed
                 .get(stack_length.wrapping_sub(1))
-                .map_or(false, |&last| last == expected)
+                .is_some_and(|&last| last == expected)
             {
                 stack_length -= 1;
             } else {

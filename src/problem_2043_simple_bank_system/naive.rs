@@ -35,7 +35,7 @@ impl Bank {
     fn deposit(&mut self, account: i32, money: i64) -> bool {
         self.balance
             .get_mut((account as u32 as usize).wrapping_sub(1))
-            .map_or(false, |value| {
+            .is_some_and(|value| {
                 *value += money;
 
                 true

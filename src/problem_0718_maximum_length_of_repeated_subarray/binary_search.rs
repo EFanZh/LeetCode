@@ -74,7 +74,7 @@ impl Solution {
         });
 
         let result = Self::rolling_hash(nums2, length, h, |hash, slice| {
-            buckets_buffer.get(&hash).map_or(false, |v| v.contains(&slice))
+            buckets_buffer.get(&hash).is_some_and(|v| v.contains(&slice))
         });
 
         for (_, mut bucket) in buckets_buffer.drain() {

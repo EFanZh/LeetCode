@@ -77,7 +77,7 @@ impl MagicDictionary {
             root.get(&search_word[..i])
                 .and_then(|node| node.get(&search_word[i + 1..]))
                 .and_then(|node| node.removed.get(i))
-                .map_or(false, |removed| {
+                .is_some_and(|removed| {
                     if removed.contains(c) {
                         removed.len() > 1
                     } else {

@@ -5,6 +5,8 @@ pub struct Solution;
 impl Solution {
     pub fn count_triplets(nums: Vec<i32>) -> i32 {
         let nums = || nums.iter().map(|&num| num as u16);
+
+        #[expect(clippy::large_stack_arrays, reason = "by-design")]
         let mut counts = [0_u32; 65536];
 
         for left in nums() {

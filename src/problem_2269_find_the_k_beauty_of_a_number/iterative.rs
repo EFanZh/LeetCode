@@ -27,7 +27,7 @@ impl Solution {
         let mut result = 0;
 
         loop {
-            if NonZeroU32::new(window).map_or(false, |window| num % window == 0) {
+            if NonZeroU32::new(window).is_some_and(|window| num % window == 0) {
                 result += 1;
             }
 

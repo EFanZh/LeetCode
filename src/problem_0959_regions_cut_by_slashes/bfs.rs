@@ -83,10 +83,10 @@ impl Solution {
                             separator,
                         } in Self::neighbors(node)
                         {
-                            if grid.get(grid_position.0).map_or(false, |row| {
+                            if grid.get(grid_position.0).is_some_and(|row| {
                                 row.as_bytes()
                                     .get(grid_position.1)
-                                    .map_or(false, |&cell| cell != separator)
+                                    .is_some_and(|&cell| cell != separator)
                             }) {
                                 if let value @ false = &mut visited[columns * position.0 + position.1] {
                                     *value = true;

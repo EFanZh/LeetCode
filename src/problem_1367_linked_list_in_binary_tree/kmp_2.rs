@@ -56,11 +56,11 @@ impl Solution {
             || node
                 .left
                 .as_deref()
-                .map_or(false, |left| Self::helper(left, list_and_prefix_function, matched))
+                .is_some_and(|left| Self::helper(left, list_and_prefix_function, matched))
             || node
                 .right
                 .as_deref()
-                .map_or(false, |right| Self::helper(right, list_and_prefix_function, matched))
+                .is_some_and(|right| Self::helper(right, list_and_prefix_function, matched))
     }
 
     pub fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {

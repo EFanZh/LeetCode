@@ -55,7 +55,7 @@ impl Solution {
                             num_minus_min % interval == 0
                                 && seen
                                     .get_mut((num_minus_min / interval) as usize)
-                                    .map_or(false, |seen_value| !mem::replace(seen_value, true))
+                                    .is_some_and(|seen_value| !mem::replace(seen_value, true))
                         });
 
                         seen.clear();

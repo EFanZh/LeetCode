@@ -34,8 +34,13 @@ impl Solution {
     pub fn minimum_incompatibility(nums: Vec<i32>, k: i32) -> i32 {
         let (nums, n) = Self::normalize_nums(nums);
         let total_bits = if n < 16 { (1_u16 << n) - 1 } else { u16::MAX };
+
+        #[expect(clippy::large_stack_arrays, reason = "by-design")]
         let mut cache = [0_u8; 65536];
+
+        #[expect(clippy::large_stack_arrays, reason = "by-design")]
         let mut set_incompatibility = [u8::MAX; 65536];
+
         let set_size = n / k as u8;
 
         Self::combinations(0, total_bits, n, set_size, &mut |bits| {

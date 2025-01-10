@@ -17,10 +17,10 @@ impl Solution {
     fn is_ip_v4(ip: &[u8]) -> bool {
         let mut iter = ip.split(|&c| c == b'.');
 
-        iter.next().map_or(false, Self::is_ip_v4_component)
-            && iter.next().map_or(false, Self::is_ip_v4_component)
-            && iter.next().map_or(false, Self::is_ip_v4_component)
-            && iter.next().map_or(false, Self::is_ip_v4_component)
+        iter.next().is_some_and(Self::is_ip_v4_component)
+            && iter.next().is_some_and(Self::is_ip_v4_component)
+            && iter.next().is_some_and(Self::is_ip_v4_component)
+            && iter.next().is_some_and(Self::is_ip_v4_component)
             && iter.next().is_none()
     }
 
@@ -31,14 +31,14 @@ impl Solution {
     fn is_ip_v6(ip: &[u8]) -> bool {
         let mut iter = ip.split(|&c| c == b':');
 
-        iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
-            && iter.next().map_or(false, Self::is_ip_v6_component)
+        iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
+            && iter.next().is_some_and(Self::is_ip_v6_component)
             && iter.next().is_none()
     }
 

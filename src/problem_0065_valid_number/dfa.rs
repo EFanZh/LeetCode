@@ -8,7 +8,7 @@ impl Solution {
     // \s*[+-]?(\d+\.?|\.\d)\d*(e[+-]?\d+)?\s*
 
     fn start(mut iter: IntoIter<u8>) -> bool {
-        iter.next().map_or(false, |c| match c {
+        iter.next().is_some_and(|c| match c {
             b' ' => Self::start(iter),
             b'+' | b'-' => Self::number_without_sign(iter),
             b'.' => Self::fractional_part(iter),
@@ -20,7 +20,7 @@ impl Solution {
     // (\d+\.?|\.\d)\d*(e[+-]?\d+)?\s*
 
     fn number_without_sign(mut iter: IntoIter<u8>) -> bool {
-        iter.next().map_or(false, |c| match c {
+        iter.next().is_some_and(|c| match c {
             b'.' => Self::fractional_part(iter),
             b'0'..=b'9' => Self::number_with_optional_fractional_part(iter),
             _ => false,
@@ -30,7 +30,7 @@ impl Solution {
     // \d+(e[+-]?\d+)?\s*
 
     fn fractional_part(mut iter: IntoIter<u8>) -> bool {
-        iter.next().map_or(false, |c| match c {
+        iter.next().is_some_and(|c| match c {
             b'0'..=b'9' => Self::optional_fractional_part(iter),
             _ => false,
         })
@@ -62,7 +62,7 @@ impl Solution {
     // [+-]?\d+\s*
 
     fn exponential_part(mut iter: IntoIter<u8>) -> bool {
-        iter.next().map_or(false, |c| match c {
+        iter.next().is_some_and(|c| match c {
             b'+' | b'-' => Self::exponent(iter),
             b'0'..=b'9' => Self::optional_exponent(iter),
             _ => false,
@@ -72,7 +72,7 @@ impl Solution {
     // \d+\s*
 
     fn exponent(mut iter: IntoIter<u8>) -> bool {
-        iter.next().map_or(false, |c| match c {
+        iter.next().is_some_and(|c| match c {
             b'0'..=b'9' => Self::optional_exponent(iter),
             _ => false,
         })

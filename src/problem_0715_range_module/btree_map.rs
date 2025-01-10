@@ -57,7 +57,7 @@ impl RangeModule {
         self.ranges
             .range(..=left)
             .next_back()
-            .map_or(false, |(_, &last_right)| last_right >= right)
+            .is_some_and(|(_, &last_right)| last_right >= right)
     }
 
     fn remove_range(&mut self, left: i32, right: i32) {

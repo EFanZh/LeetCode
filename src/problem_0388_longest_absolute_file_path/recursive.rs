@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn helper(input: &mut &[u8], depth: usize, parent_length: usize, result: &mut usize) {
-        while input.get(..depth).map_or(false, |s| s.iter().all(|&c| c == b'\t')) {
+        while input.get(..depth).is_some_and(|s| s.iter().all(|&c| c == b'\t')) {
             if let Some(name_length) = input[depth..].iter().position(|&c| c == b'\n') {
                 if input[depth..depth + name_length].contains(&b'.') {
                     *input = &input[depth + name_length + 1..];

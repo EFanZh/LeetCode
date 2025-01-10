@@ -10,7 +10,7 @@ impl Solution {
 
         while let Some(&c) = s.get(i) {
             if s.get(stack_length.wrapping_sub(1))
-                .map_or(false, |&top| matches!(c.wrapping_sub(top), 32 | 224))
+                .is_some_and(|&top| matches!(c.wrapping_sub(top), 32 | 224))
             {
                 stack_length -= 1;
             } else {

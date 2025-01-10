@@ -96,7 +96,7 @@ impl Solution {
         let (&digit_1, rest) = num.split_first().unwrap();
 
         Self::iter_integer_prefixes(digit_1, rest, |first, s| {
-            s.split_first().map_or(false, |(&digit_2, rest)| {
+            s.split_first().is_some_and(|(&digit_2, rest)| {
                 result.push(first);
 
                 let success = Self::iter_integer_prefixes(digit_2, rest, |second, s| {
