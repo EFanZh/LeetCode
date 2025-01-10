@@ -1779,6 +1779,7 @@ pub mod problem_2384_largest_palindromic_number;
 pub mod problem_2385_amount_of_time_for_binary_tree_to_be_infected;
 pub mod problem_2386_find_the_k_sum_of_an_array;
 pub mod problem_2389_longest_subsequence_with_limited_sum;
+pub mod problem_2390_removing_stars_from_a_string;
 
 #[cfg(test)]
 mod test_utilities;
