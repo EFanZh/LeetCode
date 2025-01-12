@@ -1781,6 +1781,7 @@ pub mod problem_2386_find_the_k_sum_of_an_array;
 pub mod problem_2389_longest_subsequence_with_limited_sum;
 pub mod problem_2390_removing_stars_from_a_string;
 pub mod problem_2391_minimum_amount_of_time_to_collect_garbage;
+pub mod problem_2392_build_a_matrix_with_conditions;
 
 #[cfg(test)]
 mod test_utilities;
