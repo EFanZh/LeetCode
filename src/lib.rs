@@ -1782,6 +1782,7 @@ pub mod problem_2389_longest_subsequence_with_limited_sum;
 pub mod problem_2390_removing_stars_from_a_string;
 pub mod problem_2391_minimum_amount_of_time_to_collect_garbage;
 pub mod problem_2392_build_a_matrix_with_conditions;
+pub mod problem_2395_find_subarrays_with_equal_sum;
 
 #[cfg(test)]
 mod test_utilities;
