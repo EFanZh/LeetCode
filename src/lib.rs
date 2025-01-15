@@ -1784,6 +1784,7 @@ pub mod problem_2391_minimum_amount_of_time_to_collect_garbage;
 pub mod problem_2392_build_a_matrix_with_conditions;
 pub mod problem_2395_find_subarrays_with_equal_sum;
 pub mod problem_2396_strictly_palindromic_number;
+pub mod problem_2397_maximum_rows_covered_by_columns;
 
 #[cfg(test)]
 mod test_utilities;
