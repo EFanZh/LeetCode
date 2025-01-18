@@ -1785,6 +1785,7 @@ pub mod problem_2392_build_a_matrix_with_conditions;
 pub mod problem_2395_find_subarrays_with_equal_sum;
 pub mod problem_2396_strictly_palindromic_number;
 pub mod problem_2397_maximum_rows_covered_by_columns;
+pub mod problem_2398_maximum_number_of_robots_within_budget;
 pub mod problem_2399_check_distances_between_same_letters;
 pub mod problem_2400_number_of_ways_to_reach_a_position_after_exactly_k_steps;
 
