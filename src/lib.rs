@@ -1790,6 +1790,7 @@ pub mod problem_2399_check_distances_between_same_letters;
 pub mod problem_2400_number_of_ways_to_reach_a_position_after_exactly_k_steps;
 pub mod problem_2401_longest_nice_subarray;
 pub mod problem_2402_meeting_rooms_iii;
+pub mod problem_2404_most_frequent_even_element;
 
 #[cfg(test)]
 mod test_utilities;
