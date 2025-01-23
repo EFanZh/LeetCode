@@ -1792,6 +1792,7 @@ pub mod problem_2401_longest_nice_subarray;
 pub mod problem_2402_meeting_rooms_iii;
 pub mod problem_2404_most_frequent_even_element;
 pub mod problem_2405_optimal_partition_of_string;
+pub mod problem_2406_divide_intervals_into_minimum_number_of_groups;
 
 #[cfg(test)]
 mod test_utilities;
