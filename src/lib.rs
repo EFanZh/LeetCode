@@ -1795,6 +1795,7 @@ pub mod problem_2405_optimal_partition_of_string;
 pub mod problem_2406_divide_intervals_into_minimum_number_of_groups;
 pub mod problem_2409_count_days_spent_together;
 pub mod problem_2410_maximum_matching_of_players_with_trainers;
+pub mod problem_2411_smallest_subarrays_with_maximum_bitwise_or;
 
 #[cfg(test)]
 mod test_utilities;
