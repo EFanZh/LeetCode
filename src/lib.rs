@@ -1799,6 +1799,7 @@ pub mod problem_2411_smallest_subarrays_with_maximum_bitwise_or;
 pub mod problem_2412_minimum_money_required_before_transactions;
 pub mod problem_2413_smallest_even_multiple;
 pub mod problem_2414_length_of_the_longest_alphabetical_continuous_substring;
+pub mod problem_2415_reverse_odd_levels_of_binary_tree;
 
 #[cfg(test)]
 mod test_utilities;
