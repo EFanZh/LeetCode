@@ -1801,6 +1801,7 @@ pub mod problem_2413_smallest_even_multiple;
 pub mod problem_2414_length_of_the_longest_alphabetical_continuous_substring;
 pub mod problem_2415_reverse_odd_levels_of_binary_tree;
 pub mod problem_2416_sum_of_prefix_scores_of_strings;
+pub mod problem_2418_sort_the_people;
 
 #[cfg(test)]
 mod test_utilities;
