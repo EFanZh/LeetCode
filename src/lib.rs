@@ -1804,6 +1804,7 @@ pub mod problem_2416_sum_of_prefix_scores_of_strings;
 pub mod problem_2418_sort_the_people;
 pub mod problem_2419_longest_subarray_with_maximum_bitwise_and;
 pub mod problem_2420_find_all_good_indices;
+pub mod problem_2421_number_of_good_paths;
 
 #[cfg(test)]
 mod test_utilities;
