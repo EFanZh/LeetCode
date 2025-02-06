@@ -1806,6 +1806,7 @@ pub mod problem_2419_longest_subarray_with_maximum_bitwise_and;
 pub mod problem_2420_find_all_good_indices;
 pub mod problem_2421_number_of_good_paths;
 pub mod problem_2423_remove_letter_to_equalize_frequency;
+pub mod problem_2425_bitwise_xor_of_all_pairings;
 
 #[cfg(test)]
 mod test_utilities;
