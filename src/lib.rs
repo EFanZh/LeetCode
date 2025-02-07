@@ -1807,6 +1807,7 @@ pub mod problem_2420_find_all_good_indices;
 pub mod problem_2421_number_of_good_paths;
 pub mod problem_2423_remove_letter_to_equalize_frequency;
 pub mod problem_2425_bitwise_xor_of_all_pairings;
+pub mod problem_2427_number_of_common_factors;
 
 #[cfg(test)]
 mod test_utilities;
