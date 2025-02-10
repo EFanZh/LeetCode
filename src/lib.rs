@@ -1810,6 +1810,7 @@ pub mod problem_2425_bitwise_xor_of_all_pairings;
 pub mod problem_2427_number_of_common_factors;
 pub mod problem_2428_maximum_sum_of_an_hourglass;
 pub mod problem_2429_minimize_xor;
+pub mod problem_2432_the_employee_that_worked_on_the_longest_task;
 
 #[cfg(test)]
 mod test_utilities;
