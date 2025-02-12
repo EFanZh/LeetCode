@@ -1812,6 +1812,7 @@ pub mod problem_2428_maximum_sum_of_an_hourglass;
 pub mod problem_2429_minimize_xor;
 pub mod problem_2432_the_employee_that_worked_on_the_longest_task;
 pub mod problem_2433_find_the_original_array_of_prefix_xor;
+pub mod problem_2434_using_a_robot_to_print_the_lexicographically_smallest_string;
 
 #[cfg(test)]
 mod test_utilities;
