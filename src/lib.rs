@@ -1815,6 +1815,7 @@ pub mod problem_2433_find_the_original_array_of_prefix_xor;
 pub mod problem_2434_using_a_robot_to_print_the_lexicographically_smallest_string;
 pub mod problem_2435_paths_in_matrix_whose_sum_is_divisible_by_k;
 pub mod problem_2437_number_of_valid_clock_times;
+pub mod problem_2438_range_product_queries_of_powers;
 
 #[cfg(test)]
 mod test_utilities;
