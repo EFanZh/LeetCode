@@ -1816,6 +1816,7 @@ pub mod problem_2434_using_a_robot_to_print_the_lexicographically_smallest_strin
 pub mod problem_2435_paths_in_matrix_whose_sum_is_divisible_by_k;
 pub mod problem_2437_number_of_valid_clock_times;
 pub mod problem_2438_range_product_queries_of_powers;
+pub mod problem_2441_largest_positive_integer_that_exists_with_its_negative;
 
 #[cfg(test)]
 mod test_utilities;
