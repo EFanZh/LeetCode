@@ -1817,6 +1817,7 @@ pub mod problem_2435_paths_in_matrix_whose_sum_is_divisible_by_k;
 pub mod problem_2437_number_of_valid_clock_times;
 pub mod problem_2438_range_product_queries_of_powers;
 pub mod problem_2441_largest_positive_integer_that_exists_with_its_negative;
+pub mod problem_2442_count_number_of_distinct_integers_after_reverse_operations;
 
 #[cfg(test)]
 mod test_utilities;
