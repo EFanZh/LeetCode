@@ -1819,6 +1819,7 @@ pub mod problem_2438_range_product_queries_of_powers;
 pub mod problem_2441_largest_positive_integer_that_exists_with_its_negative;
 pub mod problem_2442_count_number_of_distinct_integers_after_reverse_operations;
 pub mod problem_2443_sum_of_number_and_its_reverse;
+pub mod problem_2444_count_subarrays_with_fixed_bounds;
 
 #[cfg(test)]
 mod test_utilities;
