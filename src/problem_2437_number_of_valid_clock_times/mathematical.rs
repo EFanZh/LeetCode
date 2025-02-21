@@ -13,21 +13,13 @@ impl Solution {
                 _ => 24,
             }
         } else if h1 == b'?' {
-            if h0 == b'2' {
-                4
-            } else {
-                10
-            }
+            if h0 == b'2' { 4 } else { 10 }
         } else {
             1
         };
 
         let minutes = if m0 == b'?' {
-            if m1 == b'?' {
-                60
-            } else {
-                6
-            }
+            if m1 == b'?' { 60 } else { 6 }
         } else if m1 == b'?' {
             10
         } else {

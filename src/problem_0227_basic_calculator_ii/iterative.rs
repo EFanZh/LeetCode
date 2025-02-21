@@ -61,11 +61,7 @@ impl Solution {
             }
         }
 
-        if op == b'+' {
-            first + second
-        } else {
-            first - second
-        }
+        if op == b'+' { first + second } else { first - second }
     }
 }
 

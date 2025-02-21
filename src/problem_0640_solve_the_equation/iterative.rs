@@ -39,7 +39,7 @@ impl Solution {
             Self::parse_term(input)
         };
 
-        while let Some((&op, rest)) = input.split_first().filter(|(&op, _)| op == b'+' || op == b'-') {
+        while let Some((&op, rest)) = input.split_first().filter(|&(&op, _)| op == b'+' || op == b'-') {
             let ((x, n), rest) = Self::parse_term(rest);
 
             if op == b'+' {

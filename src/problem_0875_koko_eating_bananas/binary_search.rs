@@ -6,11 +6,7 @@ impl Solution {
     fn div_ceil(lhs: u32, rhs: u32) -> u32 {
         let result = lhs / rhs;
 
-        if lhs % rhs == 0 {
-            result
-        } else {
-            result + 1
-        }
+        if lhs % rhs == 0 { result } else { result + 1 }
     }
 
     fn check(piles: &[i32], h: u32, speed: u32) -> bool {

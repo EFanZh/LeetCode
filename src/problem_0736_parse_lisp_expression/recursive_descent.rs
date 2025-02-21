@@ -8,11 +8,7 @@ impl Solution {
     fn symbol(input: &str) -> Option<(&str, &str)> {
         let end = input.find(['(', ')', ' ']).unwrap_or(input.len());
 
-        if end == 0 {
-            None
-        } else {
-            Some(input.split_at(end))
-        }
+        if end == 0 { None } else { Some(input.split_at(end)) }
     }
 
     fn application<'a>(

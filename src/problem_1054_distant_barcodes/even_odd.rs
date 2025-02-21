@@ -17,7 +17,7 @@ impl Solution {
         let i = counts
             .iter()
             .enumerate()
-            .max_by_key(|(_, &(_, count))| count)
+            .max_by_key(|(_, (_, count))| *count)
             .unwrap()
             .0;
 

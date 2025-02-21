@@ -23,6 +23,7 @@ impl Solution {
         }
     }
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         root.map_or(true, |root| {
             let root = root.borrow();

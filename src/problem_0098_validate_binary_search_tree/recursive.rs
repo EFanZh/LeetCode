@@ -8,6 +8,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn is_valid_bst_helper(root: Option<&RefCell<TreeNode>>, min: i64, max: i64) -> bool {
         root.map_or(true, |node| {
             let node = node.borrow();

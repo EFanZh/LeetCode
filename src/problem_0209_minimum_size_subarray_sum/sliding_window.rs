@@ -29,11 +29,7 @@ impl Solution {
             }
         }
 
-        if result == usize::MAX {
-            0
-        } else {
-            result as _
-        }
+        if result == usize::MAX { 0 } else { result as _ }
     }
 }
 

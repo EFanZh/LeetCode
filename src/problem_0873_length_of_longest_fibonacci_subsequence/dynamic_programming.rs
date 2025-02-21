@@ -26,11 +26,7 @@ impl Solution {
 
         let result = lengths.values().copied().max().unwrap();
 
-        if result == 0 {
-            0
-        } else {
-            result + 2
-        }
+        if result == 0 { 0 } else { result + 2 }
     }
 }
 

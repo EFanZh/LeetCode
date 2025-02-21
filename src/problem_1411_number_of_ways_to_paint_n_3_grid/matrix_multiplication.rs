@@ -8,12 +8,12 @@ impl Solution {
     fn matrix_multiplication(lhs: ((u64, u64), (u64, u64)), rhs: ((u64, u64), (u64, u64))) -> ((u64, u64), (u64, u64)) {
         (
             (
-                (lhs.0 .0 * rhs.0 .0 + lhs.0 .1 * rhs.1 .0) % MODULUS,
-                (lhs.0 .0 * rhs.0 .1 + lhs.0 .1 * rhs.1 .1) % MODULUS,
+                (lhs.0.0 * rhs.0.0 + lhs.0.1 * rhs.1.0) % MODULUS,
+                (lhs.0.0 * rhs.0.1 + lhs.0.1 * rhs.1.1) % MODULUS,
             ),
             (
-                (lhs.1 .0 * rhs.0 .0 + lhs.1 .1 * rhs.1 .0) % MODULUS,
-                (lhs.1 .0 * rhs.0 .1 + lhs.1 .1 * rhs.1 .1) % MODULUS,
+                (lhs.1.0 * rhs.0.0 + lhs.1.1 * rhs.1.0) % MODULUS,
+                (lhs.1.0 * rhs.0.1 + lhs.1.1 * rhs.1.1) % MODULUS,
             ),
         )
     }
@@ -33,7 +33,7 @@ impl Solution {
             probe >>= 1;
         }
 
-        (((matrix.0 .0 + matrix.0 .1 + matrix.1 .0 + matrix.1 .1) * 6) % MODULUS) as _
+        (((matrix.0.0 + matrix.0.1 + matrix.1.0 + matrix.1.1) * 6) % MODULUS) as _
     }
 }
 

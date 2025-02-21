@@ -131,7 +131,7 @@ impl State {
 
                     Self {
                         buffer,
-                        sizes: (next_hand_length as u8) << 5 | (board_length as u8),
+                        sizes: ((next_hand_length as u8) << 5) | (board_length as u8),
                     }
                 })
             })

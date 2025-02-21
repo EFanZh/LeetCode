@@ -44,11 +44,7 @@ impl Solution {
 
         let result = lengths.iter().copied().max().unwrap();
 
-        if result == 0 {
-            result
-        } else {
-            result + 2
-        }
+        if result == 0 { result } else { result + 2 }
     }
 }
 

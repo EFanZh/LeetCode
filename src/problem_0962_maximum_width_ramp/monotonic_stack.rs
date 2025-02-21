@@ -6,6 +6,7 @@ impl Solution {
     pub fn max_width_ramp(nums: Vec<i32>) -> i32 {
         let mut stack = Vec::new();
 
+        #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
         for (i, &num) in (0_u32..).zip(&nums) {
             if stack.last().map_or(true, |&(_, top)| num < top) {
                 stack.push((i, num));

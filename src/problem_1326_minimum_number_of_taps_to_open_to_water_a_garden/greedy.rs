@@ -28,11 +28,7 @@ impl Solution {
             max_end_2 = max_end_2.max(end);
         }
 
-        if n <= max_end_1 {
-            result
-        } else {
-            result + 1
-        }
+        if n <= max_end_1 { result } else { result + 1 }
     }
 }
 

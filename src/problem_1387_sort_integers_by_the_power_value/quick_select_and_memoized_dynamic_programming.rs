@@ -39,7 +39,7 @@ impl Solution {
         let mut calculator = PowerCalculator::default();
         let mut elements = (lo..=hi).rev().map(|i| (calculator.get(i), i)).collect::<Vec<_>>();
 
-        elements.select_nth_unstable(k - 1).1 .1 as _
+        elements.select_nth_unstable(k - 1).1.1 as _
     }
 }
 

@@ -84,11 +84,7 @@ impl MajorityChecker {
             let first_index = indices.partition_point(|&i| i < left);
             let count = indices[first_index..].partition_point(|&i| i <= right) as u32;
 
-            if count < threshold {
-                -1
-            } else {
-                state.0
-            }
+            if count < threshold { -1 } else { state.0 }
         }
     }
 }

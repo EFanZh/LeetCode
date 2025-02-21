@@ -71,7 +71,7 @@ impl Rng {
     }
 
     fn random_bool(&mut self) -> bool {
-        self.state.gen()
+        self.state.r#gen()
     }
 }
 

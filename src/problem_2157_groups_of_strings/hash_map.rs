@@ -18,7 +18,7 @@ impl Solution {
             let word = word
                 .into_bytes()
                 .into_iter()
-                .fold(0_u32, |word, c| word | 1 << (c - b'a'));
+                .fold(0_u32, |word, c| word | (1 << (c - b'a')));
 
             match word_ids.entry(word) {
                 Entry::Occupied(entry) => *nodes[usize::from(*entry.get())].0.get_mut() += 1,

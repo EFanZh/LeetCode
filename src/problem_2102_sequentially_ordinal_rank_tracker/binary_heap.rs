@@ -32,7 +32,7 @@ impl SORTracker {
         let item = self
             .head
             .peek_mut()
-            .filter(|top| (score, Reverse(name)) > (top.0 .0, Reverse(top.1)))
+            .filter(|top| (score, Reverse(name)) > (top.0.0, Reverse(top.1)))
             .map_or((score, Reverse(name)), |mut top| {
                 let (old_score, old_name) = mem::replace(&mut *top, (Reverse(score), name));
 

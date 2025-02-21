@@ -1,7 +1,7 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 use std::mem;
 
 const INVALID_HANDLE: usize = usize::MAX;

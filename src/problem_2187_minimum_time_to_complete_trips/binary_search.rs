@@ -54,6 +54,7 @@ impl Solution {
                 (u64::from(sum) + middle / NonZeroU64::from(time)).try_into().ok()
             });
 
+            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
             if trips.map_or(true, |trips| trips >= total_trips) {
                 right = middle;
             } else {

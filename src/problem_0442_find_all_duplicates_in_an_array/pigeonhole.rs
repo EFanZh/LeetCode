@@ -27,11 +27,7 @@ impl Solution {
             .filter_map(|i| {
                 let num = nums[(i - 1) as usize];
 
-                if num == i {
-                    None
-                } else {
-                    Some(num)
-                }
+                if num == i { None } else { Some(num) }
             })
             .collect()
     }

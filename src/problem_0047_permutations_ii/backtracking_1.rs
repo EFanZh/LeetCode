@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 
 impl Solution {
     fn permute_unique_helper(nums: &mut [(i32, i32)], base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {

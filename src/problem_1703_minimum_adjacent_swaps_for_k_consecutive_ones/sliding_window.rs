@@ -73,7 +73,7 @@ impl Solution {
             }
         } else {
             for new_window in iter {
-                cost += new_window.1 - new_window.0 .1;
+                cost += new_window.1 - new_window.0.1;
                 cost -= window.1 - window.0;
 
                 window = new_window.0;

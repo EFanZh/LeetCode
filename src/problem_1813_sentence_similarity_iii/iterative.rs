@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn check(source: &str, target: &str) -> bool {
         let source = source.as_bytes();
         let target = target.as_bytes();

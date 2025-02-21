@@ -13,7 +13,7 @@ impl Solution {
             }
         } else {
             for first in start..11 - n {
-                Self::read_binary_watch_helper(base | 1 << first, first + 1, n - 1, result);
+                Self::read_binary_watch_helper(base | (1 << first), first + 1, n - 1, result);
             }
         }
     }

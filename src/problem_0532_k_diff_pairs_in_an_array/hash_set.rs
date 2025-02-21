@@ -2,7 +2,7 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::{hash_map, HashMap, HashSet};
+use std::collections::{HashMap, HashSet, hash_map};
 
 impl Solution {
     pub fn find_pairs(nums: Vec<i32>, k: i32) -> i32 {

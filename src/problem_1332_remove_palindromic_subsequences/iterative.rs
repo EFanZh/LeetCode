@@ -18,11 +18,7 @@ impl Solution {
     }
 
     pub fn remove_palindrome_sub(s: String) -> i32 {
-        if Self::is_palindrome(s.bytes()) {
-            1
-        } else {
-            2
-        }
+        if Self::is_palindrome(s.bytes()) { 1 } else { 2 }
     }
 }
 

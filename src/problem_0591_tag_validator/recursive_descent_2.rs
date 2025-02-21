@@ -28,11 +28,7 @@ impl Solution {
     fn parse_text(input: &str) -> Option<&str> {
         let length = input.bytes().position(|c| c == b'<').unwrap_or(input.len());
 
-        if length == 0 {
-            None
-        } else {
-            Some(&input[length..])
-        }
+        if length == 0 { None } else { Some(&input[length..]) }
     }
 
     fn parse_content(mut input: &str) -> &str {

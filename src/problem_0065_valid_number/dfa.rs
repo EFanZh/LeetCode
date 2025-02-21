@@ -38,6 +38,7 @@ impl Solution {
 
     // \d*\.?\d*(e[+-]?\d+)?\s*
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn number_with_optional_fractional_part(mut iter: IntoIter<u8>) -> bool {
         iter.next().map_or(true, |c| match c {
             b'0'..=b'9' => Self::number_with_optional_fractional_part(iter),
@@ -50,6 +51,7 @@ impl Solution {
 
     // \d*(e[+-]?\d+)?\s*
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn optional_fractional_part(mut iter: IntoIter<u8>) -> bool {
         iter.next().map_or(true, |c| match c {
             b'0'..=b'9' => Self::optional_fractional_part(iter),
@@ -80,6 +82,7 @@ impl Solution {
 
     // \d*\s*
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn optional_exponent(mut iter: IntoIter<u8>) -> bool {
         iter.next().map_or(true, |c| match c {
             b'0'..=b'9' => Self::optional_exponent(iter),
@@ -90,6 +93,7 @@ impl Solution {
 
     // \s*
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn trailing_space(mut iter: IntoIter<u8>) -> bool {
         iter.next().map_or(true, |c| match c {
             b' ' => Self::trailing_space(iter),

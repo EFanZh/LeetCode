@@ -13,7 +13,7 @@ impl Solution {
         let mut state = cells
             .iter()
             .enumerate()
-            .fold(0_u8, |state, (i, &value)| state | (value as u8) << i);
+            .fold(0_u8, |state, (i, &value)| state | ((value as u8) << i));
 
         days[usize::from(state)] = 0;
         states[0] = state;

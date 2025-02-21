@@ -1,8 +1,8 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 use std::convert;
 
 fn encode_name(name: &str) -> u64 {

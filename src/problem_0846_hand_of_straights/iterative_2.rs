@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
+use std::collections::hash_map::DefaultHasher;
 use std::hash::BuildHasherDefault;
 
 // <https://leetcode.com/problems/hand-of-straights/discuss/137794/Python-true-O(N)-solution>.

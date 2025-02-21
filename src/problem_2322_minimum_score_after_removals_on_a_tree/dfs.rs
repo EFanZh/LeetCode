@@ -47,11 +47,7 @@ impl Solution {
             mem::swap(&mut x, &mut y);
         }
 
-        if z >= y {
-            z - x
-        } else {
-            y - x.min(z)
-        }
+        if z >= y { z - x } else { y - x.min(z) }
     }
 
     pub fn minimum_score(nums: Vec<i32>, edges: Vec<Vec<i32>>) -> i32 {
@@ -89,7 +85,7 @@ impl Solution {
 
         let mut result = u32::MAX;
         let mut iter = nums.iter().copied().zip(&*descendants).enumerate();
-        let root_xor = iter.next().unwrap().1 .0;
+        let root_xor = iter.next().unwrap().1.0;
 
         while let Some((left_node, (left_xor, left_descendants))) = iter.next() {
             for (right_node, (right_xor, right_descendants)) in iter.clone() {

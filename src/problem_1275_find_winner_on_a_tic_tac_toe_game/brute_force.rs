@@ -43,11 +43,7 @@ impl Solution {
             }
         }
 
-        if n < 9 {
-            "Pending"
-        } else {
-            "Draw"
-        }
+        if n < 9 { "Pending" } else { "Draw" }
     }
 
     pub fn tictactoe(moves: Vec<Vec<i32>>) -> String {

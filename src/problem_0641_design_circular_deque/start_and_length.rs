@@ -80,11 +80,7 @@ impl MyCircularDeque {
     }
 
     fn get_front(&self) -> i32 {
-        if self.is_empty() {
-            -1
-        } else {
-            self.buffer[self.start]
-        }
+        if self.is_empty() { -1 } else { self.buffer[self.start] }
     }
 
     fn get_rear(&self) -> i32 {

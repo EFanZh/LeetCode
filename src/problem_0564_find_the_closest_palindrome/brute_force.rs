@@ -68,11 +68,7 @@ impl Solution {
             Ordering::Greater => (get_low(), candidate),
         };
 
-        if high - n < n - low {
-            high
-        } else {
-            low
-        }
+        if high - n < n - low { high } else { low }
     }
 
     pub fn nearest_palindromic(n: String) -> String {
