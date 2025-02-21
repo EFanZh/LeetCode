@@ -22,11 +22,7 @@ impl Solution {
 
             let slot = board[row][column];
 
-            if slot == -1 {
-                i
-            } else {
-                slot as u32 as usize - 1
-            }
+            if slot == -1 { i } else { slot as u32 as usize - 1 }
         };
 
         let target = n * n - 1;

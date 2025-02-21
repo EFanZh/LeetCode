@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 
 impl Solution {
     fn combination_sum2_helper<'a, I: Iterator<Item = (&'a i32, &'a i32)> + Clone>(

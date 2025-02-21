@@ -34,11 +34,7 @@ impl Solution {
             }
         }
 
-        if sum < 0 {
-            -1
-        } else {
-            (start % n) as _
-        }
+        if sum < 0 { -1 } else { (start % n) as _ }
     }
 }
 

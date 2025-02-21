@@ -17,11 +17,7 @@ impl Solution {
             result += counts[usize::from(c - b'A')] & !1;
         }
 
-        if result as usize == s.len() {
-            result
-        } else {
-            result + 1
-        }
+        if result as usize == s.len() { result } else { result + 1 }
     }
 }
 

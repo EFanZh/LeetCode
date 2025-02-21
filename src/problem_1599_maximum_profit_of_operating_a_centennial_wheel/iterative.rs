@@ -46,11 +46,7 @@ impl Solution {
             }
         }
 
-        if max_profit > 0 {
-            result
-        } else {
-            -1
-        }
+        if max_profit > 0 { result } else { -1 }
     }
 }
 

@@ -14,6 +14,7 @@ impl Solution {
 
         let start = counts.iter().rposition(|&count| count == 0).map_or(0, |i| i + 1);
 
+        #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
         if counts[start] == 1
             && counts.get(start + 1).map_or(true, |&first_count| {
                 counts[start + 2..].iter().all(|&count| count == first_count)

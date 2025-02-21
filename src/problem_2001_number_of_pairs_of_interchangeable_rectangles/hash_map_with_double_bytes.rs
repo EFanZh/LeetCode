@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 
 impl Solution {
     pub fn interchangeable_rectangles(rectangles: Vec<Vec<i32>>) -> i64 {

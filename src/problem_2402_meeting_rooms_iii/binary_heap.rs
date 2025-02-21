@@ -33,7 +33,7 @@ impl Solution {
                 if time <= start {
                     if let Some(allocate_request) = allocate_queue.pop_front() {
                         usage[usize::from(room)] += 1;
-                        top.0 .0 += allocate_request;
+                        top.0.0 += allocate_request;
                     } else {
                         PeekMut::pop(top);
                         free_rooms.push(Reverse(room));
@@ -55,8 +55,8 @@ impl Solution {
         while let Some(allocate_request) = allocate_queue.pop_front() {
             let top = &mut *deallocate_queue.peek_mut().unwrap();
 
-            usage[usize::from(top.0 .1)] += 1;
-            top.0 .0 += allocate_request;
+            usage[usize::from(top.0.1)] += 1;
+            top.0.0 += allocate_request;
         }
 
         let mut max_room = 0;

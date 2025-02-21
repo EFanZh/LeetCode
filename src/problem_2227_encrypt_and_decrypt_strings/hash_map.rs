@@ -1,7 +1,7 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 
 pub struct Encrypter {
     encryption_map: [[u8; 2]; 26],

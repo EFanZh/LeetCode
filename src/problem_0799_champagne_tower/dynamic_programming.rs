@@ -4,11 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn get_overflow(incoming: f64) -> f64 {
-        if incoming <= 1.0 {
-            0.0
-        } else {
-            incoming - 1.0
-        }
+        if incoming <= 1.0 { 0.0 } else { incoming - 1.0 }
     }
 
     fn update_cache(cache: &mut [f64], end: usize) {

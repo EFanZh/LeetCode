@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_alien_sorted(words: Vec<String>, order: String) -> bool {
         let mut map = [0; 26];
 

@@ -19,6 +19,7 @@ impl Solution {
         let mut result = None::<String>;
 
         for word in words {
+            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
             if word.len() >= total_letters && result.as_deref().map_or(true, |result| word.len() < result.len()) {
                 let mut word_counts = [0; 26];
                 let mut current_matches = 0;

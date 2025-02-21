@@ -92,11 +92,7 @@ impl Solution {
             }
         }
 
-        if result == i32::MAX {
-            0
-        } else {
-            result
-        }
+        if result == i32::MAX { 0 } else { result }
     }
 }
 

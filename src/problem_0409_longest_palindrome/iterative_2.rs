@@ -18,11 +18,7 @@ impl Solution {
             *count = !*count;
         }
 
-        if result as usize == s.len() {
-            result
-        } else {
-            result + 1
-        }
+        if result as usize == s.len() { result } else { result + 1 }
     }
 }
 

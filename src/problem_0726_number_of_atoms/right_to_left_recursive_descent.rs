@@ -34,7 +34,7 @@ impl Solution {
     }
 
     fn group<'a>(mut input: &'a [u8], factor: u32, counts: &mut HashMap<&'a [u8], u32>) -> Option<&'a [u8]> {
-        input = input.split_last().filter(|(&c, _)| c == b')')?.1;
+        input = input.split_last().filter(|(c, _)| **c == b')')?.1;
         input = Self::formula(input, factor, counts).unwrap();
 
         Some(input.split_last().unwrap().1)

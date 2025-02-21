@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 
 impl Solution {
     fn gcd(mut x: i32, mut y: i32) -> i32 {
@@ -24,11 +24,7 @@ impl Solution {
         let r_x = d_x / g;
         let r_y = d_y / g;
 
-        if r_x < 0 {
-            (-r_x, -r_y)
-        } else {
-            (r_x, r_y)
-        }
+        if r_x < 0 { (-r_x, -r_y) } else { (r_x, r_y) }
     }
 
     pub fn max_points(points: Vec<Vec<i32>>) -> i32 {

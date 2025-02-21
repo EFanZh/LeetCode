@@ -27,11 +27,7 @@ impl Solution {
         let gcd = Self::gcd(p, q);
         let (p, q) = (p / gcd, q / gcd);
 
-        if p % 2 == 0 {
-            2
-        } else {
-            i32::from(q % 2 != 0)
-        }
+        if p % 2 == 0 { 2 } else { i32::from(q % 2 != 0) }
     }
 }
 

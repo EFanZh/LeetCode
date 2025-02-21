@@ -40,6 +40,7 @@ impl Solution {
         for value in arr1 {
             let bucket = Self::div_floor(value, bucket_size);
 
+            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
             if !buckets.contains_key(&bucket)
                 && buckets.get(&(bucket - 1)).map_or(true, |&(_, max)| value - max > d)
                 && buckets.get(&(bucket + 1)).map_or(true, |&(min, _)| min - value > d)

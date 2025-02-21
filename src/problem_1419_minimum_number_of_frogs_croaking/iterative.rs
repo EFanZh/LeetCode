@@ -53,11 +53,7 @@ impl Solution {
             }
         }
 
-        if in_progress == 0 {
-            max_in_progress as _
-        } else {
-            -1
-        }
+        if in_progress == 0 { max_in_progress as _ } else { -1 }
     }
 }
 

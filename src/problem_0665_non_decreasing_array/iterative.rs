@@ -7,6 +7,7 @@ impl Solution {
         nums.iter().zip(&nums[1..]).all(|(lhs, rhs)| lhs <= rhs)
     }
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn check_possibility(nums: Vec<i32>) -> bool {
         if let Some((i, (lhs, rhs))) = nums
             .iter()

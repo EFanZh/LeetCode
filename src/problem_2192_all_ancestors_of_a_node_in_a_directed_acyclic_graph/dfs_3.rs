@@ -13,6 +13,7 @@ impl Solution {
         for &child in &context.graph[node] {
             let ancestors = &mut context.result[child];
 
+            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
             if ancestors.last().map_or(true, |&last| last != context.ancestor) {
                 ancestors.push(context.ancestor);
 

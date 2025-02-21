@@ -17,11 +17,10 @@ impl Solution {
                 result += 1;
 
                 loop {
-                    for next in
-                        is_connected[node]
-                            .iter()
-                            .enumerate()
-                            .filter_map(|(i, &connected)| if connected == 0 { None } else { Some(i) })
+                    for next in is_connected[node]
+                        .iter()
+                        .enumerate()
+                        .filter_map(|(i, &connected)| if connected == 0 { None } else { Some(i) })
                     {
                         if let v @ false = &mut visited[next] {
                             *v = true;

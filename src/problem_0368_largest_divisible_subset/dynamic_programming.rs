@@ -21,8 +21,8 @@ impl Solution {
                     .iter()
                     .zip(&sizes)
                     .enumerate()
-                    .filter(|(_, (&x, _))| num % x == 0)
-                    .max_by_key(|(_, (_, &size))| size)
+                    .filter(|(_, (x, _))| num % **x == 0)
+                    .max_by_key(|(_, (_, size))| **size)
                     .map_or((1, usize::MAX), |(j, (_, size))| (size + 1, j));
 
                 sizes[i] = size;

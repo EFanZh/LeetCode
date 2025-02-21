@@ -6,6 +6,7 @@ impl Solution {
     pub fn detect_capital_use(word: String) -> bool {
         let mut iter = word.as_bytes().iter();
 
+        #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
         if iter.next().unwrap().is_ascii_uppercase() {
             iter.next().map_or(true, |second| {
                 if second.is_ascii_uppercase() {

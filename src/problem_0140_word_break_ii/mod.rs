@@ -24,7 +24,18 @@ mod tests {
             (
                 (
                     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    &["a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"],
+                    &[
+                        "a",
+                        "aa",
+                        "aaa",
+                        "aaaa",
+                        "aaaaa",
+                        "aaaaaa",
+                        "aaaaaaa",
+                        "aaaaaaaa",
+                        "aaaaaaaaa",
+                        "aaaaaaaaaa",
+                    ],
                 ),
                 &[],
             ),

@@ -3,8 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::collections::binary_heap::PeekMut;
 use std::collections::BinaryHeap;
+use std::collections::binary_heap::PeekMut;
 
 struct Item {
     deadline: u16,

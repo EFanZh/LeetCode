@@ -18,11 +18,7 @@ impl Solution {
             is_space = new_is_space;
         }
 
-        if words < 2 {
-            0
-        } else {
-            spaces / (words - 1)
-        }
+        if words < 2 { 0 } else { spaces / (words - 1) }
     }
 
     pub fn reorder_spaces(text: String) -> String {

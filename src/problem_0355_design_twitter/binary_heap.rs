@@ -52,7 +52,7 @@ impl Twitter {
 
             for _ in 0..10 {
                 if let Some(mut top) = queue.peek_mut() {
-                    result.push(top.0 .1);
+                    result.push(top.0.1);
 
                     if let Some(new_top) = top.1.split_last() {
                         *top = new_top;

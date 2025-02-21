@@ -99,11 +99,7 @@ impl Solution {
 
         let candidate = cache[cache.len() - n..].iter().copied().min().unwrap();
 
-        if candidate < INVALID {
-            candidate as _
-        } else {
-            -1
-        }
+        if candidate < INVALID { candidate as _ } else { -1 }
     }
 }
 

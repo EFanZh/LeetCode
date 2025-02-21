@@ -32,11 +32,7 @@ impl Solution {
             }
         }
 
-        if Self::f(left) == k {
-            5
-        } else {
-            0
-        }
+        if Self::f(left) == k { 5 } else { 0 }
     }
 }
 

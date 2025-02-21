@@ -42,10 +42,12 @@ mod tests {
 
             check_balance(result.as_deref());
 
-            assert!(values
-                .iter()
-                .copied()
-                .eq(test_utilities::iter_tree_in_order(result.clone())));
+            assert!(
+                values
+                    .iter()
+                    .copied()
+                    .eq(test_utilities::iter_tree_in_order(result.clone()))
+            );
         }
     }
 }

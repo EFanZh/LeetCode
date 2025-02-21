@@ -3,8 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::collections::binary_heap::PeekMut;
 use std::collections::BinaryHeap;
+use std::collections::binary_heap::PeekMut;
 
 struct Window(BinaryHeap<(i32, Reverse<usize>)>, BinaryHeap<Reverse<(i32, usize)>>);
 
@@ -33,10 +33,10 @@ impl Solution {
         result.push(get_median(&window));
 
         for (i, (&old, &new)) in nums.iter().zip(&nums[k..]).enumerate() {
-            if new >= window.1.peek().unwrap().0 .0 {
+            if new >= window.1.peek().unwrap().0.0 {
                 window.1.push(Reverse((new, k + i)));
 
-                if old <= window.1.peek().unwrap().0 .0 {
+                if old <= window.1.peek().unwrap().0.0 {
                     let (x, i) = window.1.pop().unwrap().0;
 
                     window.0.push((x, Reverse(i)));
@@ -44,7 +44,7 @@ impl Solution {
             } else {
                 window.0.push((new, Reverse(k + i)));
 
-                if old >= window.1.peek().unwrap().0 .0 {
+                if old >= window.1.peek().unwrap().0.0 {
                     let (x, Reverse(i)) = window.0.pop().unwrap();
 
                     window.1.push(Reverse((x, i)));
@@ -52,7 +52,7 @@ impl Solution {
             }
 
             while let Some(top) = window.0.peek_mut() {
-                if top.1 .0 <= i {
+                if top.1.0 <= i {
                     PeekMut::pop(top);
                 } else {
                     break;
@@ -60,7 +60,7 @@ impl Solution {
             }
 
             while let Some(top) = window.1.peek_mut() {
-                if top.0 .1 <= i {
+                if top.0.1 <= i {
                     PeekMut::pop(top);
                 } else {
                     break;
@@ -78,10 +78,10 @@ impl Solution {
 
         if k % 2 == 0 {
             Self::helper(window, &nums, |window| {
-                (f64::from(window.0.peek().unwrap().0) + f64::from(window.1.peek().unwrap().0 .0)) / 2.0
+                (f64::from(window.0.peek().unwrap().0) + f64::from(window.1.peek().unwrap().0.0)) / 2.0
             })
         } else {
-            Self::helper(window, &nums, |window| f64::from(window.1.peek().unwrap().0 .0))
+            Self::helper(window, &nums, |window| f64::from(window.1.peek().unwrap().0.0))
         }
     }
 }

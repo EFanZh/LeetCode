@@ -19,11 +19,7 @@ impl Solution {
 
     #[inline]
     fn helper(cache: &mut HashMap<u32, u32>, n: u32) -> u32 {
-        if n < 3 {
-            n
-        } else {
-            Self::helper_2(cache, n)
-        }
+        if n < 3 { n } else { Self::helper_2(cache, n) }
     }
 
     pub fn min_days(n: i32) -> i32 {

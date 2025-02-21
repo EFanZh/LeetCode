@@ -4,11 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn add(lhs: u32, rhs: u32) -> u32 {
-        if lhs == 0 {
-            0
-        } else {
-            lhs + rhs
-        }
+        if lhs == 0 { 0 } else { lhs + rhs }
     }
 
     pub fn max_sum_div_three(nums: Vec<i32>) -> i32 {

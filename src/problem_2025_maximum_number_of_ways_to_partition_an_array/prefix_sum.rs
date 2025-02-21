@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::hash_map::{Entry, OccupiedEntry};
 use std::collections::HashMap;
+use std::collections::hash_map::{Entry, OccupiedEntry};
 
 impl Solution {
     fn unwrap_occupied(entry: Entry<i32, u32>) -> OccupiedEntry<i32, u32> {

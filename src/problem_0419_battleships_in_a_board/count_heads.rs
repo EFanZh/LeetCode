@@ -7,6 +7,7 @@ impl Solution {
         let mut result = 0;
 
         for (i, row) in board.iter().enumerate() {
+            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
             for (j, &cell) in row.iter().enumerate() {
                 result += i32::from(
                     cell == 'X'

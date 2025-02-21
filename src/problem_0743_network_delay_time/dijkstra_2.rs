@@ -8,7 +8,7 @@ const D: usize = 2;
 
 impl Solution {
     fn heap_relax(heap: &mut Vec<usize>, node_attributes: &mut [(usize, u32)], node: usize, distance: u32) {
-        let (mut index, current_distance) = &mut node_attributes[node];
+        let &mut (mut index, ref mut current_distance) = &mut node_attributes[node];
 
         if distance < *current_distance {
             *current_distance = distance;

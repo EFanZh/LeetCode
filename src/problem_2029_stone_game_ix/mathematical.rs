@@ -13,11 +13,7 @@ impl Solution {
         let [zero, one, two] = counts;
         let (x, y) = if two < one { (two, one) } else { (one, two) };
 
-        if zero % 2 == 0 {
-            x != 0
-        } else {
-            y - x > 2
-        }
+        if zero % 2 == 0 { x != 0 } else { y - x > 2 }
     }
 }
 

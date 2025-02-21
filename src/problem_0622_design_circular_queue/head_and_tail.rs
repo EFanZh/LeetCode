@@ -45,11 +45,7 @@ impl MyCircularQueue {
     }
 
     fn front(&self) -> i32 {
-        if self.is_empty() {
-            -1
-        } else {
-            self.buffer[self.head]
-        }
+        if self.is_empty() { -1 } else { self.buffer[self.head] }
     }
 
     fn rear(&self) -> i32 {

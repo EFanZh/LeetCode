@@ -6,11 +6,7 @@ use std::mem;
 
 impl Solution {
     fn abs_diff(lhs: usize, rhs: usize) -> usize {
-        if lhs < rhs {
-            rhs - lhs
-        } else {
-            lhs - rhs
-        }
+        if lhs < rhs { rhs - lhs } else { lhs - rhs }
     }
 
     pub fn find_paths(m: i32, n: i32, max_move: i32, start_row: i32, start_column: i32) -> i32 {

@@ -20,11 +20,7 @@ impl Solution {
             }
         }
 
-        if max >= second_max * 2 {
-            max_index
-        } else {
-            -1
-        }
+        if max >= second_max * 2 { max_index } else { -1 }
     }
 }
 

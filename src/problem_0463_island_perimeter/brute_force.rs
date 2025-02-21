@@ -8,6 +8,7 @@ impl Solution {
 
         for (i, row) in grid.iter().enumerate() {
             for (j, &cell) in row.iter().enumerate() {
+                #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
                 if cell != 0 {
                     if grid.get(i.wrapping_sub(1)).map_or(true, |r| r[j] == 0) {
                         result += 1;

@@ -30,11 +30,7 @@ impl Solution {
                 .map(|value| {
                     let other = sum - value;
 
-                    if other < value {
-                        value - other
-                    } else {
-                        other - value
-                    }
+                    if other < value { value - other } else { other - value }
                 })
                 .min()
                 .unwrap(),

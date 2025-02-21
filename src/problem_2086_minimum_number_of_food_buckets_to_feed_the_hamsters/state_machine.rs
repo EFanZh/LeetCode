@@ -45,11 +45,7 @@ impl Solution {
                 State::EmptyHamster => {
                     result += 1;
 
-                    if is_empty {
-                        State::Food
-                    } else {
-                        State::Hamster
-                    }
+                    if is_empty { State::Food } else { State::Hamster }
                 }
                 State::Food => {
                     if is_empty {

@@ -14,11 +14,7 @@ impl Solution {
                     i.checked_sub(*c as usize).and_then(|r| {
                         let v = cache[r];
 
-                        if v < 0 {
-                            None
-                        } else {
-                            Some(v)
-                        }
+                        if v < 0 { None } else { Some(v) }
                     })
                 })
                 .min()

@@ -2,8 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::collections::btree_map::Entry;
 use std::collections::BTreeMap;
+use std::collections::btree_map::Entry;
 
 impl Solution {
     pub fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

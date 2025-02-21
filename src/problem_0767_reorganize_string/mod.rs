@@ -22,10 +22,12 @@ mod tests {
                     test_utilities::unstable_sorted(result.bytes())
                 );
 
-                assert!(result
-                    .bytes()
-                    .zip(result.bytes().skip(1))
-                    .all(|(left, right)| left != right));
+                assert!(
+                    result
+                        .bytes()
+                        .zip(result.bytes().skip(1))
+                        .all(|(left, right)| left != right)
+                );
             } else {
                 assert!(result.is_empty());
             }

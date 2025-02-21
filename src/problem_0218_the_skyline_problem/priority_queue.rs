@@ -3,8 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Reverse;
-use std::collections::binary_heap::PeekMut;
 use std::collections::BinaryHeap;
+use std::collections::binary_heap::PeekMut;
 
 impl Solution {
     pub fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

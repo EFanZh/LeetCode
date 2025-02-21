@@ -1,8 +1,8 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cell::Cell;
-use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::collections::hash_map::Entry;
 use std::mem;
 use std::rc::{Rc, Weak};
 

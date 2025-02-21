@@ -21,11 +21,7 @@ impl Solution {
                 length -= half;
             }
 
-            if nums[start] == target {
-                start as _
-            } else {
-                -1
-            }
+            if nums[start] == target { start as _ } else { -1 }
         }
     }
 }

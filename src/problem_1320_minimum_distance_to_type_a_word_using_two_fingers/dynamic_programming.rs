@@ -4,11 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn abs_diff(lhs: u8, rhs: u8) -> u8 {
-        if rhs < lhs {
-            lhs - rhs
-        } else {
-            rhs - lhs
-        }
+        if rhs < lhs { lhs - rhs } else { rhs - lhs }
     }
 
     fn distance(from: u8, to: u8) -> u16 {

@@ -44,11 +44,7 @@ impl Solution {
             let seed = n / low_base;
             let palindrome = Self::make_palindrome(seed);
 
-            if palindrome < n {
-                seed + 1
-            } else {
-                seed
-            }
+            if palindrome < n { seed + 1 } else { seed }
         }
     }
 

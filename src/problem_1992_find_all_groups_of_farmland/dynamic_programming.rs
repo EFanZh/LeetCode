@@ -68,11 +68,7 @@ impl Solution {
 
                     -1
                 } else if *top == -1 {
-                    if *prev == -1 {
-                        (y << 16) | x
-                    } else {
-                        *prev
-                    }
+                    if *prev == -1 { (y << 16) | x } else { *prev }
                 } else {
                     *top
                 };

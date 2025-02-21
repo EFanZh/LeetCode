@@ -13,11 +13,7 @@ impl Solution {
             inverted = !inverted;
         }
 
-        if (k == 1) == inverted {
-            '1'
-        } else {
-            '0'
-        }
+        if (k == 1) == inverted { '1' } else { '0' }
     }
 }
 

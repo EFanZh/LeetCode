@@ -42,11 +42,7 @@ impl Solution {
             }
         }
 
-        if result == 0 {
-            -1
-        } else {
-            (result + 1) as _
-        }
+        if result == 0 { -1 } else { (result + 1) as _ }
     }
 }
 

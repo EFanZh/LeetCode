@@ -3,8 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::collections::hash_map::{Entry, OccupiedEntry};
 use std::collections::HashMap;
+use std::collections::hash_map::{Entry, OccupiedEntry};
 
 impl Solution {
     fn unwrap_occupied<K, V>(entry: Entry<K, V>) -> OccupiedEntry<K, V> {

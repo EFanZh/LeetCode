@@ -7,11 +7,7 @@ use std::collections::HashMap;
 impl Solution {
     fn helper(x: i16, y: i16, cache: &mut HashMap<(i16, i16), f64>) -> f64 {
         if x <= 0 {
-            if y <= 0 {
-                0.5
-            } else {
-                1.0
-            }
+            if y <= 0 { 0.5 } else { 1.0 }
         } else if y <= 0 {
             0.0
         } else {

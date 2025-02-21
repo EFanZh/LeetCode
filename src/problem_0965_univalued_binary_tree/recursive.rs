@@ -8,6 +8,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn helper(node: Option<&RefCell<TreeNode>>, expected: i32) -> bool {
         node.map_or(true, |node| {
             let node = node.borrow();
@@ -18,6 +19,7 @@ impl Solution {
         })
     }
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         root.map_or(true, |root| {
             let root = root.borrow();

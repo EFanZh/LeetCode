@@ -27,11 +27,12 @@ mod tests {
                 assert_eq!(top.iter().sum::<i32>(), upper);
                 assert_eq!(bottom.iter().sum::<i32>(), lower);
 
-                assert!(top
-                    .into_iter()
-                    .zip(bottom)
-                    .map(|(top, bottom)| top + bottom)
-                    .eq(colsum.iter().copied()));
+                assert!(
+                    top.into_iter()
+                        .zip(bottom)
+                        .map(|(top, bottom)| top + bottom)
+                        .eq(colsum.iter().copied())
+                );
             } else {
                 assert!(result.is_empty());
             }

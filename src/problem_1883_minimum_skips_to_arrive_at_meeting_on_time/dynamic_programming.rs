@@ -31,11 +31,7 @@ impl Solution {
 
             let i = cache.partition_point(|&x| x > scaled_hours_before);
 
-            if i == n {
-                -1
-            } else {
-                i as _
-            }
+            if i == n { -1 } else { i as _ }
         })
     }
 }

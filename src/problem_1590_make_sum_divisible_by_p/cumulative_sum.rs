@@ -38,11 +38,7 @@ impl Solution {
                 cache.insert(sum, j);
             }
 
-            if result < n {
-                result as _
-            } else {
-                -1
-            }
+            if result < n { result as _ } else { -1 }
         }
     }
 }

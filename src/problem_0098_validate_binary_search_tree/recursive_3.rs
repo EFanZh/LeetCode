@@ -36,6 +36,7 @@ impl Solution {
         }
     }
 
+    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         root.map_or(true, |root| Self::is_valid_bst_helper_0(&root.borrow()).is_some())
     }

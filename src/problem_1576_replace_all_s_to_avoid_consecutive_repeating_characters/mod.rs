@@ -16,10 +16,11 @@ mod tests {
 
             assert_eq!(result.len(), s.len());
 
-            assert!(s
-                .bytes()
-                .zip(result.bytes())
-                .all(|(lhs, rhs)| rhs.is_ascii_lowercase() && (lhs == b'?' || lhs == rhs)));
+            assert!(
+                s.bytes()
+                    .zip(result.bytes())
+                    .all(|(lhs, rhs)| rhs.is_ascii_lowercase() && (lhs == b'?' || lhs == rhs))
+            );
 
             let mut prev = 0;
 
