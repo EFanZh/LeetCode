@@ -1821,6 +1821,7 @@ pub mod problem_2442_count_number_of_distinct_integers_after_reverse_operations;
 pub mod problem_2443_sum_of_number_and_its_reverse;
 pub mod problem_2444_count_subarrays_with_fixed_bounds;
 pub mod problem_2446_determine_if_two_events_have_conflict;
+pub mod problem_2448_minimum_cost_to_make_array_equal;
 
 #[cfg(test)]
 mod test_utilities;
