@@ -1823,6 +1823,7 @@ pub mod problem_2444_count_subarrays_with_fixed_bounds;
 pub mod problem_2446_determine_if_two_events_have_conflict;
 pub mod problem_2448_minimum_cost_to_make_array_equal;
 pub mod problem_2451_odd_string_difference;
+pub mod problem_2452_words_within_two_edits_of_dictionary;
 
 #[cfg(test)]
 mod test_utilities;
