@@ -1826,6 +1826,7 @@ pub mod problem_2451_odd_string_difference;
 pub mod problem_2452_words_within_two_edits_of_dictionary;
 pub mod problem_2453_destroy_sequential_targets;
 pub mod problem_2455_average_value_of_even_numbers_that_are_divisible_by_three;
+pub mod problem_2456_most_popular_video_creator;
 
 #[cfg(test)]
 mod test_utilities;
