@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::{HashMap, HashSet};
-use std::mem;
 
 trait Node {
     fn left(&self) -> Self;
@@ -31,7 +30,7 @@ impl Node for usize {
     }
 
     fn depth(&self) -> u32 {
-        8 * mem::size_of_val(self) as u32 - 1 - self.leading_zeros()
+        8 * size_of_val(self) as u32 - 1 - self.leading_zeros()
     }
 }
 
@@ -185,11 +184,7 @@ impl Solution {
         Self::inner(
             &positions
                 .into_iter()
-                .map(|position| {
-                    let [left, length]: [i32; 2] = position.as_slice().try_into().unwrap();
-
-                    (left, length)
-                })
+                .map(|position| <(_, _)>::from(<[_; 2]>::try_from(position).ok().unwrap()))
                 .collect::<Vec<_>>(),
         )
     }

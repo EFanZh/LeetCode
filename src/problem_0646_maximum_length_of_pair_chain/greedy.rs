@@ -6,11 +6,7 @@ impl Solution {
     pub fn find_longest_chain(pairs: Vec<Vec<i32>>) -> i32 {
         let mut pairs = pairs
             .iter()
-            .map(|pair| {
-                let [left, right]: [i32; 2] = pair.as_slice().try_into().unwrap();
-
-                (left, right)
-            })
+            .map(|pair| <(_, _)>::from(<[_; 2]>::try_from(pair.as_slice()).ok().unwrap()))
             .collect::<Vec<_>>();
 
         pairs.sort_unstable_by_key(|&(_, right)| right);

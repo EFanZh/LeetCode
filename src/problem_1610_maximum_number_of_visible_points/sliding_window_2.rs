@@ -43,6 +43,7 @@ impl Solution {
 
             let min_angle = x - angle;
 
+            #[expect(clippy::while_float, reason = "no better way to handle this")]
             while angles[start] < min_angle {
                 start += 1;
             }

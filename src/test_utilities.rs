@@ -6,6 +6,7 @@ use std::fmt::Debug;
 use std::iter;
 use std::rc::Rc;
 
+#[expect(unnameable_types, reason = "false positive?")]
 pub trait Matrix<T>: Debug {
     fn to_vec(&self) -> Vec<Vec<T>>;
 

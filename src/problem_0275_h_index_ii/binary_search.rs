@@ -2,17 +2,17 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::{mem, ptr};
+use std::ptr;
 
 impl Solution {
     pub fn h_index(citations: Vec<i32>) -> i32 {
         let n = citations.len();
 
         citations.first().map_or(0, |first| {
-            let end = ptr::from_ref(first) as usize + mem::size_of_val(first) * n;
+            let end = ptr::from_ref(first) as usize + size_of_val(first) * n;
 
-            let index = citations
-                .partition_point(|num| *num < ((end - ptr::from_ref(num) as usize) / mem::size_of_val(num)) as i32);
+            let index =
+                citations.partition_point(|num| *num < ((end - ptr::from_ref(num) as usize) / size_of_val(num)) as i32);
 
             (n - index) as _
         })

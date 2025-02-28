@@ -4,7 +4,7 @@ pub mod hash_maps_online_hack;
 pub trait Codec {
     fn new() -> Self;
     fn encode(&mut self, long_url: String) -> String;
-    fn decode(&self, long_url: String) -> String;
+    fn decode(&self, short_url: String) -> String;
 }
 
 #[cfg(test)]

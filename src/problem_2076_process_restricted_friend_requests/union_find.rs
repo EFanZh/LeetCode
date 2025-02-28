@@ -10,7 +10,7 @@ type State = (Cell<u16>, Cell<u16>);
 
 impl Solution {
     fn get_node(union_find: &[State], state: &State) -> u16 {
-        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / mem::size_of::<State>()) as _
+        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / size_of::<State>()) as _
     }
 
     fn find_root<'a>(union_find: &'a [State], state: &'a State) -> &'a State {

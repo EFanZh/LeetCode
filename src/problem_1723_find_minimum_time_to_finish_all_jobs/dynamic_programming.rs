@@ -14,6 +14,7 @@ impl Solution {
 
         drop(jobs);
 
+        #[expect(clippy::redundant_clone, reason = "false positive")]
         let mut cache = costs.clone();
 
         for _ in 1..k {

@@ -26,10 +26,12 @@ impl Solution {
             let mut result = cache[next_n as usize];
 
             if result == 0 {
-                stack.push(Frame { n: frame.n, x: frame.x });
+                stack.push(frame);
 
-                frame.n = next_n;
-                frame.x = f64::from(next_n).sqrt() as _;
+                frame = Frame {
+                    n: next_n,
+                    x: f64::from(next_n).sqrt() as _,
+                };
 
                 continue;
             }

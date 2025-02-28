@@ -1,3 +1,5 @@
+#![expect(missing_docs, reason = "unnecessary")]
+
 use regex::Regex;
 use std::path::PathBuf;
 use std::{env, fs};
@@ -60,7 +62,7 @@ fn main() {
 
         println!("    Checking tests ...");
 
-        let solution_tests_regex = format!(
+        let solution_tests_header_regex = format!(
             "(?s)^\
                 #ifndef LEET_CODE_PROBLEM_{problem_include_guard}_TESTS_H\r?\n\
                 #define LEET_CODE_PROBLEM_{problem_include_guard}_TESTS_H\r?\n\r?\n\
@@ -80,7 +82,7 @@ fn main() {
         let problem_test_path = leet_code_tests_path.join(format!("problem-{problem_id}"));
         let problem_tests_source = fs::read_to_string(problem_test_path.join("tests.h")).unwrap();
 
-        check_regex(&solution_tests_regex, &problem_tests_source);
+        check_regex(&solution_tests_header_regex, &problem_tests_source);
 
         println!("    Checking solutions ...");
 

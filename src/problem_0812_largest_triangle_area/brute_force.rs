@@ -10,11 +10,7 @@ impl Solution {
     pub fn largest_triangle_area(points: Vec<Vec<i32>>) -> f64 {
         let points = points
             .iter()
-            .map(|p| {
-                let [x, y]: [i32; 2] = p.as_slice().try_into().unwrap();
-
-                (x, y)
-            })
+            .map(|p| <(_, _)>::from(<[_; 2]>::try_from(p.as_slice()).ok().unwrap()))
             .collect::<Vec<_>>();
 
         let mut max_area_times_2 = 0;

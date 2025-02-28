@@ -46,7 +46,7 @@ impl Display for OutputType {
 }
 
 impl OutputType {
-    fn value(&self) -> &'static str {
+    const fn value(&self) -> &'static str {
         match self {
             Self::Html => "html",
             Self::Lcov => "lcov",
@@ -92,10 +92,7 @@ fn add_cmake_variable(command: &mut Command, variable: &str, value: &OsStr) {
 }
 
 fn run_cpp_tests(cmake_toolchain_file: Option<&Path>, llvm_version: Option<&str>, output: &Path) -> PathBuf {
-    let mut cpp_coverage_target_dir = PathBuf::from("target");
-
-    cpp_coverage_target_dir.push(format!("c++-coverage-{}", env::consts::OS));
-
+    let cpp_coverage_target_dir = Path::new("target").join(format!("c++-coverage-{}", env::consts::OS));
     let cmake_executable = tools::find_cmake().expect("Unable to find cmake executable.");
     let mut clang = String::from("clang");
     let mut clang_plus_plus = String::from("clang++");
@@ -223,7 +220,7 @@ fn run_rust_tests(target_dir: &Path, llvm_profdata: &Path, output: &Path) -> Pat
     PathBuf::from(test_executable)
 }
 
-fn closure_type_deduction_helper<T>(f: T) -> T
+const fn closure_type_deduction_helper<T>(f: T) -> T
 where
     T: for<'a> FnOnce(&'a mut Command) -> &'a mut Command,
 {

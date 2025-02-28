@@ -8,6 +8,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 impl Solution {
+    #[expect(clippy::needless_pass_by_ref_mut, reason = "required")]
     pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
         if let Some(mut prev) = root.clone() {
             let (mut current, right) = {

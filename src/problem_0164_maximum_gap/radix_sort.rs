@@ -10,7 +10,7 @@ impl Solution {
 
         let n = nums.len();
         let num_bits = 32 - max.leading_zeros();
-        let log2_n = mem::size_of_val(&n) as u32 * 8 - 1 - n.leading_zeros();
+        let log2_n = size_of_val(&n) as u32 * 8 - 1 - n.leading_zeros();
         let mask_bits = num_bits.min(log2_n);
         let mask = (1 << mask_bits) - 1;
         let mut counts = vec![0_u32; 1 << mask_bits];

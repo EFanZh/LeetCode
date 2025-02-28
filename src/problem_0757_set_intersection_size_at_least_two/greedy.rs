@@ -8,11 +8,7 @@ impl Solution {
     pub fn intersection_size_two(intervals: Vec<Vec<i32>>) -> i32 {
         let mut intervals = intervals
             .into_iter()
-            .map(|interval| {
-                let [left, right]: [_; 2] = interval.as_slice().try_into().unwrap();
-
-                (left, right)
-            })
+            .map(|interval| <(_, _)>::from(<[_; 2]>::try_from(interval).ok().unwrap()))
             .collect::<Vec<_>>();
 
         intervals.sort_unstable_by_key(|&(left, right)| (right, Reverse(left)));

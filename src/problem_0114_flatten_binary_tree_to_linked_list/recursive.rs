@@ -25,6 +25,7 @@ impl Solution {
         }
     }
 
+    #[expect(clippy::needless_pass_by_ref_mut, reason = "required")]
     pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
         if let Some(mut node) = root.clone() {
             let (left, right) = {

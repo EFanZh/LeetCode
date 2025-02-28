@@ -2,123 +2,90 @@
 authors = ["EFanZh <efanzh@gmail.com>"]
 edition = "2024"
 name = "leet-code"
+publish = false
 version = "0.1.0"
 
 [workspace]
 members = ["tools/check-cpp-code-format", "tools/progress-tracker", "xtask"]
 
 [workspace.lints.rust]
-absolute_paths_not_starting_with_crate = "warn"
-explicit_outlives_requirements = "warn"
-let_underscore_drop = "warn"
-macro_use_extern_crate = "warn"
-meta_variable_misuse = "warn"
-missing_abi = "warn"
-missing_docs = { level = "allow", priority = 1 }
-noop_method_call = "warn"
-single_use_lifetimes = "warn"
-trivial_casts = { level = "allow", priority = 1 }
-trivial_numeric_casts = "warn"
-unsafe_code = "warn"
-unsafe_op_in_unsafe_fn = "warn"
-unused_crate_dependencies = "warn"
-unused_extern_crates = "warn"
-unused_import_braces = "warn"
-unused_lifetimes = "warn"
-unused_macro_rules = "warn"
-unused_qualifications = { level = "allow", priority = 1 } # Temporary.
-variant_size_differences = "warn"
+ambiguous-negative-literals = { level = "warn", priority = 1 }
+closure-returning-async-block = { level = "warn", priority = 1 }
+explicit-outlives-requirements = { level = "warn", priority = 1 }
+impl-trait-redundant-captures = { level = "warn", priority = 1 }
+let-underscore-drop = { level = "warn", priority = 1 }
+macro-use-extern-crate = { level = "warn", priority = 1 }
+meta-variable-misuse = { level = "warn", priority = 1 }
+missing-abi = { level = "warn", priority = 1 }
+missing-docs = { level = "warn", priority = 1 }
+redundant-imports = { level = "warn", priority = 1 }
+redundant-lifetimes = { level = "warn", priority = 1 }
+single-use-lifetimes = { level = "warn", priority = 1 }
+trivial-casts = { level = "warn", priority = 1 }
+trivial-numeric-casts = { level = "warn", priority = 1 }
+unit-bindings = { level = "warn", priority = 1 }
+unnameable-types = { level = "warn", priority = 1 }
+unsafe-code = { level = "warn", priority = 1 }
+unused-crate-dependencies = { level = "warn", priority = 1 }
+unused-extern-crates = { level = "warn", priority = 1 }
+unused-import-braces = { level = "warn", priority = 1 }
+unused-lifetimes = { level = "warn", priority = 1 }
+unused-macro-rules = { level = "warn", priority = 1 }
+unused-qualifications = { level = "warn", priority = 1 }
+variant-size-differences = { level = "warn", priority = 1 }
 
 [workspace.lints.clippy]
-alloc_instead_of_core = "warn"
-allow_attributes_without_reason = "warn"
-as_ptr_cast_mut = "warn"
-branches_sharing_code = "warn"
-cargo_common_metadata = { level = "allow", priority = 1 }
-cast_possible_truncation = { level = "allow", priority = 1 }
-cast_possible_wrap = { level = "allow", priority = 1 }
-cast_sign_loss = { level = "allow", priority = 1 }
-clone_on_ref_ptr = "warn"
-cognitive_complexity = "warn"
-create_dir = "warn"
-dbg_macro = "warn"
-debug_assert_with_mut_call = "warn"
-decimal_literal_representation = { level = "allow", priority = 1 }
-deref_by_slicing = "warn"
-derive_partial_eq_without_eq = "warn"
-empty_drop = "warn"
-empty_line_after_outer_attr = "warn"
-empty_structs_with_brackets = "warn"
-equatable_if_let = "warn"
-fallible_impl_from = "warn"
-filetype_is_file = "warn"
-float_cmp_const = "warn"
-format_push_string = "warn"
-get_unwrap = "warn"
-if_then_some_else_none = "warn"
-imprecise_flops = "warn"
-large_stack_arrays = "allow" # TODO remove when https://github.com/rust-lang/rust-clippy/issues/13774 is fixed
-iter_on_empty_collections = "warn"
-iter_on_single_items = "warn"
-iter_with_drain = "warn"
-large_include_file = "warn"
-let_underscore_must_use = "warn"
-lint_groups_priority = { level = "allow", priority = 1 }           # Temporary.
-lossy_float_literal = "warn"
-manual_clamp = "warn"
-map_err_ignore = "warn"
-missing_panics_doc = { level = "allow", priority = 1 }
-mixed_read_write_in_expression = "warn"
-multiple_inherent_impl = "warn"
-must_use_candidate = { level = "allow", priority = 1 }
-mutex_atomic = "warn"
-mutex_integer = "warn"
-needless_collect = "warn"
-needless_pass_by_value = { level = "allow", priority = 1 }
-negative_feature_names = "warn"
-non_send_fields_in_send_ty = "warn"
-nonstandard_macro_braces = "warn"
-option_if_let_else = "warn"
-or_fun_call = "warn"
-panic = "warn"
-panic_in_result_fn = "warn"
-partial_pub_fields = "warn"
-path_buf_push_overwrite = "warn"
+alloc-instead-of-core = { level = "warn", priority = 1 }
+allow-attributes = { level = "warn", priority = 1 }
+allow-attributes-without-reason = { level = "warn", priority = 1 }
+as-conversions = { level = "warn", priority = 1 }
+assertions-on-result-states = { level = "warn", priority = 1 }
+cargo = "warn"
+cfg-not-test = { level = "warn", priority = 1 }
+clone-on-ref-ptr = { level = "warn", priority = 1 }
+dbg-macro = { level = "warn", priority = 1 }
+deref-by-slicing = { level = "warn", priority = 1 }
+empty-drop = { level = "warn", priority = 1 }
+empty-enum-variants-with-brackets = { level = "warn", priority = 1 }
+empty-structs-with-brackets = { level = "warn", priority = 1 }
+field-scoped-visibility-modifiers = { level = "warn", priority = 1 }
+format-push-string = { level = "warn", priority = 1 }
+get-unwrap = { level = "warn", priority = 1 }
+if-then-some-else-none = { level = "warn", priority = 1 }
+infinite-loop = { level = "warn", priority = 1 }
+large-stack-arrays = { level = "allow", priority = 1 }               # TODO remove when https://github.com/rust-lang/rust-clippy/issues/13774 is fixed
+lossy-float-literal = { level = "warn", priority = 1 }
+multiple-crate-versions = { level = "allow", priority = 1 }
+mutex-atomic = { level = "warn", priority = 1 }
+non-zero-suggestions = { level = "warn", priority = 1 }
+nursery = "warn"
+panic-in-result-fn = { level = "warn", priority = 1 }
 pedantic = "warn"
-print_stderr = "warn"
-print_stdout = "warn"
-rc_buffer = "warn"
-rc_mutex = "warn"
-redundant_feature_names = "warn"
-redundant_pub_crate = "warn"
-rest_pat_in_fully_bound_structs = "warn"
-same_name_method = { level = "allow", priority = 1 }
-self_named_module_files = "warn"
-significant_drop_in_scrutinee = "warn"
-string_lit_as_bytes = "warn"
-string_to_string = "warn"
-suboptimal_flops = "warn"
-suspicious_operation_groupings = "warn"
-todo = "warn"
-trailing_empty_array = "warn"
-trait_duplication_in_bounds = "warn"
-transmute_undefined_repr = "warn"
-trivial_regex = "warn"
-try_err = "warn"
-type_repetition_in_bounds = "warn"
-undocumented_unsafe_blocks = "warn"
-unimplemented = "warn"
-unnecessary_safety_comment = "warn"
-unnecessary_safety_doc = "warn"
-unnecessary_self_imports = "warn"
-unneeded_field_pattern = "warn"
-unused_peekable = "warn"
-unused_rounding = "warn"
-use_debug = "warn"
-use_self = "warn"
-useless_let_if_seq = "warn"
-verbose_file_reads = "warn"
-wildcard_dependencies = { level = "allow", priority = 1 }
+print-stderr = { level = "warn", priority = 1 }
+print-stdout = { level = "warn", priority = 1 }
+rc-buffer = { level = "warn", priority = 1 }
+rc-mutex = { level = "warn", priority = 1 }
+redundant-type-annotations = { level = "warn", priority = 1 }
+renamed-function-params = { level = "warn", priority = 1 }
+rest-pat-in-fully-bound-structs = { level = "warn", priority = 1 }
+same-name-method = { level = "warn", priority = 1 }
+self-named-module-files = { level = "warn", priority = 1 }
+shadow-unrelated = { level = "warn", priority = 1 }
+string-lit-chars-any = { level = "warn", priority = 1 }
+string-to-string = { level = "warn", priority = 1 }
+tests-outside-test-module = { level = "warn", priority = 1 }
+todo = { level = "warn", priority = 1 }
+try-err = { level = "warn", priority = 1 }
+undocumented-unsafe-blocks = { level = "warn", priority = 1 }
+unimplemented = { level = "warn", priority = 1 }
+unnecessary-safety-comment = { level = "warn", priority = 1 }
+unnecessary-safety-doc = { level = "warn", priority = 1 }
+unnecessary-self-imports = { level = "warn", priority = 1 }
+unneeded-field-pattern = { level = "warn", priority = 1 }
+unseparated-literal-suffix = { level = "warn", priority = 1 }
+use-debug = { level = "warn", priority = 1 }
+verbose-file-reads = { level = "warn", priority = 1 }
+wildcard-dependencies = { level = "allow", priority = 1 }            # Project specific.
 
 [lints]
 workspace = true

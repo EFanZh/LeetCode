@@ -8,8 +8,13 @@ pub enum Language {
 }
 
 impl Language {
-    pub fn list() -> [Self; 2] {
+    pub const fn list() -> [Self; 2] {
         [Self::Rust, Self::Cpp]
+    }
+
+    #[expect(clippy::as_conversions, reason = "no better way to convert to usize")]
+    pub const fn as_usize(self) -> usize {
+        self as _
     }
 }
 

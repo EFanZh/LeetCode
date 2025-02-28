@@ -33,7 +33,7 @@ impl Solution {
         }
     }
 
-    #[expect(clippy::ptr_arg, reason = "required")]
+    #[expect(clippy::needless_pass_by_ref_mut, clippy::ptr_arg, reason = "required")]
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         let mut m = m as usize;
         let n = n as usize;

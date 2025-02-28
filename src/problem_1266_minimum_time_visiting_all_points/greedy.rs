@@ -4,11 +4,9 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_time_to_visit_all_points(points: Vec<Vec<i32>>) -> i32 {
-        let mut iter = points.iter().map(|p| {
-            let [x, y]: [_; 2] = p.as_slice().try_into().unwrap();
-
-            (x, y)
-        });
+        let mut iter = points
+            .into_iter()
+            .map(|p| <(_, _)>::from(<[_; 2]>::try_from(p).ok().unwrap()));
 
         let mut result = 0;
         let mut prev = iter.next().unwrap();

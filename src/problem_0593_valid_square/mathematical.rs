@@ -20,11 +20,11 @@ impl Solution {
     }
 
     pub fn valid_square(p1: Vec<i32>, p2: Vec<i32>, p3: Vec<i32>, p4: Vec<i32>) -> bool {
-        let [x1, y1]: [_; 2] = p1.as_slice().try_into().unwrap();
-        let [x2, y2]: [_; 2] = p2.as_slice().try_into().unwrap();
-        let [x3, y3]: [_; 2] = p3.as_slice().try_into().unwrap();
-        let [x4, y4]: [_; 2] = p4.as_slice().try_into().unwrap();
-        let mut points = [(x1, y1), (x2, y2), (x3, y3), (x4, y4)];
+        let p1 = <(_, _)>::from(<[_; 2]>::try_from(p1).ok().unwrap());
+        let p2 = <(_, _)>::from(<[_; 2]>::try_from(p2).ok().unwrap());
+        let p3 = <(_, _)>::from(<[_; 2]>::try_from(p3).ok().unwrap());
+        let p4 = <(_, _)>::from(<[_; 2]>::try_from(p4).ok().unwrap());
+        let mut points = [p1, p2, p3, p4];
 
         points.sort_unstable();
 

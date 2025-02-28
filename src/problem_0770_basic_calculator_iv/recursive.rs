@@ -26,7 +26,7 @@ impl<'a> SymbolMap<'a> {
         }
     }
 
-    fn get_value(&mut self, index: u8) -> &'a str {
+    fn get_value(&self, index: u8) -> &'a str {
         self.values[usize::from(index)]
     }
 }

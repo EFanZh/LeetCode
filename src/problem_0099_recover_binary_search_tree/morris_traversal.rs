@@ -16,6 +16,7 @@ enum State {
 }
 
 impl Solution {
+    #[expect(clippy::needless_pass_by_ref_mut, reason = "required")]
     pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
         let mut state = State::Initial;
         let mut current = root.clone().unwrap();

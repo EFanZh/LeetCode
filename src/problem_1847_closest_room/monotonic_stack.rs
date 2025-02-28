@@ -21,7 +21,7 @@ impl Solution {
         stack.push((room.1, room.0));
     }
 
-    fn search_stack(stack: &mut [(u32, u32)], min_size: u32) -> u32 {
+    fn search_stack(stack: &[(u32, u32)], min_size: u32) -> u32 {
         let i = stack.partition_point(|&(size, _)| size >= min_size);
 
         stack.get(i.wrapping_sub(1)).map_or(u32::MAX, |&(_, id)| id)
@@ -60,17 +60,17 @@ impl Solution {
                     if let Some(next_room) = room_iter.next() {
                         room = next_room;
                     } else {
-                        *target = Self::search_stack(&mut stack, min_size) as _;
+                        *target = Self::search_stack(&stack, min_size) as _;
 
                         for (_, min_size, target) in query_iter {
-                            *target = Self::search_stack(&mut stack, min_size) as _;
+                            *target = Self::search_stack(&stack, min_size) as _;
                         }
 
                         break 'outer;
                     }
                 }
 
-                *target = Self::search_stack(&mut stack, min_size) as _;
+                *target = Self::search_stack(&stack, min_size) as _;
             }
 
             stack.clear();

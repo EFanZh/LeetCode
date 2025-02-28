@@ -94,7 +94,7 @@ impl Blocks {
         self.free_head = handle;
     }
 
-    fn get(&mut self, handle: usize) -> Option<&Block> {
+    fn get(&self, handle: usize) -> Option<&Block> {
         self.storage.get(handle)
     }
 

@@ -1,3 +1,5 @@
+#![expect(missing_docs, reason = "unnecessary")]
+
 use crate::coverage::Subcommand;
 use clap::Parser;
 use std::env;

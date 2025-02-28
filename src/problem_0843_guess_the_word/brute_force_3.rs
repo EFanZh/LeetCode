@@ -80,6 +80,8 @@ impl Solution {
 
             defer_dropping.push(edges);
         }
+
+        drop(defer_dropping);
     }
 }
 
