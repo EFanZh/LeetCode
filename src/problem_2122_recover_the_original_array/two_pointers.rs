@@ -3,7 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
-use std::{mem, ptr};
+use std::ptr;
 
 impl Solution {
     pub fn recover_array(nums: Vec<i32>) -> Vec<i32> {
@@ -54,8 +54,7 @@ impl Solution {
                         let start_address = nums.as_ptr() as usize;
 
                         nums.retain_mut(|num| {
-                            let retain =
-                                !visited[(ptr::from_ref(num) as usize - start_address) / mem::size_of::<i32>()];
+                            let retain = !visited[(ptr::from_ref(num) as usize - start_address) / size_of::<i32>()];
 
                             if retain {
                                 *num += half_diff;

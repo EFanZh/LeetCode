@@ -6,11 +6,9 @@ use std::collections::HashSet;
 
 impl Solution {
     pub fn min_area_free_rect(points: Vec<Vec<i32>>) -> f64 {
-        let mut iter = points.iter().map(|point| {
-            let [x, y]: [_; 2] = point.as_slice().try_into().unwrap();
-
-            (x, y)
-        });
+        let mut iter = points
+            .into_iter()
+            .map(|point| <(_, _)>::from(<[_; 2]>::try_from(point).ok().unwrap()));
 
         let points = iter.clone().collect::<HashSet<_>>();
         let mut result = i32::MAX;

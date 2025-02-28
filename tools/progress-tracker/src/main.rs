@@ -1,3 +1,5 @@
+#![expect(missing_docs, reason = "unnecessary")]
+
 use git2::Repository;
 use http::header;
 use problems::Problems;

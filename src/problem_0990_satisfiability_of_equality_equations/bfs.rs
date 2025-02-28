@@ -19,7 +19,7 @@ impl Solution {
     }
 
     pub fn equations_possible(equations: Vec<String>) -> bool {
-        let mut nodes = 0u32;
+        let mut nodes = 0_u32;
         let mut graph = [0_u32; 26];
         let mut not_equals = Vec::new();
 

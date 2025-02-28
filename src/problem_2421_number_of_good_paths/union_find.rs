@@ -4,7 +4,7 @@ pub struct Solution;
 
 use std::cell::Cell;
 use std::cmp::Ordering;
-use std::{mem, ptr};
+use std::ptr;
 
 struct Node {
     parent: Cell<u32>,
@@ -15,7 +15,7 @@ struct Node {
 
 impl Solution {
     fn get_node(union_find: &[Node], node: &Node) -> usize {
-        (ptr::from_ref(node) as usize - union_find.as_ptr() as usize) / mem::size_of::<Node>()
+        (ptr::from_ref(node) as usize - union_find.as_ptr() as usize) / size_of::<Node>()
     }
 
     fn find_root<'a>(union_find: &'a [Node], node: &'a Node) -> &'a Node {

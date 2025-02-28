@@ -1,4 +1,18 @@
-mod data_structures;
+#![expect(clippy::missing_const_for_fn, clippy::shadow_unrelated, reason = "legacy code")]
+#![expect(clippy::needless_pass_by_value, clippy::same_name_method, reason = "style")]
+#![expect(trivial_casts, reason = "too many false positives")]
+#![expect(
+    missing_docs,
+    clippy::as_conversions,
+    clippy::cast_possible_truncation,
+    clippy::cast_possible_wrap,
+    clippy::cast_sign_loss,
+    clippy::missing_panics_doc,
+    clippy::must_use_candidate,
+    reason = "unnecessary"
+)]
+
+pub mod data_structures;
 pub mod problem_0001_two_sum;
 pub mod problem_0002_add_two_numbers;
 pub mod problem_0003_longest_substring_without_repeating_characters;

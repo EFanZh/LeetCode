@@ -3,13 +3,13 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cell::Cell;
-use std::{mem, ptr};
+use std::ptr;
 
 type State = (Cell<u32>, Cell<u32>);
 
 impl Solution {
     fn get_node(union_find: &[State], state: &State) -> u32 {
-        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / mem::size_of::<State>()) as _
+        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / size_of::<State>()) as _
     }
 
     fn find_root<'a>(union_find: &'a [State], state: &'a State) -> &'a State {
@@ -51,9 +51,9 @@ impl Solution {
 
         let zero_root = Self::find_root(union_find, &union_find[0]);
 
-        while let Some((x, y)) = time_frame.pop() {
-            if !ptr::eq(Self::find_root(union_find, x), zero_root) {
-                for node in [x, y] {
+        while let Some(item) = time_frame.pop() {
+            if !ptr::eq(Self::find_root(union_find, item.0), zero_root) {
+                for node in <[_; 2]>::from(item) {
                     node.0.set(u32::MAX);
                     node.1.set(0);
                 }

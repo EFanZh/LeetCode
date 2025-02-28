@@ -51,7 +51,7 @@ impl<'a> Writer<'a> {
 }
 
 impl Solution {
-    fn merge_to_buffer(left: &[(u32, u32, u32)], right: &mut [(u32, u32, u32)], buffer: &mut [(u32, u32, u32)]) {
+    fn merge_to_buffer(left: &[(u32, u32, u32)], right: &[(u32, u32, u32)], buffer: &mut [(u32, u32, u32)]) {
         let mut left_iter = left.iter();
         let mut left = *left_iter.next().unwrap();
         let mut right_iter = right.iter();

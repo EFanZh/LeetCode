@@ -4,9 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn decode(rec: &[i32]) -> (i32, i32, i32, i32) {
-        let [x1, y1, x2, y2]: [_; 4] = rec.try_into().unwrap();
-
-        (x1, y1, x2, y2)
+        <[_; 4]>::try_from(rec).ok().unwrap().into()
     }
 
     fn overlaps(start_1: i32, end_1: i32, start_2: i32, end_2: i32) -> bool {

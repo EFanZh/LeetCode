@@ -6,11 +6,7 @@ impl Solution {
     pub fn minimum_effort(tasks: Vec<Vec<i32>>) -> i32 {
         let mut tasks = tasks
             .into_iter()
-            .map(|task| {
-                let [actual, minimum]: [_; 2] = task.try_into().ok().unwrap();
-
-                (actual, minimum)
-            })
+            .map(|task| <(_, _)>::from(<[_; 2]>::try_from(task).ok().unwrap()))
             .collect::<Box<_>>();
 
         tasks.sort_unstable_by_key(|(actual, minimum)| actual - minimum);

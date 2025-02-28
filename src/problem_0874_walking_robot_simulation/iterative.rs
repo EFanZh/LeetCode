@@ -11,11 +11,7 @@ impl Solution {
 
         let obstacles = obstacles
             .into_iter()
-            .map(|position| {
-                let [x, y]: [i32; 2] = position.as_slice().try_into().unwrap();
-
-                (x, y)
-            })
+            .map(|position| <(_, _)>::from(<[_; 2]>::try_from(position).ok().unwrap()))
             .collect::<HashSet<_>>();
 
         let mut result = 0;

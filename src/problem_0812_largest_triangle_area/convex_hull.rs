@@ -41,11 +41,7 @@ impl Solution {
     fn sort_points(points: &[Vec<i32>]) -> Vec<(i32, i32)> {
         let mut points = points
             .iter()
-            .map(|p| {
-                let [x, y]: [i32; 2] = p.as_slice().try_into().unwrap();
-
-                (x, y)
-            })
+            .map(|p| <(_, _)>::from(<[_; 2]>::try_from(p.as_slice()).ok().unwrap()))
             .collect::<Vec<_>>();
 
         // Find the left most point of the bottom row.

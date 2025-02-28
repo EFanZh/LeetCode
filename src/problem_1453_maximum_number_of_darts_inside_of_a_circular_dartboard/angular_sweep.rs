@@ -6,11 +6,7 @@ impl Solution {
     pub fn num_points(darts: Vec<Vec<i32>>, r: i32) -> i32 {
         let darts = darts
             .into_iter()
-            .map(|dart| {
-                let [x, y]: [_; 2] = dart.try_into().ok().unwrap();
-
-                (x, y)
-            })
+            .map(|dart| <(_, _)>::from(<[_; 2]>::try_from(dart).ok().unwrap()))
             .collect::<Box<_>>();
 
         let darts = darts.as_ref();

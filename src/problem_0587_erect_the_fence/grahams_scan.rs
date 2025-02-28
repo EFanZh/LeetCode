@@ -20,11 +20,7 @@ impl Solution {
     fn sort_points(points: &[Vec<i32>]) -> Option<Vec<(i32, i32)>> {
         let mut points = points
             .iter()
-            .map(|p| {
-                let [x, y]: [i32; 2] = p.as_slice().try_into().unwrap();
-
-                (x, y)
-            })
+            .map(|p| <(_, _)>::from(<[_; 2]>::try_from(p.as_slice()).ok().unwrap()))
             .collect::<Vec<_>>();
 
         // Find the left most point of the bottom row.
@@ -90,8 +86,8 @@ impl Solution {
 
                 points.truncate(stack.len());
 
-                for (target, (x, y)) in points.iter_mut().zip(stack) {
-                    target.as_mut_slice().copy_from_slice(&[x, y]);
+                for (target, point) in points.iter_mut().zip(stack) {
+                    target.as_mut_slice().copy_from_slice(&<[_; 2]>::from(point));
                 }
             }
         }

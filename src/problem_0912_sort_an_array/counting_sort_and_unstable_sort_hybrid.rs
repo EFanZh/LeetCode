@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
-
 impl Solution {
     fn min_max(nums: &[i32]) -> Option<(i32, i32)> {
         let mut iter = nums.iter().copied();
@@ -57,7 +55,7 @@ impl Solution {
                 let range = (max - min + 1) as u32 as usize;
                 let n = nums.len();
 
-                if range <= n * (mem::size_of_val(&n) * 8 - 2 - n.leading_zeros() as usize) {
+                if range <= n * (size_of_val(&n) * 8 - 2 - n.leading_zeros() as usize) {
                     Self::counting_sort(&mut nums, min, range);
                 } else {
                     nums.sort_unstable();

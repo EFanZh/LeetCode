@@ -63,7 +63,7 @@ impl Fancy {
         self.inc = (u64::from(self.inc) * m % Self::MODULUS) as _;
     }
 
-    fn get_index(&mut self, idx: i32) -> i32 {
+    fn get_index(&self, idx: i32) -> i32 {
         let idx = idx as u32 as usize;
 
         self.values.get(idx).map_or(-1, |&value| {
@@ -92,7 +92,7 @@ impl super::Fancy for Fancy {
     }
 
     fn get_index(&mut self, idx: i32) -> i32 {
-        self.get_index(idx)
+        (*self).get_index(idx)
     }
 }
 

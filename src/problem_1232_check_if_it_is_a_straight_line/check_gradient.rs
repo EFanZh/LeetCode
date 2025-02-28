@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::convert::{TryFrom, TryInto};
-
 impl Solution {
     fn get_point(p: &[i32]) -> [i32; 2] {
         p.try_into().unwrap()

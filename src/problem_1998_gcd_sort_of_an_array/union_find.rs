@@ -7,7 +7,7 @@ use std::collections::hash_map::Entry;
 use std::collections::{HashMap, HashSet};
 use std::hash::{BuildHasherDefault, DefaultHasher};
 use std::num::NonZeroU32;
-use std::{mem, ptr};
+use std::ptr;
 
 type State = (Cell<u32>, Cell<u32>);
 
@@ -59,7 +59,7 @@ impl Solution {
     }
 
     fn get_node(union_find: &[State], state: &State) -> u32 {
-        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / mem::size_of::<State>()) as _
+        ((ptr::from_ref(state) as usize - union_find.as_ptr() as usize) / size_of::<State>()) as _
     }
 
     fn find_root_helper<'a>(union_find: &'a [State], state: &'a State) -> &'a State {

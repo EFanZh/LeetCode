@@ -8,11 +8,7 @@ impl Solution {
     pub fn min_area_free_rect(points: Vec<Vec<i32>>) -> f64 {
         let points = points
             .iter()
-            .map(|point| {
-                let [x, y]: [_; 2] = point.as_slice().try_into().unwrap();
-
-                (x, y)
-            })
+            .map(|point| <(_, _)>::from(<[_; 2]>::try_from(point.as_slice()).ok().unwrap()))
             .collect::<Vec<_>>();
 
         let mut iter = points.iter().copied();

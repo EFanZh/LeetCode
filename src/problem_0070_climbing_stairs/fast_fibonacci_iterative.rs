@@ -2,14 +2,12 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
-
 // https://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form.
 
 impl Solution {
     fn fast_fibonacci(n: i32) -> i32 {
         let n = n as u32;
-        let bits = (mem::size_of_val(&n) as u32) * 8 - n.leading_zeros();
+        let bits = (size_of_val(&n) as u32) * 8 - n.leading_zeros();
         let mut matrix = (1, 0);
 
         for bit in (0..bits).rev() {
