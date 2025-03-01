@@ -1843,6 +1843,7 @@ pub mod problem_2455_average_value_of_even_numbers_that_are_divisible_by_three;
 pub mod problem_2456_most_popular_video_creator;
 pub mod problem_2460_apply_operations_to_an_array;
 pub mod problem_2461_maximum_sum_of_distinct_subarrays_with_length_k;
+pub mod problem_2462_total_cost_to_hire_k_workers;
 
 #[cfg(test)]
 mod test_utilities;
