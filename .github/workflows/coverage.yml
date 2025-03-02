@@ -17,7 +17,7 @@ jobs:
                 --cmake-toolchain-file "$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
                 --llvm-version 18
                 -o coverage/lcov.info
-          - uses: codecov/codecov-action@v3
+          - uses: codecov/codecov-action@v5
             with:
                 files: coverage/lcov.info
           - uses: coverallsapp/github-action@v2
