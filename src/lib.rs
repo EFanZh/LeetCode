@@ -1847,6 +1847,7 @@ pub mod problem_2460_apply_operations_to_an_array;
 pub mod problem_2461_maximum_sum_of_distinct_subarrays_with_length_k;
 pub mod problem_2462_total_cost_to_hire_k_workers;
 pub mod problem_2465_number_of_distinct_averages;
+pub mod problem_2466_count_ways_to_build_good_strings;
 
 #[cfg(test)]
 mod test_utilities;
