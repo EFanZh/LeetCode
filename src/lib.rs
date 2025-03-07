@@ -1848,6 +1848,7 @@ pub mod problem_2461_maximum_sum_of_distinct_subarrays_with_length_k;
 pub mod problem_2462_total_cost_to_hire_k_workers;
 pub mod problem_2465_number_of_distinct_averages;
 pub mod problem_2466_count_ways_to_build_good_strings;
+pub mod problem_2469_convert_the_temperature;
 pub mod problem_2475_number_of_unequal_triplets_in_array;
 
 #[cfg(test)]
