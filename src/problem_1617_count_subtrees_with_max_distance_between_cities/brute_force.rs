@@ -69,7 +69,7 @@ impl Solution {
         let mut graph = [0_u16; 16];
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
             let from = from - 1;
             let to = to - 1;
 

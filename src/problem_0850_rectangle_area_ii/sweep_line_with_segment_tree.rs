@@ -237,7 +237,7 @@ impl Solution {
         let mut ys = HashSet::new();
 
         for rectangle in &rectangles {
-            let [x_1, y_1, x_2, y_2]: [_; 4] = rectangle.as_slice().try_into().unwrap();
+            let [x_1, y_1, x_2, y_2] = rectangle.as_slice().try_into().unwrap();
             let (x_1, y_1, x_2, y_2) = (x_1 as u32, y_1 as u32, x_2 as u32, y_2 as u32);
 
             ys.extend([y_1, y_2]);

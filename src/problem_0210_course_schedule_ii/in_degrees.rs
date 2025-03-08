@@ -11,7 +11,7 @@ impl Solution {
         let mut in_degrees = vec![0; num_courses];
 
         for edge in prerequisites {
-            let [to, from]: [_; 2] = edge.as_slice().try_into().unwrap();
+            let [to, from] = edge.as_slice().try_into().unwrap();
 
             graph[from as usize].push(to);
             in_degrees[to as usize] += 1;

@@ -21,7 +21,7 @@ impl ATM {
     }
 
     fn deposit(&mut self, banknotes_count: Vec<i32>) {
-        let [count_20, count_50, count_100, count_200, count_500]: [_; 5] = banknotes_count.try_into().ok().unwrap();
+        let [count_20, count_50, count_100, count_200, count_500] = banknotes_count.try_into().ok().unwrap();
 
         self.count_20 += count_20 as u32;
         self.count_50 += count_50 as u32;

@@ -11,7 +11,7 @@ impl Solution {
         let mut all_players = HashSet::new();
 
         for match_ in matches {
-            let [winner, loser]: [_; 2] = match_.try_into().ok().unwrap();
+            let [winner, loser] = match_.try_into().ok().unwrap();
             let (winner, loser) = (winner as u32, loser as u32);
 
             all_players.extend([winner, loser]);

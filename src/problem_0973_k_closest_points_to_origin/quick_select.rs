@@ -10,7 +10,7 @@ impl Solution {
         if k < points.len() {
             let i = points
                 .select_nth_unstable_by_key(k, |p| {
-                    let [x, y]: [_; 2] = p.as_slice().try_into().unwrap();
+                    let [x, y] = p.as_slice().try_into().unwrap();
 
                     x * x + y * y
                 })

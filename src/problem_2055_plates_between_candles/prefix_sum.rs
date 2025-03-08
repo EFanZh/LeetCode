@@ -36,7 +36,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [left, right]: [_; 2] = query.try_into().ok().unwrap();
+                let [left, right] = query.try_into().ok().unwrap();
                 let right_sum = prefix_sums[right as u32 as usize].1;
                 let left_sum = prefix_sums[left as u32 as usize].0;
 

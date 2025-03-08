@@ -29,7 +29,7 @@ mod tests {
             let result = S::three_equal_parts(arr.to_vec());
 
             if expected {
-                let [i, j]: [_; 2] = result.try_into().unwrap();
+                let [i, j] = result.try_into().unwrap();
                 let (i, j) = (i as usize, j as usize);
                 let part_1 = trim_leading_zeros(&arr[..=i]);
                 let part_2 = trim_leading_zeros(&arr[i + 1..j]);

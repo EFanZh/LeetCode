@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_subsequence_count(text: String, pattern: String) -> i64 {
-        let [left, right]: [_; 2] = pattern.into_bytes().try_into().ok().unwrap();
+        let [left, right] = pattern.into_bytes().try_into().ok().unwrap();
         let mut left_count = 0_u64;
         let mut right_count = 0_u64;
         let mut result = 0;

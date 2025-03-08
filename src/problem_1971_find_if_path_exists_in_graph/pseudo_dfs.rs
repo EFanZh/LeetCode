@@ -13,7 +13,7 @@ impl Solution {
             let mut graph = vec![Vec::new(); n as u32 as usize].into_boxed_slice();
 
             for edge in edges {
-                let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+                let [from, to] = edge.try_into().ok().unwrap();
                 let from = from as u32;
                 let to = to as u32;
 

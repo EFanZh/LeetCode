@@ -24,7 +24,7 @@ impl Solution {
         let mut not_equals = Vec::new();
 
         for equation in &equations {
-            let [lhs, operator, _, rhs]: [_; 4] = equation.as_bytes().try_into().unwrap();
+            let [lhs, operator, _, rhs] = equation.as_bytes().try_into().unwrap();
             let (lhs, rhs) = (lhs - b'a', rhs - b'a');
 
             if operator == b'=' {

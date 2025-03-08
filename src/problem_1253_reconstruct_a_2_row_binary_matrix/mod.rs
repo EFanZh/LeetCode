@@ -20,7 +20,7 @@ mod tests {
             let result = S::reconstruct_matrix(upper, lower, colsum.to_vec());
 
             if has_solution {
-                let [top, bottom]: [_; 2] = result.try_into().unwrap();
+                let [top, bottom] = result.try_into().unwrap();
 
                 assert_eq!(top.len(), colsum.len());
                 assert_eq!(bottom.len(), colsum.len());

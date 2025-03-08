@@ -10,7 +10,7 @@ impl Solution {
         let mut users = HashMap::<i32, HashSet<_>>::new();
 
         for log in logs {
-            let [id, time]: [_; 2] = log.try_into().ok().unwrap();
+            let [id, time] = log.try_into().ok().unwrap();
 
             match users.entry(id) {
                 Entry::Occupied(entry) => {

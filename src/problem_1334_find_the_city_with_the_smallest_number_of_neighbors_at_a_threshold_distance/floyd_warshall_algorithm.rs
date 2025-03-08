@@ -12,7 +12,7 @@ impl Solution {
         let mut cache = vec![u32::MAX; n * n].into_boxed_slice();
 
         for edge in edges {
-            let [from, to, weight]: [_; 3] = edge.try_into().ok().unwrap();
+            let [from, to, weight] = edge.try_into().ok().unwrap();
             let from = from as usize;
             let to = to as usize;
             let weight = weight as _;

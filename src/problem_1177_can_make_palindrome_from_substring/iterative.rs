@@ -22,7 +22,7 @@ impl Solution {
         queries
             .iter()
             .map(|query| {
-                let [left, right, k]: [_; 3] = query.as_slice().try_into().unwrap();
+                let [left, right, k] = query.as_slice().try_into().unwrap();
                 let (left, right, k) = (left as usize, right as usize, k as u32);
                 let state = states[right] ^ states.get(left.wrapping_sub(1)).copied().unwrap_or(0);
 

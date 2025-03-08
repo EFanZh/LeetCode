@@ -46,7 +46,7 @@ impl Solution {
 
         while Self::find_root(&mut union_find, source) != Self::find_root(&mut union_find, destination) {
             if let Some(edge) = iter.next() {
-                let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+                let [from, to] = edge.try_into().ok().unwrap();
 
                 Self::union(&mut union_find, from as _, to as _);
             } else {

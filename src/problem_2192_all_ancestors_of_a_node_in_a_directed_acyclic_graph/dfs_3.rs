@@ -27,7 +27,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
 
             graph[usize::from(from as u16)].push(usize::from(to as u16));
         }

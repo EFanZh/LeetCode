@@ -13,7 +13,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for pair in pairs {
-            let [left, right]: [_; 2] = pair.try_into().ok().unwrap();
+            let [left, right] = pair.try_into().ok().unwrap();
             let left = left as usize;
             let right = right as usize;
 

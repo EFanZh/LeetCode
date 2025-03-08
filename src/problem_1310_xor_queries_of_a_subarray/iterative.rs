@@ -15,7 +15,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [left, right]: [_; 2] = query.try_into().ok().unwrap();
+                let [left, right] = query.try_into().ok().unwrap();
 
                 arr[right as usize] ^ arr.get((left as usize).wrapping_sub(1)).copied().unwrap_or(0)
             })

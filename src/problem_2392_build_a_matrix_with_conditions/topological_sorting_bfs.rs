@@ -12,7 +12,7 @@ impl Solution {
         queue: &mut VecDeque<u16>,
     ) -> bool {
         for condition in conditions {
-            let [num_1, num_2]: [_; 2] = condition.try_into().ok().unwrap();
+            let [num_1, num_2] = condition.try_into().ok().unwrap();
             let num_1 = num_1 as u32 as usize - 1;
             let num_2 = num_2 as u32 as usize - 1;
 

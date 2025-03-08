@@ -8,7 +8,7 @@ impl Solution {
         let mut min_h = n;
 
         for op in ops {
-            let [w, h]: [i32; 2] = op.as_slice().try_into().unwrap();
+            let [w, h] = op.as_slice().try_into().unwrap();
 
             min_w = min_w.min(w);
             min_h = min_h.min(h);

@@ -36,7 +36,7 @@ impl Solution {
         let mut new_intervals = Vec::with_capacity(n * 2);
 
         for (i, interval) in (0_u32..).zip(intervals) {
-            let [left, right]: [_; 2] = interval.try_into().ok().unwrap();
+            let [left, right] = interval.try_into().ok().unwrap();
             let (left, right) = (left as u32, right as u32 + 1);
 
             new_intervals.extend([(left, right - left, i), (right, 0, i)]);

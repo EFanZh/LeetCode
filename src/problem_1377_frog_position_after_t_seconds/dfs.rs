@@ -50,7 +50,7 @@ impl Solution {
         context.tree[0].push(usize::MAX);
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
             let from = from as usize - 1;
             let to = to as usize - 1;
 

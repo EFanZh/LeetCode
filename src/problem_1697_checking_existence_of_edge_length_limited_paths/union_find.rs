@@ -46,7 +46,7 @@ impl Solution {
         let mut edge_list = edge_list
             .into_iter()
             .map(|edge| {
-                let [from, to, distance]: [_; 3] = edge.try_into().ok().unwrap();
+                let [from, to, distance] = edge.try_into().ok().unwrap();
 
                 (distance as u32, from as u32, to as u32)
             })
@@ -60,7 +60,7 @@ impl Solution {
             .iter_mut()
             .zip(queries)
             .map(|(slot, query)| {
-                let [from, to, limit]: [_; 3] = query.try_into().ok().unwrap();
+                let [from, to, limit] = query.try_into().ok().unwrap();
 
                 (limit as u32, from as u32, to as u32, slot)
             })

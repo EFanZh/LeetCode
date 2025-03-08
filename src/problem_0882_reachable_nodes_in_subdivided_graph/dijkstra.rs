@@ -37,7 +37,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for edge in edges {
-            let [from, to, count]: [_; 3] = edge.as_slice().try_into().unwrap();
+            let [from, to, count] = edge.as_slice().try_into().unwrap();
             let from = from as u32;
             let to = to as u32;
             let count = count as u32;

@@ -68,7 +68,7 @@ impl Solution {
             .collect::<Box<_>>();
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
 
             graph[from as u32 as usize].1.push(to as _);
         }

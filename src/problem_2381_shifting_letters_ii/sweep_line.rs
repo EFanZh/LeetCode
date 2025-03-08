@@ -31,7 +31,7 @@ impl Solution {
         }
 
         for shift in shifts {
-            let [start, end, direction]: [_; 3] = shift.as_slice().try_into().ok().unwrap();
+            let [start, end, direction] = shift.as_slice().try_into().ok().unwrap();
             let diff = if direction == 0 { 25 } else { 1 };
 
             Self::assign_add(&mut slice[start as u32 as usize], diff);

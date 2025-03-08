@@ -37,7 +37,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in edges {
-            let [from, to, weight]: [_; 3] = edge.try_into().ok().unwrap();
+            let [from, to, weight] = edge.try_into().ok().unwrap();
             let from = from as u32 - 1;
             let to = to as u32 - 1;
             let weight = weight as u32;

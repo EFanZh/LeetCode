@@ -10,7 +10,7 @@ impl Solution {
         let mut tasks = (0_u32..)
             .zip(tasks)
             .map(|(i, task)| {
-                let [enqueue_time, processing_time]: [_; 2] = task.try_into().ok().unwrap();
+                let [enqueue_time, processing_time] = task.try_into().ok().unwrap();
 
                 (enqueue_time as u32, processing_time as u32, i)
             })

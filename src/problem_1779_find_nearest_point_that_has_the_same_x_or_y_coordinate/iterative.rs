@@ -8,7 +8,7 @@ impl Solution {
         let mut min_distance = i32::MAX;
 
         for (i, point) in (0..).zip(&points) {
-            let [p_x, p_y]: [_; 2] = point.as_slice().try_into().ok().unwrap();
+            let [p_x, p_y] = point.as_slice().try_into().ok().unwrap();
 
             let distance = if p_x == x {
                 (p_y - y).abs()

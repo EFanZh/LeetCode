@@ -50,7 +50,7 @@ impl Solution {
         let mut union_find = vec![(0, 0); n].into_boxed_slice();
 
         for allowed_swap in allowed_swaps {
-            let [x, y]: [_; 2] = allowed_swap.try_into().ok().unwrap();
+            let [x, y] = allowed_swap.try_into().ok().unwrap();
 
             Self::union(&mut union_find, x as _, y as _);
         }

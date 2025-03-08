@@ -54,7 +54,7 @@ impl Solution {
         let mut allowed_map = [0; MAX_PAIRS];
 
         for triple in &allowed {
-            let [left, right, top]: [u8; 3] = triple.as_bytes().try_into().unwrap();
+            let [left, right, top] = triple.as_bytes().try_into().unwrap();
 
             allowed_map[usize::from(((left - b'A') << SHIFT_BITS) | (right - b'A'))] |= 1 << (top - b'A');
         }

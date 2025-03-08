@@ -11,7 +11,7 @@ impl Solution {
         let mut prev_fuel = start_fuel;
 
         for station in &stations {
-            let [position, fuel]: [_; 2] = station.as_slice().try_into().unwrap();
+            let [position, fuel] = station.as_slice().try_into().unwrap();
             let fuel_required = position - prev_position;
 
             while prev_fuel < fuel_required {

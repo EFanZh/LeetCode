@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn parse_point(point: Vec<i32>) -> (u32, u32) {
-        let [y, x]: [_; 2] = point.try_into().ok().unwrap();
+        let [y, x] = point.try_into().ok().unwrap();
 
         (y as _, x as _)
     }

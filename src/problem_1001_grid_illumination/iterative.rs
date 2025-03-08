@@ -42,7 +42,7 @@ impl Solution {
         let mut lamps = lamps
             .iter()
             .map(|lamp| {
-                let [y, x]: [_; 2] = lamp.as_slice().try_into().unwrap();
+                let [y, x] = lamp.as_slice().try_into().unwrap();
 
                 (y as u32, x as u32)
             })
@@ -66,7 +66,7 @@ impl Solution {
         queries
             .iter()
             .map(|query| {
-                let [y, x]: [_; 2] = query.as_slice().try_into().unwrap();
+                let [y, x] = query.as_slice().try_into().unwrap();
                 let y = y as u32;
                 let x = x as u32;
                 let (row_index, column_index, diagonal_index_1, diagonal_index_2) = indices(y, x);

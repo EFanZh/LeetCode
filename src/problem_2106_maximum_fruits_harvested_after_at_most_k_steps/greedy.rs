@@ -7,7 +7,7 @@ impl Solution {
         let fruits = fruits
             .into_iter()
             .map(|fruit| {
-                let [position, amount]: [_; 2] = fruit.try_into().ok().unwrap();
+                let [position, amount] = fruit.try_into().ok().unwrap();
 
                 (position as u32, amount as u32)
             })

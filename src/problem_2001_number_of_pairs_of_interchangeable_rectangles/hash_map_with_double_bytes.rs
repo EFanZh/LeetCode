@@ -11,7 +11,7 @@ impl Solution {
         let mut result = 0_u64;
 
         for rectangle in rectangles {
-            let [width, height]: [_; 2] = rectangle.try_into().ok().unwrap();
+            let [width, height] = rectangle.try_into().ok().unwrap();
 
             match counts.entry((f64::from(width) / f64::from(height)).to_ne_bytes()) {
                 Entry::Occupied(entry) => {

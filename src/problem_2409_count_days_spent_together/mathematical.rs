@@ -6,7 +6,7 @@ impl Solution {
     fn parse(s: String) -> u16 {
         const MONTH_START_DAYS: [u16; 11] = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304];
 
-        let [m0, m1, _, d0, d1]: [_; 5] = s.into_bytes().try_into().ok().unwrap();
+        let [m0, m1, _, d0, d1] = s.into_bytes().try_into().ok().unwrap();
         let month = 10 * (m0 - b'0') + (m1 - b'0') - 1;
         let day = 10 * (d0 - b'0') + (d1 - b'0') - 1;
 

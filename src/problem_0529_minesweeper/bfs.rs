@@ -36,7 +36,7 @@ impl Solution {
 
     pub fn update_board(board: Vec<Vec<char>>, click: Vec<i32>) -> Vec<Vec<char>> {
         let mut board = board;
-        let [row, column]: [i32; 2] = click.as_slice().try_into().unwrap();
+        let [row, column] = click.as_slice().try_into().unwrap();
         let mut position = (row as usize, column as usize);
         let slot = &mut board[position.0][position.1];
 

@@ -28,7 +28,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for edge in &richer {
-            let [rich, poor]: [i32; 2] = edge.as_slice().try_into().unwrap();
+            let [rich, poor] = edge.as_slice().try_into().unwrap();
 
             graph[poor as usize].push(rich as usize);
         }

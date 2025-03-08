@@ -7,7 +7,7 @@ impl Solution {
         static COMMON_YEAR_DAYS: [u32; 11] = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304];
         static LEAP_YEAR_DAYS: [u32; 11] = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305];
 
-        let [y1, y2, y3, y4, _, m1, m2, _, d1, d2]: [_; 10] = date.as_bytes().try_into().ok().unwrap();
+        let [y1, y2, y3, y4, _, m1, m2, _, d1, d2] = date.as_bytes().try_into().ok().unwrap();
 
         let year =
             1000 * u32::from(y1) + 100 * u32::from(y2) + 10 * u32::from(y3) + u32::from(y4) - u32::from(b'0') * 1111;

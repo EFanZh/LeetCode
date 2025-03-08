@@ -37,7 +37,7 @@ impl Solution {
         let mut sell = BinaryHeap::<Reverse<Order>>::new();
 
         'outer: for order in orders {
-            let [price, amount, order_type]: [_; 3] = order.try_into().ok().unwrap();
+            let [price, amount, order_type] = order.try_into().ok().unwrap();
             let price = price as u32;
             let mut amount = amount as u32;
 

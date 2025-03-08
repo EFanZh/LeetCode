@@ -11,7 +11,7 @@ impl Solution {
         let mut graph = HashMap::<_, HashSet<_>>::new();
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
             let from = from as u16;
             let to = to as u16;
 
