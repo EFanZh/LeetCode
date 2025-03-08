@@ -9,7 +9,7 @@ impl Solution {
         let n = customers.len();
 
         for customer in customers {
-            let [arrival, time]: [_; 2] = customer.try_into().ok().unwrap();
+            let [arrival, time] = customer.try_into().ok().unwrap();
 
             free_time = free_time.max(arrival) + time;
             total_waiting_time += i64::from(free_time - arrival);

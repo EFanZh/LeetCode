@@ -47,7 +47,7 @@ impl Solution {
         let mut shared_edges = Vec::new();
 
         for edge in edges {
-            let [edge_type, from, to]: [_; 3] = edge.as_slice().try_into().ok().unwrap();
+            let [edge_type, from, to] = edge.as_slice().try_into().ok().unwrap();
 
             let container = match edge_type {
                 1 => &mut alice_edges,

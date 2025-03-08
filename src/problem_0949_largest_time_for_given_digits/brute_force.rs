@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn largest_time_from_digits(arr: Vec<i32>) -> String {
-        let [a, b, c, d]: [_; 4] = arr.try_into().unwrap();
+        let [a, b, c, d] = arr.try_into().unwrap();
         let mut arr = [a as u8, b as u8, c as u8, d as u8];
 
         arr.sort_unstable();

@@ -25,7 +25,7 @@ impl Solution {
     }
 
     pub fn mincost_tickets(days: Vec<i32>, costs: Vec<i32>) -> i32 {
-        let [price_1, price_7, price_30]: [_; 3] = costs.try_into().unwrap();
+        let [price_1, price_7, price_30] = costs.try_into().unwrap();
         let (price_1, price_7, price_30) = (price_1 as u32, price_7 as u32, price_30 as u32);
         let mut cache = [(0, 0); 32];
         let mut length = 0;

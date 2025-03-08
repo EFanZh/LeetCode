@@ -16,7 +16,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [left, right]: [_; 2] = query.try_into().ok().unwrap();
+                let [left, right] = query.try_into().ok().unwrap();
                 let left_count = counts.get((left - 1) as u32 as usize).unwrap_or(&[0; 100]);
                 let right_count = &counts[right as u32 as usize];
                 let mut result = u32::MAX;

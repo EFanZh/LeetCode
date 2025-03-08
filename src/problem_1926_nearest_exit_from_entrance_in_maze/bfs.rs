@@ -7,7 +7,7 @@ use std::collections::VecDeque;
 impl Solution {
     pub fn nearest_exit(maze: Vec<Vec<char>>, entrance: Vec<i32>) -> i32 {
         let mut maze = maze;
-        let [y, x]: [_; 2] = entrance.try_into().ok().unwrap();
+        let [y, x] = entrance.try_into().ok().unwrap();
         let y = y as u8;
         let x = x as u8;
 

@@ -13,7 +13,7 @@ impl Solution {
 
         (0..n)
             .map(|_| {
-                let [min_1, min_2]: [_; 2] = sums[..2].try_into().ok().unwrap();
+                let [min_1, min_2] = sums[..2].try_into().ok().unwrap();
                 let mut diff = min_2 - min_1;
 
                 // +---------------+-------------------+---------+-----------+

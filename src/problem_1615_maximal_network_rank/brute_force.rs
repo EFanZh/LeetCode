@@ -25,7 +25,7 @@ impl Solution {
         let mut connected = BitSet::new(n * n);
 
         for road in roads {
-            let [from, to]: [_; 2] = road.try_into().ok().unwrap();
+            let [from, to] = road.try_into().ok().unwrap();
             let from = from as u32 as usize;
             let to = to as u32 as usize;
 

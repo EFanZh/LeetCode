@@ -11,7 +11,7 @@ impl Solution {
         let mut replacements = HashMap::new();
 
         while let Some(operation) = operations.pop() {
-            let [from, to]: [_; 2] = operation.try_into().ok().unwrap();
+            let [from, to] = operation.try_into().ok().unwrap();
             let to = replacements.get(&to).copied().unwrap_or(to);
 
             replacements.insert(from, to);

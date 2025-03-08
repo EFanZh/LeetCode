@@ -10,7 +10,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for flight in &flights {
-            let [from, to, price]: [i32; 3] = flight.as_slice().try_into().unwrap();
+            let [from, to, price] = flight.as_slice().try_into().unwrap();
 
             graph[from as usize].push((to as u32, price as u32));
         }

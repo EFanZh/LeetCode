@@ -15,7 +15,7 @@ impl Solution {
         let mut result = i32::MIN;
 
         for point in points {
-            let [x, y]: [_; 2] = point.try_into().ok().unwrap();
+            let [x, y] = point.try_into().ok().unwrap();
             let x_plus_y = x + y;
 
             while let Some(front) = queue.front() {

@@ -35,7 +35,7 @@ impl Solution {
         let positions = positions
             .into_iter()
             .map(|position| {
-                let [x, y]: [_; 2] = position.try_into().ok().unwrap();
+                let [x, y] = position.try_into().ok().unwrap();
 
                 (f64::from(x), f64::from(y))
             })

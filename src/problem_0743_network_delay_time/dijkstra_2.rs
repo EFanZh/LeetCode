@@ -74,7 +74,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for edge in times {
-            let [from, to, weight]: [i32; 3] = edge.as_slice().try_into().unwrap();
+            let [from, to, weight] = edge.as_slice().try_into().unwrap();
 
             graph[(from - 1) as usize].push(((to - 1) as usize, weight as u32));
         }

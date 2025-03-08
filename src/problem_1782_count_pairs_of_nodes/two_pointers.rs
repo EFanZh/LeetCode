@@ -10,7 +10,7 @@ impl Solution {
         let mut edge_counts = HashMap::<_, u32>::new();
 
         for edge in edges {
-            let [x, y]: [_; 2] = edge.try_into().ok().unwrap();
+            let [x, y] = edge.try_into().ok().unwrap();
             let x = x as u16 - 1;
             let y = y as u16 - 1;
             let (x, y) = if y < x { (y, x) } else { (x, y) };

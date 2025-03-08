@@ -9,7 +9,7 @@ impl Solution {
         let mut courses = courses
             .iter()
             .map(|course| {
-                let [duration, deadline]: [_; 2] = course.as_slice().try_into().unwrap();
+                let [duration, deadline] = course.as_slice().try_into().unwrap();
 
                 (duration as u16, deadline as u16)
             })

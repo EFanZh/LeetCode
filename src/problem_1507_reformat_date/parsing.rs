@@ -31,7 +31,7 @@ impl Solution {
         let ([y0, y1, y2, y3], [m1, m2], [d0, d1]) = if let [d, _, _, _, _, m1, m2, _, y0, y1, y2, y3] = *s {
             ([y0, y1, y2, y3], [m1, m2], [b'0', d])
         } else {
-            let [d0, d1, _, _, _, _, m1, m2, _, y0, y1, y2, y3]: [_; 13] = s.try_into().unwrap();
+            let [d0, d1, _, _, _, _, m1, m2, _, y0, y1, y2, y3] = s.try_into().unwrap();
 
             ([y0, y1, y2, y3], [m1, m2], [d0, d1])
         };

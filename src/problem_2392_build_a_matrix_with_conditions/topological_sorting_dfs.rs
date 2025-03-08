@@ -32,7 +32,7 @@ impl Solution {
 
     fn topological_sorting(conditions: Vec<Vec<i32>>, graph: &mut [Vec<u16>], states: &mut [u16]) -> bool {
         for condition in conditions {
-            let [num_1, num_2]: [_; 2] = condition.try_into().ok().unwrap();
+            let [num_1, num_2] = condition.try_into().ok().unwrap();
 
             graph[num_2 as u32 as usize - 1].push((num_1 as u16) - 1);
         }

@@ -30,7 +30,7 @@ impl Solution {
             .collect::<Vec<_>>();
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
             let from = from as usize;
             let to = to as usize;
 

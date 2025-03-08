@@ -11,7 +11,7 @@ impl Solution {
         let mut operations = Vec::with_capacity(buildings.len() * 2);
 
         for building in buildings {
-            let [left, right, height]: [_; 3] = building.as_slice().try_into().unwrap();
+            let [left, right, height] = building.as_slice().try_into().unwrap();
 
             operations.push((left, right, height));
             operations.push((right, 0, 0));

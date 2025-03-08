@@ -26,7 +26,7 @@ impl Solution {
         let mut last = [0, 0];
 
         for edge in edges {
-            let [from, to]: [i32; 2] = edge.as_slice().try_into().unwrap();
+            let [from, to] = edge.as_slice().try_into().unwrap();
             let parent = &mut parents[(to - 1) as usize];
 
             if *parent == 0 {

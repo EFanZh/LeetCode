@@ -8,7 +8,7 @@ impl Solution {
         let mut events = Vec::with_capacity(n * 2);
 
         for segment in segments {
-            let [left, right, color]: [_; 3] = segment.try_into().ok().unwrap();
+            let [left, right, color] = segment.try_into().ok().unwrap();
 
             events.extend([(left as u32, color), (right as u32, -color)]);
         }

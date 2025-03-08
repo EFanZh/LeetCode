@@ -28,7 +28,7 @@ impl Solution {
         let mut states = vec![Vec::new(); n];
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
 
             states[usize::from(to as u16)].push(from as u16);
         }

@@ -10,7 +10,7 @@ impl Solution {
         let mut stack = Vec::<(u32, u32, u32, u32)>::new();
 
         for (target, car) in result.iter_mut().zip(cars).rev() {
-            let [position, speed]: [_; 2] = car.try_into().ok().unwrap();
+            let [position, speed] = car.try_into().ok().unwrap();
             let (position, speed) = (position as u32, speed as u32);
 
             let (distance, speed_diff) = loop {

@@ -45,8 +45,7 @@ impl Solution {
             new_letters[c as usize - usize::from(b'a')] += 1;
         }
 
-        let scores: [_; 26] = score.try_into().ok().unwrap();
-        let scores = scores.map(|score| score as u8);
+        let scores = <[_; 26]>::map(score.try_into().ok().unwrap(), |score| score as u8);
         let mut result = 0;
 
         Self::helper(&scores, 0, words.iter(), &mut new_letters, &mut result);

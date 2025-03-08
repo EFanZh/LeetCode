@@ -7,7 +7,7 @@ impl Solution {
         let mut items = items
             .into_iter()
             .map(|item| {
-                let [price, beauty]: [_; 2] = item.try_into().ok().unwrap();
+                let [price, beauty] = item.try_into().ok().unwrap();
 
                 (price as u32, beauty as u32)
             })

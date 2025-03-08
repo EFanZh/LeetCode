@@ -38,7 +38,7 @@ impl Solution {
         let mut nodes = vec![(Vec::new(), Cell::new(u64::MAX), Cell::new(0_u32)); usize::from(n)].into_boxed_slice();
 
         for road in roads {
-            let [from, to, time]: [_; 3] = road.try_into().ok().unwrap();
+            let [from, to, time] = road.try_into().ok().unwrap();
             let from = from as u8 as usize;
             let to = to as u8 as usize;
             let time = time as u32;

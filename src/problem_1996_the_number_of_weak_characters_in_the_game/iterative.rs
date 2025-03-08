@@ -9,7 +9,7 @@ impl Solution {
         let mut properties = properties
             .into_iter()
             .map(|property| {
-                let [attack, defense]: [_; 2] = property.try_into().ok().unwrap();
+                let [attack, defense] = property.try_into().ok().unwrap();
 
                 (attack as u32, defense as u32)
             })

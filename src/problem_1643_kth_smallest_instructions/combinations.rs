@@ -27,7 +27,7 @@ impl Solution {
     }
 
     pub fn kth_smallest_path(destination: Vec<i32>, k: i32) -> String {
-        let [row, column]: [_; 2] = destination.try_into().ok().unwrap();
+        let [row, column] = destination.try_into().ok().unwrap();
         let mut row = row as u32 as usize;
         let mut column = column as u32 as usize;
         let mut k = k as u32;

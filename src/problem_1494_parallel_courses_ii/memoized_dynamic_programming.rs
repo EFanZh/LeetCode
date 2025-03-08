@@ -87,7 +87,7 @@ impl Solution {
         let mut graph = vec![0; usize::from(n)].into_boxed_slice();
 
         for relation in relations {
-            let [from, to]: [_; 2] = relation.try_into().ok().unwrap();
+            let [from, to] = relation.try_into().ok().unwrap();
 
             graph[from as u32 as usize - 1] |= 1 << (to - 1);
         }

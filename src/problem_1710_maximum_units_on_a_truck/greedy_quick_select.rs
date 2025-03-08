@@ -40,7 +40,7 @@ impl Solution {
         let mut box_types = box_types
             .into_iter()
             .map(|box_type| {
-                let [count, units]: [_; 2] = box_type.try_into().ok().unwrap();
+                let [count, units] = box_type.try_into().ok().unwrap();
 
                 (units as u16, count as u16)
             })

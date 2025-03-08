@@ -13,7 +13,7 @@ impl DetectSquares {
     }
 
     fn add(&mut self, point: Vec<i32>) {
-        let [x, y]: [_; 2] = point.try_into().ok().unwrap();
+        let [x, y] = point.try_into().ok().unwrap();
         let x = x as u16;
         let y = y as u16;
 
@@ -31,7 +31,7 @@ impl DetectSquares {
     }
 
     fn count(&self, point: Vec<i32>) -> i32 {
-        let [x_0, y_0]: [_; 2] = point.try_into().ok().unwrap();
+        let [x_0, y_0] = point.try_into().ok().unwrap();
         let x_0 = x_0 as u16;
         let y_0 = y_0 as u16;
         let mut result = 0;

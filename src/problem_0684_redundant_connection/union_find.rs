@@ -37,7 +37,7 @@ impl Solution {
 
         loop {
             let edge = edges.next().unwrap();
-            let [a, b]: [i32; 2] = edge.as_slice().try_into().unwrap();
+            let [a, b] = edge.as_slice().try_into().unwrap();
             let (left_root, left_rank) = Self::get_root(&mut nodes, a);
             let (right_root, right_rank) = Self::get_root(&mut nodes, b);
 

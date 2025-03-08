@@ -23,11 +23,7 @@ impl State {
 
 impl Solution {
     fn iter_list(list: &[Vec<i32>]) -> impl Iterator<Item = i32> + '_ {
-        list.iter().flat_map(|interval| {
-            let interval: [_; 2] = interval.as_slice().try_into().unwrap();
-
-            interval
-        })
+        list.iter().flatten().copied()
     }
 
     pub fn interval_intersection(first_list: Vec<Vec<i32>>, second_list: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn maximum_product(nums: Vec<i32>) -> i32 {
         let (left, right) = nums.split_at(2);
-        let [first, second]: [i32; 2] = left.try_into().unwrap();
+        let [first, second] = left.try_into().unwrap();
 
         let (mut min_1, mut max_1) = if first < second {
             (first, second)

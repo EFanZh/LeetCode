@@ -54,7 +54,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [a, b]: [_; 2] = query.try_into().ok().unwrap();
+                let [a, b] = query.try_into().ok().unwrap();
 
                 Self::find_root(&mut union_find, a as _) == Self::find_root(&mut union_find, b as _)
             })

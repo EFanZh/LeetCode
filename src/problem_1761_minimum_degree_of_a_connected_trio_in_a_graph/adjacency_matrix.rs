@@ -9,7 +9,7 @@ impl Solution {
         let mut matrix = vec![false; n * n].into_boxed_slice();
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
             let from = from as u16 - 1;
             let to = to as u16 - 1;
 

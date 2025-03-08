@@ -8,7 +8,7 @@ impl Solution {
         let mut degrees = vec![0_u16; usize::from(n)];
 
         for item in trust {
-            let [from, to]: [_; 2] = item.try_into().unwrap();
+            let [from, to] = item.try_into().unwrap();
             let (from, to) = (from as usize - 1, to as usize - 1);
 
             degrees[from] = u16::MAX;

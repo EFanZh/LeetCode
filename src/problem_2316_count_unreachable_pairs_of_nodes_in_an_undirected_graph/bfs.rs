@@ -10,7 +10,7 @@ impl Solution {
         let mut nodes = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in edges {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
 
             nodes[from as u32 as usize].push(to as u32);
             nodes[to as u32 as usize].push(from as u32);

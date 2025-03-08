@@ -20,7 +20,7 @@ impl Solution {
         let mut points = HashMap::new();
 
         for rectangle in rectangles {
-            let [left, bottom, right, top]: [i32; 4] = rectangle.as_slice().try_into().unwrap();
+            let [left, bottom, right, top] = rectangle.as_slice().try_into().unwrap();
 
             for (point, corner) in [
                 ((left, bottom), (BOTTOM_LEFT_CORNER)),

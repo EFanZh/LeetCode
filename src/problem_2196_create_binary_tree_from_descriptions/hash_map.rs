@@ -22,7 +22,7 @@ impl Solution {
         };
 
         for description in descriptions {
-            let [parent, child, is_left]: [_; 3] = description.try_into().ok().unwrap();
+            let [parent, child, is_left] = description.try_into().ok().unwrap();
 
             {
                 let parent_node = get_node(parent);

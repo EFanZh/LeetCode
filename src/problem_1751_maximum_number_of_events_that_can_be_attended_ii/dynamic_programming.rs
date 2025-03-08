@@ -9,7 +9,7 @@ impl Solution {
         let mut events = events
             .into_iter()
             .map(|event| {
-                let [start, end, value]: [_; 3] = event.try_into().ok().unwrap();
+                let [start, end, value] = event.try_into().ok().unwrap();
 
                 (end as u32, start as u32, value as u32, Cell::new(0_u32))
             })

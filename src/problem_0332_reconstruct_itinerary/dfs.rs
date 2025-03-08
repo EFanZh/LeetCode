@@ -8,7 +8,7 @@ use std::collections::HashMap;
 
 impl Solution {
     fn name_to_id(name: &str) -> u32 {
-        let [a, b, c]: [u8; 3] = name.as_bytes().try_into().unwrap();
+        let [a, b, c] = name.as_bytes().try_into().unwrap();
 
         u32::from_le_bytes([c, b, a, 0])
     }

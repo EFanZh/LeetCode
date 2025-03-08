@@ -103,7 +103,7 @@ impl Solution {
         let mut times = times
             .into_iter()
             .map(|time| {
-                let [arrival, leaving]: [_; 2] = time.try_into().ok().unwrap();
+                let [arrival, leaving] = time.try_into().ok().unwrap();
 
                 (arrival as u32, leaving as u32)
             })

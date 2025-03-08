@@ -10,7 +10,7 @@ impl Solution {
         let mut indegrees = vec![0; n as _];
 
         for edge in edges {
-            let [from, to]: [i32; 2] = edge.as_slice().try_into().unwrap();
+            let [from, to] = edge.as_slice().try_into().unwrap();
 
             graph[from as usize].push(to);
             graph[to as usize].push(from);

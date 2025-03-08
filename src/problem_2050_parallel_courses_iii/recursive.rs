@@ -32,7 +32,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for relation in relations {
-            let [prev, next]: [_; 2] = relation.try_into().ok().unwrap();
+            let [prev, next] = relation.try_into().ok().unwrap();
 
             graph[prev as u32 as usize - 1].push(next as u16 - 1);
         }

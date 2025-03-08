@@ -136,7 +136,7 @@ mod tests {
 
         for ((n, edges), (expected_critical_edges, expected_pseudo_critical_edges)) in test_cases {
             let result = S::find_critical_and_pseudo_critical_edges(n, edges.iter().map(Vec::from).collect());
-            let [actual_critical_edges, actual_pseudo_critical_edges]: [_; 2] = result.try_into().ok().unwrap();
+            let [actual_critical_edges, actual_pseudo_critical_edges] = result.try_into().ok().unwrap();
 
             assert_eq!(
                 test_utilities::unstable_sorted(actual_critical_edges),

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn square_is_white(coordinates: String) -> bool {
-        let [column, row]: [_; 2] = coordinates.as_bytes().try_into().ok().unwrap();
+        let [column, row] = coordinates.as_bytes().try_into().ok().unwrap();
 
         (column ^ row) & 1 != 0
     }

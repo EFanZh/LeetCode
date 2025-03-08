@@ -5,9 +5,9 @@ pub struct Solution;
 impl Solution {
     pub fn valid_tic_tac_toe(board: Vec<String>) -> bool {
         let [row_0, row_1, row_2]: &[String; 3] = board.as_slice().try_into().unwrap();
-        let [cell_00, cell_01, cell_02]: [u8; 3] = row_0.as_bytes().try_into().unwrap();
-        let [cell_10, cell_11, cell_12]: [u8; 3] = row_1.as_bytes().try_into().unwrap();
-        let [cell_20, cell_21, cell_22]: [u8; 3] = row_2.as_bytes().try_into().unwrap();
+        let [cell_00, cell_01, cell_02] = row_0.as_bytes().try_into().unwrap();
+        let [cell_10, cell_11, cell_12] = row_1.as_bytes().try_into().unwrap();
+        let [cell_20, cell_21, cell_22] = row_2.as_bytes().try_into().unwrap();
 
         let mut wins = 0_u8;
 

@@ -58,7 +58,7 @@ impl Solution {
         let mut points_by_x = HashMap::new();
 
         for point in &points {
-            let [x, y]: [_; 2] = point.as_slice().try_into().unwrap();
+            let [x, y] = point.as_slice().try_into().unwrap();
 
             points_by_x
                 .entry(x)

@@ -9,7 +9,7 @@ impl Solution {
         let mut workers = HashMap::<_, Vec<_>>::new();
 
         for (name, time) in key_name.into_iter().zip(key_time) {
-            let [h0, h1, _, m0, m1]: [_; 5] = time.as_bytes().try_into().ok().unwrap();
+            let [h0, h1, _, m0, m1] = time.as_bytes().try_into().ok().unwrap();
             let time = u16::from(h0) * 600 + u16::from(h1) * 60 + u16::from(m0) * 10 + u16::from(m1);
 
             workers

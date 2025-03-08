@@ -13,7 +13,7 @@ impl Solution {
         let mut meetings = meetings
             .into_iter()
             .map(|meeting| {
-                let [start, end]: [_; 2] = meeting.try_into().ok().unwrap();
+                let [start, end] = meeting.try_into().ok().unwrap();
 
                 (start as u32, end as u32)
             })

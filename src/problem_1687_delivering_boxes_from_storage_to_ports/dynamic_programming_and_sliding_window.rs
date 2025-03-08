@@ -23,7 +23,7 @@ impl Solution {
         let boxes = boxes
             .into_iter()
             .map(|box_| {
-                let [port, weight]: [_; 2] = box_.try_into().ok().unwrap();
+                let [port, weight] = box_.try_into().ok().unwrap();
 
                 (port as u32, weight as u32)
             })

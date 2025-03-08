@@ -9,7 +9,7 @@ impl Solution {
         let mut diffs = [0_i8; 101];
 
         for log in logs {
-            let [birth, death]: [_; 2] = log.try_into().ok().unwrap();
+            let [birth, death] = log.try_into().ok().unwrap();
 
             diffs[birth as u32 as usize - MIN_YEAR] += 1;
             diffs[death as u32 as usize - MIN_YEAR] -= 1;

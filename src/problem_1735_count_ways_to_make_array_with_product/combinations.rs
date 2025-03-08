@@ -74,7 +74,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [n, k]: [_; 2] = query.try_into().ok().unwrap();
+                let [n, k] = query.try_into().ok().unwrap();
 
                 Self::query(&mut cache, n as _, k as _) as _
             })

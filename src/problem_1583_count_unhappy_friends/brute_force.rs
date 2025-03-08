@@ -28,7 +28,7 @@ impl Solution {
             .collect::<Box<_>>();
 
         for pair in pairs {
-            let [x, y]: [_; 2] = pair.as_slice().try_into().ok().unwrap();
+            let [x, y] = pair.as_slice().try_into().ok().unwrap();
 
             states[x as u32 as usize].paired_with = y as _;
             states[y as u32 as usize].paired_with = x as _;

@@ -7,7 +7,7 @@ use std::cmp::Ordering;
 impl Solution {
     pub fn max_product_difference(nums: Vec<i32>) -> i32 {
         let (head, tail) = nums.split_at(4);
-        let mut head: [_; 4] = head.try_into().ok().unwrap();
+        let mut head = <[_; 4]>::try_from(head).ok().unwrap();
 
         head.sort_unstable();
 

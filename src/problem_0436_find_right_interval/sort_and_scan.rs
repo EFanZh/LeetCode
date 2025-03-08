@@ -10,7 +10,7 @@ impl Solution {
         let mut endpoints = Vec::with_capacity(n * 2);
 
         for (i, interval) in (0..).zip(intervals) {
-            let [start, end]: [i32; 2] = interval.as_slice().try_into().unwrap();
+            let [start, end] = interval.as_slice().try_into().unwrap();
 
             endpoints.extend([(end, false, i), (start, true, i)]);
         }

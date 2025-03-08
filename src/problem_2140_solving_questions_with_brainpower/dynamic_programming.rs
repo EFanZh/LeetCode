@@ -7,7 +7,7 @@ impl Solution {
         let mut cache = vec![0; questions.len()].into_boxed_slice();
 
         for (i, question) in questions.into_iter().enumerate().rev() {
-            let [points, brainpower]: [_; 2] = question.try_into().ok().unwrap();
+            let [points, brainpower] = question.try_into().ok().unwrap();
             let score_if_skip = cache.get(i + 1).copied().unwrap_or(0);
 
             let score_if_solve =

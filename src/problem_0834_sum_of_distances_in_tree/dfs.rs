@@ -51,7 +51,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for edge in &edges {
-            let [from, to]: [_; 2] = edge.as_slice().try_into().unwrap();
+            let [from, to] = edge.as_slice().try_into().unwrap();
             let (from, to) = (from as usize, to as usize);
 
             graph[from].push(to);

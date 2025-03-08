@@ -11,7 +11,7 @@ impl Solution {
         let (mut lefts, mut rights): (Vec<_>, Vec<_>) = (0..)
             .zip(intervals)
             .map(|(i, interval)| {
-                let [start, end]: [i32; 2] = interval.as_slice().try_into().unwrap();
+                let [start, end] = interval.as_slice().try_into().unwrap();
 
                 ((start, i), (end, i))
             })

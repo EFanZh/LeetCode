@@ -22,7 +22,7 @@ impl Solution {
         let mut graph = HashMap::<_, (u32, Vec<_>)>::new();
 
         for pair in &pairs {
-            let [from, to]: [_; 2] = pair.as_slice().try_into().ok().unwrap();
+            let [from, to] = pair.as_slice().try_into().ok().unwrap();
 
             match graph.entry(from) {
                 Entry::Occupied(entry) => entry.into_mut().1.push(to),

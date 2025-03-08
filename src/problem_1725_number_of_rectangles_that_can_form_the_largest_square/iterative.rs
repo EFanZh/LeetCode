@@ -10,7 +10,7 @@ impl Solution {
         let mut count = 0;
 
         for rectangle in rectangles {
-            let [length, width]: [_; 2] = rectangle.try_into().ok().unwrap();
+            let [length, width] = rectangle.try_into().ok().unwrap();
             let min_length = length.min(width);
 
             match min_length.cmp(&max_length) {

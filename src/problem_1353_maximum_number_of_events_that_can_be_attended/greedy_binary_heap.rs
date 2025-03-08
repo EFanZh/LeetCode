@@ -10,7 +10,7 @@ impl Solution {
         let mut events = events
             .into_iter()
             .map(|event| {
-                let [start, end]: [_; 2] = event.try_into().ok().unwrap();
+                let [start, end] = event.try_into().ok().unwrap();
 
                 (start as u32, end as u32)
             })

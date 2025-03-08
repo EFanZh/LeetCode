@@ -9,7 +9,7 @@ impl Solution {
         let mut unpaired = 0_u32;
 
         for word in words {
-            let [c0, c1]: [_; 2] = word.into_bytes().try_into().ok().unwrap();
+            let [c0, c1] = word.into_bytes().try_into().ok().unwrap();
             let (c0, c1) = (u16::from(c0 - b'a'), u16::from(c1 - b'a'));
 
             if c0 == c1 {

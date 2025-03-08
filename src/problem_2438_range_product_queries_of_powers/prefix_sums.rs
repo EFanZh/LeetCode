@@ -50,7 +50,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [left, right]: [_; 2] = query.try_into().ok().unwrap();
+                let [left, right] = query.try_into().ok().unwrap();
                 let high = powers[right as u32 as usize];
                 let low = power_inversions[left as u32 as usize];
 

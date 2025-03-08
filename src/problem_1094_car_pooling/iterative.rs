@@ -7,7 +7,7 @@ impl Solution {
         let mut events = Vec::with_capacity(trips.len() * 2);
 
         for trip in &trips {
-            let [passengers, from, to]: [_; 3] = trip.as_slice().try_into().unwrap();
+            let [passengers, from, to] = trip.as_slice().try_into().unwrap();
 
             events.extend([(from as u32, passengers), (to as u32, -passengers)]);
         }

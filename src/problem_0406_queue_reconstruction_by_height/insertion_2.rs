@@ -9,7 +9,7 @@ impl Solution {
         let mut people = people;
 
         people.sort_unstable_by_key(|p| {
-            let [h, k]: [_; 2] = p.as_slice().try_into().unwrap();
+            let [h, k] = p.as_slice().try_into().unwrap();
 
             (h, Reverse(k))
         });

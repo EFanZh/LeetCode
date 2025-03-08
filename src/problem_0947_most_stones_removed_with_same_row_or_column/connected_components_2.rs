@@ -12,7 +12,7 @@ impl Solution {
         let mut connections = HashMap::with_capacity(n * 2);
 
         for (i, stone) in stones.iter().enumerate() {
-            let [x, y]: [_; 2] = stone.as_slice().try_into().unwrap();
+            let [x, y] = stone.as_slice().try_into().unwrap();
 
             for key in [x, !y] {
                 connections

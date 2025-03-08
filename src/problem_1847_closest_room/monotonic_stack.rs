@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn into_array(value: Vec<i32>) -> (u32, u32) {
-        let [x, y]: [_; 2] = value.try_into().ok().unwrap();
+        let [x, y] = value.try_into().ok().unwrap();
 
         (x as _, y as _)
     }

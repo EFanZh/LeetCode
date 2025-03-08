@@ -10,7 +10,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for dislike in &dislikes {
-            let [x, y]: [_; 2] = dislike.as_slice().try_into().unwrap();
+            let [x, y] = dislike.as_slice().try_into().unwrap();
             let x = x as u16 - 1;
             let y = y as u16 - 1;
 

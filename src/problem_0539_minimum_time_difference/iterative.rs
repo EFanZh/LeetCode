@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn parse_time(s: &str) -> u16 {
-        let [h1, h2, _, m1, m2]: [u8; 5] = s.as_bytes().try_into().unwrap();
+        let [h1, h2, _, m1, m2] = s.as_bytes().try_into().unwrap();
 
         600 * u16::from(h1) + 60 * u16::from(h2) + 10 * u16::from(m1) + u16::from(m2) - 671 * u16::from(b'0')
     }

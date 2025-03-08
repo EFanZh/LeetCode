@@ -96,7 +96,7 @@ impl Solution {
         // Remove all bricks.
 
         for hit in &mut hits {
-            let [y, x]: [i32; 2] = hit.as_slice().try_into().unwrap();
+            let [y, x] = hit.as_slice().try_into().unwrap();
 
             if mem::replace(&mut grid[y as usize][x as usize], 0) == 0 {
                 hit.clear();

@@ -10,7 +10,7 @@ impl Solution {
         let mut usages = vec![0_i32; n].into_boxed_slice();
 
         for request in requests {
-            let [start, end]: [_; 2] = request.try_into().ok().unwrap();
+            let [start, end] = request.try_into().ok().unwrap();
 
             usages[start as u32 as usize] += 1;
 

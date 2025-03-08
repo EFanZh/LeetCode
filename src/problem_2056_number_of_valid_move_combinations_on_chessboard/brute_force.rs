@@ -105,7 +105,7 @@ impl Solution {
                     _ => Piece::Rook,
                 };
 
-                let [row, column]: [_; 2] = position.try_into().ok().unwrap();
+                let [row, column] = position.try_into().ok().unwrap();
 
                 (piece, row as u8 - 1, column as u8 - 1)
             })

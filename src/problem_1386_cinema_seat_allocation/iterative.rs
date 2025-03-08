@@ -9,7 +9,7 @@ impl Solution {
         let mut reserved_rows = HashMap::new();
 
         for seat in reserved_seats {
-            let [row, column]: [_; 2] = seat.try_into().ok().unwrap();
+            let [row, column] = seat.try_into().ok().unwrap();
 
             if matches!(column, 2..=9) {
                 let probe = 1_u8 << ((column - 2) / 2);

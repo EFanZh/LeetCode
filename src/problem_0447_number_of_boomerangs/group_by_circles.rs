@@ -9,10 +9,10 @@ impl Solution {
         let mut distance_map = vec![HashMap::new(); points.len()];
 
         for (i, p1) in points[..points.len() - 1].iter().enumerate() {
-            let [x1, y1]: [i32; 2] = p1.as_slice().try_into().unwrap();
+            let [x1, y1] = p1.as_slice().try_into().unwrap();
 
             for (j, p2) in points.iter().enumerate().skip(i + 1) {
-                let [x2, y2]: [i32; 2] = p2.as_slice().try_into().unwrap();
+                let [x2, y2] = p2.as_slice().try_into().unwrap();
                 let dx = x2 - x1;
                 let dy = y2 - y1;
                 let distance = dx * dx + dy * dy;

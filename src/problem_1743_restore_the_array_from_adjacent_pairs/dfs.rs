@@ -15,7 +15,7 @@ impl Solution {
             HashMap::<_, (_, _), _>::with_capacity_and_hasher(n, BuildHasherDefault::<DefaultHasher>::default());
 
         for pair in adjacent_pairs {
-            let [a, b]: [i32; 2] = pair.as_slice().try_into().unwrap();
+            let [a, b] = pair.as_slice().try_into().unwrap();
 
             graph
                 .entry(a)

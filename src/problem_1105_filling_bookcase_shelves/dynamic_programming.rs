@@ -7,7 +7,7 @@ impl Solution {
         let books = books
             .into_iter()
             .map(|book| {
-                let [thickness, height]: [_; 2] = book.try_into().ok().unwrap();
+                let [thickness, height] = book.try_into().ok().unwrap();
 
                 (thickness as u32, height as u32)
             })

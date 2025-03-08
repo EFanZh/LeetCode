@@ -73,7 +73,7 @@ impl Solution {
             .iter_mut()
             .zip(queries)
             .map(|(target, query)| {
-                let [x, limit]: [_; 2] = query.try_into().ok().unwrap();
+                let [x, limit] = query.try_into().ok().unwrap();
 
                 (limit as u32, x as u32, target)
             })

@@ -19,7 +19,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [favorite_type, favorite_day, daily_cap]: [_; 3] = query.try_into().ok().unwrap();
+                let [favorite_type, favorite_day, daily_cap] = query.try_into().ok().unwrap();
                 let favorite_type = favorite_type as u32 as usize;
                 let favorite_day = favorite_day as u32 as usize;
                 let daily_cap = daily_cap as u32;

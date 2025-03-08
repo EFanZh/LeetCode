@@ -37,7 +37,7 @@ impl Solution {
         let mut states = vec![(u64::MAX, 0_u32); usize::from(n)].into_boxed_slice();
 
         for road in roads {
-            let [from, to, time]: [_; 3] = road.try_into().ok().unwrap();
+            let [from, to, time] = road.try_into().ok().unwrap();
             let from = from as u8 as usize;
             let to = to as u8 as usize;
             let time = time as u32;

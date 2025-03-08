@@ -78,7 +78,7 @@ impl Solution {
         let mut day = 0;
 
         for cell in cells {
-            let [x, y]: [_; 2] = cell.try_into().ok().unwrap();
+            let [x, y] = cell.try_into().ok().unwrap();
             let node = stride * usize::from(y as u16) + usize::from(x as u16);
             let node_state = &union_find[node];
 

@@ -9,7 +9,7 @@ impl Solution {
         let mut envelopes = envelopes;
 
         envelopes.sort_unstable_by_key(|envelope| {
-            let [w, h]: [_; 2] = envelope.as_slice().try_into().unwrap();
+            let [w, h] = envelope.as_slice().try_into().unwrap();
 
             (w, Reverse(h))
         });

@@ -7,7 +7,7 @@ impl Solution {
         let mut targets = vec![false; n as u32 as _];
 
         for edge in edges {
-            let [_, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [_, to] = edge.try_into().ok().unwrap();
 
             targets[to as u32 as usize] = true;
         }
