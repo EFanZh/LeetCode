@@ -6,7 +6,7 @@ use std::collections::{HashSet, VecDeque};
 
 impl Solution {
     fn unwrap_point(point: Vec<i32>) -> (u32, u32) {
-        let [x, y]: [_; 2] = point.try_into().unwrap();
+        let [x, y] = point.try_into().unwrap();
 
         (x as _, y as _)
     }
@@ -17,7 +17,7 @@ impl Solution {
         let blocked = blocked
             .into_iter()
             .map(|point| {
-                let [x, y]: [_; 2] = point.try_into().ok().unwrap();
+                let [x, y] = point.try_into().ok().unwrap();
 
                 (x as u32, y as u32)
             })

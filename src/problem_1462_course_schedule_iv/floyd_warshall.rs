@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn unwrap_edge(edge: Vec<i32>) -> (usize, usize) {
-        let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+        let [from, to] = edge.try_into().ok().unwrap();
 
         (from as u32 as usize, to as u32 as usize)
     }

@@ -29,7 +29,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); num_courses as _];
 
         for edge in prerequisites {
-            let [from, to]: [_; 2] = edge.as_slice().try_into().unwrap();
+            let [from, to] = edge.as_slice().try_into().unwrap();
 
             graph[from as usize].push(to);
         }

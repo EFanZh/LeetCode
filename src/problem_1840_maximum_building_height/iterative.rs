@@ -9,7 +9,7 @@ impl Solution {
         let mut restrictions = restrictions
             .into_iter()
             .map(|restriction| {
-                let [id, max_height]: [_; 2] = restriction.try_into().ok().unwrap();
+                let [id, max_height] = restriction.try_into().ok().unwrap();
 
                 (id as u32, max_height as u32)
             })

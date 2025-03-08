@@ -9,7 +9,7 @@ impl Solution {
         let mut sorted_intervals = intervals
             .iter()
             .map(|interval| {
-                let [left, right]: [_; 2] = interval.as_slice().try_into().unwrap();
+                let [left, right] = interval.as_slice().try_into().unwrap();
 
                 (left as u32, right as u32)
             })

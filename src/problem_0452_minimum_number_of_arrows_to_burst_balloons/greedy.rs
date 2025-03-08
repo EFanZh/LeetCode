@@ -13,7 +13,7 @@ impl Solution {
             let mut prev = first[1];
 
             for point in rest {
-                let [start, end]: [i32; 2] = point.as_slice().try_into().unwrap();
+                let [start, end] = point.as_slice().try_into().unwrap();
 
                 if start > prev {
                     result += 1;

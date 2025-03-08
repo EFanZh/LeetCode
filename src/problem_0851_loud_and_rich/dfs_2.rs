@@ -31,7 +31,7 @@ impl Solution {
         let mut graph = quiet.into_iter().map(|quiet| (quiet, Vec::new())).collect::<Vec<_>>();
 
         for edge in &richer {
-            let [rich, poor]: [i32; 2] = edge.as_slice().try_into().unwrap();
+            let [rich, poor] = edge.as_slice().try_into().unwrap();
 
             graph[poor as usize].1.push(rich as usize);
         }

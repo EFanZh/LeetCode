@@ -9,7 +9,7 @@ impl Solution {
         let mut player = 1;
 
         for m in moves {
-            let [row, column]: [_; 2] = m.try_into().unwrap();
+            let [row, column] = m.try_into().unwrap();
 
             match row * 3 + column {
                 0 => board.0 = player,

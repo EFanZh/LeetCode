@@ -90,7 +90,7 @@ impl Solution {
         let mut edges = (0..)
             .zip(edges)
             .map(|(index, edge)| {
-                let [from, to, weight]: [_; 3] = edge.as_slice().try_into().ok().unwrap();
+                let [from, to, weight] = edge.as_slice().try_into().ok().unwrap();
 
                 Edge {
                     weight: weight as _,

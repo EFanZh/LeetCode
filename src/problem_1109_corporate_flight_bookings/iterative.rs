@@ -7,7 +7,7 @@ impl Solution {
         let mut result = vec![0; n as _];
 
         for booking in bookings {
-            let [first, last, seats]: [_; 3] = booking.try_into().unwrap();
+            let [first, last, seats] = booking.try_into().unwrap();
 
             result[(first as usize) - 1] += seats;
 

@@ -10,7 +10,7 @@ impl Solution {
         queries
             .iter()
             .map(|query| {
-                let [value, index]: [_; 2] = query.as_slice().try_into().unwrap();
+                let [value, index] = query.as_slice().try_into().unwrap();
                 let target = &mut nums[index as usize];
                 let old_target = *target;
 

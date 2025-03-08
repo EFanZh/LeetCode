@@ -12,7 +12,7 @@ impl Solution {
         let mut to_remove = Vec::new();
 
         for position in positions {
-            let [left, length]: [i32; 2] = position.as_slice().try_into().unwrap();
+            let [left, length] = position.as_slice().try_into().unwrap();
             let right = left + length;
             let mut iter = skyline.range(..=right).map(|(&x, &h)| (x, h)).rev();
 

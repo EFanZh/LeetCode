@@ -19,7 +19,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n as _];
 
         for connection in connections {
-            let [from, to]: [_; 2] = connection.try_into().ok().unwrap();
+            let [from, to] = connection.try_into().ok().unwrap();
             let from = from as usize;
             let to = to as usize;
 

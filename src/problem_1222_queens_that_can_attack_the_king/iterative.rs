@@ -7,12 +7,12 @@ impl Solution {
         let mut board = 0_u64;
 
         for queen in queens.iter().map(Vec::as_slice) {
-            let [y, x]: [_; 2] = queen.try_into().unwrap();
+            let [y, x] = queen.try_into().unwrap();
 
             board |= 1 << (8 * y + x);
         }
 
-        let [king_y, king_x]: [_; 2] = king.try_into().unwrap();
+        let [king_y, king_x] = king.try_into().unwrap();
         let (king_y, king_x) = (king_y as u32, king_x as u32);
         let mut result = queens;
         let mut result_length = 0;

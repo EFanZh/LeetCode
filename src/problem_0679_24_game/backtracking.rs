@@ -93,7 +93,7 @@ impl Solution {
     }
 
     pub fn judge_point24(cards: Vec<i32>) -> bool {
-        let [a, b, c, d]: [i32; 4] = cards.as_slice().try_into().unwrap();
+        let [a, b, c, d] = cards.as_slice().try_into().unwrap();
 
         for (left, right) in [(a, [b, c, d]), (b, [a, c, d]), (c, [a, b, d]), (d, [a, b, c])] {
             for rhs in Self::helper_3(right) {

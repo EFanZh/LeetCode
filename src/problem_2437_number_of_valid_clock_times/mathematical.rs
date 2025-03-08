@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_time(time: String) -> i32 {
-        let [h0, h1, _, m0, m1]: [_; 5] = time.into_bytes().try_into().ok().unwrap();
+        let [h0, h1, _, m0, m1] = time.into_bytes().try_into().ok().unwrap();
 
         let hours = if h0 == b'?' {
             match h1 {

@@ -9,7 +9,7 @@ impl Solution {
         let mut rides = rides
             .into_iter()
             .map(|ride| {
-                let [start, end, tip]: [_; 3] = ride.try_into().ok().unwrap();
+                let [start, end, tip] = ride.try_into().ok().unwrap();
 
                 (end as u32 - 1, start as u32 - 1, tip as u32)
             })

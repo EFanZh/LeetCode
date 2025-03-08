@@ -32,7 +32,7 @@ impl Solution {
         let mut max_y = 0;
 
         for tower in towers {
-            let [x, y, q]: [_; 3] = tower.try_into().ok().unwrap();
+            let [x, y, q] = tower.try_into().ok().unwrap();
             let x = x as u16;
             let y = y as u16;
             let q = f64::from(q);

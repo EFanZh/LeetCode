@@ -24,7 +24,7 @@ mod tests {
 
         for mat in test_cases {
             let mat = mat.to_vec();
-            let [y, x]: [_; 2] = S::find_peak_grid(mat.clone()).try_into().ok().unwrap();
+            let [y, x] = S::find_peak_grid(mat.clone()).try_into().ok().unwrap();
             let y = y as usize;
             let x = x as usize;
             let center = mat[y][x];

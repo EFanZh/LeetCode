@@ -6,7 +6,7 @@ use std::str;
 
 impl Solution {
     pub fn cells_in_range(s: String) -> Vec<String> {
-        let [column_0, row_0, _, column_1, row_1]: [_; 5] = s.into_bytes().try_into().ok().unwrap();
+        let [column_0, row_0, _, column_1, row_1] = s.into_bytes().try_into().ok().unwrap();
         let mut result = Vec::with_capacity(usize::from(column_1 - column_0 + 1));
 
         for column in column_0..=column_1 {

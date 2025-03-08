@@ -25,7 +25,7 @@ impl Solution {
         let mut arm_lengths = vec![u8::MAX; n * n];
 
         for mine in mines {
-            let [y, x]: [i32; 2] = mine.as_slice().try_into().unwrap();
+            let [y, x] = mine.as_slice().try_into().unwrap();
 
             arm_lengths[n * y as usize + x as usize] = 0;
         }

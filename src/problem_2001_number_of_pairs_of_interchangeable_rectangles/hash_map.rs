@@ -46,7 +46,7 @@ impl Solution {
         let mut result = 0_u64;
 
         for rectangle in rectangles {
-            let [width, height]: [_; 2] = rectangle.try_into().ok().unwrap();
+            let [width, height] = rectangle.try_into().ok().unwrap();
 
             match counts.entry(Ratio {
                 numerator: width as _,

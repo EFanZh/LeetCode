@@ -10,8 +10,8 @@ impl Solution {
         let mut grid = grid;
         let rows = grid.len();
         let columns = grid.first().map_or(0, Vec::len);
-        let [low, high]: [_; 2] = pricing.try_into().ok().unwrap();
-        let [start_row, start_col]: [_; 2] = start.try_into().ok().unwrap();
+        let [low, high] = pricing.try_into().ok().unwrap();
+        let [start_row, start_col] = start.try_into().ok().unwrap();
         let price_range = low as u32..=high as u32;
         let k = k as u32 as usize;
         let node = (start_row as u32, start_col as u32);

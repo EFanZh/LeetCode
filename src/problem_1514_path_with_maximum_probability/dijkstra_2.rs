@@ -113,7 +113,7 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for (edge, probability) in edges.into_iter().zip(succ_prob) {
-            let [from, to]: [_; 2] = edge.try_into().ok().unwrap();
+            let [from, to] = edge.try_into().ok().unwrap();
             let from = from as u32 as usize;
             let to = to as u32 as usize;
 

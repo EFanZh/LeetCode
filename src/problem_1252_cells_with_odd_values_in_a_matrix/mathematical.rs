@@ -10,7 +10,7 @@ impl Solution {
         let mut column_states = 0_u64;
 
         for index in &indices {
-            let [r, c]: [_; 2] = index.as_slice().try_into().unwrap();
+            let [r, c] = index.as_slice().try_into().unwrap();
 
             row_states ^= 1 << r;
             column_states ^= 1 << c;

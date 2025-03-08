@@ -10,7 +10,7 @@ impl Solution {
         let mut cuboids = cuboids
             .into_iter()
             .map(|cuboids| {
-                let [width, length, height]: [_; 3] = cuboids.try_into().ok().unwrap();
+                let [width, length, height] = cuboids.try_into().ok().unwrap();
                 let mut result = (width as u8, length as u8, height as u8, 0_u16);
 
                 if result.1 < result.0 {
