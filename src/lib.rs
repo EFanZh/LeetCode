@@ -1,4 +1,9 @@
-#![expect(clippy::missing_const_for_fn, clippy::shadow_unrelated, reason = "legacy code")]
+#![expect(
+    unused_qualifications,
+    clippy::missing_const_for_fn,
+    clippy::shadow_unrelated,
+    reason = "legacy code"
+)]
 #![expect(clippy::needless_pass_by_value, clippy::same_name_method, reason = "style")]
 #![expect(trivial_casts, reason = "too many false positives")]
 #![expect(
@@ -1851,6 +1856,7 @@ pub mod problem_2466_count_ways_to_build_good_strings;
 pub mod problem_2469_convert_the_temperature;
 pub mod problem_2475_number_of_unequal_triplets_in_array;
 pub mod problem_2476_closest_nodes_queries_in_a_binary_search_tree;
+pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 
 #[cfg(test)]
 mod test_utilities;
