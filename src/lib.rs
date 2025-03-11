@@ -1857,6 +1857,7 @@ pub mod problem_2469_convert_the_temperature;
 pub mod problem_2475_number_of_unequal_triplets_in_array;
 pub mod problem_2476_closest_nodes_queries_in_a_binary_search_tree;
 pub mod problem_2477_minimum_fuel_cost_to_report_to_the_capital;
+pub mod problem_2481_minimum_cuts_to_divide_a_circle;
 pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 
 #[cfg(test)]
