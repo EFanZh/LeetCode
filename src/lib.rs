@@ -1859,6 +1859,7 @@ pub mod problem_2476_closest_nodes_queries_in_a_binary_search_tree;
 pub mod problem_2477_minimum_fuel_cost_to_report_to_the_capital;
 pub mod problem_2481_minimum_cuts_to_divide_a_circle;
 pub mod problem_2482_difference_between_ones_and_zeros_in_row_and_column;
+pub mod problem_2485_find_the_pivot_integer;
 pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 
 #[cfg(test)]
