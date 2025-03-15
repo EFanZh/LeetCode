@@ -1861,6 +1861,7 @@ pub mod problem_2481_minimum_cuts_to_divide_a_circle;
 pub mod problem_2482_difference_between_ones_and_zeros_in_row_and_column;
 pub mod problem_2484_count_palindromic_subsequences;
 pub mod problem_2485_find_the_pivot_integer;
+pub mod problem_2486_append_characters_to_string_to_make_subsequence;
 pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 
 #[cfg(test)]
