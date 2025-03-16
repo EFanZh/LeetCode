@@ -1862,6 +1862,7 @@ pub mod problem_2482_difference_between_ones_and_zeros_in_row_and_column;
 pub mod problem_2484_count_palindromic_subsequences;
 pub mod problem_2485_find_the_pivot_integer;
 pub mod problem_2486_append_characters_to_string_to_make_subsequence;
+pub mod problem_2487_remove_nodes_from_linked_list;
 pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 
 #[cfg(test)]
