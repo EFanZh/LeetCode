@@ -1869,6 +1869,7 @@ pub mod problem_2491_divide_players_into_teams_of_equal_skill;
 pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 pub mod problem_2496_maximum_value_of_a_string_in_an_array;
 pub mod problem_2497_maximum_star_sum_of_a_graph;
+pub mod problem_2498_frog_jump_ii;
 
 #[cfg(test)]
 mod test_utilities;
