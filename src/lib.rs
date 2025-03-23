@@ -1870,6 +1870,7 @@ pub mod problem_2492_minimum_score_of_a_path_between_two_cities;
 pub mod problem_2496_maximum_value_of_a_string_in_an_array;
 pub mod problem_2497_maximum_star_sum_of_a_graph;
 pub mod problem_2498_frog_jump_ii;
+pub mod problem_2500_delete_greatest_value_in_each_row;
 
 #[cfg(test)]
 mod test_utilities;
