@@ -1874,6 +1874,7 @@ pub mod problem_2500_delete_greatest_value_in_each_row;
 pub mod problem_2501_longest_square_streak_in_an_array;
 pub mod problem_2506_count_pairs_of_similar_strings;
 pub mod problem_2511_maximum_enemy_forts_that_can_be_captured;
+pub mod problem_2512_reward_top_k_students;
 
 #[cfg(test)]
 mod test_utilities;
