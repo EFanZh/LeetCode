@@ -1875,6 +1875,7 @@ pub mod problem_2501_longest_square_streak_in_an_array;
 pub mod problem_2506_count_pairs_of_similar_strings;
 pub mod problem_2511_maximum_enemy_forts_that_can_be_captured;
 pub mod problem_2512_reward_top_k_students;
+pub mod problem_2515_shortest_distance_to_target_string_in_a_circular_array;
 
 #[cfg(test)]
 mod test_utilities;
