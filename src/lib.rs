@@ -1878,6 +1878,7 @@ pub mod problem_2512_reward_top_k_students;
 pub mod problem_2515_shortest_distance_to_target_string_in_a_circular_array;
 pub mod problem_2516_take_k_of_each_character_from_left_and_right;
 pub mod problem_2517_maximum_tastiness_of_candy_basket;
+pub mod problem_2520_count_the_digits_that_divide_a_number;
 
 #[cfg(test)]
 mod test_utilities;
