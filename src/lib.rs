@@ -1879,6 +1879,7 @@ pub mod problem_2515_shortest_distance_to_target_string_in_a_circular_array;
 pub mod problem_2516_take_k_of_each_character_from_left_and_right;
 pub mod problem_2517_maximum_tastiness_of_candy_basket;
 pub mod problem_2520_count_the_digits_that_divide_a_number;
+pub mod problem_2522_partition_string_into_substrings_with_values_at_most_k;
 
 #[cfg(test)]
 mod test_utilities;
