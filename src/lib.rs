@@ -1881,6 +1881,7 @@ pub mod problem_2517_maximum_tastiness_of_candy_basket;
 pub mod problem_2520_count_the_digits_that_divide_a_number;
 pub mod problem_2522_partition_string_into_substrings_with_values_at_most_k;
 pub mod problem_2525_categorize_box_according_to_criteria;
+pub mod problem_2526_find_consecutive_integers_from_a_data_stream;
 
 #[cfg(test)]
 mod test_utilities;
