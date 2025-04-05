@@ -1883,6 +1883,7 @@ pub mod problem_2522_partition_string_into_substrings_with_values_at_most_k;
 pub mod problem_2525_categorize_box_according_to_criteria;
 pub mod problem_2526_find_consecutive_integers_from_a_data_stream;
 pub mod problem_2529_maximum_count_of_positive_integer_and_negative_integer;
+pub mod problem_2530_maximal_score_after_applying_k_operations;
 
 #[cfg(test)]
 mod test_utilities;
