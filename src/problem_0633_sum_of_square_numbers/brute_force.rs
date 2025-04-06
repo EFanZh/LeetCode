@@ -6,9 +6,9 @@ impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
         let c = c as u32;
 
-        for left in 0..=f64::from(c / 2).sqrt() as _ {
+        for left in 0..=(c / 2).isqrt() {
             let right_squared = c - left * left;
-            let right = f64::from(right_squared).sqrt() as u32;
+            let right = right_squared.isqrt();
 
             if right * right == right_squared {
                 return true;

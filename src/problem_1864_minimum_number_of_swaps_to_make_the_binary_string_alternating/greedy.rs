@@ -18,8 +18,8 @@ impl Solution {
 
             i32::from(match diff_plus_1 {
                 0 => even_ones,
-                1 => even_ones.min((n + 1) / 2 - even_ones),
-                _ => (n + 1) / 2 - even_ones,
+                1 => even_ones.min(n.div_ceil(2) - even_ones),
+                _ => n.div_ceil(2) - even_ones,
             })
         } else {
             -1

@@ -36,7 +36,7 @@ impl Solution {
                     if is_odd_lap {
                         half_lap_time *= r;
                         half_lap_time_sum += half_lap_time;
-                    };
+                    }
 
                     let other_lap_time_sum = saved_half_lap_time_sum + half_lap_time_sum;
 

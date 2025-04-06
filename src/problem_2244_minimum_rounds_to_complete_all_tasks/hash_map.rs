@@ -19,7 +19,7 @@ impl Solution {
                 return -1;
             }
 
-            result += (value + 2) / 3;
+            result += value.div_ceil(3);
         }
 
         result as _

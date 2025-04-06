@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn check(source: &str, target: &str) -> bool {
         let source = source.as_bytes();
         let target = target.as_bytes();
@@ -20,7 +19,7 @@ impl Solution {
                     word_start = i;
                 }
             } else {
-                if target.get(source.len()).map_or(true, |&c| c == b' ') {
+                if target.get(source.len()).is_none_or(|&c| c == b' ') {
                     return true;
                 }
 
@@ -30,7 +29,7 @@ impl Solution {
 
         let split = target.len() - (source.len() - word_start);
 
-        target.get(split.wrapping_sub(1)).map_or(true, |&c| c == b' ') && source[word_start..] == target[split..]
+        target.get(split.wrapping_sub(1)).is_none_or(|&c| c == b' ') && source[word_start..] == target[split..]
     }
 
     pub fn are_sentences_similar(sentence1: String, sentence2: String) -> bool {

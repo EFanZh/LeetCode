@@ -19,7 +19,7 @@ impl Solution {
 
         if counts.iter().rposition(|&count| count > 1).is_some_and(|i| i != 0) {
             for (digit, &count) in (b'0'..=b'9').zip(counts).rev() {
-                result.extend(iter::repeat(digit).take((count / 2) as _));
+                result.extend(iter::repeat_n(digit, (count / 2) as _));
             }
 
             if let Some(i) = counts.iter().rposition(|&count| count & 1 != 0) {
@@ -27,7 +27,7 @@ impl Solution {
             }
 
             for (digit, &count) in (b'0'..=b'9').zip(counts) {
-                result.extend(iter::repeat(digit).take((count / 2) as _));
+                result.extend(iter::repeat_n(digit, (count / 2) as _));
             }
         } else {
             let i = counts.iter().rposition(|&count| count != 0).unwrap_or(0);

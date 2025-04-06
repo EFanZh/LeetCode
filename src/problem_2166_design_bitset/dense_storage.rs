@@ -10,7 +10,7 @@ impl Bitset {
         let length = size as u32 as usize;
 
         Self {
-            data: vec![0; (length + 63) / 64].into_boxed_slice(),
+            data: vec![0; length.div_ceil(64)].into_boxed_slice(),
             length,
         }
     }

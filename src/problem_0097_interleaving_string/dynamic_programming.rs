@@ -15,7 +15,7 @@ impl Solution {
                     cache[j + 1] = true;
                 } else {
                     break;
-                };
+                }
             }
 
             for (i, s1_i) in s1.into_bytes().into_iter().enumerate() {

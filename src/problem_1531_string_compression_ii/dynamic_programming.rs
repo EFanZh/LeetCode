@@ -60,7 +60,7 @@ impl Solution {
                         break;
                     } else {
                         available_deletions -= 1;
-                    };
+                    }
 
                     min_length = min_length.min(
                         cache

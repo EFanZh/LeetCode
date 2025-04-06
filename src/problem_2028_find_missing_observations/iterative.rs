@@ -20,8 +20,8 @@ impl Solution {
         if value != 0 && value < 6 + u32::from(count_2 == 0) {
             let value = value as i32;
 
-            rolls.extend(iter::repeat(value).take((n - count_2) as _));
-            rolls.extend(iter::repeat(value + 1).take(count_2 as _));
+            rolls.extend(iter::repeat_n(value, (n - count_2) as _));
+            rolls.extend(iter::repeat_n(value + 1, count_2 as _));
         }
 
         rolls

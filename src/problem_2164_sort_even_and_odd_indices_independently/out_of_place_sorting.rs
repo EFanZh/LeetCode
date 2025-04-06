@@ -7,7 +7,7 @@ use std::cmp::Reverse;
 impl Solution {
     pub fn sort_even_odd(nums: Vec<i32>) -> Vec<i32> {
         let mut nums = nums;
-        let mut buffer = Vec::<i32>::with_capacity((nums.len() + 1) / 2);
+        let mut buffer = Vec::<i32>::with_capacity(nums.len().div_ceil(2));
 
         buffer.extend(nums.iter().step_by(2));
         buffer.sort_unstable();

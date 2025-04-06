@@ -57,7 +57,7 @@ impl Solution {
             }
         };
 
-        result.extend(iter::repeat(c).take(count));
+        result.extend(iter::repeat_n(c, count));
 
         result
     }

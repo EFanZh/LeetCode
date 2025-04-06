@@ -6,7 +6,7 @@ use std::mem;
 
 impl Solution {
     fn is_perfect_square(value: u32) -> bool {
-        u32::pow(f64::from(value).sqrt() as _, 2) == value
+        value.isqrt().pow(2) == value
     }
 
     fn shift_left(first: &mut i32, rest: &mut [i32]) {

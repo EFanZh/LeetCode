@@ -9,7 +9,7 @@ impl Solution {
         let n = n as usize;
         let row = row as usize;
         let column = column as usize;
-        let half = (n + 1) / 2;
+        let half = n.div_ceil(2);
         let last_index = n - 1;
         let cache_size = (1 + half) * half / 2;
         let mut cache_and_temp = vec![1.0; cache_size * 2].into_boxed_slice();

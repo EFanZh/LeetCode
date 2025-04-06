@@ -76,7 +76,7 @@ impl NumArray {
             let mut result = 0;
 
             while to != 0 {
-                let length = (tree.len() + 1) / 2;
+                let length = tree.len().div_ceil(2);
                 let (root, children) = tree.split_last().unwrap();
 
                 if to == length {

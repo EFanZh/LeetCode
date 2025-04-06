@@ -18,19 +18,19 @@ impl Solution {
 
             if prev_row < row {
                 if prev_column < column {
-                    result.extend(iter::repeat('R').take(column - prev_column));
+                    result.extend(iter::repeat_n('R', column - prev_column));
                 } else {
-                    result.extend(iter::repeat('L').take(prev_column - column));
+                    result.extend(iter::repeat_n('L', prev_column - column));
                 }
 
-                result.extend(iter::repeat('D').take(row - prev_row));
+                result.extend(iter::repeat_n('D', row - prev_row));
             } else {
-                result.extend(iter::repeat('U').take(prev_row - row));
+                result.extend(iter::repeat_n('U', prev_row - row));
 
                 if prev_column < column {
-                    result.extend(iter::repeat('R').take(column - prev_column));
+                    result.extend(iter::repeat_n('R', column - prev_column));
                 } else {
-                    result.extend(iter::repeat('L').take(prev_column - column));
+                    result.extend(iter::repeat_n('L', prev_column - column));
                 }
             }
 

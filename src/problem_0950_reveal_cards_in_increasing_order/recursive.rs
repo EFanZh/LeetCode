@@ -32,7 +32,7 @@ impl Solution {
             }
         }
 
-        let next_length = (length + 1) / 2;
+        let next_length = length.div_ceil(2);
 
         if length % 2 == 0 {
             Self::helper_2(range, next_step, next_length, iter);

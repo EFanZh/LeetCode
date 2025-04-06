@@ -116,7 +116,7 @@ impl Skiplist {
                         left_address = address;
                         left_node = node;
                     }
-                };
+                }
             }
         }
 

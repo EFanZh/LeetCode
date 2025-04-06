@@ -51,7 +51,7 @@ impl Solution {
                     entry.insert(word_id);
                     nodes.push((Cell::new(1), node_neighbors));
                 }
-            };
+            }
         }
 
         for (key, lhs) in buckets {

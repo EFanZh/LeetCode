@@ -11,7 +11,7 @@ impl Solution {
         }
 
         let pair_skill_sum = total_skill / pairs;
-        let half_pair_skill_sum = (pair_skill_sum + 1) / 2;
+        let half_pair_skill_sum = pair_skill_sum.div_ceil(2);
         let left = &counts[min_skill as usize..half_pair_skill_sum as usize];
 
         let right =

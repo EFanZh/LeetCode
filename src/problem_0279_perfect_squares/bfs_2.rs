@@ -5,12 +5,8 @@ pub struct Solution;
 use std::collections::VecDeque;
 
 impl Solution {
-    fn isqrt(x: i32) -> i32 {
-        f64::from(x).sqrt() as _
-    }
-
     pub fn num_squares(n: i32) -> i32 {
-        let sqrt_n = Self::isqrt(n);
+        let sqrt_n = n.isqrt();
         let mut steps = 1;
 
         if sqrt_n * sqrt_n != n {
@@ -22,7 +18,7 @@ impl Solution {
 
                 for _ in 0..queue.len() {
                     let (current, min_sqrt) = queue.pop_front().unwrap();
-                    let sqrt_current = Self::isqrt(current);
+                    let sqrt_current = current.isqrt();
 
                     if sqrt_current * sqrt_current == current {
                         break 'outer;

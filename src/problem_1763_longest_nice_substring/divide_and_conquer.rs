@@ -66,7 +66,7 @@ impl Solution {
                 count[usize::from(c) - usize::from(b'A')].0 += 1;
             } else {
                 count[usize::from(c) - usize::from(b'a')].1 += 1;
-            };
+            }
 
             *target = count;
         }

@@ -86,7 +86,7 @@ impl Queue {
                 index = self.heap.len();
 
                 self.heap.push(0); // The value here does not matter.
-            };
+            }
 
             self.sift_up(index, node, probability);
         }

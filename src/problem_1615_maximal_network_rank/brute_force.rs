@@ -6,7 +6,7 @@ struct BitSet(Box<[u8]>);
 
 impl BitSet {
     fn new(n: usize) -> Self {
-        Self(vec![0; (n + 7) / 8].into_boxed_slice())
+        Self(vec![0; n.div_ceil(8)].into_boxed_slice())
     }
 
     fn get(&self, index: usize) -> bool {

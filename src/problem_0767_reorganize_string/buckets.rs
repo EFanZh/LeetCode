@@ -48,8 +48,8 @@ impl Solution {
 
         let buckets = counts[0].1;
 
-        if buckets <= (s.len() + 1) / 2 {
-            let mut iter = counts.iter().flat_map(|&(c, count)| iter::repeat(c).take(count));
+        if buckets <= s.len().div_ceil(2) {
+            let mut iter = counts.iter().flat_map(|&(c, count)| iter::repeat_n(c, count));
             let n = s.len();
             let small_bucket_size = n / buckets;
             let large_bucket_count = n % buckets;

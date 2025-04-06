@@ -8,9 +8,8 @@ impl Solution {
     pub fn longest_palindrome_subseq(s: String) -> i32 {
         let s = s.as_bytes();
 
-        let mut cache = iter::repeat(0)
-            .take(s.len())
-            .chain(iter::repeat(1).take(s.len()))
+        let mut cache = iter::repeat_n(0, s.len())
+            .chain(iter::repeat_n(1, s.len()))
             .collect::<Box<_>>();
 
         let (mut cache_1, mut cache_2) = cache.split_at_mut(s.len());

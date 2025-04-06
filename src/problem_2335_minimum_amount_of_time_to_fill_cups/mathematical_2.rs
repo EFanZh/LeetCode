@@ -8,7 +8,7 @@ impl Solution {
             .into_iter()
             .fold((0, 0), |(max, total), x| (max.max(x as u32), (total + x as u32)));
 
-        max.max((total + 1) / 2) as _
+        max.max(total.div_ceil(2)) as _
     }
 }
 

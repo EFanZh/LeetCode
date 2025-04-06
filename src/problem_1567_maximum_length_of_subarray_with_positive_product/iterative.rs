@@ -22,7 +22,7 @@ impl Solution {
                 } else {
                     negative = next_negative;
                     positive = next_positive;
-                };
+                }
 
                 result = result.max(positive);
             }

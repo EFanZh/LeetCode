@@ -9,9 +9,8 @@ use std::collections::VecDeque;
 use std::rc::Rc;
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_complete_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        root.map_or(true, |mut node| {
+        root.is_none_or(|mut node| {
             let mut queue = VecDeque::new();
 
             loop {

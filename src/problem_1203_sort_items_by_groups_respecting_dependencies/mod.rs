@@ -60,7 +60,7 @@ mod tests {
                 // Check grouping.
 
                 item_positions.resize(n as _, 0);
-                group_stats.extend(iter::repeat((usize::MAX, 0, 0)).take(m as _));
+                group_stats.extend(iter::repeat_n((usize::MAX, 0, 0), m as _));
 
                 for (position, &item) in result.iter().enumerate() {
                     let item = item as usize;

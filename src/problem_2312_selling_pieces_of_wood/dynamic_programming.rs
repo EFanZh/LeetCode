@@ -24,11 +24,11 @@ impl Solution {
                 let mut max_price = cache[index];
 
                 iter::zip(cache[x..].iter().step_by(n), cache[x..index].iter().step_by(n).rev())
-                    .take((y + 1) / 2)
+                    .take(y.div_ceil(2))
                     .for_each(|(left, right)| max_price = max_price.max(left + right));
 
                 iter::zip(&cache[row_start..], cache[..index].iter().rev())
-                    .take((x + 1) / 2)
+                    .take(x.div_ceil(2))
                     .for_each(|(left, right)| max_price = max_price.max(left + right));
 
                 cache[index] = max_price;

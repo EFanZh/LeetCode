@@ -11,14 +11,14 @@ impl Solution {
         let a_count = (26 * n - k) / 25;
         let mut result = Vec::with_capacity(n as _);
 
-        result.extend(iter::repeat(b'a').take(a_count as _));
+        result.extend(iter::repeat_n(b'a', a_count as _));
 
         if a_count < n {
             let z_count = n - a_count - 1;
             let x = k - a_count - 26 * z_count;
 
             result.push(b'a' - 1 + (x as u8));
-            result.extend(iter::repeat(b'z').take(z_count as _));
+            result.extend(iter::repeat_n(b'z', z_count as _));
         }
 
         String::from_utf8(result).unwrap()

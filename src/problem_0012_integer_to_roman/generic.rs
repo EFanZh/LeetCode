@@ -9,11 +9,11 @@ impl Solution {
         let digit = (num / base) as usize;
 
         match digit {
-            0..=3 => result.extend(iter::repeat(digits.0).take(digit)),
+            0..=3 => result.extend(iter::repeat_n(digits.0, digit)),
             4 => result.extend([digits.0, digits.1]),
             5..=8 => {
                 result.push(digits.1);
-                result.extend(iter::repeat(digits.0).take(digit - 5));
+                result.extend(iter::repeat_n(digits.0, digit - 5));
             }
             _ => result.extend([digits.0, digits.2]),
         }

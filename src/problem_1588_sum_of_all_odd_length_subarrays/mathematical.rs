@@ -8,7 +8,7 @@ impl Solution {
         let mut j = arr.len() as u32 + 1;
 
         for (i, num) in (1_u32..).zip(arr) {
-            result += (num as u32) * ((i / 2) * ((j - 1) / 2) + ((i + 1) / 2) * (j / 2));
+            result += (num as u32) * ((i / 2) * ((j - 1) / 2) + i.div_ceil(2) * (j / 2));
 
             j -= 1;
         }

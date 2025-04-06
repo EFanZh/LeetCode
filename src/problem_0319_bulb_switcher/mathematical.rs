@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn bulb_switch(n: i32) -> i32 {
-        f64::from(n).sqrt() as _
+        n.isqrt()
     }
 }
 

@@ -7,7 +7,7 @@ impl Solution {
         let n = n as u32;
         let mut k = k as usize - 1;
         let mut lhs = 1;
-        let sqrt_n = f64::from(n).sqrt() as u32;
+        let sqrt_n = n.isqrt();
         let mut factors = Vec::new();
 
         (loop {

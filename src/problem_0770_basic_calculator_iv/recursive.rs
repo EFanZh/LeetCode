@@ -180,7 +180,7 @@ impl Solution {
                 input = next_input;
             } else {
                 break;
-            };
+            }
         }
 
         (result, input)

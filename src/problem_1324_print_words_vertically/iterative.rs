@@ -12,7 +12,7 @@ impl Solution {
             result.extend(iter::repeat_with(String::new).take(word.len().saturating_sub(result.len())));
 
             for (row, c) in result.iter_mut().zip(word.bytes()) {
-                row.extend(iter::repeat(' ').take(i.saturating_sub(row.len())));
+                row.extend(iter::repeat_n(' ', i.saturating_sub(row.len())));
                 row.push(char::from(c));
             }
         }

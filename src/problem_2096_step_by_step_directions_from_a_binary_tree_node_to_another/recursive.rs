@@ -103,10 +103,7 @@ impl Solution {
             }
         }
 
-        dest_path.splice(
-            ..common_length,
-            iter::repeat(b'U').take(start_path.len() - common_length),
-        );
+        dest_path.splice(..common_length, iter::repeat_n(b'U', start_path.len() - common_length));
 
         String::from_utf8(dest_path).unwrap()
     }

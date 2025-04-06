@@ -5,9 +5,8 @@ pub struct Solution;
 use std::cmp::Reverse;
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn helper(max_time: u32, jobs: &[u32], usage: &mut [u32]) -> bool {
-        jobs.split_first().map_or(true, |(&cost, rest)| {
+        jobs.split_first().is_none_or(|(&cost, rest)| {
             for i in 0..usage.len() {
                 let used = &mut usage[i];
 

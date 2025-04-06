@@ -32,7 +32,7 @@ impl Solution {
                     });
 
                     allocator_len += 1;
-                };
+                }
 
                 node = &mut allocator[child_index].children;
             }

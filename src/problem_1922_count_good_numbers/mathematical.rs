@@ -22,7 +22,7 @@ impl Solution {
 
     pub fn count_good_numbers(n: i64) -> i32 {
         let n = n as u64;
-        let even_count = Self::exp_mod(5, (n + 1) / 2);
+        let even_count = Self::exp_mod(5, n.div_ceil(2));
         let odd_count = Self::exp_mod(4, n / 2);
 
         ((even_count * odd_count) % Self::MODULUS) as _

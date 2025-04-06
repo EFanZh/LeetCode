@@ -3,12 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    fn isqrt(n: u32) -> u32 {
-        f64::from(n).sqrt() as _
-    }
-
     fn is_prime(n: u32) -> bool {
-        let middle = Self::isqrt(n);
+        let middle = n.isqrt();
 
         // (2..=middle).all(|x| n % x != 0).
 
@@ -25,7 +21,7 @@ impl Solution {
         let n = n as u32;
 
         n > 3 && {
-            let middle = Self::isqrt(n);
+            let middle = n.isqrt();
 
             middle * middle == n && Self::is_prime(middle)
         }

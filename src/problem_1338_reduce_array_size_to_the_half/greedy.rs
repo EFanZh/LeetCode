@@ -20,7 +20,7 @@ impl Solution {
         }
 
         let mut i = n;
-        let mut required = (n + 1) / 2;
+        let mut required = n.div_ceil(2);
         let mut result = 0;
 
         loop {

@@ -73,7 +73,7 @@ impl Solution {
                     }
                 }
                 State::GotSecond(..) => {}
-            };
+            }
 
             if let Some(right) = maybe_right {
                 current = right;

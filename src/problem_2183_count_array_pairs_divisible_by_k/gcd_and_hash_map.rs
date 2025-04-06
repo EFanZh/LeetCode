@@ -19,7 +19,7 @@ impl Solution {
     pub fn count_pairs(nums: Vec<i32>, k: i32) -> i64 {
         let k = NonZeroU32::new(k as _).unwrap();
         let mut factors = Vec::new();
-        let middle = NonZeroU32::new(f64::from(k.get()).sqrt() as _).unwrap();
+        let middle = NonZeroU32::new(k.get().isqrt()).unwrap();
 
         for candidate in 1..middle.get() {
             let candidate = NonZeroU32::new(candidate).unwrap();

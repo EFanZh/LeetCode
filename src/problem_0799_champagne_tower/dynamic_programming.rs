@@ -25,11 +25,11 @@ impl Solution {
         } else if query_row == 0 {
             1.0
         } else {
-            let mut cache = vec![0.0; (query_row + 1) / 2];
+            let mut cache = vec![0.0; query_row.div_ceil(2)];
 
             cache[0] = f64::from(poured - 1);
 
-            let pairs = (query_row + 1) / 2;
+            let pairs = query_row.div_ceil(2);
 
             for i in 1..pairs {
                 Self::update_cache(&mut cache, i);

@@ -7,7 +7,7 @@ impl Solution {
         let n = n as u8;
 
         i32::from(if n < 7 {
-            (n + 1) / 2
+            n.div_ceil(2)
         } else {
             let mut cache = [0_u8; 101];
 

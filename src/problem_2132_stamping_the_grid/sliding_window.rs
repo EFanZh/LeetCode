@@ -37,7 +37,7 @@ impl Solution {
                     left_unstamped = 0;
                     top_unblocked = 0;
                     top_unstamped = 0;
-                };
+                }
 
                 // Sliding window minimum for unblocked columns.
 
@@ -69,7 +69,7 @@ impl Solution {
                     left_unstamped = 0;
                     top_unblocked = 0;
                     top_unstamped = 0;
-                };
+                }
 
                 // Sliding window minimum for unblocked columns.
 

@@ -49,8 +49,8 @@ impl Solution {
         let buckets = counts[0].1;
         let n = s.len();
 
-        if buckets <= (n + 1) / 2 {
-            let mut iter = counts.iter().flat_map(|&(c, count)| iter::repeat(c).take(count));
+        if buckets <= n.div_ceil(2) {
+            let mut iter = counts.iter().flat_map(|&(c, count)| iter::repeat_n(c, count));
 
             for i in (0..n).step_by(2) {
                 s[i] = iter.next().unwrap();

@@ -7,14 +7,13 @@ impl Solution {
         let mut result = 0;
 
         for (i, row) in board.iter().enumerate() {
-            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
             for (j, &cell) in row.iter().enumerate() {
                 result += i32::from(
                     cell == 'X'
-                        && board.get(i.wrapping_sub(1)).map_or(true, |values| values[j] == '.')
-                        && row.get(j.wrapping_sub(1)).map_or(true, |&c| c == '.')
-                        && (row.get(j + 1).map_or(true, |&c| c == '.')
-                            || board.get(i + 1).map_or(true, |values| values[j] == '.')),
+                        && board.get(i.wrapping_sub(1)).is_none_or(|values| values[j] == '.')
+                        && row.get(j.wrapping_sub(1)).is_none_or(|&c| c == '.')
+                        && (row.get(j + 1).is_none_or(|&c| c == '.')
+                            || board.get(i + 1).is_none_or(|values| values[j] == '.')),
                 );
             }
         }

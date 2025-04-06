@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_alien_sorted(words: Vec<String>, order: String) -> bool {
         let mut map = [0; 26];
 
@@ -13,7 +12,7 @@ impl Solution {
 
         let mut iter = words.iter().map(String::as_str);
 
-        iter.next().map_or(true, |mut prev| {
+        iter.next().is_none_or(|mut prev| {
             let key_fn = |c| map[usize::from(c) - usize::from(b'a')];
 
             for word in iter {

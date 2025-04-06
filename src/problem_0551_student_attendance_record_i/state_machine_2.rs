@@ -31,7 +31,7 @@ impl Solution {
                 None => return true,
                 Some(b'A') => break,
                 Some(b'L') => return false,
-                Some(_) => continue,
+                Some(_) => {}
             }
         }
 
@@ -59,7 +59,7 @@ impl Solution {
             match iter.next() {
                 None => return true,
                 Some(b'A' | b'L') => return false,
-                Some(_) => continue,
+                Some(_) => {}
             }
         }
     }

@@ -3,9 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn check(nums: Vec<i32>) -> bool {
-        nums.split_first().map_or(true, |(&first, rest)| {
+        nums.split_first().is_none_or(|(&first, rest)| {
             let mut prev = first;
             let mut iter = rest.iter().copied();
 

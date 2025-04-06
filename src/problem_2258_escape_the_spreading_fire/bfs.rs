@@ -29,7 +29,7 @@ impl Distances {
             }
         } else {
             return false;
-        };
+        }
 
         self.required -= 1;
 

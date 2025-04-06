@@ -15,9 +15,8 @@ impl Solution {
             let skip = value - prev - 1;
 
             result.extend(
-                iter::repeat("Push")
-                    .take(skip)
-                    .chain(iter::repeat("Pop").take(skip))
+                iter::repeat_n("Push", skip)
+                    .chain(iter::repeat_n("Pop", skip))
                     .chain(Some("Push"))
                     .map(str::to_string),
             );
