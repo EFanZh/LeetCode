@@ -11,12 +11,7 @@ impl Solution {
     pub fn winner_square_game(n: i32) -> bool {
         let n = n as u32;
         let mut cache = vec![0; n as usize + 1].into_boxed_slice();
-
-        let mut frame = Frame {
-            n,
-            x: f64::from(n).sqrt() as _,
-        };
-
+        let mut frame = Frame { n, x: n.isqrt() };
         let mut stack = Vec::new();
 
         cache[0] = 1;
@@ -30,7 +25,7 @@ impl Solution {
 
                 frame = Frame {
                     n: next_n,
-                    x: f64::from(next_n).sqrt() as _,
+                    x: next_n.isqrt(),
                 };
 
                 continue;

@@ -9,7 +9,7 @@ impl Solution {
         let num = num as u32;
         let num_1 = num + 1;
         let num_2 = num + 2;
-        let mut lhs = f64::from(num_2).sqrt() as u32;
+        let mut lhs = num_2.isqrt();
 
         loop {
             let non_zero_lhs = NonZeroU32::new(lhs).unwrap();

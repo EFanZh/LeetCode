@@ -31,7 +31,7 @@ impl Solution {
 
                     if let Some(right) = node.right.clone() {
                         queue.push_back(right);
-                    };
+                    }
                 }
 
                 #[expect(clippy::cast_precision_loss, reason = "required")]

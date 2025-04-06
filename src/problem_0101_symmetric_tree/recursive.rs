@@ -22,10 +22,8 @@ impl Solution {
             _ => false,
         }
     }
-
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        root.map_or(true, |root| {
+        root.is_none_or(|root| {
             let root = root.borrow();
 
             Self::is_flipped(root.left.as_deref(), root.right.as_deref())

@@ -18,7 +18,7 @@ impl Solution {
             logout_time += 1440;
         }
 
-        i32::from((logout_time / 15).saturating_sub((login_time + 14) / 15))
+        i32::from((logout_time / 15).saturating_sub(login_time.div_ceil(15)))
     }
 }
 

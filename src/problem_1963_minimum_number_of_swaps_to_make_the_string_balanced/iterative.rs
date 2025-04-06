@@ -16,7 +16,7 @@ impl Solution {
             });
         }
 
-        ((stack + 1) / 2) as _
+        stack.div_ceil(2) as _
     }
 }
 

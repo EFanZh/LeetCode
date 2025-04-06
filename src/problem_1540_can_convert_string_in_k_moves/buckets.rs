@@ -17,7 +17,7 @@ impl Solution {
 
                     if to < from {
                         distance = distance.wrapping_add(26);
-                    };
+                    }
 
                     let step = &mut steps[usize::from(distance)];
 

@@ -76,7 +76,7 @@ impl Solution {
 
         if trees[0].0 == (0, 0) {
             trees_iter.next().unwrap();
-        };
+        }
 
         let columns = forest[0].len();
         let mut visited = vec![false; columns * forest.len()];

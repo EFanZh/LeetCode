@@ -57,7 +57,7 @@ impl Solution {
     pub fn build_matrix(k: i32, row_conditions: Vec<Vec<i32>>, col_conditions: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         let k = k as u32 as usize;
         let mut graph = vec![Vec::new(); k].into_boxed_slice();
-        let mut states = iter::repeat(u16::MAX).take(k * 2).collect::<Box<_>>();
+        let mut states = iter::repeat_n(u16::MAX, k * 2).collect::<Box<_>>();
         let (row_states, column_states) = states.split_at_mut(k);
 
         if Self::topological_sorting(row_conditions, &mut graph, row_states) {
@@ -68,7 +68,7 @@ impl Solution {
 
         if Self::topological_sorting(col_conditions, &mut graph, column_states) {
             return Vec::new();
-        };
+        }
 
         drop(graph);
 

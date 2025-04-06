@@ -64,7 +64,7 @@ impl Solution {
 
         if Self::topological_sorting(col_conditions, &mut graph, column_states, &mut queue) {
             return Vec::new();
-        };
+        }
 
         drop(graph);
 

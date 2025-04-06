@@ -23,12 +23,12 @@ impl Solution {
         s.clear();
 
         for c in order.bytes() {
-            s.extend(iter::repeat(c).take(counts[usize::from(c) - usize::from(b'a')]));
+            s.extend(iter::repeat_n(c, counts[usize::from(c) - usize::from(b'a')]));
         }
 
         for (c, (&count, &order)) in (b'a'..).zip(counts.iter().zip(&orders)) {
             if order == usize::MAX {
-                s.extend(iter::repeat(c).take(count));
+                s.extend(iter::repeat_n(c, count));
             }
         }
 

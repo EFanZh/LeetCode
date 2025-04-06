@@ -40,7 +40,7 @@ impl Solution {
 
                     three = 0;
                     one = length;
-                };
+                }
 
                 prev_chunk = chunk;
                 chunk = num;

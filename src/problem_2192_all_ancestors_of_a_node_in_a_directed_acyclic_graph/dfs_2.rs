@@ -13,9 +13,7 @@ impl Solution {
         for &child in &context.graph[usize::from(node)] {
             let child = usize::from(child);
             let ancestors = &mut context.result[child];
-
-            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
-            if ancestors.last().map_or(true, |&last| last as u16 != context.ancestor) {
+            if ancestors.last().is_none_or(|&last| last as u16 != context.ancestor) {
                 ancestors.push(i32::from(context.ancestor));
 
                 Self::dfs(context, child as _);

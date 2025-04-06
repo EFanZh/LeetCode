@@ -22,8 +22,7 @@ impl Solution {
 
         n -= full_box_count;
 
-        #[expect(clippy::cast_precision_loss, reason = "optimal")]
-        let mut extra_count = ((n * 2) as f64).sqrt() as u64;
+        let mut extra_count = (n * 2).isqrt();
 
         if extra_count * (extra_count + 1) / 2 < n {
             extra_count += 1;

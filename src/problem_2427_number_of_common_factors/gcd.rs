@@ -15,7 +15,7 @@ impl Solution {
         let a = a as u16;
         let b = b as u16;
         let gcd = Self::gcd(a, b);
-        let middle = f32::from(gcd).sqrt() as u16;
+        let middle = gcd.isqrt();
         let mut result = 0;
 
         for i in 1..middle {

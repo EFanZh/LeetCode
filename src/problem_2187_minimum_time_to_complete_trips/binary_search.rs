@@ -53,9 +53,7 @@ impl Solution {
             let trips = time.iter().try_fold(0_u32, |sum, &time| {
                 (u64::from(sum) + middle / NonZeroU64::from(time)).try_into().ok()
             });
-
-            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
-            if trips.map_or(true, |trips| trips >= total_trips) {
+            if trips.is_none_or(|trips| trips >= total_trips) {
                 right = middle;
             } else {
                 left = middle + 1;

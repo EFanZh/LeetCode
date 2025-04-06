@@ -11,7 +11,7 @@ impl Solution {
             if available < required {
                 result += double_x;
                 available = capacity;
-            };
+            }
 
             available -= required;
         }

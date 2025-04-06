@@ -8,7 +8,7 @@ impl Solution {
     fn kmp_prefix_function(s: &[u8], buffer: &mut Vec<usize>) {
         let base = buffer.len();
 
-        buffer.extend(iter::repeat(0).take(s.len()));
+        buffer.extend(iter::repeat_n(0, s.len()));
 
         let buffer = &mut buffer[base..];
         let mut matched = 0;
@@ -35,7 +35,7 @@ impl Solution {
     fn longest_overlap(mut left: &[u8], right: &[u8], right_prefix_function: &[usize]) -> usize {
         if right.len() < left.len() {
             left = &left[left.len() - right.len()..];
-        };
+        }
 
         let mut matched = 0;
 

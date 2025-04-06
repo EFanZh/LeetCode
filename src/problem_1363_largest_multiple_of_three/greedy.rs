@@ -75,7 +75,7 @@ impl Solution {
                 result.reserve(nums.len() - removed);
 
                 for (c, count) in (b'0'..=b'9').zip(counts).rev() {
-                    result.extend(iter::repeat(c).take(count).map(char::from));
+                    result.extend(iter::repeat_n(c, count).map(char::from));
                 }
             }
         }

@@ -6,7 +6,7 @@ impl Solution {
     pub fn piovt_integer(n: i32) -> i32 {
         let n = n as u32;
         let squared_result = n * (n + 1) / 2;
-        let candidate = f64::from(squared_result).sqrt() as u32;
+        let candidate = squared_result.isqrt();
 
         if candidate * candidate == squared_result {
             candidate as _

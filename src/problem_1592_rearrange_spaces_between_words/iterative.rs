@@ -23,7 +23,7 @@ impl Solution {
 
     pub fn reorder_spaces(text: String) -> String {
         let text = text.as_bytes();
-        let separator = iter::repeat(b' ').take(Self::calculate_spaces_between_words(text));
+        let separator = iter::repeat_n(b' ', Self::calculate_spaces_between_words(text));
         let mut result = Vec::with_capacity(text.len());
         let mut word_start = None;
 
@@ -53,7 +53,7 @@ impl Solution {
 
         let missing = text.len() - result.len();
 
-        result.extend(iter::repeat(b' ').take(missing));
+        result.extend(iter::repeat_n(b' ', missing));
 
         String::from_utf8(result).unwrap()
     }

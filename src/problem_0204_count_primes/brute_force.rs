@@ -2,10 +2,12 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::num::NonZeroU32;
+
 impl Solution {
-    fn is_prime(i: i32, nums: &[i32]) -> bool {
-        for num in nums {
-            if i % num == 0 {
+    fn is_prime(i: NonZeroU32, nums: &[NonZeroU32]) -> bool {
+        for &num in nums {
+            if i.get() % num == 0 {
                 return false;
             }
         }
@@ -14,13 +16,17 @@ impl Solution {
     }
 
     pub fn count_primes(n: i32) -> i32 {
+        let n = n as u32;
+
         if n < 3 {
             0
         } else {
             let mut primes_except_2 = Vec::new();
 
             for i in (3..n).step_by(2) {
-                let j = match primes_except_2.binary_search(&(f64::from(i).sqrt() as _)) {
+                let i = NonZeroU32::new(i).unwrap();
+
+                let j = match primes_except_2.binary_search(&i) {
                     Ok(j) => j + 1,
                     Err(j) => j,
                 };

@@ -43,9 +43,7 @@ impl Solution {
 
             // Reset counters.
 
-            for count in &mut counts {
-                *count = 0;
-            }
+            counts.fill(0);
 
             mem::swap(&mut nums, &mut temp);
 

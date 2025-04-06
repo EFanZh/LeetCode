@@ -5,9 +5,8 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     pub fn is_monotonic(nums: Vec<i32>) -> bool {
-        nums.split_first().map_or(true, |(first, rest)| {
+        nums.split_first().is_none_or(|(first, rest)| {
             let mut iter = rest.iter().copied();
 
             while let Some(num) = iter.next() {

@@ -5,13 +5,6 @@ pub struct Solution;
 use std::convert;
 
 impl Solution {
-    fn sqrt(value: u64) -> u64 {
-        #[expect(clippy::cast_precision_loss, reason = "optimal")]
-        let guess = (value as f64).sqrt() as u64;
-
-        guess
-    }
-
     fn get_palindrome_seed(mut value: u64) -> (u64, u32) {
         let mut base = 10;
         let mut digits = 0;
@@ -87,7 +80,7 @@ impl Solution {
     pub fn superpalindromes_in_range(left: String, right: String) -> i32 {
         let low = left.parse::<u64>().unwrap();
         let high = right.parse::<u64>().unwrap();
-        let (seed, digits) = Self::get_palindrome_seed(Self::sqrt(low));
+        let (seed, digits) = Self::get_palindrome_seed(low.isqrt());
 
         let (seed_1, seed_2) = if digits % 2 == 0 {
             (u64::pow(10, digits / 2), seed)

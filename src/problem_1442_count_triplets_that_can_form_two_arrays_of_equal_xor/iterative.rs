@@ -26,7 +26,7 @@ impl Solution {
                 Entry::Vacant(entry) => {
                     entry.insert((1, length));
                 }
-            };
+            }
         }
 
         result

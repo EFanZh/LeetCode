@@ -8,7 +8,7 @@ impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
         let c = c as u32;
         let mut left = 0;
-        let mut right = f64::from(c).sqrt() as u32;
+        let mut right = c.isqrt();
         let mut current = right * right;
 
         while left <= right {

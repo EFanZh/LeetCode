@@ -1221,7 +1221,7 @@ mod tests {
             );
 
             if expected {
-                positions.extend(iter::repeat((u16::MAX, u16::MAX)).take(k as u32 as usize));
+                positions.extend(iter::repeat_n((u16::MAX, u16::MAX), k as u32 as usize));
 
                 for (y, row) in result.into_iter().enumerate() {
                     for (x, num) in row.into_iter().enumerate() {

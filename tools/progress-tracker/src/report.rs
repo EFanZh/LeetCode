@@ -11,17 +11,15 @@ use std::path::Path;
 fn make_solution_map(tree: &Tree) -> HashMap<String, Vec<Vec<Solution>>> {
     let mut result = HashMap::<_, Vec<Vec<_>>>::new();
 
-    solutions::list(tree, |solution| {
-        match result.entry(solution.problem_id.clone()) {
-            Entry::Occupied(entry) => entry.into_mut()[solution.language.as_usize()].push(solution),
-            Entry::Vacant(entry) => {
-                let mut solutions = Language::list().iter().map(|_| Vec::new()).collect::<Vec<_>>();
+    solutions::list(tree, |solution| match result.entry(solution.problem_id.clone()) {
+        Entry::Occupied(entry) => entry.into_mut()[solution.language.as_usize()].push(solution),
+        Entry::Vacant(entry) => {
+            let mut solutions = Language::list().iter().map(|_| Vec::new()).collect::<Vec<_>>();
 
-                solutions[solution.language.as_usize()].push(solution);
+            solutions[solution.language.as_usize()].push(solution);
 
-                entry.insert(solutions);
-            }
-        };
+            entry.insert(solutions);
+        }
     });
 
     result

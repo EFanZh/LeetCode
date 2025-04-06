@@ -32,10 +32,10 @@ impl Solution {
                     if num > third {
                         match num.cmp(&second) {
                             Ordering::Less => third = num,
-                            Ordering::Equal => continue,
+                            Ordering::Equal => {}
                             Ordering::Greater => match num.cmp(&first) {
                                 Ordering::Less => third = mem::replace(&mut second, num),
-                                Ordering::Equal => continue,
+                                Ordering::Equal => {}
                                 Ordering::Greater => third = mem::replace(&mut second, mem::replace(&mut first, num)),
                             },
                         }

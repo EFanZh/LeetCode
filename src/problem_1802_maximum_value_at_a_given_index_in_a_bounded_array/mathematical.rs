@@ -17,14 +17,13 @@ impl Solution {
         let max_sum_u64 = u64::from(max_sum);
 
         (if max_sum_u64 <= (index_u64 + 1).pow(2) {
-            f64::from(max_sum).sqrt() as u32
+            max_sum.isqrt()
         } else {
             let threshold =
                 Self::get_area(1, n_u64 - index_u64) + Self::get_area(n_u64 - index_u64 * 2, n_u64 - index_u64 - 1);
 
-            #[expect(clippy::cast_precision_loss, reason = "optimal")]
             if max_sum_u64 <= threshold {
-                (f64::sqrt((8 * (max_sum_u64 + index_u64 * (index_u64 + 1)) + 1) as _) as u32 - index * 2 - 1) / 2
+                ((8 * (max_sum_u64 + index_u64 * (index_u64 + 1)) + 1).isqrt() as u32 - index * 2 - 1) / 2
             } else {
                 n - index + (max_sum - threshold as u32) / n
             }

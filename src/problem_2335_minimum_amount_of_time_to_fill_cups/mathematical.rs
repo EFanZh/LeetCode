@@ -20,7 +20,7 @@ impl Solution {
             mem::swap(&mut a, &mut b);
         }
 
-        i32::from(if a + b < c { c } else { (a + b + c + 1) / 2 })
+        i32::from(if a + b < c { c } else { (a + b + c).div_ceil(2) })
     }
 }
 

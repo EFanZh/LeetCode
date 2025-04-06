@@ -17,7 +17,7 @@ impl Solution {
                 if a_squared <= half_c_squared {
                     let b_squared = c_squared - a_squared;
 
-                    if (f32::from(b_squared).sqrt() as u16).pow(2) == b_squared {
+                    if b_squared.isqrt().pow(2) == b_squared {
                         result += 2;
                     }
                 } else {

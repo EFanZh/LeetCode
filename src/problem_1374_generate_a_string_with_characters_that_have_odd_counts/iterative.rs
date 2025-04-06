@@ -10,10 +10,10 @@ impl Solution {
         let mut result = String::with_capacity(n);
 
         if n % 2 == 0 {
-            result.extend(iter::repeat('a').take(n - 1));
+            result.extend(iter::repeat_n('a', n - 1));
             result.push('b');
         } else {
-            result.extend(iter::repeat('a').take(n));
+            result.extend(iter::repeat_n('a', n));
         }
 
         result

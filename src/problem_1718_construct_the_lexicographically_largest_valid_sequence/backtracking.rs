@@ -3,9 +3,8 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
     fn helper(buffer: &mut [i32], available: u32) -> bool {
-        buffer.split_first_mut().map_or(true, |(first, rest)| {
+        buffer.split_first_mut().is_none_or(|(first, rest)| {
             if *first == 0 {
                 let mut bits = available;
 

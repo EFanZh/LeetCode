@@ -14,7 +14,7 @@ impl NumArray {
             } else {
                 let internal_nodes = nums.len() - 1;
 
-                nums.splice(..0, iter::repeat(0).take(internal_nodes));
+                nums.splice(..0, iter::repeat_n(0, internal_nodes));
 
                 let mut tree = nums.into_boxed_slice();
 

@@ -27,7 +27,7 @@ impl Solution {
             } else {
                 // Apply continuation.
 
-                'k: loop {
+                loop {
                     match stack.pop() {
                         Some(Frame::Left(node)) => {
                             // Left continuation.
@@ -42,8 +42,6 @@ impl Solution {
                             // Right continuation.
 
                             result.push(node.borrow().val);
-
-                            continue 'k;
                         }
                         None => {
                             // Root continuation.

@@ -195,7 +195,6 @@ impl Solution {
         for y in 0..rows {
             for x in 0..columns {
                 match grid[usize::from(8 * y + x)] {
-                    b'#' => continue,
                     b'C' => target_state |= (u16::from(y) << 9) | (u16::from(x) << 6),
                     b'F' => food_position = 8 * y + x,
                     b'M' => target_state |= (u16::from(y) << 3) | u16::from(x),

@@ -13,7 +13,7 @@ impl Solution {
         iter_2.next();
 
         for (count, num) in iter.zip(iter_2).step_by(2) {
-            result.extend(iter::repeat(num).take(count as _));
+            result.extend(iter::repeat_n(num, count as _));
         }
 
         result

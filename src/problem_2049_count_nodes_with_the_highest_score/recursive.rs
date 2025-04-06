@@ -79,7 +79,7 @@ impl Solution {
 
         if right != 0 {
             score *= u64::from(Self::dfs(&mut context, right));
-        };
+        }
 
         context.update_score(score);
 

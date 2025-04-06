@@ -55,8 +55,7 @@ impl Solution {
 
             for (j, c) in s.iter().enumerate().skip(i) {
                 if let Some(child) = trie_node.children[usize::from(c - b'a')].as_deref() {
-                    #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
-                    if child.has_value && graph.get(j + 1).map_or(true, |next| !next.is_empty()) {
+                    if child.has_value && graph.get(j + 1).is_none_or(|next| !next.is_empty()) {
                         graph[i].push(j + 1);
                     }
 

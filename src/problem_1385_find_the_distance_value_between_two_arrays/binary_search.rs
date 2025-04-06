@@ -14,9 +14,7 @@ impl Solution {
             let low = value - d;
             let high = value + d;
             let i = arr2.partition_point(|&x| x < low);
-
-            #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
-            if arr2.get(i).map_or(true, |&x| x > high) {
+            if arr2.get(i).is_none_or(|&x| x > high) {
                 result += 1;
             }
         }

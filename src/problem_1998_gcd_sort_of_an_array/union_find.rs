@@ -14,7 +14,7 @@ type State = (Cell<u32>, Cell<u32>);
 impl Solution {
     fn get_min_factors(max: u32) -> Box<[NonZeroU32]> {
         let mut result = vec![NonZeroU32::MAX; (max + 1) as usize].into_boxed_slice();
-        let middle = f64::from(max).sqrt() as u32;
+        let middle = max.isqrt();
 
         for i in 2..=middle {
             let i = NonZeroU32::new(i).unwrap();

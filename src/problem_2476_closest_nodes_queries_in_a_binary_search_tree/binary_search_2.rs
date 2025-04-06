@@ -40,7 +40,7 @@ impl Solution {
                         node = top;
                     } else {
                         return result;
-                    };
+                    }
                 }
             }
         }

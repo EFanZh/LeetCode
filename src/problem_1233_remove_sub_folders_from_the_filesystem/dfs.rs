@@ -33,7 +33,7 @@ impl Solution {
                         node = children.entry(name).or_insert_with(|| Folder::Internal(HashMap::new()));
                     }
                     Folder::Leaf(_) => continue 'outer,
-                };
+                }
             }
 
             *node = Folder::Leaf(path);

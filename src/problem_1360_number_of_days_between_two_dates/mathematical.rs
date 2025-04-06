@@ -14,7 +14,7 @@ impl Solution {
 
         let month = 10 * u32::from(m1) + u32::from(m2) - (u32::from(b'0') * 11 + 1);
         let day = 10 * u32::from(d1) + u32::from(d2) - (u32::from(b'0') * 11 + 1);
-        let leap_years_before_this_year = (year + 3) / 4 - (year + 99) / 100 + (year + 399) / 400;
+        let leap_years_before_this_year = year.div_ceil(4) - year.div_ceil(100) + year.div_ceil(400);
         let days_before_this_year = 365 * year + leap_years_before_this_year;
         let is_this_year_leap_year = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 

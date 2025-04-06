@@ -19,7 +19,7 @@ impl Solution {
                 let new_line = mem::take(word);
 
                 if i == 0 {
-                    line.extend(iter::repeat(' ').take(max_width - min_line_length));
+                    line.extend(iter::repeat_n(' ', max_width - min_line_length));
                 } else {
                     let spaces = max_width - min_line_length + i;
                     let narrow_gap = spaces / i;
@@ -27,12 +27,12 @@ impl Solution {
                     let (words_1, words_2) = words[..i].split_at(spaces % i);
 
                     for word in words_1 {
-                        line.extend(iter::repeat(' ').take(wide_gap));
+                        line.extend(iter::repeat_n(' ', wide_gap));
                         line.push_str(word);
                     }
 
                     for word in words_2 {
-                        line.extend(iter::repeat(' ').take(narrow_gap));
+                        line.extend(iter::repeat_n(' ', narrow_gap));
                         line.push_str(word);
                     }
                 }
@@ -48,7 +48,7 @@ impl Solution {
             line.push_str(word);
         }
 
-        line.extend(iter::repeat(' ').take(max_width - line.len()));
+        line.extend(iter::repeat_n(' ', max_width - line.len()));
 
         result.push(line);
     }

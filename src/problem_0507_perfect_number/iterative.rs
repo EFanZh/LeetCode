@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn check_perfect_number(num: i32) -> bool {
         let num = num as u32;
-        let last = f64::from(num).sqrt() as u32;
+        let last = num.isqrt();
 
         let divisor_sum = 1 + (2..last).filter(|&x| num % x == 0).map(|x| x + num / x).sum::<u32>();
 

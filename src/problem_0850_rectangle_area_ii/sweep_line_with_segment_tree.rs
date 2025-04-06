@@ -22,7 +22,7 @@ struct Tree<'a> {
 
 impl<'a> Tree<'a> {
     fn from_slice(slice: &'a mut [Node], start: u32) -> Self {
-        let length = (slice.len() + 1) / 2;
+        let length = slice.len().div_ceil(2);
         let (root, children) = slice.split_first_mut().unwrap();
         let left_length = length / 2;
         let (left, right) = children.split_at_mut((left_length * 2).saturating_sub(1));

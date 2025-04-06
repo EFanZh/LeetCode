@@ -59,7 +59,7 @@ impl Solution {
             current.0
         };
 
-        let left = next((total_count + 1) / 2);
+        let left = next(total_count.div_ceil(2));
 
         let median = if total_count % 2 == 0 {
             f64::from(left + next(1)) / 2.0

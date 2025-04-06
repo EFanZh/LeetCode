@@ -4,12 +4,14 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_primes(n: i32) -> i32 {
+        let n = n as u32;
+
         if n < 3 {
             0
         } else {
             let mut candidates = vec![false; ((n - 2) / 2) as _];
 
-            for (mut i, num) in (3..=(f64::from(n - 1).sqrt() as _)).step_by(2).enumerate() {
+            for (mut i, num) in (3..=(n - 1).isqrt() as _).step_by(2).enumerate() {
                 if !candidates[i] {
                     i += num;
 

@@ -20,7 +20,7 @@ impl Solution {
         if n != prev {
             let mut group = s[prev..].to_string();
 
-            group.extend(iter::repeat(fill).take(k - (n - prev)));
+            group.extend(iter::repeat_n(fill, k - (n - prev)));
 
             result.push(group);
         }

@@ -79,7 +79,7 @@ impl Solution {
                                         result.push(vec![start, value_2]);
                                         state = State::Open1;
                                     }
-                                };
+                                }
 
                                 break;
                             }

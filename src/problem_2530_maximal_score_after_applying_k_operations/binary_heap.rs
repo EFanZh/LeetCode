@@ -13,7 +13,7 @@ impl Solution {
             let max = &mut *nums.peek_mut().unwrap();
 
             result += u64::from(*max);
-            *max = (*max + 2) / 3;
+            *max = max.div_ceil(3);
         }
 
         result as _

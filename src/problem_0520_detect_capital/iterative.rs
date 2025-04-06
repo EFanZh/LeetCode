@@ -5,10 +5,8 @@ pub struct Solution;
 impl Solution {
     pub fn detect_capital_use(word: String) -> bool {
         let mut iter = word.as_bytes().iter();
-
-        #[expect(clippy::unnecessary_map_or, reason = "compatibility")]
         if iter.next().unwrap().is_ascii_uppercase() {
-            iter.next().map_or(true, |second| {
+            iter.next().is_none_or(|second| {
                 if second.is_ascii_uppercase() {
                     iter.all(u8::is_ascii_uppercase)
                 } else {

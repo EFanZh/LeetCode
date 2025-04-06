@@ -37,7 +37,7 @@ impl Solution {
             let mut j = i.wrapping_sub(1);
 
             for _ in 0..cycles {
-                s.extend(iter::repeat(b'a' + i as u8).take(repeat_limit.get() as _));
+                s.extend(iter::repeat_n(b'a' + i as u8, repeat_limit.get() as _));
 
                 loop {
                     if let Some(count_2) = counts.get_mut(j) {
@@ -56,7 +56,7 @@ impl Solution {
                 s.push(b'a' + j as u8);
             }
 
-            s.extend(iter::repeat(b'a' + i as u8).take(extra as _));
+            s.extend(iter::repeat_n(b'a' + i as u8, extra as _));
 
             i = j;
         }

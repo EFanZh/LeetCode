@@ -49,7 +49,7 @@ impl Solution {
     }
 
     fn is_prime(n: u32) -> bool {
-        let end = f64::from(n).sqrt() as u32;
+        let end = n.isqrt();
 
         for x in 2..=end {
             if n % x == 0 {

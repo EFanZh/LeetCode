@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn check(num: u32) -> u32 {
-        let sqrt_num = f64::from(num).sqrt() as u32;
+        let sqrt_num = num.isqrt();
 
         if sqrt_num * sqrt_num == num {
             0
