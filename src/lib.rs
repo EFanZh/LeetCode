@@ -1885,6 +1885,7 @@ pub mod problem_2526_find_consecutive_integers_from_a_data_stream;
 pub mod problem_2529_maximum_count_of_positive_integer_and_negative_integer;
 pub mod problem_2530_maximal_score_after_applying_k_operations;
 pub mod problem_2535_difference_between_element_sum_and_digit_sum_of_an_array;
+pub mod problem_2540_minimum_common_value;
 
 #[cfg(test)]
 mod test_utilities;
