@@ -1,4 +1,3 @@
-pub mod brute_force;
 pub mod sieve;
 
 pub trait Solution {
