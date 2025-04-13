@@ -7,47 +7,47 @@ pub struct Solution;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-enum Frame {
-    Left(Rc<RefCell<TreeNode>>),
-    Right(Rc<RefCell<TreeNode>>),
-}
-
 impl Solution {
     pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
-        let mut stack = Vec::new();
-        let mut root = root;
 
-        'r: loop {
-            #[expect(clippy::assigning_clones, reason = "false positive")]
-            if let Some(node) = root {
-                root = node.borrow().left.clone();
+        if let Some(mut node) = root {
+            let mut stack = Vec::new();
 
-                stack.push(Frame::Left(node));
-            } else {
-                // Apply continuation.
+            'outer: loop {
+                let mut val = loop {
+                    let (val, left, right) = {
+                        let node = node.borrow();
+
+                        (node.val, node.left.clone(), node.right.clone())
+                    };
+
+                    let (next, right) = match (left, right) {
+                        (None, None) => break val,
+                        (None, Some(child)) | (Some(child), None) => (child, None),
+                        (Some(left), Some(right)) => (left, Some(right)),
+                    };
+
+                    stack.push((val, right));
+
+                    node = next;
+                };
 
                 loop {
-                    match stack.pop() {
-                        Some(Frame::Left(node)) => {
-                            // Left continuation.
+                    result.push(val);
 
-                            root = node.borrow().right.clone();
+                    if let Some(top) = stack.last_mut() {
+                        if let Some(right) = top.1.take() {
+                            node = right;
 
-                            stack.push(Frame::Right(node));
-
-                            continue 'r;
+                            break;
                         }
-                        Some(Frame::Right(node)) => {
-                            // Right continuation.
 
-                            result.push(node.borrow().val);
-                        }
-                        None => {
-                            // Root continuation.
+                        val = top.0;
 
-                            break 'r;
-                        }
+                        stack.pop();
+                    } else {
+                        break 'outer;
                     }
                 }
             }
