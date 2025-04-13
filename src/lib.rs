@@ -1891,6 +1891,7 @@ pub mod problem_2544_alternating_digit_sum;
 pub mod problem_2545_sort_the_students_by_their_kth_score;
 pub mod problem_2546_apply_bitwise_operations_to_make_strings_equal;
 pub mod problem_2549_count_distinct_numbers_on_board;
+pub mod problem_2550_count_collisions_of_monkeys_on_a_polygon;
 
 #[cfg(test)]
 mod test_utilities;
