@@ -16,7 +16,28 @@ mod tests {
     use crate::test_utilities;
 
     pub fn run<S: Solution>() {
-        let test_cases = [(&[Some(1), None, Some(2), Some(3)] as &[_], &[3, 2, 1] as &[_])];
+        let test_cases = [
+            (&[Some(1), None, Some(2), Some(3)] as &[_], &[3, 2, 1] as &[_]),
+            (
+                &[
+                    Some(1),
+                    Some(2),
+                    Some(3),
+                    Some(4),
+                    Some(5),
+                    None,
+                    Some(8),
+                    None,
+                    None,
+                    Some(6),
+                    Some(7),
+                    Some(9),
+                ],
+                &[4, 6, 7, 5, 2, 9, 8, 3, 1],
+            ),
+            (&[], &[]),
+            (&[Some(1)], &[1]),
+        ];
 
         for (root, expected) in test_cases {
             assert_eq!(

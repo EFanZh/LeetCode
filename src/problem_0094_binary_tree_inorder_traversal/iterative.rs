@@ -9,23 +9,45 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        let mut root = root;
         let mut result = Vec::new();
-        let mut stack = Vec::new();
 
-        loop {
-            #[expect(clippy::assigning_clones, reason = "false positive")]
-            if let Some(node) = root {
-                root = node.borrow().left.clone();
-                stack.push(node);
-            } else if let Some(node) = stack.pop() {
-                let node_ref = node.borrow();
+        if let Some(mut node) = root {
+            let mut stack = Vec::new();
 
-                result.push(node_ref.val);
+            'outer: loop {
+                loop {
+                    let left = node.borrow().left.clone();
 
-                root = node_ref.right.clone();
-            } else {
-                break;
+                    if let Some(left) = left {
+                        stack.push(node);
+
+                        node = left;
+                    } else {
+                        break;
+                    }
+                }
+
+                loop {
+                    let (val, right) = {
+                        let node = node.borrow();
+
+                        (node.val, node.right.clone())
+                    };
+
+                    result.push(val);
+
+                    if let Some(right) = right {
+                        node = right;
+
+                        break;
+                    }
+
+                    if let Some(top) = stack.pop() {
+                        node = top;
+                    } else {
+                        break 'outer;
+                    }
+                }
             }
         }
 

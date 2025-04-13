@@ -10,22 +10,38 @@ use std::rc::Rc;
 impl Solution {
     pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut result = Vec::new();
-        let mut stack = Vec::new();
-        let mut root = root;
 
-        loop {
-            #[expect(clippy::assigning_clones, reason = "false positive")]
-            if let Some(node) = root {
-                let node_ref = node.borrow();
+        if let Some(mut node) = root {
+            let mut stack = Vec::new();
 
-                result.push(node_ref.val);
-                stack.push(node_ref.right.clone());
+            loop {
+                loop {
+                    let (val, left, right) = {
+                        let node = node.borrow();
 
-                root = node_ref.left.clone();
-            } else if let Some(right) = stack.pop() {
-                root = right;
-            } else {
-                break;
+                        (node.val, node.left.clone(), node.right.clone())
+                    };
+
+                    result.push(val);
+
+                    node = if let Some(left) = left {
+                        if let Some(right) = right {
+                            stack.push(right);
+                        }
+
+                        left
+                    } else if let Some(right) = right {
+                        right
+                    } else {
+                        break;
+                    };
+                }
+
+                if let Some(top) = stack.pop() {
+                    node = top;
+                } else {
+                    break;
+                }
             }
         }
 
