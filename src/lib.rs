@@ -1896,6 +1896,7 @@ pub mod problem_2550_count_collisions_of_monkeys_on_a_polygon;
 pub mod problem_2553_separate_the_digits_in_an_array;
 pub mod problem_2554_maximum_number_of_integers_to_choose_from_a_range_i;
 pub mod problem_2558_take_gifts_from_the_richest_pile;
+pub mod problem_2559_count_vowel_strings_in_ranges;
 
 #[cfg(test)]
 mod test_utilities;
