@@ -1898,6 +1898,7 @@ pub mod problem_2554_maximum_number_of_integers_to_choose_from_a_range_i;
 pub mod problem_2558_take_gifts_from_the_richest_pile;
 pub mod problem_2559_count_vowel_strings_in_ranges;
 pub mod problem_2560_house_robber_iv;
+pub mod problem_2562_find_the_array_concatenation_value;
 
 #[cfg(test)]
 mod test_utilities;
