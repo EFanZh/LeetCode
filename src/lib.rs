@@ -1901,6 +1901,7 @@ pub mod problem_2560_house_robber_iv;
 pub mod problem_2562_find_the_array_concatenation_value;
 pub mod problem_2563_count_the_number_of_fair_pairs;
 pub mod problem_2564_substring_xor_queries;
+pub mod problem_2566_maximum_difference_by_remapping_a_digit;
 
 #[cfg(test)]
 mod test_utilities;
