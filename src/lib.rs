@@ -1906,6 +1906,7 @@ pub mod problem_2570_merge_two_2d_arrays_by_summing_values;
 pub mod problem_2574_left_and_right_sum_differences;
 pub mod problem_2575_find_the_divisibility_array_of_a_string;
 pub mod problem_2578_split_with_minimum_sum;
+pub mod problem_2579_count_total_number_of_colored_cells;
 
 #[cfg(test)]
 mod test_utilities;
