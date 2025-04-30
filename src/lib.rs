@@ -1904,6 +1904,7 @@ pub mod problem_2563_count_the_number_of_fair_pairs;
 pub mod problem_2564_substring_xor_queries;
 pub mod problem_2566_maximum_difference_by_remapping_a_digit;
 pub mod problem_2570_merge_two_2d_arrays_by_summing_values;
+pub mod problem_2571_minimum_operations_to_reduce_an_integer_to_0;
 pub mod problem_2574_left_and_right_sum_differences;
 pub mod problem_2575_find_the_divisibility_array_of_a_string;
 pub mod problem_2578_split_with_minimum_sum;
