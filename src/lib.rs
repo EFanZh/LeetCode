@@ -1827,6 +1827,7 @@ pub mod problem_2421_number_of_good_paths;
 pub mod problem_2423_remove_letter_to_equalize_frequency;
 pub mod problem_2424_longest_uploaded_prefix;
 pub mod problem_2425_bitwise_xor_of_all_pairings;
+pub mod problem_2426_number_of_pairs_satisfying_inequality;
 pub mod problem_2427_number_of_common_factors;
 pub mod problem_2428_maximum_sum_of_an_hourglass;
 pub mod problem_2429_minimize_xor;
