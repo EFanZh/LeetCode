@@ -1913,6 +1913,7 @@ pub mod problem_2579_count_total_number_of_colored_cells;
 pub mod problem_2580_count_ways_to_group_overlapping_ranges;
 pub mod problem_2582_pass_the_pillow;
 pub mod problem_2583_kth_largest_sum_in_a_binary_tree;
+pub mod problem_2586_count_the_number_of_vowel_strings_in_range;
 
 #[cfg(test)]
 mod test_utilities;
