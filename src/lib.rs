@@ -1915,6 +1915,7 @@ pub mod problem_2582_pass_the_pillow;
 pub mod problem_2583_kth_largest_sum_in_a_binary_tree;
 pub mod problem_2586_count_the_number_of_vowel_strings_in_range;
 pub mod problem_2587_rearrange_array_to_maximize_prefix_score;
+pub mod problem_2588_count_the_number_of_beautiful_subarrays;
 
 #[cfg(test)]
 mod test_utilities;
