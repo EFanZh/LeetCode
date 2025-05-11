@@ -1919,6 +1919,7 @@ pub mod problem_2588_count_the_number_of_beautiful_subarrays;
 pub mod problem_2591_distribute_money_to_maximum_children;
 pub mod problem_2592_maximize_greatness_of_an_array;
 pub mod problem_2593_find_score_of_an_array_after_marking_all_elements;
+pub mod problem_2594_minimum_time_to_repair_cars;
 
 #[cfg(test)]
 mod test_utilities;
