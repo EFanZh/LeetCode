@@ -1920,6 +1920,7 @@ pub mod problem_2591_distribute_money_to_maximum_children;
 pub mod problem_2592_maximize_greatness_of_an_array;
 pub mod problem_2593_find_score_of_an_array_after_marking_all_elements;
 pub mod problem_2594_minimum_time_to_repair_cars;
+pub mod problem_2595_number_of_even_and_odd_bits;
 
 #[cfg(test)]
 mod test_utilities;
