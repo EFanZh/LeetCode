@@ -1921,6 +1921,7 @@ pub mod problem_2592_maximize_greatness_of_an_array;
 pub mod problem_2593_find_score_of_an_array_after_marking_all_elements;
 pub mod problem_2594_minimum_time_to_repair_cars;
 pub mod problem_2595_number_of_even_and_odd_bits;
+pub mod problem_2596_check_knight_tour_configuration;
 
 #[cfg(test)]
 mod test_utilities;
