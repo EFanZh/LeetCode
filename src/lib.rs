@@ -1923,6 +1923,7 @@ pub mod problem_2594_minimum_time_to_repair_cars;
 pub mod problem_2595_number_of_even_and_odd_bits;
 pub mod problem_2596_check_knight_tour_configuration;
 pub mod problem_2598_smallest_missing_non_negative_integer_after_operations;
+pub mod problem_2600_k_items_with_the_maximum_sum;
 
 #[cfg(test)]
 mod test_utilities;
