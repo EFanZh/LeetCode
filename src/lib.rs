@@ -1924,6 +1924,7 @@ pub mod problem_2595_number_of_even_and_odd_bits;
 pub mod problem_2596_check_knight_tour_configuration;
 pub mod problem_2598_smallest_missing_non_negative_integer_after_operations;
 pub mod problem_2600_k_items_with_the_maximum_sum;
+pub mod problem_2601_prime_subtraction_operation;
 
 #[cfg(test)]
 mod test_utilities;
