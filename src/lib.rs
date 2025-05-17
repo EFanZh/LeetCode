@@ -1925,6 +1925,7 @@ pub mod problem_2596_check_knight_tour_configuration;
 pub mod problem_2598_smallest_missing_non_negative_integer_after_operations;
 pub mod problem_2600_k_items_with_the_maximum_sum;
 pub mod problem_2601_prime_subtraction_operation;
+pub mod problem_2602_minimum_operations_to_make_all_array_elements_equal;
 
 #[cfg(test)]
 mod test_utilities;
