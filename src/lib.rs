@@ -1926,6 +1926,7 @@ pub mod problem_2598_smallest_missing_non_negative_integer_after_operations;
 pub mod problem_2600_k_items_with_the_maximum_sum;
 pub mod problem_2601_prime_subtraction_operation;
 pub mod problem_2602_minimum_operations_to_make_all_array_elements_equal;
+pub mod problem_2609_find_the_longest_balanced_substring_of_a_binary_string;
 
 #[cfg(test)]
 mod test_utilities;
