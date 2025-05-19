@@ -38,7 +38,7 @@ impl Solution {
         let mut high = Self::mul_sub_div(top, n + 2, 1, base);
 
         while low < high {
-            let middle = (low + high) / 2;
+            let middle = u64::midpoint(low, high);
 
             if middle / a + middle / b - middle / lcm < n {
                 low = middle + 1;

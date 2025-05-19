@@ -10,7 +10,7 @@ impl Solution {
         let mut right = nums.len() - 1;
 
         while left != right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
 
             if nums[middle] == nums[middle ^ 1] {
                 left = middle + 1;

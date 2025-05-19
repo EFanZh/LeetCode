@@ -9,7 +9,7 @@ use std::cmp::Ordering;
 impl Solution {
     fn partition_point(mut left: u32, mut right: u32, mut f: impl FnMut(u32) -> bool) -> u32 {
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if f(middle) {
                 left = middle + 1;
@@ -23,7 +23,7 @@ impl Solution {
 
     fn binary_search(mut left: u32, mut right: u32, mut f: impl FnMut(u32) -> Ordering) -> Option<u32> {
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             match f(middle) {
                 Ordering::Less => left = middle + 1,

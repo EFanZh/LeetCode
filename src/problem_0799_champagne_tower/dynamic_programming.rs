@@ -46,7 +46,7 @@ impl Solution {
             let query_glass = query_glass.min(query_row - query_glass);
             let left = cache.get(query_glass.wrapping_sub(1)).copied().unwrap_or(0.0);
             let right = cache[query_glass.min(cache.len() - 1)];
-            let incoming = (left + right) / 2.0;
+            let incoming = f64::midpoint(left, right);
 
             incoming.min(1.0)
         }

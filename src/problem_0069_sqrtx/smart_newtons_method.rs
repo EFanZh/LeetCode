@@ -8,7 +8,7 @@ impl Solution {
         let mut guess = (1 << ((33 - x.leading_zeros()) / 2)) - 1;
 
         while guess * guess > x {
-            guess = (guess + x / guess) / 2;
+            guess = u32::midpoint(guess, x / guess);
         }
 
         guess as _

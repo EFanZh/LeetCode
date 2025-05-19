@@ -55,8 +55,8 @@ mod tests {
         for ((root, val, depth), expected) in test_cases {
             let root = test_utilities::make_tree(root.iter().copied());
             let expected = test_utilities::make_tree(expected.iter().copied());
-            let inverted_root = test_utilities::invert_tree(root.as_deref());
-            let inverted_expected = test_utilities::invert_tree(expected.as_deref());
+            let inverted_root = root.as_deref().map(test_utilities::invert_tree);
+            let inverted_expected = expected.as_deref().map(test_utilities::invert_tree);
 
             for (root, expected) in [(root, expected), (inverted_root, inverted_expected)] {
                 assert_eq!(S::add_one_row(root, val, depth), expected);

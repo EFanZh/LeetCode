@@ -59,7 +59,7 @@ impl Solution {
             let (mut left, mut right) = Self::min_max(bloom_day);
 
             while left < right {
-                let middle = (left + right) / 2;
+                let middle = u32::midpoint(left, right);
 
                 if check(middle) {
                     right = middle;

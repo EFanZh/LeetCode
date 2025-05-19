@@ -37,7 +37,7 @@ impl Solution {
         let mut high = (*position.last().unwrap() - *position.first().unwrap()) as u32 / (m - 1) + 1;
 
         while low < high {
-            let middle = (low + high) / 2;
+            let middle = u32::midpoint(low, high);
 
             if Self::check(position, m, middle) {
                 low = middle + 1;

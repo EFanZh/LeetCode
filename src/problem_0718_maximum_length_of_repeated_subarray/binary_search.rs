@@ -98,7 +98,7 @@ impl Solution {
         let mut bucket_pool = Vec::with_capacity(nums1.len());
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
 
             if Self::check(&nums1, &nums2, middle, &mut buckets_buffer, &mut bucket_pool) {
                 left = middle + 1;

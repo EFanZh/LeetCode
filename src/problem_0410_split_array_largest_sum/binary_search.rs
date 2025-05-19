@@ -37,7 +37,7 @@ impl Solution {
         let mut right = sum;
 
         while left != right {
-            let middle = (left + right) / 2;
+            let middle = i32::midpoint(left, right);
 
             if Self::helper(&nums, m, middle) {
                 right = middle;

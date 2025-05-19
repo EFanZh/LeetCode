@@ -19,7 +19,7 @@ impl Solution {
     }
 
     fn helper(node: &RefCell<TreeNode>, row: usize, start: usize, end: usize, result: &mut [Vec<String>]) {
-        let middle = (start + end) / 2;
+        let middle = usize::midpoint(start, end);
         let node = node.borrow();
 
         result[row][middle] = node.val.to_string();

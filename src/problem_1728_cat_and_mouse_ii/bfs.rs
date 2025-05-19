@@ -100,7 +100,7 @@ impl Solution {
     fn get_in_degree(grid: &[u8; 64], rows: u8, columns: u8, max_jump: u8, y: u8, x: u8) -> u8 {
         let mut result = 0;
 
-        Self::next_positions::<Infallible>(grid, rows, columns, max_jump, y, x, |_, _| {
+        _ = Self::next_positions::<Infallible>(grid, rows, columns, max_jump, y, x, |_, _| {
             result += 1;
 
             ControlFlow::Continue(())

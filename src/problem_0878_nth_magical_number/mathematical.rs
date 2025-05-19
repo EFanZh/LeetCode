@@ -31,7 +31,7 @@ impl Solution {
         let mut high = ((a_u64 * b_u64 * (n_u64 + 2) - 1) / (a_u64 + b_u64)) as u32;
 
         while low < high {
-            let middle = (low + high) / 2;
+            let middle = u32::midpoint(low, high);
 
             if middle / a + middle / b < n {
                 low = middle + 1;

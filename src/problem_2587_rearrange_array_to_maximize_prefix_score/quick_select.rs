@@ -42,7 +42,7 @@ impl Solution {
         let mut left_sum = 0;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
             let key = nums[middle];
             let (middle_start, middle_end, window_left_sum) = Self::three_way_partition(&mut nums, left, right, key);
             let middle = middle.clamp(middle_start, middle_end - 1);

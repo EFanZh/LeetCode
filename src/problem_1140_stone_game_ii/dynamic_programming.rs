@@ -13,13 +13,13 @@ impl Solution {
         }
 
         let n = sums.len();
-        let columns = (n + 2) / 2;
+        let columns = usize::midpoint(n, 2);
         let mut cache = vec![0; columns * (n + 1)];
 
         for length in 1..=n {
             let start = n - length;
 
-            for m in 1..=(start + 2) / 2 {
+            for m in 1..=usize::midpoint(start, 2) {
                 let mut max_diff = i32::MIN;
 
                 for selection in 1..=length.min(m * 2) {
@@ -34,7 +34,7 @@ impl Solution {
 
         let diff = cache[columns * n];
 
-        (sum + diff) / 2
+        i32::midpoint(sum, diff)
     }
 }
 

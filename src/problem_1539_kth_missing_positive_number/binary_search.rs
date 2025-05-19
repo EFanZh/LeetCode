@@ -9,7 +9,7 @@ impl Solution {
         let mut right = arr.len();
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
             let missing = arr[middle] as u32 - (middle as u32 + 1);
 
             if missing < k {

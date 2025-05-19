@@ -84,7 +84,7 @@ impl Solution {
         let mut start_path = Vec::new();
         let mut dest_path = Vec::new();
 
-        Self::find_2(
+        _ = Self::find_2(
             root.as_deref(),
             &mut Vec::new(),
             start_value,

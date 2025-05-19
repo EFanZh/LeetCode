@@ -25,7 +25,11 @@ impl Solution {
 
         let a_plus_b = a + b;
 
-        (if a_plus_b < c { a_plus_b } else { (a_plus_b + c) / 2 }) as _
+        (if a_plus_b < c {
+            a_plus_b
+        } else {
+            u32::midpoint(a_plus_b, c)
+        }) as _
     }
 }
 

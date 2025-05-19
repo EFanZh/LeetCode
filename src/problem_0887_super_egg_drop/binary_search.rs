@@ -41,7 +41,7 @@ impl Solution {
             let mut high = n;
 
             while low < high {
-                let middle = (low + high) / 2;
+                let middle = u32::midpoint(low, high);
 
                 if Self::check_moves(k, middle, n) {
                     high = middle;

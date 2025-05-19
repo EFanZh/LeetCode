@@ -80,7 +80,7 @@ impl Solution {
         let mut buffer = VecDeque::new();
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
 
             if Self::check(&tasks[..middle], &workers[n - middle..], pills, strength, &mut buffer) {
                 left = middle + 1;

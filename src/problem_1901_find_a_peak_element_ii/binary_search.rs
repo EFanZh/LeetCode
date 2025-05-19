@@ -15,7 +15,7 @@ impl Solution {
         let mut right = mat.len() - 1;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
 
             if Self::check(&mat, middle) {
                 left = middle + 1;

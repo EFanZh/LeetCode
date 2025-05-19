@@ -10,7 +10,7 @@ impl Solution {
     }
 
     fn triangular_2(x: i32, y: i32) -> i32 {
-        (x * (x + 1) + y * (y + 1)) / 2
+        i32::midpoint(x * (x + 1), y * (y + 1))
     }
 
     fn going_down(first: i32, rest: &[i32], up_length: i32, down_length: i32, result: &mut i32) {

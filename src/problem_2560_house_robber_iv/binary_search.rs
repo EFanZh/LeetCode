@@ -21,7 +21,7 @@ impl Solution {
         let mut right = nums.iter().fold(0, |min, &x| min.max(x));
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if Self::check(&nums, k, middle) {
                 right = middle;

@@ -74,7 +74,7 @@ impl Solution {
                 let mut suggestions = Vec::with_capacity(3);
                 let length = buffer.len();
 
-                Self::dfs(&nodes, child, &mut buffer, &mut |item| {
+                _ = Self::dfs(&nodes, child, &mut buffer, &mut |item| {
                     suggestions.push(String::from_utf8(item).unwrap());
 
                     if suggestions.len() < 3 {
