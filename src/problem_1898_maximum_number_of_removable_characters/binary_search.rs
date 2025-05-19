@@ -25,7 +25,7 @@ impl Solution {
         let mut right = removable.len() + 1;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
             let indices = removable[..middle].iter().map(|&i| i as u32 as usize);
 
             saved.extend(indices.clone().map(|i| mem::take(&mut s[i])));

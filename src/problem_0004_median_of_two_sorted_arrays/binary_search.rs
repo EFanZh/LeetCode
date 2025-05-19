@@ -40,7 +40,7 @@ impl Solution {
                 nums2.get(other.wrapping_sub(1)).copied().unwrap_or(i32::MIN),
             ));
 
-            (left_max + right_min) / 2.0
+            f64::midpoint(left_max, right_min)
         } else {
             right_min
         }

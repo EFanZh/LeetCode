@@ -8,13 +8,13 @@ impl Solution {
         let mut guess = f64::from_bits(f64::from(x).to_bits() / 2 + 0x1FF8_0000_0000_0000) as u32;
 
         if guess * guess > x {
-            guess = (guess + x / guess) / 2;
+            guess = u32::midpoint(guess, x / guess);
 
             if guess * guess > x {
-                guess = (guess + x / guess) / 2;
+                guess = u32::midpoint(guess, x / guess);
 
                 if guess * guess > x {
-                    guess = (guess + x / guess) / 2;
+                    guess = u32::midpoint(guess, x / guess);
                 }
             }
         }

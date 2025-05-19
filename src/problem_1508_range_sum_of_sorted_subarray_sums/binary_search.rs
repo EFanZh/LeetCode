@@ -49,7 +49,7 @@ impl Solution {
     /// Get the `i`-th subarray sum.
     fn get_subarray_sum(sums: &[i32], mut low: u32, mut high: u32, i: u32) -> u32 {
         while low < high {
-            let middle = (low + high) / 2;
+            let middle = u32::midpoint(low, high);
 
             if Self::count_subarrays(sums, middle) <= i {
                 low = middle + 1;

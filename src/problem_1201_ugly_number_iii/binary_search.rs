@@ -34,7 +34,7 @@ impl Solution {
         let mut right = 2_000_000_000;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
             let count = middle / a + middle / b + middle / c - middle / ab - middle / ac - middle / bc + middle / abc;
 
             if count < n as _ {

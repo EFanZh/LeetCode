@@ -120,7 +120,7 @@ impl Solution {
         let mut length = 0;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
 
             if let Some(i) = Self::helper::<91_320_515_216_383_913>(s.as_bytes(), middle, &mut buckets, &mut pool) {
                 start = i;

@@ -10,7 +10,7 @@ impl Solution {
         let mut right = num.min(46340);
 
         while left != right {
-            let middle = (left + right) / 2;
+            let middle = i32::midpoint(left, right);
 
             match (middle * middle).cmp(&num) {
                 Ordering::Less => left = middle + 1,

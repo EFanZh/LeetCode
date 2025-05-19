@@ -29,7 +29,7 @@ impl Solution {
         let mut high = max;
 
         while low < high {
-            let middle = (low + high) / 2;
+            let middle = u32::midpoint(low, high);
 
             if Self::check(&piles, h, middle) {
                 low = middle + 1;

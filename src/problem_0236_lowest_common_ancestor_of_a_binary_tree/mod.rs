@@ -81,7 +81,7 @@ mod tests {
 
         for ((root, p, q), expected) in test_cases {
             let root = test_utilities::make_tree(root.iter().copied());
-            let inverted_root = test_utilities::invert_tree(root.as_deref());
+            let inverted_root = root.as_deref().map(test_utilities::invert_tree);
 
             for (root, p, q) in [
                 (root.clone(), p, q),

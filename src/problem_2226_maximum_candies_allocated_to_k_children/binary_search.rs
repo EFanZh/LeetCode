@@ -28,7 +28,7 @@ impl Solution {
         let mut right = candies.iter().fold(0, |acc, &x| u32::max(acc, x as _)) + 1;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if Self::check(candies, k, middle) {
                 left = middle + 1;

@@ -23,7 +23,7 @@ impl Solution {
         let mut right = k;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             match Self::f(middle).cmp(&k) {
                 Ordering::Less => left = middle + 1,

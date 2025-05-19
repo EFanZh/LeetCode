@@ -43,7 +43,7 @@ impl Solution {
         let mut usage = vec![0; k].into_boxed_slice();
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if Self::helper(middle, &jobs, &mut usage) {
                 usage.fill(0);

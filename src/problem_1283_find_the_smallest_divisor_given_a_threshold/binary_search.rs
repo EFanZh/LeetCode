@@ -11,7 +11,7 @@ impl Solution {
         let mut right = nums.iter().map(|&value| value as u32).max().unwrap();
 
         while left < right {
-            let middle = NonZeroU32::new((left + right) / 2).unwrap();
+            let middle = NonZeroU32::new(u32::midpoint(left, right)).unwrap();
             let middle_minus_1 = middle.get() - 1;
 
             if nums

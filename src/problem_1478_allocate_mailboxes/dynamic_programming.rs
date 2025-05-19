@@ -25,8 +25,8 @@ impl Solution {
 
         let distance = |start: usize, end: usize| {
             let get = |i| sums.get(i).copied().unwrap_or(0);
-            let middle_1 = ((start + end) / 2).wrapping_sub(1);
-            let middle_2 = (start + end - 1) / 2;
+            let middle_1 = usize::midpoint(start, end).wrapping_sub(1);
+            let middle_2 = usize::midpoint(start, end - 1);
 
             (get(end - 1) - get(middle_2)) - (get(middle_1) - get(start.wrapping_sub(1)))
         };

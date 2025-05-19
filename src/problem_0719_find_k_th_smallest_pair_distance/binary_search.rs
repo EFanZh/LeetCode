@@ -28,7 +28,7 @@ impl Solution {
         let mut right = nums.last().unwrap() - nums.first().unwrap();
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = i32::midpoint(left, right);
 
             if Self::check(&nums, middle, k) {
                 left = middle + 1;

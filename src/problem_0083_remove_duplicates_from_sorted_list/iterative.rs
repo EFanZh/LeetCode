@@ -5,6 +5,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
+    #[expect(clippy::single_option_map, reason = "required")]
     pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         head.map(|mut node| {
             let mut tail = node.as_mut();

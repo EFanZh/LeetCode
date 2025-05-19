@@ -78,6 +78,7 @@ impl Solution {
         }
     }
 
+    #[expect(clippy::single_option_map, reason = "required")]
     pub fn lowest_common_ancestor(
         root: Option<Rc<RefCell<TreeNode>>>,
         p: Option<Rc<RefCell<TreeNode>>>,

@@ -11,7 +11,7 @@ impl Solution {
         let mut right = x.min(46340) + 1;
 
         while right - left > 1 {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             match (middle * middle).cmp(&x) {
                 Ordering::Less => left = middle,

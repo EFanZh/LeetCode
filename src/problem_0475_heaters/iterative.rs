@@ -16,7 +16,7 @@ impl Solution {
         for (heater, boundary) in heaters
             .iter()
             .zip(&heaters[1..])
-            .map(|(&left, &right)| (left, (left + right) / 2))
+            .map(|(&left, &right)| (left, i32::midpoint(left, right)))
         {
             while house <= boundary {
                 result = result.max((house - heater).abs());

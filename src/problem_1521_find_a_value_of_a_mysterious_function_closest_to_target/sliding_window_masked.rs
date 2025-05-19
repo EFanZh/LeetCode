@@ -29,7 +29,6 @@ impl Solution {
 
         let mut arr = arr;
 
-        #[expect(clippy::manual_slice_fill, reason = "false positive")]
         for value in &mut arr {
             *value = !*value & mask;
         }

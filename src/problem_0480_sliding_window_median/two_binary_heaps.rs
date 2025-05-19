@@ -78,7 +78,10 @@ impl Solution {
 
         if k % 2 == 0 {
             Self::helper(window, &nums, |window| {
-                (f64::from(window.0.peek().unwrap().0) + f64::from(window.1.peek().unwrap().0.0)) / 2.0
+                f64::midpoint(
+                    f64::from(window.0.peek().unwrap().0),
+                    f64::from(window.1.peek().unwrap().0.0),
+                )
             })
         } else {
             Self::helper(window, &nums, |window| f64::from(window.1.peek().unwrap().0.0))

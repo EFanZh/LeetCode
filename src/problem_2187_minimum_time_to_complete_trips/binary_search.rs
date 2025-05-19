@@ -48,7 +48,7 @@ impl Solution {
         let mut right = u64::from(max.get()) * count;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u64::midpoint(left, right);
 
             let trips = time.iter().try_fold(0_u32, |sum, &time| {
                 (u64::from(sum) + middle / NonZeroU64::from(time)).try_into().ok()

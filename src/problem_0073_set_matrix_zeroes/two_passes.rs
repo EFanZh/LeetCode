@@ -10,7 +10,7 @@ impl Solution {
                     (true, true)
                 } else {
                     (
-                        first_row_rest_cells.iter().any(|x| *x == 0),
+                        first_row_rest_cells.contains(&0),
                         rest_rows.iter().any(|row| row[0] == 0),
                     )
                 };

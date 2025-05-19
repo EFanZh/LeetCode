@@ -90,16 +90,14 @@ pub fn find_node(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<Re
     })
 }
 
-pub fn invert_tree(root: Option<&RefCell<TreeNode>>) -> Option<Rc<RefCell<TreeNode>>> {
-    root.map(|root| {
-        let root = root.borrow();
+pub fn invert_tree(root: &RefCell<TreeNode>) -> Rc<RefCell<TreeNode>> {
+    let root = root.borrow();
 
-        Rc::new(RefCell::new(TreeNode {
-            val: root.val,
-            left: invert_tree(root.left.as_deref()),
-            right: invert_tree(root.right.as_deref()),
-        }))
-    })
+    Rc::new(RefCell::new(TreeNode {
+        val: root.val,
+        left: root.left.as_deref().map(invert_tree),
+        right: root.right.as_deref().map(invert_tree),
+    }))
 }
 
 pub fn is_full_stack_operations(operations: impl IntoIterator<Item = bool>) -> bool {

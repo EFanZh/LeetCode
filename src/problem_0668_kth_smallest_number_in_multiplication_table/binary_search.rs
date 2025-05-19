@@ -28,7 +28,7 @@ impl Solution {
         let mut right = m * n;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if Self::check(m, n, k, middle) {
                 left = middle + 1;

@@ -55,7 +55,7 @@ impl Solution {
         let mut right = factor * u64::from(max_rank.get());
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u64::midpoint(left, right);
             let mut count = 0;
 
             for &rank in &ranks {

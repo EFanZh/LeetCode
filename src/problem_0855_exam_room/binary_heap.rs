@@ -18,7 +18,7 @@ impl Chunk {
         if self.start == 0 {
             0
         } else if self.end & 0x8000_0000 == 0 {
-            (self.start + self.end) / 2
+            u32::midpoint(self.start, self.end)
         } else {
             self.end()
         }

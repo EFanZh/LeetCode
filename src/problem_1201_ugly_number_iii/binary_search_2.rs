@@ -39,7 +39,7 @@ impl Solution {
         let mut right = abc.get() - 1;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if rank(middle) < remainder {
                 left = middle + 1;

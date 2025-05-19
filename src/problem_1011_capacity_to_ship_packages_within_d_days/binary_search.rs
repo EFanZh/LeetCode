@@ -44,7 +44,7 @@ impl Solution {
         let mut right = total;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if Self::check(weights, days, middle) {
                 right = middle;

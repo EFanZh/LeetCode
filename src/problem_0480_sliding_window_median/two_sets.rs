@@ -105,7 +105,10 @@ impl Window {
 
     fn get_median(&self) -> f64 {
         if self.left.len() == self.right.len() {
-            (f64::from(self.left.last().unwrap()) + f64::from(self.right.first().unwrap())) / 2.0
+            f64::midpoint(
+                f64::from(self.left.last().unwrap()),
+                f64::from(self.right.first().unwrap()),
+            )
         } else {
             f64::from(self.right.first().unwrap())
         }

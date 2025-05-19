@@ -32,7 +32,7 @@ impl Solution {
         let mut right = (price.last().unwrap() - first_price) / (k - 1) + 1;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = u32::midpoint(left, right);
 
             if Self::check(first_price, iter.clone(), k, middle) {
                 left = middle + 1;

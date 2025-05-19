@@ -8,7 +8,7 @@ impl Solution {
         let mut right = arr.len() - 2;
 
         while left < right {
-            let middle = (left + right) / 2;
+            let middle = usize::midpoint(left, right);
 
             if arr[middle] < arr[middle + 1] {
                 left = middle + 1;

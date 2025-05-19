@@ -13,7 +13,7 @@ impl Solution {
             match (x * x).cmp(&num) {
                 Ordering::Less => return false,
                 Ordering::Equal => return true,
-                Ordering::Greater => x = (x + num / x) / 2,
+                Ordering::Greater => x = u64::midpoint(x, num / x),
             }
         }
     }
