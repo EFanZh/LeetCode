@@ -1928,6 +1928,7 @@ pub mod problem_2601_prime_subtraction_operation;
 pub mod problem_2602_minimum_operations_to_make_all_array_elements_equal;
 pub mod problem_2609_find_the_longest_balanced_substring_of_a_binary_string;
 pub mod problem_2610_convert_an_array_into_a_2d_array_with_conditions;
+pub mod problem_2614_prime_in_diagonal;
 
 #[cfg(test)]
 mod test_utilities;
