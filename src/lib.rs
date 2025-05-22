@@ -1930,6 +1930,7 @@ pub mod problem_2609_find_the_longest_balanced_substring_of_a_binary_string;
 pub mod problem_2610_convert_an_array_into_a_2d_array_with_conditions;
 pub mod problem_2614_prime_in_diagonal;
 pub mod problem_2639_find_the_width_of_columns_of_a_grid;
+pub mod problem_2660_determine_the_winner_of_a_bowling_game;
 
 #[cfg(test)]
 mod test_utilities;
