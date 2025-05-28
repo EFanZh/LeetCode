@@ -1936,6 +1936,7 @@ pub mod problem_2660_determine_the_winner_of_a_bowling_game;
 pub mod problem_2661_first_completely_painted_row_or_column;
 pub mod problem_2670_find_the_distinct_difference_array;
 pub mod problem_2671_frequency_tracker;
+pub mod problem_2673_make_costs_of_paths_equal_in_a_binary_tree;
 
 #[cfg(test)]
 mod test_utilities;
