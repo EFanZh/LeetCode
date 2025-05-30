@@ -1938,6 +1938,7 @@ pub mod problem_2670_find_the_distinct_difference_array;
 pub mod problem_2671_frequency_tracker;
 pub mod problem_2673_make_costs_of_paths_equal_in_a_binary_tree;
 pub mod problem_2678_number_of_senior_citizens;
+pub mod problem_2679_sum_in_a_matrix;
 
 #[cfg(test)]
 mod test_utilities;
