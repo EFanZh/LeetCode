@@ -1942,6 +1942,7 @@ pub mod problem_2679_sum_in_a_matrix;
 pub mod problem_2682_find_the_losers_of_the_circular_game;
 pub mod problem_2683_neighboring_bitwise_xor;
 pub mod problem_2696_minimum_string_length_after_removing_substrings;
+pub mod problem_2697_lexicographically_smallest_palindrome;
 
 #[cfg(test)]
 mod test_utilities;
