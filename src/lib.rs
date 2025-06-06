@@ -1933,6 +1933,7 @@ pub mod problem_2610_convert_an_array_into_a_2d_array_with_conditions;
 pub mod problem_2614_prime_in_diagonal;
 pub mod problem_2639_find_the_width_of_columns_of_a_grid;
 pub mod problem_2640_find_the_score_of_all_prefixes_of_an_array;
+pub mod problem_2643_row_with_maximum_ones;
 pub mod problem_2660_determine_the_winner_of_a_bowling_game;
 pub mod problem_2661_first_completely_painted_row_or_column;
 pub mod problem_2670_find_the_distinct_difference_array;
