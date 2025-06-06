@@ -1945,6 +1945,7 @@ pub mod problem_2683_neighboring_bitwise_xor;
 pub mod problem_2696_minimum_string_length_after_removing_substrings;
 pub mod problem_2697_lexicographically_smallest_palindrome;
 pub mod problem_2706_buy_two_chocolates;
+pub mod problem_2710_remove_trailing_zeros_from_a_string;
 
 #[cfg(test)]
 mod test_utilities;
