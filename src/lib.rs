@@ -1951,6 +1951,7 @@ pub mod problem_2712_minimum_cost_to_make_all_characters_equal;
 pub mod problem_2716_minimize_string_length;
 pub mod problem_2717_semi_ordered_permutation;
 pub mod problem_2729_check_if_the_number_is_fascinating;
+pub mod problem_2730_find_the_longest_semi_repetitive_substring;
 
 #[cfg(test)]
 mod test_utilities;
