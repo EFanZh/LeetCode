@@ -1954,6 +1954,7 @@ pub mod problem_2729_check_if_the_number_is_fascinating;
 pub mod problem_2730_find_the_longest_semi_repetitive_substring;
 pub mod problem_2731_movement_of_robots;
 pub mod problem_2733_neither_minimum_nor_maximum;
+pub mod problem_2734_lexicographically_smallest_string_after_substring_operation;
 
 #[cfg(test)]
 mod test_utilities;
