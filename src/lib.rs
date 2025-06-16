@@ -1956,6 +1956,7 @@ pub mod problem_2731_movement_of_robots;
 pub mod problem_2733_neither_minimum_nor_maximum;
 pub mod problem_2734_lexicographically_smallest_string_after_substring_operation;
 pub mod problem_2739_total_distance_traveled;
+pub mod problem_2740_find_the_value_of_the_partition;
 
 #[cfg(test)]
 mod test_utilities;
