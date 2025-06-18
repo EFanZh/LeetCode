@@ -1958,6 +1958,7 @@ pub mod problem_2734_lexicographically_smallest_string_after_substring_operation
 pub mod problem_2739_total_distance_traveled;
 pub mod problem_2740_find_the_value_of_the_partition;
 pub mod problem_2744_find_maximum_number_of_string_pairs;
+pub mod problem_2760_longest_even_odd_subarray_with_threshold;
 
 #[cfg(test)]
 mod test_utilities;
