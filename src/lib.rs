@@ -1962,6 +1962,7 @@ pub mod problem_2760_longest_even_odd_subarray_with_threshold;
 pub mod problem_2761_prime_pairs_with_target_sum;
 pub mod problem_2765_longest_alternating_subarray;
 pub mod problem_2766_relocate_marbles;
+pub mod problem_2769_find_the_maximum_achievable_number;
 
 #[cfg(test)]
 mod test_utilities;
