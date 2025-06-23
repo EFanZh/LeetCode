@@ -1963,6 +1963,7 @@ pub mod problem_2761_prime_pairs_with_target_sum;
 pub mod problem_2765_longest_alternating_subarray;
 pub mod problem_2766_relocate_marbles;
 pub mod problem_2769_find_the_maximum_achievable_number;
+pub mod problem_2771_longest_non_decreasing_subarray_from_two_arrays;
 
 #[cfg(test)]
 mod test_utilities;
