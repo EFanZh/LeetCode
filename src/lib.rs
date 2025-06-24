@@ -1964,6 +1964,7 @@ pub mod problem_2765_longest_alternating_subarray;
 pub mod problem_2766_relocate_marbles;
 pub mod problem_2769_find_the_maximum_achievable_number;
 pub mod problem_2771_longest_non_decreasing_subarray_from_two_arrays;
+pub mod problem_2778_sum_of_squares_of_special_elements;
 
 #[cfg(test)]
 mod test_utilities;
