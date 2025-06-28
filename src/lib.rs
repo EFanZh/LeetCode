@@ -1968,6 +1968,7 @@ pub mod problem_2778_sum_of_squares_of_special_elements;
 pub mod problem_2779_maximum_beauty_of_an_array_after_applying_operation;
 pub mod problem_2780_minimum_index_of_a_valid_split;
 pub mod problem_2784_check_if_array_is_good;
+pub mod problem_2785_sort_vowels_in_a_string;
 
 #[cfg(test)]
 mod test_utilities;
