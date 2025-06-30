@@ -1970,6 +1970,7 @@ pub mod problem_2780_minimum_index_of_a_valid_split;
 pub mod problem_2784_check_if_array_is_good;
 pub mod problem_2785_sort_vowels_in_a_string;
 pub mod problem_2788_split_strings_by_separator;
+pub mod problem_2789_largest_element_in_an_array_after_merge_operations;
 
 #[cfg(test)]
 mod test_utilities;
