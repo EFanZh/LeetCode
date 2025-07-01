@@ -1971,6 +1971,7 @@ pub mod problem_2784_check_if_array_is_good;
 pub mod problem_2785_sort_vowels_in_a_string;
 pub mod problem_2788_split_strings_by_separator;
 pub mod problem_2789_largest_element_in_an_array_after_merge_operations;
+pub mod problem_2798_number_of_employees_who_met_the_target;
 
 #[cfg(test)]
 mod test_utilities;
