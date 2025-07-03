@@ -1973,6 +1973,7 @@ pub mod problem_2788_split_strings_by_separator;
 pub mod problem_2789_largest_element_in_an_array_after_merge_operations;
 pub mod problem_2798_number_of_employees_who_met_the_target;
 pub mod problem_2799_count_complete_subarrays_in_an_array;
+pub mod problem_2806_account_balance_after_rounded_purchase;
 
 #[cfg(test)]
 mod test_utilities;
