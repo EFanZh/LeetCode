@@ -1977,6 +1977,7 @@ pub mod problem_2806_account_balance_after_rounded_purchase;
 pub mod problem_2807_insert_greatest_common_divisors_in_linked_list;
 pub mod problem_2810_faulty_keyboard;
 pub mod problem_2815_max_pair_sum_in_an_array;
+pub mod problem_2816_double_a_number_represented_as_a_linked_list;
 
 #[cfg(test)]
 mod test_utilities;
