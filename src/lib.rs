@@ -1978,6 +1978,7 @@ pub mod problem_2807_insert_greatest_common_divisors_in_linked_list;
 pub mod problem_2810_faulty_keyboard;
 pub mod problem_2815_max_pair_sum_in_an_array;
 pub mod problem_2816_double_a_number_represented_as_a_linked_list;
+pub mod problem_2824_count_pairs_whose_sum_is_less_than_target;
 
 #[cfg(test)]
 mod test_utilities;
