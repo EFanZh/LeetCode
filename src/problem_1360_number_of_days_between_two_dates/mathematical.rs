@@ -31,7 +31,7 @@ impl Solution {
         let date1 = Self::parse_date(&date1);
         let date2 = Self::parse_date(&date2);
 
-        (if date2 < date1 { date1 - date2 } else { date2 - date1 }) as _
+        date1.abs_diff(date2) as _
     }
 }
 

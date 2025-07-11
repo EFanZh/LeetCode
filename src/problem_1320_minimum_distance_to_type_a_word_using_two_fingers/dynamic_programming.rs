@@ -3,10 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    fn abs_diff(lhs: u8, rhs: u8) -> u8 {
-        if rhs < lhs { lhs - rhs } else { rhs - lhs }
-    }
-
     fn distance(from: u8, to: u8) -> u16 {
         if from == 26 {
             0
@@ -16,7 +12,7 @@ impl Solution {
             let to_row = to / 6;
             let to_column = to % 6;
 
-            u16::from(Self::abs_diff(from_row, to_row) + Self::abs_diff(from_column, to_column))
+            u16::from(from_row.abs_diff(to_row) + from_column.abs_diff(to_column))
         }
     }
 
