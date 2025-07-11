@@ -6,10 +6,7 @@ impl Solution {
     pub fn equal_substring(s: String, t: String, max_cost: i32) -> i32 {
         let max_cost = max_cost as u32;
 
-        let mut iter = s
-            .bytes()
-            .zip(t.bytes())
-            .map(|(lhs, rhs)| u32::from(if rhs < lhs { lhs - rhs } else { rhs - lhs }));
+        let mut iter = s.bytes().zip(t.bytes()).map(|(lhs, rhs)| u32::from(lhs.abs_diff(rhs)));
 
         let mut start = 0;
         let mut cost = 0;

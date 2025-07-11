@@ -27,11 +27,7 @@ impl Solution {
         i32::from(
             values
                 .into_iter()
-                .map(|value| {
-                    let other = sum - value;
-
-                    if other < value { value - other } else { other - value }
-                })
+                .map(|value| value.abs_diff(sum - value))
                 .min()
                 .unwrap(),
         )

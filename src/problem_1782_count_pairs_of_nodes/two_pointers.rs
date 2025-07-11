@@ -21,7 +21,6 @@ impl Solution {
             edge_counts.entry((x, y)).and_modify(|count| *count += 1).or_insert(1);
         }
 
-        #[expect(clippy::redundant_clone, reason = "false positive")]
         let mut sorted_degrees = degrees.clone();
 
         sorted_degrees.sort_unstable();

@@ -43,10 +43,10 @@ impl Solution {
             max_y = max_y.max(y);
 
             for x_2 in x.saturating_sub(radius)..(x + radius_plus_1).min(N as _) {
-                let dx = if x < x_2 { x_2 - x } else { x - x_2 };
+                let dx = x_2.abs_diff(x);
 
                 for y_2 in y.saturating_sub(radius)..(y + radius_plus_1).min(N as _) {
-                    let dy = if y < y_2 { y_2 - y } else { y - y_2 };
+                    let dy = y_2.abs_diff(y);
                     let (dx, dy) = if dy < dx { (dy, dx) } else { (dx, dy) };
 
                     quality_map[N * usize::from(x_2) + usize::from(y_2)] +=

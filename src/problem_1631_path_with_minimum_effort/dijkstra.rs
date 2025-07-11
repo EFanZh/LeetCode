@@ -65,11 +65,7 @@ impl Solution {
                 {
                     let neighbor_height = neighbor_height as u32;
 
-                    let height_diff = if neighbor_height < node_height {
-                        node_height - neighbor_height
-                    } else {
-                        neighbor_height - node_height
-                    };
+                    let height_diff = node_height.abs_diff(neighbor_height);
 
                     let candidate_distance = item.distance.max(height_diff);
                     let distance = &mut distances[columns * usize::from(neighbor.0) + usize::from(neighbor.1)];

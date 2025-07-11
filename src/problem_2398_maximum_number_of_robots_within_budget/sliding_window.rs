@@ -32,7 +32,7 @@ impl Solution {
                 let max_charge_time = *charge_time_queue.front().unwrap();
 
                 if u64::from(*max_charge_time) + (end - start) as u64 * running_cost_sum > budget {
-                    if ptr::eq(max_charge_time, &charge_times[start]) {
+                    if ptr::eq(max_charge_time, &raw const charge_times[start]) {
                         charge_time_queue.pop_front();
                     }
 
