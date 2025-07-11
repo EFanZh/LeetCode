@@ -1981,6 +1981,7 @@ pub mod problem_2816_double_a_number_represented_as_a_linked_list;
 pub mod problem_2824_count_pairs_whose_sum_is_less_than_target;
 pub mod problem_2825_make_string_a_subsequence_using_cyclic_increments;
 pub mod problem_2826_sorting_three_groups;
+pub mod problem_2828_check_if_a_string_is_an_acronym_of_words;
 
 #[cfg(test)]
 mod test_utilities;
