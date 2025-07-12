@@ -1982,6 +1982,7 @@ pub mod problem_2824_count_pairs_whose_sum_is_less_than_target;
 pub mod problem_2825_make_string_a_subsequence_using_cyclic_increments;
 pub mod problem_2826_sorting_three_groups;
 pub mod problem_2828_check_if_a_string_is_an_acronym_of_words;
+pub mod problem_2829_determine_the_minimum_sum_of_a_k_avoiding_array;
 
 #[cfg(test)]
 mod test_utilities;
