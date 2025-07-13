@@ -1983,6 +1983,7 @@ pub mod problem_2825_make_string_a_subsequence_using_cyclic_increments;
 pub mod problem_2826_sorting_three_groups;
 pub mod problem_2828_check_if_a_string_is_an_acronym_of_words;
 pub mod problem_2829_determine_the_minimum_sum_of_a_k_avoiding_array;
+pub mod problem_2830_maximize_the_profit_as_the_salesman;
 
 #[cfg(test)]
 mod test_utilities;
