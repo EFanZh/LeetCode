@@ -20,7 +20,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         steps:
           - if: ${{ matrix.os == 'ubuntu-latest' }}
-            run: sudo apt-get install --no-install-recommends libfontconfig-dev
+            run: sudo apt-get update && sudo apt-get install --no-install-recommends libfontconfig-dev
           - uses: actions/checkout@v4
           - run: rustup update
           - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
@@ -34,7 +34,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         steps:
           - if: ${{ matrix.os == 'ubuntu-latest' }}
-            run: sudo apt-get install --no-install-recommends libfontconfig-dev
+            run: sudo apt-get update && sudo apt-get install --no-install-recommends libfontconfig-dev
           - uses: actions/checkout@v4
           - run: rustup update
           - run: cargo test --workspace
