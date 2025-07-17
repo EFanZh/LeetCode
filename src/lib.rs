@@ -1987,6 +1987,7 @@ pub mod problem_2830_maximize_the_profit_as_the_salesman;
 pub mod problem_2833_furthest_point_from_origin;
 pub mod problem_2839_check_if_strings_can_be_made_equal_with_operations_i;
 pub mod problem_2840_check_if_strings_can_be_made_equal_with_operations_ii;
+pub mod problem_2841_maximum_sum_of_almost_unique_subarray;
 
 #[cfg(test)]
 mod test_utilities;
