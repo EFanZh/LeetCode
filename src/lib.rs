@@ -1989,6 +1989,7 @@ pub mod problem_2839_check_if_strings_can_be_made_equal_with_operations_i;
 pub mod problem_2840_check_if_strings_can_be_made_equal_with_operations_ii;
 pub mod problem_2841_maximum_sum_of_almost_unique_subarray;
 pub mod problem_2844_minimum_operations_to_make_a_special_number;
+pub mod problem_2848_points_that_intersect_with_cars;
 
 #[cfg(test)]
 mod test_utilities;
