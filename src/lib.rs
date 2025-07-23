@@ -1993,6 +1993,7 @@ pub mod problem_2848_points_that_intersect_with_cars;
 pub mod problem_2849_determine_if_a_cell_is_reachable_at_a_given_time;
 pub mod problem_2855_minimum_right_shifts_to_sort_the_array;
 pub mod problem_2856_minimum_array_length_after_pair_removals;
+pub mod problem_2859_sum_of_values_at_indices_with_k_set_bits;
 
 #[cfg(test)]
 mod test_utilities;
