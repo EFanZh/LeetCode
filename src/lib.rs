@@ -14,6 +14,7 @@
     clippy::cast_sign_loss,
     clippy::missing_panics_doc,
     clippy::must_use_candidate,
+    clippy::naive_bytecount,
     reason = "unnecessary"
 )]
 
@@ -1994,6 +1995,7 @@ pub mod problem_2849_determine_if_a_cell_is_reachable_at_a_given_time;
 pub mod problem_2855_minimum_right_shifts_to_sort_the_array;
 pub mod problem_2856_minimum_array_length_after_pair_removals;
 pub mod problem_2859_sum_of_values_at_indices_with_k_set_bits;
+pub mod problem_2864_maximum_odd_binary_number;
 
 #[cfg(test)]
 mod test_utilities;

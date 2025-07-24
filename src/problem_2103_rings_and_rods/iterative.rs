@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[expect(clippy::naive_bytecount, reason = "optimal")]
     pub fn count_points(rings: String) -> i32 {
         let mut iter_2 = rings.bytes();
 
