@@ -1996,6 +1996,7 @@ pub mod problem_2855_minimum_right_shifts_to_sort_the_array;
 pub mod problem_2856_minimum_array_length_after_pair_removals;
 pub mod problem_2859_sum_of_values_at_indices_with_k_set_bits;
 pub mod problem_2864_maximum_odd_binary_number;
+pub mod problem_2869_minimum_operations_to_collect_elements;
 
 #[cfg(test)]
 mod test_utilities;
