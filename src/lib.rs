@@ -1999,6 +1999,7 @@ pub mod problem_2864_maximum_odd_binary_number;
 pub mod problem_2869_minimum_operations_to_collect_elements;
 pub mod problem_2870_minimum_number_of_operations_to_make_array_empty;
 pub mod problem_2871_split_array_into_maximum_number_of_subarrays;
+pub mod problem_2873_maximum_value_of_an_ordered_triplet_i;
 
 #[cfg(test)]
 mod test_utilities;
