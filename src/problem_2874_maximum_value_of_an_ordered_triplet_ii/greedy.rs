@@ -7,9 +7,9 @@ impl Solution {
         let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
         let n = nums.len();
 
-        assert!(matches!(n, 2..=100));
+        assert!(n > 1);
 
-        let right = &mut [0; 98][..n - 2];
+        let mut right = vec![0; n - 2];
         let mut max = 0;
 
         right.iter_mut().zip(&nums[2..]).rev().for_each(|(target, &num)| {
@@ -19,7 +19,7 @@ impl Solution {
 
         let mut left_max = nums[0];
 
-        nums[1..].iter().zip(&*right).fold(0, |max, (&middle, &right_max)| {
+        nums[1..].iter().zip(&right).fold(0, |max, (&middle, &right_max)| {
             let max = max.max(i64::from(left_max.wrapping_sub(middle) as i32) * i64::from(right_max));
 
             left_max = left_max.max(middle);
