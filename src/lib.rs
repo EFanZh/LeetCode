@@ -2002,6 +2002,7 @@ pub mod problem_2871_split_array_into_maximum_number_of_subarrays;
 pub mod problem_2873_maximum_value_of_an_ordered_triplet_i;
 pub mod problem_2874_maximum_value_of_an_ordered_triplet_ii;
 pub mod problem_2894_divisible_and_non_divisible_sums_difference;
+pub mod problem_2895_minimum_processing_time;
 
 #[cfg(test)]
 mod test_utilities;
