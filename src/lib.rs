@@ -2003,6 +2003,7 @@ pub mod problem_2873_maximum_value_of_an_ordered_triplet_i;
 pub mod problem_2874_maximum_value_of_an_ordered_triplet_ii;
 pub mod problem_2894_divisible_and_non_divisible_sums_difference;
 pub mod problem_2895_minimum_processing_time;
+pub mod problem_2899_last_visited_integers;
 
 #[cfg(test)]
 mod test_utilities;
