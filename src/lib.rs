@@ -2005,6 +2005,7 @@ pub mod problem_2894_divisible_and_non_divisible_sums_difference;
 pub mod problem_2895_minimum_processing_time;
 pub mod problem_2899_last_visited_integers;
 pub mod problem_2900_longest_unequal_adjacent_groups_subsequence_i;
+pub mod problem_2903_find_indices_with_index_and_value_difference_i;
 
 #[cfg(test)]
 mod test_utilities;
