@@ -2008,6 +2008,7 @@ pub mod problem_2900_longest_unequal_adjacent_groups_subsequence_i;
 pub mod problem_2903_find_indices_with_index_and_value_difference_i;
 pub mod problem_2905_find_indices_with_index_and_value_difference_ii;
 pub mod problem_2906_construct_product_matrix;
+pub mod problem_2908_minimum_sum_of_mountain_triplets_i;
 
 #[cfg(test)]
 mod test_utilities;
