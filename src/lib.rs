@@ -2009,6 +2009,7 @@ pub mod problem_2903_find_indices_with_index_and_value_difference_i;
 pub mod problem_2905_find_indices_with_index_and_value_difference_ii;
 pub mod problem_2906_construct_product_matrix;
 pub mod problem_2908_minimum_sum_of_mountain_triplets_i;
+pub mod problem_2909_minimum_sum_of_mountain_triplets_ii;
 
 #[cfg(test)]
 mod test_utilities;
