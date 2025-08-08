@@ -2010,6 +2010,7 @@ pub mod problem_2905_find_indices_with_index_and_value_difference_ii;
 pub mod problem_2906_construct_product_matrix;
 pub mod problem_2908_minimum_sum_of_mountain_triplets_i;
 pub mod problem_2909_minimum_sum_of_mountain_triplets_ii;
+pub mod problem_2915_length_of_the_longest_subsequence_that_sums_to_target;
 
 #[cfg(test)]
 mod test_utilities;
