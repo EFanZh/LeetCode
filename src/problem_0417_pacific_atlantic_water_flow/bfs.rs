@@ -30,14 +30,13 @@ impl Solution {
                             (row, column + 1),
                             (row + 1, column),
                         ] {
-                            if let Some(&next) = matrix.get(next_row).and_then(|x| x.get(next_column)) {
-                                if next >= current {
-                                    if let next_state @ 0 = &mut states[columns * next_row + next_column] {
-                                        *next_state = 1;
+                            if let Some(&next) = matrix.get(next_row).and_then(|x| x.get(next_column))
+                                && next >= current
+                                && let next_state @ 0 = &mut states[columns * next_row + next_column]
+                            {
+                                *next_state = 1;
 
-                                        queue.push_back((next_row, next_column, next));
-                                    }
-                                }
+                                queue.push_back((next_row, next_column, next));
                             }
                         }
 
@@ -81,19 +80,19 @@ impl Solution {
                             (row, column + 1),
                             (row + 1, column),
                         ] {
-                            if let Some(&next) = matrix.get(next_row).and_then(|x| x.get(next_column)) {
-                                if next >= current {
-                                    let next_state = &mut states[columns * next_row + next_column];
+                            if let Some(&next) = matrix.get(next_row).and_then(|x| x.get(next_column))
+                                && next >= current
+                            {
+                                let next_state = &mut states[columns * next_row + next_column];
 
-                                    if *next_state != 2 {
-                                        if *next_state == 1 {
-                                            result.push(vec![next_row as _, next_column as _]);
-                                        }
-
-                                        *next_state = 2;
-
-                                        queue.push_back((next_row, next_column, next));
+                                if *next_state != 2 {
+                                    if *next_state == 1 {
+                                        result.push(vec![next_row as _, next_column as _]);
                                     }
+
+                                    *next_state = 2;
+
+                                    queue.push_back((next_row, next_column, next));
                                 }
                             }
                         }

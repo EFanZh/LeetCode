@@ -26,28 +26,28 @@ impl Solution {
         let mut result = Vec::new();
 
         for (i, reversed_word) in (0..).zip(words.iter().map(|word| word.bytes().rev().collect::<Box<_>>())) {
-            if let Some(&j) = word_map.get(reversed_word.as_ref()) {
-                if j > i {
-                    result.push(vec![i, j]);
-                    result.push(vec![j, i]);
-                }
+            if let Some(&j) = word_map.get(reversed_word.as_ref())
+                && j > i
+            {
+                result.push(vec![i, j]);
+                result.push(vec![j, i]);
             }
 
             for length in 0..reversed_word.len() {
                 let (left, right) = reversed_word.split_at(reversed_word.len() - length);
 
-                if Self::is_palindrome(left) {
-                    if let Some(&j) = word_map.get(right) {
-                        result.push(vec![i, j]);
-                    }
+                if Self::is_palindrome(left)
+                    && let Some(&j) = word_map.get(right)
+                {
+                    result.push(vec![i, j]);
                 }
 
                 let (left, right) = reversed_word.split_at(length);
 
-                if Self::is_palindrome(right) {
-                    if let Some(&j) = word_map.get(left) {
-                        result.push(vec![j, i]);
-                    }
+                if Self::is_palindrome(right)
+                    && let Some(&j) = word_map.get(left)
+                {
+                    result.push(vec![j, i]);
                 }
             }
         }

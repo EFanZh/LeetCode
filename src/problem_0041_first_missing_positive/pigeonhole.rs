@@ -9,15 +9,14 @@ impl Solution {
 
         while let Some(mut num) = nums.get(i).copied() {
             while let Ok(expected_index) = usize::try_from(num - 1) {
-                if expected_index != i {
-                    if let Some(next_num) = nums.get(expected_index).copied() {
-                        if usize::try_from(next_num - 1) != Ok(expected_index) {
-                            nums.swap(i, expected_index);
-                            num = next_num;
+                if expected_index != i
+                    && let Some(next_num) = nums.get(expected_index).copied()
+                    && usize::try_from(next_num - 1) != Ok(expected_index)
+                {
+                    nums.swap(i, expected_index);
+                    num = next_num;
 
-                            continue;
-                        }
-                    }
+                    continue;
                 }
 
                 break;

@@ -37,16 +37,15 @@ impl Solution {
                     if let Some(cell) = grid
                         .get_mut(next.0 as usize)
                         .and_then(|row| row.get_mut(next.1 as usize))
+                        && *cell != 0
                     {
-                        if *cell != 0 {
-                            let price = mem::take(cell) as _;
+                        let price = mem::take(cell) as _;
 
-                            if price_range.contains(&price) {
-                                candidates.push((distance, price, next.0, next.1));
-                            }
-
-                            queue.push_back(next);
+                        if price_range.contains(&price) {
+                            candidates.push((distance, price, next.0, next.1));
                         }
+
+                        queue.push_back(next);
                     }
                 }
             }

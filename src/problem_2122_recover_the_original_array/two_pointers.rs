@@ -74,7 +74,9 @@ impl Solution {
         let half_diff = (nums[n] - first_num) >> 1;
 
         nums.truncate(n);
-        nums.iter_mut().for_each(|x| *x += half_diff);
+        for x in &mut nums {
+            *x += half_diff;
+        }
 
         nums
     }

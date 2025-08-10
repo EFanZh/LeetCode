@@ -28,10 +28,10 @@ impl Solution {
             for _ in 0..queue.len() {
                 let node = queue.pop_front().unwrap();
 
-                if state & 1 != 0 {
-                    if let Some(contains) = pool.get(node.contains) {
-                        queue.push_back(contains);
-                    }
+                if state & 1 != 0
+                    && let Some(contains) = pool.get(node.contains)
+                {
+                    queue.push_back(contains);
                 }
 
                 if let Some(not_contains) = pool.get(node.not_contains) {
@@ -56,10 +56,10 @@ impl Solution {
             for _ in 0..queue.len() {
                 let node = queue.pop_front().unwrap();
 
-                if state & 1 != 0 {
-                    if let Some(contains) = pool.get(node.contains) {
-                        queue.push_back(contains);
-                    }
+                if state & 1 != 0
+                    && let Some(contains) = pool.get(node.contains)
+                {
+                    queue.push_back(contains);
                 }
 
                 if let Some(not_contains) = pool.get(node.not_contains) {

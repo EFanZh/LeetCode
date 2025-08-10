@@ -8,7 +8,7 @@ use std::cell::{Ref, RefCell};
 use std::rc::Rc;
 
 impl Solution {
-    fn sort_children(node: &TreeNode) -> (Option<Ref<TreeNode>>, Option<Ref<TreeNode>>) {
+    fn sort_children(node: &'_ TreeNode) -> (Option<Ref<'_, TreeNode>>, Option<Ref<'_, TreeNode>>) {
         let left = node.left.as_deref().map(RefCell::borrow);
         let right = node.right.as_deref().map(RefCell::borrow);
 

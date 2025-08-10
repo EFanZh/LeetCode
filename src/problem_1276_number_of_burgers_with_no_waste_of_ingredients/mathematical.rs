@@ -7,12 +7,11 @@ impl Solution {
         let tomato_slices = tomato_slices as u32;
         let cheese_slices = cheese_slices as u32;
 
-        if tomato_slices % 2 == 0 {
-            if let Some(jumbo_burgers) = (tomato_slices / 2).checked_sub(cheese_slices) {
-                if let Some(small_burgers) = cheese_slices.checked_sub(jumbo_burgers) {
-                    return vec![jumbo_burgers as _, small_burgers as _];
-                }
-            }
+        if tomato_slices % 2 == 0
+            && let Some(jumbo_burgers) = (tomato_slices / 2).checked_sub(cheese_slices)
+            && let Some(small_burgers) = cheese_slices.checked_sub(jumbo_burgers)
+        {
+            return vec![jumbo_burgers as _, small_burgers as _];
         }
 
         Vec::new()

@@ -56,11 +56,11 @@ impl Solution {
                     } else {
                         for &lhs in left {
                             for &rhs in right {
-                                if let Some(x) = lhs.checked_mul(rhs) {
-                                    if let Some(state @ false) = values_set.get_mut(usize::from(x)) {
-                                        *state = true;
-                                        values.push(x);
-                                    }
+                                if let Some(x) = lhs.checked_mul(rhs)
+                                    && let Some(state @ false) = values_set.get_mut(usize::from(x))
+                                {
+                                    *state = true;
+                                    values.push(x);
                                 }
                             }
                         }

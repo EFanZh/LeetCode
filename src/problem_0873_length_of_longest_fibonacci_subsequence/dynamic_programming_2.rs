@@ -28,13 +28,13 @@ impl Solution {
             for (middle_index, &middle) in (2..).zip(&arr[2..right_index]) {
                 let left = right - middle;
 
-                if left < middle {
-                    if let Some(&left_index) = indices.get(&left) {
-                        lengths[target_index] = if left_index == 0 {
-                            1
-                        } else {
-                            lengths[(middle_index - 1) * (middle_index - 2) / 2 + left_index - 1] + 1
-                        }
+                if left < middle
+                    && let Some(&left_index) = indices.get(&left)
+                {
+                    lengths[target_index] = if left_index == 0 {
+                        1
+                    } else {
+                        lengths[(middle_index - 1) * (middle_index - 2) / 2 + left_index - 1] + 1
                     }
                 }
 

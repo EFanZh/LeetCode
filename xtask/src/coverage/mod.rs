@@ -191,13 +191,13 @@ fn run_rust_tests(target_dir: &Path, llvm_profdata: &Path, output: &Path) -> Pat
                 .into_iter::<Value>()
                 .find_map(|item| {
                     if let Ok(Value::Object(mut item)) = item {
-                        if let Some(Value::Object(mut message)) = item.remove("message") {
-                            if let Some(Value::String(rendered)) = message.remove("rendered") {
-                                use std::io::Write;
+                        if let Some(Value::Object(mut message)) = item.remove("message")
+                            && let Some(Value::String(rendered)) = message.remove("rendered")
+                        {
+                            use std::io::Write;
 
-                                stdout.write_all(rendered.as_bytes()).unwrap();
-                                stdout.flush().unwrap();
-                            }
+                            stdout.write_all(rendered.as_bytes()).unwrap();
+                            stdout.flush().unwrap();
                         }
 
                         if let Some(Value::String(executable)) = item.remove("executable") {

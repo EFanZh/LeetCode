@@ -29,16 +29,16 @@ impl Solution {
                         return result;
                     }
 
-                    if let Some(&next_state) = grid.get(next_y).and_then(|row| row.get(next_x)) {
-                        if let Some(next_budget) = u32::checked_sub(budget as _, next_state as _) {
-                            let next_budget = next_budget as i32;
-                            let max_budget = &mut max_budgets[columns * next_y + next_x];
+                    if let Some(&next_state) = grid.get(next_y).and_then(|row| row.get(next_x))
+                        && let Some(next_budget) = u32::checked_sub(budget as _, next_state as _)
+                    {
+                        let next_budget = next_budget as i32;
+                        let max_budget = &mut max_budgets[columns * next_y + next_x];
 
-                            if next_budget > *max_budget {
-                                *max_budget = next_budget;
+                        if next_budget > *max_budget {
+                            *max_budget = next_budget;
 
-                                queue.push_back((next_y, next_x, next_budget));
-                            }
+                            queue.push_back((next_y, next_x, next_budget));
                         }
                     }
                 }

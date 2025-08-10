@@ -64,31 +64,31 @@ impl Solution {
     pub fn outer_trees(points: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         let mut points = points;
 
-        if points.len() >= 4 {
-            if let Some(sorted_points) = Self::sort_points(&points) {
-                let (left, right) = sorted_points.split_at(3);
-                let mut stack = left.to_vec();
+        if points.len() >= 4
+            && let Some(sorted_points) = Self::sort_points(&points)
+        {
+            let (left, right) = sorted_points.split_at(3);
+            let mut stack = left.to_vec();
 
-                for &p in right {
-                    while let Some(&[p_0, p_1]) = stack.get(stack.len().wrapping_sub(2)..) {
-                        let d_1 = Self::vec_subtract(p_1, p_0);
-                        let d = Self::vec_subtract(p, p_0);
+            for &p in right {
+                while let Some(&[p_0, p_1]) = stack.get(stack.len().wrapping_sub(2)..) {
+                    let d_1 = Self::vec_subtract(p_1, p_0);
+                    let d = Self::vec_subtract(p, p_0);
 
-                        if Self::compare_vec_direction(d_1, d) == Ordering::Greater {
-                            stack.pop();
-                        } else {
-                            break;
-                        }
+                    if Self::compare_vec_direction(d_1, d) == Ordering::Greater {
+                        stack.pop();
+                    } else {
+                        break;
                     }
-
-                    stack.push(p);
                 }
 
-                points.truncate(stack.len());
+                stack.push(p);
+            }
 
-                for (target, point) in points.iter_mut().zip(stack) {
-                    target.as_mut_slice().copy_from_slice(&<[_; 2]>::from(point));
-                }
+            points.truncate(stack.len());
+
+            for (target, point) in points.iter_mut().zip(stack) {
+                target.as_mut_slice().copy_from_slice(&<[_; 2]>::from(point));
             }
         }
 

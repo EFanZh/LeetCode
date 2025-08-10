@@ -4,20 +4,19 @@ pub struct Solution;
 
 impl Solution {
     fn next_permutation(nums: &mut [i32]) -> bool {
-        if let Some((_, rest)) = nums.split_first() {
-            if let Some((i, (current, _))) = nums
+        if let Some((_, rest)) = nums.split_first()
+            && let Some((i, (current, _))) = nums
                 .iter()
                 .zip(rest)
                 .enumerate()
                 .rfind(|(_, (current, next))| current < next)
-            {
-                let j = nums[i + 2..].partition_point(|x| current < x);
+        {
+            let j = nums[i + 2..].partition_point(|x| current < x);
 
-                nums.swap(i, i + 1 + j);
-                nums[i + 1..].reverse();
+            nums.swap(i, i + 1 + j);
+            nums[i + 1..].reverse();
 
-                return true;
-            }
+            return true;
         }
 
         false

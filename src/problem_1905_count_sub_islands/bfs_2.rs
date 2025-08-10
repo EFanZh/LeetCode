@@ -41,14 +41,14 @@ impl Solution {
                             if next.1 < columns {
                                 let next_index = columns.wrapping_mul(next.0).wrapping_add(next.1);
 
-                                if let Some(state) = grid.get_mut(next_index) {
-                                    if *state & 1 != 0 {
-                                        is_sub_island &= (*state >> 1) != 0;
+                                if let Some(state) = grid.get_mut(next_index)
+                                    && *state & 1 != 0
+                                {
+                                    is_sub_island &= (*state >> 1) != 0;
 
-                                        *state = 0;
+                                    *state = 0;
 
-                                        queue.push_back((next.0 as u16, next.1 as u16));
-                                    }
+                                    queue.push_back((next.0 as u16, next.1 as u16));
                                 }
                             }
                         }

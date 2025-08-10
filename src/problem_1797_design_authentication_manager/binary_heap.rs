@@ -70,17 +70,17 @@ impl AuthenticationManager {
     fn renew(&mut self, token_id: String, current_time: i32) {
         let current_time = current_time as u32;
 
-        if let Some((key, value)) = self.entries.get_key_value(token_id.as_str()) {
-            if value.get() > current_time {
-                let expiration_time = current_time + self.time_to_live;
+        if let Some((key, value)) = self.entries.get_key_value(token_id.as_str())
+            && value.get() > current_time
+        {
+            let expiration_time = current_time + self.time_to_live;
 
-                value.set(expiration_time);
+            value.set(expiration_time);
 
-                self.heap.push(Item {
-                    expiration_time,
-                    token_id: Rc::clone(key),
-                });
-            }
+            self.heap.push(Item {
+                expiration_time,
+                token_id: Rc::clone(key),
+            });
         }
     }
 

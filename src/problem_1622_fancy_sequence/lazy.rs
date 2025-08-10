@@ -7,7 +7,7 @@ struct State {
     acc_inc: u32,
 }
 
-struct Fancy {
+pub struct Fancy {
     states: Vec<State>,
     mul: u32,
     inc: u32,

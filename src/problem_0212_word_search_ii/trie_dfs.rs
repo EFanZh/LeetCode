@@ -32,32 +32,32 @@ impl Solution {
     }
 
     fn dfs(board: &mut [Vec<char>], row: usize, column: usize, parent: &mut Node, result: &mut Vec<String>) {
-        if let Some(cell) = board.get_mut(row).and_then(|r| r.get_mut(column)) {
-            if *cell != '*' {
-                let child = &mut parent.children[usize::from(*cell as u8 - b'a')];
+        if let Some(cell) = board.get_mut(row).and_then(|r| r.get_mut(column))
+            && *cell != '*'
+        {
+            let child = &mut parent.children[usize::from(*cell as u8 - b'a')];
 
-                if let Some(trie) = child.as_deref_mut() {
-                    let original_num_result = result.len();
+            if let Some(trie) = child.as_deref_mut() {
+                let original_num_result = result.len();
 
-                    if let Some(value) = trie.value.take() {
-                        result.push(value);
-                    }
-
-                    let saved = mem::replace(cell, '*');
-
-                    Self::dfs(board, row.wrapping_sub(1), column, trie, result);
-                    Self::dfs(board, row, column.wrapping_sub(1), trie, result);
-                    Self::dfs(board, row, column + 1, trie, result);
-                    Self::dfs(board, row + 1, column, trie, result);
-
-                    if trie.length == 0 {
-                        *child = None;
-                    }
-
-                    parent.length -= result.len() - original_num_result;
-
-                    board[row][column] = saved;
+                if let Some(value) = trie.value.take() {
+                    result.push(value);
                 }
+
+                let saved = mem::replace(cell, '*');
+
+                Self::dfs(board, row.wrapping_sub(1), column, trie, result);
+                Self::dfs(board, row, column.wrapping_sub(1), trie, result);
+                Self::dfs(board, row, column + 1, trie, result);
+                Self::dfs(board, row + 1, column, trie, result);
+
+                if trie.length == 0 {
+                    *child = None;
+                }
+
+                parent.length -= result.len() - original_num_result;
+
+                board[row][column] = saved;
             }
         }
     }

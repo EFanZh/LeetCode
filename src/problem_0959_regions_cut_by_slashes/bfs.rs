@@ -87,12 +87,11 @@ impl Solution {
                                 row.as_bytes()
                                     .get(grid_position.1)
                                     .is_some_and(|&cell| cell != separator)
-                            }) {
-                                if let value @ false = &mut visited[columns * position.0 + position.1] {
-                                    *value = true;
+                            }) && let value @ false = &mut visited[columns * position.0 + position.1]
+                            {
+                                *value = true;
 
-                                    queue.push_back(position);
-                                }
+                                queue.push_back(position);
                             }
                         }
 

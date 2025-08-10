@@ -24,20 +24,18 @@ impl Solution {
                 return true;
             }
 
-            if let Some(j) = bucket.checked_sub(1) {
-                if let Some(&value) = visited.get(&j) {
-                    if num - value <= t {
-                        return true;
-                    }
-                }
+            if let Some(j) = bucket.checked_sub(1)
+                && let Some(&value) = visited.get(&j)
+                && num - value <= t
+            {
+                return true;
             }
 
-            if let Some(j) = bucket.checked_add(1) {
-                if let Some(&value) = visited.get(&j) {
-                    if value - num <= t {
-                        return true;
-                    }
-                }
+            if let Some(j) = bucket.checked_add(1)
+                && let Some(&value) = visited.get(&j)
+                && value - num <= t
+            {
+                return true;
             }
         }
 
@@ -50,20 +48,18 @@ impl Solution {
                 return true;
             }
 
-            if let Some(j) = bucket.checked_sub(1) {
-                if let Some(&value) = visited.get(&j) {
-                    if num - value <= t {
-                        return true;
-                    }
-                }
+            if let Some(j) = bucket.checked_sub(1)
+                && let Some(&value) = visited.get(&j)
+                && num - value <= t
+            {
+                return true;
             }
 
-            if let Some(j) = bucket.checked_add(1) {
-                if let Some(&value) = visited.get(&j) {
-                    if value - num <= t {
-                        return true;
-                    }
-                }
+            if let Some(j) = bucket.checked_add(1)
+                && let Some(&value) = visited.get(&j)
+                && value - num <= t
+            {
+                return true;
             }
         }
 

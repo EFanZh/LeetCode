@@ -17,12 +17,12 @@ impl Solution {
 
             loop {
                 for (next_y, next_x) in [(y.wrapping_sub(1), x), (y, x.wrapping_sub(1)), (y, x + 1), (y + 1, x)] {
-                    if let Some(cell) = image.get_mut(next_y).and_then(|row| row.get_mut(next_x)) {
-                        if *cell == old_color {
-                            *cell = new_color;
+                    if let Some(cell) = image.get_mut(next_y).and_then(|row| row.get_mut(next_x))
+                        && *cell == old_color
+                    {
+                        *cell = new_color;
 
-                            queue.push_back((next_y, next_x));
-                        }
+                        queue.push_back((next_y, next_x));
                     }
                 }
 

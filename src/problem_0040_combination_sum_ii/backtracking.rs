@@ -6,15 +6,15 @@ impl Solution {
     fn combination_sum2_helper(candidates: &[i32], target: i32, base: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
         if target == 0 {
             result.push(base.clone());
-        } else if let Some((&first, rest)) = candidates.split_first() {
-            if target >= first {
-                base.push(first);
-                Self::combination_sum2_helper(rest, target - first, base, result);
-                base.pop();
+        } else if let Some((&first, rest)) = candidates.split_first()
+            && target >= first
+        {
+            base.push(first);
+            Self::combination_sum2_helper(rest, target - first, base, result);
+            base.pop();
 
-                if let Some(next) = rest.iter().position(|x| *x != first) {
-                    Self::combination_sum2_helper(&rest[next..], target, base, result);
-                }
+            if let Some(next) = rest.iter().position(|x| *x != first) {
+                Self::combination_sum2_helper(&rest[next..], target, base, result);
             }
         }
     }

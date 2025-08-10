@@ -6,19 +6,19 @@ impl Solution {
     fn write_with_discount(target: &mut String, word: &str, scale: u64) {
         use std::fmt::Write;
 
-        if let Some(suffix) = word.strip_prefix('$') {
-            if let Ok(value) = suffix.parse::<u64>() {
-                let multiplied = value * scale;
-                let integer_part = multiplied / 100;
-                let fraction_part = multiplied % 100;
+        if let Some(suffix) = word.strip_prefix('$')
+            && let Ok(value) = suffix.parse::<u64>()
+        {
+            let multiplied = value * scale;
+            let integer_part = multiplied / 100;
+            let fraction_part = multiplied % 100;
 
-                target.push('$');
-                write!(target, "{integer_part}").unwrap();
-                target.push('.');
-                write!(target, "{fraction_part:02}").unwrap();
+            target.push('$');
+            write!(target, "{integer_part}").unwrap();
+            target.push('.');
+            write!(target, "{fraction_part:02}").unwrap();
 
-                return;
-            }
+            return;
         }
 
         target.push_str(word);

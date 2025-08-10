@@ -12,7 +12,9 @@ impl Solution {
         let mut max_score_configuration = 0;
         let mut max_score_arrows = 0;
 
-        alice_arrows.iter_mut().for_each(|x| *x += 1);
+        for x in alice_arrows.iter_mut() {
+            *x += 1;
+        }
 
         for configuration in 1..CONFIGURATIONS {
             let i = configuration.trailing_zeros() as usize;

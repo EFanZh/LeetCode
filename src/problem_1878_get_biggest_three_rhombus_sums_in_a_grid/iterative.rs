@@ -31,14 +31,14 @@ impl Solution {
         let mut result = Vec::<i32>::new();
 
         let mut add_result = |value: u32| {
-            if let Err(i) = result.binary_search_by(|&x| value.cmp(&(x as u32))) {
-                if i < 3 {
-                    if result.len() == 3 {
-                        result.pop();
-                    }
-
-                    result.insert(i, value as _);
+            if let Err(i) = result.binary_search_by(|&x| value.cmp(&(x as u32)))
+                && i < 3
+            {
+                if result.len() == 3 {
+                    result.pop();
                 }
+
+                result.insert(i, value as _);
             }
         };
 

@@ -9,10 +9,10 @@ use std::rc::Rc;
 
 impl Solution {
     fn is_valid_bst_helper_0(root: &TreeNode) -> Option<i32> {
-        if let Some(left) = root.left.as_deref() {
-            if root.val <= Self::is_valid_bst_helper_0(&left.borrow())? {
-                return None;
-            }
+        if let Some(left) = root.left.as_deref()
+            && root.val <= Self::is_valid_bst_helper_0(&left.borrow())?
+        {
+            return None;
         }
 
         root.right.as_deref().map_or_else(
