@@ -36,7 +36,7 @@ impl<'a> Tree<'a> {
         }
     }
 
-    fn as_non_leaf_tree(&mut self) -> NonLeafTree {
+    fn as_non_leaf_tree(&mut self) -> NonLeafTree<'_> {
         let left_length = self.length / 2;
 
         NonLeafTree {

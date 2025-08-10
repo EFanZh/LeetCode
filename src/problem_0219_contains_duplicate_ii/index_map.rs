@@ -9,10 +9,10 @@ impl Solution {
         let mut indices = HashMap::with_capacity(nums.len());
 
         for (i, num) in (0..).zip(nums.into_iter()) {
-            if let Some(old_index) = indices.insert(num, i) {
-                if i - old_index <= k {
-                    return true;
-                }
+            if let Some(old_index) = indices.insert(num, i)
+                && i - old_index <= k
+            {
+                return true;
             }
         }
 

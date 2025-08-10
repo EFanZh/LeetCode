@@ -3,7 +3,7 @@
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
-struct SeatManager {
+pub struct SeatManager {
     heap: BinaryHeap<Reverse<i32>>,
     free: i32,
 }

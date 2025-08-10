@@ -79,9 +79,9 @@ impl Node {
 
 impl Solution {
     fn sort_forest(children: &mut [Node]) {
-        children
-            .iter_mut()
-            .for_each(|node| Self::sort_forest(&mut node.children));
+        for node in children.iter_mut() {
+            Self::sort_forest(&mut node.children);
+        }
 
         children.sort_unstable_by(|lhs, rhs| rhs.iter().cmp(lhs.iter()));
     }

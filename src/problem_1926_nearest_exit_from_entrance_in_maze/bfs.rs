@@ -19,12 +19,11 @@ impl Solution {
             if let Some(state) = maze
                 .get_mut(usize::from(neighbor.0))
                 .and_then(|row| row.get_mut(usize::from(neighbor.1)))
+                && *state == '.'
             {
-                if *state == '.' {
-                    *state = '\0';
+                *state = '\0';
 
-                    queue.push_back(neighbor);
-                }
+                queue.push_back(neighbor);
             }
         }
 

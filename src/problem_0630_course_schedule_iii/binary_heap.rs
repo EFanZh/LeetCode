@@ -26,11 +26,11 @@ impl Solution {
             if new_time <= deadline {
                 time = new_time;
                 queue.push(duration);
-            } else if let Some(mut top) = queue.peek_mut() {
-                if *top > duration {
-                    time -= *top - duration;
-                    *top = duration;
-                }
+            } else if let Some(mut top) = queue.peek_mut()
+                && *top > duration
+            {
+                time -= *top - duration;
+                *top = duration;
             }
         }
 

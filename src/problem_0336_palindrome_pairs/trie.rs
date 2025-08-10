@@ -53,28 +53,28 @@ impl Solution {
         let mut result = Vec::new();
 
         for (i, word) in (0..).zip(words.iter().map(String::as_bytes)) {
-            if let Some(j) = Self::find_index(&trie, word.iter().rev().copied()) {
-                if j > i {
-                    result.push(vec![i, j]);
-                    result.push(vec![j, i]);
-                }
+            if let Some(j) = Self::find_index(&trie, word.iter().rev().copied())
+                && j > i
+            {
+                result.push(vec![i, j]);
+                result.push(vec![j, i]);
             }
 
             for length in 0..word.len() {
                 let (left, right) = word.split_at(length);
 
-                if Self::is_palindrome(right) {
-                    if let Some(j) = Self::find_index(&trie, left.iter().rev().copied()) {
-                        result.push(vec![i, j]);
-                    }
+                if Self::is_palindrome(right)
+                    && let Some(j) = Self::find_index(&trie, left.iter().rev().copied())
+                {
+                    result.push(vec![i, j]);
                 }
 
                 let (left, right) = word.split_at(word.len() - length);
 
-                if Self::is_palindrome(left) {
-                    if let Some(j) = Self::find_index(&trie, right.iter().rev().copied()) {
-                        result.push(vec![j, i]);
-                    }
+                if Self::is_palindrome(left)
+                    && let Some(j) = Self::find_index(&trie, right.iter().rev().copied())
+                {
+                    result.push(vec![j, i]);
                 }
             }
         }

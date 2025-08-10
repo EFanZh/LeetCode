@@ -11,12 +11,12 @@ struct Node {
 impl Solution {
     fn dfs(node: &Node, base: &mut String, result: &mut String) {
         for (c, child) in (b'a'..).zip(&node.children) {
-            if let Some(child) = child.as_deref() {
-                if child.has_value {
-                    base.push(c.into());
-                    Self::dfs(child, base, result);
-                    base.pop();
-                }
+            if let Some(child) = child.as_deref()
+                && child.has_value
+            {
+                base.push(c.into());
+                Self::dfs(child, base, result);
+                base.pop();
             }
         }
 

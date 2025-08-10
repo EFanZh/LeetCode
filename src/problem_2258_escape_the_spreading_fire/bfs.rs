@@ -68,16 +68,15 @@ impl Solution {
                     if let Some(state) = grid
                         .get_mut(usize::from(neighbor.0))
                         .and_then(|row| row.get_mut(usize::from(neighbor.1)))
+                        && *state == 0
                     {
-                        if *state == 0 {
-                            if start_distances.update(rows as _, columns as _, steps, neighbor) {
-                                break 'outer;
-                            }
-
-                            *state = 3;
-
-                            queue.push_back(neighbor);
+                        if start_distances.update(rows as _, columns as _, steps, neighbor) {
+                            break 'outer;
                         }
+
+                        *state = 3;
+
+                        queue.push_back(neighbor);
                     }
                 }
             }
@@ -124,16 +123,15 @@ impl Solution {
                     if let Some(state) = grid
                         .get_mut(usize::from(neighbor.0))
                         .and_then(|row| row.get_mut(usize::from(neighbor.1)))
+                        && matches!(state, 0 | 3)
                     {
-                        if matches!(state, 0 | 3) {
-                            if fire_distances.update(rows as _, columns as _, steps, neighbor) {
-                                break 'outer;
-                            }
-
-                            *state = 1;
-
-                            queue.push_back(neighbor);
+                        if fire_distances.update(rows as _, columns as _, steps, neighbor) {
+                            break 'outer;
                         }
+
+                        *state = 1;
+
+                        queue.push_back(neighbor);
                     }
                 }
             }

@@ -103,25 +103,25 @@ impl Solution {
                     (row, column + 1),
                     (row + 1, column),
                 ] {
-                    if let Some(&next_height) = height_map.get(next_row).and_then(|x| x.get(next_column)) {
-                        if let state @ false = &mut visited[columns * next_row + next_column] {
-                            *state = true;
+                    if let Some(&next_height) = height_map.get(next_row).and_then(|x| x.get(next_column))
+                        && let state @ false = &mut visited[columns * next_row + next_column]
+                    {
+                        *state = true;
 
-                            if next_height < max_height {
-                                result += max_height - next_height;
+                        if next_height < max_height {
+                            result += max_height - next_height;
 
-                                queue.push(QueueItem {
-                                    max_height,
-                                    row: next_row,
-                                    column: next_column,
-                                });
-                            } else {
-                                queue.push(QueueItem {
-                                    max_height: next_height,
-                                    row: next_row,
-                                    column: next_column,
-                                });
-                            }
+                            queue.push(QueueItem {
+                                max_height,
+                                row: next_row,
+                                column: next_column,
+                            });
+                        } else {
+                            queue.push(QueueItem {
+                                max_height: next_height,
+                                row: next_row,
+                                column: next_column,
+                            });
                         }
                     }
                 }
