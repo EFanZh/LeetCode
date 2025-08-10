@@ -7,16 +7,15 @@ use std::collections::HashSet;
 
 impl Solution {
     fn helper(size: i32, nums: &[i32], cache: &mut HashSet<(u8, u8)>) -> bool {
-        if cache.insert((size as _, nums.len() as _)) {
-            if let Some((first, rest)) = nums.split_first() {
-                if match first.cmp(&size) {
-                    Ordering::Less => Self::helper(size - first, rest, cache) || Self::helper(size, rest, cache),
-                    Ordering::Equal => true,
-                    Ordering::Greater => Self::helper(size, rest, cache),
-                } {
-                    return true;
-                }
+        if cache.insert((size as _, nums.len() as _))
+            && let Some((first, rest)) = nums.split_first()
+            && match first.cmp(&size) {
+                Ordering::Less => Self::helper(size - first, rest, cache) || Self::helper(size, rest, cache),
+                Ordering::Equal => true,
+                Ordering::Greater => Self::helper(size, rest, cache),
             }
+        {
+            return true;
         }
 
         false

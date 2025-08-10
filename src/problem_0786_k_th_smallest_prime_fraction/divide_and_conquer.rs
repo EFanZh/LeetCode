@@ -29,7 +29,7 @@ impl MatrixRef<'_> {
         self.length
     }
 
-    fn iter(&self) -> impl DoubleEndedIterator<Item = VectorRef> + ExactSizeIterator + '_ {
+    fn iter(&self) -> impl DoubleEndedIterator<Item = VectorRef<'_>> + ExactSizeIterator + use<'_> {
         (0..self.length).map(move |index| VectorRef {
             data: self.data,
             length: self.length,
@@ -37,7 +37,7 @@ impl MatrixRef<'_> {
         })
     }
 
-    fn get(&self, index: usize) -> VectorRef {
+    fn get(&self, index: usize) -> VectorRef<'_> {
         assert!(index < self.length);
 
         VectorRef {

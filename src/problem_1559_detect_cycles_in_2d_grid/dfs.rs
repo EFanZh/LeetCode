@@ -17,26 +17,23 @@ impl Solution {
             (node.0, node.1 + 1),
             (node.0 + 1, node.1),
         ] {
-            if neighbor != parent {
-                if let Some(&neighbor_char) = context
+            if neighbor != parent
+                && let Some(&neighbor_char) = context
                     .grid
                     .get(usize::from(neighbor.0))
                     .and_then(|row| row.get(usize::from(neighbor.1)))
-                {
-                    if neighbor_char == context.group {
-                        let state =
-                            &mut context.states[context.columns * usize::from(neighbor.0) + usize::from(neighbor.1)];
+                && neighbor_char == context.group
+            {
+                let state = &mut context.states[context.columns * usize::from(neighbor.0) + usize::from(neighbor.1)];
 
-                        if *state {
-                            return true;
-                        }
+                if *state {
+                    return true;
+                }
 
-                        *state = true;
+                *state = true;
 
-                        if Self::dfs(context, node, neighbor) {
-                            return true;
-                        }
-                    }
+                if Self::dfs(context, node, neighbor) {
+                    return true;
                 }
             }
         }

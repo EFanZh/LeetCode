@@ -96,14 +96,14 @@ impl Solution {
     pub fn sort_array(nums: Vec<i32>) -> Vec<i32> {
         let mut nums = nums;
 
-        if let Some((min, max)) = Self::min_max(&nums) {
-            if min != max {
-                Self::offset_by(&mut nums, -min);
+        if let Some((min, max)) = Self::min_max(&nums)
+            && min != max
+        {
+            Self::offset_by(&mut nums, -min);
 
-                nums = Self::radix_sort(nums, max - min);
+            nums = Self::radix_sort(nums, max - min);
 
-                Self::offset_by(&mut nums, min);
-            }
+            Self::offset_by(&mut nums, min);
         }
 
         nums

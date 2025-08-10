@@ -76,10 +76,10 @@ impl Twitter {
 
     #[expect(clippy::similar_names, reason = "required")]
     fn unfollow(&mut self, follower_id: i32, followee_id: i32) {
-        if follower_id != followee_id {
-            if let Some(followees) = self.followees.get_mut(&follower_id) {
-                followees.remove(&followee_id);
-            }
+        if follower_id != followee_id
+            && let Some(followees) = self.followees.get_mut(&follower_id)
+        {
+            followees.remove(&followee_id);
         }
     }
 }

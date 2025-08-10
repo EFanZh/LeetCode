@@ -9,9 +9,9 @@ impl Solution {
         let k = k as u32 as usize;
         let mut counts = [0_u32; 33];
 
-        HashSet::<_>::from_iter(nums)
-            .iter()
-            .for_each(|&num| counts[num.count_ones() as usize] += 1);
+        for &num in &HashSet::<_>::from_iter(nums) {
+            counts[num.count_ones() as usize] += 1;
+        }
 
         let mut result = 0;
 

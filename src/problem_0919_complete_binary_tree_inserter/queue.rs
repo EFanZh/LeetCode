@@ -6,7 +6,7 @@ use std::cell::RefCell;
 use std::collections::VecDeque;
 use std::rc::Rc;
 
-struct CBTInserter {
+pub struct CBTInserter {
     root: Rc<RefCell<TreeNode>>,
     slots: VecDeque<Rc<RefCell<TreeNode>>>,
 }

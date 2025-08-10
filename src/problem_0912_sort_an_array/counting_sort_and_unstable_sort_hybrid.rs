@@ -50,16 +50,16 @@ impl Solution {
     pub fn sort_array(nums: Vec<i32>) -> Vec<i32> {
         let mut nums = nums;
 
-        if let Some((min, max)) = Self::min_max(&nums) {
-            if min != max {
-                let range = (max - min + 1) as u32 as usize;
-                let n = nums.len();
+        if let Some((min, max)) = Self::min_max(&nums)
+            && min != max
+        {
+            let range = (max - min + 1) as u32 as usize;
+            let n = nums.len();
 
-                if range <= n * (size_of_val(&n) * 8 - 2 - n.leading_zeros() as usize) {
-                    Self::counting_sort(&mut nums, min, range);
-                } else {
-                    nums.sort_unstable();
-                }
+            if range <= n * (size_of_val(&n) * 8 - 2 - n.leading_zeros() as usize) {
+                Self::counting_sort(&mut nums, min, range);
+            } else {
+                nums.sort_unstable();
             }
         }
 

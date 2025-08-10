@@ -29,12 +29,11 @@ impl Solution {
                     if let Some(state) = is_water
                         .get_mut(usize::from(neighbor.0))
                         .and_then(|row| row.get_mut(usize::from(neighbor.1)))
+                        && *state == 0
                     {
-                        if *state == 0 {
-                            *state = distance;
+                        *state = distance;
 
-                            queue.push_back(neighbor);
-                        }
+                        queue.push_back(neighbor);
                     }
                 }
             }

@@ -41,15 +41,15 @@ impl CountIntervals {
             right = right.max(last_end);
         }
 
-        if let Some(previous_node) = self.intervals.range_mut(..=left).next_back() {
-            if *previous_node.1 >= left {
-                if *previous_node.1 < right {
-                    self.count += right - *previous_node.1;
-                    *previous_node.1 = right;
-                }
-
-                return;
+        if let Some(previous_node) = self.intervals.range_mut(..=left).next_back()
+            && *previous_node.1 >= left
+        {
+            if *previous_node.1 < right {
+                self.count += right - *previous_node.1;
+                *previous_node.1 = right;
             }
+
+            return;
         }
 
         self.count += right - left;

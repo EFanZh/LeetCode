@@ -63,11 +63,12 @@ impl Solution {
                             for &(next_y, next_x) in
                                 &[(y.wrapping_sub(1), x), (y, x.wrapping_sub(1)), (y, x + 1), (y + 1, x)]
                             {
-                                if let Some(&group) = grid.get(next_y).and_then(|row| row.get(next_x)) {
-                                    if group != 0 && !buffer[..buffer_length].contains(&group) {
-                                        buffer[buffer_length] = group;
-                                        buffer_length += 1;
-                                    }
+                                if let Some(&group) = grid.get(next_y).and_then(|row| row.get(next_x))
+                                    && group != 0
+                                    && !buffer[..buffer_length].contains(&group)
+                                {
+                                    buffer[buffer_length] = group;
+                                    buffer_length += 1;
                                 }
                             }
 
