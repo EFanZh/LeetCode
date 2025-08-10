@@ -9,13 +9,13 @@ use std::rc::Rc;
 
 impl Solution {
     fn helper(preorder: &[i32], high: i32) -> (Option<Rc<RefCell<TreeNode>>>, &[i32]) {
-        if let Some((&val, rest)) = preorder.split_first() {
-            if val <= high {
-                let (left, rest) = Self::helper(rest, val);
-                let (right, rest) = Self::helper(rest, high);
+        if let Some((&val, rest)) = preorder.split_first()
+            && val <= high
+        {
+            let (left, rest) = Self::helper(rest, val);
+            let (right, rest) = Self::helper(rest, high);
 
-                return (Some(Rc::new(RefCell::new(TreeNode { val, left, right }))), rest);
-            }
+            return (Some(Rc::new(RefCell::new(TreeNode { val, left, right }))), rest);
         }
 
         (None, preorder)

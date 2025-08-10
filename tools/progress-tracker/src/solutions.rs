@@ -52,18 +52,17 @@ pub fn list(tree: &Tree, mut f: impl FnMut(Solution)) {
                     file: name.to_string(),
                 });
             }
-        } else if let Some(problem_id) = root.strip_prefix("src/problem_").and_then(|s| s.strip_suffix('/')) {
-            if let Some(id) = name.strip_suffix(".rs") {
-                if name != "mod.rs" {
-                    f(Solution {
-                        language: Language::Rust,
-                        problem_id: problem_id.replace('_', "-"),
-                        id: id.to_string(),
-                        root: root.to_string(),
-                        file: name.to_string(),
-                    });
-                }
-            }
+        } else if let Some(problem_id) = root.strip_prefix("src/problem_").and_then(|s| s.strip_suffix('/'))
+            && let Some(id) = name.strip_suffix(".rs")
+            && name != "mod.rs"
+        {
+            f(Solution {
+                language: Language::Rust,
+                problem_id: problem_id.replace('_', "-"),
+                id: id.to_string(),
+                root: root.to_string(),
+                file: name.to_string(),
+            });
         }
 
         TreeWalkResult::Ok

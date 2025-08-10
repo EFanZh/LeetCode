@@ -8,7 +8,7 @@ use std::{iter, mem};
 type ConnectionKey<'a> = (&'a [u8], &'a [u8]);
 
 impl Solution {
-    fn build_connection_table(word_list: &[String]) -> HashMap<ConnectionKey, Vec<&[u8]>> {
+    fn build_connection_table(word_list: &[String]) -> HashMap<ConnectionKey<'_>, Vec<&[u8]>> {
         let mut connections = HashMap::<ConnectionKey, Vec<&[u8]>>::new();
 
         for word in word_list.iter().map(String::as_bytes) {

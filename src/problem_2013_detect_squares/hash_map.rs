@@ -45,12 +45,11 @@ impl DetectSquares {
                 let d = y_1.wrapping_sub(y_0);
 
                 for x_1 in [x_0.wrapping_sub(d), x_0.wrapping_add(d)] {
-                    if let Some(column_1) = self.points.get(&x_1) {
-                        if let Some(&count_1) = column_1.get(&y_0) {
-                            if let Some(&count_2) = column_1.get(&y_1) {
-                                result += u32::from(count_0) * u32::from(count_1) * u32::from(count_2);
-                            }
-                        }
+                    if let Some(column_1) = self.points.get(&x_1)
+                        && let Some(&count_1) = column_1.get(&y_0)
+                        && let Some(&count_2) = column_1.get(&y_1)
+                    {
+                        result += u32::from(count_0) * u32::from(count_1) * u32::from(count_2);
                     }
                 }
             }

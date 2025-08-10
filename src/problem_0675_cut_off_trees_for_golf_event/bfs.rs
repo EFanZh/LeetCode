@@ -35,13 +35,13 @@ impl Solution {
                         return steps;
                     }
 
-                    if let Some(&height) = forest.get(next_row).and_then(|r| r.get(next_column)) {
-                        if let visited_value @ false = &mut visited[columns * next_row + next_column] {
-                            *visited_value = true;
+                    if let Some(&height) = forest.get(next_row).and_then(|r| r.get(next_column))
+                        && let visited_value @ false = &mut visited[columns * next_row + next_column]
+                    {
+                        *visited_value = true;
 
-                            if height != 0 {
-                                queue.push_back((next_row, next_column));
-                            }
+                        if height != 0 {
+                            queue.push_back((next_row, next_column));
                         }
                     }
                 }

@@ -11,13 +11,13 @@ type Item = (u32, i32);
 
 impl Solution {
     fn helper(input: &[Item], depth: u32) -> (Option<Rc<RefCell<TreeNode>>>, &[Item]) {
-        if let Some((&(first_depth, val), rest)) = input.split_first() {
-            if first_depth == depth {
-                let (left, rest) = Self::helper(rest, depth + 1);
-                let (right, rest) = Self::helper(rest, depth + 1);
+        if let Some((&(first_depth, val), rest)) = input.split_first()
+            && first_depth == depth
+        {
+            let (left, rest) = Self::helper(rest, depth + 1);
+            let (right, rest) = Self::helper(rest, depth + 1);
 
-                return (Some(Rc::new(RefCell::new(TreeNode { val, left, right }))), rest);
-            }
+            return (Some(Rc::new(RefCell::new(TreeNode { val, left, right }))), rest);
         }
 
         (None, input)

@@ -21,13 +21,13 @@ impl Solution {
         let mut min_sum = usize::MAX;
 
         for (i, name) in list2.iter().enumerate() {
-            if i <= min_sum {
-                if let Some(j) = indices.get(name) {
-                    let sum = i + j;
+            if i <= min_sum
+                && let Some(j) = indices.get(name)
+            {
+                let sum = i + j;
 
-                    if sum < min_sum {
-                        min_sum = sum;
-                    }
+                if sum < min_sum {
+                    min_sum = sum;
                 }
             }
         }

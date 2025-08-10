@@ -9,13 +9,13 @@ impl Solution {
         for (y, row) in mat.iter().enumerate() {
             let mut row_iter = row.iter();
 
-            if let Some(x) = row_iter.position(|&x| x != 0) {
-                if row_iter.all(|&x| x == 0) {
-                    let predicate = |row: &Vec<i32>| row[x] == 0;
+            if let Some(x) = row_iter.position(|&x| x != 0)
+                && row_iter.all(|&x| x == 0)
+            {
+                let predicate = |row: &Vec<i32>| row[x] == 0;
 
-                    if mat[..y].iter().all(predicate) && mat[y + 1..].iter().all(predicate) {
-                        result += 1;
-                    }
+                if mat[..y].iter().all(predicate) && mat[y + 1..].iter().all(predicate) {
+                    result += 1;
                 }
             }
         }
