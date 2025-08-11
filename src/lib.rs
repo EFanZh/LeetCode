@@ -2013,6 +2013,7 @@ pub mod problem_2909_minimum_sum_of_mountain_triplets_ii;
 pub mod problem_2915_length_of_the_longest_subsequence_that_sums_to_target;
 pub mod problem_2917_find_the_k_or_of_an_array;
 pub mod problem_2918_minimum_equal_sum_of_two_arrays_after_replacing_zeros;
+pub mod problem_2919_minimum_increment_operations_to_make_array_beautiful;
 
 #[cfg(test)]
 mod test_utilities;
