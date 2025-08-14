@@ -2016,6 +2016,7 @@ pub mod problem_2918_minimum_equal_sum_of_two_arrays_after_replacing_zeros;
 pub mod problem_2919_minimum_increment_operations_to_make_array_beautiful;
 pub mod problem_2923_find_champion_i;
 pub mod problem_2924_find_champion_ii;
+pub mod problem_2931_maximum_spending_after_buying_items;
 
 #[cfg(test)]
 mod test_utilities;
