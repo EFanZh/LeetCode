@@ -2017,6 +2017,7 @@ pub mod problem_2919_minimum_increment_operations_to_make_array_beautiful;
 pub mod problem_2923_find_champion_i;
 pub mod problem_2924_find_champion_ii;
 pub mod problem_2931_maximum_spending_after_buying_items;
+pub mod problem_2937_make_three_strings_equal;
 
 #[cfg(test)]
 mod test_utilities;
