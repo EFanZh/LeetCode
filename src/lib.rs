@@ -2019,6 +2019,7 @@ pub mod problem_2924_find_champion_ii;
 pub mod problem_2931_maximum_spending_after_buying_items;
 pub mod problem_2937_make_three_strings_equal;
 pub mod problem_2938_separate_black_and_white_balls;
+pub mod problem_2942_find_words_containing_character;
 
 #[cfg(test)]
 mod test_utilities;
