@@ -2020,6 +2020,7 @@ pub mod problem_2931_maximum_spending_after_buying_items;
 pub mod problem_2937_make_three_strings_equal;
 pub mod problem_2938_separate_black_and_white_balls;
 pub mod problem_2942_find_words_containing_character;
+pub mod problem_2943_maximize_area_of_square_hole_in_grid;
 
 #[cfg(test)]
 mod test_utilities;
