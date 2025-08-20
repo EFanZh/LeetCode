@@ -2022,6 +2022,7 @@ pub mod problem_2938_separate_black_and_white_balls;
 pub mod problem_2942_find_words_containing_character;
 pub mod problem_2943_maximize_area_of_square_hole_in_grid;
 pub mod problem_2946_matrix_similarity_after_cyclic_shifts;
+pub mod problem_2948_make_lexicographically_smallest_array_by_swapping_elements;
 
 #[cfg(test)]
 mod test_utilities;
