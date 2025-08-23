@@ -2025,6 +2025,7 @@ pub mod problem_2946_matrix_similarity_after_cyclic_shifts;
 pub mod problem_2948_make_lexicographically_smallest_array_by_swapping_elements;
 pub mod problem_2951_find_the_peaks;
 pub mod problem_2952_minimum_number_of_coins_to_be_added;
+pub mod problem_2956_find_common_elements_between_two_arrays;
 
 #[cfg(test)]
 mod test_utilities;
