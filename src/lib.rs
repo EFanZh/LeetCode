@@ -2028,6 +2028,7 @@ pub mod problem_2952_minimum_number_of_coins_to_be_added;
 pub mod problem_2956_find_common_elements_between_two_arrays;
 pub mod problem_2957_remove_adjacent_almost_equal_characters;
 pub mod problem_2958_length_of_longest_subarray_with_at_most_k_frequency;
+pub mod problem_2960_count_tested_devices_after_test_operations;
 
 #[cfg(test)]
 mod test_utilities;
