@@ -2030,6 +2030,7 @@ pub mod problem_2957_remove_adjacent_almost_equal_characters;
 pub mod problem_2958_length_of_longest_subarray_with_at_most_k_frequency;
 pub mod problem_2960_count_tested_devices_after_test_operations;
 pub mod problem_2961_double_modular_exponentiation;
+pub mod problem_2962_count_subarrays_where_max_element_appears_at_least_k_times;
 
 #[cfg(test)]
 mod test_utilities;
