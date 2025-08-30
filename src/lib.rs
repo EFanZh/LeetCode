@@ -2032,6 +2032,7 @@ pub mod problem_2960_count_tested_devices_after_test_operations;
 pub mod problem_2961_double_modular_exponentiation;
 pub mod problem_2962_count_subarrays_where_max_element_appears_at_least_k_times;
 pub mod problem_2965_find_missing_and_repeated_values;
+pub mod problem_2966_divide_array_into_arrays_with_max_difference;
 
 #[cfg(test)]
 mod test_utilities;
