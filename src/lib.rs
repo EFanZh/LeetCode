@@ -2033,6 +2033,7 @@ pub mod problem_2961_double_modular_exponentiation;
 pub mod problem_2962_count_subarrays_where_max_element_appears_at_least_k_times;
 pub mod problem_2965_find_missing_and_repeated_values;
 pub mod problem_2966_divide_array_into_arrays_with_max_difference;
+pub mod problem_2970_count_the_number_of_incremovable_subarrays_i;
 
 #[cfg(test)]
 mod test_utilities;
