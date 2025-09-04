@@ -2037,6 +2037,7 @@ pub mod problem_2970_count_the_number_of_incremovable_subarrays_i;
 pub mod problem_2972_count_the_number_of_incremovable_subarrays_ii;
 pub mod problem_2974_minimum_number_game;
 pub mod problem_2980_check_if_bitwise_or_has_trailing_zeros;
+pub mod problem_2981_find_longest_special_substring_that_occurs_thrice_i;
 
 #[cfg(test)]
 mod test_utilities;
