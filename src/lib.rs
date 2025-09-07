@@ -2040,6 +2040,7 @@ pub mod problem_2980_check_if_bitwise_or_has_trailing_zeros;
 pub mod problem_2981_find_longest_special_substring_that_occurs_thrice_i;
 pub mod problem_2982_find_longest_special_substring_that_occurs_thrice_ii;
 pub mod problem_2996_smallest_missing_integer_greater_than_sequential_prefix_sum;
+pub mod problem_2997_minimum_number_of_operations_to_make_array_xor_equal_to_k;
 
 #[cfg(test)]
 mod test_utilities;
