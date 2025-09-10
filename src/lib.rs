@@ -2043,6 +2043,7 @@ pub mod problem_2996_smallest_missing_integer_greater_than_sequential_prefix_sum
 pub mod problem_2997_minimum_number_of_operations_to_make_array_xor_equal_to_k;
 pub mod problem_3000_maximum_area_of_longest_diagonal_rectangle;
 pub mod problem_3001_minimum_moves_to_capture_the_queen;
+pub mod problem_3005_count_elements_with_maximum_frequency;
 
 #[cfg(test)]
 mod test_utilities;
