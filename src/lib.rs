@@ -2045,6 +2045,7 @@ pub mod problem_3000_maximum_area_of_longest_diagonal_rectangle;
 pub mod problem_3001_minimum_moves_to_capture_the_queen;
 pub mod problem_3005_count_elements_with_maximum_frequency;
 pub mod problem_3010_divide_an_array_into_subarrays_with_minimum_cost_i;
+pub mod problem_3011_find_if_array_can_be_sorted;
 
 #[cfg(test)]
 mod test_utilities;
