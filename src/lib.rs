@@ -2046,6 +2046,7 @@ pub mod problem_3001_minimum_moves_to_capture_the_queen;
 pub mod problem_3005_count_elements_with_maximum_frequency;
 pub mod problem_3010_divide_an_array_into_subarrays_with_minimum_cost_i;
 pub mod problem_3011_find_if_array_can_be_sorted;
+pub mod problem_3012_minimize_length_of_array_using_operations;
 
 #[cfg(test)]
 mod test_utilities;
