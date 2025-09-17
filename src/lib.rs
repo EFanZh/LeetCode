@@ -2050,6 +2050,7 @@ pub mod problem_3012_minimize_length_of_array_using_operations;
 pub mod problem_3014_minimum_number_of_pushes_to_type_word_i;
 pub mod problem_3016_minimum_number_of_pushes_to_type_word_ii;
 pub mod problem_3019_number_of_changing_keys;
+pub mod problem_3021_alice_and_bob_playing_flower_game;
 
 #[cfg(test)]
 mod test_utilities;
