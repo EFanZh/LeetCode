@@ -2053,6 +2053,7 @@ pub mod problem_3019_number_of_changing_keys;
 pub mod problem_3021_alice_and_bob_playing_flower_game;
 pub mod problem_3024_type_of_triangle;
 pub mod problem_3026_maximum_good_subarray_sum;
+pub mod problem_3028_ant_on_the_boundary;
 
 #[cfg(test)]
 mod test_utilities;
