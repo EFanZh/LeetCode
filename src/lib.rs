@@ -2054,6 +2054,7 @@ pub mod problem_3021_alice_and_bob_playing_flower_game;
 pub mod problem_3024_type_of_triangle;
 pub mod problem_3026_maximum_good_subarray_sum;
 pub mod problem_3028_ant_on_the_boundary;
+pub mod problem_3033_modify_the_matrix;
 
 #[cfg(test)]
 mod test_utilities;
