@@ -2056,6 +2056,7 @@ pub mod problem_3026_maximum_good_subarray_sum;
 pub mod problem_3028_ant_on_the_boundary;
 pub mod problem_3033_modify_the_matrix;
 pub mod problem_3035_maximum_palindromes_after_operations;
+pub mod problem_3038_maximum_number_of_operations_with_the_same_score_i;
 
 #[cfg(test)]
 mod test_utilities;
