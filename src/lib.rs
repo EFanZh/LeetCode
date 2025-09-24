@@ -2057,6 +2057,7 @@ pub mod problem_3028_ant_on_the_boundary;
 pub mod problem_3033_modify_the_matrix;
 pub mod problem_3035_maximum_palindromes_after_operations;
 pub mod problem_3038_maximum_number_of_operations_with_the_same_score_i;
+pub mod problem_3039_apply_operations_to_make_string_empty;
 
 #[cfg(test)]
 mod test_utilities;
