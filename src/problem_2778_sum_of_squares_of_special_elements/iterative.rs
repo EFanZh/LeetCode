@@ -8,7 +8,7 @@ impl Solution {
 
         (1..)
             .zip(nums)
-            .filter(|&(i, _)| n % i == 0)
+            .filter(|&(i, _)| n.is_multiple_of(i))
             .map(|(_, num)| num * num)
             .sum()
     }

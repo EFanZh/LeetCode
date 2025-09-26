@@ -36,7 +36,7 @@ impl Solution {
     pub fn find_lu_slength(strs: Vec<String>) -> i32 {
         let mut strs = strs;
 
-        strs.sort_unstable_by(|lhs, rhs| ((Reverse(lhs.len()), lhs.as_str()).cmp(&(Reverse(rhs.len()), rhs.as_str()))));
+        strs.sort_unstable_by(|lhs, rhs| (Reverse(lhs.len()), lhs.as_str()).cmp(&(Reverse(rhs.len()), rhs.as_str())));
 
         let mut tries = Vec::with_capacity(strs.len() - 1);
         let mut iter = strs.iter().map(String::as_bytes);

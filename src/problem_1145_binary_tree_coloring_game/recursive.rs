@@ -27,7 +27,7 @@ impl Solution {
                 Ok((left_count, right_count))
             } else {
                 Self::helper(node.left.as_deref(), x).or_else(|left_count| {
-                    Self::helper(node.right.as_deref(), x).map_err(|right_count| (1 + left_count + right_count))
+                    Self::helper(node.right.as_deref(), x).map_err(|right_count| 1 + left_count + right_count)
                 })
             }
         })

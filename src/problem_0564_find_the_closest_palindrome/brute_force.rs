@@ -26,7 +26,7 @@ impl Solution {
 
     fn is_powers_of_10(mut value: u64) -> bool {
         while value != 1 {
-            if value % 10 != 0 {
+            if !value.is_multiple_of(10) {
                 return false;
             }
 
@@ -37,7 +37,7 @@ impl Solution {
     }
 
     fn helper(n: u64, len: u32) -> u64 {
-        let is_len_even = len % 2 == 0;
+        let is_len_even = len.is_multiple_of(2);
         let half_len = len / 2;
         let base = Self::shr(n, half_len);
         let candidate = Self::shl(base, half_len) + Self::reverse(if is_len_even { base } else { base / 10 });

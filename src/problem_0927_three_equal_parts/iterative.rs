@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn helper(total_length: u32, ones: &[u32]) -> [i32; 2] {
-        if ones.len() % 3 == 0 {
+        if ones.len().is_multiple_of(3) {
             if let Some(&last_one) = ones.last() {
                 let trailing_zeros = total_length - 1 - last_one;
                 let expected_ones = ones.len() / 3;

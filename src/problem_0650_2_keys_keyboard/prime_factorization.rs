@@ -9,7 +9,7 @@ impl Solution {
         let mut divisor = 2;
 
         while n != 1 {
-            while n % divisor != 0 {
+            while !n.is_multiple_of(divisor) {
                 divisor += 1;
             }
 

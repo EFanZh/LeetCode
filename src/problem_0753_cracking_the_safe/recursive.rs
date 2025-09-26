@@ -7,7 +7,7 @@ pub struct Solution;
 impl Solution {
     fn helper(t: usize, p: usize, digits: u8, length: usize, a: &mut [u8], result: &mut String) {
         if t > length {
-            if length % p == 0 {
+            if length.is_multiple_of(p) {
                 result.extend(a[1..=p].iter().map(|&c| char::from(c)));
             }
         } else {

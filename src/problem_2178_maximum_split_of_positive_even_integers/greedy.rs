@@ -7,7 +7,7 @@ impl Solution {
         let mut final_sum = final_sum as u64;
         let mut result = Vec::new();
 
-        if final_sum % 2 == 0 {
+        if final_sum.is_multiple_of(2) {
             let mut candidate = 2;
 
             loop {

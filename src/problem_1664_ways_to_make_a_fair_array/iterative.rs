@@ -18,7 +18,7 @@ impl Solution {
             mem::swap(&mut sum_1, &mut sum_2);
         }
 
-        if buffer.len() % 2 != 0 {
+        if !buffer.len().is_multiple_of(2) {
             mem::swap(&mut sum_1, &mut sum_2);
         }
 

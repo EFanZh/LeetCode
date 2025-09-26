@@ -12,7 +12,7 @@ impl Solution {
 
         (loop {
             if lhs < sqrt_n {
-                if n % lhs == 0 {
+                if n.is_multiple_of(lhs) {
                     if k == 0 {
                         break lhs;
                     }
@@ -23,7 +23,7 @@ impl Solution {
 
                 lhs += 1;
             } else {
-                if n % lhs == 0 {
+                if n.is_multiple_of(lhs) {
                     if k == 0 {
                         break lhs;
                     }

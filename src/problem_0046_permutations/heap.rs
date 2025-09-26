@@ -32,7 +32,7 @@ impl Solution {
         let mut nums = nums;
         let nums_len = nums.len();
 
-        if nums.len() % 2 == 0 {
+        if nums.len().is_multiple_of(2) {
             Self::permute_helper_even(&mut nums, nums_len, &mut result);
         } else {
             Self::permute_helper_odd(&mut nums, nums_len, &mut result);

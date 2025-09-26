@@ -35,7 +35,7 @@ impl Solution {
                     break;
                 }
 
-                if num % x == 0 {
+                if num.is_multiple_of(x) {
                     return (num % 1337) as _;
                 }
 
