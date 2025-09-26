@@ -46,11 +46,11 @@ impl NumArray {
         let mut result = 0;
 
         while i != j {
-            if i % 2 == 0 {
+            if i.is_multiple_of(2) {
                 result += tree[i];
             }
 
-            if j % 2 == 0 {
+            if j.is_multiple_of(2) {
                 result += tree[j - 1];
             }
 

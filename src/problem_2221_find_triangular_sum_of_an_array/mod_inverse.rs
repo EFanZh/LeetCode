@@ -9,7 +9,7 @@ impl Solution {
 
         x >>= twos;
 
-        while x % 5 == 0 {
+        while x.is_multiple_of(5) {
             x /= 5;
             fives += 1;
         }

@@ -8,12 +8,12 @@ impl Solution {
         let mut twos = 0;
         let mut fives = 0;
 
-        while value % 2 == 0 {
+        while value.is_multiple_of(2) {
             value /= 2;
             twos += 1;
         }
 
-        while value % 5 == 0 {
+        while value.is_multiple_of(5) {
             value /= 5;
             fives += 1;
         }

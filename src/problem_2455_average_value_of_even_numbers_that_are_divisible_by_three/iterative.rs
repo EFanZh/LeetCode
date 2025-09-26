@@ -10,7 +10,7 @@ impl Solution {
         for num in nums {
             let num = num as u32;
 
-            if num % 6 == 0 {
+            if num.is_multiple_of(6) {
                 sum += num;
                 count += 1;
             }

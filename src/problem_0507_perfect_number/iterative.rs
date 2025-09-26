@@ -7,9 +7,13 @@ impl Solution {
         let num = num as u32;
         let last = num.isqrt();
 
-        let divisor_sum = 1 + (2..last).filter(|&x| num % x == 0).map(|x| x + num / x).sum::<u32>();
+        let divisor_sum = 1
+            + (2..last)
+                .filter(|&x| num.is_multiple_of(x))
+                .map(|x| x + num / x)
+                .sum::<u32>();
 
-        if num % last == 0 {
+        if num.is_multiple_of(last) {
             if last * last == num {
                 num == divisor_sum + last
             } else {

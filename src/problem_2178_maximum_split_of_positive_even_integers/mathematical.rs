@@ -6,7 +6,7 @@ impl Solution {
     pub fn maximum_even_split(final_sum: i64) -> Vec<i64> {
         let final_sum = final_sum as u64;
 
-        if final_sum % 2 == 0 {
+        if final_sum.is_multiple_of(2) {
             let count = ((final_sum * 4 + 1).isqrt() - 1) / 2;
 
             let mut result = Vec::with_capacity(count as _);

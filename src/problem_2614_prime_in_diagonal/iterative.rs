@@ -10,7 +10,7 @@ impl Solution {
             let sqrt = num.isqrt();
 
             for x in 2..=sqrt {
-                if num % x == 0 {
+                if num.is_multiple_of(x) {
                     return false;
                 }
             }

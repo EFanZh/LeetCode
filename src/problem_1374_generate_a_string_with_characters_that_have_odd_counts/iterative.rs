@@ -9,7 +9,7 @@ impl Solution {
         let n = n as usize;
         let mut result = String::with_capacity(n);
 
-        if n % 2 == 0 {
+        if n.is_multiple_of(2) {
             result.extend(iter::repeat_n('a', n - 1));
             result.push('b');
         } else {

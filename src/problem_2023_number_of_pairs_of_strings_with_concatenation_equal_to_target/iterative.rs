@@ -22,7 +22,7 @@ impl Solution {
             }
         }
 
-        if n % 2 == 0 {
+        if n.is_multiple_of(2) {
             let half = n / 2;
             let (left, right) = target.split_at(half);
 

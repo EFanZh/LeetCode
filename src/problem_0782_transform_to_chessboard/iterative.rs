@@ -21,9 +21,9 @@ impl Solution {
     fn min_steps_helper(iter: impl Iterator<Item = i32>, n: usize) -> usize {
         let out_of_place = Self::count_out_of_place(iter);
 
-        if n % 2 == 0 {
+        if n.is_multiple_of(2) {
             out_of_place.min(n - out_of_place) / 2
-        } else if out_of_place % 2 == 0 {
+        } else if out_of_place.is_multiple_of(2) {
             out_of_place / 2
         } else {
             (n - out_of_place) / 2

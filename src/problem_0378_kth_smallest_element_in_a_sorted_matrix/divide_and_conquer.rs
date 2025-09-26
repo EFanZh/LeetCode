@@ -185,7 +185,7 @@ impl Solution {
 
             (sorted[low_rank], sorted.get(high_rank).copied().unwrap_or(i32::MAX))
         } else {
-            let effective_length = if length % 2 == 0 { length - 1 } else { length };
+            let effective_length = if length.is_multiple_of(2) { length - 1 } else { length };
             let next_low_rank = low_rank / 4;
             let next_high_rank = (high_rank + effective_length * 2 + 1) / 4;
             let (low, high) = Self::bi_select(matrix.clone(), depth + 1, next_low_rank, next_high_rank, buffer, rng);

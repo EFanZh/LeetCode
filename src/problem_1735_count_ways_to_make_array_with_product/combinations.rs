@@ -51,7 +51,7 @@ impl Solution {
 
             let mut count = 0;
 
-            while k % prime == 0 {
+            while k.is_multiple_of(prime) {
                 k /= prime;
                 count += 1;
             }

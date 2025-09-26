@@ -16,7 +16,7 @@ impl Solution {
             for i in 0..nums.len() as u8 {
                 let num = nums[usize::from(i)];
 
-                if num.get() % n == 0 || n % num.get() == 0 {
+                if num.get().is_multiple_of(n) || n.is_multiple_of(num.get()) {
                     nums.swap(usize::from(i), last_index);
 
                     result += Self::helper(&mut nums[..last_index]);

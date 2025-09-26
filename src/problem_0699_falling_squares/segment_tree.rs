@@ -26,7 +26,7 @@ impl Node for usize {
     }
 
     fn is_left_child(&self) -> bool {
-        self % 2 == 0
+        self.is_multiple_of(2)
     }
 
     fn depth(&self) -> u32 {

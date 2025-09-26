@@ -14,7 +14,7 @@ impl Solution {
             let logic_column = i % n;
             let row = max_index - logic_row;
 
-            let column = if logic_row % 2 == 0 {
+            let column = if logic_row.is_multiple_of(2) {
                 logic_column
             } else {
                 max_index - logic_column

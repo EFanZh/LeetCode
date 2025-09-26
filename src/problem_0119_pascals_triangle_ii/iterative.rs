@@ -18,7 +18,7 @@ impl Solution {
             result[row_index - i] = prev as i32;
         }
 
-        if row_index > 1 && row_index % 2 == 0 {
+        if row_index > 1 && row_index.is_multiple_of(2) {
             prev *= row_index - (middle - 1);
             prev /= middle;
 

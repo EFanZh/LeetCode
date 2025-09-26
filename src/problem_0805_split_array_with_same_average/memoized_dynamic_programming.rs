@@ -49,7 +49,7 @@ impl Solution {
         for count in 1..=n / 2 {
             let denominator = sum * count;
 
-            if denominator % n == 0 && Self::helper(&nums, sum, count as _, denominator / n, &mut cache) {
+            if denominator.is_multiple_of(n) && Self::helper(&nums, sum, count as _, denominator / n, &mut cache) {
                 return true;
             }
         }

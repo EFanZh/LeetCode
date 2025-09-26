@@ -9,7 +9,7 @@ impl Solution {
                 let pivot = nums.partition_point(|x| x >= first);
 
                 if target < *first {
-                    nums[pivot..].binary_search(&target).map(|i| (pivot + i))
+                    nums[pivot..].binary_search(&target).map(|i| pivot + i)
                 } else {
                     nums[..pivot].binary_search(&target)
                 }

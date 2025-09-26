@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn can_be_valid(s: String, locked: String) -> bool {
-        s.len() % 2 == 0 && {
+        s.len().is_multiple_of(2) && {
             let iter = s.bytes().zip(locked.bytes());
 
             // Forward.

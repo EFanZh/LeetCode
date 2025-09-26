@@ -35,7 +35,7 @@ impl Solution {
     }
 
     pub fn has_valid_path(grid: Vec<Vec<char>>) -> bool {
-        if (grid.len() + grid.first().map_or(0, Vec::len)) % 2 == 0 {
+        if (grid.len() + grid.first().map_or(0, Vec::len)).is_multiple_of(2) {
             false
         } else {
             match grid.first().map_or(0, Vec::len) {
