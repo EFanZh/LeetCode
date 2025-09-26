@@ -2059,6 +2059,7 @@ pub mod problem_3035_maximum_palindromes_after_operations;
 pub mod problem_3038_maximum_number_of_operations_with_the_same_score_i;
 pub mod problem_3039_apply_operations_to_make_string_empty;
 pub mod problem_3043_find_the_length_of_the_longest_common_prefix;
+pub mod problem_3046_split_the_array;
 
 #[cfg(test)]
 mod test_utilities;
