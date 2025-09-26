@@ -6,7 +6,7 @@ impl Solution {
     pub fn sum_of_three(num: i64) -> Vec<i64> {
         let num = num as u64;
 
-        if num % 3 == 0 {
+        if num.is_multiple_of(3) {
             let middle = (num / 3) as i64;
 
             vec![middle - 1, middle, middle + 1]

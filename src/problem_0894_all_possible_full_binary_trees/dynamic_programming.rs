@@ -11,7 +11,7 @@ impl Solution {
     pub fn all_possible_fbt(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
         let n = n as u32;
 
-        if n % 2 == 0 {
+        if n.is_multiple_of(2) {
             Vec::new()
         } else {
             let n = (n / 2 + 1) as usize;

@@ -21,7 +21,7 @@ impl Solution {
             }
 
             if size < max_size {
-                if n % size == 0 {
+                if n.is_multiple_of(size) {
                     result += 1;
                 }
 

@@ -44,7 +44,7 @@ impl Solution {
                     let range = (max - min) as u32;
                     let base = (end - start) as u32;
 
-                    range % base == 0 && {
+                    range.is_multiple_of(base) && {
                         let interval = NonZeroU32::new(range / base).unwrap();
 
                         seen.resize(window.len(), false);

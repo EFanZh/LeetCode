@@ -6,7 +6,7 @@ impl Solution {
     fn helper(n: usize, total_skill: u32, min_skill: u32, counts: &[u32; 2048]) -> Option<u64> {
         let pairs = n as u32 / 2;
 
-        if total_skill % pairs != 0 {
+        if !total_skill.is_multiple_of(pairs) {
             return None;
         }
 
@@ -26,7 +26,7 @@ impl Solution {
             },
         )?;
 
-        if pair_skill_sum % 2 == 0 {
+        if pair_skill_sum.is_multiple_of(2) {
             chemistry += u64::from(half_pair_skill_sum).pow(2) * u64::from(counts[half_pair_skill_sum as usize] / 2);
         }
 

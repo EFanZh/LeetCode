@@ -20,7 +20,7 @@ impl Solution {
             digits[digits_len] = digit;
             digits_len += 1;
 
-            let digits = if digit % 2 == 0 {
+            let digits = if digit.is_multiple_of(2) {
                 &mut even_digits
             } else {
                 &mut odd_digits

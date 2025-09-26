@@ -10,7 +10,7 @@ impl Solution {
             total_xor ^= num;
         }
 
-        total_xor == 0 || nums.len() % 2 == 0
+        total_xor == 0 || nums.len().is_multiple_of(2)
     }
 }
 
