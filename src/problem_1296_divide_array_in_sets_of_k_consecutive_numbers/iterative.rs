@@ -8,7 +8,7 @@ use std::hash::BuildHasherDefault;
 
 impl Solution {
     pub fn is_possible_divide(nums: Vec<i32>, k: i32) -> bool {
-        if nums.len() % k as usize == 0 {
+        if nums.len().is_multiple_of(k as usize) {
             let mut counts = HashMap::with_hasher(BuildHasherDefault::<DefaultHasher>::default());
 
             for num in nums {

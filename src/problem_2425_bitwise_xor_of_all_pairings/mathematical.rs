@@ -8,7 +8,7 @@ impl Solution {
     }
 
     pub fn xor_all_nums(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
-        let (init, nums) = match (nums1.len() % 2 == 0, nums2.len() % 2 == 0) {
+        let (init, nums) = match (nums1.len().is_multiple_of(2), nums2.len().is_multiple_of(2)) {
             (false, false) => (Self::reduce_xor(0, &nums1), &nums2),
             (false, true) => (0, &nums2),
             (true, false) => (0, &nums1),

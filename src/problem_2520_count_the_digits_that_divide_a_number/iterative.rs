@@ -9,7 +9,7 @@ impl Solution {
         let mut result = 0;
 
         while x != 0 {
-            result += u8::from(num % (x % 10) == 0);
+            result += u8::from(num.is_multiple_of(x % 10));
             x /= 10;
         }
 

@@ -38,7 +38,7 @@ impl Solution {
         let num_digits = Self::count_digits(n);
         let low_base = u32::pow(10, num_digits / 2);
 
-        if num_digits % 2 == 0 {
+        if num_digits.is_multiple_of(2) {
             low_base
         } else {
             let seed = n / low_base;
@@ -52,7 +52,7 @@ impl Solution {
         let end = n.isqrt();
 
         for x in 2..=end {
-            if n % x == 0 {
+            if n.is_multiple_of(x) {
                 return false;
             }
         }

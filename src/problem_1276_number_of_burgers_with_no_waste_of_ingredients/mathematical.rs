@@ -7,7 +7,7 @@ impl Solution {
         let tomato_slices = tomato_slices as u32;
         let cheese_slices = cheese_slices as u32;
 
-        if tomato_slices % 2 == 0
+        if tomato_slices.is_multiple_of(2)
             && let Some(jumbo_burgers) = (tomato_slices / 2).checked_sub(cheese_slices)
             && let Some(small_burgers) = cheese_slices.checked_sub(jumbo_burgers)
         {

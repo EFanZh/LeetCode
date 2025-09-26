@@ -8,7 +8,7 @@ impl Solution {
     pub fn is_n_straight_hand(hand: Vec<i32>, group_size: i32) -> bool {
         let group_size = group_size as usize;
 
-        if hand.len() % group_size == 0 {
+        if hand.len().is_multiple_of(group_size) {
             let mut cards = HashMap::new();
 
             for card in hand {

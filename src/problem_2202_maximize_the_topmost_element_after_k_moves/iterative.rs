@@ -7,7 +7,7 @@ impl Solution {
         let k = k as u32 as usize;
 
         if nums.len() < 2 {
-            if k % 2 == 0 { nums[0] } else { -1 }
+            if k.is_multiple_of(2) { nums[0] } else { -1 }
         } else {
             let result = if let Some(&right) = nums.get(k) {
                 if k < 2 {

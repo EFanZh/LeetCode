@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn is_same_after_reversals(num: i32) -> bool {
-        num == 0 || num as u32 % 10 != 0
+        num == 0 || !(num as u32).is_multiple_of(10)
     }
 }
 

@@ -13,7 +13,7 @@ impl Solution {
 
             let (second, third) = loop {
                 if i <= sqrt_num {
-                    if num % i == 0 {
+                    if num.is_multiple_of(i) {
                         break (i, num / i);
                     }
 
@@ -27,7 +27,7 @@ impl Solution {
                 i += 1;
 
                 if i <= sqrt_num {
-                    if num % i == 0 {
+                    if num.is_multiple_of(i) {
                         return 0;
                     }
                 } else {

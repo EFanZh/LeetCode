@@ -41,7 +41,7 @@ impl Solution {
             Ordering::Greater => {
                 let k_plus_distance = k + distance;
 
-                if k_plus_distance % 2 == 0 {
+                if k_plus_distance.is_multiple_of(2) {
                     let t = k_plus_distance / 2;
                     let mut factorial = 1;
 

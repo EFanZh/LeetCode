@@ -14,7 +14,7 @@ impl Solution {
             let next_length = length / 2;
 
             if next_length != 0 {
-                if length % 2 == 0 {
+                if length.is_multiple_of(2) {
                     Self::helper_1(rest, next_step, next_length, iter);
                 } else {
                     Self::helper_2(rest, next_step, next_length, iter);
@@ -34,7 +34,7 @@ impl Solution {
 
         let next_length = length.div_ceil(2);
 
-        if length % 2 == 0 {
+        if length.is_multiple_of(2) {
             Self::helper_2(range, next_step, next_length, iter);
         } else {
             Self::helper_1(range, next_step, next_length, iter);

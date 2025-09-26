@@ -19,14 +19,14 @@ impl Solution {
         let mut result = 0;
 
         for i in 1..middle {
-            result += u8::from(gcd % i == 0);
+            result += u8::from(gcd.is_multiple_of(i));
         }
 
         result = result * 2
             + if middle * middle == gcd {
                 1
             } else {
-                u8::from(gcd % middle == 0) * 2
+                u8::from(gcd.is_multiple_of(middle)) * 2
             };
 
         i32::from(result)

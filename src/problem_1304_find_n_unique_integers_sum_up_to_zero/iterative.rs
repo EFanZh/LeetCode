@@ -7,7 +7,7 @@ impl Solution {
         let n = n as u32;
         let mut result = Vec::with_capacity(n as _);
 
-        if n % 2 != 0 {
+        if !n.is_multiple_of(2) {
             result.push(0);
         }
 

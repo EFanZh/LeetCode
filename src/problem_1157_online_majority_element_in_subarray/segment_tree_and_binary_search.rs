@@ -59,11 +59,11 @@ impl MajorityChecker {
         let mut state = (0, 0);
 
         loop {
-            if i % 2 == 0 {
+            if i.is_multiple_of(2) {
                 Self::merge_state(&mut state, self.tree[i]);
             }
 
-            if j % 2 != 0 {
+            if !j.is_multiple_of(2) {
                 Self::merge_state(&mut state, self.tree[j]);
             }
 

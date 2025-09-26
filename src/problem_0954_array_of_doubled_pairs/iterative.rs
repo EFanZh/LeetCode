@@ -73,7 +73,7 @@ impl Solution {
         let mut arr = arr;
         let (i, j) = Self::partition(&mut arr, 0);
 
-        if i % 2 == 0 && (j - i) % 2 == 0 && (arr.len() - j) % 2 == 0 {
+        if i % 2 == 0 && (j - i) % 2 == 0 && (arr.len() - j).is_multiple_of(2) {
             let (left, rest) = arr.split_at_mut(i);
             let right = &mut rest[j - i..];
 

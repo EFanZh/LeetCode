@@ -9,7 +9,7 @@ impl Solution {
         // (2..=middle).all(|x| n % x != 0).
 
         for x in 2..=middle {
-            if n % x == 0 {
+            if n.is_multiple_of(x) {
                 return false;
             }
         }
