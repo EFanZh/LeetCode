@@ -1942,6 +1942,7 @@ pub mod problem_2671_frequency_tracker;
 pub mod problem_2673_make_costs_of_paths_equal_in_a_binary_tree;
 pub mod problem_2678_number_of_senior_citizens;
 pub mod problem_2679_sum_in_a_matrix;
+pub mod problem_2680_maximum_or;
 pub mod problem_2682_find_the_losers_of_the_circular_game;
 pub mod problem_2683_neighboring_bitwise_xor;
 pub mod problem_2696_minimum_string_length_after_removing_substrings;
