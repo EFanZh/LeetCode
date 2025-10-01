@@ -1,4 +1,5 @@
 pub mod sliding_window;
+pub mod sliding_window_2;
 
 pub trait Solution {
     fn continuous_subarrays(nums: Vec<i32>) -> i64;
