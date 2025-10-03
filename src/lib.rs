@@ -2066,6 +2066,7 @@ pub mod problem_3065_minimum_operations_to_exceed_threshold_value_i;
 pub mod problem_3066_minimum_operations_to_exceed_threshold_value_ii;
 pub mod problem_3069_distribute_elements_into_two_arrays_i;
 pub mod problem_3070_count_submatrices_with_top_left_element_and_sum_less_than_k;
+pub mod problem_3071_minimum_operations_to_write_the_letter_y_on_a_grid;
 
 #[cfg(test)]
 mod test_utilities;
