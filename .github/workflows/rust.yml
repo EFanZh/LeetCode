@@ -9,6 +9,7 @@ jobs:
         steps:
           - uses: actions/checkout@v4
           - run: rustup update
+          - run: rustup component add rustfmt
           - run: cargo fmt --all -- --check
         strategy:
             matrix:
@@ -23,6 +24,7 @@ jobs:
             run: sudo apt-get update && sudo apt-get install --no-install-recommends libfontconfig-dev
           - uses: actions/checkout@v4
           - run: rustup update
+          - run: rustup component add clippy
           - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
         strategy:
             matrix:
