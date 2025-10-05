@@ -32,7 +32,7 @@ impl Solution {
     }
 
     pub fn minimum_time_required(jobs: Vec<i32>, k: i32) -> i32 {
-        let mut jobs = jobs.into_iter().map(|x| x as u32).collect::<Box<_>>();
+        let mut jobs = jobs.into_iter().map(i32::cast_unsigned).collect::<Box<_>>();
         let k = k as u32 as usize;
 
         jobs.sort_unstable_by_key(|&x| Reverse(x));

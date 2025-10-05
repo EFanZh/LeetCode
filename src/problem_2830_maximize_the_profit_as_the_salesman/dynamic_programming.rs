@@ -6,7 +6,7 @@ impl Solution {
     pub fn maximize_the_profit(n: i32, offers: Vec<Vec<i32>>) -> i32 {
         let mut offers = offers
             .into_iter()
-            .map(|offer| <(_, _, _)>::from(<[_; 3]>::try_from(offer).unwrap().map(|x| x as u32)))
+            .map(|offer| <(_, _, _)>::from(<[_; 3]>::try_from(offer).unwrap().map(i32::cast_unsigned)))
             .collect::<Box<_>>();
 
         offers.sort_unstable_by_key(|offer| offer.1);

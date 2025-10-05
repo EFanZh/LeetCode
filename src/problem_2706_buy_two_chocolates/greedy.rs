@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn buy_choco(prices: Vec<i32>, money: i32) -> i32 {
-        let prices = prices.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let prices = prices.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let money = money as u32;
         let mut min_1 = u32::MAX / 2;
         let mut min_2 = u32::MAX / 2;

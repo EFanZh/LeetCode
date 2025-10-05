@@ -6,7 +6,7 @@ use std::mem;
 
 impl Solution {
     pub fn find_score(nums: Vec<i32>) -> i64 {
-        let mut nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut indices = (0..nums.len() as u32).collect::<Vec<_>>();
 
         indices.sort_unstable_by_key(|&index| (nums[index as usize], index));

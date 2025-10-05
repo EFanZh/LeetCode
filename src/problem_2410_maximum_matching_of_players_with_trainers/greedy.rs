@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn match_players_and_trainers(players: Vec<i32>, trainers: Vec<i32>) -> i32 {
-        let mut players = players.into_iter().map(|x| x as u32).collect::<Vec<_>>();
-        let mut trainers = trainers.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut players = players.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let mut trainers = trainers.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         players.sort_unstable();
         trainers.sort_unstable();

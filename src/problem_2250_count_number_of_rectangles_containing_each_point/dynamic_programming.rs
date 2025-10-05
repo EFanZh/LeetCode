@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_rectangles(rectangles: Vec<Vec<i32>>, points: Vec<Vec<i32>>) -> Vec<i32> {
-        let parse_point = |point| <[_; 2]>::try_from(point).ok().unwrap().map(|x| x as u32);
+        let parse_point = |point| <[_; 2]>::try_from(point).ok().unwrap().map(i32::cast_unsigned);
         let mut rectangles = rectangles.into_iter().map(parse_point).collect::<Vec<_>>();
 
         rectangles.sort_unstable_by_key(|&[w, _]| w);

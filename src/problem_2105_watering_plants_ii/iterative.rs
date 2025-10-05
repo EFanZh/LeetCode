@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn minimum_refill(plants: Vec<i32>, capacity_a: i32, capacity_b: i32) -> i32 {
         let (plants, capacity_a, capacity_b) = (
-            plants.into_iter().map(|x| x as u32).collect::<Vec<_>>(),
+            plants.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>(),
             capacity_a as u32,
             capacity_b as u32,
         );

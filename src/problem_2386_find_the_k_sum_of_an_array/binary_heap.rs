@@ -47,7 +47,7 @@ impl Solution {
         if k < 2 {
             max_sum
         } else {
-            let mut nums = nums.into_iter().map(|x| x as _).collect::<Vec<u32>>();
+            let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
             let nums = if k < nums.len() {
                 nums.select_nth_unstable(k - 1);
