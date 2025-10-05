@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn sum_of_floored_pairs(nums: Vec<i32>) -> i32 {
-        let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let max_num = nums.iter().fold(0, |x, &y| x.max(y));
         let mut counts = vec![0_u32; max_num as usize].into_boxed_slice();
 

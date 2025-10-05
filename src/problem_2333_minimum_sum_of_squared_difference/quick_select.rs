@@ -77,7 +77,7 @@ impl Solution {
             .zip(nums2)
             .for_each(|(target, source)| *target = target.abs_diff(source) as _);
 
-        let mut nums = nums1.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut nums = nums1.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let nums = &mut *nums;
         let n = nums.len();
         let k = u64::from((k1 + k2) as u32);

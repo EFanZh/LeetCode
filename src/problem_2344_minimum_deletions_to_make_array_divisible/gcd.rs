@@ -39,7 +39,7 @@ impl Solution {
     }
 
     pub fn min_operations(nums: Vec<i32>, nums_divide: Vec<i32>) -> i32 {
-        let vec_i32_to_u32 = |v: Vec<i32>| v.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let vec_i32_to_u32 = |v: Vec<i32>| v.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut nums = vec_i32_to_u32(nums);
         let nums_divide = vec_i32_to_u32(nums_divide);
         let mut gcd = 0;

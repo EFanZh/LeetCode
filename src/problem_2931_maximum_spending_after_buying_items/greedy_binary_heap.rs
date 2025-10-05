@@ -36,7 +36,7 @@ impl Solution {
         let mut queue = values
             .into_iter()
             .map(|row| {
-                let mut row = row.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+                let mut row = row.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
                 let key = row.pop().unwrap();
 
                 Item { key, row }

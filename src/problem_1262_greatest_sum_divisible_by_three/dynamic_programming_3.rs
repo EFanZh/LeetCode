@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_sum_div_three(nums: Vec<i32>) -> i32 {
-        let mut iter = nums.into_iter().map(|num| num as u32);
+        let mut iter = nums.into_iter().map(i32::cast_unsigned);
         let mut max_0 = 0;
         let mut max_1;
         let mut max_2;

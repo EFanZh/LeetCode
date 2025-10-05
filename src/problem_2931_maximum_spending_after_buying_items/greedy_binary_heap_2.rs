@@ -35,7 +35,7 @@ impl Solution {
         let mut queue = values
             .into_iter()
             .map(|row| Item {
-                row: row.into_iter().map(|x| x as u32).collect::<Vec<_>>(),
+                row: row.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>(),
             })
             .collect::<BinaryHeap<_>>();
 

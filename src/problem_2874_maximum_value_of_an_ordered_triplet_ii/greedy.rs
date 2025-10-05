@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_triplet_value(nums: Vec<i32>) -> i64 {
-        let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let n = nums.len();
 
         assert!(n > 1);

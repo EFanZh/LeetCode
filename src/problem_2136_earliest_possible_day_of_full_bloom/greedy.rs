@@ -6,8 +6,8 @@ use std::cmp::Reverse;
 
 impl Solution {
     pub fn earliest_full_bloom(plant_time: Vec<i32>, grow_time: Vec<i32>) -> i32 {
-        let mut plant_time = plant_time.into_iter().map(|x| x as u32).collect::<Vec<_>>();
-        let grow_time = grow_time.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut plant_time = plant_time.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let grow_time = grow_time.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         for (plant_time, grow_time) in plant_time.iter_mut().zip(grow_time) {
             *plant_time |= grow_time << 16;

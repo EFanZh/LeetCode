@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn minimum_removal(beans: Vec<i32>) -> i64 {
-        let mut beans = beans.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut beans = beans.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         beans.sort_unstable();
 

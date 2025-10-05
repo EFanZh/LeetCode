@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn sort_as_u32(values: Vec<i32>) -> Vec<u32> {
-        let mut values = values.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut values = values.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         values.sort_unstable();
 

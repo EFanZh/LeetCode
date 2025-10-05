@@ -103,7 +103,7 @@ impl Solution {
     pub fn gcd_sort(nums: Vec<i32>) -> bool {
         type StableHasher = BuildHasherDefault<DefaultHasher>;
 
-        let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let nums_set = nums.iter().copied().collect::<HashSet<_, StableHasher>>();
         let max_num = nums_set.iter().copied().max().unwrap();
         let min_factors = Self::get_min_factors(max_num);

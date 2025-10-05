@@ -76,11 +76,11 @@ impl Solution {
 
     pub fn smallest_missing_value_subtree(parents: Vec<i32>, nums: Vec<i32>) -> Vec<i32> {
         Self::helper(
-            parents.into_iter().map(|x| x as _).collect(),
-            nums.into_iter().map(|x| x as _).collect(),
+            parents.into_iter().map(i32::cast_unsigned).collect(),
+            nums.into_iter().map(i32::cast_unsigned).collect(),
         )
         .into_iter()
-        .map(|x| x as _)
+        .map(u32::cast_signed)
         .collect()
     }
 }

@@ -40,7 +40,7 @@ impl Counter {
 
 impl Solution {
     pub fn maximum_subarray_sum(nums: Vec<i32>, k: i32) -> i64 {
-        let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let k = k as usize;
 
         let mut counter = Counter {

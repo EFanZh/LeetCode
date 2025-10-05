@@ -24,8 +24,8 @@ impl Solution {
         let a = a as u32 % M;
         let mut result = 1;
 
-        for digit in b.into_iter().map(|d| d as _) {
-            result = (Self::pow_mod(result, 10, M) * Self::pow_mod(a, digit, M)) % M;
+        for digit in b {
+            result = (Self::pow_mod(result, 10, M) * Self::pow_mod(a, digit.cast_unsigned(), M)) % M;
         }
 
         result as _

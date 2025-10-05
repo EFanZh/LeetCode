@@ -10,7 +10,7 @@ impl Solution {
         let mut iter = nums.into_iter();
 
         while max <= n {
-            if let Some(num) = iter.next().map(|x| x as u32) {
+            if let Some(num) = iter.next().map(i32::cast_unsigned) {
                 while num > max {
                     max *= 2;
                     result += 1;

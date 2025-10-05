@@ -54,8 +54,8 @@ impl Solution {
     }
 
     pub fn latest_time_catch_the_bus(buses: Vec<i32>, passengers: Vec<i32>, capacity: i32) -> i32 {
-        let mut buses = buses.into_iter().map(|x| x as u32).collect::<Vec<_>>();
-        let mut passengers = passengers.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut buses = buses.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let mut passengers = passengers.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         buses.sort_unstable();
         passengers.sort_unstable();

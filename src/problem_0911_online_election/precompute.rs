@@ -7,7 +7,7 @@ pub struct TopVotedCandidate {
 impl TopVotedCandidate {
     fn new(persons: Vec<i32>, times: Vec<i32>) -> Self {
         let n = persons.len();
-        let mut iter = times.into_iter().map(|time| time as u32).zip(persons);
+        let mut iter = times.into_iter().map(i32::cast_unsigned).zip(persons);
         let mut leads = Vec::with_capacity(n);
         let mut counts = vec![0_u32; n];
         let (first_time, first_person) = iter.next().unwrap();

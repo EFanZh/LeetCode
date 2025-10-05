@@ -6,7 +6,7 @@ use std::collections::BinaryHeap;
 
 impl Solution {
     pub fn max_kelements(nums: Vec<i32>, k: i32) -> i64 {
-        let mut nums = nums.into_iter().map(|num| num as u32).collect::<BinaryHeap<_>>();
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<BinaryHeap<_>>();
         let mut result = 0;
 
         for _ in 0..k as u32 {

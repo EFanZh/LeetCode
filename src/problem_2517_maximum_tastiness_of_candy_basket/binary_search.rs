@@ -21,7 +21,7 @@ impl Solution {
     }
 
     pub fn maximum_tastiness(price: Vec<i32>, k: i32) -> i32 {
-        let mut price = price.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut price = price.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let k = k as u32;
 
         price.sort_unstable();

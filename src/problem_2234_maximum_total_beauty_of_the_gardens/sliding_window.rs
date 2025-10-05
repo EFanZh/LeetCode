@@ -83,7 +83,7 @@ impl Solution {
     }
 
     pub fn maximum_beauty(flowers: Vec<i32>, new_flowers: i64, target: i32, full: i32, partial: i32) -> i64 {
-        let mut flowers = flowers.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut flowers = flowers.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let new_flowers = new_flowers as u64;
         let target = target as u32;
         let full = u64::from(full as u32);

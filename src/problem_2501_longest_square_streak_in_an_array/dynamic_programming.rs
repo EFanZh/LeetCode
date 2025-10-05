@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn longest_square_streak(nums: Vec<i32>) -> i32 {
-        let mut nums = nums.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         nums.sort_unstable_by(|lhs, rhs| rhs.cmp(lhs));
 

@@ -15,7 +15,7 @@ impl Solution {
     }
 
     pub fn min_capability(nums: Vec<i32>, k: i32) -> i32 {
-        let nums = nums.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let k = k as u32;
         let mut left = nums.iter().fold(u32::MAX, |min, &x| min.min(x));
         let mut right = nums.iter().fold(0, |min, &x| min.max(x));

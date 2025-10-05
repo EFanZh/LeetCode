@@ -17,7 +17,7 @@ impl Solution {
 
     pub fn die_simulator(n: i32, roll_max: Vec<i32>) -> i32 {
         let n = n as usize;
-        let roll_max = <[_; 6]>::try_from(roll_max).ok().unwrap().map(|value| value as u32);
+        let roll_max = <[_; 6]>::try_from(roll_max).ok().unwrap().map(i32::cast_unsigned);
         let mut cache = vec![([0_u32; 6], 1_u32); n + 1];
         let mut prev = &cache[0];
 

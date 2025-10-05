@@ -6,10 +6,6 @@ use std::cmp::{Ordering, Reverse};
 use std::collections::VecDeque;
 
 impl Solution {
-    fn vec_i32_to_vec_u32(v: Vec<i32>) -> Vec<u32> {
-        v.into_iter().map(|x| x as _).collect()
-    }
-
     fn check(tasks: &[u32], workers: &[u32], mut pills: u32, strength: u32, buffer: &mut VecDeque<u32>) -> bool {
         let mut tasks_iter = tasks.iter();
 
@@ -49,8 +45,8 @@ impl Solution {
     }
 
     pub fn max_task_assign(tasks: Vec<i32>, workers: Vec<i32>, pills: i32, strength: i32) -> i32 {
-        let mut tasks = Self::vec_i32_to_vec_u32(tasks);
-        let mut workers = Self::vec_i32_to_vec_u32(workers);
+        let mut tasks = tasks.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let mut workers = workers.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let pills = pills as u32;
         let strength = strength as u32;
 
