@@ -20,8 +20,8 @@ impl Solution {
     }
 
     pub fn min_sum(nums1: Vec<i32>, nums2: Vec<i32>) -> i64 {
-        let nums1 = nums1.into_iter().map(|x| x as u32).collect::<Vec<_>>();
-        let nums2 = nums2.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let nums1 = nums1.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let nums2 = nums2.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let (min1, max1) = Self::analyze(&nums1);
         let (min2, max2) = Self::analyze(&nums2);
 

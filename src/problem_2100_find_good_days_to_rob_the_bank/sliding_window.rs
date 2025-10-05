@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn good_days_to_rob_bank(security: Vec<i32>, time: i32) -> Vec<i32> {
-        let security = security.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let security = security.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let time = time as u32 as usize;
         let mut result = Vec::new();
 

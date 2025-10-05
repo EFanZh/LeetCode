@@ -26,7 +26,7 @@ impl Solution {
         _ = (m, n);
 
         let [mut h_bars, mut v_bars] =
-            [h_bars, v_bars].map(|bars| bars.into_iter().map(|bar| bar as u32).collect::<Vec<_>>());
+            [h_bars, v_bars].map(|bars| bars.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>());
 
         h_bars.sort_unstable();
         v_bars.sort_unstable();

@@ -44,7 +44,7 @@ impl Solution {
     }
 
     pub fn minimal_k_sum(nums: Vec<i32>, k: i32) -> i64 {
-        let mut nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut k = u64::from(k as u32);
 
         let nums_set = nums

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_operations(nums: Vec<i32>, queries: Vec<i32>) -> Vec<i64> {
-        let mut nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let n = nums.len() as u64;
 
         nums.sort_unstable();

@@ -23,7 +23,7 @@ impl Solution {
     }
 
     pub fn number_of_weeks(milestones: Vec<i32>) -> i64 {
-        Self::helper(milestones.into_iter().map(|x| x as _).collect()) as _
+        Self::helper(milestones.into_iter().map(i32::cast_unsigned).collect()) as _
     }
 }
 

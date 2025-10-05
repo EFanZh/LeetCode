@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn minimum_sum(nums: Vec<i32>) -> i32 {
-        let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut min = u32::MAX;
 
         let left_mins = nums[..nums.len() - 2]

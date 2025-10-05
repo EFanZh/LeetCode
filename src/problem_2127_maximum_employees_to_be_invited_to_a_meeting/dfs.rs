@@ -86,7 +86,7 @@ impl Solution {
     }
 
     pub fn maximum_invitations(favorite: Vec<i32>) -> i32 {
-        let favorite = favorite.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let favorite = favorite.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let size_1 = Self::longest_cycle(&favorite);
         let size_2 = Self::case_2(&favorite);
 

@@ -15,7 +15,7 @@ impl Solution {
     }
 
     pub fn is_good_array(nums: Vec<i32>) -> bool {
-        let mut iter = nums.into_iter().map(|num| num as u32);
+        let mut iter = nums.into_iter().map(i32::cast_unsigned);
         let mut gcd = iter.next().unwrap();
 
         for num in iter {

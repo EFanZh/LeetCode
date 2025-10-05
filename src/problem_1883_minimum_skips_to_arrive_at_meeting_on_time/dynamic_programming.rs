@@ -13,7 +13,7 @@ impl Solution {
     }
 
     pub fn min_skips(dist: Vec<i32>, speed: i32, hours_before: i32) -> i32 {
-        let dist = dist.into_iter().map(|x| x as u32).collect::<Vec<_>>();
+        let dist = dist.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let speed = NonZeroU32::new(speed as _).unwrap();
         let hours_before = hours_before as u32;
 

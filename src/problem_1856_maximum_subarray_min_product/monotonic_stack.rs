@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_sum_min_product(nums: Vec<i32>) -> i32 {
-        let nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut stack = Vec::<(u32, u64)>::with_capacity(nums.len());
 
         let left_sums = nums

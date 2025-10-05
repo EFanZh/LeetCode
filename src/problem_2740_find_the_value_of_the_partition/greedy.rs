@@ -6,7 +6,7 @@ use std::mem;
 
 impl Solution {
     pub fn find_value_of_partition(nums: Vec<i32>) -> i32 {
-        let mut nums = nums.into_iter().map(|num| num as u32).collect::<Vec<_>>();
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         nums.sort_unstable();
 
