@@ -1937,6 +1937,7 @@ pub mod problem_2640_find_the_score_of_all_prefixes_of_an_array;
 pub mod problem_2643_row_with_maximum_ones;
 pub mod problem_2644_find_the_maximum_divisibility_score;
 pub mod problem_2645_minimum_additions_to_make_valid_string;
+pub mod problem_2651_calculate_delayed_arrival_time;
 pub mod problem_2660_determine_the_winner_of_a_bowling_game;
 pub mod problem_2661_first_completely_painted_row_or_column;
 pub mod problem_2670_find_the_distinct_difference_array;
