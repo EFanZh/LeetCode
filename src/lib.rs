@@ -1941,6 +1941,7 @@ pub mod problem_2651_calculate_delayed_arrival_time;
 pub mod problem_2652_sum_multiples;
 pub mod problem_2656_maximum_sum_with_exactly_k_elements;
 pub mod problem_2657_find_the_prefix_common_array_of_two_arrays;
+pub mod problem_2658_maximum_number_of_fish_in_a_grid;
 pub mod problem_2660_determine_the_winner_of_a_bowling_game;
 pub mod problem_2661_first_completely_painted_row_or_column;
 pub mod problem_2670_find_the_distinct_difference_array;
