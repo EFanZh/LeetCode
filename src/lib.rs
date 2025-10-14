@@ -2077,6 +2077,7 @@ pub mod problem_3071_minimum_operations_to_write_the_letter_y_on_a_grid;
 pub mod problem_3074_apple_redistribution_into_boxes;
 pub mod problem_3075_maximize_happiness_of_selected_children;
 pub mod problem_3079_find_the_sum_of_encrypted_integers;
+pub mod problem_3081_replace_question_marks_in_string_to_minimize_its_value;
 
 #[cfg(test)]
 mod test_utilities;
