@@ -2079,6 +2079,7 @@ pub mod problem_3075_maximize_happiness_of_selected_children;
 pub mod problem_3079_find_the_sum_of_encrypted_integers;
 pub mod problem_3081_replace_question_marks_in_string_to_minimize_its_value;
 pub mod problem_3083_existence_of_a_substring_in_a_string_and_its_reverse;
+pub mod problem_3084_count_substrings_starting_and_ending_with_given_character;
 
 #[cfg(test)]
 mod test_utilities;
