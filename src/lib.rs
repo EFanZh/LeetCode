@@ -2080,6 +2080,7 @@ pub mod problem_3079_find_the_sum_of_encrypted_integers;
 pub mod problem_3081_replace_question_marks_in_string_to_minimize_its_value;
 pub mod problem_3083_existence_of_a_substring_in_a_string_and_its_reverse;
 pub mod problem_3084_count_substrings_starting_and_ending_with_given_character;
+pub mod problem_3085_minimum_deletions_to_make_string_k_special;
 
 #[cfg(test)]
 mod test_utilities;
