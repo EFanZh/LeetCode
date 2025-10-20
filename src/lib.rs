@@ -2082,6 +2082,7 @@ pub mod problem_3083_existence_of_a_substring_in_a_string_and_its_reverse;
 pub mod problem_3084_count_substrings_starting_and_ending_with_given_character;
 pub mod problem_3085_minimum_deletions_to_make_string_k_special;
 pub mod problem_3090_maximum_length_substring_with_two_occurrences;
+pub mod problem_3091_apply_operations_to_make_sum_of_array_greater_than_or_equal_to_k;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
