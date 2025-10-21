@@ -1,4 +1,4 @@
-pub mod bidirectional_search;
+pub mod mathematical;
 
 pub trait Solution {
     fn repeated_substring_pattern(s: String) -> bool;
