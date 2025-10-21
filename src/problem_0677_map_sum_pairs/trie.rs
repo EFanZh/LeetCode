@@ -1,68 +1,91 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::str::Bytes;
-
-#[derive(Default)]
 struct Node {
     value: i32,
-    children_sum: i32,
-    children: [Option<Box<Self>>; 26],
+    sum: i32,
+    children: [i32; 26],
 }
 
 pub struct MapSum {
     root: Node,
+    nodes: Vec<Node>,
 }
 
 impl MapSum {
     fn new() -> Self {
-        Self { root: Node::default() }
-    }
-
-    fn insert_helper(node: &mut Node, mut iter: Bytes, new_value: i32) -> i32 {
-        let Node {
-            value,
-            children_sum,
-            children,
-        } = node;
-
-        iter.next().map_or_else(
-            || {
-                let diff = new_value - *value;
-
-                *value = new_value;
-
-                diff
+        Self {
+            root: Node {
+                value: 0,
+                sum: 0,
+                children: [-1; 26],
             },
-            |c| {
-                let diff = Self::insert_helper(
-                    children[usize::from(c - b'a')].get_or_insert_with(Box::default),
-                    iter,
-                    new_value,
-                );
-
-                *children_sum += diff;
-
-                diff
-            },
-        )
+            nodes: Vec::new(),
+        }
     }
 
     fn insert(&mut self, key: String, val: i32) {
-        Self::insert_helper(&mut self.root, key.bytes(), val);
+        let Self { root, nodes } = self;
+
+        let diff = 'block: {
+            let mut node = &*root;
+
+            for c in key.bytes() {
+                if let Some(child) = nodes.get(node.children[usize::from(c) - usize::from(b'a')] as usize) {
+                    node = child;
+                } else {
+                    break 'block val;
+                }
+            }
+
+            val - node.value
+        };
+
+        let mut node = root;
+        let mut nodes_len = nodes.len();
+
+        node.sum += diff;
+
+        for c in key.bytes() {
+            let child_index = &mut node.children[usize::from(c) - usize::from(b'a')];
+            let child_index_usize = *child_index as usize;
+
+            node = if child_index_usize < nodes_len {
+                let node = &mut nodes[child_index_usize];
+
+                node.sum += diff;
+
+                node
+            } else {
+                *child_index = nodes_len as _;
+
+                nodes.push(Node {
+                    value: 0,
+                    sum: diff,
+                    children: [-1; 26],
+                });
+
+                nodes_len += 1;
+
+                nodes.last_mut().unwrap()
+            };
+        }
+
+        node.value = val;
     }
 
     fn sum(&self, prefix: String) -> i32 {
-        let mut node = &self.root;
+        let Self { root, nodes } = self;
+        let mut node = root;
 
         for c in prefix.bytes() {
-            if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
+            if let Some(child) = nodes.get(node.children[usize::from(c - b'a')] as usize) {
                 node = child;
             } else {
                 return 0;
             }
         }
 
-        node.value + node.children_sum
+        node.sum
     }
 }
 
