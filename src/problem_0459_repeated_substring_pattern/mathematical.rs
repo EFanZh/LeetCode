@@ -4,12 +4,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn repeated_substring_pattern(s: String) -> bool {
-        let mut t = String::with_capacity(s.len() * 2 - 2);
+        let mut s = s;
+        let n = s.len();
 
-        t.push_str(&s[1..]);
-        t.push_str(&s[..s.len() - 1]);
+        s.extend_from_within(..n - 1);
 
-        t.contains(&s)
+        s[1..].contains(&s[..n])
     }
 }
 
