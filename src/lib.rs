@@ -2087,6 +2087,7 @@ pub mod problem_3095_shortest_subarray_with_or_at_least_k_i;
 pub mod problem_3096_minimum_levels_to_gain_more_points;
 pub mod problem_3097_shortest_subarray_with_or_at_least_k_ii;
 pub mod problem_3099_harshad_number;
+pub mod problem_3101_count_alternating_subarrays;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
