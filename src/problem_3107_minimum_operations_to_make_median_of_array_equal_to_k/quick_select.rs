@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::cmp::Ordering;
+use std::iter;
 
 impl Solution {
     pub fn min_operations_to_make_median_k(nums: Vec<i32>, k: i32) -> i64 {
@@ -11,18 +12,18 @@ impl Solution {
 
         nums.sort_unstable();
 
-        let middle = nums.len() / 2;
+        let half = nums.len() / 2;
+        let (left, &mut middle, right) = nums.select_nth_unstable(half);
 
-        match nums[middle].cmp(&k) {
-            Ordering::Less => nums[middle..]
-                .iter()
-                .map_while(|&num| k.checked_sub(num).map(i64::from))
+        match middle.cmp(&k) {
+            Ordering::Less => iter::once(middle)
+                .chain(right.iter().copied())
+                .map(|num| i64::from(k.saturating_sub(num)))
                 .sum(),
             Ordering::Equal => 0,
-            Ordering::Greater => nums[..=middle]
-                .iter()
-                .rev()
-                .map_while(|&num| num.checked_sub(k).map(i64::from))
+            Ordering::Greater => iter::once(middle)
+                .chain(left.iter().copied())
+                .map(|num| i64::from(num.saturating_sub(k)))
                 .sum(),
         }
     }
