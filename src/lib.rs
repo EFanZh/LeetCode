@@ -2090,6 +2090,7 @@ pub mod problem_3099_harshad_number;
 pub mod problem_3101_count_alternating_subarrays;
 pub mod problem_3105_longest_strictly_increasing_or_strictly_decreasing_subarray;
 pub mod problem_3106_lexicographically_smallest_string_after_operations_with_constraint;
+pub mod problem_3107_minimum_operations_to_make_median_of_array_equal_to_k;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
