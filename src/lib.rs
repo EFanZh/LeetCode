@@ -2096,6 +2096,7 @@ pub mod problem_3111_minimum_rectangles_to_cover_points;
 pub mod problem_3114_latest_time_you_can_obtain_after_replacing_characters;
 pub mod problem_3115_maximum_prime_difference;
 pub mod problem_3120_count_the_number_of_special_characters_i;
+pub mod problem_3121_count_the_number_of_special_characters_ii;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
