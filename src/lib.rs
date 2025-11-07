@@ -2100,6 +2100,7 @@ pub mod problem_3121_count_the_number_of_special_characters_ii;
 pub mod problem_3127_make_a_square_with_the_same_color;
 pub mod problem_3131_find_the_integer_added_to_array_i;
 pub mod problem_3133_minimum_array_end;
+pub mod problem_3136_valid_word;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
