@@ -12,6 +12,7 @@ impl Solution {
         for row_plus_1 in 1..n {
             let row = row_plus_1 - 1;
 
+            #[expect(clippy::needless_range_loop, reason = "false positive")]
             for column in row_plus_1..n {
                 let temp = matrix[row][column];
 

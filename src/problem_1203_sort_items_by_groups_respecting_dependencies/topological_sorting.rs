@@ -4,16 +4,12 @@ pub struct Solution;
 
 use std::{iter, mem};
 
+#[derive(Default)]
 enum State {
+    #[default]
     NotVisited,
     Visiting,
     Visited,
-}
-
-impl Default for State {
-    fn default() -> Self {
-        Self::NotVisited
-    }
 }
 
 impl Solution {
