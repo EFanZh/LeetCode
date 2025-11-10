@@ -2103,6 +2103,7 @@ pub mod problem_3133_minimum_array_end;
 pub mod problem_3136_valid_word;
 pub mod problem_3137_minimum_number_of_operations_to_make_word_k_periodic;
 pub mod problem_3138_minimum_length_of_anagram_concatenation;
+pub mod problem_3142_check_if_grid_satisfies_conditions;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
