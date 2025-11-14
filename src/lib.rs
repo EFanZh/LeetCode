@@ -2107,6 +2107,7 @@ pub mod problem_3142_check_if_grid_satisfies_conditions;
 pub mod problem_3143_maximum_points_inside_the_square;
 pub mod problem_3146_permutation_difference_between_two_strings;
 pub mod problem_3147_taking_maximum_energy_from_the_mystic_dungeon;
+pub mod problem_3148_maximum_difference_score_in_a_grid;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
