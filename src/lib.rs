@@ -2111,6 +2111,7 @@ pub mod problem_3148_maximum_difference_score_in_a_grid;
 pub mod problem_3151_special_array_i;
 pub mod problem_3152_special_array_ii;
 pub mod problem_3153_sum_of_digit_differences_of_all_pairs;
+pub mod problem_3158_find_the_xor_of_numbers_which_appear_twice;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
