@@ -2115,6 +2115,7 @@ pub mod problem_3158_find_the_xor_of_numbers_which_appear_twice;
 pub mod problem_3159_find_occurrences_of_an_element_in_an_array;
 pub mod problem_3160_find_the_number_of_distinct_colors_among_the_balls;
 pub mod problem_3162_find_the_number_of_good_pairs_i;
+pub mod problem_3163_string_compression_iii;
 pub mod problem_3164_find_the_number_of_good_pairs_ii;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
