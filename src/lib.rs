@@ -2117,6 +2117,7 @@ pub mod problem_3160_find_the_number_of_distinct_colors_among_the_balls;
 pub mod problem_3162_find_the_number_of_good_pairs_i;
 pub mod problem_3163_string_compression_iii;
 pub mod problem_3164_find_the_number_of_good_pairs_ii;
+pub mod problem_3168_minimum_number_of_chairs_in_a_waiting_room;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
