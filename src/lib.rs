@@ -2120,6 +2120,7 @@ pub mod problem_3164_find_the_number_of_good_pairs_ii;
 pub mod problem_3168_minimum_number_of_chairs_in_a_waiting_room;
 pub mod problem_3169_count_days_without_meetings;
 pub mod problem_3170_lexicographically_minimum_string_after_removing_stars;
+pub mod problem_3174_clear_digits;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
