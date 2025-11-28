@@ -2121,6 +2121,7 @@ pub mod problem_3168_minimum_number_of_chairs_in_a_waiting_room;
 pub mod problem_3169_count_days_without_meetings;
 pub mod problem_3170_lexicographically_minimum_string_after_removing_stars;
 pub mod problem_3174_clear_digits;
+pub mod problem_3175_find_the_first_player_to_win_k_games_in_a_row;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
