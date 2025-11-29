@@ -2122,6 +2122,7 @@ pub mod problem_3169_count_days_without_meetings;
 pub mod problem_3170_lexicographically_minimum_string_after_removing_stars;
 pub mod problem_3174_clear_digits;
 pub mod problem_3175_find_the_first_player_to_win_k_games_in_a_row;
+pub mod problem_3178_find_the_child_who_has_the_ball_after_k_seconds;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
