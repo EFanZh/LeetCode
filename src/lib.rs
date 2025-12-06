@@ -2129,6 +2129,7 @@ pub mod problem_3185_count_pairs_that_form_a_complete_day_ii;
 pub mod problem_3186_maximum_total_damage_with_spell_casting;
 pub mod problem_3190_find_minimum_operations_to_make_all_elements_divisible_by_three;
 pub mod problem_3191_minimum_operations_to_make_binary_array_elements_equal_to_one_i;
+pub mod problem_3192_minimum_operations_to_make_binary_array_elements_equal_to_one_ii;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
