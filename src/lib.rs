@@ -2132,6 +2132,7 @@ pub mod problem_3191_minimum_operations_to_make_binary_array_elements_equal_to_o
 pub mod problem_3192_minimum_operations_to_make_binary_array_elements_equal_to_one_ii;
 pub mod problem_3194_minimum_average_of_smallest_and_largest_elements;
 pub mod problem_3195_find_the_minimum_area_to_cover_all_ones_i;
+pub mod problem_3196_maximize_total_cost_of_alternating_subarrays;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
