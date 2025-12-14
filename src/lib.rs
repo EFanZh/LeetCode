@@ -2137,6 +2137,7 @@ pub mod problem_3200_maximum_height_of_a_triangle;
 pub mod problem_3201_find_the_maximum_length_of_valid_subsequence_i;
 pub mod problem_3206_alternating_groups_i;
 pub mod problem_3208_alternating_groups_ii;
+pub mod problem_3210_find_the_encrypted_string;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
