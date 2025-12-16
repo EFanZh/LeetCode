@@ -2139,6 +2139,7 @@ pub mod problem_3206_alternating_groups_i;
 pub mod problem_3208_alternating_groups_ii;
 pub mod problem_3210_find_the_encrypted_string;
 pub mod problem_3211_generate_binary_strings_without_adjacent_zeros;
+pub mod problem_3212_count_submatrices_with_equal_frequency_of_x_and_y;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
