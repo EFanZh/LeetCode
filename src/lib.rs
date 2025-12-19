@@ -2142,6 +2142,7 @@ pub mod problem_3211_generate_binary_strings_without_adjacent_zeros;
 pub mod problem_3212_count_submatrices_with_equal_frequency_of_x_and_y;
 pub mod problem_3216_lexicographically_smallest_string_after_a_swap;
 pub mod problem_3217_delete_nodes_from_linked_list_present_in_array;
+pub mod problem_3222_find_the_winning_player_in_coin_game;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
