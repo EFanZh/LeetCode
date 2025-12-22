@@ -2145,6 +2145,7 @@ pub mod problem_3217_delete_nodes_from_linked_list_present_in_array;
 pub mod problem_3222_find_the_winning_player_in_coin_game;
 pub mod problem_3223_minimum_length_of_string_after_operations;
 pub mod problem_3226_number_of_bit_changes_to_make_two_integers_equal;
+pub mod problem_3227_vowels_game_in_a_string;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
