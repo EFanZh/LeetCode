@@ -2,7 +2,7 @@
 
 #[derive(Default)]
 pub struct WordDictionary {
-    children: [Option<Box<WordDictionary>>; 26],
+    children: [Option<Box<Self>>; 26],
     has_value: bool,
 }
 

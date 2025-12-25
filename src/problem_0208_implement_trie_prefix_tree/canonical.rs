@@ -2,7 +2,7 @@
 
 #[derive(Default)]
 pub struct Node {
-    children: [Option<Box<Node>>; 26],
+    children: [Option<Box<Self>>; 26],
     has_value: bool,
 }
 

@@ -6,7 +6,7 @@ use std::mem;
 
 #[derive(Default)]
 struct Node {
-    children: [Option<Box<Node>>; 26],
+    children: [Option<Box<Self>>; 26],
     length: usize,
     value: Option<String>,
 }

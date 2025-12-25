@@ -7,7 +7,7 @@ use std::rc::Rc;
 
 #[derive(Clone, Default)]
 struct Node {
-    children: [Option<Rc<Node>>; 26],
+    children: [Option<Rc<Self>>; 26],
 }
 
 impl Solution {

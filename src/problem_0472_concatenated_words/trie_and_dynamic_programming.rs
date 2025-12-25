@@ -5,7 +5,7 @@ pub struct Solution;
 #[derive(Default)]
 struct Node {
     has_value: bool,
-    children: [Option<Box<Node>>; 26],
+    children: [Option<Box<Self>>; 26],
 }
 
 impl Solution {

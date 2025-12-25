@@ -8,8 +8,8 @@ use std::mem;
 struct Node {
     length: usize,
     value: Vec<i32>,
-    left: Option<Box<Node>>,
-    right: Option<Box<Node>>,
+    left: Option<Box<Self>>,
+    right: Option<Box<Self>>,
 }
 
 impl Solution {

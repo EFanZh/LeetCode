@@ -9,8 +9,8 @@ use std::rc::{Rc, Weak};
 struct Node {
     key: Cell<i32>,
     value: Cell<i32>,
-    prev: Cell<Weak<Node>>,
-    next: Cell<Weak<Node>>,
+    prev: Cell<Weak<Self>>,
+    next: Cell<Weak<Self>>,
 }
 
 pub struct LRUCache {

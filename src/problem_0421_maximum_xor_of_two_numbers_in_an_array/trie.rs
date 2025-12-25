@@ -4,8 +4,8 @@ pub struct Solution;
 
 #[derive(Default)]
 struct Node {
-    zero: Option<Box<Node>>,
-    one: Option<Box<Node>>,
+    zero: Option<Box<Self>>,
+    one: Option<Box<Self>>,
 }
 
 impl Solution {

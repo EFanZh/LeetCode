@@ -4,7 +4,7 @@ pub struct Solution;
 
 #[derive(Default)]
 struct Node {
-    children: [Option<Box<Node>>; 26],
+    children: [Option<Box<Self>>; 26],
     value: Option<i32>,
 }
 
