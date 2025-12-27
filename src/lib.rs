@@ -2150,6 +2150,7 @@ pub mod problem_3228_maximum_number_of_operations_to_move_ones_to_the_end;
 pub mod problem_3232_find_if_digit_game_can_be_won;
 pub mod problem_3233_find_the_count_of_numbers_which_are_not_special;
 pub mod problem_3238_find_the_number_of_winning_players;
+pub mod problem_3239_minimum_number_of_flips_to_make_binary_grid_palindromic_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
