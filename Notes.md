@@ -369,3 +369,7 @@ Why is this solution correct?
 ## [1388. Pizza With 3n Slices](https://leetcode.com/problems/pizza-with-3n-slices/)
 
 Why is this solution correct?
+
+## [3250. Find the Count of Monotonic Pairs I](https://leetcode.com/problems/find-the-count-of-monotonic-pairs-i/)
+
+Implement the [combinatorics solution](https://leetcode.com/problems/find-the-count-of-monotonic-pairs-i/solutions/5633883/python3-combinatorics-explanation-on-by-ye3ow/).
