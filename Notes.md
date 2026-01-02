@@ -373,3 +373,7 @@ Why is this solution correct?
 ## [3250. Find the Count of Monotonic Pairs I](https://leetcode.com/problems/find-the-count-of-monotonic-pairs-i/)
 
 Implement the [combinatorics solution](https://leetcode.com/problems/find-the-count-of-monotonic-pairs-i/solutions/5633883/python3-combinatorics-explanation-on-by-ye3ow/).
+
+## [3251. Find the Count of Monotonic Pairs II](https://leetcode.com/problems/find-the-count-of-monotonic-pairs-ii/)
+
+Implement the [combinatorics solution](https://leetcode.com/problems/find-the-count-of-monotonic-pairs-i/solutions/5633883/python3-combinatorics-explanation-on-by-ye3ow/).
