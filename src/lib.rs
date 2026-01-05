@@ -2159,6 +2159,7 @@ pub mod problem_3250_find_the_count_of_monotonic_pairs_i;
 pub mod problem_3251_find_the_count_of_monotonic_pairs_ii;
 pub mod problem_3254_find_the_power_of_k_size_subarrays_i;
 pub mod problem_3255_find_the_power_of_k_size_subarrays_ii;
+pub mod problem_3258_count_substrings_that_satisfy_k_constraint_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
