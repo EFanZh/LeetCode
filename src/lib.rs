@@ -2167,6 +2167,7 @@ pub mod problem_3271_hash_divided_string;
 pub mod problem_3274_check_if_two_chessboard_squares_have_the_same_color;
 pub mod problem_3275_k_th_nearest_obstacle_queries;
 pub mod problem_3280_convert_date_to_binary;
+pub mod problem_3281_maximize_score_of_numbers_in_ranges;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
