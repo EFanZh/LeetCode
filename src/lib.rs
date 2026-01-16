@@ -2170,6 +2170,7 @@ pub mod problem_3280_convert_date_to_binary;
 pub mod problem_3281_maximize_score_of_numbers_in_ranges;
 pub mod problem_3282_reach_end_of_array_with_max_score;
 pub mod problem_3285_find_indices_of_stable_mountains;
+pub mod problem_3286_find_a_safe_walk_through_a_grid;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
