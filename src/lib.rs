@@ -2175,6 +2175,7 @@ pub mod problem_3289_the_two_sneaky_numbers_of_digitville;
 pub mod problem_3290_maximum_multiplication_score;
 pub mod problem_3295_report_spam_message;
 pub mod problem_3296_minimum_number_of_seconds_to_make_mountain_height_zero;
+pub mod problem_3297_count_substrings_that_can_be_rearranged_to_contain_a_string_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
