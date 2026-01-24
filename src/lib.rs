@@ -2178,6 +2178,7 @@ pub mod problem_3296_minimum_number_of_seconds_to_make_mountain_height_zero;
 pub mod problem_3297_count_substrings_that_can_be_rearranged_to_contain_a_string_i;
 pub mod problem_3298_count_substrings_that_can_be_rearranged_to_contain_a_string_ii;
 pub mod problem_3300_minimum_element_after_replacement_with_digit_sum;
+pub mod problem_3301_maximize_the_total_height_of_unique_towers;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
