@@ -2180,6 +2180,7 @@ pub mod problem_3298_count_substrings_that_can_be_rearranged_to_contain_a_string
 pub mod problem_3300_minimum_element_after_replacement_with_digit_sum;
 pub mod problem_3301_maximize_the_total_height_of_unique_towers;
 pub mod problem_3304_find_the_k_th_character_in_string_game_i;
+pub mod problem_3305_count_of_substrings_containing_every_vowel_and_k_consonants_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
