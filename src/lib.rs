@@ -2183,6 +2183,7 @@ pub mod problem_3304_find_the_k_th_character_in_string_game_i;
 pub mod problem_3305_count_of_substrings_containing_every_vowel_and_k_consonants_i;
 pub mod problem_3306_count_of_substrings_containing_every_vowel_and_k_consonants_ii;
 pub mod problem_3307_find_the_k_th_character_in_string_game_ii;
+pub mod problem_3309_maximum_possible_number_by_binary_concatenation;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
