@@ -2187,6 +2187,7 @@ pub mod problem_3309_maximum_possible_number_by_binary_concatenation;
 pub mod problem_3310_remove_methods_from_project;
 pub mod problem_3314_construct_the_minimum_bitwise_array_i;
 pub mod problem_3315_construct_the_minimum_bitwise_array_ii;
+pub mod problem_3316_find_maximum_removals_from_source_string;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
