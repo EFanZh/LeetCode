@@ -2189,6 +2189,7 @@ pub mod problem_3314_construct_the_minimum_bitwise_array_i;
 pub mod problem_3315_construct_the_minimum_bitwise_array_ii;
 pub mod problem_3316_find_maximum_removals_from_source_string;
 pub mod problem_3319_k_th_largest_perfect_subtree_size_in_binary_tree;
+pub mod problem_3324_find_the_sequence_of_strings_appeared_on_the_screen;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
