@@ -2192,6 +2192,7 @@ pub mod problem_3319_k_th_largest_perfect_subtree_size_in_binary_tree;
 pub mod problem_3324_find_the_sequence_of_strings_appeared_on_the_screen;
 pub mod problem_3325_count_substrings_with_k_frequency_characters_i;
 pub mod problem_3326_minimum_division_operations_to_make_array_non_decreasing;
+pub mod problem_3330_find_the_original_typed_string_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
