@@ -2196,6 +2196,7 @@ pub mod problem_3330_find_the_original_typed_string_i;
 pub mod problem_3332_maximum_points_tourist_can_earn;
 pub mod problem_3334_find_the_maximum_factor_score_of_array;
 pub mod problem_3335_total_characters_in_string_after_transformations_i;
+pub mod problem_3337_total_characters_in_string_after_transformations_ii;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 
 #[cfg(test)]
