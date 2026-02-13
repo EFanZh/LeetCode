@@ -2,8 +2,6 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::array;
-
 impl Solution {
     const MODULUS: u64 = 1_000_000_007;
 
@@ -27,21 +25,21 @@ impl Solution {
             exponent >>= 1;
         }
 
-        if exponent == 1 {
-            return base;
-        }
-
         let mut result = base;
 
-        loop {
-            exponent >>= 1;
-            base = Self::matrix_multiply(&base, &base);
+        if exponent != 1 {
+            let mut base = result;
 
-            if exponent & 1 != 0 {
-                result = Self::matrix_multiply(&result, &base);
+            loop {
+                exponent >>= 1;
+                base = Self::matrix_multiply(&base, &base);
 
-                if exponent == 1 {
-                    break;
+                if exponent & 1 != 0 {
+                    result = Self::matrix_multiply(&result, &base);
+
+                    if exponent == 1 {
+                        break;
+                    }
                 }
             }
         }
@@ -50,20 +48,18 @@ impl Solution {
     }
 
     pub fn length_after_transformations(s: String, t: i32) -> i32 {
-        let base = array::from_fn(|i| {
-            let mut result = [0; 26];
+        let mut base = [[0; 26]; 26];
 
-            result[25] = u32::from(i < 2);
+        base[0][25] = 1;
+        base[1][25] = 1;
 
-            if i != 0 {
-                result[i - 1] = 1;
-            }
-
-            result
-        });
+        base[1..]
+            .as_flattened_mut()
+            .iter_mut()
+            .step_by(27)
+            .for_each(|value| *value = 1);
 
         let matrix = Self::exp_mod(base, t.cast_unsigned());
-
         let mut counts = [0_u32; 26];
 
         for c in s.bytes() {

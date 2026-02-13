@@ -25,21 +25,21 @@ impl Solution {
             exponent >>= 1;
         }
 
-        if exponent == 1 {
-            return base;
-        }
-
         let mut result = base;
 
-        loop {
-            exponent >>= 1;
-            base = Self::matrix_multiply(&base, &base);
+        if exponent != 1 {
+            let mut base = result;
 
-            if exponent & 1 != 0 {
-                result = Self::matrix_multiply(&result, &base);
+            loop {
+                exponent >>= 1;
+                base = Self::matrix_multiply(&base, &base);
 
-                if exponent == 1 {
-                    break;
+                if exponent & 1 != 0 {
+                    result = Self::matrix_multiply(&result, &base);
+
+                    if exponent == 1 {
+                        break;
+                    }
                 }
             }
         }
