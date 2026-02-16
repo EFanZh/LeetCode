@@ -2202,6 +2202,7 @@ pub mod problem_3345_smallest_divisible_digit_product_i;
 pub mod problem_3349_adjacent_increasing_subarrays_detection_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
 pub mod problem_3360_stone_removal_game;
+pub mod problem_3370_smallest_number_with_all_set_bits;
 
 #[cfg(test)]
 mod test_utilities;
