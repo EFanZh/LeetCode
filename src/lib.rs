@@ -2201,6 +2201,7 @@ pub mod problem_3340_check_balanced_string;
 pub mod problem_3345_smallest_divisible_digit_product_i;
 pub mod problem_3349_adjacent_increasing_subarrays_detection_i;
 pub mod problem_3350_adjacent_increasing_subarrays_detection_ii;
+pub mod problem_3354_make_array_elements_equal_to_zero;
 pub mod problem_3360_stone_removal_game;
 pub mod problem_3364_minimum_positive_sum_subarray;
 pub mod problem_3365_rearrange_k_substrings_to_form_target_string;
