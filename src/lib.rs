@@ -2209,6 +2209,7 @@ pub mod problem_3370_smallest_number_with_all_set_bits;
 pub mod problem_3371_identify_the_largest_outlier_in_an_array;
 pub mod problem_3375_minimum_operations_to_make_array_values_equal_to_k;
 pub mod problem_3376_minimum_time_to_break_locks_i;
+pub mod problem_3379_transformed_array;
 
 #[cfg(test)]
 mod test_utilities;
