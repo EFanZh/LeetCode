@@ -2210,6 +2210,7 @@ pub mod problem_3371_identify_the_largest_outlier_in_an_array;
 pub mod problem_3375_minimum_operations_to_make_array_values_equal_to_k;
 pub mod problem_3376_minimum_time_to_break_locks_i;
 pub mod problem_3379_transformed_array;
+pub mod problem_3381_maximum_subarray_sum_with_length_divisible_by_k;
 
 #[cfg(test)]
 mod test_utilities;
