@@ -2214,6 +2214,7 @@ pub mod problem_3376_minimum_time_to_break_locks_i;
 pub mod problem_3379_transformed_array;
 pub mod problem_3381_maximum_subarray_sum_with_length_divisible_by_k;
 pub mod problem_3386_button_with_longest_push_time;
+pub mod problem_3392_count_subarrays_of_length_three_with_a_condition;
 
 #[cfg(test)]
 mod test_utilities;
