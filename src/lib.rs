@@ -2216,6 +2216,7 @@ pub mod problem_3381_maximum_subarray_sum_with_length_divisible_by_k;
 pub mod problem_3386_button_with_longest_push_time;
 pub mod problem_3392_count_subarrays_of_length_three_with_a_condition;
 pub mod problem_3393_count_paths_with_the_given_xor_value;
+pub mod problem_3396_minimum_number_of_operations_to_make_elements_in_array_distinct;
 
 #[cfg(test)]
 mod test_utilities;
