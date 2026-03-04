@@ -2218,6 +2218,7 @@ pub mod problem_3392_count_subarrays_of_length_three_with_a_condition;
 pub mod problem_3393_count_paths_with_the_given_xor_value;
 pub mod problem_3396_minimum_number_of_operations_to_make_elements_in_array_distinct;
 pub mod problem_3397_maximum_number_of_distinct_elements_after_operations;
+pub mod problem_3398_smallest_substring_with_identical_characters_i;
 
 #[cfg(test)]
 mod test_utilities;
