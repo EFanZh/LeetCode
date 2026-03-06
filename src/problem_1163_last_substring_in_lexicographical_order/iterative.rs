@@ -5,14 +5,14 @@ pub struct Solution;
 use std::cmp::Ordering;
 
 impl Solution {
-    pub fn last_substring(palindrome: String) -> String {
-        let s = palindrome.as_bytes();
+    pub fn last_substring(s: String) -> String {
+        let bytes = s.as_bytes();
         let mut best_start = 0;
         let mut start = 1;
         let mut length = 0;
 
-        while let Some(&c) = s.get(start + length) {
-            match c.cmp(&s[best_start + length]) {
+        while let Some(&c) = bytes.get(start + length) {
+            match c.cmp(&bytes[best_start + length]) {
                 Ordering::Less => {
                     start += length + 1;
                     length = 0;
@@ -26,7 +26,7 @@ impl Solution {
             }
         }
 
-        let mut result = palindrome;
+        let mut result = s;
 
         result.replace_range(..best_start, "");
 
