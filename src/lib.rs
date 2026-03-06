@@ -2220,6 +2220,7 @@ pub mod problem_3396_minimum_number_of_operations_to_make_elements_in_array_dist
 pub mod problem_3397_maximum_number_of_distinct_elements_after_operations;
 pub mod problem_3398_smallest_substring_with_identical_characters_i;
 pub mod problem_3399_smallest_substring_with_identical_characters_ii;
+pub mod problem_3402_minimum_operations_to_make_columns_strictly_increasing;
 
 #[cfg(test)]
 mod test_utilities;
