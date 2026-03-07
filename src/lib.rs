@@ -2221,6 +2221,7 @@ pub mod problem_3397_maximum_number_of_distinct_elements_after_operations;
 pub mod problem_3398_smallest_substring_with_identical_characters_i;
 pub mod problem_3399_smallest_substring_with_identical_characters_ii;
 pub mod problem_3402_minimum_operations_to_make_columns_strictly_increasing;
+pub mod problem_3403_find_the_lexicographically_largest_string_from_the_box_i;
 
 #[cfg(test)]
 mod test_utilities;
