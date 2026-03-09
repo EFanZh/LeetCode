@@ -2223,6 +2223,7 @@ pub mod problem_3399_smallest_substring_with_identical_characters_ii;
 pub mod problem_3402_minimum_operations_to_make_columns_strictly_increasing;
 pub mod problem_3403_find_the_lexicographically_largest_string_from_the_box_i;
 pub mod problem_3407_substring_matching_pattern;
+pub mod problem_3411_maximum_subarray_with_equal_products;
 
 #[cfg(test)]
 mod test_utilities;
