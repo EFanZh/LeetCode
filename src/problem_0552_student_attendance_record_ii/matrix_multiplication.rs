@@ -89,7 +89,7 @@ impl Vec6<Vec6<WrappingNum>> {
     fn pow(self, n: u32) -> Self {
         let mut result = self;
 
-        for bit in (0..(31 - n.leading_zeros())).rev() {
+        for bit in (0..n.ilog2()).rev() {
             result = result.mul_mat(result);
 
             if n & (1 << bit) != 0 {

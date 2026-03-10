@@ -33,7 +33,7 @@ impl Solution {
 
         let mut result = matrix;
 
-        for i in (0..31 - n.leading_zeros()).rev() {
+        for i in (0..n.ilog2()).rev() {
             result = Self::matrix_multiply(&result, &result);
 
             if n & (1 << i) != 0 {

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn max_eggs_required(floors: u32) -> u32 {
-        31 - (floors + 1).leading_zeros()
+        (floors + 1).ilog2()
     }
 
     fn min_moves_required(floors: u32) -> u32 {
