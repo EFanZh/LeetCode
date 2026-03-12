@@ -2226,6 +2226,7 @@ pub mod problem_3407_substring_matching_pattern;
 pub mod problem_3411_maximum_subarray_with_equal_products;
 pub mod problem_3412_find_mirror_score_of_a_string;
 pub mod problem_3417_zigzag_grid_traversal_with_skip;
+pub mod problem_3423_maximum_difference_between_adjacent_elements_in_a_circular_array;
 
 #[cfg(test)]
 mod test_utilities;
