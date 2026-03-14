@@ -2228,6 +2228,7 @@ pub mod problem_3412_find_mirror_score_of_a_string;
 pub mod problem_3417_zigzag_grid_traversal_with_skip;
 pub mod problem_3418_maximum_amount_of_money_robot_can_earn;
 pub mod problem_3423_maximum_difference_between_adjacent_elements_in_a_circular_array;
+pub mod problem_3424_minimum_cost_to_make_arrays_identical;
 
 #[cfg(test)]
 mod test_utilities;
