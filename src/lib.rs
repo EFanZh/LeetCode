@@ -2232,6 +2232,7 @@ pub mod problem_3424_minimum_cost_to_make_arrays_identical;
 pub mod problem_3427_sum_of_variable_length_subarrays;
 pub mod problem_3429_paint_house_iv;
 pub mod problem_3432_count_partitions_with_even_sum_difference;
+pub mod problem_3438_find_valid_pair_of_adjacent_digits_in_string;
 
 #[cfg(test)]
 mod test_utilities;
