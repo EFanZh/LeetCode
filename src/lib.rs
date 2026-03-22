@@ -2236,6 +2236,7 @@ pub mod problem_3438_find_valid_pair_of_adjacent_digits_in_string;
 pub mod problem_3442_maximum_difference_between_even_and_odd_frequency_i;
 pub mod problem_3443_maximum_manhattan_distance_after_k_changes;
 pub mod problem_3446_sort_matrix_by_diagonals;
+pub mod problem_3447_assign_elements_to_groups_with_constraints;
 
 #[cfg(test)]
 mod test_utilities;
