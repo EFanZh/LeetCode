@@ -2239,6 +2239,7 @@ pub mod problem_3446_sort_matrix_by_diagonals;
 pub mod problem_3447_assign_elements_to_groups_with_constraints;
 pub mod problem_3452_sum_of_good_numbers;
 pub mod problem_3456_find_special_substring_of_length_k;
+pub mod problem_3457_eat_pizzas;
 
 #[cfg(test)]
 mod test_utilities;
