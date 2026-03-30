@@ -2244,6 +2244,7 @@ pub mod problem_3462_maximum_sum_with_at_most_k_elements;
 pub mod problem_3467_transform_array_by_parity;
 pub mod problem_3468_find_the_number_of_copy_arrays;
 pub mod problem_3471_find_the_largest_almost_missing_integer;
+pub mod problem_3487_maximum_unique_subarray_sum_after_deletion;
 
 #[cfg(test)]
 mod test_utilities;
