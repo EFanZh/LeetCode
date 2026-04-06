@@ -2250,6 +2250,7 @@ pub mod problem_3493_properties_graph;
 pub mod problem_3498_reverse_degree_of_a_string;
 pub mod problem_3499_maximize_active_section_with_trade_i;
 pub mod problem_3502_minimum_cost_to_reach_every_position;
+pub mod problem_3512_minimum_operations_to_make_array_sum_divisible_by_k;
 
 #[cfg(test)]
 mod test_utilities;
