@@ -2252,6 +2252,7 @@ pub mod problem_3499_maximize_active_section_with_trade_i;
 pub mod problem_3502_minimum_cost_to_reach_every_position;
 pub mod problem_3512_minimum_operations_to_make_array_sum_divisible_by_k;
 pub mod problem_3513_number_of_unique_xor_triplets_i;
+pub mod problem_3516_find_closest_person;
 
 #[cfg(test)]
 mod test_utilities;
