@@ -2254,6 +2254,7 @@ pub mod problem_3512_minimum_operations_to_make_array_sum_divisible_by_k;
 pub mod problem_3513_number_of_unique_xor_triplets_i;
 pub mod problem_3516_find_closest_person;
 pub mod problem_3517_smallest_palindromic_rearrangement_i;
+pub mod problem_3522_calculate_score_after_performing_instructions;
 
 #[cfg(test)]
 mod test_utilities;
