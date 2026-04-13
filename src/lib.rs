@@ -2257,6 +2257,7 @@ pub mod problem_3517_smallest_palindromic_rearrangement_i;
 pub mod problem_3522_calculate_score_after_performing_instructions;
 pub mod problem_3523_make_array_non_decreasing;
 pub mod problem_3528_unit_conversion_i;
+pub mod problem_3531_count_covered_buildings;
 
 #[cfg(test)]
 mod test_utilities;
