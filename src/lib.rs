@@ -2261,6 +2261,7 @@ pub mod problem_3531_count_covered_buildings;
 pub mod problem_3536_maximum_product_of_two_digits;
 pub mod problem_3537_fill_a_special_grid;
 pub mod problem_3541_find_most_frequent_vowel_and_consonant;
+pub mod problem_3545_minimum_deletions_for_at_most_k_distinct_characters;
 
 #[cfg(test)]
 mod test_utilities;
