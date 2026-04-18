@@ -2262,6 +2262,7 @@ pub mod problem_3536_maximum_product_of_two_digits;
 pub mod problem_3537_fill_a_special_grid;
 pub mod problem_3541_find_most_frequent_vowel_and_consonant;
 pub mod problem_3545_minimum_deletions_for_at_most_k_distinct_characters;
+pub mod problem_3546_equal_sum_grid_partition_i;
 
 #[cfg(test)]
 mod test_utilities;
