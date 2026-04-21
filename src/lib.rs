@@ -2265,6 +2265,7 @@ pub mod problem_3545_minimum_deletions_for_at_most_k_distinct_characters;
 pub mod problem_3546_equal_sum_grid_partition_i;
 pub mod problem_3550_smallest_index_with_digit_sum_equal_to_index;
 pub mod problem_3560_find_minimum_log_transportation_cost;
+pub mod problem_3561_resulting_string_after_adjacent_removals;
 
 #[cfg(test)]
 mod test_utilities;
