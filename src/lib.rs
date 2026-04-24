@@ -2268,6 +2268,7 @@ pub mod problem_3560_find_minimum_log_transportation_cost;
 pub mod problem_3561_resulting_string_after_adjacent_removals;
 pub mod problem_3566_partition_array_into_two_equal_product_subsets;
 pub mod problem_3572_maximize_ysum_by_picking_a_triplet_of_distinct_xvalues;
+pub mod problem_3576_transform_array_to_all_equal_elements;
 
 #[cfg(test)]
 mod test_utilities;
