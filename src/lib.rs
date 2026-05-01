@@ -2275,6 +2275,7 @@ pub mod problem_3584_maximum_product_of_first_and_last_elements_of_a_subsequence
 pub mod problem_3587_minimum_adjacent_swaps_to_alternate_parity;
 pub mod problem_3588_find_maximum_area_of_a_triangle;
 pub mod problem_3591_check_if_any_element_has_prime_frequency;
+pub mod problem_3597_partition_string;
 
 #[cfg(test)]
 mod test_utilities;
