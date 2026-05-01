@@ -8,9 +8,8 @@ impl Solution {
         let s_bytes = s.as_bytes();
         let mut cache = vec![0_u32; s_bytes.len()];
         let mut matched = 0;
-        let mut i = 1;
 
-        for &c in &s_bytes[1..] {
+        (1..).zip(&s_bytes[1..]).for_each(|(i, &c)| {
             loop {
                 if s_bytes[matched as usize] == c {
                     matched += 1;
@@ -24,8 +23,7 @@ impl Solution {
             }
 
             cache[i] = matched;
-            i += 1;
-        }
+        });
 
         s.truncate(*cache.last().unwrap() as _);
 

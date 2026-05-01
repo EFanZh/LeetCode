@@ -20,7 +20,7 @@ impl Solution {
             right_sum -= num;
 
             let left_average = left_sum / left_count;
-            let right_average = if right_count == 0 { 0 } else { right_sum / right_count };
+            let right_average = right_sum.checked_div(right_count).unwrap_or(0);
 
             let diff = left_average.abs_diff(right_average);
 

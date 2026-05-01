@@ -2,6 +2,8 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
+use std::ops::ControlFlow;
+
 impl Solution {
     pub fn minimum_pushes(word: String) -> i32 {
         let mut counts = [0_u32; 26];
@@ -15,16 +17,18 @@ impl Solution {
         counts.sort_unstable();
 
         let mut result = 0;
-        let mut assignment = 8;
 
-        for count in counts.iter().rev().copied() {
-            if count == 0 {
-                break;
-            }
+        _ = (8..)
+            .zip(counts.iter().rev().copied())
+            .try_for_each(|(assignment, count)| {
+                if count == 0 {
+                    return ControlFlow::Break(());
+                }
 
-            result += (assignment / 8) * count;
-            assignment += 1;
-        }
+                result += (assignment / 8) * count;
+
+                ControlFlow::Continue(())
+            });
 
         result.cast_signed()
     }

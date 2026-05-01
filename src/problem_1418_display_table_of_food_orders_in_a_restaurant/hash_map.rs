@@ -39,7 +39,7 @@ impl Solution {
                 .collect(),
         );
 
-        for (i, table) in (1_u16..).zip(tables.into_iter()) {
+        for (i, table) in (1_u16..).zip(tables) {
             if !table.is_empty() {
                 result.push(
                     iter::once(i)

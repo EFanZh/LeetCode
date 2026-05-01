@@ -10,10 +10,8 @@ impl Solution {
         for c in &mut s {
             match c {
                 b'(' => stack.push(c),
-                b')' => {
-                    if stack.pop().is_none() {
-                        *c = 0;
-                    }
+                b')' if stack.pop().is_none() => {
+                    *c = 0;
                 }
                 _ => {}
             }

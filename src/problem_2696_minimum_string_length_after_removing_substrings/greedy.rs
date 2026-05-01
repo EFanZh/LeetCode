@@ -13,19 +13,15 @@ impl Solution {
             i += 1;
 
             match c {
-                b'B' => {
-                    if s.get(stack_length.wrapping_sub(1)).copied() == Some(b'A') {
-                        stack_length -= 1;
+                b'B' if s.get(stack_length.wrapping_sub(1)).copied() == Some(b'A') => {
+                    stack_length -= 1;
 
-                        continue;
-                    }
+                    continue;
                 }
-                b'D' => {
-                    if s.get(stack_length.wrapping_sub(1)).copied() == Some(b'C') {
-                        stack_length -= 1;
+                b'D' if s.get(stack_length.wrapping_sub(1)).copied() == Some(b'C') => {
+                    stack_length -= 1;
 
-                        continue;
-                    }
+                    continue;
                 }
                 _ => {}
             }

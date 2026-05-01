@@ -37,8 +37,8 @@ impl Solution {
         }
 
         content_to_path
-            .into_iter()
-            .filter_map(|(_, value)| if value.len() < 2 { None } else { Some(value) })
+            .into_values()
+            .filter_map(|value| if value.len() < 2 { None } else { Some(value) })
             .collect()
     }
 }

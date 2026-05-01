@@ -3,20 +3,24 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::collections::HashMap;
+use std::ops::ControlFlow;
 
 impl Solution {
     pub fn contains_nearby_duplicate(nums: Vec<i32>, k: i32) -> bool {
         let mut indices = HashMap::with_capacity(nums.len());
 
-        for (i, num) in (0..).zip(nums.into_iter()) {
-            if let Some(old_index) = indices.insert(num, i)
-                && i - old_index <= k
-            {
-                return true;
-            }
-        }
-
-        false
+        (0..)
+            .zip(nums)
+            .try_for_each(|(i, num)| {
+                if let Some(old_index) = indices.insert(num, i)
+                    && i - old_index <= k
+                {
+                    ControlFlow::Break(())
+                } else {
+                    ControlFlow::Continue(())
+                }
+            })
+            .is_break()
     }
 }
 

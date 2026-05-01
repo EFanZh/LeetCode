@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::mem;
+use std::ops::ControlFlow;
 
 impl Solution {
     pub fn minimum_length_encoding(words: Vec<String>) -> i32 {
@@ -15,9 +16,8 @@ impl Solution {
         for word in &words {
             let mut iter = word.bytes().rev();
             let mut node = 0;
-            let mut i = 2;
 
-            for c in &mut iter {
+            _ = (2..).zip(&mut iter).try_for_each(|(i, c)| {
                 let child_slot = &mut pool_children[node][usize::from(c) - usize::from(b'a')];
                 let old_has_children = mem::replace(&mut pool_has_children[node], true);
 
@@ -27,12 +27,13 @@ impl Solution {
                     node_count += 1; // Allocate a new node.
                     result += if old_has_children { i } else { 1 };
 
-                    break;
+                    return ControlFlow::Break(());
                 }
 
                 node = *child_slot as _;
-                i += 1;
-            }
+
+                ControlFlow::Continue(())
+            });
 
             for c in iter {
                 pool_children[node][usize::from(c) - usize::from(b'a')] = node_count as _;

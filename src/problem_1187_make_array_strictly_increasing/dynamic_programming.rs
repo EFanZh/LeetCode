@@ -15,7 +15,7 @@ impl Solution {
 
         cache[0] = i32::MIN;
 
-        for (i, value) in (2..).zip(arr1.into_iter()) {
+        (2..).zip(arr1).for_each(|(i, value)| {
             let mut prev = i32::MAX;
 
             for slot in &mut cache[..i] {
@@ -29,7 +29,7 @@ impl Solution {
 
                 prev = mem::replace(slot, tail);
             }
-        }
+        });
 
         cache.iter().position(|&tail| tail != i32::MAX).unwrap_or(usize::MAX) as _
     }

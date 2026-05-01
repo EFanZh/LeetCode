@@ -26,16 +26,12 @@ impl Solution {
         let mut graph = vec![Vec::new(); n];
 
         for (i, lhs) in strs[..n - 1].iter().enumerate() {
-            let mut j = i + 1;
-
-            for rhs in &strs[i + 1..] {
+            (i + 1..).zip(strs[i + 1..].iter()).for_each(|(j, rhs)| {
                 if Self::is_similar(lhs, rhs) {
                     graph[i].push(j);
                     graph[j].push(i);
                 }
-
-                j += 1;
-            }
+            });
         }
 
         let mut result = 0;

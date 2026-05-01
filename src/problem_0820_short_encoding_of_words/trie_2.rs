@@ -3,6 +3,7 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use std::mem;
+use std::ops::ControlFlow;
 
 #[derive(Default)]
 struct Node {
@@ -20,9 +21,8 @@ impl Solution {
         for word in &words {
             let mut iter = word.bytes().rev();
             let mut node = 0;
-            let mut i = 2;
 
-            for c in &mut iter {
+            _ = (2..).zip(&mut iter).try_for_each(|(i, c)| {
                 let handle = pool.len();
                 let node_ref = &mut pool[node];
                 let child_slot = &mut node_ref.children[usize::from(c) - usize::from(b'a')];
@@ -34,12 +34,13 @@ impl Solution {
                     node = handle;
                     result += if old_has_children { i } else { 1 };
 
-                    break;
+                    return ControlFlow::Break(());
                 }
 
                 node = *child_slot as _;
-                i += 1;
-            }
+
+                ControlFlow::Continue(())
+            });
 
             for c in iter {
                 let handle = pool.len();

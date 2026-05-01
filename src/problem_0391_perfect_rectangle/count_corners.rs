@@ -47,12 +47,10 @@ impl Solution {
 
         for &corner in points.values() {
             match corner {
-                BOTTOM_LEFT_CORNER | BOTTOM_RIGHT_CORNER | TOP_LEFT_CORNER | TOP_RIGHT_CORNER => {
-                    if corners & corner == 0 {
-                        corners |= corner;
-                    } else {
-                        return false;
-                    }
+                BOTTOM_LEFT_CORNER | BOTTOM_RIGHT_CORNER | TOP_LEFT_CORNER | TOP_RIGHT_CORNER
+                    if corners & corner == 0 =>
+                {
+                    corners |= corner;
                 }
                 BOTTOM_SIDE | LEFT_SIDE | TOP_SIDE | RIGHT_SIDE | CROSS_CORNER => {}
                 _ => return false,

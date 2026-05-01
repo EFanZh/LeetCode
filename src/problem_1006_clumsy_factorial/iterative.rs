@@ -13,8 +13,8 @@ impl Solution {
             result *= n;
             n -= 1;
 
-            if n != 0 {
-                result /= n;
+            if let Some(new_result) = result.checked_div(n) {
+                result = new_result;
                 n -= 1;
 
                 while n != 0 {
