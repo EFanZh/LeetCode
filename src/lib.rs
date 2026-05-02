@@ -2276,6 +2276,7 @@ pub mod problem_3587_minimum_adjacent_swaps_to_alternate_parity;
 pub mod problem_3588_find_maximum_area_of_a_triangle;
 pub mod problem_3591_check_if_any_element_has_prime_frequency;
 pub mod problem_3597_partition_string;
+pub mod problem_3598_longest_common_prefix_between_adjacent_strings_after_removals;
 
 #[cfg(test)]
 mod test_utilities;
