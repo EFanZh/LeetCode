@@ -2277,6 +2277,7 @@ pub mod problem_3588_find_maximum_area_of_a_triangle;
 pub mod problem_3591_check_if_any_element_has_prime_frequency;
 pub mod problem_3597_partition_string;
 pub mod problem_3598_longest_common_prefix_between_adjacent_strings_after_removals;
+pub mod problem_3602_hexadecimal_and_hexatrigesimal_conversion;
 
 #[cfg(test)]
 mod test_utilities;
