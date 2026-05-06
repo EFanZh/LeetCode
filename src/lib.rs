@@ -2279,6 +2279,7 @@ pub mod problem_3597_partition_string;
 pub mod problem_3598_longest_common_prefix_between_adjacent_strings_after_removals;
 pub mod problem_3602_hexadecimal_and_hexatrigesimal_conversion;
 pub mod problem_3606_coupon_code_validator;
+pub mod problem_3612_process_string_with_special_operations_i;
 pub mod problem_3622_check_divisibility_by_digit_sum_and_product;
 
 #[cfg(test)]
