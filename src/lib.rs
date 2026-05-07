@@ -2281,6 +2281,7 @@ pub mod problem_3602_hexadecimal_and_hexatrigesimal_conversion;
 pub mod problem_3606_coupon_code_validator;
 pub mod problem_3612_process_string_with_special_operations_i;
 pub mod problem_3622_check_divisibility_by_digit_sum_and_product;
+pub mod problem_3633_earliest_finish_time_for_land_and_water_rides_i;
 
 #[cfg(test)]
 mod test_utilities;
