@@ -2285,6 +2285,7 @@ pub mod problem_3627_maximum_median_sum_of_subsequences_of_size_3;
 pub mod problem_3633_earliest_finish_time_for_land_and_water_rides_i;
 pub mod problem_3635_earliest_finish_time_for_land_and_water_rides_ii;
 pub mod problem_3637_trionic_array_i;
+pub mod problem_3638_maximum_balanced_shipments;
 pub mod problem_3643_flip_square_submatrix_vertically;
 
 #[cfg(test)]
