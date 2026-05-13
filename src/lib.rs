@@ -2287,6 +2287,7 @@ pub mod problem_3635_earliest_finish_time_for_land_and_water_rides_ii;
 pub mod problem_3637_trionic_array_i;
 pub mod problem_3638_maximum_balanced_shipments;
 pub mod problem_3643_flip_square_submatrix_vertically;
+pub mod problem_3644_maximum_k_to_sort_a_permutation;
 
 #[cfg(test)]
 mod test_utilities;
