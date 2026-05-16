@@ -2289,6 +2289,7 @@ pub mod problem_3638_maximum_balanced_shipments;
 pub mod problem_3639_minimum_time_to_activate_string;
 pub mod problem_3643_flip_square_submatrix_vertically;
 pub mod problem_3644_maximum_k_to_sort_a_permutation;
+pub mod problem_3648_minimum_sensors_to_cover_grid;
 pub mod problem_3658_gcd_of_odd_and_even_sums;
 
 #[cfg(test)]
