@@ -2291,6 +2291,7 @@ pub mod problem_3643_flip_square_submatrix_vertically;
 pub mod problem_3644_maximum_k_to_sort_a_permutation;
 pub mod problem_3648_minimum_sensors_to_cover_grid;
 pub mod problem_3658_gcd_of_odd_and_even_sums;
+pub mod problem_3659_partition_array_into_k_distinct_groups;
 pub mod problem_3663_find_the_least_frequent_digit;
 
 #[cfg(test)]
