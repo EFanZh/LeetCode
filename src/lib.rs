@@ -2293,6 +2293,7 @@ pub mod problem_3648_minimum_sensors_to_cover_grid;
 pub mod problem_3658_gcd_of_odd_and_even_sums;
 pub mod problem_3659_partition_array_into_k_distinct_groups;
 pub mod problem_3663_find_the_least_frequent_digit;
+pub mod problem_3668_restore_finishing_order;
 
 #[cfg(test)]
 mod test_utilities;
