@@ -2297,6 +2297,7 @@ pub mod problem_3668_restore_finishing_order;
 pub mod problem_3674_minimum_operations_to_equalize_array;
 pub mod problem_3675_minimum_operations_to_transform_string;
 pub mod problem_3678_smallest_absent_positive_greater_than_average;
+pub mod problem_3683_earliest_time_to_finish_one_task;
 
 #[cfg(test)]
 mod test_utilities;
