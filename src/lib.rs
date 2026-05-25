@@ -2299,6 +2299,7 @@ pub mod problem_3675_minimum_operations_to_transform_string;
 pub mod problem_3678_smallest_absent_positive_greater_than_average;
 pub mod problem_3683_earliest_time_to_finish_one_task;
 pub mod problem_3684_maximize_sum_of_at_most_k_distinct_elements;
+pub mod problem_3688_bitwise_or_of_even_numbers_in_an_array;
 
 #[cfg(test)]
 mod test_utilities;
