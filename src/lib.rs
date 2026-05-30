@@ -2304,6 +2304,7 @@ pub mod problem_3689_maximum_total_subarray_value_i;
 pub mod problem_3692_majority_frequency_characters;
 pub mod problem_3697_compute_decimal_representation;
 pub mod problem_3701_compute_alternating_sum;
+pub mod problem_3707_equal_score_substrings;
 
 #[cfg(test)]
 mod test_utilities;
