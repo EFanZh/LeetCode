@@ -2305,6 +2305,7 @@ pub mod problem_3692_majority_frequency_characters;
 pub mod problem_3697_compute_decimal_representation;
 pub mod problem_3701_compute_alternating_sum;
 pub mod problem_3707_equal_score_substrings;
+pub mod problem_3708_longest_fibonacci_subarray;
 pub mod problem_3712_sum_of_elements_with_frequency_divisible_by_k;
 pub mod problem_3718_smallest_missing_multiple_of_k;
 pub mod problem_3726_remove_zeros_in_decimal_representation;
