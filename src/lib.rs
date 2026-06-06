@@ -2245,6 +2245,7 @@ pub mod problem_3467_transform_array_by_parity;
 pub mod problem_3468_find_the_number_of_copy_arrays;
 pub mod problem_3471_find_the_largest_almost_missing_integer;
 pub mod problem_3477_fruits_into_baskets_ii;
+pub mod problem_3483_unique_3_digit_even_numbers;
 pub mod problem_3487_maximum_unique_subarray_sum_after_deletion;
 pub mod problem_3488_closest_equal_element_queries;
 pub mod problem_3493_properties_graph;
