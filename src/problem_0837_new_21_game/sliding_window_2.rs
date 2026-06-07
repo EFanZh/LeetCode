@@ -56,7 +56,7 @@ impl Solution {
                     sum += sum / max_pts_f64;
                 }
 
-                result += (sum / max_pts_f64) * f64::from(n - k + 1);
+                result = (sum / max_pts_f64).mul_add(f64::from(n - k + 1), result);
             }
 
             result
