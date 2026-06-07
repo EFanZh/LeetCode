@@ -2312,6 +2312,7 @@ pub mod problem_3712_sum_of_elements_with_frequency_divisible_by_k;
 pub mod problem_3718_smallest_missing_multiple_of_k;
 pub mod problem_3726_remove_zeros_in_decimal_representation;
 pub mod problem_3731_find_missing_elements;
+pub mod problem_3736_minimum_moves_to_equal_array_elements_iii;
 
 #[cfg(test)]
 mod test_utilities;
