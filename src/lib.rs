@@ -2315,6 +2315,7 @@ pub mod problem_3731_find_missing_elements;
 pub mod problem_3736_minimum_moves_to_equal_array_elements_iii;
 pub mod problem_3740_minimum_distance_between_three_equal_elements_i;
 pub mod problem_3745_maximize_expression_of_three_elements;
+pub mod problem_3750_minimum_number_of_flips_to_reverse_binary_string;
 
 #[cfg(test)]
 mod test_utilities;
