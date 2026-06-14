@@ -2319,6 +2319,7 @@ pub mod problem_3745_maximize_expression_of_three_elements;
 pub mod problem_3750_minimum_number_of_flips_to_reverse_binary_string;
 pub mod problem_3754_concatenate_non_zero_digits_and_multiply_by_sum_i;
 pub mod problem_3769_sort_integers_by_binary_reflection;
+pub mod problem_3774_absolute_difference_between_maximum_and_minimum_k_elements;
 
 #[cfg(test)]
 mod test_utilities;
