@@ -2322,6 +2322,7 @@ pub mod problem_3754_concatenate_non_zero_digits_and_multiply_by_sum_i;
 pub mod problem_3769_sort_integers_by_binary_reflection;
 pub mod problem_3774_absolute_difference_between_maximum_and_minimum_k_elements;
 pub mod problem_3775_reverse_words_with_same_vowel_count;
+pub mod problem_3783_mirror_distance_of_an_integer;
 
 #[cfg(test)]
 mod test_utilities;
