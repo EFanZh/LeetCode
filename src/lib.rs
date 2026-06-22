@@ -2327,6 +2327,7 @@ pub mod problem_3775_reverse_words_with_same_vowel_count;
 pub mod problem_3783_mirror_distance_of_an_integer;
 pub mod problem_3794_reverse_string_prefix;
 pub mod problem_3798_largest_even_number;
+pub mod problem_3803_count_residue_prefixes;
 
 #[cfg(test)]
 mod test_utilities;
