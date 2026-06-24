@@ -2329,6 +2329,7 @@ pub mod problem_3794_reverse_string_prefix;
 pub mod problem_3798_largest_even_number;
 pub mod problem_3803_count_residue_prefixes;
 pub mod problem_3813_vowel_consonant_score;
+pub mod problem_3823_reverse_letters_then_special_characters_in_a_string;
 
 #[cfg(test)]
 mod test_utilities;
