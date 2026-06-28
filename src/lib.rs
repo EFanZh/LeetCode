@@ -2333,6 +2333,7 @@ pub mod problem_3823_reverse_letters_then_special_characters_in_a_string;
 pub mod problem_3827_count_monobit_integers;
 pub mod problem_3833_count_dominant_indices;
 pub mod problem_3834_merge_adjacent_equal_elements;
+pub mod problem_3838_weighted_word_mapping;
 
 #[cfg(test)]
 mod test_utilities;
