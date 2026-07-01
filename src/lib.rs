@@ -2306,6 +2306,7 @@ pub mod problem_3688_bitwise_or_of_even_numbers_in_an_array;
 pub mod problem_3689_maximum_total_subarray_value_i;
 pub mod problem_3692_majority_frequency_characters;
 pub mod problem_3697_compute_decimal_representation;
+pub mod problem_3698_split_array_with_minimum_difference;
 pub mod problem_3701_compute_alternating_sum;
 pub mod problem_3707_equal_score_substrings;
 pub mod problem_3708_longest_fibonacci_subarray;
