@@ -2328,6 +2328,7 @@ pub mod problem_3769_sort_integers_by_binary_reflection;
 pub mod problem_3774_absolute_difference_between_maximum_and_minimum_k_elements;
 pub mod problem_3775_reverse_words_with_same_vowel_count;
 pub mod problem_3783_mirror_distance_of_an_integer;
+pub mod problem_3784_minimum_deletion_cost_to_make_all_characters_equal;
 pub mod problem_3794_reverse_string_prefix;
 pub mod problem_3798_largest_even_number;
 pub mod problem_3803_count_residue_prefixes;
