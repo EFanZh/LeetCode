@@ -2339,6 +2339,7 @@ pub mod problem_3833_count_dominant_indices;
 pub mod problem_3834_merge_adjacent_equal_elements;
 pub mod problem_3838_weighted_word_mapping;
 pub mod problem_3842_toggle_light_bulbs;
+pub mod problem_3856_trim_trailing_vowels;
 
 #[cfg(test)]
 mod test_utilities;
