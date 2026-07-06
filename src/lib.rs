@@ -2341,6 +2341,7 @@ pub mod problem_3838_weighted_word_mapping;
 pub mod problem_3842_toggle_light_bulbs;
 pub mod problem_3856_trim_trailing_vowels;
 pub mod problem_3861_minimum_capacity_box;
+pub mod problem_3866_first_unique_even_element;
 
 #[cfg(test)]
 mod test_utilities;
