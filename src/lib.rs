@@ -2343,6 +2343,7 @@ pub mod problem_3856_trim_trailing_vowels;
 pub mod problem_3861_minimum_capacity_box;
 pub mod problem_3866_first_unique_even_element;
 pub mod problem_3870_count_commas_in_range;
+pub mod problem_3875_construct_uniform_parity_array_i;
 
 #[cfg(test)]
 mod test_utilities;
