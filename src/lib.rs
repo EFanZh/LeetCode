@@ -2345,6 +2345,7 @@ pub mod problem_3866_first_unique_even_element;
 pub mod problem_3870_count_commas_in_range;
 pub mod problem_3875_construct_uniform_parity_array_i;
 pub mod problem_3880_minimum_absolute_difference_between_two_values;
+pub mod problem_3884_first_matching_character_from_both_ends;
 
 #[cfg(test)]
 mod test_utilities;
