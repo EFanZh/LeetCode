@@ -2350,6 +2350,7 @@ pub mod problem_3894_traffic_signal_color;
 pub mod problem_3898_find_the_degree_of_each_vertex;
 pub mod problem_3903_smallest_stable_index_i;
 pub mod problem_3904_smallest_stable_index_ii;
+pub mod problem_3905_multi_source_flood_fill;
 pub mod problem_3908_valid_digit_number;
 
 #[cfg(test)]
