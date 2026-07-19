@@ -2354,6 +2354,7 @@ pub mod problem_3905_multi_source_flood_fill;
 pub mod problem_3908_valid_digit_number;
 pub mod problem_3912_valid_elements_in_an_array;
 pub mod problem_3917_count_indices_with_opposite_parity;
+pub mod problem_3921_score_validator;
 
 #[cfg(test)]
 mod test_utilities;
