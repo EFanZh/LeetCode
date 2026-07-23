@@ -2358,6 +2358,7 @@ pub mod problem_3921_score_validator;
 pub mod problem_3925_concatenate_array_with_reverse;
 pub mod problem_3931_check_adjacent_digit_differences;
 pub mod problem_3936_minimum_swaps_to_move_zeros_to_end;
+pub mod problem_3940_limit_occurrences_in_sorted_array;
 
 #[cfg(test)]
 mod test_utilities;
