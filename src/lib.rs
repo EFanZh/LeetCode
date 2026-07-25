@@ -2360,6 +2360,7 @@ pub mod problem_3931_check_adjacent_digit_differences;
 pub mod problem_3936_minimum_swaps_to_move_zeros_to_end;
 pub mod problem_3940_limit_occurrences_in_sorted_array;
 pub mod problem_3945_digit_frequency_score;
+pub mod problem_3950_exactly_one_consecutive_set_bits_pair;
 
 #[cfg(test)]
 mod test_utilities;
