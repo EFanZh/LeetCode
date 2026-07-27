@@ -2362,6 +2362,7 @@ pub mod problem_3940_limit_occurrences_in_sorted_array;
 pub mod problem_3945_digit_frequency_score;
 pub mod problem_3950_exactly_one_consecutive_set_bits_pair;
 pub mod problem_3959_check_good_integer;
+pub mod problem_3978_unique_middle_element;
 
 #[cfg(test)]
 mod test_utilities;
