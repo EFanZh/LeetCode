@@ -2364,6 +2364,7 @@ pub mod problem_3950_exactly_one_consecutive_set_bits_pair;
 pub mod problem_3959_check_good_integer;
 pub mod problem_3978_unique_middle_element;
 pub mod problem_3982_sum_of_integers_with_maximum_digit_range;
+pub mod problem_3986_number_of_elapsed_seconds_between_two_times;
 
 #[cfg(test)]
 mod test_utilities;
