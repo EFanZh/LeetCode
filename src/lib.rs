@@ -2367,6 +2367,7 @@ pub mod problem_3978_unique_middle_element;
 pub mod problem_3982_sum_of_integers_with_maximum_digit_range;
 pub mod problem_3986_number_of_elapsed_seconds_between_two_times;
 pub mod problem_3992_rearrange_string_to_avoid_character_pair;
+pub mod problem_3996_even_number_of_knight_moves;
 
 #[cfg(test)]
 mod test_utilities;
