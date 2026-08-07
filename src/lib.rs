@@ -2367,6 +2367,7 @@ pub mod problem_3936_minimum_swaps_to_move_zeros_to_end;
 pub mod problem_3940_limit_occurrences_in_sorted_array;
 pub mod problem_3945_digit_frequency_score;
 pub mod problem_3950_exactly_one_consecutive_set_bits_pair;
+pub mod problem_3955_valid_binary_strings_with_cost_limit;
 pub mod problem_3959_check_good_integer;
 pub mod problem_3978_unique_middle_element;
 pub mod problem_3982_sum_of_integers_with_maximum_digit_range;
