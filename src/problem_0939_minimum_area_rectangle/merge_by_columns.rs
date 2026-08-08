@@ -17,21 +17,9 @@ impl Solution {
 
             loop {
                 match left.cmp(&right) {
-                    Ordering::Less => {
-                        if let Some(next_left) = left_iter.next() {
-                            left = next_left;
-                        } else {
-                            return None;
-                        }
-                    }
+                    Ordering::Less => left = left_iter.next()?,
                     Ordering::Equal => return Some(left),
-                    Ordering::Greater => {
-                        if let Some(next_right) = right_iter.next() {
-                            right = next_right;
-                        } else {
-                            return None;
-                        }
-                    }
+                    Ordering::Greater => right = right_iter.next()?,
                 }
             }
         })

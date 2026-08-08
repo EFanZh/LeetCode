@@ -27,11 +27,7 @@ impl Solution {
 
     fn find_index(mut node: &Node, word: impl Iterator<Item = u8>) -> Option<i32> {
         for c in word {
-            if let Some(next) = node.children[usize::from(c - b'a')].as_deref() {
-                node = next;
-            } else {
-                return None;
-            }
+            node = node.children[usize::from(c - b'a')].as_deref()?;
         }
 
         node.value

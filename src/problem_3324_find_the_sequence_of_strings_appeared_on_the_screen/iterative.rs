@@ -19,8 +19,6 @@ impl Solution {
             }
         }
 
-        assert!(result.len() == result_length);
-
         result
     }
 }

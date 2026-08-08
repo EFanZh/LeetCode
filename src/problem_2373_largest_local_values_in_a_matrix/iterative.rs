@@ -3,7 +3,6 @@ pub struct Solution;
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 impl Solution {
-    #[expect(single_use_lifetimes, reason = "false-positive")]
     fn conv_1d<'a>(mut iter: impl Iterator<Item = &'a mut i32>) {
         let mut prev_1 = iter.next().unwrap();
         let mut prev_2 = iter.next().unwrap();

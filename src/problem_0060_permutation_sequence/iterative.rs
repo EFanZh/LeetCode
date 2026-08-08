@@ -7,7 +7,7 @@ impl Solution {
         const FACTORIALS: [usize; 10] = [1, 1, 2, 6, 24, 120, 720, 5_040, 40_320, 362_880];
         let n = n as usize;
         let mut k = (k - 1) as usize;
-        let mut digits_storage = [b'1', b'2', b'3', b'4', b'5', b'6', b'7', b'8', b'9'];
+        let mut digits_storage = *b"123456789";
         let mut digits = &mut digits_storage as &mut [_];
 
         for base in FACTORIALS[1..n].iter().rev() {

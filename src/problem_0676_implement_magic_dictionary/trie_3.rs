@@ -23,11 +23,7 @@ impl Node {
         let mut node = self;
 
         for c in word {
-            if let Some(child) = node.children[usize::from(c - b'a')].as_deref() {
-                node = child;
-            } else {
-                return None;
-            }
+            node = node.children[usize::from(c - b'a')].as_deref()?;
         }
 
         Some(node)
