@@ -2092,6 +2092,7 @@ pub mod problem_3095_shortest_subarray_with_or_at_least_k_i;
 pub mod problem_3096_minimum_levels_to_gain_more_points;
 pub mod problem_3097_shortest_subarray_with_or_at_least_k_ii;
 pub mod problem_3099_harshad_number;
+pub mod problem_3100_water_bottles_ii;
 pub mod problem_3101_count_alternating_subarrays;
 pub mod problem_3105_longest_strictly_increasing_or_strictly_decreasing_subarray;
 pub mod problem_3106_lexicographically_smallest_string_after_operations_with_constraint;
