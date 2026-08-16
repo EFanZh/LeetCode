@@ -1937,6 +1937,7 @@ pub mod problem_2610_convert_an_array_into_a_2d_array_with_conditions;
 pub mod problem_2614_prime_in_diagonal;
 pub mod problem_2639_find_the_width_of_columns_of_a_grid;
 pub mod problem_2640_find_the_score_of_all_prefixes_of_an_array;
+pub mod problem_2641_cousins_in_binary_tree_ii;
 pub mod problem_2643_row_with_maximum_ones;
 pub mod problem_2644_find_the_maximum_divisibility_score;
 pub mod problem_2645_minimum_additions_to_make_valid_string;
