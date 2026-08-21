@@ -2301,6 +2301,7 @@ pub mod problem_3639_minimum_time_to_activate_string;
 pub mod problem_3643_flip_square_submatrix_vertically;
 pub mod problem_3644_maximum_k_to_sort_a_permutation;
 pub mod problem_3648_minimum_sensors_to_cover_grid;
+pub mod problem_3653_largest_integer_with_given_digit_sum;
 pub mod problem_3658_gcd_of_odd_and_even_sums;
 pub mod problem_3659_partition_array_into_k_distinct_groups;
 pub mod problem_3663_find_the_least_frequent_digit;
