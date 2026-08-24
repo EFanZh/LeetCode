@@ -2352,6 +2352,7 @@ pub mod problem_3834_merge_adjacent_equal_elements;
 pub mod problem_3838_weighted_word_mapping;
 pub mod problem_3842_toggle_light_bulbs;
 pub mod problem_3847_find_the_score_difference_in_a_game;
+pub mod problem_3849_maximum_bitwise_xor_after_rearrangement;
 pub mod problem_3856_trim_trailing_vowels;
 pub mod problem_3857_minimum_cost_to_split_into_ones;
 pub mod problem_3861_minimum_capacity_box;
