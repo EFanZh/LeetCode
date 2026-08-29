@@ -2356,6 +2356,7 @@ pub mod problem_3842_toggle_light_bulbs;
 pub mod problem_3843_first_element_with_unique_frequency;
 pub mod problem_3847_find_the_score_difference_in_a_game;
 pub mod problem_3849_maximum_bitwise_xor_after_rearrangement;
+pub mod problem_3852_smallest_pair_with_different_frequencies;
 pub mod problem_3856_trim_trailing_vowels;
 pub mod problem_3857_minimum_cost_to_split_into_ones;
 pub mod problem_3861_minimum_capacity_box;
