@@ -2398,6 +2398,7 @@ pub mod problem_3996_even_number_of_knight_moves;
 pub mod problem_3997_count_dominant_nodes_in_a_binary_tree;
 pub mod problem_4006_count_valid_prefixes;
 pub mod problem_4014_minimum_total_price_after_applying_discounts;
+pub mod problem_4020_elevator_requests_i;
 pub mod problem_4024_nearest_available_drone;
 
 #[cfg(test)]
