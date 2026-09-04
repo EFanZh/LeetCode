@@ -1961,6 +1961,7 @@ pub mod problem_2696_minimum_string_length_after_removing_substrings;
 pub mod problem_2697_lexicographically_smallest_palindrome;
 pub mod problem_2706_buy_two_chocolates;
 pub mod problem_2710_remove_trailing_zeros_from_a_string;
+pub mod problem_2711_difference_of_number_of_distinct_values_on_diagonals;
 pub mod problem_2712_minimum_cost_to_make_all_characters_equal;
 pub mod problem_2716_minimize_string_length;
 pub mod problem_2717_semi_ordered_permutation;
