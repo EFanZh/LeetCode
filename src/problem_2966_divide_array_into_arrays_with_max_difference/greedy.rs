@@ -9,10 +9,10 @@ impl Solution {
 
         nums.sort_unstable_by_key(|num| num.cast_unsigned());
 
-        nums.chunks_exact(3)
-            .map(|window| {
-                let window @ [min, _, max] = window.try_into().ok().unwrap();
-
+        nums.as_chunks::<3>()
+            .0
+            .iter()
+            .map(|window @ [min, _, max]| {
                 if (max - min).cast_unsigned() <= k {
                     Ok(window.to_vec())
                 } else {

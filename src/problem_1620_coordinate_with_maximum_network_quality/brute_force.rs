@@ -59,7 +59,9 @@ impl Solution {
         let mut result = [0, 0];
 
         for (x, row) in quality_map
-            .chunks_exact(N)
+            .as_chunks::<N>()
+            .0
+            .iter()
             .enumerate()
             .take(usize::from(max_x) + 1)
             .skip(usize::from(min_x))

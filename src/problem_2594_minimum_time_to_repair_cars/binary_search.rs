@@ -10,11 +10,9 @@ impl Solution {
         values.split_first().map(|(&first, rest)| {
             let mut min = first;
             let mut max = first;
-            let mut iter = rest.chunks_exact(2);
+            let (chunks, remainder) = rest.as_chunks::<2>();
 
-            iter.by_ref().for_each(|chunk| {
-                let [mut x, mut y] = chunk.try_into().unwrap();
-
+            for &[mut x, mut y] in chunks {
                 if y < x {
                     mem::swap(&mut x, &mut y);
                 }
@@ -26,9 +24,9 @@ impl Solution {
                 if y > max {
                     max = y;
                 }
-            });
+            }
 
-            if let [last] = *iter.remainder() {
+            if let &[last] = remainder {
                 if last < min {
                     min = last;
                 } else if last > max {

@@ -12,11 +12,9 @@ impl Solution {
         let mut current = 0;
         let mut min = 0;
         let mut max = 0;
-        let mut iter = differences.chunks_exact(2);
+        let (chunks, remainder) = differences.as_chunks::<2>();
 
-        for diffs in iter.by_ref() {
-            let &[diff_1, diff_2]: &[_; 2] = diffs.try_into().ok().unwrap();
-
+        for &[diff_1, diff_2] in chunks {
             current += diff_1;
 
             let left = current;
@@ -32,7 +30,7 @@ impl Solution {
             }
         }
 
-        if let &[diff] = iter.remainder() {
+        if let &[diff] = remainder {
             current += diff;
 
             if current < min {

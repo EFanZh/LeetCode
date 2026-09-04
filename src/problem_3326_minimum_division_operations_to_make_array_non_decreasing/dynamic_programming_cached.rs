@@ -7,7 +7,6 @@ use std::sync::OnceLock;
 const N: usize = 1_000_000;
 
 impl Solution {
-    #[expect(clippy::unnecessary_box_returns, reason = "by design")]
     fn zeroed_array<const N: usize>() -> Box<[u16; N]> {
         Box::try_from(vec![0; N].into_boxed_slice()).unwrap()
     }

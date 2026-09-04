@@ -8,8 +8,7 @@ impl Solution {
         let mut result = 0;
         let mut term = u16::from(first - b'0');
 
-        for window in rest.chunks_exact(2) {
-            let [operator, rhs] = window.try_into().ok().unwrap();
+        for &[operator, rhs] in rest.as_chunks::<2>().0 {
             let rhs = u16::from(rhs) - u16::from(b'0');
 
             if operator == b'+' {

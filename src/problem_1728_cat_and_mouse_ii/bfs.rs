@@ -28,9 +28,14 @@ impl Solution {
         let rows = grid.len() as u8;
         let columns = grid.first().map_or(0, String::len) as u8;
 
-        for (target_row, row) in result_grid.chunks_exact_mut(8).zip(grid) {
-            target_row[..row.len()].copy_from_slice(row.as_bytes());
-        }
+        result_grid
+            .as_chunks_mut::<8>()
+            .0
+            .iter_mut()
+            .zip(grid)
+            .for_each(|(target_row, row)| {
+                target_row[..row.len()].copy_from_slice(row.as_bytes());
+            });
 
         (result_grid, rows, columns)
     }

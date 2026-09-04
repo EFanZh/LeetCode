@@ -15,10 +15,10 @@ impl Hasher for FxHasher {
     }
 
     fn write(&mut self, bytes: &[u8]) {
-        for value in bytes.chunks_exact(4) {
+        for &value in bytes.as_chunks::<4>().0 {
             self.0 = self
                 .0
-                .wrapping_add(u32::from_ne_bytes(value.try_into().unwrap()) as usize)
+                .wrapping_add(u32::from_ne_bytes(value) as usize)
                 .wrapping_mul(0x_0000_f135_7aea_2e62_a9c5);
         }
     }

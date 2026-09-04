@@ -19,17 +19,15 @@ impl Solution {
         digits.sort_unstable_by(|lhs, rhs| rhs.cmp(lhs));
 
         let mut base = 1;
-        let mut iter = digits.chunks_exact(2);
+        let (chunks, remainder) = digits.as_chunks::<2>();
         let mut result = 0;
 
-        for chunk in &mut iter {
-            let [x, y] = chunk.try_into().ok().unwrap();
-
+        for &[x, y] in chunks {
             result += base * u32::from(x + y);
             base *= 10;
         }
 
-        if let [extra] = *iter.remainder() {
+        if let &[extra] = remainder {
             result += base * u32::from(extra);
         }
 

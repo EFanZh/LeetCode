@@ -26,7 +26,7 @@ impl Solution {
         let mut right = nums.iter().fold(0, |max, &num| max.max(num as _));
 
         loop {
-            let middle = (left + right) >> 1;
+            let middle = u32::midpoint(left, right);
 
             if Self::check(&nums, middle, max_operations) {
                 right = middle;

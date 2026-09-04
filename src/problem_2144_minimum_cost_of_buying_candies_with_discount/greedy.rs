@@ -9,13 +9,13 @@ impl Solution {
         cost.sort_unstable_by(|lhs, rhs| rhs.cmp(lhs));
 
         let mut result = 0;
-        let mut iter = cost.chunks_exact(3);
+        let (chunks, remainder) = cost.as_chunks::<3>();
 
-        for chunk in iter.by_ref() {
+        for chunk in chunks {
             result += chunk[0] + chunk[1];
         }
 
-        result += iter.remainder().iter().sum::<i32>();
+        result += remainder.iter().sum::<i32>();
 
         result
     }

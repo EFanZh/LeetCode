@@ -12,6 +12,7 @@
     clippy::cast_possible_truncation,
     clippy::cast_possible_wrap,
     clippy::cast_sign_loss,
+    clippy::manual_isolate_lowest_one, // Not supported yet.
     clippy::missing_panics_doc,
     clippy::must_use_candidate,
     clippy::naive_bytecount,
