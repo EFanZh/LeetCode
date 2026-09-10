@@ -2408,6 +2408,7 @@ pub mod problem_4014_minimum_total_price_after_applying_discounts;
 pub mod problem_4020_elevator_requests_i;
 pub mod problem_4024_nearest_available_drone;
 pub mod problem_4030_check_ascii_palindromic;
+pub mod problem_4038_count_integers_appearing_in_a_single_block;
 
 #[cfg(test)]
 mod test_utilities;
