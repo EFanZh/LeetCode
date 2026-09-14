@@ -1961,6 +1961,7 @@ pub mod problem_2683_neighboring_bitwise_xor;
 pub mod problem_2685_count_the_number_of_complete_components;
 pub mod problem_2696_minimum_string_length_after_removing_substrings;
 pub mod problem_2697_lexicographically_smallest_palindrome;
+pub mod problem_2698_find_the_punishment_number_of_an_integer;
 pub mod problem_2706_buy_two_chocolates;
 pub mod problem_2710_remove_trailing_zeros_from_a_string;
 pub mod problem_2711_difference_of_number_of_distinct_values_on_diagonals;
