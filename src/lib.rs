@@ -2411,6 +2411,7 @@ pub mod problem_4014_minimum_total_price_after_applying_discounts;
 pub mod problem_4020_elevator_requests_i;
 pub mod problem_4024_nearest_available_drone;
 pub mod problem_4030_check_ascii_palindromic;
+pub mod problem_4031_find_all_numbers_disappeared_in_an_array_ii;
 pub mod problem_4034_minimum_bishop_moves_to_reach_target;
 pub mod problem_4038_count_integers_appearing_in_a_single_block;
 
