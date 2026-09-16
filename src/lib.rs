@@ -2410,6 +2410,7 @@ pub mod problem_4006_count_valid_prefixes;
 pub mod problem_4014_minimum_total_price_after_applying_discounts;
 pub mod problem_4020_elevator_requests_i;
 pub mod problem_4024_nearest_available_drone;
+pub mod problem_4025_minimize_the_maximum_waiting_time_at_synchronized_traffic_lights;
 pub mod problem_4030_check_ascii_palindromic;
 pub mod problem_4031_find_all_numbers_disappeared_in_an_array_ii;
 pub mod problem_4034_minimum_bishop_moves_to_reach_target;
