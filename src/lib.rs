@@ -2356,6 +2356,7 @@ pub mod problem_3794_reverse_string_prefix;
 pub mod problem_3798_largest_even_number;
 pub mod problem_3803_count_residue_prefixes;
 pub mod problem_3804_number_of_centered_subarrays;
+pub mod problem_3810_minimum_operations_to_reach_target_array;
 pub mod problem_3813_vowel_consonant_score;
 pub mod problem_3818_minimum_prefix_removal_to_make_array_strictly_increasing;
 pub mod problem_3823_reverse_letters_then_special_characters_in_a_string;
