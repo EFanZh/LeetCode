@@ -2416,6 +2416,7 @@ pub mod problem_4030_check_ascii_palindromic;
 pub mod problem_4031_find_all_numbers_disappeared_in_an_array_ii;
 pub mod problem_4034_minimum_bishop_moves_to_reach_target;
 pub mod problem_4038_count_integers_appearing_in_a_single_block;
+pub mod problem_4043_count_rotations_with_exactly_k_equal_adjacent_pairs;
 
 #[cfg(test)]
 mod test_utilities;
