@@ -2267,6 +2267,7 @@ pub mod problem_3483_unique_3_digit_even_numbers;
 pub mod problem_3487_maximum_unique_subarray_sum_after_deletion;
 pub mod problem_3488_closest_equal_element_queries;
 pub mod problem_3493_properties_graph;
+pub mod problem_3494_find_the_minimum_amount_of_time_to_brew_potions;
 pub mod problem_3498_reverse_degree_of_a_string;
 pub mod problem_3499_maximize_active_section_with_trade_i;
 pub mod problem_3502_minimum_cost_to_reach_every_position;
