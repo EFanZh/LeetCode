@@ -2,19 +2,13 @@ pub struct Solution;
 
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
-use std::mem;
-
 impl Solution {
     fn min_max(nums: &[u32]) -> Option<(u32, u32)> {
         let (chunks, suffix) = nums.as_chunks();
-        let mut iter = chunks.iter().copied();
+        let mut iter = chunks.iter().map(|&[x, y]| if y < x { (y, x) } else { (x, y) });
 
-        let mut result = iter.next().map(|[mut min, mut max]| {
-            for &[mut x, mut y] in chunks {
-                if y < x {
-                    mem::swap(&mut x, &mut y);
-                }
-
+        let mut result = iter.next().map(|(mut min, mut max)| {
+            for (x, y) in iter {
                 if x < min {
                     min = x;
                 }
