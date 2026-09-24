@@ -463,6 +463,7 @@ pub mod problem_0617_merge_two_binary_trees;
 pub mod problem_0621_task_scheduler;
 pub mod problem_0622_design_circular_queue;
 pub mod problem_0623_add_one_row_to_tree;
+pub mod problem_0624_maximum_distance_in_arrays;
 pub mod problem_0628_maximum_product_of_three_numbers;
 pub mod problem_0629_k_inverse_pairs_array;
 pub mod problem_0630_course_schedule_iii;
