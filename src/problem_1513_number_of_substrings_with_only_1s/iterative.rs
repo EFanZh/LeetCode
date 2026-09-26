@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn num_sub(s: String) -> i32 {
         let mut result = 0;
-        let mut length = 0;
+        let mut length = 0_u32;
 
         for c in s.bytes() {
             if c == b'0' {
@@ -13,10 +13,14 @@ impl Solution {
             } else {
                 length += 1;
                 result += length;
+
+                if result >= 1_000_000_007 {
+                    result -= 1_000_000_007;
+                }
             }
         }
 
-        result
+        result.cast_signed()
     }
 }
 
