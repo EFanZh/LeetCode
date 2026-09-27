@@ -2368,6 +2368,7 @@ pub mod problem_3827_count_monobit_integers;
 pub mod problem_3833_count_dominant_indices;
 pub mod problem_3834_merge_adjacent_equal_elements;
 pub mod problem_3838_weighted_word_mapping;
+pub mod problem_3839_number_of_prefix_connected_groups;
 pub mod problem_3842_toggle_light_bulbs;
 pub mod problem_3843_first_element_with_unique_frequency;
 pub mod problem_3847_find_the_score_difference_in_a_game;
