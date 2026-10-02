@@ -2430,6 +2430,7 @@ pub mod problem_4043_count_rotations_with_exactly_k_equal_adjacent_pairs;
 pub mod problem_4048_count_values_with_equally_spaced_occurrences_i;
 pub mod problem_4049_count_values_with_equally_spaced_occurrences_ii;
 pub mod problem_4052_cyclically_shift_rows_and_columns;
+pub mod problem_4056_number_of_intersecting_interval_pairs_i;
 
 #[cfg(test)]
 mod test_utilities;
