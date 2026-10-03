@@ -2431,6 +2431,7 @@ pub mod problem_4048_count_values_with_equally_spaced_occurrences_i;
 pub mod problem_4049_count_values_with_equally_spaced_occurrences_ii;
 pub mod problem_4052_cyclically_shift_rows_and_columns;
 pub mod problem_4056_number_of_intersecting_interval_pairs_i;
+pub mod problem_4057_number_of_intersecting_interval_pairs_ii;
 
 #[cfg(test)]
 mod test_utilities;
