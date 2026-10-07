@@ -2388,6 +2388,7 @@ pub mod problem_3867_sum_of_gcd_of_formed_pairs;
 pub mod problem_3870_count_commas_in_range;
 pub mod problem_3871_count_commas_in_range_ii;
 pub mod problem_3875_construct_uniform_parity_array_i;
+pub mod problem_3876_construct_uniform_parity_array_ii;
 pub mod problem_3880_minimum_absolute_difference_between_two_values;
 pub mod problem_3884_first_matching_character_from_both_ends;
 pub mod problem_3894_traffic_signal_color;
