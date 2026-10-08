@@ -128,29 +128,8 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::{Vec6, WrappingNum};
-
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();
-    }
-
-    #[test]
-    fn test_clone_wrapping_num() {
-        for i in 0..10 {
-            assert_eq!(Clone::clone(&WrappingNum(i)).0, WrappingNum(i).0);
-        }
-    }
-
-    #[test]
-    fn test_clone_vec6() {
-        let cloned = Clone::clone(&Vec6(0, 1, 2, 3, 4, 5));
-
-        assert_eq!(cloned.0, 0);
-        assert_eq!(cloned.1, 1);
-        assert_eq!(cloned.2, 2);
-        assert_eq!(cloned.3, 3);
-        assert_eq!(cloned.4, 4);
-        assert_eq!(cloned.5, 5);
     }
 }

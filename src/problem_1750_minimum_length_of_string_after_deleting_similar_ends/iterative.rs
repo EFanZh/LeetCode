@@ -41,9 +41,9 @@ impl Solution {
                     return iter.len() as i32 + 2;
                 }
             }
-        } else {
-            1
         }
+
+        1
     }
 }
 

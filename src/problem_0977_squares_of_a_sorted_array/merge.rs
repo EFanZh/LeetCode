@@ -39,11 +39,11 @@ impl Solution {
                             }
                         }
                     }
-                } else {
-                    *target_iter.next().unwrap() = left;
-
-                    break 'outer;
                 }
+
+                *target_iter.next().unwrap() = left;
+
+                break 'outer;
             }
         }
 

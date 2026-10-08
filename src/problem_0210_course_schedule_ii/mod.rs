@@ -40,7 +40,7 @@ mod tests {
                     assert!(course_indices[prerequisite as usize] < course_indices[course as usize]);
                 }
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

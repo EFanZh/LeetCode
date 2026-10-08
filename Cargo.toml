@@ -9,82 +9,81 @@ version = "0.1.0"
 members = ["tools/check-cpp-code-format", "tools/progress-tracker", "xtask"]
 
 [workspace.lints.rust]
-ambiguous-negative-literals = { level = "warn", priority = 1 }
-closure-returning-async-block = { level = "warn", priority = 1 }
-explicit-outlives-requirements = { level = "warn", priority = 1 }
-impl-trait-redundant-captures = { level = "warn", priority = 1 }
-let-underscore-drop = { level = "warn", priority = 1 }
-macro-use-extern-crate = { level = "warn", priority = 1 }
-meta-variable-misuse = { level = "warn", priority = 1 }
-missing-abi = { level = "warn", priority = 1 }
-missing-docs = { level = "warn", priority = 1 }
-redundant-imports = { level = "warn", priority = 1 }
-redundant-lifetimes = { level = "warn", priority = 1 }
-single-use-lifetimes = { level = "warn", priority = 1 }
-trivial-casts = { level = "warn", priority = 1 }
-trivial-numeric-casts = { level = "warn", priority = 1 }
-unit-bindings = { level = "warn", priority = 1 }
-unnameable-types = { level = "warn", priority = 1 }
-unsafe-code = { level = "warn", priority = 1 }
-unused-crate-dependencies = { level = "warn", priority = 1 }
-unused-extern-crates = { level = "warn", priority = 1 }
-unused-import-braces = { level = "warn", priority = 1 }
-unused-lifetimes = { level = "warn", priority = 1 }
-unused-macro-rules = { level = "warn", priority = 1 }
-unused-qualifications = { level = "warn", priority = 1 }
-variant-size-differences = { level = "warn", priority = 1 }
+ambiguous_negative_literals = { level = "warn", priority = 1 }
+closure_returning_async_block = { level = "warn", priority = 1 }
+explicit_outlives_requirements = { level = "warn", priority = 1 }
+impl_trait_redundant_captures = { level = "warn", priority = 1 }
+let_underscore_drop = { level = "warn", priority = 1 }
+macro_use_extern_crate = { level = "warn", priority = 1 }
+meta_variable_misuse = { level = "warn", priority = 1 }
+missing_abi = { level = "warn", priority = 1 }
+missing_docs = { level = "warn", priority = 1 }
+redundant_imports = { level = "warn", priority = 1 }
+redundant_lifetimes = { level = "warn", priority = 1 }
+single_use_lifetimes = { level = "warn", priority = 1 }
+trivial_casts = { level = "warn", priority = 1 }
+trivial_numeric_casts = { level = "warn", priority = 1 }
+unit_bindings = { level = "warn", priority = 1 }
+unnameable_types = { level = "warn", priority = 1 }
+unsafe_code = { level = "warn", priority = 1 }
+unused_crate_dependencies = { level = "warn", priority = 1 }
+unused_extern_crates = { level = "warn", priority = 1 }
+unused_import_braces = { level = "warn", priority = 1 }
+unused_lifetimes = { level = "warn", priority = 1 }
+unused_macro_rules = { level = "warn", priority = 1 }
+unused_qualifications = { level = "warn", priority = 1 }
+variant_size_differences = { level = "warn", priority = 1 }
 
 [workspace.lints.clippy]
-alloc-instead-of-core = { level = "warn", priority = 1 }
-allow-attributes = { level = "warn", priority = 1 }
-allow-attributes-without-reason = { level = "warn", priority = 1 }
-as-conversions = { level = "warn", priority = 1 }
-assertions-on-result-states = { level = "warn", priority = 1 }
+alloc_instead_of_core = { level = "warn", priority = 1 }
+allow_attributes = { level = "warn", priority = 1 }
+allow_attributes_without_reason = { level = "warn", priority = 1 }
+as_conversions = { level = "warn", priority = 1 }
+assertions_on_result_states = { level = "warn", priority = 1 }
 cargo = "warn"
-cfg-not-test = { level = "warn", priority = 1 }
-clone-on-ref-ptr = { level = "warn", priority = 1 }
-dbg-macro = { level = "warn", priority = 1 }
-deref-by-slicing = { level = "warn", priority = 1 }
-empty-drop = { level = "warn", priority = 1 }
-empty-enum-variants-with-brackets = { level = "warn", priority = 1 }
-empty-structs-with-brackets = { level = "warn", priority = 1 }
-field-scoped-visibility-modifiers = { level = "warn", priority = 1 }
-format-push-string = { level = "warn", priority = 1 }
-get-unwrap = { level = "warn", priority = 1 }
-if-then-some-else-none = { level = "warn", priority = 1 }
-infinite-loop = { level = "warn", priority = 1 }
-large-stack-arrays = { level = "allow", priority = 1 }               # TODO remove when https://github.com/rust-lang/rust-clippy/issues/13774 is fixed
-lossy-float-literal = { level = "warn", priority = 1 }
-multiple-crate-versions = { level = "allow", priority = 1 }
-mutex-atomic = { level = "warn", priority = 1 }
-non-zero-suggestions = { level = "warn", priority = 1 }
+cfg_not_test = { level = "warn", priority = 1 }
+clone_on_ref_ptr = { level = "warn", priority = 1 }
+dbg_macro = { level = "warn", priority = 1 }
+deref_by_slicing = { level = "warn", priority = 1 }
+empty_drop = { level = "warn", priority = 1 }
+empty_enum_variants_with_brackets = { level = "warn", priority = 1 }
+empty_structs_with_brackets = { level = "warn", priority = 1 }
+field_scoped_visibility_modifiers = { level = "warn", priority = 1 }
+format_push_string = { level = "warn", priority = 1 }
+get_unwrap = { level = "warn", priority = 1 }
+if_then_some_else_none = { level = "warn", priority = 1 }
+infinite_loop = { level = "warn", priority = 1 }
+lossy_float_literal = { level = "warn", priority = 1 }
+multiple_crate_versions = { level = "allow", priority = 1 }
+mutex_atomic = { level = "warn", priority = 1 }
+non_zero_suggestions = { level = "warn", priority = 1 }
 nursery = "warn"
-panic-in-result-fn = { level = "warn", priority = 1 }
+panic_in_result_fn = { level = "warn", priority = 1 }
 pedantic = "warn"
-print-stderr = { level = "warn", priority = 1 }
-print-stdout = { level = "warn", priority = 1 }
-rc-buffer = { level = "warn", priority = 1 }
-rc-mutex = { level = "warn", priority = 1 }
-redundant-type-annotations = { level = "warn", priority = 1 }
-renamed-function-params = { level = "warn", priority = 1 }
-rest-pat-in-fully-bound-structs = { level = "warn", priority = 1 }
-same-name-method = { level = "warn", priority = 1 }
-self-named-module-files = { level = "warn", priority = 1 }
-shadow-unrelated = { level = "warn", priority = 1 }
-string-lit-chars-any = { level = "warn", priority = 1 }
-tests-outside-test-module = { level = "warn", priority = 1 }
+print_stderr = { level = "warn", priority = 1 }
+print_stdout = { level = "warn", priority = 1 }
+rc_buffer = { level = "warn", priority = 1 }
+rc_mutex = { level = "warn", priority = 1 }
+redundant_type_annotations = { level = "warn", priority = 1 }
+renamed_function_params = { level = "warn", priority = 1 }
+rest_pat_in_fully_bound_structs = { level = "warn", priority = 1 }
+same_name_method = { level = "warn", priority = 1 }
+self_named_module_files = { level = "warn", priority = 1 }
+shadow_unrelated = { level = "warn", priority = 1 }
+string_lit_chars_any = { level = "warn", priority = 1 }
+tests_outside_test_module = { level = "warn", priority = 1 }
 todo = { level = "warn", priority = 1 }
-try-err = { level = "warn", priority = 1 }
-undocumented-unsafe-blocks = { level = "warn", priority = 1 }
+try_err = { level = "warn", priority = 1 }
+undocumented_unsafe_blocks = { level = "warn", priority = 1 }
 unimplemented = { level = "warn", priority = 1 }
-unnecessary-safety-comment = { level = "warn", priority = 1 }
-unnecessary-safety-doc = { level = "warn", priority = 1 }
-unnecessary-self-imports = { level = "warn", priority = 1 }
-unneeded-field-pattern = { level = "warn", priority = 1 }
-unseparated-literal-suffix = { level = "warn", priority = 1 }
-use-debug = { level = "warn", priority = 1 }
-verbose-file-reads = { level = "warn", priority = 1 }
-wildcard-dependencies = { level = "allow", priority = 1 }            # Project specific.
+unnecessary_safety_comment = { level = "warn", priority = 1 }
+unnecessary_safety_doc = { level = "warn", priority = 1 }
+unnecessary_self_imports = { level = "warn", priority = 1 }
+unneeded_field_pattern = { level = "warn", priority = 1 }
+unseparated_literal_suffix = { level = "warn", priority = 1 }
+use_debug = { level = "warn", priority = 1 }
+verbose_file_reads = { level = "warn", priority = 1 }
+wildcard_dependencies = { level = "allow", priority = 1 }            # Project specific.
 
 [lints]
 workspace = true

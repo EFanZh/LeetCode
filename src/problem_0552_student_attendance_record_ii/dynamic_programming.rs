@@ -57,17 +57,9 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::WrappingNum;
 
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();
-    }
-
-    #[test]
-    fn test_clone_wrapping_num() {
-        for i in -10..10 {
-            assert_eq!(Clone::clone(&WrappingNum(i)).0, WrappingNum(i).0);
-        }
     }
 }

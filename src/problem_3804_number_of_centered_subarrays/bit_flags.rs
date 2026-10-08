@@ -26,7 +26,9 @@ impl Solution {
     }
 
     pub fn centered_subarrays(nums: Vec<i32>) -> i32 {
+        #[expect(clippy::large_stack_arrays, reason = "by design")]
         let mut seen = [0_usize; usize::div_ceil(200_001, usize::BITS as _)];
+
         let mut seen_buckets = Vec::new();
         let mut iter = nums.iter().copied();
         let mut result = nums.len() as _;

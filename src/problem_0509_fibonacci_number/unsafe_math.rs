@@ -5,7 +5,9 @@ pub struct Solution;
 // https://en.wikipedia.org/wiki/Fibonacci_number#Closed-form_expression
 
 impl Solution {
+    #[expect(clippy::approx_constant, reason = "compatibility")]
     const PHI: f64 = 1.618_033_988_749_895;
+
     const PSI: f64 = -0.618_033_988_749_894_9;
     const SQRT_5: f64 = 2.236_067_977_499_79;
 

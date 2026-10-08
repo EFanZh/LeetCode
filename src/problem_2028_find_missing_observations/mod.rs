@@ -31,7 +31,7 @@ mod tests {
                     rolls.iter().sum::<i32>() + result.iter().sum::<i32>(),
                 );
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

@@ -34,7 +34,7 @@ mod tests {
                         .eq(colsum.iter().copied())
                 );
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

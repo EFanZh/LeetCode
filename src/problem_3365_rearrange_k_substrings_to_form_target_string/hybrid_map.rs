@@ -106,6 +106,7 @@ impl Solution {
         let n = NonZero::new(s.len() / k.cast_unsigned() as usize).unwrap();
 
         match n.get() {
+            #[expect(clippy::large_stack_arrays, reason = "by design")]
             1..4 => Self::inner(s, t, n, &mut [0_u32; 26 * 26 * 26]),
             4..7 => Self::inner(s, t, n, &mut HashMap::<u32, u32>::new()),
             7..14 => Self::inner(s, t, n, &mut HashMap::<u64, u32>::new()),

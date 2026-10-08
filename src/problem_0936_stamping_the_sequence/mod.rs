@@ -31,7 +31,7 @@ mod tests {
 
                 assert_eq!(buffer, target.as_bytes());
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

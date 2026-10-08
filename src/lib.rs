@@ -15,6 +15,7 @@
     clippy::manual_isolate_lowest_one, // Not supported yet.
     clippy::missing_panics_doc,
     clippy::must_use_candidate,
+    clippy::mut_mut,
     clippy::naive_bytecount,
     reason = "unnecessary"
 )]

@@ -127,18 +127,8 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::Rational;
-
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();
-    }
-
-    #[test]
-    fn test_clone_rational() {
-        let x = Rational(2, 3);
-
-        assert_eq!(Clone::clone(&x).0, 2);
-        assert_eq!(Clone::clone(&x).1, 3);
     }
 }

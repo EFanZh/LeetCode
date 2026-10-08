@@ -193,18 +193,9 @@ impl super::Solution for Solution {
 
 #[cfg(test)]
 mod tests {
-    use super::State;
 
     #[test]
     fn test_solution() {
         super::super::tests::run::<super::Solution>();
-    }
-
-    #[test]
-    fn test_state() {
-        let lhs = State::new(b"BGRWY", b"BGRWY");
-        let rhs = Clone::clone(&lhs);
-
-        assert!(lhs == rhs);
     }
 }

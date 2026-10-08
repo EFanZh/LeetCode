@@ -29,7 +29,7 @@ mod tests {
                         .all(|(left, right)| left != right)
                 );
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

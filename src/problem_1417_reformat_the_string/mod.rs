@@ -35,7 +35,7 @@ mod tests {
                     prev = value;
                 }
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

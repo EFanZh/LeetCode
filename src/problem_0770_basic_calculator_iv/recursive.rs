@@ -115,11 +115,11 @@ impl Solution {
                         break 'outer;
                     }
                 }
-            } else {
-                buffer.extend(right_iterator);
-
-                break;
             }
+
+            buffer.extend(right_iterator);
+
+            break;
         }
     }
 

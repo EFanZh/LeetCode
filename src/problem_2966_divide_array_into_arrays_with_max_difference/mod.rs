@@ -33,7 +33,7 @@ mod tests {
                     assert!(item[2] - item[0] <= k);
                 }
             } else {
-                assert!(result.is_empty());
+                assert_eq!(result.len(), 0);
             }
         }
     }

@@ -37,9 +37,9 @@ impl Solution {
                         }
                     }
                 }
-            } else {
-                None
             }
+
+            None
         })
     }
 

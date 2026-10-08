@@ -32,7 +32,10 @@ impl Solution {
     pub fn ideal_arrays(n: i32, max_value: i32) -> i32 {
         let n = n as u32 as usize;
         let max_value = max_value as u32 as usize;
+
+        #[expect(clippy::manual_bit_width, reason = "compatibility")]
         let max_unique_values = n.min((usize::BITS - max_value.leading_zeros()) as _);
+
         let mut cache = vec![0_u32; max_value * max_unique_values].into_boxed_slice();
         let mut iter = cache.chunks_exact_mut(max_value);
         let mut prev_row = iter.next().unwrap();
