@@ -2256,6 +2256,7 @@ pub mod problem_3427_sum_of_variable_length_subarrays;
 pub mod problem_3429_paint_house_iv;
 pub mod problem_3432_count_partitions_with_even_sum_difference;
 pub mod problem_3438_find_valid_pair_of_adjacent_digits_in_string;
+pub mod problem_3440_reschedule_meetings_for_maximum_free_time_ii;
 pub mod problem_3442_maximum_difference_between_even_and_odd_frequency_i;
 pub mod problem_3443_maximum_manhattan_distance_after_k_changes;
 pub mod problem_3446_sort_matrix_by_diagonals;
