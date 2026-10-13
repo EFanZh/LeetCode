@@ -2439,6 +2439,7 @@ pub mod problem_4049_count_values_with_equally_spaced_occurrences_ii;
 pub mod problem_4052_cyclically_shift_rows_and_columns;
 pub mod problem_4056_number_of_intersecting_interval_pairs_i;
 pub mod problem_4057_number_of_intersecting_interval_pairs_ii;
+pub mod problem_4061_minimum_queen_moves_to_reach_target;
 pub mod problem_4065_rearrange_array_by_removing_distinct_values;
 pub mod problem_4070_minimum_rotations_to_dial_a_number_i;
 pub mod problem_4078_three_fibonacci_sum;
