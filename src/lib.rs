@@ -2443,6 +2443,7 @@ pub mod problem_4057_number_of_intersecting_interval_pairs_ii;
 pub mod problem_4061_minimum_queen_moves_to_reach_target;
 pub mod problem_4065_rearrange_array_by_removing_distinct_values;
 pub mod problem_4070_minimum_rotations_to_dial_a_number_i;
+pub mod problem_4074_maximum_product_pair_with_target_sum;
 pub mod problem_4078_three_fibonacci_sum;
 
 #[cfg(test)]
