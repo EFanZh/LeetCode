@@ -1882,6 +1882,7 @@ pub mod problem_2498_frog_jump_ii;
 pub mod problem_2500_delete_greatest_value_in_each_row;
 pub mod problem_2501_longest_square_streak_in_an_array;
 pub mod problem_2506_count_pairs_of_similar_strings;
+pub mod problem_2507_smallest_value_after_replacing_with_sum_of_prime_factors;
 pub mod problem_2511_maximum_enemy_forts_that_can_be_captured;
 pub mod problem_2512_reward_top_k_students;
 pub mod problem_2513_minimize_the_maximum_of_two_arrays;
