@@ -2453,6 +2453,7 @@ pub mod problem_4070_minimum_rotations_to_dial_a_number_i;
 pub mod problem_4074_maximum_product_pair_with_target_sum;
 pub mod problem_4078_three_fibonacci_sum;
 pub mod problem_4083_minimum_deletions_to_make_array_sharp;
+pub mod problem_4084_last_visited_cell_in_a_directional_grid;
 
 #[cfg(test)]
 mod test_utilities;
