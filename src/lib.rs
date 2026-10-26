@@ -2292,6 +2292,7 @@ pub mod problem_3523_make_array_non_decreasing;
 pub mod problem_3527_find_the_most_common_response;
 pub mod problem_3528_unit_conversion_i;
 pub mod problem_3531_count_covered_buildings;
+pub mod problem_3532_path_existence_queries_in_a_graph_i;
 pub mod problem_3536_maximum_product_of_two_digits;
 pub mod problem_3537_fill_a_special_grid;
 pub mod problem_3541_find_most_frequent_vowel_and_consonant;
