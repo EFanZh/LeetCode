@@ -2453,6 +2453,7 @@ pub mod problem_4062_transform_array_using_pair_operations;
 pub mod problem_4065_rearrange_array_by_removing_distinct_values;
 pub mod problem_4070_minimum_rotations_to_dial_a_number_i;
 pub mod problem_4074_maximum_product_pair_with_target_sum;
+pub mod problem_4076_longest_resilient_subarray_ii;
 pub mod problem_4078_three_fibonacci_sum;
 pub mod problem_4083_minimum_deletions_to_make_array_sharp;
 pub mod problem_4084_last_visited_cell_in_a_directional_grid;
