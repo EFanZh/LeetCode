@@ -2457,6 +2457,7 @@ pub mod problem_4076_longest_resilient_subarray_ii;
 pub mod problem_4078_three_fibonacci_sum;
 pub mod problem_4083_minimum_deletions_to_make_array_sharp;
 pub mod problem_4084_last_visited_cell_in_a_directional_grid;
+pub mod problem_4088_difference_between_peaks_and_valleys;
 
 #[cfg(test)]
 mod test_utilities;
