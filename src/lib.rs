@@ -2461,6 +2461,7 @@ pub mod problem_4083_minimum_deletions_to_make_array_sharp;
 pub mod problem_4084_last_visited_cell_in_a_directional_grid;
 pub mod problem_4088_difference_between_peaks_and_valleys;
 pub mod problem_4092_binary_digit_score;
+pub mod problem_4093_maximize_sum_after_at_most_k_digit_rearrangements;
 
 #[cfg(test)]
 mod test_utilities;
