@@ -1961,6 +1961,7 @@ pub mod problem_2660_determine_the_winner_of_a_bowling_game;
 pub mod problem_2661_first_completely_painted_row_or_column;
 pub mod problem_2670_find_the_distinct_difference_array;
 pub mod problem_2671_frequency_tracker;
+pub mod problem_2672_number_of_adjacent_elements_with_the_same_color;
 pub mod problem_2673_make_costs_of_paths_equal_in_a_binary_tree;
 pub mod problem_2678_number_of_senior_citizens;
 pub mod problem_2679_sum_in_a_matrix;
