@@ -24,6 +24,7 @@ void run() {
         const auto [buffer, head] = test_utilities::make_list(list_values);
         auto *node = head;
 
+        // NOLINTNEXTLINE(clang-analyzer-core.NullDereference)
         while (node->val != node_value) {
             node = node->next;
         }

@@ -15,7 +15,7 @@ jobs:
           - run: >-
                 cargo xtask coverage
                 --cmake-toolchain-file "$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-                --llvm-version 18
+                --llvm-version 22
                 -o coverage/lcov.info
           - uses: codecov/codecov-action@v5
             with:

@@ -5,6 +5,7 @@ Checks: >-
     -altera-id-dependent-backward-branch,
     -altera-struct-pack-align,
     -altera-unroll-loops,
+    -boost-use-ranges,
     -bugprone-easily-swappable-parameters,
     -cppcoreguidelines-avoid-do-while,
     -cppcoreguidelines-avoid-magic-numbers,
@@ -22,6 +23,7 @@ Checks: >-
     -readability-convert-member-functions-to-static,
     -readability-identifier-length,
     -readability-magic-numbers,
+    -readability-math-missing-parentheses,
 WarningsAsErrors: '*'
 HeaderFilterRegex: '.*'
 FormatStyle: file
