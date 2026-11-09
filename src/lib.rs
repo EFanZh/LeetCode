@@ -2339,6 +2339,7 @@ pub mod problem_3653_largest_integer_with_given_digit_sum;
 pub mod problem_3658_gcd_of_odd_and_even_sums;
 pub mod problem_3659_partition_array_into_k_distinct_groups;
 pub mod problem_3663_find_the_least_frequent_digit;
+pub mod problem_3665_twisted_mirror_path_count;
 pub mod problem_3668_restore_finishing_order;
 pub mod problem_3674_minimum_operations_to_equalize_array;
 pub mod problem_3675_minimum_operations_to_transform_string;
