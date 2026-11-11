@@ -2410,6 +2410,7 @@ pub mod problem_3875_construct_uniform_parity_array_i;
 pub mod problem_3876_construct_uniform_parity_array_ii;
 pub mod problem_3880_minimum_absolute_difference_between_two_values;
 pub mod problem_3884_first_matching_character_from_both_ends;
+pub mod problem_3889_mirror_frequency_distance;
 pub mod problem_3894_traffic_signal_color;
 pub mod problem_3895_count_digit_appearances;
 pub mod problem_3898_find_the_degree_of_each_vertex;
