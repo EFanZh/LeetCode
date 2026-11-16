@@ -6,7 +6,7 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn max_result(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut queue = VecDeque::<(u32, i32)>::new();
         let mut current_cost = 0;
 

@@ -38,7 +38,7 @@ impl Solution {
             let diff_1 = right_sums.get(split.wrapping_sub(1)).map_or(-1, |&x| target - x);
             let diff_2 = right_sums.get(split).map_or(-1, |&x| x - target);
 
-            result = result.min(u32::min(diff_1 as _, diff_2 as _));
+            result = result.min(u32::min(diff_1.cast_unsigned(), diff_2.cast_unsigned()));
         }
 
         result as _

@@ -8,7 +8,7 @@ use std::collections::{BinaryHeap, HashMap};
 
 impl Solution {
     pub fn find_least_num_of_unique_ints(arr: Vec<i32>, k: i32) -> i32 {
-        let mut k = k as u32;
+        let mut k = k.cast_unsigned();
         let mut counts = HashMap::new();
 
         for value in arr {

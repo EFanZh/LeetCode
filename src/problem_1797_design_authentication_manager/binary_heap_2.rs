@@ -20,7 +20,7 @@ pub struct AuthenticationManager {
 impl AuthenticationManager {
     fn new(time_to_live: i32) -> Self {
         Self {
-            time_to_live: time_to_live as _,
+            time_to_live: time_to_live.cast_unsigned(),
             heap: Vec::new(),
             entries: HashMap::new(),
         }
@@ -92,7 +92,7 @@ impl AuthenticationManager {
 
     fn generate(&mut self, token_id: String, current_time: i32) {
         let token_id = Rc::from(token_id);
-        let current_time = current_time as u32;
+        let current_time = current_time.cast_unsigned();
         let index = Rc::new(Cell::new(self.heap.len()));
 
         self.heap.push(Item {
@@ -105,7 +105,7 @@ impl AuthenticationManager {
     }
 
     fn renew(&mut self, token_id: String, current_time: i32) {
-        let current_time = current_time as u32;
+        let current_time = current_time.cast_unsigned();
 
         self.advance(current_time);
 
@@ -119,7 +119,7 @@ impl AuthenticationManager {
     }
 
     fn count_unexpired_tokens(&mut self, current_time: i32) -> i32 {
-        let current_time = current_time as u32;
+        let current_time = current_time.cast_unsigned();
 
         self.advance(current_time);
 

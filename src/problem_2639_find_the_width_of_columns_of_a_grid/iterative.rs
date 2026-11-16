@@ -20,7 +20,7 @@ impl Solution {
                             Ordering::Greater => (value, 1),
                         };
 
-                        (abs as u32).ilog10() + extra
+                        (abs.cast_unsigned()).ilog10() + extra
                     })
                 }) as _
             })

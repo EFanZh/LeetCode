@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn construct2_d_array(original: Vec<i32>, m: i32, n: i32) -> Vec<Vec<i32>> {
-        let m = m as u32 as usize;
-        let n = n as u32 as usize;
+        let m = m.cast_unsigned() as usize;
+        let n = n.cast_unsigned() as usize;
 
         let mut result = Vec::new();
 

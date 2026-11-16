@@ -46,7 +46,7 @@ pub struct ExamRoom {
 
 impl ExamRoom {
     fn new(n: i32) -> Self {
-        let n = n as u32 - 1;
+        let n = n.cast_unsigned() - 1;
 
         Self {
             heap: vec![Chunk {
@@ -194,7 +194,7 @@ impl ExamRoom {
     }
 
     fn leave(&mut self, p: i32) {
-        let p = p as u32;
+        let p = p.cast_unsigned();
 
         if let Some(&left_chunk_index) = self.ends.get(&(p.wrapping_sub(1))) {
             if self.starts.contains_key(&(p + 1)) {

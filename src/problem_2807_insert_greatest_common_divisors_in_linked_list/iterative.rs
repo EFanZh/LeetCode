@@ -19,12 +19,12 @@ impl Solution {
         let mut result = head;
         let mut cursor = &mut result;
         let first_node = cursor.as_deref_mut().unwrap();
-        let mut prev_value = first_node.val as u32;
+        let mut prev_value = first_node.val.cast_unsigned();
 
         cursor = &mut first_node.next;
 
         while let Some(node) = cursor.take() {
-            let value = node.val as u32;
+            let value = node.val.cast_unsigned();
             let gcd = Self::gcd(mem::replace(&mut prev_value, value), value);
 
             cursor = &mut cursor

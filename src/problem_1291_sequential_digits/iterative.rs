@@ -43,8 +43,8 @@ impl Solution {
             123_456_789,
         ];
 
-        let low = low as u32;
-        let high = high as u32;
+        let low = low.cast_unsigned();
+        let high = high.cast_unsigned();
         let mut result = Vec::new();
         let mut iter = DATA.iter().copied();
 

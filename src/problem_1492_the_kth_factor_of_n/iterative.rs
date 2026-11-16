@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn kth_factor(n: i32, k: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut k = k as usize - 1;
         let mut lhs = 1;
         let sqrt_n = n.isqrt();

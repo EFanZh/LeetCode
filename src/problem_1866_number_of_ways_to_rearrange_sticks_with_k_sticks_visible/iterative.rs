@@ -6,8 +6,8 @@ impl Solution {
     pub fn rearrange_sticks(n: i32, k: i32) -> i32 {
         const MODULUS: u64 = 1_000_000_007;
 
-        let n = n as u32;
-        let k = k as u32;
+        let n = n.cast_unsigned();
+        let k = k.cast_unsigned();
         let mut cache = vec![0_u64; k as _].into_boxed_slice();
 
         *cache.last_mut().unwrap() = 1;

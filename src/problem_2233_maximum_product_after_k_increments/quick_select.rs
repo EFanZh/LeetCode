@@ -72,7 +72,7 @@ impl Solution {
 
     pub fn maximum_product(nums: Vec<i32>, k: i32) -> i32 {
         let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let k = u64::from(k as u32);
+        let k = u64::from(k.cast_unsigned());
         let mut left = 0;
         let mut right = nums.len();
         let mut left_sum = 0;

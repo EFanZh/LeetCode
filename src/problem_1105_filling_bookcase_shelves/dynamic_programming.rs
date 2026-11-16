@@ -9,11 +9,11 @@ impl Solution {
             .map(|book| {
                 let [thickness, height] = book.try_into().ok().unwrap();
 
-                (thickness as u32, height as u32)
+                (thickness.cast_unsigned(), height.cast_unsigned())
             })
             .collect::<Vec<_>>();
 
-        let shelf_width = shelf_width as u32;
+        let shelf_width = shelf_width.cast_unsigned();
         let mut cache = Vec::with_capacity(books.len());
         let mut result = 0;
 

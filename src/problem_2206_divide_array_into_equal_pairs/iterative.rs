@@ -7,7 +7,7 @@ impl Solution {
         let mut states = [false; 500];
 
         for num in nums {
-            let state = &mut states[num as u32 as usize - 1];
+            let state = &mut states[num.cast_unsigned() as usize - 1];
 
             *state = !*state;
         }

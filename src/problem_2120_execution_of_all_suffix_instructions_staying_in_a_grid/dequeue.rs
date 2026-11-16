@@ -6,8 +6,9 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn execute_instructions(n: i32, start_pos: Vec<i32>, s: String) -> Vec<i32> {
-        let n = n as u32 as usize;
-        let [start_row, start_column] = <[_; 2]>::map(start_pos.try_into().ok().unwrap(), |x| x as u32 as usize);
+        let n = n.cast_unsigned() as usize;
+        let [start_row, start_column] =
+            <[_; 2]>::map(start_pos.try_into().ok().unwrap(), |x| x.cast_unsigned() as usize);
         let mut result = vec![0; s.len()];
         let mut vertical_queue = VecDeque::from([1]);
         let mut horizontal_queue = VecDeque::from([1]);

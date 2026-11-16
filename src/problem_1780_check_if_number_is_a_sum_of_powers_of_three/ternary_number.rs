@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn check_powers_of_three(n: i32) -> bool {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
 
         while n != 0 {
             if n % 3 == 2 {

@@ -30,7 +30,7 @@ impl Fancy {
         let index = self.states.len() as u32 + 1;
 
         self.states.push(State {
-            val: val as _,
+            val: val.cast_unsigned(),
             acc_index: index,
             acc_mul: self.mul,
             acc_inc: self.inc,
@@ -43,7 +43,7 @@ impl Fancy {
     fn add_all(&mut self, inc: i32) {
         let modulus = Self::MODULUS as _;
 
-        self.inc += inc as u32;
+        self.inc += inc.cast_unsigned();
 
         if self.inc >= modulus {
             self.inc -= modulus;
@@ -51,7 +51,7 @@ impl Fancy {
     }
 
     fn mult_all(&mut self, m: i32) {
-        let m = u64::from(m as u32);
+        let m = u64::from(m.cast_unsigned());
 
         self.mul = (u64::from(self.mul) * m % Self::MODULUS) as _;
         self.inc = (u64::from(self.inc) * m % Self::MODULUS) as _;
@@ -60,7 +60,7 @@ impl Fancy {
     fn get_index(&mut self, idx: i32) -> i32 {
         let states = self.states.as_mut_slice();
         let latest_acc_index = states.len() as _;
-        let idx = idx as u32 as usize;
+        let idx = idx.cast_unsigned() as usize;
 
         if let Some(value) = states.get(idx).map(|state| u64::from(state.val)) {
             let mut op_index = idx + 1;

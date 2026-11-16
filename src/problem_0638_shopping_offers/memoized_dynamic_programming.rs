@@ -46,7 +46,7 @@ impl Solution {
             let offer = offer
                 .iter()
                 .enumerate()
-                .map(|(i, &count)| (count as u32) << (4 * i))
+                .map(|(i, &count)| count.cast_unsigned() << (4 * i))
                 .sum();
 
             offers.push((offer, price));
@@ -57,7 +57,7 @@ impl Solution {
         let needs = needs
             .iter()
             .enumerate()
-            .map(|(i, &count)| (count as u32) << (4 * i))
+            .map(|(i, &count)| count.cast_unsigned() << (4 * i))
             .sum();
 
         Self::helper(&offers, needs, &mut HashMap::with_capacity(max_states))

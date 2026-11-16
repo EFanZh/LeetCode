@@ -13,7 +13,7 @@ impl ProductOfNumbers {
     }
 
     fn add(&mut self, num: i32) {
-        let num = num as u32;
+        let num = num.cast_unsigned();
 
         if let Some(new_product) = NonZeroU32::new(self.data.last().map_or(num, |product| product.get() * num)) {
             self.data.push(new_product);
@@ -24,7 +24,7 @@ impl ProductOfNumbers {
 
     fn get_product(&self, k: i32) -> i32 {
         let result = if let Some(&product) = self.data.last() {
-            let k = k as u32 as usize;
+            let k = k.cast_unsigned() as usize;
 
             if let Some(&prev) = self.data.get((self.data.len() - 1).wrapping_sub(k)) {
                 product.get() / prev

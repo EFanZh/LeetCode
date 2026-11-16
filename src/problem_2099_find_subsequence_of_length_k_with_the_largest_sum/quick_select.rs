@@ -6,7 +6,7 @@ use std::cmp::Reverse;
 
 impl Solution {
     pub fn max_subsequence(nums: Vec<i32>, k: i32) -> Vec<i32> {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut indices = (0..nums.len() as u16).collect::<Box<_>>();
 
         let split = indices

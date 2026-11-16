@@ -14,7 +14,9 @@ impl Solution {
         let mut buffer = [0_u8; 49];
 
         (0..).step_by(16).zip(grid).for_each(|(y, row)| {
-            (y..).zip(row).for_each(|(x, value)| buffer[value as u32 as usize] = x);
+            (y..)
+                .zip(row)
+                .for_each(|(x, value)| buffer[value.cast_unsigned() as usize] = x);
         });
 
         let mut iter = buffer[..n * n].iter().copied().map(Self::decode_position);

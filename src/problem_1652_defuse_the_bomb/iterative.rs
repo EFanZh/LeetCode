@@ -16,7 +16,7 @@ impl Solution {
             let n = code.len();
 
             if k < 0 {
-                let k = (-k) as u32 as usize;
+                let k = (-k).cast_unsigned() as usize;
                 let mut sum = code[n - k..].iter().sum::<i32>();
 
                 code[n - k..]
@@ -30,7 +30,7 @@ impl Solution {
                     })
                     .collect()
             } else {
-                let k = k as u32 as usize;
+                let k = k.cast_unsigned() as usize;
                 let mut sum = code[..k].iter().sum::<i32>();
 
                 code.iter()

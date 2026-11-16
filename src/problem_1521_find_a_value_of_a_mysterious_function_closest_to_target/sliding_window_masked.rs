@@ -35,14 +35,14 @@ impl Solution {
 
         // Sliding window.
 
-        let target = (!target & mask) as u32;
+        let target = (!target & mask).cast_unsigned();
         let mut start = 0;
         let mut bit_counts = [0_u32; 32];
         let mut bits = 0_u32;
         let mut min_diff = u32::MAX;
 
         for (i, &new) in arr.iter().enumerate() {
-            Self::iter_bits(new as _, |i, bit| {
+            Self::iter_bits(new.cast_unsigned(), |i, bit| {
                 bit_counts[i] += 1;
                 bits |= bit;
             });
@@ -51,7 +51,7 @@ impl Solution {
                 Ordering::Less => min_diff = target - bits,
                 Ordering::Equal => return 0,
                 Ordering::Greater => loop {
-                    let old = arr[start] as u32;
+                    let old = arr[start].cast_unsigned();
                     let mut next_bits = bits;
 
                     Self::iter_bits(old, |i, bit| {

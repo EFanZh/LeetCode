@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn get_digits(mapping: &[u8; 10], num: i32) -> u32 {
-        let mut num = num as u32;
+        let mut num = num.cast_unsigned();
 
         if num == 0 {
             u32::from(mapping[0])

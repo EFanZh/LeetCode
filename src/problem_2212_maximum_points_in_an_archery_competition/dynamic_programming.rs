@@ -19,7 +19,7 @@ impl Solution {
         for configuration in 1..CONFIGURATIONS {
             let i = configuration.trailing_zeros() as usize;
             let prev = configuration & (configuration - 1);
-            let arrow_sum = arrow_sums[prev] + alice_arrows[i + 1] as u32;
+            let arrow_sum = arrow_sums[prev] + alice_arrows[i + 1].cast_unsigned();
 
             arrow_sums[configuration] = arrow_sum;
 
@@ -46,7 +46,10 @@ impl Solution {
     pub fn maximum_bob_points(num_arrows: i32, alice_arrows: Vec<i32>) -> Vec<i32> {
         let mut alice_arrows = alice_arrows;
 
-        Self::helper(num_arrows as _, alice_arrows.as_mut_slice().try_into().ok().unwrap());
+        Self::helper(
+            num_arrows.cast_unsigned(),
+            alice_arrows.as_mut_slice().try_into().ok().unwrap(),
+        );
 
         alice_arrows
     }

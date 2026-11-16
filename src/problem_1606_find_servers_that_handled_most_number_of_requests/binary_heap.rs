@@ -32,15 +32,15 @@ impl Ord for Item {
 
 impl Solution {
     pub fn busiest_servers(k: i32, arrival: Vec<i32>, load: Vec<i32>) -> Vec<i32> {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut busy = BinaryHeap::new();
         let mut idle = (0..k).map(|i| Reverse((0, i))).collect::<BinaryHeap<_>>();
         let mut candidate = (0_u32, 0);
         let mut counts = vec![0_u32; k as usize].into_boxed_slice();
 
         for (&start, &length) in arrival.iter().zip(&load) {
-            let start = start as u32;
-            let length = length as u32;
+            let start = start.cast_unsigned();
+            let length = length.cast_unsigned();
 
             // Finish all request till now.
 

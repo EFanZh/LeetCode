@@ -37,12 +37,12 @@ impl Solution {
         l.iter()
             .zip(&r)
             .map(|(&start, &end)| {
-                let window = &nums[start as u32 as usize..=end as u32 as usize];
+                let window = &nums[start.cast_unsigned() as usize..=end.cast_unsigned() as usize];
                 let (min, max) = Self::min_max(window);
 
                 min == max || {
-                    let range = (max - min) as u32;
-                    let base = (end - start) as u32;
+                    let range = (max - min).cast_unsigned();
+                    let base = (end - start).cast_unsigned();
 
                     range.is_multiple_of(base) && {
                         let interval = NonZeroU32::new(range / base).unwrap();
@@ -50,7 +50,7 @@ impl Solution {
                         seen.resize(window.len(), false);
 
                         let result = window.iter().all(|&num| {
-                            let num_minus_min = (num - min) as u32;
+                            let num_minus_min = (num - min).cast_unsigned();
 
                             num_minus_min % interval == 0
                                 && seen

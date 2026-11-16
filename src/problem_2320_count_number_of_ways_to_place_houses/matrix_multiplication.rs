@@ -36,7 +36,7 @@ impl Solution {
     }
 
     pub fn count_house_placements(n: i32) -> i32 {
-        let matrix = Self::exp_mod(n as _);
+        let matrix = Self::exp_mod(n.cast_unsigned());
 
         ((matrix.0 * 2 + matrix.1).pow(2) % Self::MODULUS) as _
     }

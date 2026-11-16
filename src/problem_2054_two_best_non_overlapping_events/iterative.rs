@@ -15,13 +15,13 @@ impl Solution {
         events_2.extend(events.iter().map(|event| {
             let &[start, _, value] = Self::parse_event(event);
 
-            (u64::from(start as u32) << 33) | u64::from(value as u32)
+            (u64::from(start.cast_unsigned()) << 33) | u64::from(value.cast_unsigned())
         }));
 
         events_2.extend(events.iter().map(|event| {
             let &[_, end, value] = Self::parse_event(event);
 
-            (u64::from(end as u32) << 33) | PROBE | u64::from(value as u32)
+            (u64::from(end.cast_unsigned()) << 33) | PROBE | u64::from(value.cast_unsigned())
         }));
 
         drop(events);

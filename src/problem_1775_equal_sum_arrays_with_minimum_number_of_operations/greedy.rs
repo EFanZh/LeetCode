@@ -9,7 +9,7 @@ impl Solution {
         let mut result = [0; 6];
 
         for num in nums {
-            result[num as u32 as usize - 1] += 1;
+            result[num.cast_unsigned() as usize - 1] += 1;
         }
 
         result

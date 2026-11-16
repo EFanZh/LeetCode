@@ -5,6 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn get_permutation(n: i32, k: i32) -> String {
         const FACTORIALS: [usize; 10] = [1, 1, 2, 6, 24, 120, 720, 5_040, 40_320, 362_880];
+
         let n = n as usize;
         let mut k = (k - 1) as usize;
         let mut digits_storage = *b"123456789";

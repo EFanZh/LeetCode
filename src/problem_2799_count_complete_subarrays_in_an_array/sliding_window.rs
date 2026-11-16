@@ -17,7 +17,7 @@ impl Solution {
     }
 
     pub fn count_complete_subarrays(nums: Vec<i32>) -> i32 {
-        let nums = nums.into_iter().map(|x| x as u32 - 1).collect::<Vec<_>>();
+        let nums = nums.into_iter().map(|x| x.cast_unsigned() - 1).collect::<Vec<_>>();
         let total_unique_count = Self::get_unique_count(&nums);
         let mut result = 0;
         let mut counts = [0_u16; 2000];

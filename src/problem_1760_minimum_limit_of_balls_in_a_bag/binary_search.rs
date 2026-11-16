@@ -9,7 +9,7 @@ impl Solution {
         let penalty = NonZeroU32::new(penalty).unwrap();
 
         nums.iter().all(|&num| {
-            let required_ops = (num as u32 - 1) / penalty;
+            let required_ops = (num.cast_unsigned() - 1) / penalty;
             let ok = required_ops <= max_operations;
 
             if ok {
@@ -21,9 +21,9 @@ impl Solution {
     }
 
     pub fn minimum_size(nums: Vec<i32>, max_operations: i32) -> i32 {
-        let max_operations = max_operations as u32;
+        let max_operations = max_operations.cast_unsigned();
         let mut left = 1;
-        let mut right = nums.iter().fold(0, |max, &num| max.max(num as _));
+        let mut right = nums.iter().fold(0, |max, &num| max.max(num.cast_unsigned()));
 
         loop {
             let middle = u32::midpoint(left, right);

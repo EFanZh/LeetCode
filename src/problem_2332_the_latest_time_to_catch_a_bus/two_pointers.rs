@@ -60,7 +60,7 @@ impl Solution {
         buses.sort_unstable();
         passengers.sort_unstable();
 
-        Self::helper(&buses, &passengers, capacity as _) as _
+        Self::helper(&buses, &passengers, capacity.cast_unsigned()) as _
     }
 }
 

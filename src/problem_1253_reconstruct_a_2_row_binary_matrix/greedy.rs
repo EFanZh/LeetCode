@@ -41,7 +41,7 @@ impl Solution {
     }
 
     pub fn reconstruct_matrix(upper: i32, lower: i32, colsum: Vec<i32>) -> Vec<Vec<i32>> {
-        Self::helper(upper as _, lower as _, colsum).unwrap_or_default()
+        Self::helper(upper.cast_unsigned(), lower.cast_unsigned(), colsum).unwrap_or_default()
     }
 }
 

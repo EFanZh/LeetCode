@@ -15,11 +15,11 @@ impl Solution {
     }
 
     pub fn three_sum_multi(arr: Vec<i32>, target: i32) -> i32 {
-        let target = target as u32;
+        let target = target.cast_unsigned();
         let mut counts = HashMap::<u32, u64>::new();
 
         for num in arr {
-            let num = num as u32;
+            let num = num.cast_unsigned();
 
             if num <= target {
                 counts.entry(num).and_modify(|count| *count += 1).or_insert(1);

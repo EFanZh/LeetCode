@@ -50,7 +50,7 @@ impl Solution {
             701_408_733,
         ];
 
-        let mut k = k as u32;
+        let mut k = k.cast_unsigned();
         let mut end = FIBONACCI_NUMBERS.len();
         let mut result = 0;
 

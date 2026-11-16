@@ -13,7 +13,7 @@ impl Solution {
         let mut result = 0;
 
         iter::zip(nums1, nums2).for_each(|(num1, num2)| {
-            let (mut x, mut y) = (num1 as u32, num2 as u32);
+            let (mut x, mut y) = (num1.cast_unsigned(), num2.cast_unsigned());
 
             if y < x {
                 mem::swap(&mut x, &mut y);

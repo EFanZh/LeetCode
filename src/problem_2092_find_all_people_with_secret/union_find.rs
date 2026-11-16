@@ -62,29 +62,29 @@ impl Solution {
     }
 
     pub fn find_all_people(n: i32, meetings: Vec<Vec<i32>>, first_person: i32) -> Vec<i32> {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
 
         let mut meetings = meetings
-            .iter()
-            .map(|meeting| <&[_; 3]>::try_from(meeting.as_slice()).ok().unwrap())
+            .into_iter()
+            .map(|meeting| <[_; 3]>::map(meeting.try_into().ok().unwrap(), i32::cast_unsigned))
             .collect::<Vec<_>>();
 
-        let first_person = first_person as u32;
+        let first_person = first_person.cast_unsigned();
 
-        meetings.sort_unstable_by_key(|&&[_, _, time]| time as u32);
+        meetings.sort_unstable_by_key(|&[_, _, time]| time);
 
         let union_find = vec![(Cell::new(u32::MAX), Cell::new(0)); n].into_boxed_slice();
         let mut prev_time = 0;
         let mut time_frame = vec![(&union_find[0], &union_find[first_person as usize])];
 
-        for &[x, y, time] in meetings {
+        for [x, y, time] in meetings {
             if time != prev_time {
                 prev_time = time;
 
                 Self::broadcast_in_time_frame(&union_find, &mut time_frame);
             }
 
-            time_frame.push((&union_find[x as u32 as usize], &union_find[y as u32 as usize]));
+            time_frame.push((&union_find[x as usize], &union_find[y as usize]));
         }
 
         Self::broadcast_in_time_frame(&union_find, &mut time_frame);

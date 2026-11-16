@@ -35,7 +35,7 @@ impl PowerCalculator {
 
 impl Solution {
     pub fn get_kth(lo: i32, hi: i32, k: i32) -> i32 {
-        let (lo, hi, k) = (lo as u32, hi as u32, k as usize);
+        let (lo, hi, k) = (lo.cast_unsigned(), hi.cast_unsigned(), k.cast_unsigned() as usize);
         let mut calculator = PowerCalculator::default();
         let mut elements = (lo..=hi).rev().map(|i| (calculator.get(i), i)).collect::<Vec<_>>();
 

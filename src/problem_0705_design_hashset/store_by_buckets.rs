@@ -6,7 +6,7 @@ pub struct MyHashSet {
 }
 
 fn hash_key(key: i32) -> u32 {
-    (key as u32).wrapping_mul(0x9E37_79B9)
+    key.cast_unsigned().wrapping_mul(0x9E37_79B9)
 }
 
 impl MyHashSet {

@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn max_consecutive_answers(answer_key: String, k: i32) -> i32 {
         let answer_key = answer_key.into_bytes();
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut window_start = 0;
         let mut window_false_count = 0;
         let mut window_true_count = 0;

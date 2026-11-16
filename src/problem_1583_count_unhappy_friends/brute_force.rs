@@ -9,7 +9,7 @@ struct State {
 
 impl Solution {
     pub fn unhappy_friends(n: i32, preferences: Vec<Vec<i32>>, pairs: Vec<Vec<i32>>) -> i32 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
 
         let mut states = preferences
             .into_iter()
@@ -20,7 +20,7 @@ impl Solution {
                 };
 
                 for (i, friend) in (0..).zip(friends) {
-                    state.rank[friend as u32 as usize] = i;
+                    state.rank[friend.cast_unsigned() as usize] = i;
                 }
 
                 state
@@ -30,8 +30,8 @@ impl Solution {
         for pair in pairs {
             let [x, y] = pair.as_slice().try_into().ok().unwrap();
 
-            states[x as u32 as usize].paired_with = y as _;
-            states[y as u32 as usize].paired_with = x as _;
+            states[x.cast_unsigned() as usize].paired_with = y as _;
+            states[y.cast_unsigned() as usize].paired_with = x as _;
         }
 
         let mut result = 0;

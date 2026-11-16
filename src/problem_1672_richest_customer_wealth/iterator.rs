@@ -6,7 +6,7 @@ impl Solution {
     pub fn maximum_wealth(accounts: Vec<Vec<i32>>) -> i32 {
         accounts
             .into_iter()
-            .map(|account| account.iter().sum::<i32>() as u32)
+            .map(|account| account.iter().sum::<i32>().cast_unsigned())
             .max()
             .unwrap() as _
     }

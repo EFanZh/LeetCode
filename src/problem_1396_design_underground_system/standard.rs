@@ -32,14 +32,14 @@ impl UndergroundSystem {
 
     fn check_in(&mut self, id: i32, station_name: String, t: i32) {
         let station_name = Self::get_station_name(station_name);
-        let t = t as _;
+        let t = t.cast_unsigned();
 
         self.ongoing.insert(id, (station_name, t));
     }
 
     fn check_out(&mut self, id: i32, station_name: String, t: i32) {
         let end_station = Self::get_station_name(station_name);
-        let t = t as u32;
+        let t = t.cast_unsigned();
         let (start_station, start_time) = self.ongoing.remove(&id).unwrap();
         let duration = u64::from(t - start_time);
 

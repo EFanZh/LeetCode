@@ -15,15 +15,13 @@ impl Solution {
     }
 
     pub fn find_kth_number(m: i32, n: i32, k: i32) -> i32 {
-        let (m, n) = if n < m {
-            (n as u32, m as u32)
-        } else {
-            (m as u32, n as u32)
-        };
+        let m = m.cast_unsigned();
+        let n = n.cast_unsigned();
+        let k = k.cast_unsigned();
+        let (m, n) = if n < m { (n, m) } else { (m, n) };
 
         assert!(n != 0);
 
-        let k = k as u32;
         let mut left = 1;
         let mut right = m * n;
 

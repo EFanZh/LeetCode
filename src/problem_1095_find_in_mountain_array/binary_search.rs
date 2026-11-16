@@ -36,7 +36,7 @@ impl Solution {
     }
 
     pub fn find_in_mountain_array(target: i32, mountain_arr: &MountainArray) -> i32 {
-        let n = mountain_arr.length() as u32;
+        let n = mountain_arr.length().cast_unsigned();
         let peak = Self::partition_point(1, n - 2, |i| mountain_arr.get(i as _) < mountain_arr.get((i + 1) as _));
 
         Self::binary_search(0, peak + 1, |i| mountain_arr.get(i as _).cmp(&target))

@@ -6,7 +6,7 @@ use std::num::NonZeroU64;
 
 impl Solution {
     pub fn get_averages(nums: Vec<i32>, k: i32) -> Vec<i32> {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let window_size = k * 2 + 1;
         let window_size_u64 = NonZeroU64::new(window_size as _).unwrap();
 
@@ -15,7 +15,7 @@ impl Solution {
 
             let mut sum = nums[..window_size]
                 .iter()
-                .fold(0_u64, |sum, &x| sum + u64::from(x as u32));
+                .fold(0_u64, |sum, &x| sum + u64::from(x.cast_unsigned()));
 
             result[k] = (sum / window_size_u64) as _;
 

@@ -65,7 +65,7 @@ impl Solution {
     }
 
     pub fn count_subgraphs_for_each_diameter(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut graph = [0_u16; 16];
 
         for edge in edges {
@@ -73,8 +73,8 @@ impl Solution {
             let from = from - 1;
             let to = to - 1;
 
-            graph[from as u32 as usize] |= 1 << to;
-            graph[to as u32 as usize] |= 1 << from;
+            graph[from.cast_unsigned() as usize] |= 1 << to;
+            graph[to.cast_unsigned() as usize] |= 1 << from;
         }
 
         let mut result = vec![0; n - 1];

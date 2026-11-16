@@ -16,14 +16,14 @@ impl Solution {
         if source == destination {
             true
         } else {
-            let source = source as u32;
-            let destination = destination as u32;
-            let mut graph = vec![Vec::new(); n as u32 as usize];
+            let source = source.cast_unsigned();
+            let destination = destination.cast_unsigned();
+            let mut graph = vec![Vec::new(); n.cast_unsigned() as usize];
 
             for edge in edges {
                 let [from, to] = edge.try_into().ok().unwrap();
-                let from = from as u32;
-                let to = to as u32;
+                let from = from.cast_unsigned();
+                let to = to.cast_unsigned();
 
                 graph[from as usize].push(to);
                 graph[to as usize].push(from);

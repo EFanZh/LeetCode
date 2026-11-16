@@ -9,7 +9,7 @@ impl Solution {
         let candidates = nums
             .iter()
             .enumerate()
-            .flat_map(|(i, row)| [row[i] as u32, row[n_minus_1 - i] as u32])
+            .flat_map(|(i, row)| [row[i].cast_unsigned(), row[n_minus_1 - i].cast_unsigned()])
             .collect::<Vec<_>>();
 
         let max = candidates.iter().fold(0, |max, &x| max.max(x));

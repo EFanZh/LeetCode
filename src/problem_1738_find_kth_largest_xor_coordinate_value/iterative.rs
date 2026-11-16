@@ -38,7 +38,7 @@ impl Solution {
         }
 
         *values
-            .select_nth_unstable_by_key(k as u32 as usize - 1, |&x| Reverse(x))
+            .select_nth_unstable_by_key(k.cast_unsigned() as usize - 1, |&x| Reverse(x))
             .1
     }
 }

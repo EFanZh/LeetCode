@@ -6,9 +6,9 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn smallest_divisor(nums: Vec<i32>, threshold: i32) -> i32 {
-        let threshold = threshold as u32;
+        let threshold = threshold.cast_unsigned();
         let mut left = 1;
-        let mut right = nums.iter().map(|&value| value as u32).max().unwrap();
+        let mut right = nums.iter().map(|&value| value.cast_unsigned()).max().unwrap();
 
         while left < right {
             let middle = NonZeroU32::new(u32::midpoint(left, right)).unwrap();
@@ -16,7 +16,7 @@ impl Solution {
 
             if nums
                 .iter()
-                .map(|&value| (value as u32 + middle_minus_1) / middle)
+                .map(|&value| (value.cast_unsigned() + middle_minus_1) / middle)
                 .sum::<u32>()
                 <= threshold
             {

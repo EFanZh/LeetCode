@@ -54,11 +54,11 @@ impl Solution {
 
             ways = (ways * child_ways) % Self::MODULUS;
 
-            ways =
-                (ways * Self::mod_inverse(u64::from(context.factorials[child_nodes as usize] as u32))) % Self::MODULUS;
+            ways = (ways * Self::mod_inverse(u64::from(context.factorials[child_nodes as usize].cast_unsigned())))
+                % Self::MODULUS;
         }
 
-        ways = ways * u64::from(context.factorials[nodes as usize] as u32) % Self::MODULUS;
+        ways = ways * u64::from(context.factorials[nodes as usize].cast_unsigned()) % Self::MODULUS;
 
         (nodes + 1, ways)
     }

@@ -8,8 +8,8 @@ impl Solution {
     pub fn possible_to_stamp(grid: Vec<Vec<i32>>, stamp_height: i32, stamp_width: i32) -> bool {
         let columns = grid.first().map_or(0, Vec::len);
         let rows = grid.len();
-        let stamp_height = stamp_height as u32;
-        let stamp_width = stamp_width as u32 as usize;
+        let stamp_height = stamp_height.cast_unsigned();
+        let stamp_width = stamp_width.cast_unsigned() as usize;
 
         if rows < stamp_height as usize || columns < stamp_width {
             return grid.iter().all(|row| row.iter().all(|&x| x != 0));

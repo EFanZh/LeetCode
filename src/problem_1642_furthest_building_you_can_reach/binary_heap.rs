@@ -8,7 +8,7 @@ use std::collections::BinaryHeap;
 impl Solution {
     pub fn furthest_building(heights: Vec<i32>, bricks: i32, ladders: i32) -> i32 {
         let mut bricks = bricks;
-        let ladders = ladders as u32 as usize;
+        let ladders = ladders.cast_unsigned() as usize;
         let mut ladder_candidates = BinaryHeap::new();
         let mut prev = i32::MAX;
         let mut i = -1;

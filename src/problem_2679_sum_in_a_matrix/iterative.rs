@@ -7,14 +7,14 @@ impl Solution {
         let mut nums = nums;
 
         for num in &mut nums {
-            num.sort_unstable_by(|&lhs, &rhs| u32::cmp(&(rhs as _), &(lhs as _)));
+            num.sort_unstable_by(|&lhs, &rhs| u32::cmp(&rhs.cast_unsigned(), &lhs.cast_unsigned()));
         }
 
         (0..nums.first().map_or(0, Vec::len))
             .map(|column| {
                 nums.iter()
                     .map_while(|row| row.get(column).copied())
-                    .fold(0, |max, value| u32::max(max, value as _))
+                    .fold(0, |max, value| u32::max(max, value.cast_unsigned()))
             })
             .sum::<u32>() as _
     }

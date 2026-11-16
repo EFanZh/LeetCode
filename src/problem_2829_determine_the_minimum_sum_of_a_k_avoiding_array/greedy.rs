@@ -8,8 +8,8 @@ impl Solution {
     }
 
     pub fn minimum_sum(n: i32, k: i32) -> i32 {
-        let n = n as u32;
-        let k = k as u32;
+        let n = n.cast_unsigned();
+        let k = k.cast_unsigned();
         let k_half = k / 2;
 
         (if n <= k_half {

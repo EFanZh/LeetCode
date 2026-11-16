@@ -10,7 +10,7 @@ impl Solution {
         let mut total_time = 0;
 
         for (color, time) in colors.bytes().zip(needed_time) {
-            let time = time as u32;
+            let time = time.cast_unsigned();
 
             max_time = if color == prev_color {
                 max_time.max(time)

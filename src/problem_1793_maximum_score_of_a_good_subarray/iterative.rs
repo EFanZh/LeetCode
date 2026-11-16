@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_score(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32 as usize;
-        let mut result = nums[k] as u32;
+        let k = k.cast_unsigned() as usize;
+        let mut result = nums[k].cast_unsigned();
         let mut left = k;
         let mut left_height = result;
         let mut right = k;
@@ -19,7 +19,7 @@ impl Solution {
                 right += 1;
 
                 if let Some(&next_right_height) = nums.get(right) {
-                    let next_right_height = next_right_height as u32;
+                    let next_right_height = next_right_height.cast_unsigned();
 
                     right_height = right_height.min(next_right_height);
                 } else {
@@ -28,7 +28,7 @@ impl Solution {
                         left = left.wrapping_sub(1);
 
                         if let Some(&next_left_height) = nums.get(left) {
-                            left_height = left_height.min(next_left_height as _);
+                            left_height = left_height.min(next_left_height.cast_unsigned());
                         } else {
                             break;
                         }
@@ -41,7 +41,7 @@ impl Solution {
                 left = left.wrapping_sub(1);
 
                 if let Some(&next_left_height) = nums.get(left) {
-                    let next_left_height = next_left_height as u32;
+                    let next_left_height = next_left_height.cast_unsigned();
 
                     left_height = left_height.min(next_left_height);
                 } else {
@@ -50,7 +50,7 @@ impl Solution {
                         right += 1;
 
                         if let Some(&next_right_height) = nums.get(right) {
-                            right_height = right_height.min(next_right_height as _);
+                            right_height = right_height.min(next_right_height.cast_unsigned());
                         } else {
                             break;
                         }

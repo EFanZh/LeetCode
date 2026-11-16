@@ -6,7 +6,7 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn closest_divisors(num: i32) -> Vec<i32> {
-        let num = num as u32;
+        let num = num.cast_unsigned();
         let num_1 = num + 1;
         let num_2 = num + 2;
         let mut lhs = num_2.isqrt();

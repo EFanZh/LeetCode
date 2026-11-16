@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn find_smallest_integer(nums: Vec<i32>, value: i32) -> i32 {
-        let value = value as u32;
+        let value = value.cast_unsigned();
 
         assert_ne!(value, 0);
 
@@ -20,7 +20,7 @@ impl Solution {
         (0..).zip(counts).for_each(|(i, count)| {
             if count < min_count {
                 min_count = count;
-                min_index = i as u32;
+                min_index = i;
             }
         });
 

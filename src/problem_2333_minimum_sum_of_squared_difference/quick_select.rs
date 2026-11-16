@@ -80,7 +80,7 @@ impl Solution {
         let mut nums = nums1.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let nums = &mut *nums;
         let n = nums.len();
-        let k = u64::from((k1 + k2) as u32);
+        let k = u64::from((k1 + k2).cast_unsigned());
         let mut random = Random::<0x_9E37_79B9>(0);
         let mut left = 0;
         let mut right = n;

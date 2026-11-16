@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn add_to_array_form(num: Vec<i32>, k: i32) -> Vec<i32> {
         let mut num = num;
-        let mut k = k as u32;
+        let mut k = k.cast_unsigned();
         let mut digits = num.iter_mut().rev();
 
         while k != 0 {
@@ -13,7 +13,7 @@ impl Solution {
                 *target += (k % 10) as i32;
                 k /= 10;
 
-                if let Some(normalized_target) = (*target as u32).checked_sub(10) {
+                if let Some(normalized_target) = (target.cast_unsigned()).checked_sub(10) {
                     *target = normalized_target as _;
                     k += 1;
                 }

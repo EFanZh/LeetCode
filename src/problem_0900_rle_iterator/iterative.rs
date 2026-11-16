@@ -14,7 +14,7 @@ impl RLEIterator {
         let mut n = n;
 
         while let Some(count) = self.encoding.get_mut(self.i) {
-            if n as u32 <= *count as u32 {
+            if n.cast_unsigned() <= count.cast_unsigned() {
                 *count -= n;
 
                 return self.encoding[self.i + 1];

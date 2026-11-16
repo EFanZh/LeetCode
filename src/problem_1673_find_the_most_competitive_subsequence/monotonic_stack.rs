@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn most_competitive(nums: Vec<i32>, k: i32) -> Vec<i32> {
         let mut nums = nums;
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let buffer = nums.as_mut_slice();
         let n = buffer.len();
         let mut i = 0;

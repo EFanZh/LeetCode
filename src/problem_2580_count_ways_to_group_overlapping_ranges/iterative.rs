@@ -31,7 +31,7 @@ impl Solution {
             .flat_map(|range| {
                 let [x, y] = range.try_into().ok().unwrap();
 
-                [(x as u32) << 2, ((y as u32) << 2) + 2]
+                [(x.cast_unsigned()) << 2, ((y.cast_unsigned()) << 2) + 2]
             })
             .collect::<Box<_>>();
 

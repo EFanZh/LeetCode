@@ -37,14 +37,14 @@ impl Counter {
 
 impl Solution {
     pub fn grid_illumination(n: i32, lamps: Vec<Vec<i32>>, queries: Vec<Vec<i32>>) -> Vec<i32> {
-        let n_minus_1 = n as u32 - 1;
+        let n_minus_1 = n.cast_unsigned() - 1;
 
         let mut lamps = lamps
             .iter()
             .map(|lamp| {
                 let [y, x] = lamp.as_slice().try_into().unwrap();
 
-                (y as u32, x as u32)
+                (y.cast_unsigned(), x.cast_unsigned())
             })
             .collect::<HashSet<_>>();
 
@@ -67,8 +67,8 @@ impl Solution {
             .iter()
             .map(|query| {
                 let [y, x] = query.as_slice().try_into().unwrap();
-                let y = y as u32;
-                let x = x as u32;
+                let y = y.cast_unsigned();
+                let x = x.cast_unsigned();
                 let (row_index, column_index, diagonal_index_1, diagonal_index_2) = indices(y, x);
 
                 let result = i32::from(

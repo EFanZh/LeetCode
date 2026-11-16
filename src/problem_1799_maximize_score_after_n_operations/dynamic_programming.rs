@@ -15,6 +15,7 @@ impl Solution {
     }
 
     pub fn max_score(nums: Vec<i32>) -> i32 {
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let n = nums.len();
         let mut cache = vec![0_u32; 1 << n];
 
@@ -27,16 +28,16 @@ impl Solution {
                 let mut x = bits;
 
                 for steps_1 in 1..bit_count {
-                    let bit_1 = x & x.wrapping_neg();
+                    let bit_1 = x.isolate_lowest_one();
                     let mut y = x & (x - 1);
 
                     for _ in 0..bit_count - steps_1 {
-                        let bit_2 = y & y.wrapping_neg();
+                        let bit_2 = y.isolate_lowest_one();
                         let prev_score = cache[usize::from(bits ^ bit_1 ^ bit_2)];
 
                         let score = Self::gcd(
-                            nums[bit_1.trailing_zeros() as usize] as _,
-                            nums[bit_2.trailing_zeros() as usize] as _,
+                            nums[bit_1.trailing_zeros() as usize],
+                            nums[bit_2.trailing_zeros() as usize],
                         ) * i;
 
                         max_score = max_score.max(prev_score + score);

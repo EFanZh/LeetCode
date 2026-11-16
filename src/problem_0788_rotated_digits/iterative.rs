@@ -20,7 +20,7 @@ impl Solution {
     }
 
     pub fn rotated_digits(n: i32) -> i32 {
-        let n = (n + 1) as _;
+        let n = n.cast_unsigned() + 1;
         let mut digits = [0; 5];
         let digits = Self::get_digits(n, &mut digits);
         let mut result = 0;

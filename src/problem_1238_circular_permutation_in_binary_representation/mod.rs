@@ -14,13 +14,13 @@ mod tests {
         for (n, start) in test_cases {
             let mut result = S::circular_permutation(n, start);
 
-            assert_eq!(result.len(), usize::pow(2, n as _));
+            assert_eq!(result.len(), usize::pow(2, n.cast_unsigned()));
             assert_eq!(result[0], start);
 
-            let mut prev = *result.last().unwrap() as u32;
+            let mut prev = result.last().unwrap().cast_unsigned();
 
             for &value in &result {
-                let value = value as u32;
+                let value = value.cast_unsigned();
 
                 assert!((value ^ prev).is_power_of_two());
 
@@ -29,7 +29,7 @@ mod tests {
 
             result.sort_unstable();
 
-            assert!(result.into_iter().eq(0..i32::pow(2, n as _)));
+            assert!(result.into_iter().eq(0..i32::pow(2, n.cast_unsigned())));
         }
     }
 }

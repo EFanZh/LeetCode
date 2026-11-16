@@ -17,14 +17,14 @@ impl Solution {
             .collect::<Box<_>>();
 
         let mut need_to_learn = vec![false; languages.len()].into_boxed_slice();
-        let mut language_counts = vec![0_u16; n as u32 as usize].into_boxed_slice();
+        let mut language_counts = vec![0_u16; n.cast_unsigned() as usize].into_boxed_slice();
         let mut total = 0;
         let mut max_common_languages = 0;
 
         for friendship in friendships {
             let [x, y] = friendship.try_into().ok().unwrap();
-            let x = x as u32 as usize - 1;
-            let y = y as u32 as usize - 1;
+            let x = x.cast_unsigned() as usize - 1;
+            let y = y.cast_unsigned() as usize - 1;
             let x_languages = &languages[x];
             let y_languages = &languages[y];
 

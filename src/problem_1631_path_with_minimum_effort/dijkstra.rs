@@ -51,7 +51,7 @@ impl Solution {
                 return item.distance as _;
             }
 
-            let node_height = heights[usize::from(item.node.0)][usize::from(item.node.1)] as u32;
+            let node_height = heights[usize::from(item.node.0)][usize::from(item.node.1)].cast_unsigned();
 
             for neighbor in [
                 (item.node.0.wrapping_sub(1), item.node.1),
@@ -63,7 +63,7 @@ impl Solution {
                     .get(usize::from(neighbor.0))
                     .and_then(|row| row.get(usize::from(neighbor.1)))
                 {
-                    let neighbor_height = neighbor_height as u32;
+                    let neighbor_height = neighbor_height.cast_unsigned();
 
                     let height_diff = node_height.abs_diff(neighbor_height);
 

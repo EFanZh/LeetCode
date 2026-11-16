@@ -11,8 +11,8 @@ impl Solution {
     pub fn total_cost(costs: Vec<i32>, k: i32, candidates: i32) -> i64 {
         let costs = costs.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let n = costs.len();
-        let k = k as u32 as usize;
-        let candidates = candidates as u32 as usize;
+        let k = k.cast_unsigned() as usize;
+        let candidates = candidates.cast_unsigned() as usize;
 
         if k >= n {
             return costs.iter().fold(0, |sum, &cost| sum + i64::from(cost));

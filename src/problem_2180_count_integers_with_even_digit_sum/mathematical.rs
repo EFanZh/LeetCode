@@ -15,7 +15,7 @@ impl Solution {
     }
 
     pub fn count_even(num: i32) -> i32 {
-        let num = num as u32;
+        let num = num.cast_unsigned();
         let base_count = num / 10 * 5;
         let extra_count = u32::midpoint(num % 10, 2 - ((num ^ Self::sum_of_digits(num)) & 1));
 

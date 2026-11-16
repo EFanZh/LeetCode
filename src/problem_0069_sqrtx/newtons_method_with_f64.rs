@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn my_sqrt(x: i32) -> i32 {
-        let x = x as u32;
+        let x = x.cast_unsigned();
         let mut guess = f64::from_bits(f64::from(x).to_bits() / 2 + 0x1FF8_0000_0000_0000) as u32;
 
         if guess * guess > x {

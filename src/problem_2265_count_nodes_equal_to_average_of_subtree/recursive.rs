@@ -12,7 +12,7 @@ impl Solution {
         node.map_or((0, 0), |node| {
             let node = node.borrow();
             let node = &*node;
-            let value = node.val as u32;
+            let value = node.val.cast_unsigned();
             let (left_count, left_sum) = Self::helper(node.left.as_deref(), result);
             let (right_count, right_sum) = Self::helper(node.right.as_deref(), result);
             let count = left_count + right_count + 1;

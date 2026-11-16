@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn decode_ciphertext(encoded_text: String, rows: i32) -> String {
-        let rows = rows as u32 as usize;
+        let rows = rows.cast_unsigned() as usize;
         let columns = encoded_text.len() / rows;
         let mut result = Vec::with_capacity(encoded_text.len());
         let mut iter = encoded_text.bytes();

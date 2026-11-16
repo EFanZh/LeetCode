@@ -11,11 +11,16 @@ impl Solution {
             .map(|event| {
                 let [start, end, value] = event.try_into().ok().unwrap();
 
-                (end as u32, start as u32, value as u32, Cell::new(0_u32))
+                (
+                    end.cast_unsigned(),
+                    start.cast_unsigned(),
+                    value.cast_unsigned(),
+                    Cell::new(0_u32),
+                )
             })
             .collect::<Box<_>>();
 
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
         events.sort_unstable();
 

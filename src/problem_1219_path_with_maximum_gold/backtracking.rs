@@ -13,7 +13,7 @@ impl Solution {
         {
             let saved_value = mem::replace(value, 0);
 
-            gold += saved_value as u32;
+            gold += saved_value.cast_unsigned();
 
             Self::helper(grid, y.wrapping_sub(1), x, gold, result);
             Self::helper(grid, y, x.wrapping_sub(1), gold, result);

@@ -33,8 +33,8 @@ impl Solution {
     }
 
     pub fn super_egg_drop(k: i32, n: i32) -> i32 {
-        let k = k as u32;
-        let n = n as u32;
+        let k = k.cast_unsigned();
+        let n = n.cast_unsigned();
 
         if k < Self::max_eggs_required(n) {
             let mut low = 3;

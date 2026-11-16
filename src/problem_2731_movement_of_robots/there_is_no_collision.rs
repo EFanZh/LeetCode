@@ -19,7 +19,7 @@ impl Solution {
         let mut prev_sum = 0;
 
         (0..).zip(&nums).for_each(|(count, &num)| {
-            prev_sum = (prev_sum + ((num - prev) as u64) * count) % MODULUS;
+            prev_sum = (prev_sum + (num - prev).cast_unsigned() * count) % MODULUS;
             prev = num;
             result += prev_sum;
             result = result.checked_sub(MODULUS).unwrap_or(result);

@@ -73,14 +73,14 @@ impl Solution {
     }
 
     pub fn minimum_weight(n: i32, edges: Vec<Vec<i32>>, src1: i32, src2: i32, dest: i32) -> i64 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
 
         // Build forward graph.
 
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in &edges {
-            let [from, to, weight] = <[_; 3]>::map(edge.as_slice().try_into().ok().unwrap(), |x| x as u32);
+            let [from, to, weight] = <[_; 3]>::map(edge.as_slice().try_into().ok().unwrap(), i32::cast_unsigned);
 
             graph[from as usize].push((to, weight));
         }
@@ -91,8 +91,8 @@ impl Solution {
         let (distances_1, distances_2) = distances.split_at_mut(n);
         let mut queue = BinaryHeap::new();
 
-        Self::dijkstra(&graph, src1 as _, distances_1, &mut queue);
-        Self::dijkstra(&graph, src2 as _, distances_2, &mut queue);
+        Self::dijkstra(&graph, src1.cast_unsigned(), distances_1, &mut queue);
+        Self::dijkstra(&graph, src2.cast_unsigned(), distances_2, &mut queue);
 
         distances_1
             .iter_mut()
@@ -104,7 +104,7 @@ impl Solution {
         graph.iter_mut().for_each(Vec::clear);
 
         for edge in &edges {
-            let [from, to, weight] = <[_; 3]>::map(edge.as_slice().try_into().ok().unwrap(), |x| x as u32);
+            let [from, to, weight] = <[_; 3]>::map(edge.as_slice().try_into().ok().unwrap(), i32::cast_unsigned);
 
             graph[to as usize].push((from, weight));
         }
@@ -113,7 +113,7 @@ impl Solution {
 
         // Calculate backward distances.
 
-        Self::dijkstra(&graph, dest as _, distances_2, &mut queue);
+        Self::dijkstra(&graph, dest.cast_unsigned(), distances_2, &mut queue);
 
         distances_1
             .iter()

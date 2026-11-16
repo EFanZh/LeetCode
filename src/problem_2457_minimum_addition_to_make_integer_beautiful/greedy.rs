@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn make_integer_beautiful(n: i64, target: i32) -> i64 {
-        let n = n as u64;
+        let n = n.cast_unsigned();
         let target = target as u8;
         let mut x = n;
         let mut digits_buffer = [0_u8; 12];

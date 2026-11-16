@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     fn iter_bits(mut x: u8, mut f: impl FnMut(u8)) {
         while x != 0 {
-            let bit = x & x.wrapping_neg();
+            let bit = x.isolate_lowest_one();
 
             f(bit);
 

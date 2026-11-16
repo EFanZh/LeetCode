@@ -38,7 +38,7 @@ impl Solution {
     }
 
     pub fn max_run_time(n: i32, batteries: Vec<i32>) -> i64 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut batteries = batteries.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let m = batteries.len();
         let split = m - n;

@@ -10,7 +10,7 @@ impl Solution {
     }
 
     pub fn knight_dialer(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         // 0 1 0
         // 2   2

@@ -24,7 +24,7 @@ impl Solution {
     }
 
     pub fn integer_replacement(n: i32) -> i32 {
-        Self::helper(n as _, &mut HashMap::new()) as _
+        Self::helper(n.cast_unsigned(), &mut HashMap::new()) as _
     }
 }
 

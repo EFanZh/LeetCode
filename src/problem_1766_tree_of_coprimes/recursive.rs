@@ -24,7 +24,7 @@ impl Solution {
     }
 
     fn dfs(context: &mut Context, depth: u32, parent: u32, node: u32) {
-        let num = context.nums[node as usize] as u32;
+        let num = context.nums[node as usize].cast_unsigned();
         let mut max_depth = 0;
         let mut max_index = u32::MAX;
 
@@ -54,8 +54,8 @@ impl Solution {
 
         for edge in edges {
             let [from, to] = edge.try_into().ok().unwrap();
-            let from = from as u32;
-            let to = to as u32;
+            let from = from.cast_unsigned();
+            let to = to.cast_unsigned();
 
             graph[from as usize].push(to);
             graph[to as usize].push(from);

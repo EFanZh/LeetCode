@@ -4,9 +4,9 @@ pub struct Solution;
 
 impl Solution {
     pub fn fill_cups(amount: Vec<i32>) -> i32 {
-        let (max, total) = amount
-            .into_iter()
-            .fold((0, 0), |(max, total), x| (max.max(x as u32), (total + x as u32)));
+        let (max, total) = amount.into_iter().fold((0, 0), |(max, total), x| {
+            (max.max(x.cast_unsigned()), (total + x.cast_unsigned()))
+        });
 
         max.max(total.div_ceil(2)) as _
     }

@@ -91,10 +91,10 @@ impl Solution {
     }
 
     pub fn friend_requests(n: i32, restrictions: Vec<Vec<i32>>, requests: Vec<Vec<i32>>) -> Vec<bool> {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let union_find = vec![(Cell::new(u16::MAX), Cell::new(0)); n].into_boxed_slice();
         let mut root_restrictions = vec![Vec::new(); n].into_boxed_slice();
-        let parse = |value: Vec<_>| <[_; 2]>::map(value.try_into().ok().unwrap(), |x| x as u32 as usize);
+        let parse = |value: Vec<_>| <[_; 2]>::map(value.try_into().ok().unwrap(), |x: i32| x.cast_unsigned() as usize);
 
         for restriction in restrictions {
             let [left, right] = parse(restriction);

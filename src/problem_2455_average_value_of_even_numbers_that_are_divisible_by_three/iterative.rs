@@ -8,7 +8,7 @@ impl Solution {
         let mut count = 0_u32;
 
         for num in nums {
-            let num = num as u32;
+            let num = num.cast_unsigned();
 
             if num.is_multiple_of(6) {
                 sum += num;

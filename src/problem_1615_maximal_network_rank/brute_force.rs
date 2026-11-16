@@ -20,14 +20,14 @@ impl BitSet {
 
 impl Solution {
     pub fn maximal_network_rank(n: i32, roads: Vec<Vec<i32>>) -> i32 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut degrees = vec![0_u8; n].into_boxed_slice();
         let mut connected = BitSet::new(n * n);
 
         for road in roads {
             let [from, to] = road.try_into().ok().unwrap();
-            let from = from as u32 as usize;
-            let to = to as u32 as usize;
+            let from = from.cast_unsigned() as usize;
+            let to = to.cast_unsigned() as usize;
 
             degrees[from] += 1;
             degrees[to] += 1;

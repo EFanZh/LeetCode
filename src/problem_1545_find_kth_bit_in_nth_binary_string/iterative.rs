@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn find_kth_bit(n: i32, k: i32) -> char {
         let _ = n;
-        let mut k = k as u32;
+        let mut k = k.cast_unsigned();
         let mut inverted = false;
 
         while k & (k - 1) != 0 {

@@ -55,7 +55,7 @@ impl Solution {
     }
 
     pub fn tribonacci(n: i32) -> i32 {
-        let matrix = Self::get_matrix(n as _);
+        let matrix = Self::get_matrix(n.cast_unsigned());
 
         (matrix.0.1 + matrix.0.2) as _
     }

@@ -23,17 +23,17 @@ impl Solution {
     pub fn min_cost(houses: Vec<i32>, cost: Vec<Vec<i32>>, m: i32, n: i32, target: i32) -> i32 {
         let _ = (m, n);
         let n = cost.first().map_or(0, Vec::len);
-        let target = target as u32 as usize;
+        let target = target.cast_unsigned() as usize;
         let mut cache = vec![INVALID; n * target].into_boxed_slice();
 
-        let mut iter = houses.into_iter().map(|house| house as u32 as usize).zip(cost);
+        let mut iter = houses.into_iter().map(|house| house.cast_unsigned() as usize).zip(cost);
 
         {
             let (house, house_costs) = iter.next().unwrap();
 
             if house == 0 {
                 for (slot, cost) in cache.iter_mut().zip(house_costs) {
-                    *slot = cost as _;
+                    *slot = cost.cast_unsigned();
                 }
             } else {
                 cache[house - 1] = 0;
@@ -55,7 +55,7 @@ impl Solution {
                             top_min_cost_2
                         } else {
                             top_min_cost_1
-                        }) + cost as u32;
+                        }) + cost.cast_unsigned();
                     }
 
                     row = top_row;
@@ -64,7 +64,7 @@ impl Solution {
                 // `neighborhoods == 1`.
 
                 for (slot, &cost) in row.iter_mut().zip(&house_costs) {
-                    *slot += cost as u32;
+                    *slot += cost.cast_unsigned();
                 }
             } else {
                 // `neighborhoods > 1`.

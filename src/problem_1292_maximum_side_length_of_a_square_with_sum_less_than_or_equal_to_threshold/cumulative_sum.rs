@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn max_side_length(mat: Vec<Vec<i32>>, threshold: i32) -> i32 {
         let mut mat = mat;
-        let threshold = threshold as u32;
+        let threshold = threshold.cast_unsigned();
 
         // Calculate cumulative sums.
 
@@ -47,7 +47,7 @@ impl Solution {
 
                     let left = row.get(x.wrapping_sub(candidate)).copied().unwrap_or(0);
 
-                    if (sum + top_left - top - left) as u32 <= threshold {
+                    if (sum + top_left - top - left).cast_unsigned() <= threshold {
                         result = candidate;
                     }
                 }

@@ -10,7 +10,7 @@ impl Solution {
         const MODULUS: u64 = 1_000_000_007;
 
         let arr = {
-            let mut arr = arr;
+            let mut arr = arr.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
             arr.sort_unstable();
 
@@ -20,10 +20,10 @@ impl Solution {
         let mut result = 0;
         let mut cache = HashMap::<u32, u32>::with_capacity(arr.len());
 
-        for (i, num) in arr.iter().map(|&num| num as u32).enumerate() {
+        for (i, num) in arr.iter().copied().enumerate() {
             let mut count = 1;
 
-            for lhs in arr[..i].iter().map(|&num| num as u32) {
+            for lhs in arr[..i].iter().copied() {
                 if num % lhs == 0 {
                     let rhs = num / lhs;
 

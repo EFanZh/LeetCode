@@ -8,10 +8,10 @@ impl Solution {
     }
 
     pub fn max_value(n: i32, index: i32, max_sum: i32) -> i32 {
-        let n = n as u32;
-        let index = index as u32;
+        let n = n.cast_unsigned();
+        let index = index.cast_unsigned();
         let index = index.min(n - 1 - index);
-        let max_sum = max_sum as u32 - n;
+        let max_sum = max_sum.cast_unsigned() - n;
         let n_u64 = u64::from(n);
         let index_u64 = u64::from(index);
         let max_sum_u64 = u64::from(max_sum);

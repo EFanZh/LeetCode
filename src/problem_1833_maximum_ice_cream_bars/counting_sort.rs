@@ -4,7 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_ice_cream(costs: Vec<i32>, coins: i32) -> i32 {
-        let iter_costs = || costs.iter().map(|&cost| cost as u32);
+        let costs = costs.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let iter_costs = || costs.iter().copied();
         let min = iter_costs().min().unwrap();
 
         assert_ne!(min, 0);
@@ -13,10 +14,10 @@ impl Solution {
         let mut counts = vec![0; (max - min) as usize + 1].into_boxed_slice();
 
         for cost in costs {
-            counts[(cost as u32 - min) as usize] += 1;
+            counts[(cost - min) as usize] += 1;
         }
 
-        let mut coins = coins as u32;
+        let mut coins = coins.cast_unsigned();
         let mut result = 0;
 
         for (cost, &count) in (min..u32::MAX).zip(&*counts) {

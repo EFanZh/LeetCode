@@ -14,7 +14,7 @@ impl Solution {
 
         for num in nums {
             sum += num.rem_euclid(k) as u32;
-            sum = sum.checked_sub(k as _).unwrap_or(sum);
+            sum = sum.checked_sub(k.cast_unsigned()).unwrap_or(sum);
 
             if let Some(&count) = counts.get(&sum) {
                 result += count;

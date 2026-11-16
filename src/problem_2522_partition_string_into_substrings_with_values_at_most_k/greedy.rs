@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn minimum_partition(s: String, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
 
         if k < 10 {
             let target = b'0' + k as u8;

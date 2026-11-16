@@ -9,7 +9,7 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn destroy_targets(nums: Vec<i32>, space: i32) -> i32 {
-        let space = NonZeroU32::new(space as _).unwrap();
+        let space = NonZeroU32::new(space.cast_unsigned()).unwrap();
         let buckets = space.get() as usize;
         let mut state = (0, 0);
 
@@ -23,7 +23,7 @@ impl Solution {
             let mut groups = vec![(0_u32, 0_u32); buckets].into_boxed_slice();
 
             for num in nums {
-                let num = num as u32;
+                let num = num.cast_unsigned();
                 let state = &mut groups[(num % space) as usize];
 
                 *state = if state.0 == 0 {
@@ -38,7 +38,7 @@ impl Solution {
             let mut groups = HashMap::<u32, (u32, u32)>::new();
 
             for num in nums {
-                let num = num as u32;
+                let num = num.cast_unsigned();
 
                 match groups.entry(num % space) {
                     Entry::Occupied(occupied_entry) => {

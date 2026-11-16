@@ -6,7 +6,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn fib(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let bits = (size_of_val(&n) as u32) * 8 - n.leading_zeros();
         let mut matrix = (1, 0);
 

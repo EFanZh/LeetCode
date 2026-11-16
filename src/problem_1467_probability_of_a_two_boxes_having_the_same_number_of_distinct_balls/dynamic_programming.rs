@@ -32,7 +32,7 @@ impl Solution {
         const MAX_BALLS_PER_COLOR: usize = 6;
         const MAX_BALLS: usize = MAX_BALLS_PER_COLOR * MAX_COLORS;
 
-        let total_balls = balls.iter().sum::<i32>() as u32 as usize;
+        let total_balls = balls.iter().sum::<i32>().cast_unsigned() as usize;
         let combinations = Self::combinations(total_balls);
         let combinations_columns = total_balls / 2 + 1;
         let max_left_balls = total_balls / 2;
@@ -47,7 +47,7 @@ impl Solution {
         let mut current_total_balls = 0;
 
         for current_balls in balls {
-            let current_balls = current_balls as u32 as usize;
+            let current_balls = current_balls.cast_unsigned() as usize;
 
             current_total_balls += current_balls;
 

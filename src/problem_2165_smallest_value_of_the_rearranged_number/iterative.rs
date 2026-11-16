@@ -8,9 +8,9 @@ impl Solution {
             num
         } else {
             let (is_negative, mut num) = if num < 0 {
-                (true, (-num) as u64)
+                (true, (-num).cast_unsigned())
             } else {
-                (false, num as u64)
+                (false, num.cast_unsigned())
             };
 
             let mut digits_buffer = [0; 20];

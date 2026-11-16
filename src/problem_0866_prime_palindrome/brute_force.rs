@@ -61,7 +61,7 @@ impl Solution {
     }
 
     pub fn prime_palindrome(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         match n {
             0..=2 => 2,

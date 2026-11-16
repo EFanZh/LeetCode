@@ -8,7 +8,7 @@ impl Solution {
 
         nums.into_iter()
             .map(|x| {
-                value = value * 2 + x as u32;
+                value = value * 2 + x.cast_unsigned();
                 value = value.checked_sub(5).unwrap_or(value);
 
                 value == 0

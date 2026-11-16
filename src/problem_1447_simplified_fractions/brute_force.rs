@@ -15,7 +15,7 @@ impl Solution {
     }
 
     pub fn simplified_fractions(n: i32) -> Vec<String> {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut result = Vec::new();
 
         for y in 2..=n {

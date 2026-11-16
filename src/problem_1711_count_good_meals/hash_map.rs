@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn count_pairs(deliciousness: Vec<i32>) -> i32 {
-        let max = deliciousness.iter().fold(0, |max, &x| u32::max(max, x as _));
+        let max = deliciousness.iter().fold(0, |max, &x| u32::max(max, x.cast_unsigned()));
         let mut result = 0_u32;
 
         if max != 0 {
@@ -14,7 +14,7 @@ impl Solution {
             let mut counts = HashMap::new();
 
             for x in deliciousness {
-                let x = x as u32;
+                let x = x.cast_unsigned();
                 let mut sum = x.next_power_of_two();
 
                 while sum <= max_sum {

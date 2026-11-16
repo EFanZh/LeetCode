@@ -25,13 +25,13 @@ impl Solution {
             .map(|box_| {
                 let [port, weight] = box_.try_into().ok().unwrap();
 
-                (port as u32, weight as u32)
+                (port.cast_unsigned(), weight.cast_unsigned())
             })
             .collect::<Box<_>>();
 
         let _ = ports_count;
-        let max_boxes = max_boxes as u32 as usize;
-        let max_weight = max_weight as u32;
+        let max_boxes = max_boxes.cast_unsigned() as usize;
+        let max_weight = max_weight.cast_unsigned();
         let mut cache = vec![0_u32; boxes.len()].into_boxed_slice();
 
         let mut window = Window {

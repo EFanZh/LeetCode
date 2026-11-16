@@ -20,8 +20,8 @@ impl Solution {
     }
 
     pub fn count_balls(low_limit: i32, high_limit: i32) -> i32 {
-        let low_limit = low_limit as u32;
-        let high_limit = high_limit as u32;
+        let low_limit = low_limit.cast_unsigned();
+        let high_limit = high_limit.cast_unsigned();
         let mut cache = vec![0; high_limit as usize + 1].into_boxed_slice();
         let mut counts = [0; 46];
 

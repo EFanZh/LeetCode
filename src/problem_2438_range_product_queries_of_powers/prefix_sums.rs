@@ -30,7 +30,7 @@ impl Solution {
     }
 
     pub fn product_queries(n: i32, queries: Vec<Vec<i32>>) -> Vec<i32> {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
         let mut powers = [0_u64; 32];
         let mut power_inversions = [0_u64; 32];
         let mut product = 1;
@@ -39,7 +39,7 @@ impl Solution {
         while n != 0 {
             power_inversions[i] = Self::mod_inverse(product);
 
-            let last_bit = n & n.wrapping_neg();
+            let last_bit = n.isolate_lowest_one();
 
             product = (product * u64::from(last_bit)) % Self::MODULUS;
             n ^= last_bit;
@@ -51,8 +51,8 @@ impl Solution {
             .into_iter()
             .map(|query| {
                 let [left, right] = query.try_into().ok().unwrap();
-                let high = powers[right as u32 as usize];
-                let low = power_inversions[left as u32 as usize];
+                let high = powers[right.cast_unsigned() as usize];
+                let low = power_inversions[left.cast_unsigned() as usize];
 
                 ((high * low) % Self::MODULUS) as _
             })

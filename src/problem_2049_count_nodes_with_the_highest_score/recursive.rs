@@ -56,7 +56,7 @@ impl Solution {
         let mut graph = vec![(0_u32, 0_u32); parents.len()].into_boxed_slice();
 
         for (node, &parent) in (1..).zip(&parents[1..]) {
-            let parent = &mut graph[parent as u32 as usize];
+            let parent = &mut graph[parent.cast_unsigned() as usize];
 
             if parent.0 == 0 {
                 parent.0 = node;

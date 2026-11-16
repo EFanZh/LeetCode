@@ -12,7 +12,7 @@ impl Solution {
         let mut bits = zero;
 
         for x in iter {
-            bits |= one << (x as u32 - 1);
+            bits |= one << (x.cast_unsigned() - 1);
         }
 
         bits

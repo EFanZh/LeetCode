@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_digits(num: i32) -> i32 {
-        let num = num as u32;
+        let num = num.cast_unsigned();
         let mut x = num;
         let mut result = 0;
 

@@ -31,10 +31,11 @@ impl Solution {
         let edges = edges
             .into_iter()
             .map(|edge| {
-                let [from, to] = <[_; 2]>::map(edge.as_slice().try_into().ok().unwrap(), |x| x as u32 as usize);
+                let [from, to] =
+                    <[_; 2]>::map(edge.as_slice().try_into().ok().unwrap(), |x| x.cast_unsigned() as usize);
 
-                Self::insert_neighbor(&mut nodes[from], scores[to] as _, to as _);
-                Self::insert_neighbor(&mut nodes[to], scores[from] as _, from as _);
+                Self::insert_neighbor(&mut nodes[from], scores[to].cast_unsigned(), to as _);
+                Self::insert_neighbor(&mut nodes[to], scores[from].cast_unsigned(), from as _);
 
                 (from as u16, to as u16)
             })

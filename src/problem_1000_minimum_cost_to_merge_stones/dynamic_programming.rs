@@ -9,7 +9,7 @@ use std::num::NonZeroUsize;
 impl Solution {
     pub fn merge_stones(stones: Vec<i32>, k: i32) -> i32 {
         let n = stones.len();
-        let k = k as usize;
+        let k = k.cast_unsigned() as usize;
         let k_minus_1 = NonZeroUsize::new(k - 1).unwrap();
 
         if (n - 1) % k_minus_1 == 0 {
@@ -33,8 +33,8 @@ impl Solution {
                     }
 
                     if (length - 1) % k_minus_1 == 0 {
-                        result +=
-                            (sums[start + length - 1] - sums.get(start.wrapping_sub(1)).copied().unwrap_or(0)) as u32;
+                        result += (sums[start + length - 1] - sums.get(start.wrapping_sub(1)).copied().unwrap_or(0))
+                            .cast_unsigned();
                     }
 
                     cache[n * (length - 1) + start] = result;

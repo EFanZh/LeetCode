@@ -11,7 +11,7 @@ impl Solution {
 
         for (max_count, cost) in (2..).zip(&costs) {
             let [cost_a, cost_b] = <[_; 2]>::try_from(cost.as_slice()).unwrap();
-            let (cost_a, cost_b) = (cost_a as u32, cost_b as u32);
+            let (cost_a, cost_b) = (cost_a.cast_unsigned(), cost_b.cast_unsigned());
             let count = max_count.min(n + 1);
 
             let mut iter = cache[..count].iter_mut().rev();

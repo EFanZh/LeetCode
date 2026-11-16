@@ -18,7 +18,11 @@ impl Solution {
     }
 
     pub fn champagne_tower(poured: i32, query_row: i32, query_glass: i32) -> f64 {
-        let (poured, query_row, query_glass) = (poured as u32, query_row as usize, query_glass as usize);
+        let (poured, query_row, query_glass) = (
+            poured.cast_unsigned(),
+            query_row.cast_unsigned() as usize,
+            query_glass.cast_unsigned() as usize,
+        );
 
         if poured == 0 {
             0.0

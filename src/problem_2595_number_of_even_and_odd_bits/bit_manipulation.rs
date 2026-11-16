@@ -7,7 +7,7 @@ impl Solution {
         const EVEN_MASK: u32 = 0x_55555555_u32;
         const ODD_MASK: u32 = 0x_aaaaaaaa_u32;
 
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let even_bits = (n & EVEN_MASK).count_ones();
         let odd_bits = (n & ODD_MASK).count_ones();
 

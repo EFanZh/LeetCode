@@ -112,7 +112,7 @@ impl Solution {
             Vec6(0, 0, 0, 0, 1, 0),
         )
         .map(|row| row.map(WrappingNum))
-        .pow(n as _);
+        .pow(n.cast_unsigned());
 
         matrix.mul_vec(Vec6(1, 0, 0, 0, 0, 0).map(WrappingNum)).sum().0 as _
     }

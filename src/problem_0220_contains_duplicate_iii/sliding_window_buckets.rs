@@ -10,8 +10,8 @@ impl Solution {
     }
 
     pub fn contains_nearby_almost_duplicate(nums: Vec<i32>, k: i32, t: i32) -> bool {
-        let k = k as u32;
-        let t = t as u32;
+        let k = k.cast_unsigned();
+        let t = t.cast_unsigned();
         let bucket_size = t + 1;
         let split = nums.len().min((k + 1) as _);
         let mut visited = HashMap::with_capacity(split);

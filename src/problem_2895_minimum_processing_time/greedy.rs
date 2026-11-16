@@ -14,7 +14,7 @@ impl Solution {
             .iter()
             .zip(tasks.iter().rev().step_by(4))
             .fold(0, |max, (processor_time, task)| {
-                u32::max(max, (processor_time + task) as _)
+                u32::max(max, (processor_time + task).cast_unsigned())
             }) as _
     }
 }

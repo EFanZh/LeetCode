@@ -7,7 +7,8 @@ impl Solution {
         mat.iter().all(|row| {
             let n = row.len();
 
-            row.iter().eq(row.iter().skip(k as u32 as usize % n).chain(row).take(n))
+            row.iter()
+                .eq(row.iter().skip(k.cast_unsigned() as usize % n).chain(row).take(n))
         })
     }
 }

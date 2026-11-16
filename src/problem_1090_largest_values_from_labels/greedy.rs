@@ -33,14 +33,14 @@ impl Ord for Item {
 
 impl Solution {
     pub fn largest_vals_from_labels(values: Vec<i32>, labels: Vec<i32>, num_wanted: i32, use_limit: i32) -> i32 {
-        let use_limit = use_limit as u32;
+        let use_limit = use_limit.cast_unsigned();
 
         let mut queue = values
             .into_iter()
             .zip(labels)
             .map(|(value, label)| Item {
-                value: value as _,
-                label: label as _,
+                value: value.cast_unsigned(),
+                label: label.cast_unsigned(),
             })
             .collect::<BinaryHeap<_>>();
 

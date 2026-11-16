@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn find_k_distant_indices(nums: Vec<i32>, key: i32, k: i32) -> Vec<i32> {
         let some_key = Some(key);
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut count = nums[..k].iter().fold(0, |count, &x| count + u16::from(x == key));
         let mut result = Vec::with_capacity(nums.len());
 

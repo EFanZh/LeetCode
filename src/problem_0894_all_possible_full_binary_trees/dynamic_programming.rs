@@ -9,7 +9,7 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn all_possible_fbt(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         if n.is_multiple_of(2) {
             Vec::new()

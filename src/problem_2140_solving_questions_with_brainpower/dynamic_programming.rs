@@ -10,8 +10,11 @@ impl Solution {
             let [points, brainpower] = question.try_into().ok().unwrap();
             let score_if_skip = cache.get(i + 1).copied().unwrap_or(0);
 
-            let score_if_solve =
-                u64::from(points as u32) + cache.get(i + 1 + brainpower as u32 as usize).copied().unwrap_or(0);
+            let score_if_solve = u64::from(points.cast_unsigned())
+                + cache
+                    .get(i + 1 + brainpower.cast_unsigned() as usize)
+                    .copied()
+                    .unwrap_or(0);
 
             cache[i] = score_if_skip.max(score_if_solve);
         }

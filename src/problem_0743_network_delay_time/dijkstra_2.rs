@@ -70,16 +70,17 @@ impl Solution {
     }
 
     pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
-        let n = n as _;
+        let n = n.cast_unsigned() as usize;
         let mut graph = vec![Vec::new(); n];
 
         for edge in times {
             let [from, to, weight] = edge.as_slice().try_into().unwrap();
 
-            graph[(from - 1) as usize].push(((to - 1) as usize, weight as u32));
+            graph[(from - 1).cast_unsigned() as usize]
+                .push(((to - 1).cast_unsigned() as usize, weight.cast_unsigned()));
         }
 
-        let mut item = ((k - 1) as usize, 0);
+        let mut item = ((k - 1).cast_unsigned() as usize, 0);
         let mut heap = Vec::with_capacity(n);
         let mut node_attributes = vec![(usize::MAX, u32::MAX); n];
 

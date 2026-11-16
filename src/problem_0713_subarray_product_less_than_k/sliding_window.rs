@@ -4,7 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn num_subarray_product_less_than_k(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let k = k.cast_unsigned();
         let mut result = 0;
 
         if k > 1 {
@@ -13,13 +14,11 @@ impl Solution {
             let mut product = 1;
 
             for &num in &nums {
-                let num = num as u32;
-
                 end += 1;
                 product *= num;
 
                 while product >= k {
-                    product /= nums[start] as u32;
+                    product /= nums[start];
                     start += 1;
                 }
 

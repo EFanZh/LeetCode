@@ -40,7 +40,7 @@ impl Solution {
             let [from, to, time] = road.try_into().ok().unwrap();
             let from = from as u8 as usize;
             let to = to as u8 as usize;
-            let time = time as u32;
+            let time = time.cast_unsigned();
 
             graph[from].push((to as u8, time));
             graph[to].push((from as u8, time));

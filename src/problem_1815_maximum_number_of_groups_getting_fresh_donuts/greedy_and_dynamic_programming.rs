@@ -15,7 +15,7 @@ impl Solution {
             let mut group_states = [0_u8; 8];
 
             for group in groups {
-                let group = group as u32 % NonZeroU32::from(batch_size);
+                let group = group.cast_unsigned() % NonZeroU32::from(batch_size);
 
                 if group == 0 {
                     greedy_result += 1;

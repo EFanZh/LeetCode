@@ -18,11 +18,11 @@ impl Solution {
     }
 
     pub fn count_pairs(nums: Vec<i32>, k: i32) -> i64 {
-        let k = NonZeroU32::new(k as _).unwrap();
+        let k = NonZeroU32::new(k.cast_unsigned()).unwrap();
         let mut counts = HashMap::<_, u64>::new();
 
         for num in nums {
-            match counts.entry(Self::gcd(num as _, k)) {
+            match counts.entry(Self::gcd(num.cast_unsigned(), k)) {
                 Entry::Occupied(entry) => *entry.into_mut() += 1,
                 Entry::Vacant(entry) => {
                     entry.insert(1);

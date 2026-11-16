@@ -16,7 +16,7 @@ impl Solution {
             let left_result = Self::helper(node.left.as_deref(), f);
             let right_result = Self::helper(node.right.as_deref(), f);
 
-            f(node.val as _, left_result, right_result)
+            f(node.val.cast_unsigned(), left_result, right_result)
         } else {
             T::default()
         }

@@ -21,11 +21,11 @@ impl Solution {
     }
 
     pub fn minimum_fuel_cost(roads: Vec<Vec<i32>>, seats: i32) -> i64 {
-        let seats = NonZeroU32::new(seats as _).unwrap();
+        let seats = NonZeroU32::new(seats.cast_unsigned()).unwrap();
         let mut graph = vec![Vec::new(); roads.len() + 1].into_boxed_slice();
 
         for road in roads {
-            let [from, to] = <[_; 2]>::map(road.try_into().ok().unwrap(), |node| node as u32);
+            let [from, to] = <[_; 2]>::map(road.try_into().ok().unwrap(), i32::cast_unsigned);
 
             graph[from as usize].push(to);
             graph[to as usize].push(from);

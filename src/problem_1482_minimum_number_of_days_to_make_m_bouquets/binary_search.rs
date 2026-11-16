@@ -11,7 +11,7 @@ impl Solution {
             let mut bouquets = 0;
 
             for &day in bloom_day {
-                if day as u32 <= middle {
+                if day.cast_unsigned() <= middle {
                     length += 1;
                 } else {
                     bouquets += length / k;
@@ -51,7 +51,11 @@ impl Solution {
     }
 
     pub fn min_days(bloom_day: Vec<i32>, m: i32, k: i32) -> i32 {
-        Self::inner(&bloom_day, m as _, NonZeroU32::new(k as _).unwrap()) as _
+        Self::inner(
+            &bloom_day,
+            m.cast_unsigned(),
+            NonZeroU32::new(k.cast_unsigned()).unwrap(),
+        ) as _
     }
 }
 

@@ -35,7 +35,7 @@ impl SmallestInfiniteSet {
     }
 
     fn add_back(&mut self, num: i32) {
-        let num = num as u32;
+        let num = num.cast_unsigned();
 
         match num.cmp(&self.back) {
             Ordering::Less => {

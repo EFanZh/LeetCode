@@ -8,7 +8,7 @@ impl Solution {
         let mut lengths = Vec::with_capacity(obstacles.len());
 
         for height in &mut obstacles {
-            let height_u32 = *height as u32;
+            let height_u32 = height.cast_unsigned();
             let i = lengths.partition_point(|&x| x <= height_u32);
 
             if let Some(value) = lengths.get_mut(i) {

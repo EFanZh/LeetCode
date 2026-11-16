@@ -7,20 +7,20 @@ use std::collections::hash_map::DefaultHasher;
 use std::hash::Hasher;
 
 struct VectorRef<'a> {
-    data: &'a [i32],
+    data: &'a [u32],
     length: usize,
     row: usize,
 }
 
 impl VectorRef<'_> {
     fn get(&self, index: usize) -> Option<(u32, u32)> {
-        (index < self.length).then(|| (self.data[index] as _, self.data[self.data.len() - 1 - self.row] as _))
+        (index < self.length).then(|| (self.data[index], self.data[self.data.len() - 1 - self.row]))
     }
 }
 
 #[derive(Clone)]
 struct MatrixRef<'a> {
-    data: &'a [i32],
+    data: &'a [u32],
     length: usize,
 }
 
@@ -256,8 +256,9 @@ impl Solution {
     }
 
     pub fn kth_smallest_prime_fraction(arr: Vec<i32>, k: i32) -> Vec<i32> {
+        let arr = arr.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let k = k.cast_unsigned() as usize;
         let n = arr.len() - 1;
-        let k = k as usize;
         let length = n.min(k);
         let matrix = MatrixRef { data: &arr, length };
 

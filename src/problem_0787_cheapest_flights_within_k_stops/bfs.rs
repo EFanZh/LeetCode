@@ -6,13 +6,19 @@ use std::collections::{HashSet, VecDeque};
 
 impl Solution {
     pub fn find_cheapest_price(n: i32, flights: Vec<Vec<i32>>, src: i32, dst: i32, k: i32) -> i32 {
-        let (n, src, dst, k) = (n as usize, src as u32, dst as u32, k as u32);
+        let (n, src, dst, k) = (
+            n.cast_unsigned() as usize,
+            src.cast_unsigned(),
+            dst.cast_unsigned(),
+            k.cast_unsigned(),
+        );
+
         let mut graph = vec![Vec::new(); n];
 
         for flight in &flights {
             let [from, to, price] = flight.as_slice().try_into().unwrap();
 
-            graph[from as usize].push((to as u32, price as u32));
+            graph[from.cast_unsigned() as usize].push((to.cast_unsigned(), price.cast_unsigned()));
         }
 
         let mut queue = VecDeque::from([src]);

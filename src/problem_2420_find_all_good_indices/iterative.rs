@@ -15,7 +15,7 @@ impl Solution {
         }
 
         let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut left_length = 0;
         let mut left_prev = 0;
 

@@ -18,7 +18,7 @@ impl Solution {
                 let state = &mut grid[row][column];
 
                 if *state != 0 {
-                    let mut count = mem::take(state) as u32;
+                    let mut count = mem::take(state).cast_unsigned();
                     let mut row = row;
                     let mut column = column;
 
@@ -32,7 +32,7 @@ impl Solution {
                             if let Some(next_state) = grid.get_mut(next_row).and_then(|row| row.get_mut(next_column))
                                 && *next_state != 0
                             {
-                                count += mem::take(next_state) as u32;
+                                count += mem::take(next_state).cast_unsigned();
 
                                 queue.push_back(((next_row as u8) << 4) | next_column as u8);
                             }

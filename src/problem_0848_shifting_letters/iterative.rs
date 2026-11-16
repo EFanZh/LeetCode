@@ -8,7 +8,7 @@ impl Solution {
         let mut shift = 0;
 
         for (c, &extra_shift) in s.iter_mut().zip(&shifts).rev() {
-            shift = ((u32::from(shift) + extra_shift as u32) % 26) as u8;
+            shift = ((u32::from(shift) + extra_shift.cast_unsigned()) % 26) as u8;
 
             *c += shift;
 

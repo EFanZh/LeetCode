@@ -38,11 +38,11 @@ impl Solution {
     pub fn max_profit(inventory: Vec<i32>, orders: i32) -> i32 {
         const MODULUS: u64 = 1_000_000_007;
 
-        let mut orders = orders as u32;
+        let mut orders = orders.cast_unsigned();
         let mut count_counts = HashMap::<u32, u32>::with_capacity(inventory.len());
 
         for count in inventory {
-            *count_counts.entry(count as _).or_default() += 1;
+            *count_counts.entry(count.cast_unsigned()).or_default() += 1;
         }
 
         let mut queue = count_counts

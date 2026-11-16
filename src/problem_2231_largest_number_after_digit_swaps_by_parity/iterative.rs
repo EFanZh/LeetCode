@@ -6,7 +6,7 @@ use std::cmp::Reverse;
 
 impl Solution {
     pub fn largest_integer(num: i32) -> i32 {
-        let mut num = num as u32;
+        let mut num = num.cast_unsigned();
         let mut digits = [0; 10];
         let mut digits_len = 0;
         let mut even_digits = ([0; 10], 0);

@@ -22,7 +22,7 @@ impl Solution {
     }
 
     pub fn min_non_zero_product(p: i32) -> i32 {
-        let p = p as u32;
+        let p = p.cast_unsigned();
         let max = (1 << p) - 1;
 
         Self::mul(max % Self::MODULUS, Self::exp((max - 1) % Self::MODULUS, p - 1)) as _

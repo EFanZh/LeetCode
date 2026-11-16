@@ -6,7 +6,12 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn reaching_points(sx: i32, sy: i32, tx: i32, ty: i32) -> bool {
-        let (mut sx, mut sy, mut tx, mut ty) = (sx as u32, sy as u32, tx as u32, ty as u32);
+        let (mut sx, mut sy, mut tx, mut ty) = (
+            sx.cast_unsigned(),
+            sy.cast_unsigned(),
+            tx.cast_unsigned(),
+            ty.cast_unsigned(),
+        );
 
         loop {
             match tx.cmp(&sx) {

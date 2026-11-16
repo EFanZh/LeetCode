@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn remove_duplicates(s: String, k: i32) -> String {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut stack = Vec::new();
 
         for c in s.bytes() {

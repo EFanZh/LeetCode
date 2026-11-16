@@ -11,7 +11,7 @@ impl Solution {
 
         offers.sort_unstable_by_key(|offer| offer.1);
 
-        let mut cache = vec![0_u32; n as u32 as usize].into_boxed_slice();
+        let mut cache = vec![0_u32; n.cast_unsigned() as usize].into_boxed_slice();
         let mut processed = 0;
         let mut prev = 0;
 

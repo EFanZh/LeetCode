@@ -17,7 +17,7 @@ impl OrderedStream {
     }
 
     fn insert(&mut self, id_key: i32, value: String) -> Vec<String> {
-        let index = id_key as u32 as usize - self.start;
+        let index = id_key.cast_unsigned() as usize - self.start;
         let mut result = Vec::new();
 
         if index == 0 {

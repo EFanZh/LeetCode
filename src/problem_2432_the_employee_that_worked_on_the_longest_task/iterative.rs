@@ -14,7 +14,7 @@ impl Solution {
 
         for log in logs {
             let [id, leave_time] = log.try_into().ok().unwrap();
-            let id = id as u32;
+            let id = id.cast_unsigned();
             let leave_time = leave_time as u16;
             let work_time = leave_time - current_time;
 

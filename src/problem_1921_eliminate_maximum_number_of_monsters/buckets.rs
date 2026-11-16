@@ -7,7 +7,7 @@ impl Solution {
         let mut buckets = vec![0_u32; dist.len()].into_boxed_slice();
 
         for (distance, speed) in dist.into_iter().zip(speed) {
-            if let Some(count) = buckets.get_mut(((distance - 1) as u32 / speed as u32) as usize) {
+            if let Some(count) = buckets.get_mut(((distance.cast_unsigned() - 1) / speed.cast_unsigned()) as usize) {
                 *count += 1;
             }
         }

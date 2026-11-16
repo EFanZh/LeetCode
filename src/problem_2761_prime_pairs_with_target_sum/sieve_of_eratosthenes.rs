@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn find_prime_pairs(n: i32) -> Vec<Vec<i32>> {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut result = Vec::new();
 
         if n >= 4 {

@@ -48,7 +48,7 @@ impl Solution {
         let mut countdowns = vec![0; n].into_boxed_slice();
 
         let mut item = Item {
-            cost: passing_fees[n - 1] as _,
+            cost: passing_fees[n - 1].cast_unsigned(),
             countdown: max_time,
             node: n as u16 - 1,
         };
@@ -62,7 +62,7 @@ impl Solution {
                 for &(neighbor, time) in &graph[usize::from(item.node)] {
                     if let Some(candidate_countdown) = item.countdown.checked_sub(time) {
                         queue.push(Item {
-                            cost: item.cost + passing_fees[usize::from(neighbor)] as u32,
+                            cost: item.cost + passing_fees[usize::from(neighbor)].cast_unsigned(),
                             countdown: candidate_countdown,
                             node: neighbor,
                         });

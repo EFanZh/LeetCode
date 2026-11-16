@@ -11,7 +11,7 @@ impl Solution {
         let mut temp = HashMap::new();
 
         for rod in rods {
-            let rod = rod as u32;
+            let rod = rod.cast_unsigned();
 
             temp.extend(cache.iter().map(|(&key, &value)| (key, value)));
 

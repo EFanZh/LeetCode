@@ -9,7 +9,7 @@ struct Frame {
 
 impl Solution {
     pub fn winner_square_game(n: i32) -> bool {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut cache = vec![0; n as usize + 1].into_boxed_slice();
         let mut frame = Frame { n, x: n.isqrt() };
         let mut stack = Vec::new();

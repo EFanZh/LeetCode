@@ -6,14 +6,14 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn count_pairs(n: i32, edges: Vec<Vec<i32>>) -> i64 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut nodes = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in edges {
             let [from, to] = edge.try_into().ok().unwrap();
 
-            nodes[from as u32 as usize].push(to as u32);
-            nodes[to as u32 as usize].push(from as u32);
+            nodes[from.cast_unsigned() as usize].push(to.cast_unsigned());
+            nodes[to.cast_unsigned() as usize].push(from.cast_unsigned());
         }
 
         let mut total_count = 0_u64;

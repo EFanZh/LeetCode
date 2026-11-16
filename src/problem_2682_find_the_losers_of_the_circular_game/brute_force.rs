@@ -12,8 +12,8 @@ impl Solution {
     }
 
     pub fn circular_game_losers(n: i32, k: i32) -> Vec<i32> {
-        let n = NonZeroUsize::new(n as u32 as _).unwrap();
-        let k = k as u32 as usize;
+        let n = NonZeroUsize::new(n.cast_unsigned() as _).unwrap();
+        let k = k.cast_unsigned() as usize;
 
         assert!(k <= n.get());
 

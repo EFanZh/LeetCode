@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn odd_cells(m: i32, n: i32, indices: Vec<Vec<i32>>) -> i32 {
-        let m = m as u32;
-        let n = n as u32;
+        let m = m.cast_unsigned();
+        let n = n.cast_unsigned();
         let mut row_states = 0_u64;
         let mut column_states = 0_u64;
 

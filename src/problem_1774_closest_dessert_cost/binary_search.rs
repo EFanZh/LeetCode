@@ -16,7 +16,7 @@ impl Solution {
             sum += value;
         }
 
-        target.push(sum as _);
+        target.push(sum.cast_unsigned());
     }
 
     fn generate_sums(values: &[i32]) -> Box<[u32]> {
@@ -28,7 +28,7 @@ impl Solution {
     }
 
     pub fn closest_cost(base_costs: Vec<i32>, topping_costs: Vec<i32>, target: i32) -> i32 {
-        let target = target as u32;
+        let target = target.cast_unsigned();
 
         // Note: a better splitting point could be used.
         let (left, right) = topping_costs.split_at(topping_costs.len() / 2);
@@ -42,7 +42,7 @@ impl Solution {
 
         for base_cost in base_costs {
             for &left_cost in &*left_topping_costs {
-                let current_cost = base_cost as u32 + left_cost;
+                let current_cost = base_cost.cast_unsigned() + left_cost;
 
                 if let Some(expected_right_cost) = target.checked_sub(current_cost) {
                     if expected_right_cost == 0 {

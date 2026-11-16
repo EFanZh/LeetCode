@@ -27,7 +27,7 @@ impl Solution {
     }
 
     pub fn num_dup_digits_at_most_n(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut buffer = [0_u8; 10];
         let digits = Self::get_digits(n, &mut buffer);
         let digits_length = digits.len() as u32;

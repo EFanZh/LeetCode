@@ -23,7 +23,7 @@ impl Solution {
     }
 
     pub fn mirror_reflection(p: i32, q: i32) -> i32 {
-        let (p, q) = (p as _, q as _);
+        let (p, q) = (p.cast_unsigned(), q.cast_unsigned());
         let gcd = Self::gcd(p, q);
         let (p, q) = (p / gcd, q / gcd);
 

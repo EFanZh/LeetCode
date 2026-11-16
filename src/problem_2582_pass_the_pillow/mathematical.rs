@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn pass_the_pillow(n: i32, time: i32) -> i32 {
-        let n = n as u32;
-        let time = time as u32 % ((n - 1) * 2);
+        let n = n.cast_unsigned();
+        let time = time.cast_unsigned() % ((n - 1) * 2);
 
         (if time < n { time + 1 } else { n * 2 - (time + 1) }) as _
     }

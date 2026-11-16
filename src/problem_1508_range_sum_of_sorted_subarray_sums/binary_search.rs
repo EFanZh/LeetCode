@@ -10,11 +10,11 @@ impl Solution {
         let mut result = 0;
 
         for (end, &right) in sums.iter().enumerate() {
-            let right = right as u32;
+            let right = right.cast_unsigned();
 
             while right - left > max_sum {
                 start = start.wrapping_add(1);
-                left = sums[start] as _;
+                left = sums[start].cast_unsigned();
             }
 
             result += end.wrapping_sub(start) as u32;
@@ -31,12 +31,12 @@ impl Solution {
         let mut result = 0;
 
         for (end, &right) in sums.iter().enumerate() {
-            let right = right as u32;
+            let right = right.cast_unsigned();
 
             while right - left > max_sum {
                 sum -= left;
                 start = start.wrapping_add(1);
-                left = sums[start] as _;
+                left = sums[start].cast_unsigned();
             }
 
             result += u64::from(right) * end.wrapping_sub(start) as u64 - u64::from(sum);
@@ -73,19 +73,19 @@ impl Solution {
 
     pub fn range_sum(nums: Vec<i32>, _n: i32, left: i32, right: i32) -> i32 {
         let mut nums = nums;
-        let mut min_num = nums[0] as u32;
+        let mut min_num = nums[0].cast_unsigned();
         let mut sum = 0;
 
         for value in &mut nums {
-            min_num = min_num.min(*value as _);
+            min_num = min_num.min(value.cast_unsigned());
             sum += *value;
             *value = sum;
         }
 
         let nums = nums.as_slice();
-        let sum = sum as u32;
-        let (new_min_sum, left) = Self::get_subarray_prefix_sum(nums, min_num, sum, left as u32 - 1);
-        let right = Self::get_subarray_prefix_sum(nums, new_min_sum, sum, right as _).1;
+        let sum = sum.cast_unsigned();
+        let (new_min_sum, left) = Self::get_subarray_prefix_sum(nums, min_num, sum, left.cast_unsigned() - 1);
+        let right = Self::get_subarray_prefix_sum(nums, new_min_sum, sum, right.cast_unsigned()).1;
 
         ((right - left) % 1_000_000_007) as _
     }

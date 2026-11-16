@@ -25,9 +25,9 @@ impl RangeFreqQuery {
 
     fn query(&self, left: i32, right: i32, value: i32) -> i32 {
         self.indices.get(&(value as _)).map_or(0, |indices| {
-            let start = indices.partition_point(|&x| x < left as u32);
+            let start = indices.partition_point(|&x| x < left.cast_unsigned());
 
-            indices[start..].partition_point(|&x| x <= right as u32) as _
+            indices[start..].partition_point(|&x| x <= right.cast_unsigned()) as _
         })
     }
 }

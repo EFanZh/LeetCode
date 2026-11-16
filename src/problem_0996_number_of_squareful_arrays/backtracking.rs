@@ -23,7 +23,7 @@ impl Solution {
 
     fn dfs(first: i32, rest: &mut [i32], result: &mut i32) {
         if let Some((second, rest)) = rest.split_first_mut() {
-            if Self::is_perfect_square((first + *second) as _) {
+            if Self::is_perfect_square((first + *second).cast_unsigned()) {
                 Self::dfs(*second, rest, result);
             }
 
@@ -33,7 +33,7 @@ impl Solution {
                 if *candidate != *second {
                     mem::swap(second, candidate);
 
-                    if Self::is_perfect_square((first + *second) as _) {
+                    if Self::is_perfect_square((first + *second).cast_unsigned()) {
                         Self::dfs(*second, rest, result);
                     }
                 }

@@ -10,7 +10,7 @@ impl Solution {
         for segment in segments {
             let [left, right, color] = segment.try_into().ok().unwrap();
 
-            events.extend([(left as u32, color), (right as u32, -color)]);
+            events.extend([(left.cast_unsigned(), color), (right.cast_unsigned(), -color)]);
         }
 
         events.sort_unstable_by_key(|&(x, _)| x);

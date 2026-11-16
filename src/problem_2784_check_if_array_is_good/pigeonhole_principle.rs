@@ -34,7 +34,7 @@ impl Solution {
                 let start = i;
 
                 loop {
-                    let Some(next) = nums.get_mut(value as u32 as usize) else {
+                    let Some(next) = nums.get_mut(value.cast_unsigned() as usize) else {
                         return false;
                     };
 

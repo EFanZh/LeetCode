@@ -17,8 +17,8 @@ impl Solution {
                 let mut c = s[i];
 
                 loop {
-                    c = mem::replace(&mut s[index as u32 as usize], c);
-                    index = mem::replace(&mut indices[index as u32 as usize], index);
+                    c = mem::replace(&mut s[index.cast_unsigned() as usize], c);
+                    index = mem::replace(&mut indices[index.cast_unsigned() as usize], index);
 
                     if index == i as i32 {
                         break;

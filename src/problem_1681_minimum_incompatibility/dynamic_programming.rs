@@ -21,7 +21,7 @@ impl Solution {
             f(selected);
         } else {
             for _ in 0..available_count - (required - 1) {
-                let last_bit = available & available.wrapping_neg();
+                let last_bit = available.isolate_lowest_one();
 
                 available ^= last_bit;
                 available_count -= 1;
@@ -68,7 +68,7 @@ impl Solution {
 
         while total_size <= n {
             Self::combinations(0, total_bits, n, total_size, &mut |selected| {
-                let last_bit = selected & selected.wrapping_neg();
+                let last_bit = selected.isolate_lowest_one();
                 let mut min_incompatibility = u8::MAX;
 
                 Self::combinations(

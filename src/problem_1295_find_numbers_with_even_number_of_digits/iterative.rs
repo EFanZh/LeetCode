@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn has_even_digits(n: i32) -> bool {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         if n < 1_000 {
             (10..100).contains(&n)

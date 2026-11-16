@@ -81,7 +81,7 @@ impl Solution {
         //
         // 12, 13, 14, 15, 16, 21, 23, 25, 31, 32, 34, 35, 41, 43, 45, 51, 52, 53, 54, 56, 61, 65.
 
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         if n < 3 {
             // Lagrange Interpolation.

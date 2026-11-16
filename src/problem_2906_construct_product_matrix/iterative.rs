@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn multiply(lhs: i32, rhs: i32) -> i32 {
-        ((u64::from(lhs as u32) * u64::from(rhs as u32)) % 12345) as i32
+        ((u64::from(lhs.cast_unsigned()) * u64::from(rhs.cast_unsigned())) % 12345) as _
     }
 
     pub fn construct_product_matrix(grid: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

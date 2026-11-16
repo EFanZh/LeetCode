@@ -68,14 +68,16 @@ impl Solution {
     }
 
     pub fn number_of_good_paths(vals: Vec<i32>, edges: Vec<Vec<i32>>) -> i32 {
-        let as_u32 = |x| x as u32;
-
         let mut edges = edges
             .into_iter()
             .map(|edge| {
-                let [x, y] = <[_; 2]>::map(edge.try_into().ok().unwrap(), as_u32);
+                let [x, y] = <[_; 2]>::map(edge.try_into().ok().unwrap(), i32::cast_unsigned);
 
-                (u32::max(vals[x as usize] as _, vals[y as usize] as _), x, y)
+                (
+                    u32::max(vals[x as usize].cast_unsigned(), vals[y as usize].cast_unsigned()),
+                    x,
+                    y,
+                )
             })
             .collect::<Box<_>>();
 
@@ -86,7 +88,7 @@ impl Solution {
             .map(|val| Node {
                 parent: Cell::new(u32::MAX),
                 rank: Cell::new(0),
-                max_value: Cell::new(val as _),
+                max_value: Cell::new(val.cast_unsigned()),
                 max_value_count: Cell::new(1),
             })
             .collect::<Box<_>>();

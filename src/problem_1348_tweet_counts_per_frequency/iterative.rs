@@ -13,7 +13,7 @@ impl TweetCounts {
     }
 
     fn record_tweet(&mut self, tweet_name: String, time: i32) {
-        let time = time as u32;
+        let time = time.cast_unsigned();
 
         self.tweets
             .entry(tweet_name.into_boxed_str())
@@ -30,8 +30,8 @@ impl TweetCounts {
         start_time: i32,
         end_time: i32,
     ) -> Vec<i32> {
-        let start_time = start_time as u32;
-        let end_time = end_time as u32;
+        let start_time = start_time.cast_unsigned();
+        let end_time = end_time.cast_unsigned();
 
         let interval = NonZeroU32::new(match freq.as_str() {
             "day" => 86_400,

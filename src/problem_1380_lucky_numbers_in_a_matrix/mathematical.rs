@@ -12,7 +12,7 @@ impl Solution {
             let mut min_row_column = 0;
 
             for (i, &value) in row.iter().enumerate() {
-                let value = value as _;
+                let value = value.cast_unsigned();
 
                 if value < min_row {
                     min_row = value;
@@ -26,7 +26,10 @@ impl Solution {
             }
         }
 
-        if matrix.into_iter().any(|row| max_min_row < row[max_min_row_column] as _) {
+        if matrix
+            .into_iter()
+            .any(|row| max_min_row < row[max_min_row_column].cast_unsigned())
+        {
             Vec::new()
         } else {
             vec![max_min_row as _]

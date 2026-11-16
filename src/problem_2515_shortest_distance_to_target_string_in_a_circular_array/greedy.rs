@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn closest_target(words: Vec<String>, target: String, start_index: i32) -> i32 {
-        let start_index = start_index as u32 as usize;
+        let start_index = start_index.cast_unsigned() as usize;
         let (left, right) = words.split_at(start_index);
         let is_target = |x| x == &target;
 

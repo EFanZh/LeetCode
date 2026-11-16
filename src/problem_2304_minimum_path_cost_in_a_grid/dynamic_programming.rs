@@ -15,18 +15,20 @@ impl Solution {
         cache
             .iter_mut()
             .zip(&prev_row)
-            .for_each(|(target, &id)| *target = id as u32);
+            .for_each(|(target, &id)| *target = id.cast_unsigned());
 
         temp.fill(u32::MAX);
 
         for row in iter {
             cache.iter().zip(prev_row).for_each(|(&cost, id)| {
                 temp.iter_mut()
-                    .zip(&move_cost[id as u32 as usize])
-                    .for_each(|(target, &move_cost)| *target = (*target).min(cost + move_cost as u32));
+                    .zip(&move_cost[id.cast_unsigned() as usize])
+                    .for_each(|(target, &move_cost)| *target = (*target).min(cost + move_cost.cast_unsigned()));
             });
 
-            temp.iter_mut().zip(&row).for_each(|(target, &id)| *target += id as u32);
+            temp.iter_mut()
+                .zip(&row)
+                .for_each(|(target, &id)| *target += id.cast_unsigned());
 
             prev_row = row;
             mem::swap(&mut cache, &mut temp);

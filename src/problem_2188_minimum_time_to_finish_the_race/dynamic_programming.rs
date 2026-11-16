@@ -6,12 +6,12 @@ impl Solution {
     pub fn minimum_finish_time(tires: Vec<Vec<i32>>, change_time: i32, num_laps: i32) -> i32 {
         const QUEUE_BITS: u8 = 5;
 
-        let change_time = change_time as u32;
-        let num_laps = num_laps as u32 as usize;
+        let change_time = change_time.cast_unsigned();
+        let num_laps = num_laps.cast_unsigned() as usize;
         let mut min_times = [u32::MAX; 16];
 
         for tire in tires {
-            let [f, r] = <[_; 2]>::map(tire.try_into().ok().unwrap(), |x| x as u32);
+            let [f, r] = <[_; 2]>::map(tire.try_into().ok().unwrap(), i32::cast_unsigned);
 
             let first_min_time = min_times.first_mut().unwrap();
 

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut cells = cells;
         let mut states = [0_u8; 256];
         let mut days = [u16::MAX; 256];

@@ -42,7 +42,7 @@ impl Solution {
 
     pub fn maximum_and_sum(nums: Vec<i32>, num_slots: i32) -> i32 {
         let n = nums.len() as u8;
-        let num_slots = num_slots as u32 as usize;
+        let num_slots = num_slots.cast_unsigned() as usize;
         let configurations = u16::pow(3, num_slots as _);
         let mut cache = vec![0_u8; usize::from(configurations)].into_boxed_slice();
 

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_consecutive(bottom: i32, top: i32, special: Vec<i32>) -> i32 {
-        let (bottom, top) = (bottom as u32, top as u32);
+        let (bottom, top) = (bottom.cast_unsigned(), top.cast_unsigned());
         let mut special = special.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         special.sort_unstable();

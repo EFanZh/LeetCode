@@ -6,7 +6,7 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn number_of_subarrays(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut result = 0;
         let mut count = 0;
         let mut min_start = 0;

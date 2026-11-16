@@ -41,7 +41,7 @@ impl Solution {
             let [from, to, time] = road.try_into().ok().unwrap();
             let from = from as u8 as usize;
             let to = to as u8 as usize;
-            let time = time as u32;
+            let time = time.cast_unsigned();
 
             nodes[from].0.push((to as u8, time));
             nodes[to].0.push((from as u8, time));

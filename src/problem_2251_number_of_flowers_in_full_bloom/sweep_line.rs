@@ -36,7 +36,7 @@ impl Solution {
         let mut events = flowers
             .into_iter()
             .flat_map(|flower| {
-                let [start, end] = <[_; 2]>::map(flower.try_into().ok().unwrap(), |x| x as u32);
+                let [start, end] = <[_; 2]>::map(flower.try_into().ok().unwrap(), i32::cast_unsigned);
 
                 [
                     Event {
@@ -50,7 +50,7 @@ impl Solution {
                 ]
             })
             .chain(result.iter_mut().map(|people| Event {
-                time_and_type: *people as u32 * 4 + 1,
+                time_and_type: people.cast_unsigned() * 4 + 1,
                 data: Some(people),
             }))
             .collect::<Vec<_>>();

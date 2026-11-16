@@ -9,11 +9,11 @@ impl Solution {
             .map(|clip| {
                 let [start, end] = <[_; 2]>::try_from(clip).ok().unwrap();
 
-                (start as u32, end as u32)
+                (start.cast_unsigned(), end.cast_unsigned())
             })
             .collect::<Vec<_>>();
 
-        let time = time as u32;
+        let time = time.cast_unsigned();
 
         clips.sort_unstable_by_key(|&(start, _)| start);
 

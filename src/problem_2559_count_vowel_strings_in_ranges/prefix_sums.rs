@@ -27,9 +27,9 @@ impl Solution {
             .map(|query| {
                 let [left, right] = query.try_into().ok().unwrap();
 
-                (prefix_sums[right as u32 as usize]
+                (prefix_sums[right.cast_unsigned() as usize]
                     - prefix_sums
-                        .get((left as u32 as usize).wrapping_sub(1))
+                        .get((left.cast_unsigned() as usize).wrapping_sub(1))
                         .copied()
                         .unwrap_or(0)) as _
             })

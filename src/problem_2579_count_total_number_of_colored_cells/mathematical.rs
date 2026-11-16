@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn colored_cells(n: i32) -> i64 {
-        let n = u64::from(n as u32);
+        let n = u64::from(n.cast_unsigned());
 
         (n * (n - 1) * 2 + 1) as _
     }

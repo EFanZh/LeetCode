@@ -52,7 +52,7 @@ impl Solution {
 
     pub fn rotate_grid(grid: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
         let mut grid = grid;
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let rows = grid.len();
         let columns = grid.first().map_or(0, Vec::len);
         let mut length = (rows + columns + 2) * 2;

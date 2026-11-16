@@ -4,15 +4,13 @@ pub struct Solution;
 
 impl Solution {
     pub fn asteroids_destroyed(mass: i32, asteroids: Vec<i32>) -> bool {
-        let mut asteroids = asteroids;
+        let mut asteroids = asteroids.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
-        asteroids.sort_unstable_by_key(|&x| x as u32);
+        asteroids.sort_unstable();
 
-        let mut mass = mass as u32;
+        let mut mass = mass.cast_unsigned();
 
         for asteroid in asteroids {
-            let asteroid = asteroid as u32;
-
             if mass < asteroid {
                 return false;
             }

@@ -65,7 +65,7 @@ impl Solution {
     }
 
     pub fn max_diff(num: i32) -> i32 {
-        let mut num = num as u32;
+        let mut num = num.cast_unsigned();
         let mut digits = [0_u8; 10];
         let mut i = 10;
 

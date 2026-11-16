@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn categorize_box(length: i32, width: i32, height: i32, mass: i32) -> String {
-        let (length, width, height) = (length as u32, width as u32, height as u32);
+        let (length, width, height) = (length.cast_unsigned(), width.cast_unsigned(), height.cast_unsigned());
 
         let is_bulky = length >= 10000
             || width >= 10000

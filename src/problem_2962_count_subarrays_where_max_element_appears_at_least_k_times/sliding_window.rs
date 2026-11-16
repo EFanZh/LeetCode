@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn count_subarrays(nums: Vec<i32>, k: i32) -> i64 {
         let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let mut required = k as u32;
+        let mut required = k.cast_unsigned();
         let max = nums.iter().copied().fold(0, u32::max);
         let mut start = 0;
         let mut result = 0;

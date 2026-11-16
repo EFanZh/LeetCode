@@ -13,7 +13,7 @@ impl Solution {
         }
 
         let [king_y, king_x] = king.try_into().unwrap();
-        let (king_y, king_x) = (king_y as u32, king_x as u32);
+        let (king_y, king_x) = (king_y.cast_unsigned(), king_x.cast_unsigned());
         let mut result = queens;
         let mut result_length = 0;
 

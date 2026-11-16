@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn clumsy(n: i32) -> i32 {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
         let mut result = n;
 
         n -= 1;

@@ -6,7 +6,7 @@ impl Solution {
     pub fn get_min_swaps(num: String, k: i32) -> i32 {
         let mut num = num.into_bytes();
         let mut target_num = num.clone();
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut result = 0;
 
         for _ in 0..k {

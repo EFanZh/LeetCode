@@ -10,7 +10,7 @@ impl Solution {
     pub fn k_items_with_maximum_sum(num_ones: i32, num_zeros: i32, num_neg_ones: i32, k: i32) -> i32 {
         _ = num_neg_ones;
 
-        Self::helper(num_ones as _, num_zeros as _, k as _) as _
+        Self::helper(num_ones.cast_unsigned(), num_zeros.cast_unsigned(), k.cast_unsigned()).cast_signed()
     }
 }
 

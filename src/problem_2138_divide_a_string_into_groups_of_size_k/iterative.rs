@@ -7,7 +7,7 @@ use std::iter;
 impl Solution {
     pub fn divide_string(s: String, k: i32, fill: char) -> Vec<String> {
         let n = s.len();
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut prev = 0;
         let mut result = Vec::with_capacity(s.len().div_ceil(k));
 

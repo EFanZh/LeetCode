@@ -11,7 +11,7 @@ impl Solution {
             .map(|property| {
                 let [attack, defense] = property.try_into().ok().unwrap();
 
-                (attack as u32, defense as u32)
+                (attack.cast_unsigned(), defense.cast_unsigned())
             })
             .collect::<Box<_>>();
 

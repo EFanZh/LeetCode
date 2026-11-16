@@ -13,10 +13,10 @@ impl Solution {
         let mut sum = 0;
 
         for i in 0..cache.len() {
-            let prev = cache[i] as u32 as usize;
+            let prev = cache[i].cast_unsigned() as usize;
 
             sum += sum + 2 + Self::MODULUS;
-            sum -= cache.get(prev.wrapping_sub(1)).copied().unwrap_or(0) as u32;
+            sum -= cache.get(prev.wrapping_sub(1)).copied().unwrap_or(0).cast_unsigned();
 
             sum = sum.checked_sub(Self::MODULUS).unwrap_or(sum);
             sum = sum.checked_sub(Self::MODULUS).unwrap_or(sum);

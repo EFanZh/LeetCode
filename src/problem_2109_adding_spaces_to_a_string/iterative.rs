@@ -8,7 +8,7 @@ impl Solution {
         let mut prev_end = 0;
 
         for i in indices {
-            let i = i as u32 as usize;
+            let i = i.cast_unsigned() as usize;
 
             result.push_str(&s[prev_end..i]);
             result.push(' ');

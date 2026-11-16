@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn equal_substring(s: String, t: String, max_cost: i32) -> i32 {
-        let max_cost = max_cost as u32;
+        let max_cost = max_cost.cast_unsigned();
 
         let mut iter = s.bytes().zip(t.bytes()).map(|(lhs, rhs)| u32::from(lhs.abs_diff(rhs)));
 

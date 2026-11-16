@@ -7,11 +7,11 @@ impl Solution {
         let mut counts = [0, 0];
 
         for student in students {
-            counts[(student as u32 as usize) & 1] += 1;
+            counts[(student.cast_unsigned() as usize) & 1] += 1;
         }
 
         for sandwich in sandwiches {
-            let sandwich = sandwich as u32 as usize & 1;
+            let sandwich = sandwich.cast_unsigned() as usize & 1;
             let count = &mut counts[sandwich];
 
             if *count == 0 {

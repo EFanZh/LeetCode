@@ -20,7 +20,7 @@ impl Solution {
 
     pub fn num_of_ways(n: i32) -> i32 {
         let mut matrix = ((1_u64, 0_u64), (0_u64, 1_u64));
-        let n = n as u32 - 1;
+        let n = n.cast_unsigned() - 1;
         let mut probe = (1 << (32 - n.leading_zeros())) >> 1;
 
         while probe != 0 {

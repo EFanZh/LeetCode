@@ -43,7 +43,7 @@ impl Solution {
                         return 0;
                     }
 
-                    min_sum = u32::min(min_sum, candidate as _);
+                    min_sum = u32::min(min_sum, candidate.cast_unsigned());
                 }
             }
         }

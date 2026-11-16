@@ -10,10 +10,10 @@ impl Solution {
         let mut cost = 0;
 
         for &dist in dist {
-            cost += (u64::from(dist as u32) + (speed.get() - 1)) / speed;
+            cost += (u64::from(dist.cast_unsigned()) + (speed.get() - 1)) / speed;
         }
 
-        (cost * speed.get() + u64::from(last_dist as u32)) * 100 > hour * speed.get()
+        (cost * speed.get() + u64::from(last_dist.cast_unsigned())) * 100 > hour * speed.get()
     }
 
     pub fn min_speed_on_time(dist: Vec<i32>, hour: f64) -> i32 {

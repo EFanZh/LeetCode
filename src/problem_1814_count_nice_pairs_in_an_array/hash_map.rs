@@ -23,7 +23,7 @@ impl Solution {
         let mut result = 0_u64;
 
         for num in nums {
-            match diffs.entry(Self::calculate_diff(num as _)) {
+            match diffs.entry(Self::calculate_diff(num.cast_unsigned())) {
                 Entry::Occupied(entry) => {
                     result += *entry.get();
                     *entry.into_mut() += 1;

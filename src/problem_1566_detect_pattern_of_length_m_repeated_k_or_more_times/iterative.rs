@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn contains_pattern(arr: Vec<i32>, m: i32, k: i32) -> bool {
-        let m = m as u32;
-        let k = k as u32;
+        let m = m.cast_unsigned();
+        let k = k.cast_unsigned();
         let required = m * (k - 1);
         let mut length = 0;
 

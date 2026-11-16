@@ -14,8 +14,8 @@ impl Solution {
 
     pub fn min_skips(dist: Vec<i32>, speed: i32, hours_before: i32) -> i32 {
         let dist = dist.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let speed = NonZeroU32::new(speed as _).unwrap();
-        let hours_before = hours_before as u32;
+        let speed = NonZeroU32::new(speed.cast_unsigned()).unwrap();
+        let hours_before = hours_before.cast_unsigned();
 
         speed.get().checked_mul(hours_before).map_or(0, |scaled_hours_before| {
             let n = dist.len();

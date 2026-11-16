@@ -4,15 +4,15 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_subarrays(nums: Vec<i32>, k: i64) -> i64 {
-        let k = k as u64;
+        let k = k.cast_unsigned();
         let mut start = 0;
         let mut sum = 0;
 
         (1..).zip(&nums).fold(0, |result, (end, &num)| {
-            sum += u64::from(num as u32);
+            sum += u64::from(num.cast_unsigned());
 
             while sum * (end - start) >= k {
-                sum -= u64::from(nums[start as usize] as u32);
+                sum -= u64::from(nums[start as usize].cast_unsigned());
                 start += 1;
             }
 

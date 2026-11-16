@@ -6,7 +6,7 @@ use std::str;
 
 impl Solution {
     pub fn thousand_separator(n: i32) -> String {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
         let mut buffer;
 
         if n == 0 {

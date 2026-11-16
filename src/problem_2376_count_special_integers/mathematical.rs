@@ -21,7 +21,7 @@ impl Solution {
             9, 90, 738, 5_274, 32_490, 168_570, 712_890, 2_345_850, 5_611_770, 8_877_690,
         ];
 
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut digits = [0_u8; 10];
         let mut i = 10;
         let mut x = n;

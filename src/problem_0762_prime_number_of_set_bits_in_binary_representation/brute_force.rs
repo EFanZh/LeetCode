@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_prime_set_bits(left: i32, right: i32) -> i32 {
-        let left = left as u32;
-        let right = right as u32;
+        let left = left.cast_unsigned();
+        let right = right.cast_unsigned();
         let mut count = 0;
 
         for x in left..=right {

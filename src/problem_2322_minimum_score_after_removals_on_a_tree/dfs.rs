@@ -39,9 +39,9 @@ impl Solution {
     }
 
     fn get_diff(x: i32, y: i32, z: i32) -> u32 {
-        let mut x = x as u32;
-        let mut y = y as u32;
-        let z = z as u32;
+        let mut x = x.cast_unsigned();
+        let mut y = y.cast_unsigned();
+        let z = z.cast_unsigned();
 
         if y < x {
             mem::swap(&mut x, &mut y);
@@ -59,7 +59,7 @@ impl Solution {
         let mut nodes = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in edges {
-            let [from, to] = <[_; 2]>::map(edge.try_into().ok().unwrap(), |x| x as u32);
+            let [from, to] = <[_; 2]>::map(edge.try_into().ok().unwrap(), i32::cast_unsigned);
 
             nodes[from as usize].push(to as _);
             nodes[to as usize].push(from as _);

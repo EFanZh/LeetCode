@@ -6,7 +6,7 @@ use std::array;
 
 impl Solution {
     pub fn min_changes(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
         assert!(k >= 1 && k <= nums.len());
 
@@ -17,11 +17,11 @@ impl Solution {
 
         for i in 0..k {
             let mut counts = [0_u16; 1024];
-            let iter = nums[i..].iter().step_by(k).map(|&x| x as u32 as usize);
+            let iter = nums[i..].iter().step_by(k).map(|&x| x.cast_unsigned() as usize);
             let rows = iter.len() as u16;
 
             for num in iter {
-                let count = &mut counts[num as u32 as usize];
+                let count = &mut counts[num];
 
                 if *count == 0 {
                     column_nums.push(num);

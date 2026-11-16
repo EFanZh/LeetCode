@@ -16,7 +16,7 @@ impl MovieRentingSystem {
         let mut prices = HashMap::<(u32, u32), u32>::new();
 
         for entry in entries {
-            let [shop, movie, price] = <[_; 3]>::map(entry.try_into().ok().unwrap(), |x| x as u32);
+            let [shop, movie, price] = <[_; 3]>::map(entry.try_into().ok().unwrap(), i32::cast_unsigned);
 
             match unrented.entry(movie) {
                 Entry::Occupied(entry) => {
@@ -40,7 +40,7 @@ impl MovieRentingSystem {
     fn search(&self, movie: i32) -> Vec<i32> {
         let mut result = Vec::new();
 
-        if let Some(state) = self.unrented.get(&(movie as _)) {
+        if let Some(state) = self.unrented.get(&(movie.cast_unsigned())) {
             result.extend(state.iter().take(5).map(|&(_, shop)| shop as i32));
         }
 
@@ -48,7 +48,7 @@ impl MovieRentingSystem {
     }
 
     fn rent(&mut self, shop: i32, movie: i32) {
-        let (shop, movie) = (shop as u32, movie as u32);
+        let (shop, movie) = (shop.cast_unsigned(), movie.cast_unsigned());
         let state = self.unrented.get_mut(&movie).unwrap();
         let price = self.prices[&(movie, shop)];
 
@@ -57,7 +57,7 @@ impl MovieRentingSystem {
     }
 
     fn drop(&mut self, shop: i32, movie: i32) {
-        let (shop, movie) = (shop as u32, movie as u32);
+        let (shop, movie) = (shop.cast_unsigned(), movie.cast_unsigned());
         let state = self.unrented.get_mut(&movie).unwrap();
         let price = self.prices[&(movie, shop)];
 

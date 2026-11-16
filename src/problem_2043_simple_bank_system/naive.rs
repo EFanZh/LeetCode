@@ -16,8 +16,8 @@ impl Bank {
     fn transfer(&mut self, account1: i32, account2: i32, money: i64) -> bool {
         let balance = Cell::from_mut(self.balance.as_mut()).as_slice_of_cells();
 
-        if let Some(from) = balance.get((account1 as u32 as usize).wrapping_sub(1))
-            && let Some(to) = balance.get((account2 as u32 as usize).wrapping_sub(1))
+        if let Some(from) = balance.get((account1.cast_unsigned() as usize).wrapping_sub(1))
+            && let Some(to) = balance.get((account2.cast_unsigned() as usize).wrapping_sub(1))
         {
             let from_money = from.get();
 
@@ -34,7 +34,7 @@ impl Bank {
 
     fn deposit(&mut self, account: i32, money: i64) -> bool {
         self.balance
-            .get_mut((account as u32 as usize).wrapping_sub(1))
+            .get_mut((account.cast_unsigned() as usize).wrapping_sub(1))
             .is_some_and(|value| {
                 *value += money;
 
@@ -43,7 +43,7 @@ impl Bank {
     }
 
     fn withdraw(&mut self, account: i32, money: i64) -> bool {
-        if let Some(value) = self.balance.get_mut((account as u32 as usize).wrapping_sub(1))
+        if let Some(value) = self.balance.get_mut((account.cast_unsigned() as usize).wrapping_sub(1))
             && money <= *value
         {
             *value -= money;

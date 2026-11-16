@@ -4,14 +4,14 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_building(n: i32, restrictions: Vec<Vec<i32>>) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         let mut restrictions = restrictions
             .into_iter()
             .map(|restriction| {
                 let [id, max_height] = restriction.try_into().ok().unwrap();
 
-                (id as u32, max_height as u32)
+                (id.cast_unsigned(), max_height.cast_unsigned())
             })
             .collect::<Box<_>>();
 

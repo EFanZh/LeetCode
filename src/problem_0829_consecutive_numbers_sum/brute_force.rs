@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn consecutive_numbers_sum(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut result = 1;
         let mut size = 2;
         let max_size = (f64::sqrt(f64::from(n * 2) + 0.25) + 0.5).ceil() as u32;

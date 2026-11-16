@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_max_difference(num: i32) -> i32 {
-        let num = num as u32;
+        let num = num.cast_unsigned();
         let mut buffer = [0_u8; 10];
         let mut i = buffer.len();
         let mut x = num;

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn split_num(num: i32) -> i32 {
-        let mut num = num as u32;
+        let mut num = num.cast_unsigned();
         let mut digits = [0_u8; 10];
         let mut i = 0;
 

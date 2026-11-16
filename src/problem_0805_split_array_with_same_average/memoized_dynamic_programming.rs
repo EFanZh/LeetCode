@@ -5,7 +5,7 @@ pub struct Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    fn helper(nums: &[i32], sum: u32, count: u16, target: u32, cache: &mut HashSet<u64>) -> bool {
+    fn helper(nums: &[u32], sum: u32, count: u16, target: u32, cache: &mut HashSet<u64>) -> bool {
         // Invariant: `nums.iter().sum() == sum`.
         // Invariant: `0 <= count <= nums.len()`.
         // Invariant: `0 <= target <= sum`.
@@ -21,7 +21,6 @@ impl Solution {
                 false
             } else {
                 let (&first, nums) = nums.split_first().unwrap();
-                let first = first as u32;
                 let sum = sum - first;
 
                 let result = first <= target
@@ -38,12 +37,12 @@ impl Solution {
     }
 
     pub fn split_array_same_average(nums: Vec<i32>) -> bool {
-        let mut nums = nums;
+        let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
         nums.sort_unstable();
 
         let n = nums.len() as u32;
-        let sum = nums.iter().sum::<i32>() as u32;
+        let sum = nums.iter().sum::<u32>();
         let mut cache = HashSet::new();
 
         for count in 1..=n / 2 {

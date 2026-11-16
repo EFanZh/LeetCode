@@ -9,7 +9,7 @@ impl Solution {
         days -= 1;
 
         for &weight in weights {
-            let weight = weight as u32;
+            let weight = weight.cast_unsigned();
             let candidate = sum + weight;
 
             if candidate <= capacity {
@@ -29,12 +29,12 @@ impl Solution {
 
     pub fn ship_within_days(weights: Vec<i32>, days: i32) -> i32 {
         let weights = weights.as_slice();
-        let days = days as u32;
+        let days = days.cast_unsigned();
         let mut max = 0;
         let mut total = 0;
 
         for &weight in weights {
-            let weight = weight as u32;
+            let weight = weight.cast_unsigned();
 
             max = max.max(weight);
             total += weight;

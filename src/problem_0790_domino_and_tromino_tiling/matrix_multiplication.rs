@@ -67,7 +67,7 @@ impl Solution {
     }
 
     pub fn num_tilings(n: i32) -> i32 {
-        let matrix = Self::get_matrix(n as u32 - 1);
+        let matrix = Self::get_matrix(n.cast_unsigned() - 1);
 
         ((matrix.1.0 + matrix.1.1) % MODULUS) as _
     }

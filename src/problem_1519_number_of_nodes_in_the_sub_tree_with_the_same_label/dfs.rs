@@ -22,7 +22,7 @@ impl Solution {
     }
 
     pub fn count_sub_trees(n: i32, edges: Vec<Vec<i32>>, labels: String) -> Vec<i32> {
-        let n = n as u32 as _;
+        let n = n.cast_unsigned() as _;
 
         let mut graph = labels
             .into_bytes()
@@ -32,8 +32,8 @@ impl Solution {
 
         for edge in edges {
             let [from, to] = edge.try_into().ok().unwrap();
-            let from = from as u32 as usize;
-            let to = to as u32 as usize;
+            let from = from.cast_unsigned() as usize;
+            let to = to.cast_unsigned() as usize;
 
             graph[from].1.push(to);
             graph[to].1.push(from);

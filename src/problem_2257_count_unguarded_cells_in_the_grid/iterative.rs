@@ -4,13 +4,13 @@ pub struct Solution;
 
 impl Solution {
     pub fn count_unguarded(m: i32, n: i32, guards: Vec<Vec<i32>>, walls: Vec<Vec<i32>>) -> i32 {
-        let m = m as u32 as usize;
-        let n = n as u32 as usize;
+        let m = m.cast_unsigned() as usize;
+        let n = n.cast_unsigned() as usize;
         let mut grid = vec![0_u8; n * m].into_boxed_slice();
 
         for (c, positions) in [(b'g', guards), (b'w', walls)] {
             for position in positions {
-                let [y, x] = <[_; 2]>::map(position.try_into().ok().unwrap(), |x| x as u32 as usize);
+                let [y, x] = <[_; 2]>::map(position.try_into().ok().unwrap(), |x| x.cast_unsigned() as usize);
 
                 grid[n * y + x] = c;
             }

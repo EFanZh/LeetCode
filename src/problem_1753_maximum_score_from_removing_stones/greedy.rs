@@ -17,9 +17,9 @@ impl Solution {
     }
 
     pub fn maximum_score(a: i32, b: i32, c: i32) -> i32 {
-        let mut a = a as u32;
-        let mut b = b as u32;
-        let mut c = c as u32;
+        let mut a = a.cast_unsigned();
+        let mut b = b.cast_unsigned();
+        let mut c = c.cast_unsigned();
 
         Self::sort_3(&mut a, &mut b, &mut c);
 

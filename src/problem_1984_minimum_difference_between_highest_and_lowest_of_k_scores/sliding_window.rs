@@ -9,7 +9,7 @@ impl Solution {
         nums.sort_unstable();
 
         nums.iter()
-            .zip(&nums[k as u32 as usize - 1..])
+            .zip(&nums[k.cast_unsigned() as usize - 1..])
             .fold(i32::MAX, |result, (left, right)| result.min(right - left))
     }
 }

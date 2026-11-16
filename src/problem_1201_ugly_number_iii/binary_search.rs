@@ -22,9 +22,9 @@ impl Solution {
     }
 
     pub fn nth_ugly_number(n: i32, a: i32, b: i32, c: i32) -> i32 {
-        let a = NonZeroU32::new(a as _).unwrap();
-        let b = NonZeroU32::new(b as _).unwrap();
-        let c = NonZeroU32::new(c as _).unwrap();
+        let a = NonZeroU32::new(a.cast_unsigned()).unwrap();
+        let b = NonZeroU32::new(b.cast_unsigned()).unwrap();
+        let c = NonZeroU32::new(c.cast_unsigned()).unwrap();
         let ab = Self::lcm(a, b);
         let ac = Self::lcm(a, c);
         let bc = Self::lcm(b, c);
@@ -37,7 +37,7 @@ impl Solution {
             let middle = u32::midpoint(left, right);
             let count = middle / a + middle / b + middle / c - middle / ab - middle / ac - middle / bc + middle / abc;
 
-            if count < n as _ {
+            if count < n.cast_unsigned() {
                 left = middle + 1;
             } else {
                 right = middle;

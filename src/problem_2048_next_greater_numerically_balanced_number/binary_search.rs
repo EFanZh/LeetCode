@@ -16,7 +16,7 @@ impl Solution {
             551_555, 555_155, 555_515, 555_551, 666_666,
         ];
 
-        let i = DATA.partition_point(|&x| x <= n as u32);
+        let i = DATA.partition_point(|&x| x <= n.cast_unsigned());
 
         DATA.get(i).copied().unwrap_or(1_224_444) as _
     }

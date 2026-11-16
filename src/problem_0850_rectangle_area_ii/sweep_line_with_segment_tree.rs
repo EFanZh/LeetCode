@@ -238,7 +238,13 @@ impl Solution {
 
         for rectangle in &rectangles {
             let [x_1, y_1, x_2, y_2] = rectangle.as_slice().try_into().unwrap();
-            let (x_1, y_1, x_2, y_2) = (x_1 as u32, y_1 as u32, x_2 as u32, y_2 as u32);
+
+            let (x_1, y_1, x_2, y_2) = (
+                x_1.cast_unsigned(),
+                y_1.cast_unsigned(),
+                x_2.cast_unsigned(),
+                y_2.cast_unsigned(),
+            );
 
             ys.extend([y_1, y_2]);
 

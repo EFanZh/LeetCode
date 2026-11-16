@@ -25,7 +25,7 @@ impl Solution {
     }
 
     pub fn discount_prices(sentence: String, discount: i32) -> String {
-        let discount = u64::from(100 - discount as u32);
+        let discount = u64::from(100 - discount.cast_unsigned());
         let mut result = String::with_capacity(sentence.len() * 2);
 
         for word in sentence.split_ascii_whitespace() {

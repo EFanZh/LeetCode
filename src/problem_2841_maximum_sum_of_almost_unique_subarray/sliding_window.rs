@@ -24,8 +24,8 @@ impl Solution {
 
     pub fn max_sum(nums: Vec<i32>, m: i32, k: i32) -> i64 {
         let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let m = m as u32;
-        let (left, right) = nums.split_at(k as u32 as usize - 1);
+        let m = m.cast_unsigned();
+        let (left, right) = nums.split_at(k.cast_unsigned() as usize - 1);
         let mut counts = HashMap::new();
 
         let mut sum = left.iter().fold(0, |sum, &num| {

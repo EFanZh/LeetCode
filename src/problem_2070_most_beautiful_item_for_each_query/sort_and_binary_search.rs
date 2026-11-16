@@ -9,7 +9,7 @@ impl Solution {
             .map(|item| {
                 let [price, beauty] = item.try_into().ok().unwrap();
 
-                (price as u32, beauty as u32)
+                (price.cast_unsigned(), beauty.cast_unsigned())
             })
             .collect::<Box<_>>();
 
@@ -25,7 +25,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let i = items.partition_point(|&(price, _)| price <= query as _);
+                let i = items.partition_point(|&(price, _)| price <= query.cast_unsigned());
 
                 items.get(i.wrapping_sub(1)).map_or(0, |&(_, beauty)| beauty as _)
             })

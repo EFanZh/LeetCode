@@ -8,10 +8,10 @@ use std::{iter, mem};
 
 impl Solution {
     pub fn max_score(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> i64 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
         let mut nums = iter::zip(nums1, nums2)
-            .map(|(num_1, num_2)| (num_1 as u32, num_2 as u32))
+            .map(|(num_1, num_2)| (num_1.cast_unsigned(), num_2.cast_unsigned()))
             .collect::<Box<_>>();
 
         nums.sort_unstable_by_key(|&(_, num_2)| num_2);

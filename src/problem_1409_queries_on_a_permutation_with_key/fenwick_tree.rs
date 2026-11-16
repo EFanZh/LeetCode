@@ -24,7 +24,7 @@ impl Solution {
     pub fn process_queries(queries: Vec<i32>, m: i32) -> Vec<i32> {
         let mut queries = queries;
         let n = queries.len();
-        let m = m as u32 as usize;
+        let m = m.cast_unsigned() as usize;
         let mut buffer = vec![0; n + m * 2].into_boxed_slice();
         let (value_indices, tree) = buffer.split_at_mut(m);
 
@@ -36,7 +36,7 @@ impl Solution {
         let mut new_index = n;
 
         for slot in &mut queries {
-            let query_index_in_tree = &mut value_indices[*slot as u32 as usize - 1];
+            let query_index_in_tree = &mut value_indices[slot.cast_unsigned() as usize - 1];
 
             *slot = i32::from(Self::sum_less_than(tree, usize::from(*query_index_in_tree)));
 

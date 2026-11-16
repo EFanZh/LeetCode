@@ -12,12 +12,12 @@ impl Solution {
     }
 
     pub fn min_wasted_space(packages: Vec<i32>, boxes: Vec<Vec<i32>>) -> i32 {
-        let max_package = packages.iter().fold(0, |max, &size| max.max(size as _));
+        let max_package = packages.iter().fold(0, |max, &size| max.max(size.cast_unsigned()));
         let mut sums = vec![0_u64; max_package as usize + 1].into_boxed_slice();
         let mut required_space = 0;
 
         for &package in &packages {
-            let package = package as u32;
+            let package = package.cast_unsigned();
 
             required_space += u64::from(package);
             sums[package as usize] += 1;

@@ -31,7 +31,7 @@ impl Solution {
             .map(|query| {
                 Vec::from({
                     let [first, second] = query.try_into().ok().unwrap();
-                    let target = (first ^ second) as u32;
+                    let target = (first ^ second).cast_unsigned();
 
                     (if target == 0 {
                         zero.map(|index| [index as _, index as i32])

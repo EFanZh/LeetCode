@@ -7,7 +7,7 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn is_possible(target: Vec<i32>) -> bool {
-        let mut sum = target.iter().copied().sum::<i32>() as u32;
+        let mut sum = target.iter().copied().sum::<i32>().cast_unsigned();
         let mut queue = target.into_iter().map(i32::cast_unsigned).collect::<BinaryHeap<_>>();
 
         loop {

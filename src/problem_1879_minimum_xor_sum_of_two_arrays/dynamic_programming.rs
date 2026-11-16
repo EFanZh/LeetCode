@@ -18,7 +18,7 @@ impl Solution {
                 let top_index = remaining_bits.trailing_zeros();
                 let probe = 1 << top_index;
 
-                value = value.min(cache[selection ^ probe] + (nums1[top_index as usize] ^ bottom_num) as u32);
+                value = value.min(cache[selection ^ probe] + (nums1[top_index as usize] ^ bottom_num).cast_unsigned());
 
                 remaining_bits ^= probe;
 

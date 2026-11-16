@@ -13,18 +13,19 @@ impl Solution {
             sum += value;
             min_sum = min_sum.min(sum);
             max_sum = max_sum.max(sum);
-            max_subarray_sum = max_subarray_sum.max((sum - min_sum) as _);
+            max_subarray_sum = max_subarray_sum.max((sum - min_sum).cast_unsigned());
         }
 
         let result = if k == 1 {
             max_subarray_sum
         } else {
-            let base_sum = (max_sum - min_sum) as u32;
+            let base_sum = (max_sum - min_sum).cast_unsigned();
 
             if sum <= 0 {
-                max_subarray_sum.max(base_sum.wrapping_add(sum as _))
+                max_subarray_sum.max(base_sum.wrapping_add(sum.cast_unsigned()))
             } else {
-                ((u64::from(base_sum) + u64::from(sum as u32) * (u64::from(k as u32) - 1)) % 1_000_000_007) as _
+                ((u64::from(base_sum) + u64::from(sum.cast_unsigned()) * (u64::from(k.cast_unsigned()) - 1))
+                    % 1_000_000_007) as _
             }
         };
 

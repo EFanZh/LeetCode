@@ -34,9 +34,9 @@ impl Solution {
             let [start, end, direction] = shift.as_slice().try_into().ok().unwrap();
             let diff = if direction == 0 { 25 } else { 1 };
 
-            Self::assign_add(&mut slice[start as u32 as usize], diff);
+            Self::assign_add(&mut slice[start.cast_unsigned() as usize], diff);
 
-            if let Some(end) = slice.get_mut(end as u32 as usize + 1) {
+            if let Some(end) = slice.get_mut(end.cast_unsigned() as usize + 1) {
                 Self::assign_sub(end, diff);
             }
         }

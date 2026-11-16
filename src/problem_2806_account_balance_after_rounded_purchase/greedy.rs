@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn account_balance_after_purchase(purchase_amount: i32) -> i32 {
-        let purchase_amount = purchase_amount as u32;
+        let purchase_amount = purchase_amount.cast_unsigned();
 
         ((104 - purchase_amount) / 10 * 10) as _
     }

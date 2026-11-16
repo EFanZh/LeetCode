@@ -7,10 +7,10 @@ use std::iter;
 impl Solution {
     pub fn missing_rolls(rolls: Vec<i32>, mean: i32, n: i32) -> Vec<i32> {
         let mut rolls = rolls;
-        let mean = mean as u32;
-        let n = n as u32;
+        let mean = mean.cast_unsigned();
+        let n = n.cast_unsigned();
         let total = mean * (rolls.len() as u32 + n);
-        let rest = total - rolls.iter().sum::<i32>() as u32;
+        let rest = total - rolls.iter().sum::<i32>().cast_unsigned();
         let value = rest / n;
         let count_2 = rest % n;
 

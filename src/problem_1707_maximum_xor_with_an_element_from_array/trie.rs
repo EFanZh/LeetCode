@@ -75,20 +75,20 @@ impl Solution {
             .map(|(target, query)| {
                 let [x, limit] = query.try_into().ok().unwrap();
 
-                (limit as u32, x as u32, target)
+                (limit.cast_unsigned(), x.cast_unsigned(), target)
             })
             .collect::<Vec<_>>();
 
         queue.sort_unstable_by_key(|&(limit, ..)| limit);
 
-        let min_num = nums[0] as u32;
+        let min_num = nums[0].cast_unsigned();
         let probe = 1 << u32::saturating_sub(31, nums.last().unwrap().leading_zeros());
         let mut nodes = vec![(u32::MAX, u32::MAX)];
         let mut iter = nums.iter();
 
         for (limit, x, target) in queue {
             while let Some(&peek) = iter.as_slice().first() {
-                let peek = peek as u32;
+                let peek = peek.cast_unsigned();
 
                 if peek <= limit {
                     Self::trie_insert(&mut nodes, probe, peek);

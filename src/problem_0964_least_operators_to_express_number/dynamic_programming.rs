@@ -6,8 +6,8 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn least_ops_express_target(x: i32, target: i32) -> i32 {
-        let x = NonZeroU32::new(x as _).unwrap();
-        let mut target = target as u32;
+        let x = NonZeroU32::new(x.cast_unsigned()).unwrap();
+        let mut target = target.cast_unsigned();
         let digit = target % x;
         let mut plus = 2 * digit;
         let mut minus = 2 * (x.get() - digit);

@@ -12,7 +12,7 @@ impl Solution {
 
         for match_ in matches {
             let [winner, loser] = match_.try_into().ok().unwrap();
-            let (winner, loser) = (winner as u32, loser as u32);
+            let (winner, loser) = (winner.cast_unsigned(), loser.cast_unsigned());
 
             all_players.extend([winner, loser]);
 

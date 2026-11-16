@@ -9,7 +9,7 @@ impl Solution {
         for x in nums {
             diff += x;
 
-            let mut x = x as u32;
+            let mut x = x.cast_unsigned();
 
             while x != 0 {
                 diff -= (x % 10) as i32;

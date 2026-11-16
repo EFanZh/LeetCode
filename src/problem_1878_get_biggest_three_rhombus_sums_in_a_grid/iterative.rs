@@ -11,7 +11,7 @@ impl Solution {
         for (y, row) in grid.into_iter().enumerate() {
             for (x, value) in row.into_iter().enumerate() {
                 let index = columns * y + x;
-                let value = value as u32;
+                let value = value.cast_unsigned();
 
                 sums[index] = (
                     if y == 0 || x == 0 {
@@ -31,7 +31,7 @@ impl Solution {
         let mut result = Vec::<i32>::new();
 
         let mut add_result = |value: u32| {
-            if let Err(i) = result.binary_search_by(|&x| value.cmp(&(x as u32)))
+            if let Err(i) = result.binary_search_by(|&x| value.cmp(&(x.cast_unsigned())))
                 && i < 3
             {
                 if result.len() == 3 {

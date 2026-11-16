@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn sum_of_three(num: i64) -> Vec<i64> {
-        let num = num as u64;
+        let num = num.cast_unsigned();
 
         if num.is_multiple_of(3) {
             let middle = (num / 3) as i64;

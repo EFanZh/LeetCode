@@ -61,7 +61,7 @@ impl FrequencyTracker {
 
     fn has_frequency(&self, frequency: i32) -> bool {
         self.frequency_counts
-            .get((frequency as u32 as usize).wrapping_sub(1))
+            .get((frequency.cast_unsigned() as usize).wrapping_sub(1))
             .is_some_and(|&count| count != 0)
     }
 }

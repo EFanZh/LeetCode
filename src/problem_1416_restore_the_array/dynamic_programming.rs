@@ -28,7 +28,7 @@ impl Queue {
 impl Solution {
     pub fn number_of_arrays(s: String, k: i32) -> i32 {
         let s = s.as_bytes();
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut cache = Queue::default();
 
         cache.push_front(1);

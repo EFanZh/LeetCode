@@ -6,7 +6,7 @@ use std::cmp::Ordering;
 use std::collections::BinaryHeap;
 
 struct Item {
-    sum: i32,
+    sum: u32,
     indices: [u8; 40],
 }
 
@@ -26,7 +26,7 @@ impl PartialOrd for Item {
 
 impl Ord for Item {
     fn cmp(&self, other: &Self) -> Ordering {
-        u32::cmp(&(other.sum as _), &(self.sum as _))
+        u32::cmp(&other.sum, &self.sum)
     }
 }
 
@@ -37,13 +37,13 @@ impl Solution {
         assert!(mat.len() <= 40);
 
         let mut item = Item {
-            sum: mat.iter().map(|row| row[0]).sum(),
+            sum: mat.iter().map(|row| row[0]).sum::<i32>().cast_unsigned(),
             indices: [0; 40],
         };
 
         let mut queue = BinaryHeap::new();
 
-        for _ in 1..k as u32 {
+        for _ in 1..k.cast_unsigned() {
             for (i, row) in mat.iter().map(Vec::as_slice).enumerate() {
                 let index = usize::from(item.indices[i]);
 
@@ -51,7 +51,7 @@ impl Solution {
                     item.indices[i] += 1;
 
                     queue.push(Item {
-                        sum: item.sum - row[index] + new_value,
+                        sum: (item.sum.cast_signed() - row[index] + new_value).cast_unsigned(),
                         indices: item.indices,
                     });
 
@@ -66,7 +66,7 @@ impl Solution {
             item = queue.pop().unwrap();
         }
 
-        item.sum
+        item.sum.cast_signed()
     }
 }
 

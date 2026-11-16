@@ -22,7 +22,7 @@ impl Solution {
 
     pub fn swap_nodes(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
         let mut head = head;
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let n = iter::successors(head.as_deref(), |node| node.next.as_deref()).count();
         let right = n - k;
         let left = k - 1;

@@ -9,7 +9,7 @@ impl Solution {
         let mut result = 0;
 
         for num in nums {
-            let num = num as u32;
+            let num = num.cast_unsigned();
             let mut max_steps = 0;
 
             loop {

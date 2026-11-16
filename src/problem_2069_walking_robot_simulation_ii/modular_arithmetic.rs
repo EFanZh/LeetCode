@@ -21,7 +21,7 @@ impl Robot {
     }
 
     fn step(&mut self, num: i32) {
-        let num = num as u32;
+        let num = num.cast_unsigned();
         let steps = u32::from(self.steps & 0x_7fff);
 
         self.steps = ((steps + num) % NonZeroU32::from(self.cycle_length)) as _;

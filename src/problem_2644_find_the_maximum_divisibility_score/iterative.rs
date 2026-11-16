@@ -10,8 +10,8 @@ impl Solution {
         divisors
             .into_iter()
             .fold((0_u32, u32::MAX), |(max_score, max_score_divisor), divisor| {
-                let divisor = NonZeroU32::new(divisor as _).unwrap();
-                let score = nums.iter().filter(|&&num| num as u32 % divisor == 0).count() as u32;
+                let divisor = NonZeroU32::new(divisor.cast_unsigned()).unwrap();
+                let score = nums.iter().filter(|&&num| num.cast_unsigned() % divisor == 0).count() as u32;
 
                 match score.cmp(&max_score) {
                     Ordering::Less => (max_score, max_score_divisor),

@@ -6,14 +6,15 @@ use std::iter;
 
 impl Solution {
     pub fn selling_wood(m: i32, n: i32, prices: Vec<Vec<i32>>) -> i64 {
-        let m = m as u32 as usize;
-        let n = n as u32 as usize;
+        let m = m.cast_unsigned() as usize;
+        let n = n.cast_unsigned() as usize;
         let mut cache = vec![0_u64; n * m].into_boxed_slice();
 
         for price in prices {
             let [height, width, price] = price.try_into().ok().unwrap();
 
-            cache[n * (height as u32 as usize - 1) + width as u32 as usize - 1] = u64::from(price as u32);
+            cache[n * (height.cast_unsigned() as usize - 1) + width.cast_unsigned() as usize - 1] =
+                u64::from(price.cast_unsigned());
         }
 
         let mut row_start = 0;

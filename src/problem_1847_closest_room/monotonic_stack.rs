@@ -4,9 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn into_array(value: Vec<i32>) -> (u32, u32) {
-        let [x, y] = value.try_into().ok().unwrap();
-
-        (x as _, y as _)
+        <[_; 2]>::map(value.try_into().ok().unwrap(), i32::cast_unsigned).into()
     }
 
     fn add_to_stack(stack: &mut Vec<(u32, u32)>, room: (u32, u32)) {
@@ -83,10 +81,10 @@ impl Solution {
             let mut room = room_iter.next_back().unwrap();
             let mut query_iter = queries.iter_mut().map(|query| (query.0, query.1, &mut *query.2));
 
-            let update_target = |target: &mut _, stack: &mut _, preferred, min_size| {
+            let update_target = |target: &mut i32, stack: &mut _, preferred, min_size| {
                 let candidate = Self::search_stack(stack, min_size);
 
-                if *target == -1 || candidate - preferred < preferred - *target as u32 {
+                if *target == -1 || candidate - preferred < preferred - target.cast_unsigned() {
                     *target = candidate as _;
                 }
             };

@@ -8,7 +8,7 @@ impl Solution {
     pub fn min_operations(nums: Vec<i32>, x: i32) -> i32 {
         let nums = nums.as_slice();
         let n = nums.len();
-        let x = x as u32;
+        let x = x.cast_unsigned();
         let mut sum = 0;
         let mut j = n;
 
@@ -16,7 +16,7 @@ impl Solution {
             j = j.wrapping_sub(1);
 
             if let Some(&num) = nums.get(j) {
-                sum += num as u32;
+                sum += num.cast_unsigned();
 
                 break match sum.cmp(&x) {
                     Ordering::Less => continue,
@@ -32,12 +32,12 @@ impl Solution {
 
         while let Some(&right) = nums.get(j) {
             j += 1;
-            sum -= right as u32;
+            sum -= right.cast_unsigned();
 
             loop {
                 match sum.cmp(&x) {
                     Ordering::Less => {
-                        sum += nums[i] as u32;
+                        sum += nums[i].cast_unsigned();
                         i += 1;
 
                         continue;

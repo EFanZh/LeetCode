@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn my_sqrt(x: i32) -> i32 {
-        let x = x as u32;
+        let x = x.cast_unsigned();
         let mut guess = (1 << ((33 - x.leading_zeros()) / 2)) - 1;
 
         while guess * guess > x {

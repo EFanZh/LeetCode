@@ -6,7 +6,7 @@ use std::mem;
 
 impl Solution {
     pub fn max_value_of_coins(piles: Vec<Vec<i32>>, k: i32) -> i32 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut buffer = vec![0_u32; (k + 1) * 2].into_boxed_slice();
         let (mut cache, mut temp) = buffer.split_at_mut(k + 1);
 
@@ -24,7 +24,7 @@ impl Solution {
                     .rev()
                     .zip(&pile)
                     .fold(cache[max_count], |max, (&prev_max, &value)| {
-                        max.max(prev_max + value as u32)
+                        max.max(prev_max + value.cast_unsigned())
                     });
             });
 

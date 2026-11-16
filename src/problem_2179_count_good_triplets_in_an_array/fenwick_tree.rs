@@ -34,7 +34,7 @@ impl Solution {
         let mut indices = vec![0; n].into_boxed_slice();
 
         for (i, num) in (0_u32..).zip(nums1) {
-            indices[num as u32 as usize] = i;
+            indices[num.cast_unsigned() as usize] = i;
         }
 
         let mut fenwick_tree = vec![0; n].into_boxed_slice();
@@ -44,7 +44,7 @@ impl Solution {
         for num in nums2 {
             right_count -= 1;
 
-            let index = indices[num as u32 as usize];
+            let index = indices[num.cast_unsigned() as usize];
             let left_less = Self::fenwick_tree_sum_less_than(&fenwick_tree, index as _);
             let right_greater = right_count - (index - left_less);
 

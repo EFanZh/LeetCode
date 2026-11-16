@@ -9,7 +9,7 @@ impl Solution {
 
         for nums in nums {
             for num in nums {
-                counts[num as u32 as usize - 1] += 1;
+                counts[num.cast_unsigned() as usize - 1] += 1;
             }
         }
 

@@ -22,10 +22,10 @@ impl Solution {
 
     pub fn sub_str_hash(s: String, power: i32, modulo: i32, k: i32, hash_value: i32) -> String {
         let slice = s.as_bytes();
-        let power = u64::from(power as u32);
-        let modulo = NonZeroU64::new(u64::from(modulo as u32)).unwrap();
-        let k = k as u32 as usize;
-        let hash_value = hash_value as u32;
+        let power = u64::from(power.cast_unsigned());
+        let modulo = NonZeroU64::new(u64::from(modulo.cast_unsigned())).unwrap();
+        let k = k.cast_unsigned() as usize;
+        let hash_value = hash_value.cast_unsigned();
         let n = slice.len();
         let mut current_hash = 0;
 

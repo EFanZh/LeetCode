@@ -8,13 +8,12 @@ use std::collections::BinaryHeap;
 impl Solution {
     pub fn max_performance(n: i32, speed: Vec<i32>, efficiency: Vec<i32>, k: i32) -> i32 {
         let _ = n;
-        let i_as_u = |x: i32| x as u32;
-        let k = k as usize;
+        let k = k.cast_unsigned() as usize;
 
         let mut items = speed
             .into_iter()
             .zip(efficiency)
-            .map(|(s, e)| (i_as_u(s), i_as_u(e)))
+            .map(|(s, e)| (s.cast_unsigned(), e.cast_unsigned()))
             .collect::<Vec<_>>();
 
         items.sort_unstable_by_key(|&(_, e)| Reverse(e));

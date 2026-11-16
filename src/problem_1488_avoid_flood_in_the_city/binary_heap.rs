@@ -88,7 +88,7 @@ impl Solution {
                     lake.id
                 })
             } else {
-                let alt_id = *slot as u32;
+                let alt_id = slot.cast_unsigned();
                 let lake = &mut id_to_lake[alt_id as usize];
 
                 if lake.is_full {

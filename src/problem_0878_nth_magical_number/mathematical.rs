@@ -44,7 +44,7 @@ impl Solution {
     }
 
     pub fn nth_magical_number(n: i32, a: i32, b: i32) -> i32 {
-        let (n, a, b) = (n as u32, a as u32, b as u32);
+        let (n, a, b) = (n.cast_unsigned(), a.cast_unsigned(), b.cast_unsigned());
         let lcm = a * b / Self::gcd(a, b);
         let cycle_length = lcm / a + lcm / b - 1;
         let cycles = n / cycle_length;

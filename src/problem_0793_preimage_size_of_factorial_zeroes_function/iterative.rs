@@ -18,7 +18,7 @@ impl Solution {
     }
 
     pub fn preimage_size_fzf(k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut left = (k + 1) * 4 / 5;
 
         loop {

@@ -8,7 +8,7 @@ impl Solution {
         let mut right = u32::MAX;
 
         for &num in nums.iter().rev() {
-            let num = num as u32;
+            let num = num.cast_unsigned();
 
             if right < num {
                 let quotient = num / right;

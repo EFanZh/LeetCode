@@ -9,7 +9,7 @@ impl Solution {
             .flat_map(|interval| {
                 let [left, right] = interval.try_into().ok().unwrap();
 
-                [(left as u32) << 2, ((right as u32) << 2) | 2]
+                [(left.cast_unsigned()) << 2, ((right.cast_unsigned()) << 2) | 2]
             })
             .collect::<Box<_>>();
 

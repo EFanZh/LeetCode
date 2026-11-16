@@ -18,7 +18,7 @@ impl Solution {
     }
 
     pub fn is_three(n: i32) -> bool {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         n > 3 && {
             let middle = n.isqrt();

@@ -6,7 +6,7 @@ impl Solution {
     pub fn number_of_employees_who_met_target(hours: Vec<i32>, target: i32) -> i32 {
         hours
             .iter()
-            .filter(|&&hour| u32::ge(&(hour as _), &(target as _)))
+            .filter(|&&hour| u32::ge(&hour.cast_unsigned(), &target.cast_unsigned()))
             .count() as _
     }
 }

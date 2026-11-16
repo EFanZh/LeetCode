@@ -35,7 +35,7 @@ impl Solution {
         let mut counts = vec![0_u16; range];
 
         for &num in &*nums {
-            counts[(num - min) as u32 as usize] += 1;
+            counts[(num - min).cast_unsigned() as usize] += 1;
         }
 
         for (num, &count) in (min..).zip(&counts) {
@@ -53,7 +53,7 @@ impl Solution {
         if let Some((min, max)) = Self::min_max(&nums)
             && min != max
         {
-            let range = (max - min + 1) as u32 as usize;
+            let range = (max - min + 1).cast_unsigned() as usize;
             let n = nums.len();
 
             if range <= n * (size_of_val(&n) * 8 - 2 - n.leading_zeros() as usize) {

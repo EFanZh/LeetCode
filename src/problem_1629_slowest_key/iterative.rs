@@ -8,7 +8,7 @@ impl Solution {
         let mut state = 0; // High 56 bits for duration, low 8 bits for key.
 
         for (&release_time, key) in release_times.iter().zip(keys_pressed.bytes()) {
-            state = state.max((u64::from((release_time - time) as u32) << 8) | u64::from(key));
+            state = state.max((u64::from((release_time - time).cast_unsigned()) << 8) | u64::from(key));
             time = release_time;
         }
 

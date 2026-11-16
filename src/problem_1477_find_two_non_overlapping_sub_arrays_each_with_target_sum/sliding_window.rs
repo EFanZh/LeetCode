@@ -21,7 +21,7 @@ impl Window {
                 Ordering::Less => break false,
                 Ordering::Equal => break true,
                 Ordering::Greater => {
-                    self.sum -= arr[self.start] as u32;
+                    self.sum -= arr[self.start].cast_unsigned();
                     self.start += 1;
                     self.length -= 1;
                 }
@@ -38,9 +38,9 @@ impl Solution {
         let mut result = usize::MAX;
 
         for &right_num in arr {
-            if right_window.slide(arr, target, right_num as _) {
+            if right_window.slide(arr, target, right_num.cast_unsigned()) {
                 for &left_num in &arr[left_window.start + left_window.length..right_window.start] {
-                    if left_window.slide(arr, target, left_num as _) {
+                    if left_window.slide(arr, target, left_num.cast_unsigned()) {
                         min_left_length = min_left_length.min(left_window.length);
                     }
                 }
@@ -55,7 +55,7 @@ impl Solution {
     }
 
     pub fn min_sum_of_lengths(arr: Vec<i32>, target: i32) -> i32 {
-        Self::inner(&arr, target as _) as _
+        Self::inner(&arr, target.cast_unsigned()) as _
     }
 }
 

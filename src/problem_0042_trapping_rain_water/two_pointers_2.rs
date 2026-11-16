@@ -4,7 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
-        let mut iter = height.iter().map(|&x| x as u32);
+        let height = height.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let mut iter = height.iter().copied();
         let mut result = 0;
         let mut left_max = 0;
         let mut right_max = 0;
@@ -33,7 +34,7 @@ impl Solution {
             }
         }
 
-        result as _
+        result.cast_signed()
     }
 }
 

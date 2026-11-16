@@ -43,7 +43,7 @@ impl Solution {
         let actual_range = max - min;
         let available_range = upper - lower;
 
-        (available_range as u32 + 1).saturating_sub(actual_range as u32) as _
+        (available_range.cast_unsigned() + 1).saturating_sub(actual_range.cast_unsigned()) as _
     }
 }
 

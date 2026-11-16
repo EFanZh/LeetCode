@@ -10,10 +10,10 @@ impl Solution {
     }
 
     pub fn count_good_strings(low: i32, high: i32, zero: i32, one: i32) -> i32 {
-        let low = low as u32 as usize;
-        let high = high as u32 as usize;
-        let zero = zero as u32 as usize;
-        let one = one as u32 as usize;
+        let low = low.cast_unsigned() as usize;
+        let high = high.cast_unsigned() as usize;
+        let zero = zero.cast_unsigned() as usize;
+        let one = one.cast_unsigned() as usize;
         let range_size = high - low + 1;
         let capacity = (zero.max(one) + 1).max(range_size).next_power_of_two();
         let mut cache = vec![0_u32; capacity].into_boxed_slice();
