@@ -1969,6 +1969,7 @@ pub mod problem_2679_sum_in_a_matrix;
 pub mod problem_2680_maximum_or;
 pub mod problem_2682_find_the_losers_of_the_circular_game;
 pub mod problem_2683_neighboring_bitwise_xor;
+pub mod problem_2684_maximum_number_of_moves_in_a_grid;
 pub mod problem_2685_count_the_number_of_complete_components;
 pub mod problem_2696_minimum_string_length_after_removing_substrings;
 pub mod problem_2697_lexicographically_smallest_palindrome;
