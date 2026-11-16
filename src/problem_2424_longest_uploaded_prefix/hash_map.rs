@@ -9,7 +9,7 @@ pub struct LUPrefix {
 
 impl LUPrefix {
     fn new(n: i32) -> Self {
-        let capacity = n as u32 as usize / 2;
+        let capacity = n.cast_unsigned() as usize / 2;
 
         Self {
             end_to_start: HashMap::with_capacity(capacity),

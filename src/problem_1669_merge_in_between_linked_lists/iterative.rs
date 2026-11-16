@@ -14,8 +14,8 @@ impl Solution {
         list2: Option<Box<ListNode>>,
     ) -> Option<Box<ListNode>> {
         let mut list1 = list1;
-        let a = a as u32;
-        let b = b as u32;
+        let a = a.cast_unsigned();
+        let b = b.cast_unsigned();
 
         // Find the node of index `a`.
 

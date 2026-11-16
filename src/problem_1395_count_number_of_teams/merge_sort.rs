@@ -83,7 +83,7 @@ impl Solution {
         let mut data = rating
             .into_iter()
             .zip(0..)
-            .map(|(value, i)| (value as _, i, 0))
+            .map(|(value, i)| (value.cast_unsigned(), i, 0))
             .collect::<Vec<_>>();
 
         Self::merge_sort_to_self(&mut data, &mut vec![(0, 0, 0); n]);

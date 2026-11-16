@@ -19,12 +19,12 @@ impl Solution {
     }
 
     pub fn people_aware_of_secret(n: i32, delay: i32, forget: i32) -> i32 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
 
         assert!(n <= 1000);
 
-        let delay = delay as u32 as usize;
-        let forget = forget as u32 as usize;
+        let delay = delay.cast_unsigned() as usize;
+        let forget = forget.cast_unsigned() as usize;
         let mut cache = [0_u32; 1000];
 
         cache[0] = 1;

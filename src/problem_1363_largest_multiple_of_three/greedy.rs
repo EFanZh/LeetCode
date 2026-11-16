@@ -13,7 +13,7 @@ impl Solution {
         let mut counts = [0; 10];
 
         for &value in &nums {
-            let value = value as u32;
+            let value = value.cast_unsigned();
             let remainder = value as u8 % 3;
 
             match remainder {

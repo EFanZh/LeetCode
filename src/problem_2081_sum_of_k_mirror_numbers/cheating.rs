@@ -181,7 +181,7 @@ const DATA: [[u64; 30]; 8] = [
 
 impl Solution {
     pub fn k_mirror(k: i32, n: i32) -> i64 {
-        DATA[k as u32 as usize - 2][n as u32 as usize - 1] as _
+        DATA[k.cast_unsigned() as usize - 2][n.cast_unsigned() as usize - 1] as _
     }
 }
 

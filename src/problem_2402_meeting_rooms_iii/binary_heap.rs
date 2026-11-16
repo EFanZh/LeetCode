@@ -8,14 +8,14 @@ use std::collections::{BinaryHeap, VecDeque};
 
 impl Solution {
     pub fn most_booked(n: i32, meetings: Vec<Vec<i32>>) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         let mut meetings = meetings
             .into_iter()
             .map(|meeting| {
                 let [start, end] = meeting.try_into().ok().unwrap();
 
-                (start as u32, end as u32)
+                (start.cast_unsigned(), end.cast_unsigned())
             })
             .collect::<Vec<_>>();
 

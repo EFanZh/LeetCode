@@ -41,7 +41,7 @@ impl Solution {
 
         for (y, row) in (0..).zip(&target_grid) {
             for (x, &color) in (0..).zip(row) {
-                let bound = &mut bounds[color as u32 as usize - 1];
+                let bound = &mut bounds[color.cast_unsigned() as usize - 1];
 
                 *bound = (bound.0.min(y), bound.1.min(x), y, bound.3.max(x));
             }
@@ -79,7 +79,7 @@ impl Solution {
             let mut column_colors = 0;
 
             for (&color, column_operation) in row.iter().zip(column_operations) {
-                let color = color as u32 as usize - 1;
+                let color = color.cast_unsigned() as usize - 1;
 
                 column_colors |= column_operation.0;
                 column_colors &= !column_operation.1;

@@ -58,7 +58,7 @@ impl Queue {
 
 impl Solution {
     pub fn constrained_subset_sum(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let (left, right) = nums.split_at(k as usize);
         let mut queue = Queue::with_capacity(left.len() - 1);
         let mut result = i32::MIN;

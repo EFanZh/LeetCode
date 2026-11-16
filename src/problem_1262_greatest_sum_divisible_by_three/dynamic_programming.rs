@@ -11,7 +11,7 @@ impl Solution {
         let mut cache = (0, 0, 0);
 
         for num in nums {
-            let num = num as u32;
+            let num = num.cast_unsigned();
 
             cache = match num % 3 {
                 0 => (cache.0 + num, Self::add(cache.1, num), Self::add(cache.2, num)),

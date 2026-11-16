@@ -70,7 +70,7 @@ impl Solution {
         for edge in edges {
             let [from, to] = edge.try_into().ok().unwrap();
 
-            graph[from as u32 as usize].1.push(to as _);
+            graph[from.cast_unsigned() as usize].1.push(to.cast_unsigned());
         }
 
         let mut states = iter::repeat_with(|| State::NotVisited).take(n).collect::<Box<_>>();

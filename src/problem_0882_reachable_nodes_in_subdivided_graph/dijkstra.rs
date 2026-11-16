@@ -32,15 +32,15 @@ impl Ord for Item {
 
 impl Solution {
     pub fn reachable_nodes(edges: Vec<Vec<i32>>, max_moves: i32, n: i32) -> i32 {
-        let max_moves = max_moves as u32;
+        let max_moves = max_moves.cast_unsigned();
         let n = n as usize;
         let mut graph = vec![Vec::new(); n];
 
         for edge in edges {
             let [from, to, count] = edge.as_slice().try_into().unwrap();
-            let from = from as u32;
-            let to = to as u32;
-            let count = count as u32;
+            let from = from.cast_unsigned();
+            let to = to.cast_unsigned();
+            let count = count.cast_unsigned();
 
             graph[from as usize].push((to, count));
             graph[to as usize].push((from, count));

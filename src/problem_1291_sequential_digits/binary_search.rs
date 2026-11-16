@@ -43,8 +43,8 @@ impl Solution {
             123_456_789,
         ];
 
-        let start = DATA.partition_point(|&value| (value as u32) < (low as u32));
-        let length = DATA[start..].partition_point(|&value| (value as u32) <= (high as u32));
+        let start = DATA.partition_point(|&value| (value.cast_unsigned()) < (low.cast_unsigned()));
+        let length = DATA[start..].partition_point(|&value| (value.cast_unsigned()) <= (high.cast_unsigned()));
 
         DATA[start..start + length].to_vec()
     }

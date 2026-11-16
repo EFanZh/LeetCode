@@ -7,9 +7,9 @@ use std::cmp::Reverse;
 impl Solution {
     pub fn sort_the_students(score: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
         let mut score = score;
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
-        score.sort_unstable_by_key(|student| Reverse(student[k] as u32));
+        score.sort_unstable_by_key(|student| Reverse(student[k].cast_unsigned()));
 
         score
     }

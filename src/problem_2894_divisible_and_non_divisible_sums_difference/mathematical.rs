@@ -6,8 +6,8 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn difference_of_sums(n: i32, m: i32) -> i32 {
-        let n = n as u32;
-        let m = NonZeroU32::new(m as _).unwrap();
+        let n = n.cast_unsigned();
+        let m = NonZeroU32::new(m.cast_unsigned()).unwrap();
         let divisible = n / m;
         let divisible_sum = (m.get() + m.get() * divisible) * divisible / 2;
         let total_sum = (1 + n) * n / 2;

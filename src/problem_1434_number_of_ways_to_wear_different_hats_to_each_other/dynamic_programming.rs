@@ -23,7 +23,7 @@ impl Solution {
 
         for (i, hats) in hats.into_iter().enumerate() {
             for hat in hats {
-                hat_to_people[hat as u32 as usize] |= 1 << i;
+                hat_to_people[hat.cast_unsigned() as usize] |= 1 << i;
                 all_hats |= 1 << hat;
             }
         }

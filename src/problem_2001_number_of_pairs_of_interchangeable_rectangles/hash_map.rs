@@ -49,8 +49,8 @@ impl Solution {
             let [width, height] = rectangle.try_into().ok().unwrap();
 
             match counts.entry(Ratio {
-                numerator: width as _,
-                denominator: height as _,
+                numerator: width.cast_unsigned(),
+                denominator: height.cast_unsigned(),
             }) {
                 Entry::Occupied(entry) => {
                     let count = entry.into_mut();

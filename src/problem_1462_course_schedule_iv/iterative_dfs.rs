@@ -14,11 +14,11 @@ impl Solution {
     fn unwrap_edge(edge: Vec<i32>) -> (usize, usize) {
         let [from, to] = edge.try_into().ok().unwrap();
 
-        (from as u32 as usize, to as u32 as usize)
+        (from.cast_unsigned() as usize, to.cast_unsigned() as usize)
     }
 
     pub fn check_if_prerequisite(num_courses: i32, prerequisites: Vec<Vec<i32>>, queries: Vec<Vec<i32>>) -> Vec<bool> {
-        let n = num_courses as u32 as usize;
+        let n = num_courses.cast_unsigned() as usize;
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in prerequisites {

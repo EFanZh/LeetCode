@@ -83,7 +83,7 @@ impl Solution {
         while let Some((from, [x_i, y_i])) = iter.next() {
             for (to, [x_j, y_j]) in iter.clone() {
                 edges.push(Edge {
-                    distance: ((x_j - x_i).abs() + (y_j - y_i).abs()) as _,
+                    distance: ((x_j - x_i).abs() + (y_j - y_i).abs()).cast_unsigned(),
                     from,
                     to,
                 });

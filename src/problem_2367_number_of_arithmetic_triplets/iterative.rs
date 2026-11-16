@@ -9,7 +9,7 @@ impl Solution {
         let mut result = 0;
 
         for num in nums {
-            seen[num as u32 as usize] = true;
+            seen[num.cast_unsigned() as usize] = true;
 
             result += i32::from(
                 seen.get((num - double_diff) as usize)

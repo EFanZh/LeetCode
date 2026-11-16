@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn distance_traveled(main_tank: i32, additional_tank: i32) -> i32 {
-        let (main_tank, additional_tank) = (main_tank as u32, additional_tank as u32);
+        let (main_tank, additional_tank) = (main_tank.cast_unsigned(), additional_tank.cast_unsigned());
 
         (10 * (main_tank + u32::min((main_tank - 1) / 4, additional_tank))) as _
     }

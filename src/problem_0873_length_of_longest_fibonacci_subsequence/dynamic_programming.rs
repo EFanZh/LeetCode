@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     fn make_key(left: i32, right: i32) -> u64 {
-        (u64::from(left as u32) << 32) | u64::from(right as u32)
+        (u64::from(left.cast_unsigned()) << 32) | u64::from(right.cast_unsigned())
     }
 
     pub fn len_longest_fib_subseq(arr: Vec<i32>) -> i32 {

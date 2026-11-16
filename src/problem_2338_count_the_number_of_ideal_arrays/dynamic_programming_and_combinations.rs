@@ -30,8 +30,8 @@ impl Solution {
     }
 
     pub fn ideal_arrays(n: i32, max_value: i32) -> i32 {
-        let n = n as u32 as usize;
-        let max_value = max_value as u32 as usize;
+        let n = n.cast_unsigned() as usize;
+        let max_value = max_value.cast_unsigned() as usize;
 
         #[expect(clippy::manual_bit_width, reason = "compatibility")]
         let max_unique_values = n.min((usize::BITS - max_value.leading_zeros()) as _);

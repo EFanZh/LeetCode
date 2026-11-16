@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximize_sum(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
-        let max = nums.iter().fold(0, |max, &num| max.max(num as u32));
+        let k = k.cast_unsigned();
+        let max = nums.iter().fold(0, |max, &num| max.max(num.cast_unsigned()));
 
         ((max * 2 + k - 1) * k / 2) as _
     }

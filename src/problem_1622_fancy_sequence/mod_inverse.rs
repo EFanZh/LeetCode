@@ -38,7 +38,7 @@ impl Fancy {
     }
 
     fn append(&mut self, val: i32) {
-        let val = u64::from(val as u32);
+        let val = u64::from(val.cast_unsigned());
 
         self.values.push(
             ((val + (Self::MODULUS - u64::from(self.inc))) * Self::mod_inv(u64::from(self.mul)) % Self::MODULUS) as _,
@@ -47,7 +47,7 @@ impl Fancy {
 
     fn add_all(&mut self, inc: i32) {
         let modulus = Self::MODULUS as _;
-        let inc = inc as u32;
+        let inc = inc.cast_unsigned();
 
         self.inc += inc;
 
@@ -57,14 +57,14 @@ impl Fancy {
     }
 
     fn mult_all(&mut self, m: i32) {
-        let m = u64::from(m as u32);
+        let m = u64::from(m.cast_unsigned());
 
         self.mul = (u64::from(self.mul) * m % Self::MODULUS) as _;
         self.inc = (u64::from(self.inc) * m % Self::MODULUS) as _;
     }
 
     fn get_index(&self, idx: i32) -> i32 {
-        let idx = idx as u32 as usize;
+        let idx = idx.cast_unsigned() as usize;
 
         self.values.get(idx).map_or(-1, |&value| {
             ((u64::from(value) * u64::from(self.mul) + u64::from(self.inc)) % Self::MODULUS) as _

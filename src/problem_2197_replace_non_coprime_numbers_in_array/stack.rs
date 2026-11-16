@@ -19,17 +19,17 @@ impl Solution {
         while let Some(&num) = nums.get(i) {
             i += 1;
 
-            let mut value = num as u32;
+            let mut value = num.cast_unsigned();
 
             while let Some(&top) = nums.get(stack_size.wrapping_sub(1)) {
-                let gcd = Self::gcd(top as _, value);
+                let gcd = Self::gcd(top.cast_unsigned(), value);
 
                 if gcd == 1 {
                     break;
                 }
 
                 stack_size -= 1;
-                value *= top as u32 / gcd;
+                value *= top.cast_unsigned() / gcd;
             }
 
             nums[stack_size] = value as _;

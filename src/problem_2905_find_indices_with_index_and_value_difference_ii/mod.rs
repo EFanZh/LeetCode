@@ -25,8 +25,8 @@ mod tests {
                 assert!(result[1] - result[0] >= index_difference);
 
                 assert!(
-                    nums[result[0] as u32 as usize].abs_diff(nums[result[1] as u32 as usize])
-                        >= value_difference as u32
+                    nums[result[0].cast_unsigned() as usize].abs_diff(nums[result[1].cast_unsigned() as usize])
+                        >= value_difference.cast_unsigned()
                 );
             } else {
                 assert_eq!(result, [-1, -1]);

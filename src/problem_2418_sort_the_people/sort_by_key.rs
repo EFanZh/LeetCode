@@ -15,7 +15,7 @@ impl Solution {
             .map(|(name, height)| (height, mem::take(name)))
             .collect::<Vec<_>>();
 
-        sorting.sort_unstable_by_key(|&(height, _)| Reverse(height as u32));
+        sorting.sort_unstable_by_key(|&(height, _)| Reverse(height.cast_unsigned()));
 
         for (target, (_, mut name)) in names.iter_mut().zip(sorting) {
             mem::swap(target, &mut name);

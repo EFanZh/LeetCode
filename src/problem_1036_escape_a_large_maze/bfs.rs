@@ -6,23 +6,13 @@ use std::collections::{HashSet, VecDeque};
 
 impl Solution {
     fn unwrap_point(point: Vec<i32>) -> (u32, u32) {
-        let [x, y] = point.try_into().unwrap();
-
-        (x as _, y as _)
+        <[_; 2]>::map(point.try_into().unwrap(), i32::cast_unsigned).into()
     }
 
     pub fn is_escape_possible(blocked: Vec<Vec<i32>>, source: Vec<i32>, target: Vec<i32>) -> bool {
         const MAZE_SIZE: u32 = 1_000_000;
 
-        let blocked = blocked
-            .into_iter()
-            .map(|point| {
-                let [x, y] = point.try_into().ok().unwrap();
-
-                (x as u32, y as u32)
-            })
-            .collect::<HashSet<_>>();
-
+        let blocked = blocked.into_iter().map(Self::unwrap_point).collect::<HashSet<_>>();
         let source = Self::unwrap_point(source);
         let target = Self::unwrap_point(target);
         let max_steps = blocked.len().saturating_sub(1);

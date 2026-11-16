@@ -7,7 +7,7 @@ use std::collections::hash_map::Entry;
 
 impl Solution {
     pub fn max_subarray_length(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut start = 0;
         let mut counts = HashMap::new();
         let mut greater_than_k = 0;

@@ -21,7 +21,7 @@ impl Solution {
             .zip(ids)
             .zip(views)
             .for_each(|((creator, id), view)| {
-                let view = view as u32;
+                let view = view.cast_unsigned();
 
                 match videos_by_creators.entry(creator) {
                     Entry::Occupied(occupied_entry) => {

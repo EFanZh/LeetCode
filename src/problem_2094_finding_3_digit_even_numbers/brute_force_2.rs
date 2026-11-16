@@ -9,7 +9,7 @@ impl Solution {
         let mut counts = [const { Cell::new(0) }; 10];
 
         for digit in digits {
-            *counts[digit as u32 as usize].get_mut() += 1;
+            *counts[digit.cast_unsigned() as usize].get_mut() += 1;
         }
 
         let mut result = Vec::new();

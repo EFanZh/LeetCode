@@ -21,7 +21,7 @@ impl Solution {
     }
 
     pub fn max_nice_divisors(prime_factors: i32) -> i32 {
-        let prime_factors = prime_factors as u32;
+        let prime_factors = prime_factors.cast_unsigned();
 
         (if prime_factors < 5 {
             prime_factors

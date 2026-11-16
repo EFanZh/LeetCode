@@ -8,7 +8,7 @@ impl Solution {
         let mut result = Vec::<Vec<_>>::new();
 
         for num in nums {
-            let count = &mut counts[num as u32 as usize - 1];
+            let count = &mut counts[num.cast_unsigned() as usize - 1];
             let old_count = *count;
 
             *count += 1;

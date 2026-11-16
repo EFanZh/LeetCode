@@ -4,12 +4,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn calculate_tax(brackets: Vec<Vec<i32>>, income: i32) -> f64 {
-        let income = income as u32;
+        let income = income.cast_unsigned();
         let mut prev = 0;
         let mut taxes = 0;
 
         for bracket in brackets {
-            let [upper, percent] = <[_; 2]>::map(bracket.try_into().ok().unwrap(), |x| x as u32);
+            let [upper, percent] = <[_; 2]>::map(bracket.try_into().ok().unwrap(), i32::cast_unsigned);
 
             if income < upper {
                 taxes += (income - prev) * percent;

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn minimum_perimeter(num: i64) -> i64 {
-        let num = num as u64;
+        let num = num .cast_unsigned();
 
         let x = if num < 13 {
             u64::from(num != 0)

@@ -9,7 +9,7 @@ impl Solution {
         let mut right_unique_count = 0;
 
         for &num in &nums {
-            let count = &mut right_counts[num as u32 as usize - 1];
+            let count = &mut right_counts[num.cast_unsigned() as usize - 1];
 
             right_unique_count += i32::from(*count == 0);
             *count += 1;
@@ -19,7 +19,7 @@ impl Solution {
         let mut left_unique_count = 0;
 
         for num in &mut nums {
-            let index = *num as u32 as usize - 1;
+            let index = num.cast_unsigned() as usize - 1;
             let left_count = &mut left_counts[index];
 
             left_unique_count += i32::from(*left_count == 0);

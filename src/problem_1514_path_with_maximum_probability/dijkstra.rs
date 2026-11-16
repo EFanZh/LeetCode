@@ -32,15 +32,15 @@ impl Ord for Item {
 
 impl Solution {
     pub fn max_probability(n: i32, edges: Vec<Vec<i32>>, succ_prob: Vec<f64>, start: i32, end: i32) -> f64 {
-        let n = n as u32 as usize;
-        let start = start as u32 as usize;
-        let end = end as u32 as usize;
+        let n = n.cast_unsigned() as usize;
+        let start = start.cast_unsigned() as usize;
+        let end = end.cast_unsigned() as usize;
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for (edge, probability) in edges.into_iter().zip(succ_prob) {
             let [from, to] = edge.try_into().ok().unwrap();
-            let from = from as u32 as usize;
-            let to = to as u32 as usize;
+            let from = from.cast_unsigned() as usize;
+            let to = to.cast_unsigned() as usize;
 
             graph[from].push((to, probability));
             graph[to].push((from, probability));

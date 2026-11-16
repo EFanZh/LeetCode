@@ -10,7 +10,7 @@ use std::rc::Rc;
 
 impl Solution {
     pub fn kth_largest_level_sum(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i64 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut queue = VecDeque::from_iter(root);
         let mut sums = Vec::new();
 
@@ -26,7 +26,7 @@ impl Solution {
                     (node_ref.val, node_ref.left.clone(), node_ref.right.clone())
                 };
 
-                sum += u64::from(val as u32);
+                sum += u64::from(val.cast_unsigned());
 
                 queue.extend(left.into_iter().chain(right));
             }

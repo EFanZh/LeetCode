@@ -5,7 +5,13 @@ pub struct Solution;
 impl Solution {
     pub fn sample_stats(count: Vec<i32>) -> Vec<f64> {
         let count: &[_; 256] = count.as_slice().try_into().unwrap();
-        let make_iter = || count.iter().zip(0_u32..).map(|(&count, value)| (value, count as u32));
+
+        let make_iter = || {
+            count
+                .iter()
+                .zip(0_u32..)
+                .map(|(&count, value)| (value, count.cast_unsigned()))
+        };
 
         // Minimum.
 

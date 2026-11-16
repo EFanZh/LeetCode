@@ -7,12 +7,12 @@ pub struct ParkingSystem {
 impl ParkingSystem {
     fn new(big: i32, medium: i32, small: i32) -> Self {
         Self {
-            slots: [big as _, medium as _, small as _],
+            slots: [big.cast_unsigned(), medium.cast_unsigned(), small.cast_unsigned()],
         }
     }
 
     fn add_car(&mut self, car_type: i32) -> bool {
-        let slot = &mut self.slots[car_type as u32 as usize - 1];
+        let slot = &mut self.slots[car_type.cast_unsigned() as usize - 1];
         let is_available = *slot != 0;
 
         *slot -= u32::from(is_available);

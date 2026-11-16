@@ -39,7 +39,7 @@ impl Solution {
                 0
             };
 
-            result = (result + (num as u32) * real_factor) % 10;
+            result = (result + (num.cast_unsigned()) * real_factor) % 10;
 
             if i == n {
                 break;

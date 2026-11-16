@@ -9,7 +9,7 @@ impl Solution {
 
         nums.into_iter()
             .map(|num| {
-                let num = num as u32;
+                let num = num.cast_unsigned();
 
                 max = max.max(num);
                 score += u64::from(num + max);

@@ -4,13 +4,13 @@ pub struct Solution;
 
 impl Solution {
     pub fn find_kth_positive(arr: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut left = 0;
         let mut right = arr.len();
 
         while left < right {
             let middle = usize::midpoint(left, right);
-            let missing = arr[middle] as u32 - (middle as u32 + 1);
+            let missing = arr[middle].cast_unsigned() - (middle as u32 + 1);
 
             if missing < k {
                 left = middle + 1;

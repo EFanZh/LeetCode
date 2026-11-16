@@ -23,9 +23,8 @@ impl Solution {
         result
     }
 
-    fn helper(num: &mut [u8], k: usize) -> Vec<u8> {
+    fn helper(num: &mut [u8], mut k: usize) -> Vec<u8> {
         let n = num.len();
-        let mut k = k as u32 as usize;
         let mut digit_indices = [(); 10].map(|()| VecDeque::<u16>::new());
         let mut non_empty_digits = 0_u16;
         let mut fenwick_tree = vec![0; n].into_boxed_slice();
@@ -113,7 +112,7 @@ impl Solution {
     }
 
     pub fn min_integer(num: String, k: i32) -> String {
-        String::from_utf8(Self::helper(&mut num.into_bytes(), k as u32 as usize)).unwrap()
+        String::from_utf8(Self::helper(&mut num.into_bytes(), k.cast_unsigned() as usize)).unwrap()
     }
 }
 

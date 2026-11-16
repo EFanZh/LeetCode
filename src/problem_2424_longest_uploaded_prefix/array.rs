@@ -7,12 +7,12 @@ pub struct LUPrefix {
 impl LUPrefix {
     fn new(n: i32) -> Self {
         Self {
-            states: vec![0; n as u32 as usize].into_boxed_slice(),
+            states: vec![0; n.cast_unsigned() as usize].into_boxed_slice(),
         }
     }
 
     fn upload(&mut self, video: i32) {
-        let video = video as u32 as usize;
+        let video = video.cast_unsigned() as usize;
 
         let (start, end) = match (
             self.states.get(video.wrapping_sub(2)).filter(|&&x| x != 0),

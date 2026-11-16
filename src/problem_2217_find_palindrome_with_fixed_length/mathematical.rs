@@ -17,7 +17,7 @@ impl Solution {
     }
 
     pub fn kth_palindrome(queries: Vec<i32>, int_length: i32) -> Vec<i64> {
-        let int_length = int_length as u32;
+        let int_length = int_length.cast_unsigned();
         let half_int_length = int_length / 2;
         let other_half_int_length = int_length - half_int_length;
         let first = u32::pow(10, other_half_int_length - 1);
@@ -28,7 +28,7 @@ impl Solution {
 
         if int_length & 1 == 0 {
             iter.map(|query| {
-                let query_u32 = query as u32;
+                let query_u32 = query.cast_unsigned();
 
                 if query_u32 <= count {
                     let left = offset + query_u32;
@@ -41,7 +41,7 @@ impl Solution {
             .collect()
         } else {
             iter.map(|query| {
-                let query_u32 = query as u32;
+                let query_u32 = query.cast_unsigned();
 
                 if query_u32 <= count {
                     let left = offset + query_u32;

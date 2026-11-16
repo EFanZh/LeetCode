@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn alternate_digit_sum(n: i32) -> i32 {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
         let mut result = 0;
 
         loop {

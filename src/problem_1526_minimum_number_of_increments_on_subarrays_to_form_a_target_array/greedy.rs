@@ -8,7 +8,7 @@ impl Solution {
         let mut prev = 0;
 
         for &value in &target {
-            let value = value as u32;
+            let value = value.cast_unsigned();
 
             result += value.saturating_sub(prev);
 

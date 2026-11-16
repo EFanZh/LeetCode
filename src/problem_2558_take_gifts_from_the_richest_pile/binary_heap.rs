@@ -8,7 +8,7 @@ impl Solution {
     pub fn pick_gifts(gifts: Vec<i32>, k: i32) -> i64 {
         let mut gifts = gifts.into_iter().map(i32::cast_unsigned).collect::<BinaryHeap<_>>();
 
-        for _ in 0..k as u32 {
+        for _ in 0..k.cast_unsigned() {
             let count = &mut *gifts.peek_mut().unwrap();
 
             *count = count.isqrt();

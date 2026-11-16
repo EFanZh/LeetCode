@@ -46,7 +46,7 @@ impl Solution {
             .for_each(|(capacity, rocks)| *capacity -= rocks);
 
         let mut capacity = capacity.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let additional_rocks = u64::from(additional_rocks as u32);
+        let additional_rocks = u64::from(additional_rocks.cast_unsigned());
         let mut left = 0;
         let mut right = capacity.len();
         let mut left_sum = 0;

@@ -6,7 +6,7 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
-        let c = c as u32;
+        let c = c.cast_unsigned();
         let mut left = 0;
         let mut right = c.isqrt();
         let mut current = right * right;

@@ -13,7 +13,7 @@ impl Solution {
             let mut base = 1;
 
             for x in [right, left] {
-                let mut x = x as u32;
+                let mut x = x.cast_unsigned();
 
                 while x != 0 {
                     result += u64::from(x % 10) * base;
@@ -25,7 +25,7 @@ impl Solution {
 
         if let [x] = nums[half..nums.len() - half] {
             let mut base = 1;
-            let mut x = x as u32;
+            let mut x = x.cast_unsigned();
 
             while x != 0 {
                 result += u64::from(x % 10) * base;

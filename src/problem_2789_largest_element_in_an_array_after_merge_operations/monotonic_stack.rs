@@ -7,7 +7,7 @@ impl Solution {
         let mut stack = Vec::<u64>::new();
 
         for &num in nums.iter().rev() {
-            let mut num = u64::from(num as u32);
+            let mut num = u64::from(num.cast_unsigned());
 
             while let Some(&top) = stack.last() {
                 if top < num {

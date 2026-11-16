@@ -9,7 +9,7 @@ impl Solution {
         let mut count = 0;
 
         for num in nums {
-            sum += u64::from(num as u32);
+            sum += u64::from(num.cast_unsigned());
             count += 1;
             result = result.max(sum.div_ceil(count) as _);
         }

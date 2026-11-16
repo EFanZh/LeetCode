@@ -9,7 +9,7 @@ impl Solution {
         let (distances_1, distances_2) = distances.split_at_mut(n);
 
         for (node, distances) in [(node1, &mut *distances_1), (node2, &mut *distances_2)] {
-            let mut node = node as u32 as usize;
+            let mut node = node.cast_unsigned() as usize;
             let mut distance = 0;
 
             while let Some(state @ &mut u32::MAX) = distances.get_mut(node) {

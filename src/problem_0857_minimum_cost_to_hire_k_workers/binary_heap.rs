@@ -11,12 +11,12 @@ impl Solution {
     }
 
     pub fn mincost_to_hire_workers(quality: Vec<i32>, wage: Vec<i32>, k: i32) -> f64 {
-        let k = k as usize;
+        let k = k.cast_unsigned() as usize;
 
         let mut workers = quality
             .iter()
             .zip(&wage)
-            .map(|(&quality, &wage)| ((quality as u32), (wage as u32)))
+            .map(|(&quality, &wage)| (quality.cast_unsigned(), wage.cast_unsigned()))
             .collect::<Vec<_>>();
 
         workers.sort_unstable_by(|&lhs, &rhs| Self::compare_unit_wage(lhs, rhs));

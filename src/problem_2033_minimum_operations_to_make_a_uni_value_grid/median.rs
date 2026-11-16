@@ -6,13 +6,13 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn min_operations(grid: Vec<Vec<i32>>, x: i32) -> i32 {
-        let x = NonZeroU32::new(x as _).unwrap();
+        let x = NonZeroU32::new(x.cast_unsigned()).unwrap();
         let mut values = Vec::with_capacity(grid.first().map_or(0, Vec::len) * grid.len());
-        let remainder = grid[0][0] as u32 % x;
+        let remainder = grid[0][0].cast_unsigned() % x;
 
         for row in grid {
             for value in row {
-                let value = value as u32;
+                let value = value.cast_unsigned();
 
                 if value % x == remainder {
                     let value = value / x;

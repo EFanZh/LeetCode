@@ -71,8 +71,8 @@ impl Solution {
     }
 
     pub fn count_prime_set_bits(left: i32, right: i32) -> i32 {
-        let left_count = Self::count_prime_set_bits_less_than(left as _);
-        let right_count = Self::count_prime_set_bits_less_than((right + 1) as _);
+        let left_count = Self::count_prime_set_bits_less_than(left.cast_unsigned());
+        let right_count = Self::count_prime_set_bits_less_than(right.cast_unsigned() + 1);
 
         (right_count - left_count) as _
     }

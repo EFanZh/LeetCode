@@ -14,7 +14,7 @@ impl Solution {
     }
 
     pub fn beautiful_array(n: i32) -> Vec<i32> {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let target_1 = n >> (n.trailing_zeros() + 1);
         let mut left = Vec::with_capacity(target_1 as _);
         let mut right = Vec::with_capacity(n as _);

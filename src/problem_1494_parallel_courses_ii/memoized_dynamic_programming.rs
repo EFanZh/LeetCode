@@ -16,7 +16,7 @@ impl Solution {
             let next_k = k - 1;
 
             loop {
-                let bit = bits & bits.wrapping_neg();
+                let bit = bits.isolate_lowest_one();
 
                 bits ^= bit;
                 n -= 1;
@@ -89,7 +89,7 @@ impl Solution {
         for relation in relations {
             let [from, to] = relation.try_into().ok().unwrap();
 
-            graph[from as u32 as usize - 1] |= 1 << (to - 1);
+            graph[from.cast_unsigned() as usize - 1] |= 1 << (to - 1);
         }
 
         // Pre-invert children so we don’t need to invert them later on.

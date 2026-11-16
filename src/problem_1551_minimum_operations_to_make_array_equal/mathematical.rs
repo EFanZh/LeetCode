@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_operations(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let half = n / 2;
 
         ((n - half) * half) as _

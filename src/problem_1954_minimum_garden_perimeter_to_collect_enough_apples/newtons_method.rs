@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn minimum_perimeter(num: i64) -> i64 {
-        let num = num as u64;
+        let num = num .cast_unsigned();
 
         #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let mut x = ((num / 4) as f64).cbrt() as u64;

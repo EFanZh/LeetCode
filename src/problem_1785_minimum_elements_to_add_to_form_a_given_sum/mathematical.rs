@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_elements(nums: Vec<i32>, limit: i32, goal: i32) -> i32 {
-        let limit = u64::from(limit as u32);
+        let limit = u64::from(limit.cast_unsigned());
         let sum = nums.into_iter().map(i64::from).sum::<i64>();
         let diff = (i64::from(goal) - sum).unsigned_abs();
 

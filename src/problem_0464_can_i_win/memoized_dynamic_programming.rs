@@ -56,9 +56,12 @@ impl Solution {
             Ordering::Less => false,
             Ordering::Equal => max_choosable_integer % 2 != 0,
             Ordering::Greater => {
-                let choosable_integers = (1 << max_choosable_integer) - 1;
+                let choosable_integers = (1_u32 << max_choosable_integer) - 1;
 
-                Self::helper((choosable_integers | (desired_total << 20)) as _, &mut HashMap::new())
+                Self::helper(
+                    choosable_integers | (desired_total.cast_unsigned() << 20),
+                    &mut HashMap::new(),
+                )
             }
         }
     }

@@ -24,7 +24,7 @@ impl Solution {
             let mut bits = word;
 
             while bits != 0 {
-                let bit = bits & bits.wrapping_neg();
+                let bit = bits .isolate_lowest_one();
 
                 if start_words.contains(&(word ^ bit)) {
                     result += 1;

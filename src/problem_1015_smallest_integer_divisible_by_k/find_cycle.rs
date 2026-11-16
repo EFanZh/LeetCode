@@ -7,7 +7,7 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn smallest_repunit_div_by_k(k: i32) -> i32 {
-        let k = NonZeroU32::new(k as _).unwrap();
+        let k = NonZeroU32::new(k.cast_unsigned()).unwrap();
         let mut x = 1 % k;
         let mut length = 1;
         let mut visited = HashSet::from([x]);

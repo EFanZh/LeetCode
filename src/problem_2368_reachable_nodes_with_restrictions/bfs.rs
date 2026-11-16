@@ -6,17 +6,17 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn reachable_nodes(n: i32, edges: Vec<Vec<i32>>, restricted: Vec<i32>) -> i32 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut visited = vec![false; n].into_boxed_slice();
 
         for x in restricted {
-            visited[x as u32 as usize] = true;
+            visited[x.cast_unsigned() as usize] = true;
         }
 
         let mut neighbors = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in edges {
-            let [from, to] = <[_; 2]>::map(edge.try_into().ok().unwrap(), |x| x as u32);
+            let [from, to] = <[_; 2]>::map(edge.try_into().ok().unwrap(), i32::cast_unsigned);
             let (from_usize, to_usize) = (from as usize, to as usize);
 
             if !(visited[from_usize] || visited[to_usize]) {

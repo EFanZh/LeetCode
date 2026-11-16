@@ -37,9 +37,9 @@ impl Solution {
             .for_each(|(target, &index)| {
                 *target = max_sum as _;
 
-                let mut index = index as u32 as usize;
+                let mut index = index.cast_unsigned() as usize;
                 let mut end = &items[index];
-                let mut sum = u64::from(nums[index] as u32);
+                let mut sum = u64::from(nums[index].cast_unsigned());
                 let other_end;
 
                 'block: {

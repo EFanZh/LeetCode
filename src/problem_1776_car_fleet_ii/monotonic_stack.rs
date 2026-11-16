@@ -11,7 +11,7 @@ impl Solution {
 
         for (target, car) in result.iter_mut().zip(cars).rev() {
             let [position, speed] = car.try_into().ok().unwrap();
-            let (position, speed) = (position as u32, speed as u32);
+            let (position, speed) = (position.cast_unsigned(), speed.cast_unsigned());
 
             let (distance, speed_diff) = loop {
                 if let Some(&(right_position, right_speed, numerator, denominator)) = stack.last() {

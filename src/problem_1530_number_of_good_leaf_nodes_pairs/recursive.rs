@@ -49,7 +49,7 @@ impl Solution {
     }
 
     pub fn count_pairs(root: Option<Rc<RefCell<TreeNode>>>, distance: i32) -> i32 {
-        let distance = distance as u32;
+        let distance = distance.cast_unsigned();
         let mut result = 0;
 
         if distance >= 2 {

@@ -14,8 +14,8 @@ impl Solution {
         let mut sum = 0;
 
         for (sum_slot, cache_slot) in sums.iter_mut().zip(&mut *cache) {
-            cache_slot.1 = *sum_slot as _;
-            cache_slot.2 = *sum_slot as _;
+            cache_slot.1 = sum_slot.cast_unsigned();
+            cache_slot.2 = sum_slot.cast_unsigned();
 
             sum += *sum_slot;
             *sum_slot = sum;
@@ -28,8 +28,8 @@ impl Solution {
 
             for start in 0..=n - length {
                 let end = start + length;
-                let start_sum = sums.get(start.wrapping_sub(1)).copied().unwrap_or(0) as u32;
-                let end_sum = sums[end - 1] as u32;
+                let start_sum = sums.get(start.wrapping_sub(1)).copied().unwrap_or(0).cast_unsigned();
+                let end_sum = sums[end - 1].cast_unsigned();
 
                 // Find the split point where.
 
@@ -37,7 +37,7 @@ impl Solution {
                 let max_split_sum_times_2 = start_sum + end_sum;
 
                 while {
-                    split_sum_times_2 = sums[split] as u32 * 2;
+                    split_sum_times_2 = sums[split].cast_unsigned() * 2;
 
                     split_sum_times_2 < max_split_sum_times_2
                 } {

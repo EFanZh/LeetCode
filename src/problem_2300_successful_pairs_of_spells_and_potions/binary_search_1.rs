@@ -8,14 +8,14 @@ impl Solution {
     pub fn successful_pairs(spells: Vec<i32>, potions: Vec<i32>, success: i64) -> Vec<i32> {
         let mut spells = spells;
         let mut potions = potions;
-        let success = success as u64;
+        let success = success .cast_unsigned();
 
-        potions.sort_unstable_by_key(|&x| Reverse(x as u32));
+        potions.sort_unstable_by_key(|&x| Reverse(x.cast_unsigned()));
 
         for spell in &mut spells {
-            let spell_strength = u64::from(*spell as u32);
+            let spell_strength = u64::from(spell.cast_unsigned());
 
-            *spell = potions.partition_point(|&x| spell_strength * u64::from(x as u32) >= success) as _;
+            *spell = potions.partition_point(|&x| spell_strength * u64::from(x.cast_unsigned()) >= success) as _;
         }
 
         spells

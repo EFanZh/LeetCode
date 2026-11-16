@@ -10,7 +10,7 @@ impl Solution {
             let manager = managers[employee] as usize;
 
             let result = inform_times.get(manager).map_or(0, |&inform_time| {
-                Self::helper(managers, inform_times, manager, states) + inform_time as u32
+                Self::helper(managers, inform_times, manager, states) + inform_time.cast_unsigned()
             });
 
             states[employee] = result;

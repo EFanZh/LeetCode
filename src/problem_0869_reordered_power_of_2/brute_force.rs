@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn reordered_power_of2(n: i32) -> bool {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
         let mut digits = [0_u8; 10];
         let mut length = 0;
 

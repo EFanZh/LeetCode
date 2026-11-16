@@ -34,7 +34,7 @@ impl Solution {
     }
 
     pub fn btree_game_winning_move(root: Option<Rc<RefCell<TreeNode>>>, n: i32, x: i32) -> bool {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let (left_count, right_count) = Self::helper(root.as_deref(), x).unwrap();
         let rest = n - (1 + left_count + right_count);
         let max = left_count.max(right_count).max(rest);

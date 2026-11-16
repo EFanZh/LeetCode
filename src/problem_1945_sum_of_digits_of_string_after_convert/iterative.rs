@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn get_lucky(s: String, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut value = 0;
 
         // Convert and transform.

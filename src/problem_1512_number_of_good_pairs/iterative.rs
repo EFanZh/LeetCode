@@ -8,7 +8,7 @@ impl Solution {
         let mut result = 0;
 
         for num in nums {
-            let count = &mut count[num as u32 as usize - 1];
+            let count = &mut count[num.cast_unsigned() as usize - 1];
 
             result += *count;
             *count += 1;

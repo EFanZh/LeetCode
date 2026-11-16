@@ -20,15 +20,19 @@ impl Solution {
             .into_iter()
             .map(|query| {
                 let [favorite_type, favorite_day, daily_cap] = query.try_into().ok().unwrap();
-                let favorite_type = favorite_type as u32 as usize;
-                let favorite_day = favorite_day as u32 as usize;
-                let daily_cap = daily_cap as u32;
-                let left_sum = candy_sums.get(favorite_type.wrapping_sub(1)).copied().unwrap_or(0) as u32;
+                let favorite_type = favorite_type.cast_unsigned() as usize;
+                let favorite_day = favorite_day.cast_unsigned() as usize;
+                let daily_cap = daily_cap.cast_unsigned();
+                let left_sum = candy_sums
+                    .get(favorite_type.wrapping_sub(1))
+                    .copied()
+                    .unwrap_or(0)
+                    .cast_unsigned();
 
                 Self::interval_overlaps(
                     (
                         left_sum.saturating_sub(daily_cap - 1),
-                        candy_sums[favorite_type] as u32 - 1,
+                        candy_sums[favorite_type].cast_unsigned() - 1,
                     ),
                     (favorite_day as _, daily_cap.saturating_mul(favorite_day as _)),
                 )

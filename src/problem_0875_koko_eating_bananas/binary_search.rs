@@ -10,16 +10,20 @@ impl Solution {
     }
 
     fn check(piles: &[i32], h: u32, speed: u32) -> bool {
-        piles.iter().map(|&pile| Self::div_ceil(pile as _, speed)).sum::<u32>() > h
+        piles
+            .iter()
+            .map(|&pile| Self::div_ceil(pile.cast_unsigned(), speed))
+            .sum::<u32>()
+            > h
     }
 
     pub fn min_eating_speed(piles: Vec<i32>, h: i32) -> i32 {
-        let h = h as u32;
+        let h = h.cast_unsigned();
         let mut total = 0;
         let mut max = 0;
 
         for &pile in &piles {
-            let pile = pile as u32;
+            let pile = pile.cast_unsigned();
 
             total += pile;
             max = max.max(pile);

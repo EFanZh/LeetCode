@@ -6,10 +6,10 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn all_cells_dist_order(rows: i32, cols: i32, r_center: i32, c_center: i32) -> Vec<Vec<i32>> {
-        let rows = rows as u32;
-        let cols = cols as u32;
-        let r_center = r_center as u32;
-        let c_center = c_center as u32;
+        let rows = rows.cast_unsigned();
+        let cols = cols.cast_unsigned();
+        let r_center = r_center.cast_unsigned();
+        let c_center = c_center.cast_unsigned();
         let mut result = Vec::with_capacity(cols as usize * rows as usize);
         let mut queue = VecDeque::new();
         let mut node = (r_center, c_center);

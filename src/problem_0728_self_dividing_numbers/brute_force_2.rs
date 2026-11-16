@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn self_dividing_numbers(left: i32, right: i32) -> Vec<i32> {
-        let (left, right) = (left as u32, right as u32);
+        let (left, right) = (left.cast_unsigned(), right.cast_unsigned());
         let mut result = Vec::with_capacity((right - left) as _);
         let mut x = left;
 

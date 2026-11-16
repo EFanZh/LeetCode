@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn minimum_recolors(blocks: String, k: i32) -> i32 {
         let blocks = blocks.as_bytes();
-        let (left, right) = blocks.split_at(k as u32 as _);
+        let (left, right) = blocks.split_at(k.cast_unsigned() as _);
         let mut white_count = left.iter().fold(0, |count, &c| count + u8::from(c == b'W'));
         let mut result = white_count;
 

@@ -18,7 +18,7 @@ impl Solution {
 
                     u32::max(
                         max,
-                        (top.iter().sum::<i32>() + middle[1] + bottom.iter().sum::<i32>()) as _,
+                        (top.iter().sum::<i32>() + middle[1] + bottom.iter().sum::<i32>()).cast_unsigned(),
                     )
                 })
         }) as _

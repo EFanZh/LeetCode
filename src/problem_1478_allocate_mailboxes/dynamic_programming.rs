@@ -6,18 +6,18 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_distance(houses: Vec<i32>, k: i32) -> i32 {
-        let mut houses = houses;
+        let mut houses = houses.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
 
-        houses.sort_unstable_by_key(|&x| x as u32);
+        houses.sort_unstable();
 
         let n = houses.len();
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut sum = 0;
 
         let sums = houses
             .iter()
             .map(|&position| {
-                sum += position as u32;
+                sum += position;
 
                 sum
             })

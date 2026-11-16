@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
-        let c = c as u32;
+        let c = c.cast_unsigned();
 
         for left in 0..=(c / 2).isqrt() {
             let right_squared = c - left * left;

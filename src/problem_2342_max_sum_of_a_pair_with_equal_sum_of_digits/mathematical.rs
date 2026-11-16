@@ -8,7 +8,7 @@ impl Solution {
         let mut result = -1;
 
         for &num in &nums {
-            let num = num as u32;
+            let num = num.cast_unsigned();
             let mut bucket = 0_usize;
             let mut x = num;
 

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn parse(value: i32) -> u64 {
-        let mut value = value as u32;
+        let mut value = value.cast_unsigned();
         let mut twos = 0;
         let mut fives = 0;
 

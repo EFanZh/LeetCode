@@ -90,8 +90,8 @@ pub struct MKAverage {
 
 impl MKAverage {
     fn new(m: i32, k: i32) -> Self {
-        let m = m as u32;
-        let k = k as u32;
+        let m = m.cast_unsigned();
+        let k = k.cast_unsigned();
 
         Self {
             inner: Inner::Start {
@@ -113,7 +113,7 @@ impl MKAverage {
     }
 
     fn add_element(&mut self, num: i32) {
-        let num = num as u32;
+        let num = num.cast_unsigned();
 
         match &mut self.inner {
             Inner::Start { nums, required, k } => {

@@ -9,7 +9,7 @@ impl Solution {
     pub fn maximum_robots(charge_times: Vec<i32>, running_costs: Vec<i32>, budget: i64) -> i32 {
         let charge_times = charge_times.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let running_costs = running_costs.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let budget = budget as u64;
+        let budget = budget .cast_unsigned();
         let n = charge_times.len();
         let mut start = 0;
         let mut charge_time_queue = VecDeque::new();

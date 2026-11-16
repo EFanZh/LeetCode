@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn two_egg_drop(n: i32) -> i32 {
-        let n = n as u32 as usize + 1;
+        let n = n.cast_unsigned() as usize + 1;
         let mut cache = vec![0_u16; n].into_boxed_slice();
 
         for i in 1..n {

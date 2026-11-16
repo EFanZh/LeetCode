@@ -6,8 +6,8 @@ impl Solution {
     pub fn minimum_refill(plants: Vec<i32>, capacity_a: i32, capacity_b: i32) -> i32 {
         let (plants, capacity_a, capacity_b) = (
             plants.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>(),
-            capacity_a as u32,
-            capacity_b as u32,
+            capacity_a.cast_unsigned(),
+            capacity_b.cast_unsigned(),
         );
 
         let (left, right) = plants.split_at(plants.len() / 2);

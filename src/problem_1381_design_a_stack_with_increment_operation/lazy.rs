@@ -38,7 +38,7 @@ impl CustomStack {
     fn increment(&mut self, k: i32, val: i32) {
         if let Some((_, extra)) = self
             .buffer
-            .get_mut((k as u32 as usize).min(self.length).wrapping_sub(1))
+            .get_mut((k.cast_unsigned() as usize).min(self.length).wrapping_sub(1))
         {
             *extra += val;
         }

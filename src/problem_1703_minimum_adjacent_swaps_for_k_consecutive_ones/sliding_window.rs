@@ -22,11 +22,10 @@ impl Solution {
     fn get_cost(window: &[i32]) -> u32 {
         let mut result = 0;
         let middle = window.len() / 2;
-        let i32_as_u32 = |&x| x as u32;
 
         // Left cost.
 
-        let mut iter = window[..=middle].iter().map(i32_as_u32);
+        let mut iter = window[..=middle].iter().copied().map(i32::cast_unsigned);
         let mut prev = iter.next().unwrap();
 
         for (cost, position) in (1..).zip(iter) {
@@ -36,7 +35,7 @@ impl Solution {
 
         // Right cost.
 
-        let mut iter = window[middle..].iter().rev().map(i32_as_u32);
+        let mut iter = window[middle..].iter().rev().copied().map(i32::cast_unsigned);
         let mut prev = iter.next().unwrap();
 
         for (cost, position) in (1..).zip(iter) {
@@ -49,7 +48,7 @@ impl Solution {
 
     pub fn min_moves(nums: Vec<i32>, k: i32) -> i32 {
         let mut nums = nums;
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
         Self::find_ones(&mut nums);
 
@@ -57,7 +56,7 @@ impl Solution {
             .iter()
             .zip(&nums[k / 2..])
             .zip(&nums[k - 1..])
-            .map(|((&left, &middle), &right)| ((left as u32, middle as u32), right as u32));
+            .map(|((&left, &middle), &right)| ((left.cast_unsigned(), middle.cast_unsigned()), right.cast_unsigned()));
 
         let mut window = iter.next().unwrap().0;
         let mut cost = Self::get_cost(&nums[..k]);

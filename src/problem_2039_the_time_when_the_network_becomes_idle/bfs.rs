@@ -12,8 +12,8 @@ impl Solution {
 
         for edge in edges {
             let [from, to] = edge.try_into().ok().unwrap();
-            let from = from as u32;
-            let to = to as u32;
+            let from = from.cast_unsigned();
+            let to = to.cast_unsigned();
 
             graph[from as usize].push(to);
             graph[to as usize].push(from);
@@ -33,7 +33,7 @@ impl Solution {
                 let node = queue.pop_front().unwrap();
 
                 for &neighbor in &graph[node as usize] {
-                    if let Some(patience) = NonZeroU32::new(mem::take(&mut states[neighbor as usize]) as _) {
+                    if let Some(patience) = NonZeroU32::new(mem::take(&mut states[neighbor as usize]).cast_unsigned()) {
                         result = result.max(double_distance - distance_minus_1 % patience);
 
                         queue.push_back(neighbor);

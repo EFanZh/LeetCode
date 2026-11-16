@@ -16,9 +16,9 @@ impl Solution {
     }
 
     pub fn powerful_integers(x: i32, y: i32, bound: i32) -> Vec<i32> {
-        let x = x as u32;
-        let y = y as u32;
-        let bound = bound as u32;
+        let x = x.cast_unsigned();
+        let y = y.cast_unsigned();
+        let bound = bound.cast_unsigned();
         let mut result = Vec::new();
 
         if x == 1 {

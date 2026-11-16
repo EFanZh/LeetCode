@@ -41,10 +41,10 @@ impl Solution {
         let mut result = 0;
 
         for num in nums {
-            result += Self::check(num as _);
+            result += Self::check(num.cast_unsigned());
         }
 
-        result as _
+        result.cast_signed()
     }
 }
 

@@ -40,7 +40,7 @@ impl Solution {
         let mut counts = [0_u32; 2048];
 
         for skill in skill {
-            let skill = skill as u32;
+            let skill = skill.cast_unsigned();
 
             total_skill += skill;
             min_skill = min_skill.min(skill);

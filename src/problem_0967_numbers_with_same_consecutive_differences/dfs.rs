@@ -20,8 +20,8 @@ impl Solution {
     }
 
     pub fn nums_same_consec_diff(n: i32, k: i32) -> Vec<i32> {
-        let n = n as u32;
-        let k = k as u32;
+        let n = n.cast_unsigned();
+        let k = k.cast_unsigned();
         let mut result = Vec::new();
 
         if k == 0 {

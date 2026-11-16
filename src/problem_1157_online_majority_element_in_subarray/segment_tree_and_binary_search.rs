@@ -50,9 +50,9 @@ impl MajorityChecker {
     }
 
     fn query(&self, left: i32, right: i32, threshold: i32) -> i32 {
-        let left = left as u32;
-        let right = right as u32;
-        let threshold = threshold as u32;
+        let left = left.cast_unsigned();
+        let right = right.cast_unsigned();
+        let threshold = threshold.cast_unsigned();
         let first_leaf = self.tree.len() / 2;
         let mut i = first_leaf + left as usize;
         let mut j = first_leaf + right as usize;

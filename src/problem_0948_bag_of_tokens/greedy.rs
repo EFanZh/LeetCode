@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn bag_of_tokens_score(tokens: Vec<i32>, power: i32) -> i32 {
         let mut tokens = tokens;
-        let mut power = power as u32;
+        let mut power = power.cast_unsigned();
 
         tokens.sort_unstable();
 
@@ -13,12 +13,12 @@ impl Solution {
         let mut score = 0_u32;
 
         while let Some(left_value) = iter.next() {
-            if let Some(next_power) = power.checked_sub(left_value as _) {
+            if let Some(next_power) = power.checked_sub(left_value.cast_unsigned()) {
                 power = next_power;
                 score += 1;
             } else if score != 0 {
                 if let Some(right_value) = iter.next_back() {
-                    power += (right_value - left_value) as u32;
+                    power += (right_value - left_value).cast_unsigned();
                 } else {
                     break;
                 }

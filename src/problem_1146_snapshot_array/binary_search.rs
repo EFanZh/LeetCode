@@ -36,7 +36,7 @@ impl SnapshotArray {
     }
 
     fn get(&self, index: i32, snap_id: i32) -> i32 {
-        let snap_id = snap_id as _;
+        let snap_id = snap_id.cast_unsigned();
         let slot = self.data[index as usize].as_slice();
         let i = slot.partition_point(|&(_, version)| version <= snap_id).wrapping_sub(1);
 

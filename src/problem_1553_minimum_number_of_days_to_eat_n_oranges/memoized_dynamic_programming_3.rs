@@ -23,7 +23,7 @@ impl Solution {
     }
 
     pub fn min_days(n: i32) -> i32 {
-        Self::helper(&mut HashMap::new(), n as _) as _
+        Self::helper(&mut HashMap::new(), n.cast_unsigned()) as _
     }
 }
 

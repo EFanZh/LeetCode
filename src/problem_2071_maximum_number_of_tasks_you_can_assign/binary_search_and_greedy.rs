@@ -47,8 +47,8 @@ impl Solution {
     pub fn max_task_assign(tasks: Vec<i32>, workers: Vec<i32>, pills: i32, strength: i32) -> i32 {
         let mut tasks = tasks.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut workers = workers.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let pills = pills as u32;
-        let strength = strength as u32;
+        let pills = pills.cast_unsigned();
+        let strength = strength.cast_unsigned();
 
         let (tasks, workers) = match tasks.len().cmp(&workers.len()) {
             Ordering::Less => {

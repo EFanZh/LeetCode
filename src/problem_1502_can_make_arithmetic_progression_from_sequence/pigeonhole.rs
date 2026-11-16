@@ -21,9 +21,9 @@ impl Solution {
 
         let n = arr.len();
 
-        if let Some(interval) = NonZeroU32::new((max - min) as u32 / (n - 1) as u32) {
+        if let Some(interval) = NonZeroU32::new((max - min).cast_unsigned() / (n - 1) as u32) {
             for num in &mut arr {
-                let diff = (*num - min) as u32;
+                let diff = (*num - min).cast_unsigned();
 
                 if diff % interval == 0 {
                     *num = (diff / interval) as i32;
@@ -39,7 +39,7 @@ impl Solution {
                     // We have an empty slot at `start` and a number `pending` to place.
 
                     loop {
-                        if let Some(occupied) = arr.get_mut(pending as u32 as usize) {
+                        if let Some(occupied) = arr.get_mut(pending.cast_unsigned() as usize) {
                             if *occupied == pending {
                                 return false;
                             }

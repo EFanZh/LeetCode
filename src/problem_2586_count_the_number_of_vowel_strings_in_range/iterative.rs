@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn vowel_strings(words: Vec<String>, left: i32, right: i32) -> i32 {
-        words[left as u32 as usize..=right as u32 as usize]
+        words[left.cast_unsigned() as usize..=right.cast_unsigned() as usize]
             .iter()
             .filter(|word| {
                 if let [b'a' | b'e' | b'i' | b'o' | b'u', rest @ ..] = word.as_bytes() {

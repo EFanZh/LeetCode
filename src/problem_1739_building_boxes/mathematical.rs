@@ -6,7 +6,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn minimum_boxes(n: i32) -> i32 {
-        let mut n = u64::from(n as u32);
+        let mut n = u64::from(n.cast_unsigned());
 
         #[expect(clippy::cast_precision_loss, reason = "optimal")]
         let mut h = ((n * 6) as f64).cbrt() as u64;

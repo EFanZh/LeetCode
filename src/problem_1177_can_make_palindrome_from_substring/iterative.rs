@@ -23,7 +23,13 @@ impl Solution {
             .iter()
             .map(|query| {
                 let [left, right, k] = query.as_slice().try_into().unwrap();
-                let (left, right, k) = (left as usize, right as usize, k as u32);
+
+                let (left, right, k) = (
+                    left.cast_unsigned() as usize,
+                    right.cast_unsigned() as usize,
+                    k.cast_unsigned(),
+                );
+
                 let state = states[right] ^ states.get(left.wrapping_sub(1)).copied().unwrap_or(0);
 
                 state.count_ones() / 2 <= k

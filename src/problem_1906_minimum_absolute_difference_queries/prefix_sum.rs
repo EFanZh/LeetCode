@@ -8,7 +8,7 @@ impl Solution {
         let mut count = [0; 100];
 
         for (target, num) in counts.iter_mut().zip(nums) {
-            count[(num - 1) as u32 as usize] += 1;
+            count[(num - 1).cast_unsigned() as usize] += 1;
 
             *target = count;
         }
@@ -17,8 +17,8 @@ impl Solution {
             .into_iter()
             .map(|query| {
                 let [left, right] = query.try_into().ok().unwrap();
-                let left_count = counts.get((left - 1) as u32 as usize).unwrap_or(&[0; 100]);
-                let right_count = &counts[right as u32 as usize];
+                let left_count = counts.get((left - 1).cast_unsigned() as usize).unwrap_or(&[0; 100]);
+                let right_count = &counts[right.cast_unsigned() as usize];
                 let mut result = u32::MAX;
 
                 let mut iter = (0_u32..)

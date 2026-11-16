@@ -9,7 +9,7 @@ impl Solution {
         let mut nums = nums;
 
         mem::take(
-            nums.select_nth_unstable_by(k as u32 as usize - 1, |x, y| {
+            nums.select_nth_unstable_by(k.cast_unsigned() as usize - 1, |x, y| {
                 y.len().cmp(&x.len()).then_with(|| y.cmp(x))
             })
             .1,

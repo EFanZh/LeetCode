@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn check_perfect_number(num: i32) -> bool {
-        let num = num as u32;
+        let num = num.cast_unsigned();
         let last = num.isqrt();
 
         let divisor_sum = 1

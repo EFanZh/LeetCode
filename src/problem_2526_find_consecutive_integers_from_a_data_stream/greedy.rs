@@ -10,7 +10,7 @@ impl DataStream {
     fn new(value: i32, k: i32) -> Self {
         Self {
             value,
-            k: k as u32,
+            k: k.cast_unsigned(),
             count: 0,
         }
     }

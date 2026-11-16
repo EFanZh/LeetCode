@@ -10,7 +10,7 @@ impl Solution {
         let mut unique_numbers = Vec::with_capacity(50);
 
         for num in nums {
-            let index = num as u32 as usize - 1;
+            let index = num.cast_unsigned() as usize - 1;
             let count = &mut counts[index];
 
             if *count == 0 {
@@ -36,7 +36,7 @@ impl Solution {
         assert!(n <= 10);
 
         for bits in 1..(1 << n) {
-            result[bits] = result[bits & (bits - 1)] + value[bits.trailing_zeros() as usize] as u32;
+            result[bits] = result[bits & (bits - 1)] + value[bits.trailing_zeros() as usize].cast_unsigned();
         }
 
         (result, n)

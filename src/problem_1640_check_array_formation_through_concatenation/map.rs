@@ -7,7 +7,7 @@ impl Solution {
         let mut pieces_by_first = [const { Vec::new() }; 100];
 
         for piece in pieces {
-            let first = piece[0] as u32 as usize;
+            let first = piece[0].cast_unsigned() as usize;
 
             pieces_by_first[first - 1] = piece;
         }
@@ -15,7 +15,7 @@ impl Solution {
         let mut i = 0;
 
         while let Some([first, lhs @ ..]) = arr.get(i..) {
-            if let Some(rhs) = pieces_by_first[*first as u32 as usize - 1].get(1..) {
+            if let Some(rhs) = pieces_by_first[first.cast_unsigned() as usize - 1].get(1..) {
                 if lhs.starts_with(rhs) {
                     i += rhs.len() + 1;
                 } else {

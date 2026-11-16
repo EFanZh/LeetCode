@@ -22,7 +22,7 @@ impl Solution {
             }
         }
 
-        let mut result = vec![0; k as u32 as usize];
+        let mut result = vec![0; k.cast_unsigned() as usize];
 
         for (_, times) in users {
             result[times.len() - 1] += 1;

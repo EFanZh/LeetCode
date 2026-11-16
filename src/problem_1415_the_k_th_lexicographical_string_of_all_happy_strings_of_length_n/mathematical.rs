@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn get_happy_string(n: i32, k: i32) -> String {
-        let n = n as u32;
-        let k = k as u32 - 1;
+        let n = n.cast_unsigned();
+        let k = k.cast_unsigned() - 1;
         let mut result = String::new();
         let first_digit = (k >> (n - 1)) as u8;
 

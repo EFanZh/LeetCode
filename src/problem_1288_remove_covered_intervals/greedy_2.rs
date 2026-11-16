@@ -11,7 +11,7 @@ impl Solution {
             .map(|interval| {
                 let [left, right] = interval.try_into().ok().unwrap();
 
-                (left as u32, right as u32)
+                (left.cast_unsigned(), right.cast_unsigned())
             })
             .collect::<Vec<_>>();
 

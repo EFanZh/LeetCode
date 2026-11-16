@@ -42,17 +42,18 @@ impl Solution {
     }
 
     pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
-        let n = n as _;
+        let n = n.cast_unsigned() as _;
         let mut graph = vec![Vec::new(); n];
 
         for edge in times {
             let [from, to, weight] = edge.as_slice().try_into().unwrap();
 
-            graph[(from - 1) as usize].push(((to - 1) as usize, weight as u32));
+            graph[(from - 1).cast_unsigned() as usize]
+                .push(((to - 1).cast_unsigned() as usize, weight.cast_unsigned()));
         }
 
         let mut item = Item {
-            node: (k - 1) as _,
+            node: (k - 1).cast_unsigned() as _,
             distance: 0,
         };
 

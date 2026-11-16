@@ -4,30 +4,31 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_swaps(nums: Vec<i32>) -> i32 {
+        let nums = nums.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let n = nums.len() as u32;
-        let ones = nums.iter().sum::<i32>() as u32;
+        let ones = nums.iter().sum::<u32>();
 
         let (left, right) = nums.split_at(ones as usize);
-        let mut window_ones = left.iter().sum::<i32>() as u32;
+        let mut window_ones = left.iter().sum::<u32>();
         let mut max_windows_ones = window_ones;
 
         for (&old, &new) in nums.iter().zip(right) {
-            window_ones -= old as u32;
-            window_ones += new as u32;
+            window_ones -= old;
+            window_ones += new;
             max_windows_ones = max_windows_ones.max(window_ones);
         }
 
         let (left, right) = nums.split_at((n - ones) as usize);
-        let mut window_ones = left.iter().sum::<i32>() as u32;
+        let mut window_ones = left.iter().sum::<u32>();
         let mut min_windows_ones = window_ones;
 
         for (&old, &new) in nums.iter().zip(right) {
-            window_ones -= old as u32;
-            window_ones += new as u32;
+            window_ones -= old;
+            window_ones += new;
             min_windows_ones = min_windows_ones.min(window_ones);
         }
 
-        (ones - max_windows_ones).min(min_windows_ones) as _
+        (ones - max_windows_ones).min(min_windows_ones).cast_signed()
     }
 }
 

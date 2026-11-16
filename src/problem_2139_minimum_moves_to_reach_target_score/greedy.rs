@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_moves(target: i32, max_doubles: i32) -> i32 {
-        let mut target = target as u32;
-        let mut max_doubles = max_doubles as u32;
+        let mut target = target.cast_unsigned();
+        let mut max_doubles = max_doubles.cast_unsigned();
         let mut result = 0;
 
         if target > 1 {

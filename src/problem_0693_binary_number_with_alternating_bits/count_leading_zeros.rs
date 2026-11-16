@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn has_alternating_bits(n: i32) -> bool {
-        let n = n as u32;
+        let n = n.cast_unsigned();
 
         n == 0x_aaaa_aaaa >> n.leading_zeros()
     }

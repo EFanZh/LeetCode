@@ -9,12 +9,12 @@ impl Solution {
             .map(|fruit| {
                 let [position, amount] = fruit.try_into().ok().unwrap();
 
-                (position as u32, amount as u32)
+                (position.cast_unsigned(), amount.cast_unsigned())
             })
             .collect::<Vec<_>>();
 
-        let start_pos = start_pos as u32;
-        let k = k as u32;
+        let start_pos = start_pos.cast_unsigned();
+        let k = k.cast_unsigned();
         let start_index = fruits.partition_point(|&(position, _)| position < start_pos);
         let mut result = 0;
 

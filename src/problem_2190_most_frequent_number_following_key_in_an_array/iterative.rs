@@ -9,7 +9,7 @@ impl Solution {
 
         for num in nums {
             if prev == key {
-                counts[num as u32 as usize - 1] += 1;
+                counts[num.cast_unsigned() as usize - 1] += 1;
             }
 
             prev = num;

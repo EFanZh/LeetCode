@@ -6,7 +6,7 @@ use std::collections::HashSet;
 
 impl Solution {
     pub fn count_excellent_pairs(nums: Vec<i32>, k: i32) -> i64 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut counts = [0_u32; 33];
 
         for &num in &HashSet::<_>::from_iter(nums) {

@@ -27,7 +27,7 @@ impl SORTracker {
         }
 
         let name = parse_name(name);
-        let score = score as u32;
+        let score = score.cast_unsigned();
 
         let item = self
             .head

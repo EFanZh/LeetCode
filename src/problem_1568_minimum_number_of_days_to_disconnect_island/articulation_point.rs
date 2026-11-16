@@ -96,7 +96,7 @@ impl Solution {
                 let mut new_row = 0;
 
                 for (i, cell) in (1..).zip(row) {
-                    let cell = cell as u32;
+                    let cell = cell.cast_unsigned();
 
                     cells += cell;
                     new_row |= cell << i;

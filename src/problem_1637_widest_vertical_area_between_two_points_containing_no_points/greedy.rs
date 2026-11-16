@@ -4,7 +4,10 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_width_of_vertical_area(points: Vec<Vec<i32>>) -> i32 {
-        let mut xs = points.into_iter().map(|point| point[0] as u32).collect::<Box<_>>();
+        let mut xs = points
+            .into_iter()
+            .map(|point| point[0].cast_unsigned())
+            .collect::<Box<_>>();
 
         xs.sort_unstable();
 

@@ -4,14 +4,14 @@ pub struct Solution;
 
 impl Solution {
     pub fn shortest_sequence(rolls: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut states = vec![false; k as usize].into_boxed_slice();
         let mut current_count_count = k;
         let mut current_count_state = false;
         let mut result = 1;
 
         for roll in rolls {
-            let state = &mut states[roll as u32 as usize - 1];
+            let state = &mut states[roll.cast_unsigned() as usize - 1];
 
             if *state == current_count_state {
                 *state = !current_count_state;

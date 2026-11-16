@@ -28,7 +28,7 @@ impl Solution {
     }
 
     pub fn monotone_increasing_digits(n: i32) -> i32 {
-        Self::helper(n as _) as _
+        Self::helper(n.cast_unsigned()) as _
     }
 }
 

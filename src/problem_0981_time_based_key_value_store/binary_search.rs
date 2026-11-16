@@ -13,7 +13,7 @@ impl TimeMap {
     }
 
     fn set(&mut self, key: String, value: String, timestamp: i32) {
-        let event = (timestamp as _, value);
+        let event = (timestamp.cast_unsigned(), value);
 
         match self.inner.entry(key) {
             Entry::Occupied(entry) => entry.into_mut().push(event),
@@ -24,7 +24,7 @@ impl TimeMap {
     }
 
     fn get(&self, key: String, timestamp: i32) -> String {
-        let timestamp = timestamp as u32;
+        let timestamp = timestamp.cast_unsigned();
 
         self.inner
             .get(&key)

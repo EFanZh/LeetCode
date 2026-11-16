@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn num_of_burgers(tomato_slices: i32, cheese_slices: i32) -> Vec<i32> {
-        let tomato_slices = tomato_slices as u32;
-        let cheese_slices = cheese_slices as u32;
+        let tomato_slices = tomato_slices.cast_unsigned();
+        let cheese_slices = cheese_slices.cast_unsigned();
 
         if tomato_slices.is_multiple_of(2)
             && let Some(jumbo_burgers) = (tomato_slices / 2).checked_sub(cheese_slices)

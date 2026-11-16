@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn task_scheduler_ii(tasks: Vec<i32>, space: i32) -> i64 {
-        let space = u64::from(space as u32 + 1);
+        let space = u64::from(space.cast_unsigned() + 1);
         let mut prev_days = HashMap::new();
         let mut time = 0;
 

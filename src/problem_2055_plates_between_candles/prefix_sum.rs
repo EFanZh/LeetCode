@@ -37,8 +37,8 @@ impl Solution {
             .into_iter()
             .map(|query| {
                 let [left, right] = query.try_into().ok().unwrap();
-                let right_sum = prefix_sums[right as u32 as usize].1;
-                let left_sum = prefix_sums[left as u32 as usize].0;
+                let right_sum = prefix_sums[right.cast_unsigned() as usize].1;
+                let left_sum = prefix_sums[left.cast_unsigned() as usize].0;
 
                 right_sum.saturating_sub(left_sum) as _
             })

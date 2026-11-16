@@ -23,7 +23,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let query = u64::from(query as u32);
+                let query = u64::from(query.cast_unsigned());
                 let index = nums.partition_point(|&num| num < query as u32);
                 let left_sum = sums.get(index.wrapping_sub(1)).copied().unwrap_or(0);
                 let index = index as u64;

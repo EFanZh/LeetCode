@@ -20,12 +20,12 @@ impl Solution {
         result
     }
 
-    fn rolling_hash<'a>(nums: &'a [i32], length: usize, h: u64, mut f: impl FnMut(u64, &'a [i32]) -> bool) -> bool {
+    fn rolling_hash<'a>(nums: &'a [u32], length: usize, h: u64, mut f: impl FnMut(u64, &'a [u32]) -> bool) -> bool {
         let (left, right) = nums.split_at(length);
         let mut hash = 0;
 
         for &num in left {
-            hash = (hash * D + u64::from(num as u32)) % MODULUS;
+            hash = (hash * D + u64::from(num)) % MODULUS;
         }
 
         if f(hash, left) {
@@ -33,8 +33,8 @@ impl Solution {
         }
 
         for (i, (&old, &new)) in (1..).zip(nums.iter().zip(right)) {
-            let old = u64::from(old as u32);
-            let new = u64::from(new as u32);
+            let old = u64::from(old);
+            let new = u64::from(new);
 
             hash = (D * (hash + (MODULUS - (h * old) % MODULUS)) + new) % MODULUS;
 
@@ -47,11 +47,11 @@ impl Solution {
     }
 
     fn check<'a>(
-        nums1: &'a [i32],
-        nums2: &'a [i32],
+        nums1: &'a [u32],
+        nums2: &'a [u32],
         length: usize,
-        buckets_buffer: &mut HashMap<u64, Vec<&'a [i32]>>,
-        bucket_pool: &mut Vec<Vec<&'a [i32]>>,
+        buckets_buffer: &mut HashMap<u64, Vec<&'a [u32]>>,
+        bucket_pool: &mut Vec<Vec<&'a [u32]>>,
     ) -> bool {
         let h = Self::exp_mod(D, length - 1, MODULUS);
 
@@ -86,6 +86,9 @@ impl Solution {
     }
 
     pub fn find_length(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
+        let nums1 = nums1.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+        let nums2 = nums2.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
+
         let (nums1, nums2) = if nums2.len() < nums1.len() {
             (nums2, nums1)
         } else {

@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn take_characters(s: String, k: i32) -> i32 {
         let s = s.into_bytes();
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut a_count = 0_u32;
         let mut b_count = 0_u32;
         let mut c_count = 0_u32;

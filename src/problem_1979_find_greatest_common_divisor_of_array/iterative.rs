@@ -29,8 +29,8 @@ impl Solution {
     }
 
     fn gcd(x: i32, y: i32) -> i32 {
-        let mut x = x as u32;
-        let mut y = y as u32;
+        let mut x = x.cast_unsigned();
+        let mut y = y.cast_unsigned();
 
         while y != 0 {
             let z = x % y;

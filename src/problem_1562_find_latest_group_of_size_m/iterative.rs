@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn find_latest_step(arr: Vec<i32>, m: i32) -> i32 {
         let n = arr.len();
-        let m = m as u32;
+        let m = m.cast_unsigned();
 
         if n == m as usize {
             m as _
@@ -15,7 +15,7 @@ impl Solution {
             let mut result = -1;
 
             for (step, i) in (0..).zip(arr) {
-                let i = i as u32 as usize - 1;
+                let i = i.cast_unsigned() as usize - 1;
                 let left_length = lengths.get(i.wrapping_sub(1)).copied().unwrap_or(0);
                 let right_length = lengths.get(i + 1).copied().unwrap_or(0);
 

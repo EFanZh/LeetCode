@@ -30,7 +30,7 @@ impl Solution {
                     }
 
                     if let Some(&next_state) = grid.get(next_y).and_then(|row| row.get(next_x))
-                        && let Some(next_budget) = u32::checked_sub(budget as _, next_state as _)
+                        && let Some(next_budget) = u32::checked_sub(budget.cast_unsigned(), next_state.cast_unsigned())
                     {
                         let next_budget = next_budget as i32;
                         let max_budget = &mut max_budgets[columns * next_y + next_x];

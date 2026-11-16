@@ -48,7 +48,7 @@ impl Solution {
             .map(|edge| {
                 let [from, to, distance] = edge.try_into().ok().unwrap();
 
-                (distance as u32, from as u32, to as u32)
+                (distance.cast_unsigned(), from.cast_unsigned(), to.cast_unsigned())
             })
             .collect::<Box<_>>();
 
@@ -62,14 +62,14 @@ impl Solution {
             .map(|(slot, query)| {
                 let [from, to, limit] = query.try_into().ok().unwrap();
 
-                (limit as u32, from as u32, to as u32, slot)
+                (limit.cast_unsigned(), from.cast_unsigned(), to.cast_unsigned(), slot)
             })
             .collect::<Vec<_>>();
 
         queue.sort_unstable_by_key(|&(limit, ..)| limit);
 
         let mut iter = edge_list.iter();
-        let mut union_find = vec![(0, 0); n as u32 as usize].into_boxed_slice();
+        let mut union_find = vec![(0, 0); n.cast_unsigned() as usize].into_boxed_slice();
 
         for (limit, p, q, slot) in queue {
             while let Some(item) = iter.as_slice().first() {

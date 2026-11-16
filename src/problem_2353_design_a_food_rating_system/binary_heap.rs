@@ -175,14 +175,14 @@ impl FoodRatings {
                         let stats = &mut occupied_entry.into_mut().stats;
                         let stat_index = stats.len() as _;
 
-                        stats.push((rating as _, food, stat_index));
+                        stats.push((rating.cast_unsigned(), food, stat_index));
 
                         stat_index
                     }
                     Entry::Vacant(vacant_entry) => {
                         vacant_entry.insert(Ratings {
                             heap: Box::new([]),
-                            stats: vec![(rating as _, food, 0)],
+                            stats: vec![(rating.cast_unsigned(), food, 0)],
                         });
 
                         0
@@ -204,7 +204,7 @@ impl FoodRatings {
 
     fn change_rating(&mut self, food: String, new_rating: i32) {
         let food = encode_name(&convert::identity(food));
-        let new_rating = new_rating as u32;
+        let new_rating = new_rating.cast_unsigned();
         let (cuisine, stat_index) = self.food_to_cuisine[&food];
         let ratings = self.cuisine_ratings.get_mut(&cuisine).unwrap();
 

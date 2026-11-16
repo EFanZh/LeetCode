@@ -9,20 +9,20 @@ impl Solution {
         if source == destination {
             true
         } else {
-            let destination = destination as u32;
-            let mut graph = vec![Vec::new(); n as u32 as usize].into_boxed_slice();
+            let destination = destination.cast_unsigned();
+            let mut graph = vec![Vec::new(); n.cast_unsigned() as usize].into_boxed_slice();
 
             for edge in edges {
                 let [from, to] = edge.try_into().ok().unwrap();
-                let from = from as u32;
-                let to = to as u32;
+                let from = from.cast_unsigned();
+                let to = to.cast_unsigned();
 
                 graph[from as usize].push(to);
                 graph[to as usize].push(from);
             }
 
             let mut stack = Vec::new();
-            let mut iter = mem::take(&mut graph[source as u32 as usize]).into_iter();
+            let mut iter = mem::take(&mut graph[source.cast_unsigned() as usize]).into_iter();
 
             loop {
                 if let Some(node) = iter.next() {

@@ -8,14 +8,17 @@ use std::mem;
 impl Solution {
     pub fn minimum_time(n: i32, relations: Vec<Vec<i32>>, time: Vec<i32>) -> i32 {
         let _ = n;
-        let states = time.into_iter().map(|x| Cell::new(x as u32)).collect::<Vec<_>>();
+        let states = time
+            .into_iter()
+            .map(|x| Cell::new(x.cast_unsigned()))
+            .collect::<Vec<_>>();
         let n = states.len();
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for relation in relations {
             let [prev, next] = relation.try_into().ok().unwrap();
 
-            graph[prev as u32 as usize - 1].push(next as u16 - 1);
+            graph[prev.cast_unsigned() as usize - 1].push(next as u16 - 1);
         }
 
         let mut result = 0;

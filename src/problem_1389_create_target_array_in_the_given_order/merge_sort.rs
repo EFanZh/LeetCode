@@ -84,7 +84,7 @@ impl Solution {
         let mut data = nums
             .iter()
             .zip(index)
-            .map(|(&num, index)| (index as u32, num))
+            .map(|(&num, index)| (index.cast_unsigned(), num))
             .collect::<Vec<_>>();
 
         Self::merge_sort_to_self(&mut data, &mut vec![(0, 0); n]);

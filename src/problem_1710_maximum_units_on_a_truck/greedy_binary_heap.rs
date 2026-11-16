@@ -44,7 +44,7 @@ impl Solution {
             })
             .collect::<BinaryHeap<_>>();
 
-        let mut available = truck_size as u32;
+        let mut available = truck_size.cast_unsigned();
         let mut result = 0;
 
         while let Some(item) = queue.pop() {

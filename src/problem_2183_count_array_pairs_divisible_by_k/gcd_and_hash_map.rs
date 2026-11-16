@@ -17,7 +17,7 @@ impl Solution {
     }
 
     pub fn count_pairs(nums: Vec<i32>, k: i32) -> i64 {
-        let k = NonZeroU32::new(k as _).unwrap();
+        let k = NonZeroU32::new(k.cast_unsigned()).unwrap();
         let mut factors = Vec::new();
         let middle = NonZeroU32::new(k.get().isqrt()).unwrap();
 
@@ -40,7 +40,7 @@ impl Solution {
         let mut counts = HashMap::<_, u32>::new();
 
         nums.into_iter().fold(0_u64, |mut result, num| {
-            let num = num as u32;
+            let num = num.cast_unsigned();
 
             result += u64::from(counts.get(&(k.get() / Self::gcd(num, k))).copied().unwrap_or(0));
 

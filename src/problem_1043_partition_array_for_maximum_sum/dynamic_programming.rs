@@ -44,7 +44,7 @@ impl Solution {
             let mut max = 0;
 
             for &num in arr[i.saturating_sub(k)..i].iter().rev() {
-                let num = num as u32;
+                let num = num.cast_unsigned();
 
                 subarray_length += 1;
                 max_subarray = max_subarray.max(num);

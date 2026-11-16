@@ -4,12 +4,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn find_smallest_set_of_vertices(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
-        let mut targets = vec![false; n as u32 as _];
+        let mut targets = vec![false; n.cast_unsigned() as _];
 
         for edge in edges {
             let [_, to] = edge.try_into().ok().unwrap();
 
-            targets[to as u32 as usize] = true;
+            targets[to.cast_unsigned() as usize] = true;
         }
 
         (0..)

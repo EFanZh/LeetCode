@@ -39,8 +39,8 @@ impl Solution {
             .into_iter()
             .map(|class| {
                 let [pass, total] = class.try_into().ok().unwrap();
-                let pass = pass as u32;
-                let total = total as u32;
+                let pass = pass.cast_unsigned();
+                let total = total.cast_unsigned();
 
                 Class {
                     not_pass: total - pass,

@@ -13,14 +13,14 @@ impl Solution {
             mem::swap(&mut items1, &mut items2);
         }
 
-        let sort_key = |item: &Vec<_>| item[0] as u32;
+        let sort_key = |item: &Vec<i32>| item[0].cast_unsigned();
 
         items1.sort_unstable_by_key(sort_key);
 
         for item in &mut items2 {
             let [value, weight] = <&mut [_; 2]>::try_from(item.as_mut_slice()).ok().unwrap();
 
-            if let Ok(i) = items1.binary_search_by(|item| u32::cmp(&(item[0] as _), &(*value as _))) {
+            if let Ok(i) = items1.binary_search_by(|item| u32::cmp(&item[0].cast_unsigned(), &value.cast_unsigned())) {
                 *weight += mem::take(&mut items1[i][1]);
             }
         }

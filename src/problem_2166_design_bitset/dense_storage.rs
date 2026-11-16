@@ -7,7 +7,7 @@ pub struct Bitset {
 
 impl Bitset {
     fn new(size: i32) -> Self {
-        let length = size as u32 as usize;
+        let length = size.cast_unsigned() as usize;
 
         Self {
             data: vec![0; length.div_ceil(64)].into_boxed_slice(),
@@ -16,13 +16,13 @@ impl Bitset {
     }
 
     fn fix(&mut self, idx: i32) {
-        let idx = idx as u32 as usize;
+        let idx = idx.cast_unsigned() as usize;
 
         self.data[idx / 64] |= 1 << (idx % 64);
     }
 
     fn unfix(&mut self, idx: i32) {
-        let idx = idx as u32 as usize;
+        let idx = idx.cast_unsigned() as usize;
 
         self.data[idx / 64] &= !(1 << (idx % 64));
     }

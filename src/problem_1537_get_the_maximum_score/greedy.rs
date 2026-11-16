@@ -7,7 +7,7 @@ use std::mem;
 
 impl Solution {
     fn make_iter(nums: &[i32]) -> impl Iterator<Item = u32> + '_ {
-        nums.iter().map(|&num| num as _)
+        nums.iter().copied().map(i32::cast_unsigned)
     }
 
     pub fn max_sum(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {

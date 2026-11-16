@@ -16,8 +16,8 @@ impl Solution {
 
         let mut locations = locations.into_boxed_slice();
 
-        let start_location = locations[start as u32 as usize];
-        let finish_location = locations[finish as u32 as usize];
+        let start_location = locations[start.cast_unsigned() as usize];
+        let finish_location = locations[finish.cast_unsigned() as usize];
 
         locations.sort_unstable();
 
@@ -27,13 +27,13 @@ impl Solution {
         // Dynamic programming.
 
         let n = locations.len();
-        let fuel = fuel as u32 as usize;
+        let fuel = fuel.cast_unsigned() as usize;
         let mut cache = vec![(0_u32, 0_u32); n * (fuel + 1)].into_boxed_slice();
         let index = |fuel, i| n.wrapping_mul(fuel).wrapping_add(i);
 
         for fuel in 1..=fuel {
             for (i, &location) in locations.iter().enumerate() {
-                let location = location as u32 as usize;
+                let location = location.cast_unsigned() as usize;
 
                 // Move left.
 
@@ -42,8 +42,10 @@ impl Solution {
                 let left_count = locations
                     .get(left)
                     .and_then(|&left_location| {
-                        let next =
-                            cache.get(index(fuel.wrapping_sub(location - left_location as u32 as usize), left))?;
+                        let next = cache.get(index(
+                            fuel.wrapping_sub(location - left_location.cast_unsigned() as usize),
+                            left,
+                        ))?;
 
                         Some(Self::normalize(next.0 * 2 + u32::from(left == finish) + next.1))
                     })
@@ -57,7 +59,7 @@ impl Solution {
                     .get(right)
                     .and_then(|&right_location| {
                         let next = cache.get(index(
-                            fuel.wrapping_sub(right_location as u32 as usize - location),
+                            fuel.wrapping_sub(right_location.cast_unsigned() as usize - location),
                             right,
                         ))?;
 

@@ -38,10 +38,10 @@ impl Solution {
     pub fn minimum_time(time: Vec<i32>, total_trips: i32) -> i64 {
         let time = time
             .into_iter()
-            .map(|time| NonZeroU32::new(time as _).unwrap())
+            .map(|time| NonZeroU32::new(time.cast_unsigned()).unwrap())
             .collect::<Vec<_>>();
 
-        let total_trips = total_trips as u32;
+        let total_trips = total_trips.cast_unsigned();
         let (min, max) = Self::min_max(&time);
         let count = u64::from(total_trips.div_ceil(time.len() as u32));
         let mut left = u64::from(min.get()) * count;

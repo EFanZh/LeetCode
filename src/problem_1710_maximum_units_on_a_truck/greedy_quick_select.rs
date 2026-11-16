@@ -47,7 +47,7 @@ impl Solution {
             .collect::<Box<_>>();
 
         let mut box_types = box_types.as_mut();
-        let mut truck_size = truck_size as u32;
+        let mut truck_size = truck_size.cast_unsigned();
         let mut result = 0;
 
         // Quick select.

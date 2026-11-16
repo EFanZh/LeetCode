@@ -32,7 +32,7 @@ impl Solution {
     }
 
     pub fn number_of_ways(start_pos: i32, end_pos: i32, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let distance = start_pos.abs_diff(end_pos);
 
         match k.cmp(&distance) {

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_operations(nums: Vec<i32>, k: i32) -> i32 {
-        let target = (1 << (k as u32 + 1)) - 2;
+        let target = (1 << (k.cast_unsigned() + 1)) - 2;
         let mut state = 0_u64;
         let mut result = 0;
 

@@ -8,7 +8,7 @@ impl Solution {
     }
 
     pub fn longest_ideal_string(s: String, k: i32) -> i32 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut cache = [0_u32; 26];
 
         for c in s.into_bytes() {

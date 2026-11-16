@@ -9,8 +9,8 @@ use std::mem;
 impl Solution {
     pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {
         let mut head = head;
-        let m = m as u32 - 1;
-        let n = n as u32;
+        let m = m.cast_unsigned() - 1;
+        let n = n.cast_unsigned();
         let mut rest = &mut head;
         let mut i = 0;
 

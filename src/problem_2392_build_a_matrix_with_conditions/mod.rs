@@ -1221,12 +1221,12 @@ mod tests {
             );
 
             if expected {
-                positions.extend(iter::repeat_n((u16::MAX, u16::MAX), k as u32 as usize));
+                positions.extend(iter::repeat_n((u16::MAX, u16::MAX), k.cast_unsigned() as usize));
 
                 for (y, row) in result.into_iter().enumerate() {
                     for (x, num) in row.into_iter().enumerate() {
                         if num != 0 {
-                            let position = &mut positions[num as u32 as usize - 1];
+                            let position = &mut positions[num.cast_unsigned() as usize - 1];
 
                             assert_eq!(*position, (u16::MAX, u16::MAX));
 
@@ -1238,11 +1238,17 @@ mod tests {
                 assert!(positions.iter().all(|&position| position != (u16::MAX, u16::MAX)));
 
                 for &[num_1, num_2] in row_conditions {
-                    assert!(positions[num_1 as u32 as usize - 1].0 < positions[num_2 as u32 as usize - 1].0);
+                    assert!(
+                        positions[num_1.cast_unsigned() as usize - 1].0
+                            < positions[num_2.cast_unsigned() as usize - 1].0
+                    );
                 }
 
                 for &[num_1, num_2] in col_conditions {
-                    assert!(positions[num_1 as u32 as usize - 1].1 < positions[num_2 as u32 as usize - 1].1);
+                    assert!(
+                        positions[num_1.cast_unsigned() as usize - 1].1
+                            < positions[num_2.cast_unsigned() as usize - 1].1
+                    );
                 }
 
                 positions.clear();

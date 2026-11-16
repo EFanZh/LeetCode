@@ -6,8 +6,8 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn divisor_substrings(num: i32, k: i32) -> i32 {
-        let num = num as u32;
-        let mut k = k as u32;
+        let num = num.cast_unsigned();
+        let mut k = k.cast_unsigned();
         let mut x = num;
         let mut base = 1;
         let mut window = 0;

@@ -5,10 +5,10 @@ pub struct Solution;
 impl Solution {
     pub fn count_different_subsequence_gc_ds(nums: Vec<i32>) -> i32 {
         let mut nums_set =
-            vec![false; nums.iter().fold(0_usize, |max, &x| max.max(x as u32 as usize))].into_boxed_slice();
+            vec![false; nums.iter().fold(0_usize, |max, &x| max.max(x.cast_unsigned() as usize))].into_boxed_slice();
 
         for num in nums {
-            nums_set[num as u32 as usize - 1] = true;
+            nums_set[num.cast_unsigned() as usize - 1] = true;
         }
 
         let n = nums_set.len();

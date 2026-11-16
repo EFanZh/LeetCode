@@ -38,8 +38,8 @@ impl Solution {
 
         'outer: for order in orders {
             let [price, amount, order_type] = order.try_into().ok().unwrap();
-            let price = price as u32;
-            let mut amount = amount as u32;
+            let price = price.cast_unsigned();
+            let mut amount = amount.cast_unsigned();
 
             if order_type == 0 {
                 while let Some(mut peek) = sell.peek_mut() {

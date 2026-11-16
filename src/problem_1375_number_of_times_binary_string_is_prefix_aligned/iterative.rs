@@ -8,7 +8,7 @@ impl Solution {
         let mut result = 0;
 
         for (i, flip) in (1..).zip(flips) {
-            max = max.max(flip as u32);
+            max = max.max(flip.cast_unsigned());
 
             result += i32::from(max == i);
         }

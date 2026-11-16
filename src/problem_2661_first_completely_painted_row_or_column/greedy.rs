@@ -8,20 +8,20 @@ impl Solution {
 
         (0_u32..)
             .zip(arr)
-            .for_each(|(i, x)| value_to_index[x as u32 as usize - 1] = i);
+            .for_each(|(i, x)| value_to_index[x.cast_unsigned() as usize - 1] = i);
 
         let columns = mat.first().map_or(0, Vec::len);
         let mut result = u32::MAX;
 
         for row in &mat {
             result = result.min(row.iter().fold(0, |max_index, &value| {
-                max_index.max(value_to_index[value as u32 as usize - 1])
+                max_index.max(value_to_index[value.cast_unsigned() as usize - 1])
             }));
         }
 
         for column in 0..columns {
             result = result.min(mat.iter().fold(0, |max_index, row| {
-                max_index.max(value_to_index[row[column] as u32 as usize - 1])
+                max_index.max(value_to_index[row[column].cast_unsigned() as usize - 1])
             }));
         }
 

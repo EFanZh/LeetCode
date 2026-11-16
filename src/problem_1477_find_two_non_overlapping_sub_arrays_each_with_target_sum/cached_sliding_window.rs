@@ -15,7 +15,7 @@ impl Solution {
         let mut result = usize::MAX;
 
         for &num in arr {
-            sum += num as u32;
+            sum += num.cast_unsigned();
             length += 1;
 
             loop {
@@ -41,7 +41,7 @@ impl Solution {
                         break;
                     }
                     Ordering::Greater => {
-                        sum -= arr[start] as u32;
+                        sum -= arr[start].cast_unsigned();
                         start += 1;
                         length -= 1;
                     }
@@ -53,7 +53,7 @@ impl Solution {
     }
 
     pub fn min_sum_of_lengths(arr: Vec<i32>, target: i32) -> i32 {
-        Self::inner(&arr, target as _) as _
+        Self::inner(&arr, target.cast_unsigned()) as _
     }
 }
 

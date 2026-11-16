@@ -43,10 +43,10 @@ impl Solution {
 
         let ranks = ranks
             .into_iter()
-            .filter_map(|rank| NonZeroU32::new(rank as _))
+            .filter_map(|rank| NonZeroU32::new(rank.cast_unsigned()))
             .collect::<Vec<_>>();
 
-        let cars = cars as u32;
+        let cars = cars.cast_unsigned();
         let (min_rank, max_rank) = Self::min_max(&ranks).unwrap();
         let factor = u64::from((cars / n) + u32::from(cars % n != 0)).pow(2);
         let mut left = factor * u64::from(min_rank.get());

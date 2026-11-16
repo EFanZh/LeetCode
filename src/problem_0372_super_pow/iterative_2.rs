@@ -21,7 +21,7 @@ impl Solution {
     pub fn super_pow(a: i32, b: Vec<i32>) -> i32 {
         const M: u32 = 1337;
 
-        let a = a as u32 % M;
+        let a = a.cast_unsigned() % M;
         let mut result = 1;
 
         for digit in b {

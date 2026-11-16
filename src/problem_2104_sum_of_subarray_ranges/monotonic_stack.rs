@@ -21,12 +21,12 @@ impl Solution {
                     max_stack.push((prev, prev_max_length));
                     prev_max_length = 1;
 
-                    sum += u64::from((prev - num) as u32) * u64::from(prev_min_length);
+                    sum += u64::from((prev - num).cast_unsigned()) * u64::from(prev_min_length);
                     prev_min_length += 1;
 
                     while let Some(&(top, top_length)) = min_stack.last() {
                         if num <= top {
-                            sum += u64::from((top - num) as u32) * u64::from(top_length);
+                            sum += u64::from((top - num).cast_unsigned()) * u64::from(top_length);
                             prev_min_length += top_length;
                             min_stack.pop();
                         } else {
@@ -42,12 +42,12 @@ impl Solution {
                     min_stack.push((prev, prev_min_length));
                     prev_min_length = 1;
 
-                    sum += u64::from((num - prev) as u32) * u64::from(prev_max_length);
+                    sum += u64::from((num - prev).cast_unsigned()) * u64::from(prev_max_length);
                     prev_max_length += 1;
 
                     while let Some(&(top, top_length)) = max_stack.last() {
                         if num >= top {
-                            sum += u64::from((num - top) as u32) * u64::from(top_length);
+                            sum += u64::from((num - top).cast_unsigned()) * u64::from(top_length);
                             prev_max_length += top_length;
                             max_stack.pop();
                         } else {

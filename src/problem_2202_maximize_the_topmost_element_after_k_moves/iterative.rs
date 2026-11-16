@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_top(nums: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
         if nums.len() < 2 {
             if k.is_multiple_of(2) { nums[0] } else { -1 }

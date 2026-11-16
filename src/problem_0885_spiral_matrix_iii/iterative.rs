@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn spiral_matrix_iii(rows: i32, cols: i32, r_start: i32, c_start: i32) -> Vec<Vec<i32>> {
-        let required = cols as u32 as usize * rows as u32 as usize;
+        let required = cols.cast_unsigned() as usize * rows.cast_unsigned() as usize;
         let mut result = Vec::with_capacity(required);
         let mut row = r_start;
         let mut column = c_start;

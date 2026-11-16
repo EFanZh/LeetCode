@@ -34,7 +34,7 @@ impl Solution {
     pub fn ways(pizza: Vec<String>, k: i32) -> i32 {
         const MODULUS: u32 = 1_000_000_007;
 
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let rows = pizza.len();
         let columns = pizza.first().map_or(0, String::len);
         let apples = Self::count_apples(&pizza, rows, columns);

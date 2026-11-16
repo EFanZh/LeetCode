@@ -9,7 +9,7 @@ impl Solution {
         let mut nums = nums.into_iter().map(i32::cast_unsigned).collect::<BinaryHeap<_>>();
         let mut result = 0;
 
-        for _ in 0..k as u32 {
+        for _ in 0..k.cast_unsigned() {
             let max = &mut *nums.peek_mut().unwrap();
 
             result += u64::from(*max);

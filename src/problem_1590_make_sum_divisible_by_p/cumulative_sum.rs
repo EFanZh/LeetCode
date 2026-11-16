@@ -8,11 +8,11 @@ use std::num::NonZeroU32;
 impl Solution {
     pub fn min_subarray(nums: Vec<i32>, p: i32) -> i32 {
         let mut nums = nums;
-        let p = NonZeroU32::new(p as _).unwrap();
+        let p = NonZeroU32::new(p.cast_unsigned()).unwrap();
         let mut extra = 0_u32;
 
         for num in &mut nums {
-            extra = (extra + *num as u32) % p;
+            extra = (extra + num.cast_unsigned()) % p;
             *num = extra as _;
         }
 
@@ -24,7 +24,7 @@ impl Solution {
             let mut cache = HashMap::from([(0, 0)]);
 
             for (j, sum) in (1..).zip(nums) {
-                let sum = sum as u32;
+                let sum = sum.cast_unsigned();
                 let mut sum_2 = sum;
 
                 if sum_2 < extra {

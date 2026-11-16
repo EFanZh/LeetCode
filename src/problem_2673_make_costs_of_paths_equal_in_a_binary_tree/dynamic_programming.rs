@@ -14,7 +14,7 @@ impl Solution {
                 let left = cost[i * 2 + 1];
                 let right = cost[i * 2 + 2];
 
-                let (min, max) = if u32::lt(&(right as _), &(left as _)) {
+                let (min, max) = if right.cast_unsigned() < left.cast_unsigned() {
                     (right, left)
                 } else {
                     (left, right)

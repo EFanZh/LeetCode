@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn shortest_sequence(rolls: Vec<i32>, k: i32) -> i32 {
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let mut states = vec![false; k as usize].into_boxed_slice();
         let mut true_count = 0;
         let mut result = 1;
@@ -13,7 +13,7 @@ impl Solution {
         'outer: loop {
             loop {
                 if let Some(roll) = iter.next() {
-                    if let state @ false = &mut states[roll as u32 as usize - 1] {
+                    if let state @ false = &mut states[roll.cast_unsigned() as usize - 1] {
                         *state = true;
 
                         true_count += 1;
@@ -31,7 +31,7 @@ impl Solution {
 
             loop {
                 if let Some(roll) = iter.next() {
-                    if let state @ true = &mut states[roll as u32 as usize - 1] {
+                    if let state @ true = &mut states[roll.cast_unsigned() as usize - 1] {
                         *state = false;
 
                         true_count -= 1;

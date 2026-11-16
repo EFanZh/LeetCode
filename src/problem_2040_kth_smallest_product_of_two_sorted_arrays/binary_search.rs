@@ -121,7 +121,7 @@ impl Solution {
     }
 
     pub fn kth_smallest_product(nums1: Vec<i32>, nums2: Vec<i32>, k: i64) -> i64 {
-        let k = k as u64;
+        let k = k .cast_unsigned();
         let min_1 = i64::from(*nums1.first().unwrap());
         let max_1 = i64::from(*nums1.last().unwrap());
         let min_2 = i64::from(*nums2.first().unwrap());

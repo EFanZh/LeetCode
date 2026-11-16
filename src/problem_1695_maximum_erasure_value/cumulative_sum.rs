@@ -14,7 +14,7 @@ impl Solution {
         let mut result = 0;
 
         for &num in &nums {
-            sum += num as u32;
+            sum += num.cast_unsigned();
 
             match num_to_sums.entry(num as _) {
                 Entry::Occupied(entry) => left_sum = left_sum.max(mem::replace(entry.into_mut(), sum)),

@@ -32,7 +32,7 @@ impl FindSumPairs {
     }
 
     fn add(&mut self, index: i32, val: i32) {
-        let slot = &mut self.nums2[index as u32 as usize];
+        let slot = &mut self.nums2[index.cast_unsigned() as usize];
 
         self.counts_2.entry(*slot).and_modify(|count| *count -= 1);
 

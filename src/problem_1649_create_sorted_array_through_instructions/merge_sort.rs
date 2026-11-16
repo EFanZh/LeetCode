@@ -135,7 +135,7 @@ impl Solution {
         let (data, buffer) = buffer.split_at_mut(n);
 
         for (target, source) in data.iter_mut().zip(instructions) {
-            target.0 = source as _;
+            target.0 = source.cast_unsigned();
         }
 
         Self::merge_sort_to_self(data, buffer);

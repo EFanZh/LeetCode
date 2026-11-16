@@ -42,7 +42,7 @@ impl Solution {
     }
 
     pub fn concatenated_binary(n: i32) -> i32 {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let total_bits = 32 - n.leading_zeros();
         let mut result = 0;
 

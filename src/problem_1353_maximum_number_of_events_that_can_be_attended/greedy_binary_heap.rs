@@ -12,7 +12,7 @@ impl Solution {
             .map(|event| {
                 let [start, end] = event.try_into().ok().unwrap();
 
-                (start as u32, end as u32)
+                (start.cast_unsigned(), end.cast_unsigned())
             })
             .collect::<Vec<_>>();
 

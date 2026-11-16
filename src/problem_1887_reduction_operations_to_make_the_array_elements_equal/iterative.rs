@@ -8,7 +8,7 @@ impl Solution {
     pub fn reduction_operations(nums: Vec<i32>) -> i32 {
         let mut nums = nums;
 
-        nums.sort_unstable_by_key(|&num| Reverse(num as u32));
+        nums.sort_unstable_by_key(|&num| Reverse(num.cast_unsigned()));
 
         let mut result = 0;
         let mut prev = 0;

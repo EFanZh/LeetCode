@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn count_pairs(n: i32, edges: Vec<Vec<i32>>, queries: Vec<i32>) -> Vec<i32> {
-        let mut degrees = vec![0_u32; n as u32 as usize].into_boxed_slice();
+        let mut degrees = vec![0_u32; n.cast_unsigned() as usize].into_boxed_slice();
         let mut edge_counts = HashMap::<_, u32>::new();
 
         for edge in edges {
@@ -30,7 +30,7 @@ impl Solution {
         let left = iter.next().unwrap();
 
         for target in &mut result {
-            let min_incident = *target as u32;
+            let min_incident = target.cast_unsigned();
             let mut candidate = 0;
             let mut iter = iter.clone();
             let mut left = left;

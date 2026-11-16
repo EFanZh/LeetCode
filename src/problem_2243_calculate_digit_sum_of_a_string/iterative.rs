@@ -6,7 +6,7 @@ use std::mem;
 
 impl Solution {
     pub fn digit_sum(s: String, k: i32) -> String {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut s = s.into_bytes();
 
         for c in &mut s {

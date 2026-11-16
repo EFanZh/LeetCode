@@ -50,10 +50,10 @@ impl Solution {
     }
 
     pub fn min_score(n: i32, roads: Vec<Vec<i32>>) -> i32 {
-        let union_find = vec![(Cell::new(u32::MAX), Cell::new(0), Cell::new(u32::MAX)); n as u32 as usize];
+        let union_find = vec![(Cell::new(u32::MAX), Cell::new(0), Cell::new(u32::MAX)); n.cast_unsigned() as usize];
 
         for road in roads {
-            let [mut a, mut b, distance] = <[_; 3]>::map(road.try_into().ok().unwrap(), |x| x as u32);
+            let [mut a, mut b, distance] = <[_; 3]>::map(road.try_into().ok().unwrap(), i32::cast_unsigned);
 
             a -= 1;
             b -= 1;

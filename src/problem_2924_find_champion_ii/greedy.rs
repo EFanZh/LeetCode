@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn find_champion(n: i32, edges: Vec<Vec<i32>>) -> i32 {
-        let mut lost = vec![false; n as u32 as usize].into_boxed_slice();
+        let mut lost = vec![false; n.cast_unsigned() as usize].into_boxed_slice();
 
         for edge in edges {
             lost[edge[1].cast_unsigned() as usize] = true;

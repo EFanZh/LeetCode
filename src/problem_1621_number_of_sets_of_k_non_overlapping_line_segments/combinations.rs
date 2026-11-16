@@ -53,8 +53,8 @@ impl Solution {
     }
 
     pub fn number_of_sets(n: i32, k: i32) -> i32 {
-        let n = u64::from(n as u32);
-        let k = u64::from(k as u32);
+        let n = u64::from(n.cast_unsigned());
+        let k = u64::from(k.cast_unsigned());
 
         Self::combinations(n + k - 1, k * 2) as _
     }

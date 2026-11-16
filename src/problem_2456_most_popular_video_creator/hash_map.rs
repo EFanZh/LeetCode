@@ -39,7 +39,7 @@ impl Solution {
             .for_each(|((creator, id), view)| {
                 let creator = Self::encode(creator);
                 let id = Self::encode(id);
-                let view = view as u32;
+                let view = view.cast_unsigned();
 
                 match videos_by_creators.entry(creator) {
                     Entry::Occupied(occupied_entry) => {

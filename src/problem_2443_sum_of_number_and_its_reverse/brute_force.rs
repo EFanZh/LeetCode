@@ -15,7 +15,7 @@ impl Solution {
     }
 
     pub fn sum_of_number_and_reverse(num: i32) -> bool {
-        let num = num as u32;
+        let num = num.cast_unsigned();
 
         (0..=num).rev().any(|x| x + Self::reverse(x) == num)
     }

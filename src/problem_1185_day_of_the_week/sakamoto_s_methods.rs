@@ -18,9 +18,9 @@ impl Solution {
 
         const MONTH_DAYS: [u32; 12] = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4];
 
-        let day = day as u32;
-        let month = month as u32;
-        let mut year = year as u32;
+        let day = day.cast_unsigned();
+        let month = month.cast_unsigned();
+        let mut year = year.cast_unsigned();
 
         year -= u32::from(month < 3);
 

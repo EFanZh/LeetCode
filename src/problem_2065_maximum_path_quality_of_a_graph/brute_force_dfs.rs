@@ -81,7 +81,7 @@ impl Solution {
         let mut nodes = values
             .into_iter()
             .map(|value| Node {
-                value: value as _,
+                value: value.cast_unsigned(),
                 children: [0; 4],
                 children_distances: [0; 4],
                 children_length: 0,
@@ -90,7 +90,7 @@ impl Solution {
             .collect::<Vec<_>>();
 
         for edge in edges {
-            let [from, to, time] = <[_; 3]>::map(edge.try_into().ok().unwrap(), |x| x as u32);
+            let [from, to, time] = <[_; 3]>::map(edge.try_into().ok().unwrap(), i32::cast_unsigned);
 
             for (from, to) in [(from, to), (to, from)] {
                 let from_node = &mut nodes[from as usize];

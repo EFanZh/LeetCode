@@ -18,7 +18,7 @@ impl Solution {
 
     pub fn count_distinct_integers(nums: Vec<i32>) -> i32 {
         nums.iter()
-            .flat_map(|&num| [num as _, Self::reverse(num as _)])
+            .flat_map(|&num| [num.cast_unsigned(), Self::reverse(num.cast_unsigned())])
             .collect::<HashSet<_>>()
             .len() as _
     }

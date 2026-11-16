@@ -22,7 +22,7 @@ impl Solution {
         let mut indices = [const { Vec::new() }; 100];
 
         for (i, num) in (0_u8..).zip(nums) {
-            indices[num as u32 as usize - 1].push(i);
+            indices[num.cast_unsigned() as usize - 1].push(i);
         }
 
         // See solutions to <https://leetcode.com/problems/count-array-pairs-divisible-by-k/>.

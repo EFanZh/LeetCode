@@ -71,8 +71,8 @@ impl Solution {
         if k == 1 {
             1
         } else {
-            let n = n as u32;
-            let mut k = k as u32 - 1;
+            let n = n.cast_unsigned();
+            let mut k = k.cast_unsigned() - 1;
             let base = u32::pow(10, Self::num_digits(n) - 1);
             let mut subtree_size = (base * 10 - 1) / 9;
             let middle_branch = n / base;

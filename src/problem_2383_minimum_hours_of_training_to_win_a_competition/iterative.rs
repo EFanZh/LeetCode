@@ -11,12 +11,13 @@ impl Solution {
         energy: Vec<i32>,
         experience: Vec<i32>,
     ) -> i32 {
-        let mut current_energy = initial_energy as u32;
-        let mut current_experience = initial_experience as u32;
+        let mut current_energy = initial_energy.cast_unsigned();
+        let mut current_experience = initial_experience.cast_unsigned();
         let mut result = 0;
 
         iter::zip(&energy, &experience).for_each(|(&required_energy, &required_experience)| {
-            let (required_energy, required_experience) = (required_energy as u32, required_experience as u32);
+            let (required_energy, required_experience) =
+                (required_energy.cast_unsigned(), required_experience.cast_unsigned());
 
             if current_energy <= required_energy {
                 result += required_energy + 1 - current_energy;

@@ -22,7 +22,7 @@ impl Solution {
 
             for (i, ((target, &top), &value)) in (0..).zip(temp.iter_mut().zip(&*cache).zip(&row).rev()) {
                 right_max = right_max.max(top + i);
-                *target = (*target).max(right_max - i) + u64::from(value as u32);
+                *target = (*target).max(right_max - i) + u64::from(value.cast_unsigned());
             }
 
             mem::swap(&mut cache, &mut temp);

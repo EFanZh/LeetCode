@@ -6,7 +6,7 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn my_sqrt(x: i32) -> i32 {
-        let x = x as u32;
+        let x = x.cast_unsigned();
         let mut left = 0;
         let mut right = x.min(46340) + 1;
 

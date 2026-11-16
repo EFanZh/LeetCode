@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn find_the_city(n: i32, edges: Vec<Vec<i32>>, distance_threshold: i32) -> i32 {
         let n = n as usize;
-        let distance_threshold = distance_threshold as u32;
+        let distance_threshold = distance_threshold.cast_unsigned();
 
         // Floyd–Warshall algorithm.
 
@@ -13,9 +13,9 @@ impl Solution {
 
         for edge in edges {
             let [from, to, weight] = edge.try_into().ok().unwrap();
-            let from = from as usize;
-            let to = to as usize;
-            let weight = weight as _;
+            let from = from.cast_unsigned() as usize;
+            let to = to.cast_unsigned() as usize;
+            let weight = weight.cast_unsigned();
 
             cache[n * from + to] = weight;
             cache[n * to + from] = weight;

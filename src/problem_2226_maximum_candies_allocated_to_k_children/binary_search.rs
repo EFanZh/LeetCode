@@ -9,7 +9,7 @@ impl Solution {
         let candidate = NonZeroU32::new(candidate).unwrap();
 
         for &candies in candies {
-            let satisfied = u64::from(candies as u32 / candidate);
+            let satisfied = u64::from(candies.cast_unsigned() / candidate);
 
             if satisfied >= k {
                 return true;
@@ -23,9 +23,9 @@ impl Solution {
 
     pub fn maximum_candies(candies: Vec<i32>, k: i64) -> i32 {
         let candies = candies.as_slice();
-        let k = k as u64;
+        let k = k .cast_unsigned();
         let mut left = 1;
-        let mut right = candies.iter().fold(0, |acc, &x| u32::max(acc, x as _)) + 1;
+        let mut right = candies.iter().fold(0, |acc, &x| u32::max(acc, x.cast_unsigned())) + 1;
 
         while left < right {
             let middle = u32::midpoint(left, right);

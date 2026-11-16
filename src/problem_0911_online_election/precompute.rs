@@ -14,11 +14,11 @@ impl TopVotedCandidate {
         let mut max_count = 1;
         let mut max_person = first_person;
 
-        counts[first_person as u32 as usize] = 1;
+        counts[first_person.cast_unsigned() as usize] = 1;
         leads.push((first_time, first_person));
 
         for (time, person) in iter {
-            let count = &mut counts[person as u32 as usize];
+            let count = &mut counts[person.cast_unsigned() as usize];
 
             *count += 1;
 
@@ -38,7 +38,7 @@ impl TopVotedCandidate {
     fn q(&self, t: i32) -> i32 {
         let i = self
             .leads
-            .binary_search_by_key(&(t as _), |&(time, _)| time)
+            .binary_search_by_key(&t.cast_unsigned(), |&(time, _)| time)
             .unwrap_or_else(|i| i - 1);
 
         self.leads[i].1

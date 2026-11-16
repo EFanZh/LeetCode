@@ -7,7 +7,7 @@ use std::slice::Iter;
 impl Solution {
     fn helper(counts: &mut [u32], max_count: u32, result: &mut u32, mut iter: Iter<i32>) {
         if let Some(&bag) = iter.next() {
-            let bag = bag as u32;
+            let bag = bag.cast_unsigned();
 
             for i in 0..counts.len() {
                 counts[i] += bag;
@@ -30,7 +30,12 @@ impl Solution {
     pub fn distribute_cookies(cookies: Vec<i32>, k: i32) -> i32 {
         let mut result = u32::MAX;
 
-        Self::helper(&mut [0; 8][..k as u32 as usize], 0, &mut result, cookies.iter());
+        Self::helper(
+            &mut [0; 8][..k.cast_unsigned() as usize],
+            0,
+            &mut result,
+            cookies.iter(),
+        );
 
         result as _
     }

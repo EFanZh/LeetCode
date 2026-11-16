@@ -62,7 +62,7 @@ impl Solution {
         let mut numbers_by_factors = HashMap::new();
 
         for (id, num) in (0..).zip(nums) {
-            Self::get_prime_factors(num as _, |factor| {
+            Self::get_prime_factors(num.cast_unsigned(), |factor| {
                 numbers_by_factors
                     .entry(factor)
                     .and_modify(|numbers| Vec::push(numbers, id))

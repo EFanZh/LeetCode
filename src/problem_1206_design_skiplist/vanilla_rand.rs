@@ -1,7 +1,7 @@
 // ------------------------------------------------------ snip ------------------------------------------------------ //
 
 use rand::rngs::StdRng;
-use rand::{Rng as _, SeedableRng};
+use rand::{RngExt, SeedableRng};
 use std::cmp::Ordering;
 
 struct Node {
@@ -71,7 +71,7 @@ impl Rng {
     }
 
     fn random_bool(&mut self) -> bool {
-        self.state.r#gen()
+        self.state.random()
     }
 }
 

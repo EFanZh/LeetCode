@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn length_of_longest_subsequence(nums: Vec<i32>, target: i32) -> i32 {
-        let target = target as u32 as usize;
+        let target = target.cast_unsigned() as usize;
 
         let mut nums = nums
             .into_iter()

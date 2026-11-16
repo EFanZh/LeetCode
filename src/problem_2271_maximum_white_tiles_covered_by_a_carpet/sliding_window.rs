@@ -7,13 +7,13 @@ impl Solution {
         let mut tiles = tiles
             .into_iter()
             .map(|tile| {
-                let [start, end] = <[_; 2]>::map(tile.as_slice().try_into().ok().unwrap(), |x| x as u32);
+                let [start, end] = <[_; 2]>::map(tile.as_slice().try_into().ok().unwrap(), i32::cast_unsigned);
 
                 (start, end + 1)
             })
             .collect::<Vec<_>>();
 
-        let carpet_len = carpet_len as u32;
+        let carpet_len = carpet_len.cast_unsigned();
         let mut start_index = 0;
         let mut covered = 0;
         let mut result = 0;

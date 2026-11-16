@@ -8,7 +8,7 @@ impl Solution {
         let mut diff_sum = 0;
 
         for transaction in transactions {
-            let [cost, cashback] = <[_; 2]>::map(transaction.try_into().ok().unwrap(), |x| x as u32);
+            let [cost, cashback] = <[_; 2]>::map(transaction.try_into().ok().unwrap(), i32::cast_unsigned);
 
             let min_diff = if cashback < cost {
                 diff_sum += u64::from(cost - cashback);

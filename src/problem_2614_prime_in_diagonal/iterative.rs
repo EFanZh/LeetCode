@@ -24,8 +24,8 @@ impl Solution {
         let mut result = 0;
 
         for (i, row) in nums.iter().enumerate() {
-            let x = row[i] as u32;
-            let y = row[n - 1 - i] as u32;
+            let x = row[i].cast_unsigned();
+            let y = row[n - 1 - i].cast_unsigned();
 
             if Self::is_prime(x) {
                 result = result.max(x);

@@ -11,10 +11,10 @@ impl Solution {
     ) -> u32 {
         let (&first, rest) = slices.split_first().unwrap();
 
-        cache_2[1] = first as _;
+        cache_2[1] = first.cast_unsigned();
 
         for &num in rest {
-            let num = num as u32;
+            let num = num.cast_unsigned();
 
             for (target, (&prev_1, &prev_2)) in temp[1..].iter_mut().zip(cache_1.iter().zip(&cache_2[1..])) {
                 *target = (prev_1 + num).max(prev_2);

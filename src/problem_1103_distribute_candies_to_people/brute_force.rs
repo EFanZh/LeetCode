@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn distribute_candies(candies: i32, num_people: i32) -> Vec<i32> {
-        let mut candies = candies as u32;
-        let num_people = num_people as u32;
+        let mut candies = candies.cast_unsigned();
+        let num_people = num_people.cast_unsigned();
         let mut required = 1;
         let mut result = vec![0; num_people as usize];
 

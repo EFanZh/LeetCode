@@ -6,8 +6,8 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn count_operations(num1: i32, num2: i32) -> i32 {
-        let num1 = num1 as u32;
-        let num2 = num2 as u32;
+        let num1 = num1.cast_unsigned();
+        let num2 = num2.cast_unsigned();
         let (mut num1, mut num2) = if num2 < num1 { (num2, num1) } else { (num1, num2) };
         let mut result = 0;
 

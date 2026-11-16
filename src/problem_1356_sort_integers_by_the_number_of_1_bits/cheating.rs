@@ -6,7 +6,7 @@ impl Solution {
     pub fn sort_by_bits(arr: Vec<i32>) -> Vec<i32> {
         let mut arr = arr;
 
-        arr.sort_unstable_by_key(|&value| (value.count_ones(), value as u32));
+        arr.sort_unstable_by_key(|&value| (value.count_ones(), value.cast_unsigned()));
 
         arr
     }

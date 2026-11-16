@@ -6,12 +6,12 @@ use std::cmp::Reverse;
 
 impl Solution {
     pub fn car_fleet(target: i32, position: Vec<i32>, speed: Vec<i32>) -> i32 {
-        let target = target as u32;
+        let target = target.cast_unsigned();
 
         let mut cars = position
             .into_iter()
             .zip(speed)
-            .map(|(p, s)| (p as u32, s as u32))
+            .map(|(p, s)| (p.cast_unsigned(), s.cast_unsigned()))
             .collect::<Vec<_>>();
 
         cars.sort_unstable_by_key(|&(p, _)| Reverse(p));

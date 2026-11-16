@@ -8,7 +8,7 @@ use std::num::NonZeroU32;
 impl Solution {
     pub fn repeat_limited_string(s: String, repeat_limit: i32) -> String {
         let mut s = s.into_bytes();
-        let repeat_limit = NonZeroU32::new(repeat_limit as _).unwrap();
+        let repeat_limit = NonZeroU32::new(repeat_limit.cast_unsigned()).unwrap();
         let mut counts = [0_u32; 26];
 
         for &c in &s {

@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_even_split(final_sum: i64) -> Vec<i64> {
-        let mut final_sum = final_sum as u64;
+        let mut final_sum = final_sum .cast_unsigned();
         let mut result = Vec::new();
 
         if final_sum.is_multiple_of(2) {

@@ -105,11 +105,11 @@ impl Solution {
             .map(|time| {
                 let [arrival, leaving] = time.try_into().ok().unwrap();
 
-                (arrival as u32, leaving as u32)
+                (arrival.cast_unsigned(), leaving.cast_unsigned())
             })
             .collect::<Box<_>>();
 
-        let target_friend = target_friend as u32 as usize;
+        let target_friend = target_friend.cast_unsigned() as usize;
         let target_arrival = times[target_friend].0;
         let split = Self::partition(&mut times, |&(arrival_time, _)| arrival_time < target_arrival);
         let times = &mut times[..split];

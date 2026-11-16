@@ -40,7 +40,7 @@ impl Solution {
     }
 
     pub fn max_num_edges_to_remove(n: i32, edges: Vec<Vec<i32>>) -> i32 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let total_edges = edges.len();
         let mut alice_edges = Vec::new();
         let mut bob_edges = Vec::new();
@@ -55,7 +55,7 @@ impl Solution {
                 _ => &mut shared_edges,
             };
 
-            container.push((from as u32 - 1, to as u32 - 1));
+            container.push((from.cast_unsigned() - 1, to.cast_unsigned() - 1));
         }
 
         // Shared edges.

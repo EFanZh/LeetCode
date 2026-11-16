@@ -42,7 +42,8 @@ impl Solution {
                 }
             };
 
-            result += u64::from(value as u32) * u64::from((i.wrapping_sub(left_boundary)) * (right_boundary - i));
+            result +=
+                u64::from(value.cast_unsigned()) * u64::from((i.wrapping_sub(left_boundary)) * (right_boundary - i));
 
             stack.push((i, value));
         }

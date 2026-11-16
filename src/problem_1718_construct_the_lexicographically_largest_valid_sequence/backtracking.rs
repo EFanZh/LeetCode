@@ -47,7 +47,7 @@ impl Solution {
     }
 
     pub fn construct_distanced_sequence(n: i32) -> Vec<i32> {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut result = vec![0; n as usize * 2 - 1];
 
         Self::helper(&mut result, u32::MAX << (32 - n));

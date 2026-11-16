@@ -7,7 +7,7 @@ impl Solution {
         let mut players = scores
             .iter()
             .zip(&ages)
-            .map(|(&score, &age)| (age as u32, score as u32))
+            .map(|(&score, &age)| (age.cast_unsigned(), score.cast_unsigned()))
             .collect::<Box<_>>();
 
         players.sort_unstable();
@@ -24,7 +24,7 @@ impl Solution {
                 .iter()
                 .zip(&*players)
                 .filter(|&(_, &(left_age, left_score))| left_age == age || left_score <= score)
-                .map(|(&left_total_score, _)| left_total_score as u32)
+                .map(|(&left_total_score, _)| left_total_score.cast_unsigned())
                 .max()
                 .map_or(score, |left_score| left_score + score);
 

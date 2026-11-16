@@ -7,7 +7,7 @@ use std::ops::ControlFlow;
 
 impl Solution {
     pub fn find_indices(nums: Vec<i32>, index_difference: i32, value_difference: i32) -> Vec<i32> {
-        let index_difference = index_difference as u32 as usize;
+        let index_difference = index_difference.cast_unsigned() as usize;
 
         if index_difference < nums.len() {
             let mut min = i32::MAX;

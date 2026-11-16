@@ -6,8 +6,8 @@ use std::iter;
 
 impl Solution {
     pub fn get_smallest_string(n: i32, k: i32) -> String {
-        let n = n as u32;
-        let k = k as u32;
+        let n = n.cast_unsigned();
+        let k = k.cast_unsigned();
         let a_count = (26 * n - k) / 25;
         let mut result = Vec::with_capacity(n as _);
 

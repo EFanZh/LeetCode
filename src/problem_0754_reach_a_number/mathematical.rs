@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn reach_number(target: i32) -> i32 {
-        let target = target.wrapping_abs() as u32;
+        let target = target.unsigned_abs();
         let mut low = ((f64::from(target * 2) + 0.25).sqrt() - 0.5).ceil() as u32;
         let reached = low * (low + 1) / 2;
 

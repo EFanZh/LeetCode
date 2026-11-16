@@ -12,9 +12,7 @@ impl Solution {
             }
         }
 
-        let x = !bits;
-
-        x & x.wrapping_neg()
+         (!bits).isolate_lowest_one()
     }
 }
 

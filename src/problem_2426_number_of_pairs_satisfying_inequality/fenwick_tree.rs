@@ -43,7 +43,7 @@ impl Solution {
 
         for num in &mut nums1 {
             *num -= min;
-            max = max.max(*num as _);
+            max = max.max(num.cast_unsigned());
         }
 
         let mut fenwick_tree = nums2;
@@ -56,10 +56,10 @@ impl Solution {
             let target = num + diff;
 
             if target >= 0 {
-                let target = target as u32;
+                let target = target.cast_unsigned();
 
                 let count = if target < max {
-                    u64::from(Self::fenwick_tree_count_less_than(&fenwick_tree, (target + 1) as _) as u32)
+                    u64::from(Self::fenwick_tree_count_less_than(&fenwick_tree, (target + 1) as _).cast_unsigned())
                 } else {
                     i
                 };

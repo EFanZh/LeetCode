@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn largest_number(cost: Vec<i32>, target: i32) -> String {
         let cost: &[_; 9] = cost.as_slice().try_into().ok().unwrap();
-        let mut target = target as u32 as usize;
+        let mut target = target.cast_unsigned() as usize;
         let mut cache = vec![(0_u16, 0_u16); target + 1].into_boxed_slice();
 
         cache[0].0 = u16::MAX;
@@ -15,7 +15,7 @@ impl Solution {
                 .iter()
                 .enumerate()
                 .filter_map(|(i, &digit_cost)| {
-                    let prev_length = cache.get(current_cost.wrapping_sub(digit_cost as u32 as _))?.1;
+                    let prev_length = cache.get(current_cost.wrapping_sub(digit_cost.cast_unsigned() as _))?.1;
 
                     (prev_length != u16::MAX).then_some((i, prev_length))
                 })
@@ -33,7 +33,7 @@ impl Solution {
             loop {
                 result.push(b'1' + node.0 as u8);
 
-                target -= cost[usize::from(node.0)] as u32 as usize;
+                target -= cost[usize::from(node.0)].cast_unsigned() as usize;
 
                 if target == 0 {
                     break;

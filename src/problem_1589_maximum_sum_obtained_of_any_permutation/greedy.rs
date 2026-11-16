@@ -12,9 +12,9 @@ impl Solution {
         for request in requests {
             let [start, end] = request.try_into().ok().unwrap();
 
-            usages[start as u32 as usize] += 1;
+            usages[start.cast_unsigned() as usize] += 1;
 
-            if let Some(diff) = usages.get_mut(end as u32 as usize + 1) {
+            if let Some(diff) = usages.get_mut(end.cast_unsigned() as usize + 1) {
                 *diff -= 1;
             }
         }
@@ -35,7 +35,7 @@ impl Solution {
             .map(|(&num, &usage)| i64::from(num) * i64::from(usage))
             .sum::<i64>();
 
-        (result as u64 % 1_000_000_007) as _
+        (result .cast_unsigned() % 1_000_000_007) as _
     }
 }
 

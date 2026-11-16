@@ -28,7 +28,7 @@ impl Solution {
                     let mut word_bits = word;
 
                     while word_bits != 0 {
-                        let bit = word_bits & word_bits.wrapping_neg();
+                        let bit = word_bits.isolate_lowest_one();
                         let group = word ^ bit;
 
                         match buckets.entry(group) {

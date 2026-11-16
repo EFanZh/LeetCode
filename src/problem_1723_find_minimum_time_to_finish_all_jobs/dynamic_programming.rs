@@ -9,7 +9,7 @@ impl Solution {
         let mut costs = vec![0_u32; 1 << n].into_boxed_slice();
 
         for bits in 1..1 << n {
-            costs[bits] = costs[bits & (bits - 1)] + jobs[bits.trailing_zeros() as usize] as u32;
+            costs[bits] = costs[bits & (bits - 1)] + jobs[bits.trailing_zeros() as usize].cast_unsigned();
         }
 
         drop(jobs);

@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn largest_sum_of_averages(nums: Vec<i32>, k: i32) -> f64 {
         let n = nums.len() as u32;
-        let k = k as u32;
+        let k = k.cast_unsigned();
 
         let cumulative_sums = {
             let mut sum = 0;

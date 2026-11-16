@@ -37,7 +37,7 @@ impl Solution {
 
         for (i, interval) in (0_u32..).zip(intervals) {
             let [left, right] = interval.try_into().ok().unwrap();
-            let (left, right) = (left as u32, right as u32 + 1);
+            let (left, right) = (left.cast_unsigned(), right.cast_unsigned() + 1);
 
             new_intervals.extend([(left, right - left, i), (right, 0, i)]);
         }
@@ -84,7 +84,7 @@ impl Solution {
         let mut queries = queries;
 
         for target in &mut queries {
-            let query = *target as u32;
+            let query = target.cast_unsigned();
             let i = splits.partition_point(|&(x, _)| x <= query);
 
             *target = splits.get(i.wrapping_sub(1)).map_or(u32::MAX, |&(_, i)| i) as _;

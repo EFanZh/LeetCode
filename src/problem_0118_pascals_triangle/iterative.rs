@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
-        let num_rows = num_rows as u32 as usize;
+        let num_rows = num_rows.cast_unsigned() as usize;
         let mut result = (1..=num_rows).map(Vec::with_capacity).collect::<Vec<_>>();
         let mut iter = result.iter_mut();
         let mut top_row = iter.next().unwrap();

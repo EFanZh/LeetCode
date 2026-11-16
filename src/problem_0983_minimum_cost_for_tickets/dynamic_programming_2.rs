@@ -26,7 +26,13 @@ impl Solution {
 
     pub fn mincost_tickets(days: Vec<i32>, costs: Vec<i32>) -> i32 {
         let [price_1, price_7, price_30] = costs.try_into().unwrap();
-        let (price_1, price_7, price_30) = (price_1 as u32, price_7 as u32, price_30 as u32);
+
+        let (price_1, price_7, price_30) = (
+            price_1.cast_unsigned(),
+            price_7.cast_unsigned(),
+            price_30.cast_unsigned(),
+        );
+
         let mut cache = [(0, 0); 32];
         let mut length = 0;
         let mut start_30 = 0;
@@ -37,7 +43,7 @@ impl Solution {
         let mut cost_1 = 0;
 
         for day in days.into_iter().rev() {
-            let day = day as u32;
+            let day = day.cast_unsigned();
 
             Self::update_min_cost(&cache, length, day + 30, &mut start_30, &mut cost_30);
             Self::update_min_cost(&cache, length, day + 7, &mut start_7, &mut cost_7);

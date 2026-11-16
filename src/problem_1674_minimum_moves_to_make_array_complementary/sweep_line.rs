@@ -4,12 +4,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn min_moves(nums: Vec<i32>, limit: i32) -> i32 {
-        let limit = limit as u32 as usize;
+        let limit = limit.cast_unsigned() as usize;
         let mut diffs = vec![0; limit * 2 + 1].into_boxed_slice();
         let (left, right) = nums.split_at(nums.len() / 2);
 
         for (&x, &y) in left.iter().zip(right.iter().rev()) {
-            let (x, y) = (x as u32 as usize, y as u32 as usize);
+            let (x, y) = (x.cast_unsigned() as usize, y.cast_unsigned() as usize);
             let (min, max) = if y < x { (y, x) } else { (x, y) };
 
             diffs[min] -= 1;

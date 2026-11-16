@@ -12,13 +12,13 @@ impl Solution {
         let columns = grid.first().map_or(0, Vec::len);
         let [low, high] = pricing.try_into().ok().unwrap();
         let [start_row, start_col] = start.try_into().ok().unwrap();
-        let price_range = low as u32..=high as u32;
-        let k = k as u32 as usize;
-        let node = (start_row as u32, start_col as u32);
+        let price_range = low.cast_unsigned()..=high.cast_unsigned();
+        let k = k.cast_unsigned() as usize;
+        let node = (start_row.cast_unsigned(), start_col.cast_unsigned());
         let mut distance = 1;
         let mut queue = VecDeque::from([node]);
         let mut candidates = Vec::<(u32, u32, u32, u32)>::with_capacity(columns * rows);
-        let start_price = mem::take(&mut grid[node.0 as usize][node.1 as usize]) as _;
+        let start_price = mem::take(&mut grid[node.0 as usize][node.1 as usize]).cast_unsigned();
 
         if price_range.contains(&start_price) {
             candidates.push((0, start_price, node.0, node.1));
@@ -39,7 +39,7 @@ impl Solution {
                         .and_then(|row| row.get_mut(next.1 as usize))
                         && *cell != 0
                     {
-                        let price = mem::take(cell) as _;
+                        let price = mem::take(cell).cast_unsigned();
 
                         if price_range.contains(&price) {
                             candidates.push((distance, price, next.0, next.1));

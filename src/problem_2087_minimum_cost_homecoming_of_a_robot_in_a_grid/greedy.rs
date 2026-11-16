@@ -4,9 +4,7 @@ pub struct Solution;
 
 impl Solution {
     fn parse_point(point: Vec<i32>) -> (u32, u32) {
-        let [y, x] = point.try_into().ok().unwrap();
-
-        (y as _, x as _)
+        <[_; 2]>::map(point.try_into().ok().unwrap(), i32::cast_unsigned).into()
     }
 
     pub fn min_cost(start_pos: Vec<i32>, home_pos: Vec<i32>, row_costs: Vec<i32>, col_costs: Vec<i32>) -> i32 {

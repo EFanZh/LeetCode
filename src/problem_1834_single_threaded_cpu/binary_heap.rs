@@ -12,7 +12,7 @@ impl Solution {
             .map(|(i, task)| {
                 let [enqueue_time, processing_time] = task.try_into().ok().unwrap();
 
-                (enqueue_time as u32, processing_time as u32, i)
+                (enqueue_time.cast_unsigned(), processing_time.cast_unsigned(), i)
             })
             .collect::<Box<_>>();
 

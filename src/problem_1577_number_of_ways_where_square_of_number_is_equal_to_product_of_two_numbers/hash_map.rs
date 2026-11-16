@@ -8,10 +8,10 @@ use std::num::NonZeroU64;
 impl Solution {
     fn count_triplets(counts: &mut HashMap<u64, u32>, result: &mut u32, left: &[i32], right: &[i32]) {
         for &third in right {
-            let third = NonZeroU64::new(u64::from(third as u32)).unwrap();
+            let third = NonZeroU64::new(u64::from(third.cast_unsigned())).unwrap();
 
             for &first in left {
-                let first_squared = u64::from(first as u32).pow(2);
+                let first_squared = u64::from(first.cast_unsigned()).pow(2);
 
                 if first_squared % third == 0 {
                     let second = first_squared / third;

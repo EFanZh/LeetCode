@@ -7,7 +7,7 @@ use std::num::NonZeroUsize;
 impl Solution {
     pub fn number_of_paths(grid: Vec<Vec<i32>>, k: i32) -> i32 {
         let columns = grid.first().map_or(0, Vec::len);
-        let k_usize = NonZeroUsize::new(k as u32 as usize).unwrap();
+        let k_usize = NonZeroUsize::new(k.cast_unsigned() as usize).unwrap();
         let mut cache = vec![0_u32; k_usize.get() * (columns + 1)].into_boxed_slice();
         let (left, cache) = cache.split_at_mut(k_usize.get());
 
@@ -25,7 +25,7 @@ impl Solution {
                         *target = (*target).checked_sub(1_000_000_007).unwrap_or(*target);
                     });
 
-                    counts.rotate_right(value as u32 as usize % k_usize);
+                    counts.rotate_right(value.cast_unsigned() as usize % k_usize);
                     left = counts;
                 });
         }

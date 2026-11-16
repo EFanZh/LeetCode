@@ -4,12 +4,12 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_count(banned: Vec<i32>, n: i32, max_sum: i32) -> i32 {
-        let n = n as u32 as usize;
-        let max_sum = max_sum as u32;
+        let n = n.cast_unsigned() as usize;
+        let max_sum = max_sum.cast_unsigned();
         let mut banned_map = vec![false; n].into_boxed_slice();
 
         for num in banned {
-            if let Some(is_banned) = banned_map.get_mut(num as u32 as usize - 1) {
+            if let Some(is_banned) = banned_map.get_mut(num.cast_unsigned() as usize - 1) {
                 *is_banned = true;
             }
         }

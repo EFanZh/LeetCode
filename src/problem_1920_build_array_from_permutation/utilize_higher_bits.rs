@@ -8,7 +8,7 @@ impl Solution {
         let slice = nums.as_mut_slice();
 
         for i in 0..slice.len() {
-            slice[i] |= slice[slice[i] as u32 as usize] << 16;
+            slice[i] |= slice[slice[i].cast_unsigned() as usize] << 16;
         }
 
         for num in slice {

@@ -4,14 +4,17 @@ pub struct Solution;
 
 impl Solution {
     pub fn chalk_replacer(chalk: Vec<i32>, k: i32) -> i32 {
-        let mut k = k as u32;
+        let mut k = k.cast_unsigned();
 
-        if let Some(sum) = chalk.iter().try_fold(0_u32, |sum, &x| sum.checked_add(x as _)) {
+        if let Some(sum) = chalk
+            .iter()
+            .try_fold(0_u32, |sum, &x| sum.checked_add(x.cast_unsigned()))
+        {
             k %= sum;
         }
 
         let mut i = 0;
-        let mut iter = chalk.iter().map(|&x| x as u32);
+        let mut iter = chalk.iter().map(|&x| x.cast_unsigned());
 
         loop {
             let required = iter.next().unwrap();

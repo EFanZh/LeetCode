@@ -6,7 +6,7 @@ impl Solution {
     pub fn longest_subsequence(s: String, k: i32) -> i32 {
         let s = s.as_bytes();
         let n = s.len();
-        let k = k as u32;
+        let k = k.cast_unsigned();
         let bits = 32 - k.leading_zeros() as usize;
 
         if n < bits {

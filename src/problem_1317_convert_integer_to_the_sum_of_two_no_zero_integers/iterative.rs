@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solution {
     pub fn get_no_zero_integers(n: i32) -> Vec<i32> {
-        let mut n = n as u32;
+        let mut n = n.cast_unsigned();
         let mut a = 0;
         let mut b = 0;
         let mut base = 1;

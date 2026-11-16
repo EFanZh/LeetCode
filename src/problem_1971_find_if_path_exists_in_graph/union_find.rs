@@ -39,16 +39,16 @@ impl Solution {
     }
 
     pub fn valid_path(n: i32, edges: Vec<Vec<i32>>, source: i32, destination: i32) -> bool {
-        let source = source as u32;
-        let destination = destination as u32;
-        let mut union_find = vec![(0, 0); n as u32 as usize].into_boxed_slice();
+        let source = source.cast_unsigned();
+        let destination = destination.cast_unsigned();
+        let mut union_find = vec![(0, 0); n.cast_unsigned() as usize].into_boxed_slice();
         let mut iter = edges.into_iter();
 
         while Self::find_root(&mut union_find, source) != Self::find_root(&mut union_find, destination) {
             if let Some(edge) = iter.next() {
                 let [from, to] = edge.try_into().ok().unwrap();
 
-                Self::union(&mut union_find, from as _, to as _);
+                Self::union(&mut union_find, from.cast_unsigned(), to.cast_unsigned());
             } else {
                 return false;
             }

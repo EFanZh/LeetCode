@@ -7,11 +7,13 @@ use std::ops::Add;
 
 impl Solution {
     pub fn max_star_sum(vals: Vec<i32>, edges: Vec<Vec<i32>>, k: i32) -> i32 {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut nodes = vec![Vec::new(); vals.len()];
 
         for edge in edges {
-            let (from, to) = <(_, _)>::from(<[_; 2]>::map(edge.try_into().ok().unwrap(), |x| x as u32 as usize));
+            let (from, to) = <(_, _)>::from(<[_; 2]>::map(edge.try_into().ok().unwrap(), |x| {
+                x.cast_unsigned() as usize
+            }));
 
             for (left, right) in [(from, to), (to, from)] {
                 let node = &mut nodes[left];
@@ -27,7 +29,7 @@ impl Solution {
             .zip(nodes)
             .fold(i32::MIN, |result, (val, mut neighbors)| {
                 if neighbors.len() > k {
-                    neighbors.select_nth_unstable_by_key(k, |&x| Reverse(x as u32));
+                    neighbors.select_nth_unstable_by_key(k, |&x| Reverse(x.cast_unsigned()));
                     neighbors.truncate(k);
                 }
 

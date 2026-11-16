@@ -8,7 +8,7 @@ impl Solution {
         let mut events = Vec::with_capacity(n * 2);
 
         for (i, (start, end)) in (0_u16..).zip(start_time.into_iter().zip(end_time)) {
-            events.extend([(start as u32 * 2 + 1, i), (end as u32 * 2, i)]);
+            events.extend([(start.cast_unsigned() * 2 + 1, i), (end.cast_unsigned() * 2, i)]);
         }
 
         events.sort_unstable_by_key(|&(key, _)| key);
@@ -22,11 +22,11 @@ impl Solution {
             if position % 2 == 0 {
                 max_profit = max_profit.max(cache[i]);
             } else {
-                cache[i] = max_profit + profit[i] as u32;
+                cache[i] = max_profit + profit[i].cast_unsigned();
             }
         }
 
-        max_profit as _
+        max_profit.cast_signed()
     }
 }
 

@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solution {
     pub fn sum_of_multiples(n: i32) -> i32 {
         let sum = |base| {
-            let count = n as u32 / base;
+            let count = n.cast_unsigned() / base;
 
             (1 + count) * count / 2 * base
         };

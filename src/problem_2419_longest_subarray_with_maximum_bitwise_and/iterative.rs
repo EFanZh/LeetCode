@@ -9,7 +9,7 @@ impl Solution {
         let mut max_value = 0;
         let mut max_value_length = 0;
         let mut length = 0;
-        let mut iter = nums.iter().map(|&x| x as u32);
+        let mut iter = nums.iter().copied().map(i32::cast_unsigned);
 
         'outer: loop {
             if let Some(num) = iter.next() {

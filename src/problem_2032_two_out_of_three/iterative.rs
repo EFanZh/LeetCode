@@ -7,13 +7,13 @@ impl Solution {
         let mut states = [0_u8; 100];
 
         for num in nums1 {
-            states[num as u32 as usize - 1] = 1;
+            states[num.cast_unsigned() as usize - 1] = 1;
         }
 
         let mut result = Vec::new();
 
         for num in nums2 {
-            let state = &mut states[num as u32 as usize - 1];
+            let state = &mut states[num.cast_unsigned() as usize - 1];
 
             if *state == 1 {
                 result.push(num);
@@ -23,7 +23,7 @@ impl Solution {
         }
 
         for num in nums3 {
-            let state = &mut states[num as u32 as usize - 1];
+            let state = &mut states[num.cast_unsigned() as usize - 1];
 
             if *state == 1 || *state == 2 {
                 result.push(num);

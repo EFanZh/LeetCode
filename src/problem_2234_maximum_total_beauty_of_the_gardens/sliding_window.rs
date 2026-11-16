@@ -84,10 +84,10 @@ impl Solution {
 
     pub fn maximum_beauty(flowers: Vec<i32>, new_flowers: i64, target: i32, full: i32, partial: i32) -> i64 {
         let mut flowers = flowers.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
-        let new_flowers = new_flowers as u64;
-        let target = target as u32;
-        let full = u64::from(full as u32);
-        let partial = u64::from(partial as u32);
+        let new_flowers = new_flowers .cast_unsigned();
+        let target = target.cast_unsigned();
+        let full = u64::from(full.cast_unsigned());
+        let partial = u64::from(partial.cast_unsigned());
         let split = Self::partition(&mut flowers, |x| x < target);
         let (left, right) = flowers.split_at_mut(split);
         let right_beauty = full * right.len() as u64;

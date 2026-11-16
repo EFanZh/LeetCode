@@ -6,8 +6,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn spiral_matrix(m: i32, n: i32, head: Option<Box<ListNode>>) -> Vec<Vec<i32>> {
-        let m = m as u32 as usize;
-        let n = n as u32 as usize;
+        let m = m.cast_unsigned() as usize;
+        let n = n.cast_unsigned() as usize;
         let mut result = vec![vec![-1; n]; m];
         let mut top = 0;
         let mut bottom = m;

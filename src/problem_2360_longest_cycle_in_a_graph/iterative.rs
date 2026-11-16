@@ -16,7 +16,7 @@ impl Solution {
         for i in 0..n {
             let mut state = &mut edges[i];
 
-            if ((*state + 1) as u32) < MAX_BIT {
+            if ((*state + 1).cast_unsigned()) < MAX_BIT {
                 current_id += 1;
 
                 let start_id = current_id;
@@ -25,15 +25,15 @@ impl Solution {
                     let next = mem::replace(state, current_id as _) as usize;
 
                     if let Some(next_state) = edges.get_mut(next) {
-                        if ((*next_state + 1) as u32) < MAX_BIT {
+                        if ((*next_state + 1).cast_unsigned()) < MAX_BIT {
                             state = next_state;
                             current_id += 1;
 
                             continue;
                         }
 
-                        if *next_state as u32 >= start_id {
-                            result = result.max(current_id - *next_state as u32);
+                        if next_state.cast_unsigned() >= start_id {
+                            result = result.max(current_id - next_state.cast_unsigned());
                         }
                     }
 

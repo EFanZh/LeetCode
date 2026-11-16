@@ -6,12 +6,12 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn add_rungs(rungs: Vec<i32>, dist: i32) -> i32 {
-        let dist = NonZeroU32::new(dist as _).unwrap();
+        let dist = NonZeroU32::new(dist.cast_unsigned()).unwrap();
         let mut result = 0;
         let mut prev = 0;
 
         for height in rungs {
-            let diff = (height - prev) as u32;
+            let diff = (height - prev).cast_unsigned();
 
             result += (diff - 1) / dist;
 

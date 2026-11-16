@@ -10,7 +10,7 @@ impl Solution {
         let mut queue = VecDeque::from([start]);
         let mut result = 1;
 
-        visited[start as u32 as usize] = true;
+        visited[start.cast_unsigned() as usize] = true;
 
         loop {
             for _ in 0..queue.len() {

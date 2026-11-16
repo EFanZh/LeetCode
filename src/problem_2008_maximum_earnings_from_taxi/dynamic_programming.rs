@@ -4,14 +4,14 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_taxi_earnings(n: i32, rides: Vec<Vec<i32>>) -> i64 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
 
         let mut rides = rides
             .into_iter()
             .map(|ride| {
                 let [start, end, tip] = ride.try_into().ok().unwrap();
 
-                (end as u32 - 1, start as u32 - 1, tip as u32)
+                (end.cast_unsigned() - 1, start.cast_unsigned() - 1, tip.cast_unsigned())
             })
             .collect::<Vec<_>>();
 

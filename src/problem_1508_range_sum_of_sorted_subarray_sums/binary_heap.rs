@@ -33,12 +33,15 @@ impl Ord for Item {
 
 impl Solution {
     pub fn range_sum(nums: Vec<i32>, _n: i32, left: i32, right: i32) -> i32 {
-        let left = left as u32;
-        let right = right as u32;
+        let left = left.cast_unsigned();
+        let right = right.cast_unsigned();
 
         let mut queue = (1..)
             .zip(&nums)
-            .map(|(end, &num)| Item { sum: num as _, end })
+            .map(|(end, &num)| Item {
+                sum: num.cast_unsigned(),
+                end,
+            })
             .collect::<BinaryHeap<_>>();
 
         let mut next_sum = move || {
@@ -49,7 +52,7 @@ impl Solution {
             if let Some(&num) = nums.get(usize::from(item_ref.end)) {
                 let item_ref_mut = &mut *item;
 
-                item_ref_mut.sum += num as u32;
+                item_ref_mut.sum += num.cast_unsigned();
                 item_ref_mut.end += 1;
 
                 drop(item);

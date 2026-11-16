@@ -6,7 +6,7 @@ use std::str;
 
 impl Solution {
     pub fn query_string(s: String, n: i32) -> bool {
-        let n = n as u32;
+        let n = n.cast_unsigned();
         let mut buffer = [b'0'; 32];
         let mut start = 32;
 

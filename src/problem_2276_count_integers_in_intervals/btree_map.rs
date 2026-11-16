@@ -18,8 +18,8 @@ impl CountIntervals {
     }
 
     fn add(&mut self, left: i32, right: i32) {
-        let left = left as u32;
-        let mut right = right as u32 + 1;
+        let left = left.cast_unsigned();
+        let mut right = right.cast_unsigned() + 1;
 
         let mut to_remove_iter = self.intervals.range(left + 1..=right).map(|(&start, &end)| {
             self.count -= end - start;

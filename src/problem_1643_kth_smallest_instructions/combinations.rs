@@ -28,9 +28,9 @@ impl Solution {
 
     pub fn kth_smallest_path(destination: Vec<i32>, k: i32) -> String {
         let [row, column] = destination.try_into().ok().unwrap();
-        let mut row = row as u32 as usize;
-        let mut column = column as u32 as usize;
-        let mut k = k as u32;
+        let mut row = row.cast_unsigned() as usize;
+        let mut column = column.cast_unsigned() as usize;
+        let mut k = k.cast_unsigned();
         let length = row + column;
         let combinations = Self::combinations(length);
         let mut result = String::with_capacity(length);

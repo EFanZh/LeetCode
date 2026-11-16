@@ -12,7 +12,10 @@ impl Solution {
         for trip in &trips {
             let [passengers, from, to] = trip.as_slice().try_into().unwrap();
 
-            events.extend([Reverse((from as u32, passengers)), Reverse((to as u32, -passengers))]);
+            events.extend([
+                Reverse((from.cast_unsigned(), passengers)),
+                Reverse((to.cast_unsigned(), -passengers)),
+            ]);
         }
 
         drop(trips);

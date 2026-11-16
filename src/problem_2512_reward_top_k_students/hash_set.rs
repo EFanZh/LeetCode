@@ -13,7 +13,7 @@ impl Solution {
         student_id: Vec<i32>,
         k: i32,
     ) -> Vec<i32> {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
 
         let positive_feedback = positive_feedback
             .into_iter()

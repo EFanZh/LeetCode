@@ -105,7 +105,7 @@ impl Solution {
         queries
             .into_iter()
             .map(|query| {
-                let [node, val] = <[_; 2]>::map(query.try_into().ok().unwrap(), |x| x as u32);
+                let [node, val] = <[_; 2]>::map(query.try_into().ok().unwrap(), i32::cast_unsigned);
 
                 ((val & mask)
                     | Self::find_max_xor(

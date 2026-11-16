@@ -8,7 +8,7 @@ impl Solution {
         let mut result = 0;
 
         for num in nums {
-            let state = &mut states[num as u32 as usize - 1];
+            let state = &mut states[num.cast_unsigned() as usize - 1];
 
             result += num * i32::from(*state);
             *state = -i8::from(*state == 1);

@@ -11,8 +11,8 @@ impl Solution {
         for log in logs {
             let [birth, death] = log.try_into().ok().unwrap();
 
-            diffs[birth as u32 as usize - MIN_YEAR] += 1;
-            diffs[death as u32 as usize - MIN_YEAR] -= 1;
+            diffs[birth.cast_unsigned() as usize - MIN_YEAR] += 1;
+            diffs[death.cast_unsigned() as usize - MIN_YEAR] -= 1;
         }
 
         let mut max_population = 0;

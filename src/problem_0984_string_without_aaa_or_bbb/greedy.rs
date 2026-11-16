@@ -4,8 +4,8 @@ pub struct Solution;
 
 impl Solution {
     pub fn str_without3a3b(a: i32, b: i32) -> String {
-        let a = a as u32;
-        let b = b as u32;
+        let a = a.cast_unsigned();
+        let b = b.cast_unsigned();
 
         let (a, b, s1, s2, c) = if b < a {
             (b, a, "aab", "ab", 'a')

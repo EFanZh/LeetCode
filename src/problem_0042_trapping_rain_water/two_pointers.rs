@@ -4,12 +4,13 @@ pub struct Solution;
 
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
+        let height = height.into_iter().map(i32::cast_unsigned).collect::<Vec<_>>();
         let mut result = 0;
 
         if let [left_max, rest @ .., right_max] = height.as_slice() {
-            let mut left_max = *left_max as u32;
-            let mut right_max = *right_max as u32;
-            let mut iter = rest.iter().map(|&x| x as u32);
+            let mut left_max = *left_max;
+            let mut right_max = *right_max;
+            let mut iter = rest.iter().copied();
 
             'outer: loop {
                 if right_max < left_max {
@@ -38,7 +39,7 @@ impl Solution {
             }
         }
 
-        result as _
+        result.cast_signed()
     }
 }
 

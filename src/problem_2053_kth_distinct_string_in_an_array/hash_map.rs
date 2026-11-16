@@ -14,7 +14,7 @@ impl Solution {
 
         arr.iter()
             .filter(|&s| counts[s.as_str()] == 1)
-            .nth(k as u32 as usize - 1)
+            .nth(k.cast_unsigned() as usize - 1)
             .map_or_else(String::new, String::clone)
     }
 }

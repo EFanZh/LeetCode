@@ -11,7 +11,7 @@ impl Solution {
         player
             .iter()
             .map(|&x| {
-                let score = x as u32 * (1 + u32::from(state & 3 != 0));
+                let score = x.cast_unsigned() * (1 + u32::from(state & 3 != 0));
 
                 state = (state << 1) | u8::from(x == 10);
 

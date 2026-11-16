@@ -23,15 +23,15 @@ impl ATM {
     fn deposit(&mut self, banknotes_count: Vec<i32>) {
         let [count_20, count_50, count_100, count_200, count_500] = banknotes_count.try_into().ok().unwrap();
 
-        self.count_20 += count_20 as u32;
-        self.count_50 += count_50 as u32;
-        self.count_100 += count_100 as u32;
-        self.count_200 += count_200 as u32;
-        self.count_500 += count_500 as u32;
+        self.count_20 += count_20.cast_unsigned();
+        self.count_50 += count_50.cast_unsigned();
+        self.count_100 += count_100.cast_unsigned();
+        self.count_200 += count_200.cast_unsigned();
+        self.count_500 += count_500.cast_unsigned();
     }
 
     fn withdraw(&mut self, amount: i32) -> Vec<i32> {
-        let mut amount = amount as u32;
+        let mut amount = amount.cast_unsigned();
 
         let count_500 = (amount / 500).min(self.count_500);
 

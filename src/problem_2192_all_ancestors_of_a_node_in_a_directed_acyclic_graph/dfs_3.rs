@@ -21,7 +21,7 @@ impl Solution {
     }
 
     pub fn get_ancestors(n: i32, edges: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut graph = vec![Vec::new(); n];
 
         for edge in edges {

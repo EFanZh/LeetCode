@@ -16,7 +16,7 @@ impl Solution {
     pub fn get_length_of_optimal_compression(s: String, k: i32) -> i32 {
         let s = s.as_bytes();
         let n = s.len();
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let columns = k + 1;
         let mut cache = vec![0; columns * n].into_boxed_slice();
 

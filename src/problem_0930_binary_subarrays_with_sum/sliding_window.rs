@@ -6,7 +6,7 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn num_subarrays_with_sum(nums: Vec<i32>, goal: i32) -> i32 {
-        let goal = goal as u32 as usize;
+        let goal = goal.cast_unsigned() as usize;
         let mut queue = VecDeque::with_capacity(goal);
         let mut iter = (0_u32..).zip(nums);
 

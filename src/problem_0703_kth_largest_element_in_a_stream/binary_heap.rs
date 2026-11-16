@@ -9,7 +9,7 @@ pub struct KthLargest {
 
 impl KthLargest {
     fn new(k: i32, nums: Vec<i32>) -> Self {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut nums = nums;
 
         match nums.len().cmp(&k) {

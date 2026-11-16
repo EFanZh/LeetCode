@@ -35,7 +35,7 @@ impl Solution {
         let mut queue = nums
             .iter()
             .copied()
-            .map(|x| TotalF64(f64::from(x as u32)))
+            .map(|x| TotalF64(f64::from(x.cast_unsigned())))
             .collect::<BinaryHeap<_>>();
 
         let mut result = 1;

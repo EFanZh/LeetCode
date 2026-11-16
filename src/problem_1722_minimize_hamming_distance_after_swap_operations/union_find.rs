@@ -52,7 +52,7 @@ impl Solution {
         for allowed_swap in allowed_swaps {
             let [x, y] = allowed_swap.try_into().ok().unwrap();
 
-            Self::union(&mut union_find, x as _, y as _);
+            Self::union(&mut union_find, x.cast_unsigned(), y.cast_unsigned());
         }
 
         let mut groups = vec![HashMap::<i32, i32>::new(); n];

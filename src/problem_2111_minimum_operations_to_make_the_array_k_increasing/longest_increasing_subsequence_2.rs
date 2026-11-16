@@ -6,7 +6,7 @@ use std::num::NonZeroUsize;
 
 impl Solution {
     pub fn k_increasing(arr: Vec<i32>, k: i32) -> i32 {
-        let k = NonZeroUsize::new(k as u32 as _).unwrap();
+        let k = NonZeroUsize::new(k.cast_unsigned() as _).unwrap();
         let mut lengths = Vec::new();
         let mut result = 0;
 

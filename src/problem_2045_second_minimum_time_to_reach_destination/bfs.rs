@@ -7,9 +7,9 @@ use std::num::NonZeroU32;
 
 impl Solution {
     pub fn second_minimum(n: i32, edges: Vec<Vec<i32>>, time: i32, change: i32) -> i32 {
-        let n = n as u32 as usize;
-        let time = time as u32;
-        let change = change as u32;
+        let n = n.cast_unsigned() as usize;
+        let time = time.cast_unsigned();
+        let change = change.cast_unsigned();
         let cycle = NonZeroU32::new(change * 2).unwrap();
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 

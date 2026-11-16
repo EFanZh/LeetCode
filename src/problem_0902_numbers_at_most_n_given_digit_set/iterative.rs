@@ -41,7 +41,7 @@ impl Solution {
         let base = digits.len() as u32;
         let mapping = Self::get_mapping(&digits);
         let mut buffer = [0; 10];
-        let n_digits = Self::get_digits(n as _, &mut buffer);
+        let n_digits = Self::get_digits(n.cast_unsigned(), &mut buffer);
         let mut result = 1;
         let mut exp = 1;
 

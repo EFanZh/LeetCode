@@ -32,15 +32,15 @@ impl Ord for Item {
 
 impl Solution {
     pub fn count_restricted_paths(n: i32, edges: Vec<Vec<i32>>) -> i32 {
-        let n = n as u32 as usize;
+        let n = n.cast_unsigned() as usize;
         let mut states = vec![(u32::MAX, 0_u32); n].into_boxed_slice();
         let mut graph = vec![Vec::new(); n].into_boxed_slice();
 
         for edge in edges {
             let [from, to, weight] = edge.try_into().ok().unwrap();
-            let from = from as u32 - 1;
-            let to = to as u32 - 1;
-            let weight = weight as u32;
+            let from = from.cast_unsigned() - 1;
+            let to = to.cast_unsigned() - 1;
+            let weight = weight.cast_unsigned();
 
             graph[from as usize].push((to, weight));
             graph[to as usize].push((from, weight));

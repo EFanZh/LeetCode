@@ -34,7 +34,7 @@ impl Solution {
         for condition in conditions {
             let [num_1, num_2] = condition.try_into().ok().unwrap();
 
-            graph[num_2 as u32 as usize - 1].push((num_1 as u16) - 1);
+            graph[num_2.cast_unsigned() as usize - 1].push((num_1 as u16) - 1);
         }
 
         let k = graph.len();
@@ -55,7 +55,7 @@ impl Solution {
     }
 
     pub fn build_matrix(k: i32, row_conditions: Vec<Vec<i32>>, col_conditions: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut graph = vec![Vec::new(); k].into_boxed_slice();
         let mut states = iter::repeat_n(u16::MAX, k * 2).collect::<Box<_>>();
         let (row_states, column_states) = states.split_at_mut(k);

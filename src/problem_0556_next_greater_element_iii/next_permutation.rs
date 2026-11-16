@@ -25,7 +25,7 @@ impl Solution {
 
     pub fn next_greater_element(n: i32) -> i32 {
         let mut buffer = [0_u8; 10];
-        let buffer = Self::get_digits(n as _, &mut buffer);
+        let buffer = Self::get_digits(n.cast_unsigned(), &mut buffer);
 
         if let Some(t) = buffer.iter().zip(&buffer[1..]).position(|(left, right)| left > right) {
             let digit_index = t + 1;

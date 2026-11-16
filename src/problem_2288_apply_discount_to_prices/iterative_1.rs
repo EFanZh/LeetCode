@@ -7,7 +7,7 @@ impl Solution {
         use std::fmt::Write;
 
         let mut result = String::with_capacity(sentence.len() * 2);
-        let discount = u64::from(100 - discount as u32);
+        let discount = u64::from(100 - discount.cast_unsigned());
         let mut iter = sentence.split(' ');
         let mut word = iter.next().unwrap();
 

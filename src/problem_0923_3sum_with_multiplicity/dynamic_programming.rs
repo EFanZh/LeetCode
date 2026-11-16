@@ -9,12 +9,12 @@ impl Solution {
     }
 
     pub fn three_sum_multi(arr: Vec<i32>, target: i32) -> i32 {
-        let target = target as u32 as usize;
+        let target = target.cast_unsigned() as usize;
         let mut cache = vec![(0, 0); target + 1];
         let mut result = 0;
 
         for num in arr {
-            let num = num as u32 as usize;
+            let num = num.cast_unsigned() as usize;
 
             if let Some(&(_, two_sum_count)) = cache.get(target.wrapping_sub(num)) {
                 Self::assign_add(&mut result, two_sum_count);

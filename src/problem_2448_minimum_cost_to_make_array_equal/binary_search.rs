@@ -6,7 +6,7 @@ impl Solution {
     fn get_cost(nums: &[i32], cost: &[i32], target: i32) -> u64 {
         nums.iter()
             .zip(cost)
-            .map(|(&num, &cost)| u64::from(num.abs_diff(target)) * u64::from(cost as u32))
+            .map(|(&num, &cost)| u64::from(num.abs_diff(target)) * u64::from(cost.cast_unsigned()))
             .sum()
     }
 

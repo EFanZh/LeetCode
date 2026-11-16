@@ -4,10 +4,10 @@ pub struct Solution;
 
 impl Solution {
     pub fn maximum_importance(n: i32, roads: Vec<Vec<i32>>) -> i64 {
-        let mut degrees = vec![0_u16; n as u32 as usize];
+        let mut degrees = vec![0_u16; n.cast_unsigned() as usize];
 
         for road in roads {
-            let [from, to] = <[_; 2]>::map(road.try_into().ok().unwrap(), |x| x as u32 as usize);
+            let [from, to] = <[_; 2]>::map(road.try_into().ok().unwrap(), |x| x.cast_unsigned() as usize);
 
             degrees[from] += 1;
             degrees[to] += 1;

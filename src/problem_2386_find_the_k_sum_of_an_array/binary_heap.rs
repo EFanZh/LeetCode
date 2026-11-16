@@ -33,12 +33,12 @@ impl Ord for Item {
 impl Solution {
     pub fn k_sum(nums: Vec<i32>, k: i32) -> i64 {
         let mut nums = nums;
-        let k = k as u32 as usize;
+        let k = k.cast_unsigned() as usize;
         let mut max_sum = 0;
 
         for num in &mut nums {
             if *num > 0 {
-                max_sum += i64::from(*num as u32);
+                max_sum += i64::from(num.cast_unsigned());
             } else {
                 *num = -*num;
             }

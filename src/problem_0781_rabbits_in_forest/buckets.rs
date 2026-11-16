@@ -17,7 +17,7 @@ impl Solution {
 
         for num in answers {
             counter
-                .entry(num as u32)
+                .entry(num.cast_unsigned())
                 .and_modify(|count: &mut u32| *count += 1)
                 .or_insert(1);
         }

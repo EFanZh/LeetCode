@@ -14,14 +14,14 @@ impl ATM {
         let banknotes_count: &[_; 5] = banknotes_count.as_slice().try_into().ok().unwrap();
 
         for (target, &count) in self.counts.iter_mut().zip(banknotes_count) {
-            *target += count as u32;
+            *target += count.cast_unsigned();
         }
     }
 
     pub fn withdraw(&mut self, amount: i32) -> Vec<i32> {
-        let mut amount = amount as u32;
+        let mut amount = amount.cast_unsigned();
         let mut result = vec![0; 5];
-        let result_ref: &mut [_; 5] = result.as_mut_slice().try_into().ok().unwrap();
+        let result_ref: &mut [i32; 5] = result.as_mut_slice().try_into().ok().unwrap();
 
         let mut iter = result_ref
             .iter_mut()
@@ -39,7 +39,7 @@ impl ATM {
                 }
 
                 for (available, required) in self.counts.iter_mut().zip(&*result_ref) {
-                    *available -= *required as u32;
+                    *available -= required.cast_unsigned();
                 }
             } else {
                 result_ref[0] = -1;

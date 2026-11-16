@@ -9,7 +9,7 @@ impl Solution {
         for num in nums {
             let [start, end] = num.try_into().ok().unwrap();
 
-            events.extend([(start as u32) << 2, ((end as u32 + 1) << 2) + 2]);
+            events.extend([(start.cast_unsigned()) << 2, ((end.cast_unsigned() + 1) << 2) + 2]);
         }
 
         events.sort_unstable();
