@@ -1915,6 +1915,7 @@ pub mod problem_2555_maximize_win_from_two_segments;
 pub mod problem_2558_take_gifts_from_the_richest_pile;
 pub mod problem_2559_count_vowel_strings_in_ranges;
 pub mod problem_2560_house_robber_iv;
+pub mod problem_2561_rearranging_fruits;
 pub mod problem_2562_find_the_array_concatenation_value;
 pub mod problem_2563_count_the_number_of_fair_pairs;
 pub mod problem_2564_substring_xor_queries;
