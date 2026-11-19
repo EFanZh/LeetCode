@@ -2173,6 +2173,7 @@ pub mod problem_3195_find_the_minimum_area_to_cover_all_ones_i;
 pub mod problem_3196_maximize_total_cost_of_alternating_subarrays;
 pub mod problem_3200_maximum_height_of_a_triangle;
 pub mod problem_3201_find_the_maximum_length_of_valid_subsequence_i;
+pub mod problem_3203_find_minimum_diameter_after_merging_two_trees;
 pub mod problem_3206_alternating_groups_i;
 pub mod problem_3208_alternating_groups_ii;
 pub mod problem_3210_find_the_encrypted_string;
