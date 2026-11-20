@@ -41,7 +41,7 @@ impl Solution {
             cache.push((day, (cost_30 + price_30).min(cost_7 + price_7).min(cost_1 + price_1)));
         }
 
-        cache.pop().map(|(_, result)| result as _).unwrap_or_default()
+        cache.pop().map_or_default(|(_, result)| result as _)
     }
 }
 
