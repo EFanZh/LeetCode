@@ -2482,6 +2482,7 @@ pub mod problem_4089_count_subarrays_with_loose_bounds;
 pub mod problem_4092_binary_digit_score;
 pub mod problem_4093_maximize_sum_after_at_most_k_digit_rearrangements;
 pub mod problem_4097_minimum_value_of_merged_integers;
+pub mod problem_4102_count_valid_substrings_i;
 
 #[cfg(test)]
 mod test_utilities;
