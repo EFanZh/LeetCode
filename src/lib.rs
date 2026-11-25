@@ -2484,6 +2484,7 @@ pub mod problem_4093_maximize_sum_after_at_most_k_digit_rearrangements;
 pub mod problem_4097_minimum_value_of_merged_integers;
 pub mod problem_4102_count_valid_substrings_i;
 pub mod problem_4104_count_valid_substrings_ii;
+pub mod problem_4106_find_mismatched_segments_between_two_strings;
 
 #[cfg(test)]
 mod test_utilities;
