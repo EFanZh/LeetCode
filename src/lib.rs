@@ -2487,6 +2487,7 @@ pub mod problem_4102_count_valid_substrings_i;
 pub mod problem_4104_count_valid_substrings_ii;
 pub mod problem_4106_find_mismatched_segments_between_two_strings;
 pub mod problem_4117_minimum_range_after_sum_operations;
+pub mod problem_4120_count_dominant_elements;
 
 #[cfg(test)]
 mod test_utilities;
