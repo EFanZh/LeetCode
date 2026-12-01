@@ -2487,6 +2487,7 @@ pub mod problem_4102_count_valid_substrings_i;
 pub mod problem_4103_remove_elements_by_type_and_color;
 pub mod problem_4104_count_valid_substrings_ii;
 pub mod problem_4106_find_mismatched_segments_between_two_strings;
+pub mod problem_4112_maximize_score_after_zeroing_subtrees;
 pub mod problem_4116_assign_umbrella_on_rainy_days;
 pub mod problem_4117_minimum_range_after_sum_operations;
 pub mod problem_4120_count_dominant_elements;
